@@ -1,0 +1,48 @@
+<!DOCTYPE html (h410.html: Z-index ile 5 katmanlı gölgeli kutu destesi oluşturma örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font: 14px courier;
+            background: #c72 url("resim/zemin1.gif"); /* Resim yoksa zemin rengi geçerli */
+            color: Blue;
+            padding: 0;}
+        p {position: absolute;
+            width: 400px;
+            height: 200px;
+            background: MediumAquaMarine;
+            border: 5px solid #ccc;
+            box-shadow: 10px 10px 10px Cyan;
+            margin: 0;}
+        code {padding: 0 15px;}
+        .p1 {top: 80px;
+            left: 80px;
+            z-index: 4;}
+        .p2 {top: 60px;
+            left: 60px;
+            z-index: 3;}
+        .p3 {top: 40px;
+            left: 40px;
+            z-index: 2;}
+        .p4 {top: 20px;
+            left: 20px;
+            z-index: 1;}
+        p:hover {z-index: 99;}
+        #reklam {top: 100px;
+            left: 100px;
+            z-index: 5;}
+        #reklam a {display: block;
+            width: 120px;
+            height: 90px;
+            padding: 55px 140px;}
+    </style>
+</head>
+<body>
+    <p class="p1"><code>z-index: 4;</code></p>
+    <p class="p2"><code>z-index: 3;</code></p>
+    <p class="p3"><code>z-index: 2;</code></p>
+    <p class="p4"><code>z-index: 1;</code></p>
+
+    <p id="reklam"><code>z-index: 5;</code><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

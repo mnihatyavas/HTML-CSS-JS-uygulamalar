@@ -1,0 +1,35 @@
+<!DOCTYPE html (h408c.html: Satıriçi ve satıriçi-blok kutuları örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {background:PowderBlue;
+            color:Purple;
+            font: 90% arial, helvetica, sans-serif;}
+        h1 {font-size: 1.75em;}
+        h2 {font-size: 1.25em;}
+        code {font-family: courier;}
+        #örnek1, #örnek2 {background: #ccc;
+            border: 3px solid black;}
+        span {background: SeaShell;
+            display: inline;
+            border: 0.75em solid red;
+            padding: 1em;
+            margin: 0.5em;}
+        span.farklı {background: #5b5;}
+        #örnek2 span {display: inline-block;}
+    </style>
+</head>
+<body>
+    <h1>Satıriçi ve satıriçi-blok kutuları (tampon, sınır ve marjinli)</h1>
+    <p>Heriki örnek de aynı HTML'yi içermekte, ancak ilk span elementi <code>display: inline</code> ve ikincisi ise <code>display: inline-block</code> olarak ayarlanmıştır.</p>
+
+    <h2>Satıriçi</h2>
+    <br/><p id="örnek1"><span>Bu</span><span class="farklı">Şu</span><span>Diğeri</span><span class="farklı">2019</span></p>
+
+    <br/><h2>Satıriçi-blok</h2>
+    <p id="örnek2"><span>Bu</span><span class="farklı">Şu</span><span>Diğeri</span><span class="farklı">2019</span></p>
+
+    <br/><p style="border: 5px solid black; width:120px;"><a href="http://www.htmldog.com/örneks/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

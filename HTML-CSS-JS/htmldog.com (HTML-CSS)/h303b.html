@@ -1,0 +1,46 @@
+<!DOCTYPE html (h303b.html)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>Zemin Dekoru Tekrarı: background-repeat</title>
+    <style>
+        body {font: 14px courier;
+            background: DodgerBlue;
+            margin: 0;
+            padding: 10px;}
+        p {background-color: cyan;
+            background-image: url("resim/zemin1.gif");
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+            float: left;
+            text-align: center;}
+        code {color:gold;
+            background: black;
+            padding: 0 15px 2px;}
+
+        #p1 {background-repeat: repeat;}
+        #p2 {background-repeat: no-repeat;}
+        #p3 {background-repeat: repeat-x;}
+        #p4 {background-repeat: repeat-y;}
+        #p5 {background-repeat: space;}
+        #p6 {background-repeat: round;}
+
+        #taban {background:none;}
+        #taban a {display: block;
+            height: 300px;
+            background: #444 url("resim/rozet.gif") center no-repeat;
+            text-indent: -999em;} /* img src resmini gözardı et... */
+    </style>
+</head>
+<body>
+    <p id="p1"><code>background-repeat: repeat;</code></p>
+    <p id="p2"><code>background-repeat: no-repeat;</code></p>
+    <p id="p3"><code>background-repeat: repeat-x;</code></p>
+    <p id="p4"><code>background-repeat: repeat-y;</code></p>
+    <p id="p5"><code>background-repeat: space;</code></p>
+    <p id="p6"><code>background-repeat: round;</code></p>
+
+    <p id="taban"><code>background: center no-repeat;</code><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

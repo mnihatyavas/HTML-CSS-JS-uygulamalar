@@ -1,0 +1,40 @@
+<!DOCTYPE html (h203c.html)>
+<html>
+<head>
+    <meta charset="coding:iso-8859-9 Türkçe">
+    <title>Kýpýrdama 3: Netleþme</title>
+    <style>
+        body {
+            font: 15px arial, helvetica, sans-serif;
+            background:Chocolate; /* #d2691e */
+            color:White; /* #ffffff */
+        }
+        #tukan {
+            display: block;
+            width: 200px;
+            height: 65px;
+            background: url(/resim/tukanKuþu.jpg);
+            position: relative;
+        }
+        #tukan:after {
+            content: "";
+            background: url(resim/tukanKuþu.jpg);
+            display: block;
+            position: absolute;
+            top: 0;
+            height: 65px;
+            width: 200px;
+            opacity: 0.1;
+            transition: 2.5s;
+        }
+        #tukan:hover:after {opacity: 1;}
+    </style>
+</head>
+<body>
+    <h3>Resmin üzerindeyken solgunluk netleþecektir</h3>
+    <p><a href="#" id="tukan">Tukan Kuþu</a></p>
+
+    <!-- HTML Dog baðlantýsý: -->
+    <p><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html (h306.html)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>Çoklu zeminler: Multiple backgrounds</title>
+    <style>
+        body {
+            font: 14px/1.5 courier, monospace;
+            background: Olive;
+            color: MintCream;
+            margin: 20px;
+        }
+        pre {
+            background-color: #c72;
+            height: 200px;
+            margin: 20px 0;
+            overflow: auto;
+        }
+        pre code {
+            background: MidnightBlue;
+            padding: 2px 10px 4px 0;
+        }
+        #p0 {background-image: url("resim/zemin1.gif");}
+        #p1 {background-image: url("resim/daire.png"), url("resim/zemin1.gif");}
+        #p2 {
+            background-image: url("resim/daire.png"), url("resim/zemin1.gif");
+            background-repeat: no-repeat, repeat;
+            background-position: bottom left;
+        }
+        #p3 {
+            background-image: url("resim/daire.png"), url("resim/zemin1.gif");
+            background-repeat: no-repeat, repeat;
+            background-position: center;
+        }
+        #p4 {background: url("resim/daire.png") center bottom no-repeat, url("resim/zemin1.gif");}
+
+        #htmldog a {
+            display: block;
+            height: 200px;
+            background: cyan url("resim/kesikKöşe.gif");
+            background-repeat: no-repeat;
+            text-indent: -999em;
+            transition: background-position 1.5s steps(5);
+        }
+        #htmldog a:hover {background-position: top -50px left -50px, top -50px right -50px, bottom -50px right -50px, bottom -50px left -50px, center;}
+    </style>
+</head>
+<body>
+    <h1><a href="http://www.htmldog.com/guides/css/advanced/backgrounds/" target="_">Çoklu zeminler</a></h1>
+    <p>Kullanılan teknikler: <a href="http://www.htmldog.com/references/css/properties/background-image/" target="_"><code>background-image/zemin-resmi</code></a> ve <a href="http://www.htmldog.com/references/css/properties/background/" target="_"><code>background/zemin</code></a> CSS özellikleri.</p>
+
+    <pre id="p0"><code>background-image: url("resim/zemin1.gif");</code></pre>
+    <pre id="p1"><code>background-image: url("resim/daire.png"), url("resim/zemin1.gif");</code></pre>
+    <pre id="p2"><code>background-image: url("resim/daire.png"), url("resim/zemin1.gif");</code><code>background-repeat: no-repeat, repeat;</code></pre>
+    <pre id="p3"><code>background-image: url("resim/daire.png"), url("resim/zemin1.gif");</code><code>background-repeat: no-repeat, repeat;</code><code>background-position: center;</code></pre>
+    <pre id="p4"><code>background: url("resim/daire.png") center no-repeat, url("resim/zemin1.gif");</code></pre>
+
+    <p id="htmldog"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

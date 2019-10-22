@@ -1,0 +1,60 @@
+<!DOCTYPE html (h305.html)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>Zemin-ebatı: background-size</title>
+    <style>
+        body {
+            font: 14px courier;
+            background: #c72 url("resim/zemin1.gif");
+            color: Orange;
+            margin: 0;
+            padding: 10px;
+        }
+        p {
+            background: #7a796b url("resim/tikal.jpg");
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+            float: left;
+            text-align: center;
+        }
+        code {
+            background: Maroon;
+            padding: 0 15px 2px;
+        }
+        #p1 {background-size: auto;}
+        #p2 {background-size: 50%;}
+        #p3 {background-size: 100px;}
+        #p4 {background-size: 100px 100px;}
+        #p5 {background-size: contain;}
+        #p6 {background-size: cover;}
+        #p7 {background-size: 300px 300px;}
+        #reklam a {
+            display: block;
+            height: 300px;
+            background: SeaGreen url("resim/rozet.gif") center no-repeat;
+            background-size: 90px 60px;
+            transition: background-size .5s;
+            text-indent: -999em;
+        }
+        #reklam a:hover {
+            background-size: 150px 100px;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;"><code>Zemin Ebatı</code></h1>
+
+    <p id="p1"><code>background-size: auto;</code></p>
+    <p id="p2"><code>background-size: 50%;</code></p>
+    <p id="p3"><code>background-size: 100px;</code></p>
+    <p id="p4"><code>background-size: 100px 100px;</code></p>
+    <p id="p5"><code>background-size: contain;</code></p>
+    <p id="p6"><code>background-size: cover;</code></p>
+    <p id="p7"><code>background-size: 300px 300px;</code></p>
+
+    <p id="reklam"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

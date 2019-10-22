@@ -1,0 +1,81 @@
+<!DOCTYPE html (h414b.html: Dönüştürme noktası özelliği kullanılarak dönüşümün gerçekleştirileceği odağın ayarlanması örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font: 15px/1.5 helvetica, arial, sans-serif;
+            background: #333;
+            color: #ccc;
+            margin: 50px 0 50px 50px;}
+        a, code {color: white;}
+        p {margin-bottom: 50px;}
+        div, #reklam {float: left;
+            height: 300px;
+            width: 300px;
+            background-color: #666;
+            margin: 0 50px 50px 0;
+            white-space: normal;
+            position: relative;}
+        div code {display: block;
+            height: 260px;
+            background: rgba(255,204,000,.7);
+            padding: 20px;}
+        div:after {content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            border: 5px solid white;
+            border-radius: 10px;
+            margin: -10px 0 0 -10px;}
+        #p0 code {transform: rotate(10deg);
+            transform-origin: 50% 50%;}
+        #p0:after {top: 50%;
+            left: 50%;}
+        #p1 code {transform: rotate(10deg);
+            transform-origin: top;}
+        #p1:after {top: 0;
+            left: 50%;}
+        #p2 code {transform: rotate(10deg);
+            transform-origin: right;}
+        #p2:after {top: 50%;
+            right: 0;
+            margin: -10px -10px 0 0;}
+        #p3 code {transform: rotate(10deg);
+            transform-origin: right top;}
+        #p3:after {top: 0;
+            right: 0;
+            margin: -10px -10px 0 0;}
+        #p4 code {transform: rotate(10deg);
+            transform-origin: 25% 25%;}
+        #p4:after {top: 25%;
+            left: 25%;}
+        #p5 code {transform: rotate(10deg);
+            transform-origin: -20px 20px;}
+        #p5:after {top: 20px;
+            left: -20px;}
+        #reklam a {
+            display: block;
+            padding: 105px 90px;
+            background: rgba(255,204,000,.7);
+            transform: rotate(30deg);
+            transform-origin: 0 0;
+            transition: 1s;}
+        #reklam a:hover {transform: rotate(-30deg);
+            transform-origin: right top;}
+    </style>
+</head>
+<body>
+    <h1><a href="http://www.htmldog.com/guides/css/advanced/transformations/" target="_">Dönüştürme noktası</a></h1>
+    <p>CSS özelliğinden <a href="http://www.htmldog.com/references/css/properties/transform-origin/" target="_"><code>transform-origin</code></a> kullanılarak, dönüştürmenin hangi noktadan kaynaklanacağı ayarlanmaktadır.</p>
+
+    <div id="p0"><code id="c0">transform: rotate(10deg); transform-origin: 50% 50%;</code></div>
+    <div id="p1"><code id="c1">transform: rotate(10deg); transform-origin: top;</code></div>
+    <div id="p2"><code id="c2">transform: rotate(10deg); transform-origin: right;</code></div>
+    <div id="p3"><code id="c3">transform: rotate(10deg); transform-origin: right top;</code></div>
+    <div id="p4"><code id="c4">transform: rotate(10deg); transform-origin: 25% 25%;</code></div>
+    <div id="p5"><code id="c5">transform: rotate(10deg); transform-origin: -20px 20px;</code></div>
+
+    <p id="reklam"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog" width="120" height="90"></a><code>transform: rotate(30deg); <br/>transform-origin: 0 0; <br/>(hover) transform: rotate(-30deg); <br/>transform-origin: right-top;</code></p>
+</body>
+</html>

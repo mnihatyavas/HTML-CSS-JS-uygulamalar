@@ -1,0 +1,86 @@
+<!DOCTYPE html (h204b.html)>
+<html>
+<head>
+    <meta charset="coding:8859-9 Türkçe">
+    <title>Sýnýr-yarýçapý ve RGBa renk deðiþim süresi</title>
+    <style>
+        * {margin: 0;}
+        body {font: 36px arial, helvetica, sans-serif;
+            color: #000;
+            background: #06c;
+        }
+        h1 {margin: 50px;
+            font-size: 20px;
+            color: orange;
+            text-align: center;
+        }
+        p {height: 360px; padding: 40px;}
+        a, img {display: block;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            text-decoration: none;
+            transition: 1s;
+        }
+        a:hover {background: rgba(255, 255, 255, 0.5); color: pink;}
+        #baba {background: rgba(0,0,0,.3);}
+        #baba a {width: 120px;
+            height: 120px;
+            padding: 60px;
+            border-radius: 80px;
+            border: 60px solid rgba(255,255,255,.5);
+        }
+        #baba a:hover {border-radius: 180px;}
+        #ergen {background: rgba(0,0,0,.2);}
+        #ergen a, #yavru a {
+            width: 80px;
+            height: 80px;
+            padding: 40px;
+            border-radius: 60px;
+            border: 40px solid rgba(255,255,255,.5);
+            margin: 60px auto;
+            font-size: 24px;
+        }
+        #ergen a:hover {
+            width: 120px;
+            height: 120px;
+            padding: 60px;
+            border-width: 60px;
+            border-radius: 180px;
+            margin: 0 auto;
+            font-size: 36px;
+        }
+        #yavru {background: rgba(0,0,0,.1);}
+        #yavru a:hover {
+            width: 40px;
+            height: 40px;
+            padding: 20px;
+            border-width: 20px;
+            border-radius: 60px;
+            margin: 120px auto;
+            font-size: 12px;
+        }
+        kod {font-style:italic;}
+        #evcil a {
+            width: 120px;
+            margin-top: 125px;
+            background: white;
+            border: 10px solid white;
+            border-radius: 10px;
+            opacity: .7;
+        }
+        #evcil a:hover {
+            box-shadow: 0 0 100px 100px rgba(255,50,20,.5);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1><kod>Sýnýr-yarýçapý</kod> ve RGBa rengi kullanarak CSS animasyon süresi:</h1>
+    <p id="baba"><a href="">Yetiþkin baba baðlantýsý!</a></p>
+    <p id="ergen"><a href="">Coþkulu ergen baðlantýsý!</a></p>
+    <p id="yavru"><a href="">Çekingen yavru baðlantýsý!</a></p>
+
+    <p id="evcil"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

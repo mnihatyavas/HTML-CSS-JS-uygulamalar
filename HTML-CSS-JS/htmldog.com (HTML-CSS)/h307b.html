@@ -1,0 +1,50 @@
+<!DOCTYPE html (h307b.html: Radial-gradient ile çeşitli dairesel kademeleme örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        html {
+            background: radial-gradient(green, yellow);
+            height: 100%;
+        }
+        body {
+            font: 14px/1.5 courier;
+            color: #000;
+        }
+        p {
+            width: 300px;
+            height: 150px;
+            padding: 20px;
+            margin: 20px 0 0 20px;
+            float: left;
+            border: 4px solid SpringGreen;
+        }
+        #kademeleme1 {
+            /*background: #888 url(resim/daireselKademeleme.jpg); ==> Kademeleme yapamayan tarayıcılar için böyle bir zemin resmi kullanılabilir */
+            background: radial-gradient(yellow, green); /* CSS3 standardı */
+        }
+        #kademeleme2 {background: radial-gradient(circle, yellow, green);}
+        #kademeleme3 {background: radial-gradient(circle closest-side, yellow, green);}
+        #kademeleme4 {background: radial-gradient(at top left, yellow, green);}
+        #kademeleme5 {background: repeating-radial-gradient(#bd0, #dd0 10px, #ff0 10px, #0f0 20px);}
+        #reklam {
+            width: 120px;
+            height: 90px;
+            padding: 50px 60px;
+            border-radius: 120px/95px;
+            background: radial-gradient(white 50%, #06c 75%);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color:SlateBlue; text-align:center;">Dairesel Kademeleme</h1>
+
+    <p id="kademeleme1"><code>background: radial-gradient(yellow, green);</code></p>
+    <p id="kademeleme2"><code>background: radial-gradient(circle, yellow, green);</code></p>
+    <p id="kademeleme3"><code>background: radial-gradient(circle closest-side, yellow, green);</code></p>
+    <p id="kademeleme4"><code>background: radial-gradient(at top left, yellow, green);</code></p>
+    <p id="kademeleme5"><code>background: repeating-radial-gradient(#8d0, #0d0 10px, #9f0 10px, #0f0 20px);</code></p>
+
+    <p id="reklam"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html (h307a.html: Linear-gradient ile çeşitli doğrusal kademeleme örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        html {
+            background: linear-gradient(to left, yellow, red);
+            height: 100%;
+        }
+        body {
+            font: 14px/1.5 courier;
+            color: #000;
+        }
+        p {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            margin: 20px 0 0 20px;
+            float: left;
+            border: 4px solid green;
+        }
+        #kademeleme1 {
+            /* background: #888 url(resim/doğrusalKademeleme.jpg) repeat-x; ==> Renkle doğrusal kademeleme yapamayan tarayıcılar için böyle bir zemin resmi konulabilir */
+            background: linear-gradient(yellow, red); /* CSS3 standardı */
+        }
+        #kademeleme2 {background: linear-gradient(to right, yellow, red);}
+        #kademeleme3 {background: linear-gradient(to bottom right, yellow, red);}
+        #kademeleme4 {background: linear-gradient(20deg, yellow, red);}
+        #kademeleme5 {background: linear-gradient(hsl(0,100%,50%), hsl(60,100%,50%), hsl(120,100%,50%), hsl(180,100%,50%), hsl(240,100%,50%), hsl(300,100%,50%));} /* hsl: hue-saturation-light/renk-doygunluk-ışık */
+        #kademeleme6 {background: linear-gradient(135deg, hsl(36,100%,50%) 10%, hsl(72,100%,50%) 60%, white 90%);}
+        #reklam {
+            width: 120px; /* resim için */
+            height: 90px;
+            padding: 75px 60px;
+            background: linear-gradient(white, #06c);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; color:SlateBlue;">Doğrusal Kademeleme</h1>
+
+    <p id="kademeleme1"><code>background: linear-gradient(yellow, red);</code></p>
+    <p id="kademeleme2"><code>background: linear-gradient(to right, yellow, red);</code></p>
+    <p id="kademeleme3"><code>background: linear-gradient(to bottom right, yellow, red);</code></p>
+    <p id="kademeleme4"><code>background: linear-gradient(20deg, yellow, red);</code></p>
+    <p id="kademeleme5"><code>background: linear-gradient(hsl(0,100%,50%), hsl(60,100%,50%), hsl(120,100%,50%), hsl(180,100%,50%), hsl(240,100%,50%), hsl(300,100%,50%));</code></p>
+    <p id="kademeleme6"><code>background: linear-gradient(135deg, hsl(36,100%,50%) 10%, hsl(72,100%,50%) 60%, white 90%);</code></p>
+
+    <p id="reklam"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html (h204c)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>CSS süreleri: Zamanlama fonksiyonları</title>
+    <style>
+        * {padding: 0; margin: 0;}
+        body {font: 15px arial, helvetica, sans-serif;
+            text-align: center;
+            background:MistyRose;} /* #ffe4e1 */
+        h1 {margin-top: 20px;
+            color:green;}
+        li {list-style: none;
+            margin: 20px 0;
+            background: #def;}
+        li a {display: block;
+            width: 300px;
+            padding: 20px 0;
+            background: #06c;
+            color: white;}
+        #zamanlama1 {transition: 2s;}
+        #zamanlama2 {transition: 2s linear;}
+        #zamanlama3 {transition: 2s ease-in;}
+        #zamanlama4 {transition: 2s ease-out;}
+        #zamanlama5 {transition: 2s ease-in-out;}
+        #zamanlama6 {transition: 2s cubic-bezier(0.5,0.25,0,1);}
+        #zamanlama7 {transition: 2s cubic-bezier(0.5,1.5,0.5,-0.5);}
+        #zamanlama8 {transition: 2s steps(4);}
+        kod {font-style:italic}
+        li a:hover {width: 100%;}
+    </style>
+</head>
+<body>
+    <h1>Zamanlama fonksiyonlu CSS süresi</h1>
+    <ul>
+        <li><a href="" id="zamanlama1"><kod>ease/aynılık</kod> (varsayılı)</a></li>
+        <li><a href="" id="zamanlama2"><kod>linear</kod>/tekdüze</a></li>
+        <li><a href="" id="zamanlama3"><kod>ease-in</kod>/yavaş-çıkış</a></li>
+        <li><a href="" id="zamanlama4"><kod>ease-out</kod>/yavaş-bitiş</a></li>
+        <li><a href="" id="zamanlama5"><kod>ease-in-out</kod>/yavaş-çıkış-bitiş</a></li>
+        <li><a href="" id="zamanlama6"><kod>cubic-bezier(0.5,0.25,0,1)</kod>/etaplı-akıcılık</a></li>
+        <li><a href="" id="zamanlama7"><kod>cubic-bezier(0.5,1.5,0.5,-0.5)</kod>/esnemeli-etap</a></li>
+        <li><a href="" id="zamanlama8"><kod>steps(4)</kod>/duraksamalı-4-etap</a></li>
+    </ul>
+
+    <p><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

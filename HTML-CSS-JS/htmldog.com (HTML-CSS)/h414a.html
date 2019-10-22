@@ -1,0 +1,57 @@
+<!DOCTYPE html (h414a.html: 2 boyutlu çeşitli transform/dönüştürme CSS özelliği örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font: 15px/1.5 helvetica, arial, sans-serif;
+            background: #333;
+            color: #ccc;
+            margin: 50px 0 50px 50px;}
+        a, code {color: #fff;}
+        p {margin-bottom: 50px;}
+        div, #reklam {float: left;
+            height: 300px;
+            width: 300px;
+            background-color: #666;
+            margin: 0 50px 50px 0;
+            white-space: normal;}
+        div code {display: block;
+            height: 260px;
+            background: rgba(255,204,000,.7);
+            padding: 20px;}
+        #c0 {transform: none;}
+        #c1 {transform: rotate(10deg);}
+        #c2 {transform: skewX(10deg);}
+        #c3 {transform: skewY(-10deg);}
+        #c4 {transform: skew(10deg, -10deg);}
+        #c5 {transform: scale(0.8);}
+        #c6 {transform: scale(0.8, 1.2);}
+        #c7 {transform: translate(25px, 10px);}
+        #c8 {transform: scale(0.8) rotate(10deg) translate(25px, 10px);}
+        #c9 {transform: matrix(0.787846, 0.138919, -0.138919, 0.787846, 18.307, 11.3514);}
+        #reklam a {display: block;
+            padding: 105px 90px;
+            background: rgba(255,204,000,.7);
+            transform: scale(.5);
+            transition: .7s transform cubic-bezier(0.5,1.5,0.5,-0.5);}
+        #reklam a:hover {transform: scale(1);}
+    </style>
+</head>
+<body>
+    <h1><a href="http://www.htmldog.com/guides/css/advanced/transformations/" target="_">2B Dönüşümler</a></h1>
+    <p><a href="http://www.htmldog.com/references/css/properties/transform/" target="_"><code>Dönüşüm</code></a> CSS özelliğinin kullanılması.</p>
+
+    <div><code id="c0">transform: none;</code></div>
+    <div><code id="c1">transform: rotate(10deg);</code></div>
+    <div><code id="c2">transform: skewX(10deg);</code></div>
+    <div><code id="c3">transform: skewY(-10deg);</code></div>
+    <div><code id="c4">transform: skew(10deg, -10deg);</code></div>
+    <div><code id="c5">transform: scale(0.8);</code></div>
+    <div><code id="c6">transform: scale(0.8, 1.2);</code></div>
+    <div><code id="c7">transform: translate(25px, 10px);</code></div>
+    <div><code id="c8">transform: scale(0.8) rotate(10deg) translate(25px, 10px);</code></div>
+    <div><code id="c9">transform: matrix(0.787846, 0.138919, -0.138919, 0.787846, 18.307, 11.3514);</code></div>
+
+    <p id="reklam"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog" width="120" height="90"></a></p>
+</body>
+</html>

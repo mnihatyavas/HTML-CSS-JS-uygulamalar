@@ -1,0 +1,44 @@
+<!DOCTYPE html (h401.html: Serilim için paragraf en ve boy ayarlarý örneði.)>
+<html>
+<head>
+    <meta charset="is0-8859-9 Türkçe">
+    <style>
+        body {font-size: 20px;
+            background: #fc0;
+            color: LimeGreen;}
+        h1 {color:LightSeaGreen; text-align:center;}
+        p {background: SlateGray;}
+        #p1 {width: 300px;}
+        #p2 {height: 100px;}
+        #p3 {width: 50%;}
+        #p4 {max-width: 500px;}
+        #p5, #p6 {min-height: 100px;}
+        #reklam {background: none;}
+        #reklam a {display: block;
+            width: 120px;
+            text-align: center;
+            transition: width .5s;}
+        #reklam a:hover {
+            width: 100%;
+            background: SlateGray;}        
+    </style>
+</head>
+<body>
+    <h1>Geniþlik ve yükseklikler</h1>
+
+    <p>Yarým demet  paragraflar&hellip;</p>
+    <p id="p1"><code>width: 300px;</code></p>
+    <p id="p2"><code>height: 100px; /* Kesin yükseklik 100 px'dir. Yani taþma olursa, taþan fazlalýklar görüntü dýþý kalacaktýr. */</code></p>
+    <p id="p3"><code>width: 50%;</code></p>
+    <p id="p4"><code>max-width: 500px;</code></p>
+    <p id="p5"><code>min-height: 100px;</code></p>
+    <p id="p6"><code>min-height: 100px; /* Enaz yükseklik 100px'dir.
+        Yani hiç içerik olmasa da boþ paragraf kutusu 100px yükseklik
+        oluþturacaktýr. Ancak þayet paragraf içeriði bu yüksekliði aþarsa,
+        yükseklik 100px'le sýnýrlý kalmayýp, artan geniþliðe kendini yükseltecektir.
+        Bu yükseklik artýþý, tarayýcý ebatýnýn daraltýlmasý nedeniyle de olabilir.*/
+    </code></p>
+
+    <p id="reklam"><a href="http://www.reklam.com/examples/" target="_""><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

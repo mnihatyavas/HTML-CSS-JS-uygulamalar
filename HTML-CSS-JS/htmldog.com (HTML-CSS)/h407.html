@@ -1,0 +1,35 @@
+<!DOCTYPE html (h407.html: Taşmanın görünür, görünmez, kaydıraçlı ve otomatik örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {background:Olive;
+            font-size: 25px;
+            color: MintCream;
+            margin: 20px;}
+        p {background-color: PaleGreen;
+            color:Navy;
+            margin: 0 20px 90px 0;
+            width: 300px;
+            height: 90px;
+            float: left;
+            line-height: 1.4;}
+        code {color: #c00;}
+        #p1 {overflow: visible;}
+        #p2 {overflow: hidden;}
+        #p3 {overflow: scroll;}
+        #p4 {overflow: auto;}
+        #reklam a {display: block;}
+    </style>
+</head>
+<body>
+    <h1><a href="http://www.htmldog.com/references/css/properties/overflow/" target="_">CSS Özelliği:</a> <code>overflow/taşma</code></h1>
+
+    <p id="p1"><code>overflow: visible/görünür</code>: Varsayılandır. Taşan fazlalıklar alttan kutu dışına sarkarak görünür.</p>
+    <p id="p2"><code>overflow: hidden/görünmez</code>: Taşan fazlalıklar alttan kırpılır, tarayıcı kırpılanların görüntülenmesine izin vermez.</p>
+    <p id="p3"><code>overflow: scroll/kayar</code>: Taşan fazlalıklar alttan kırpılır, fakat tarayıcı sağ ve alt kenarlarda kaydıraç oluşturup, istenirse bu kısımların da görüntülenmesine izin verir.</p>
+    <p id="p4"><code>overflow: auto/otomatik</code>: Taşmaya tepkisi her tarayıcının özelliğine bağlıdır, ancak genellikle taşan kısma <code>kaydıraç</code> benzeri görüntülenme sağlar.</p>
+
+    <p id="reklam" style="text-align:center;"><a href="http://www.reklam.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

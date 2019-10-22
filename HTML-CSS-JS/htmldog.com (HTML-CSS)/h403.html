@@ -1,0 +1,46 @@
+<!DOCTYPE html (h403.html: Yuvarlatılmış kutu köşeleri için border-radius/sınır-yarıçapı özelliği örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font: 14px courier;
+            background: #04a;
+            color: #000;}
+        p {width: 300px;
+            height: 100px;
+            padding: 50px;
+            margin: 20px 0 0 20px;
+            background: SpringGreen;
+            float: left;}
+        code {display: block;
+            padding: 10px;
+            background: #9ef;
+            border-radius: 10px;}
+        #köşeler1 {border-top-left-radius: 100px;}
+        #köşeler2 {border-radius: 100px;}
+        #köşeler3 {border-radius: 0 50px 100px 200px;}
+        #köşeler4 {padding: 30px;
+            background: none;
+            border-radius: 50px;
+            border: 20px solid MintCream;}
+        #köşeler5 {border-radius: 25%;}
+        #köşeler6 {border-radius: 200px/100px;}
+        #reklam {border-radius: 75px/125px;
+            border-bottom-left-radius: 75px;
+            border-bottom-right-radius: 75px;
+            width: 120px;
+            height: 90px;
+            padding: 80px 15px 30px 15px;}
+    </style>
+</head>
+<body>
+    <p id="köşeler1"><code>border-top-left-radius: 100px;</code></p>
+    <p id="köşeler2"><code>border-radius: 100px;</code></p>
+    <p id="köşeler3"><code>border-radius: 0 50px 100px 200px;</code></p>
+    <p id="köşeler4"><code>border-radius: 50px;<br>border: 20px solid MintCream;</code></p>
+    <p id="köşeler5"><code>border-radius: 25%;</code></p>
+    <p id="köşeler6"><code>border-radius: 200px/100px;</code></p>
+
+    <p id="reklam"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html (h408a.html: Blok kutu ve satıriçi kutu görüntülenme örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {background:PaleVioletRed;
+            color:Navy;
+            font: 80% arial, helvetica, sans-serif;}
+        h1 {font-size: 1.5em;}
+        h2 {font-size: 1em;}
+        code {font-family: courier;}
+        #örnek1, #örnek2 {background: #ddd;
+            border: 4px solid black;}
+        span {background: Moccasin;
+            display: block;}
+        span.alternatifi {background: #5b5;}
+        #örnek2 span {display: inline;}
+    </style>
+</head>
+<body>
+    <h1>Blok kutu ve satıriçi kutu ayrımı</h1>
+    <p>Bu örnek içeriği her iki örnekte de aynı HTML'dir, fakat ilkinin elemanları <code>display: block</code> ve ikincinin elemanları ise <code>display: inline</code> özelliğiyle farklılaştırılmıştır.</p>
+
+    <h2>Blok kutu</h2>
+    <p id="örnek1"><span>Bunlar</span><span class="alternatifi">Şunlar</span><span>Diğerleri</span><span class="alternatifi">1957'liler</span></p>
+
+    <h2>Satıriçi kutu</h2>
+    <p id="örnek2"><span>Bunlar</span><span class="alternatifi">Şunlar</span><span>Diğerleri</span><span class="alternatifi">1957'liler</span></p>
+
+    <p><a href="http://www.htmldog.com/örneks/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>
