@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>h702.html: Formlar içinde çentikli ve radyo düğmeli veri girişi örneği.</title>
+    <!-- Başlık açıklaması ilk satır parantez içinde, radyo düğmelerinin div'leri kayıyor -->
+    <style>
+        body {
+            font: 100% arial, helvetica, sans-serif;
+            background-color:SaddleBrown;
+            color:SpringGreen;}
+        fieldset {
+            padding: 0 1em 1em 1em;
+            margin-bottom:1em;
+            border: 2px solid yellow;}
+        legend {
+            padding: 0.5em;
+            color: yellow;
+            border: 2px solid blue;}
+        label {
+            float: left;
+            width: 6em;}
+    </style>
+</head>
+<body>
+    <form action="biryer.php">
+	    <fieldset>
+            <legend>Sevdiğiniz filimler</legend>
+            <div>
+                <label for="dram">Dram</label>
+                <input type="checkbox" name="dram" id="dram" value="dram">
+            </div>
+            <div>
+                <label for="action">Aksiyon</label>
+                <input type="checkbox" name="aksiyon" id="aksiyon" value="Aksiyon">
+            </div>
+            <div>
+                <label for="comedy">Komedi</label>
+                <input type="checkbox" name="komedi" id="komedi" value="Komedi">
+            </div>
+            <div>
+                <label for="horror">Korku</label>
+                <input type="checkbox" name="korku" id="korku" value="Korku">
+            </div>
+            <div>
+                <label for="bilkur">Bil-kur</label>
+                <input type="checkbox" name="bilkur" id="bilkur" value="Bil-kur">
+            </div>
+	    </fieldset>
+
+	    <fieldset>
+            <legend>Yaşınız</legend>
+            <div>
+                <label for="20altı">19 veya altı</label>
+                <input type="radio" name="yaş" id="20altı" value="19 veya altı">
+            </div>
+            <div>
+                <label for="20-39">20'den 39'a</label>
+                <input type="radio" name="yaş" id="20-39" value="20'den 39'a">
+            </div>
+            <div>
+                <label for="40-59">40'dan 59'a</label>
+                <input type="radio" name="yaş" id="40-59" value="40'dan 59'a">
+            </div>
+            <div>
+                <label for="59üstü">60 veya üstü</label>
+                <input type="radio" name="yaş" id="59üstü" value="60 veya üstü">
+            </div>
+	    </fieldset>
+    </form>
+
+    <p style="text-align:center; margin-top:5em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html (h604b.html: Sýnýrlarýn çökertilmesinde estetik tablolama örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <style>
+        body {
+            background-color: Orchid;
+            color: Navy;}
+        table {
+            border: 3px solid Orange;
+        }
+
+        td, th {
+            padding: 0.1em 1em;
+            border: 10px solid Olive;
+        }
+        #t2 {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sýnýrlarýn Estetik Çökertilmesi</h1>
+
+    <h2><code>border-collapse: separate;</code> (varsayýlý)</h2>
+    <table>
+	    <tr>
+            <th colspan="2">Etoburlar</th>
+            <th>Maymungiller</th>
+	    </tr>
+	    <tr>
+            <td>Aslan</td>
+            <td>Kurt</td>
+            <td>Ýnsan</td>
+	    </tr>
+	    <tr>
+            <td>Çita</td>
+            <td>Tazý</td>
+            <td>Sifaka</td>
+	    </tr>
+	    <tr>
+            <td>Çakal</td>
+            <td>Tilki</td>
+            <td>Lemur</td>
+	    </tr>
+	    <tr>
+            <td>Kedi</td>
+            <td>Porsuk</td>
+            <td>Goril</td>
+	    </tr>
+    </table>
+
+    <h2><code>border-collapse: collapse;</code></h2>
+    <table id="t2"> <!-- Hücreler arasý ve dýþ tablo sýnýrlarý çöker -->
+	    <tr>
+            <th rowspan="2">Etoburlar</th>
+            <td>Aslan</td>
+            <td>Çita</td>
+            <td>Çakal</td>
+            <td>Kedi</td>
+	    </tr>
+	    <tr>
+            <td>Kurt</td>
+            <td>Tazý</td>
+            <td>Tilki</td>
+            <td>Porsuk</td>
+	    </tr>
+	    <tr>
+            <th>Maymungiller</th>
+            <td>Lemur</td>
+            <td>Sifaka</td>
+            <td>Ýnsan</td>
+            <td>Goril</td>
+	    </tr>
+    </table>
+
+    <p style="text-align:center; margin-top:2em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

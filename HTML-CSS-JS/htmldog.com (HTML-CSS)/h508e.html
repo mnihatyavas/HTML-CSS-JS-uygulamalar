@@ -1,0 +1,69 @@
+<!DOCTYPE html (h508e.html: Tam sayfa dosyalamanýn alt-sýnýrlý fiþleri örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <style>
+        body {
+            background: #f80;
+            font: 1.2em arial, helvetica, sans-serif;
+            text-transform: lowercase;
+            margin: 0;
+            padding: 0;}
+        #baþlýk {
+            background-color: LightSeaGreen;}
+        #baþlýk ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: LightSeaGreen;
+            float: left;
+            width: 100%;}
+        #baþlýk li {
+            float: left;
+            margin: 0 1em 0 0;}
+        #baþlýk a {
+            text-decoration: none;
+            display: block;
+            width: 6em;
+            padding: 0 0.5em;
+            font-weight: bold;
+            border-bottom: 1.5em solid #fc6;
+            color: #fc6;}
+        #baþlýk a:hover {
+            color: #fa3;
+            border-color: #fa3;}
+        #baþlýk #selected a {
+            color: #f80;
+            border-color: #f80;}
+        #içerik {
+            clear: both;
+            color: indigo;
+            padding: 1em;}
+        #içerik p {margin: 0 0 1em 0;}
+        h1 {
+            margin: 0;
+            padding: 0.5em 0 1em 0.5em;
+            color: #f80;
+            font-size: 2.5em;
+            font-style: italic;
+            text-align:center;}
+    </style>
+</head>
+<body>
+    <div id="baþlýk">
+        <h1>Dosyalama Fiþleri</h1>
+        <ul>
+            <li><a href="#">Bu dosya</a></li>
+            <li id="selected"><a href="#">Þu dosya</a></li>
+            <li><a href="#">O dosya</a></li>
+            <li><a href="#">Diðer dosya</a></li>
+        </ul>
+    </div>
+
+    <div id="içerik">
+        <p>Tam sayfa dosya detaylarý...</p>
+    </div>
+
+    <p style="text-align:center; margin-top:5em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

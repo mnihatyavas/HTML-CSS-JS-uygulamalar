@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>Tercih gruplamalı sarkan seçim menüsü örneği.</title>
+    <style>
+        body {
+            font: 100% arial, helvetica, sans-serif;
+            background-color: Olive;
+            color: Orchid;}
+        fieldset {
+            padding: 0 1em 1em 1em;
+            background-color: Navy;
+            color: yellow;
+            border: 2px solid red;}
+        legend {
+            padding: 1em;
+            margin-bottom:1em;
+            background-color: MediumVioletRed;
+            color: Gold;
+            border: 2px solid MintCream;}
+        select {
+            background-color: PaleGoldenRod;
+            color: OrangeRed;}
+        optgroup {color: MidnightBlue;}
+        option {color: Green;}
+    </style>
+</head>
+<body>
+    <form action="biryerlerdeki.php">
+	    <fieldset>
+            <legend>Sevilen Romanlar</legend>
+            <label for="kitap">Roman adı: </label>
+            <select name="kitap" id="kitap">
+                <optgroup label="Camus">
+                    <option>Dışardaki</option>
+                    <option>İsyan</option>
+                    <option>Salgın</option>
+                </optgroup>
+                <optgroup label="Orwell">
+                    <option>Hayvan Çiftliği</option>
+                    <option>Bindokuzyüzseksendört</option>
+                    <option>Paris ve Londra'da Aşağı veDışlanmışlık</option>
+                </optgroup>
+            </select>
+	    </fieldset>
+    </form>
+
+    <p style="text-align:center; margin-top:5em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html (h507a.html: Üzerindeyken düşen menü görünmesi örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font: 15px arial, helvetica, sans-serif;
+            background: #777;
+            color: SpringGreen;}
+        a {color: yellow;}
+        ul ul li a {color: Teal;}
+        ul { /* tüm listeler için... */
+            padding: 0;
+            margin: 0;
+            background: violet;}
+        li { /* tüm liste elemanları için... */
+            display: inline;
+            position: relative;}
+        ul ul { /* liste içi listeler için... */
+            position: absolute;
+            left: 0;
+            top: 100%;
+            display: none; /* gizle... */}
+        li:hover ul {display: block;} /* üzerindeyken göster */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="">Kuşlar</a>
+            <ul>
+                <li><a href="">Tavuk</a></li>
+                <li><a href="">Fok</a></li>
+                <li><a href="">Devekuşu</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Memeliler</a>
+            <ul>
+                <li><a href="">İnsan</a></li>
+                <li><a href="">Maymun</a></li>
+                <li><a href="">İnek</a></li>
+                <li><a href="">Yunus</a></li>
+                <li><a href="">Yarasa</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Sürüngenler</a>
+            <ul>
+                <li><a href="">Yılan</a></li>
+                <li><a href="">Kaplumbağa</a></li>
+                <li><a href="">Timsah</a></li>
+                <li><a href="">Kertenkele</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">İkiyaşamlılar</a>
+            <ul>
+                <li><a href="">Kurbağa</a></li>
+                <li><a href="">Semender</a></li>
+                <li><a href="">İpekböceği</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <p style="margin:5em 0;">CSS sarkanmenü esasları: Yukardaki style ul-li-a yorumlarını okuyun veya daha derin bilgi için <a href="/techniques/dropdowns/" target="_">Sarkanmenü teknik makalesi</a> internet sayfasına yönelin.</p>
+
+    <p style="text-align:center;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

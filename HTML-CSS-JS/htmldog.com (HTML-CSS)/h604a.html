@@ -1,0 +1,102 @@
+<!DOCTYPE html (h604a.html: Tablo hücre ayrýk sýnýrlarýn çöktürülmesi örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <style>
+        body {
+            background-color: MediumSpringGreen;
+            color: MediumVioletRed;}
+        td, th {
+            padding: 0.1em 1em;
+            border: 2px solid MidnightBlue;
+            background-color:MediumSeaGreen;}
+        #t2 {border-collapse: collapse;}
+    </style>
+</head>
+<body>
+    <h1>Sýnýrlarýn Çökertilmesi</h1>
+
+    <h2><code>border-collapse: separate;</code> (varsayýlý)</h2>
+    <table>
+	    <tr>
+            <th colspan="2">Etoburlar</th>
+            <th>Primatlar</th>
+	    </tr>
+	    <tr>
+            <td>Kaplan</td>
+            <td>Gri Kurt</td>
+            <td>Indri</td>
+	    </tr>
+	    <tr>
+            <td>Çita</td>
+            <td>Av Köpeði</td>
+            <td>Sifaka</td>
+	    </tr>
+	    <tr>
+            <td>Çakal</td>
+            <td>Kýzýl Tilki</td>
+            <td>Haki Lemur</td>
+	    </tr>
+	    <tr>
+            <td>Vahþi Kedi</td>
+            <td>Fenek</td>
+            <td>Cüce Lemur</td>
+	    </tr>
+    </table>
+
+
+    <h2><code>border-collapse: collapse;</code></h2>
+    <table id="t2"> <!-- Tablonun tüm ara ayrýk sýnýrlarý çöker -->
+	    <tr>
+            <th colspan="2">Etoburlar</th>
+            <th>Primatlar</th>
+	    </tr>
+	    <tr>
+            <td>Kaplan</td>
+            <td>Gri Kurt</td>
+            <td>Indri</td>
+	    </tr>
+	    <tr>
+            <td>Çita</td>
+            <td>Av Köpeði</td>
+            <td>Sifaka</td>
+	    </tr>
+	    <tr>
+            <td>Çakal</td>
+            <td>Kýzýl Tilki</td>
+            <td>Haki Lemur</td>
+	    </tr>
+	    <tr>
+            <td>Vahþi Kedi</td>
+            <td>Fenek</td>
+            <td>Cüce Lemur</td>
+	    </tr>
+    </table>
+
+    <h2><code>border-collapse: collapse;</code></h2>
+    <table id="t2">
+	    <tr>
+            <th rowspan="2">Etoburlar</th>
+            <td>Kaplan</td>
+            <td>Çita</td>
+            <td>Çakal</td>
+            <td>Vahþi Kedi</td>
+	    </tr>
+	    <tr>
+            <td>Gri Kurt</td>
+            <td>Av Köpeði</td>
+            <td>Kýzýl Tilki</td>
+            <td>Fenek</td>
+	    </tr>
+	    <tr>
+            <th>Primatlar</th>
+            <td>Indri</td>
+            <td>Sifaka</td>
+            <td>Haki Lemur</td>
+            <td>Cüce Lemur</td>
+	    </tr>
+    </table>
+
+    <p style="text-align:center; margin-top:2em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

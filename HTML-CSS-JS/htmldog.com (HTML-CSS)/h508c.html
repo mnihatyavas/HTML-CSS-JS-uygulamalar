@@ -1,0 +1,65 @@
+<!DOCTYPE html (h508c.html: Dosya fiþlerinde sabit fiþ geniþliði örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <style>
+        body {
+            font: 1.0em arial, helvetica, sans-serif;
+            background-color: Orchid;
+            color:OrangeRed;}
+        #baþlýk ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;}
+        #baþlýk li {
+            float: left;
+            border: 2px solid green;
+            border-bottom-width: 0;
+            margin: 0;}
+        #baþlýk a {
+            text-decoration: none;
+            display: block;
+            background: #eee;
+            padding: 0.24em 1em;
+            color: #00c;
+            width: 6em;
+            text-align: center;}
+        #baþlýk a:hover {
+            background: #aac;}
+        #baþlýk #selected {
+            border-color: red;}
+        #baþlýk #selected a {
+            position: relative;
+            top: 2px; /* ara sýnýr çizgisini baskýlar... */
+            background: PowderBlue;
+            color: black;
+            font-weight: bold;}
+        #içerik {
+            border: 2px solid green;
+            clear: both;
+            padding: 0 1em;
+            background: PowderBlue;}
+        h1 {
+            margin: 0;
+            padding: 0 0 1em 0;
+            text-align:center;}
+    </style>
+</head>
+<body>
+    <div id="baþlýk">
+        <h1>Dosyalama Fiþleri</h1>
+        <ul>
+            <li><a href="#">Bu dosya</a></li>
+            <li id="selected"><a href="#">Þu dosya</a></li>
+            <li><a href="#">O dosya</a></li>
+            <li><a href="#">Diðer dossya</a></li>
+        </ul>
+    </div>
+
+    <div id="içerik">
+        <p>Dosyalarýn içerik detaylarý....</p>
+    </div>
+
+    <p style="text-align:center; margin-top:5em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html (h507b.html: Üzerindeyken çoklu seviyeli düşen menü görüntüleme örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body { font: 15px arial, helvetica, sans-serif;
+            background: #333;
+            color:Magenta;}
+        a {color: #06c;}
+        ul {padding: 0;
+            margin: 0;
+            background: MistyRose;
+            float: left;}
+        li {float: left;
+            display: inline;
+            position: relative;
+            width: 150px;
+            list-style: none;}
+        ul ul {position: absolute;
+            left: 0;
+            top: 100%;
+            background: SpringGreen;
+            display: none;}
+        ul ul ul {left: 100%;
+            top: 0;
+            background: MediumSpringGreen;}
+        li:hover > ul {
+            display: block;
+        }
+	
+	
+        p {
+            clear: left;
+            padding-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="">Kuşlar</a>
+                <ul>
+                    <li><a href="">Kümes hayvanları</a></li>
+                    <li><a href="">Güney Kutup Fokları</a></li>
+                    <li><a href="">Afrika Devekuşları</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">Memeliler</a>
+                <ul>
+                    <li>
+                        <a href="">Monotremes</a>
+                        <ul>
+                            <li><a href="">Echidnas</a></li>
+                            <li><a href="">Platypus</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Marsupials</a>
+                        <ul>
+                            <li><a href="">Opossums</a></li>
+                            <li><a href="">Numbats, etc.</a></li>
+                            <li><a href="">Bandicoots, etc.</a></li>
+                            <li><a href="">Kangaroos, koalas, wombats, etc.</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Placentals</a>
+                        <ul>
+                            <li><a href="">Primates, ungulates, etc.</a></li>
+                            <li><a href="">Anteaters, sloths, etc.</a></li>
+                            <li><a href="">Elephants, etc.</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">Sürüngenler</a>
+                <ul>
+                    <li><a href="">Yılanlar ve Kertenkeleler</a></li>
+                    <li><a href="">Deniz ve kara Kaplumbağaları</a></li>
+                    <li><a href="">Timsahlar</a></li>
+                    <li><a href="">Tuatara</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">İkiyaşamlılar</a>
+                <ul>
+                    <li><a href="">Su ve kara Kurbağaları</a></li>
+                    <li><a href="">Salamanders and newts</a></li>
+                    <li><a href="">Caecilians</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <p/>
+    <p style="margin: 8em;">Basit bir çoklu seviyeli CSS düşen menü örneği. Daha fazla bilgi için: HTML Dog <a href="/techniques/dropdowns/" target="_">Düşenmenülerin teknikleri hakkında makaleler</a> sayfasına başvurabilirsiniz.</p>
+
+    <p style="text-align:center;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html (h605.html: Farklý özelliklendirilebilen kolon gruplarý örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <style>
+        body {
+            font: 80%/1.5 arial, helvetica, sans-serif;
+            background-color: Maroon;
+            color: MintCream;}
+        table {
+            border: 3px solid Magenta;
+            border-collapse: collapse;
+            caption-side: bottom; /* varsayýlý: top */
+            margin-top: 2em;}
+        th {border-bottom: 2px solid black;}
+        td {
+            padding: 0.1em 2em;
+            border-spacing: 1em;}
+        col.alternatif1 {background: #ddf;}
+        col.alternatif2 {background: #fdd;}
+    </style>
+</head>
+<body>
+    <table>
+    <caption>Tablo Alt Baþlýðý</caption>
+	    <colgroup>
+            <col class="alternatif1">
+            <col class="alternatif2">
+            <col class="alternatif1">
+            <col class="alternatif2">
+            <col class="alternatif1">
+	    </colgroup>
+	    <tr>
+            <th>Bu kolon</th>
+            <th>Þu kolon</th>
+            <th>O kolon</th>
+            <th>Öteki kolon</th>
+            <th>Beriki kolon</th>
+	    </tr>
+	    <tr>
+            <td>Kýzkuþu</td>
+            <td>Çekirge</td>
+            <td>Yem</td>
+            <td>Böcek</td>
+            <td>Polen</td>
+	    </tr>
+	    <tr>
+            <td>Kýzkuþu</td>
+            <td>Çekirge</td>
+            <td>Yem</td>
+            <td>Böcek</td>
+            <td>Polen</td>
+	    </tr>
+	    <tr>
+            <td>Kýzkuþu</td>
+            <td>Çekirge</td>
+            <td>Yem</td>
+            <td>Böcek</td>
+            <td>Polen</td>
+	    </tr>
+	    <tr>
+            <td>Kýzkuþu</td>
+            <td>Çekirge</td>
+            <td>Yem</td>
+            <td>Böcek</td>
+            <td>Polen</td>
+	    </tr>
+    </table>
+
+    <p style="text-align:center; margin-top:5em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

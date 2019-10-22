@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>Çoklu seçimli ve kayan çubuklu açılan menü örneği.</title>
+    <style>
+        body {
+            font: 100% arial, helvetica, sans-serif;
+            background-color: MidnightBlue;
+            color: Linen;}
+        fieldset {
+            padding: 0 1em 1em 1em;
+            background-color:OliveDrab;
+            border: 2px solid Red;}
+        legend {
+            padding: 1em;
+            background-color: Maroon;
+            color: Yellow;
+            margin-bottom: 1em;
+            border: 1px solid Red;}
+        select {
+            background-color: SlateGray;
+            color: Gold;}
+    </style>
+</head>
+<body>
+    <form action="biryerlerdeki.php">
+	    <fieldset>
+            <legend>Çok Okunan Romanlar</legend>
+            <label for="roman">Roman adı: </label>
+            <select name="roman" id="roman" size="3" multiple="multiple">
+                <option>İsyan</option>
+                <option>Salgın</option>
+                <option>Bindokuzyüzseksendört</option>
+                <option>Paris ve Londra'da Aşağı veDışlanmışlık</option>
+                <option>Deneme</option>
+                <option>Dışardaki</option>
+                <option>Parçalanış</option>
+                <option>Hayvan Çiftliği</option>
+                <option>Omega Parşömeni</option>
+                <option>Yasak İlişki</option>
+                <option>Yıldız Gemisi</option>
+                <option>Mesaj</option>
+            </select>
+	    </fieldset>
+    </form>
+
+    <p style="text-align:center; margin-top:5em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html (h509b.html: Target sýnýflý js'siz gizle/göster düðmesi örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: SaddleBrown;
+            color: Maroon;
+            margin: 0;
+            font: 300 17px/27px "Helvetica Neue", Helvetica, Arial, sans-serif;}
+        #içerik {
+            width: 240px;
+            position: relative;
+            background: PowderBlue;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 5px 2px yellow;}
+        #anaSeyrü {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: SeaGreen;
+            width: 100%;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 8px 2px Blue;}
+        #anaSeyrü:target {display: block;}
+        .eriþimYardýmý {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 0;
+            padding-top: 40px;
+            overflow: hidden;
+            border: 2px solid #fff;
+            background: maroon 10px 10px / 20px 20px no-repeat;}
+        #eriþimGörünen {background-image: repeating-linear-gradient(#f00, #f00 2px, #ff0f 2px, #ff0 4px);}
+        #eriþimGizli {background-image: linear-gradient(45deg, transparent 13px, red 13px, red 15px, transparent 0), linear-gradient(-45deg, yellow 13px, #f00 13px, #f00 15px, yellow 0);}
+    </style>
+</head>
+<body>
+    <div id="içerik">
+        <p><a href="#anaSeyrü" id="eriþimGörünen" class="eriþimYardýmý">Skip to navigation</a></p>
+        <article>
+            <h1>Göster / Gizle Seyrüseferi (target)</h1>
+            <p>Bu bir, <code>:target</code> sanal sýnýfýný kullanarak göster ve gizle seyrüseferi tekniðinin basit bir örneðidir. Özellikle mobil aygýtlar için kullanýþlýdýr.</p>
+            <p>Bu örnek ayrýca "göster" ve "gizle" buton ikonlarýný üretmek için resim yerine CSS kademelemeyi kullanmaktadýr.</p>
+            <p>Hoþça vakit geçirmeler.</p>
+            <p>Daha fazlasý için <a href="http://www.htmldog.com/techniques/showhide/" target="_">ilgili HTML Dog Teknikleri makalesine</a> göz atabilirsiniz.</p>
+        </article>
+
+        <seyrü id="anaSeyrü">
+            <ul>
+                <li><a href="#">Bu açýklama baðlantýsý</a></li>
+                <li><a href="#">Þu açýklama baðlantýsý</a></li>
+                <li><a href="#">O açýklama baðlantýsý</a></li>
+            </ul>
+            <p><a href="#" id="eriþimGizli" class="eriþimYardýmý">Tepeye atla</a></p>
+        </seyrü>
+
+        <p style="text-align:center; margin-top:2em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+    </div>
+</body>
+</html>

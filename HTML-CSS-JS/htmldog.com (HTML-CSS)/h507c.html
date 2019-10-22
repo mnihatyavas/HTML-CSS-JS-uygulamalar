@@ -1,0 +1,124 @@
+<!DOCTYPE html (h507c.html: Üzerindeyken açılan düşenmenülerin süslenmesi örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        * {margin: 0;
+            padding: 0;}
+        body {font: 300 15px/1.5 "Helvetica Neue", helvetica, arial, sans-serif;
+            background: #222;
+            margin: 15px;}
+        article {width: 600px;
+            margin: 0 auto;
+            background: #000;
+            color:Magenta;
+            border-radius: 15px;
+            box-shadow: 0 0 15px 2px #aaa;}
+        section {clear: left;}
+        h1 {font-size: 45px;
+            font-weight: 100;
+            letter-spacing: 15px;
+            color:MediumVioletRed;
+            text-align: center;}
+        h1, #açıklama, #reklam {padding: 5px;}
+        p {margin: 15px 0;}
+        a {color: #06c;
+            font-weight:bold;}
+        #seyrü ul {background: PaleGreen;
+            float: left;
+            transition: .5s;}
+        #seyrü li {float: left;
+            position: relative;
+            width: 150px;
+            list-style: none;
+            transition: .5s;}
+        #seyrü > ul > li > a, h1 {text-transform: uppercase;}
+        #seyrü a {display: block;
+            text-decoration: none;
+            padding: 5px 15px;
+            color: OrangeRed;}
+        #seyrü ul ul {position: absolute;
+            left: 0;
+            top: 100%;
+            visibility: hidden;
+            opacity: 0;}
+        #seyrü ul ul ul {left: 100%;
+            top: 0;}
+        #seyrü li:hover, #seyrü li:hover li {background: Plum;}
+        #seyrü li li:hover, #seyrü li li:hover li {background: Orchid;}
+        #seyrü li li li:hover {background: Purple;}
+        #seyrü li:hover > ul {visibility: visible;
+            opacity: 1;}
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Dörtayaklılar</h1>
+        <nav id="seyrü">
+            <ul>
+                <li>
+                    <a href="">Kuşlar</a>
+                    <ul>
+                        <li><a href="">Ratites</a></li>
+                        <li><a href="">Fowl</a></li>
+                        <li><a href="">Neoaves</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Memeliler</a>
+                    <ul>
+                        <li>
+                            <a href="">Monotremes</a>
+                            <ul>
+                                <li><a href="">Echidnas</a></li>
+                                <li><a href="">Platypus</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Marsupials</a>
+                            <ul>
+                                <li><a href="">Opossums</a></li>
+                                <li><a href="">Numbats, etc.</a></li>
+                                <li><a href="">Bandicoots, etc.</a></li>
+                                <li><a href="">Kangaroos, koalas, wombats, etc.</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Placentals</a>
+                            <ul>
+                                <li><a href="">Primates, ungulates, etc.</a></li>
+                                <li><a href="">Anteaters, sloths, etc.</a></li>
+                                <li><a href="">Elephants, etc.</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Sürüngenler</a>
+                    <ul>
+                        <li><a href="">Lizards and snakes</a></li>
+                        <li><a href="">Tortoises and turtles</a></li>
+                        <li><a href="">Crocodilians</a></li>
+                        <li><a href="">Tuatara</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Çiftyaşamlılar</a>
+                    <ul>
+                        <li><a href="">Frogs and toads</a></li>
+                        <li><a href="">Salamanders and newts</a></li>
+                        <li><a href="">Caecilians</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </nav>
+
+    <section style="margin:5em;" id="açıklama">
+        <p>Seyrüsefer birimleri olarak tetrapod/dörtayaklı hayvanlar grubunu kullanan bir CSS düşenmenü örneği. Memeliler birimi çoklu-seviyeli bir örnekleme sergilemektedir. Daha detaylı bilgilenmek isterseniz HTML Dog <a href="/techniques/dropdowns/">Düşenmenüler teknik makalesi</a> sayfasına uğrayabilirsiniz.</p>
+        <p>Tetrapod hayvanlar grubu deniz yaşamındaki balıklardan evrilip karasal yaşama uyum sağlamışlar ve yüzgeç yerine yürüme uzuvları geliştirmişlerdir. İkiyaşamlılar, sürüngenler, memeliler ve kuşlar ana gruplarını kapsarlar. Latince kökenli tetrapod'un kelime anlamı dört ayaklı demektir.</p>
+    </section>
+    <hr/>
+    <p style="text-align:center;" id="reklam"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+    </article>
+</body>
+</html>

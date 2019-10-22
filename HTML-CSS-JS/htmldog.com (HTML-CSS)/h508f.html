@@ -1,0 +1,88 @@
+<!DOCTYPE html (h508f.html: Estetik görünüþlü ve gölgeli dosyalama fiþleri örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <style>
+        *, #içerik :first-child, #içerik :last-child {margin: 0;}
+        body {
+            font: 300 15px/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #333;
+            margin: 30px;}
+        h1 {
+            margin-bottom: 2em;
+            color: Coral;
+            /* text-transform: uppercase; */
+            font-size: 35px;
+            font-weight: 100;
+            letter-spacing: 30px;
+            text-shadow: 3px 3px 5px #eee;}
+        seyrü ul {
+            list-style: none;
+            padding: 0 0 0 10px;
+            min-width: 460px;}
+        seyrü li {
+            float: left;
+            position: relative;
+            height: 30px;
+            border-radius: 10px 30px 0 0;
+            margin-left: -10px;
+            text-shadow: 1px 1px 0 #ddd;
+            box-shadow: 0px 0px 5px #bbb;
+            transition: .5s;}
+        seyrü a {
+            display: block;
+            position: relative;
+            width: 90px;
+            height: 20px;
+            padding: 6px 10px 20px 0;
+            border-radius: 10px 30px 0 0;
+            background: #999;
+            color: #444;
+            text-align: center;
+            text-decoration: none;
+            transition: .5s;}
+        seyrü li:hover {z-index: 1;}
+        seyrü li:hover a {
+            background: #ccc;
+            color: #000;}
+        #selected {z-index: 2;}
+        #selected a {
+            z-index: 3;
+            background: khaki;
+            color: #000;
+            text-shadow: none;
+            font-weight: 500;}
+        #içerik {
+            position: relative;
+            z-index: 1;
+            clear: both;
+            min-width: 420px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px LightGoldenRodYellow;
+            background: Khaki;}
+        #içerik p {margin: 20px 0;}
+    </style>
+</head>
+<body>
+    <baþlýk>
+        <h1>CSS Fiþleri</h1>
+        <seyrü>
+            <ul>
+                <li><a href="">Bu dosya</a></li>
+                <li id="selected"><a href="">Þu dosya</a></li>
+                <li><a href="">O dosya</a></li>
+                <li><a href="">Öteki dosya</a></li>
+                <li><a href="">Beriki dosya</a></li>
+            </ul>
+        </seyrü>
+    </baþlýk>
+	
+    <section id="içerik">
+        <p>Kayan liste birimleri kullanarak "fiþli seyrüsefer" yaratma.</p>
+        <p>Daha detaylý baþvuru için <a href="/techniques/tabs/" target="_">CSS Fiþleri</a> "HTML Dog Teknikleri makalesi"ne göz atabilirsiniz.</p>
+
+        <p style="text-align:center; margin-top:2em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+    </section>
+</body>
+</html>

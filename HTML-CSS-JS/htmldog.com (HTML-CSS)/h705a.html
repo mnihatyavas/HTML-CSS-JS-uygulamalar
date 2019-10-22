@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>h705a.html: Sarkan menü seçeneklerinden birinin tercih edilmesi örneği.</title>
+    <style>
+        body {
+            font: 100% arial, helvetica, sans-serif;
+            background-color:SlateGray;
+            color:Snow;}
+        fieldset {
+            padding: 0 1em 1em 1em;
+            border: 2px solid MintCream;
+            background-color:Navy;}
+        legend {
+            padding: 1em;
+            margin-bottom:1em;
+            color: SpringGreen;
+            background-color: Green;
+            border:2px solid OldLace;}
+        select {background-color:Orchid; color:yellow;}
+    </style>
+</head>
+<body>
+    <form action="biryerlerdeki.php">
+	    <fieldset>
+            <legend>Favori kitabınızı seçin</legend>
+            <label for="kitap">Kitap adı: </label>
+            <select name="kitap" id="kitap">
+                <option>Deneme</option>
+                <option>Dışardaki</option>
+                <option>Parçalanış</option>
+                <option>Hayvan Çiftliği</option>
+                <option>Omega Parşömeni</option>
+                <option>Yasak İlişki</option>
+                <option>Yıldız Gemisi</option>
+                <option>Mesaj</option>
+            </select>
+	    </fieldset>
+    </form>
+
+    <p style="text-align:center; margin-top:5em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>

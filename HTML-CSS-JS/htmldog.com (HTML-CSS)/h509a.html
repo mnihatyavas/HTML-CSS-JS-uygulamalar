@@ -1,0 +1,79 @@
+<!DOCTYPE html (h509a.html: Düðme týklayarak göster/gizle seyrüseferi örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #333;
+            color: #000;
+            margin: 0;
+            font: 300 18px/27px "Helvetica Neue", Helvetica, Arial, sans-serif;}
+        #içerik {
+            width: 240px;
+            position: relative;
+            background: khaki;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 5px 2px #fff;}
+        #anaSeyrü {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: IndianRed;
+            width: 100%;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 8px 2px #fa5;}
+        .seyrüyle #anaSeyrü {display: block;}
+        .eriþimYardýmý {display: none;}
+        #seyrüEriþim {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 0;
+            padding-top: 40px;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            background: Indigo 10px 10px / 20px 20px no-repeat;
+            background-image: repeating-linear-gradient(red, red 2px, yellow 2px, yellow 4px);
+            z-index: 1;}
+        .seyrüyle #seyrüEriþim {
+            background-image: linear-gradient(45deg, transparent 13px, #ccc 13px, #ccc 15px, transparent 0), linear-gradient(-45deg, white 13px, #ccc 13px, #ccc 15px, white 0);}
+    </style>
+</head>
+<body id="gövde">
+    <div id="içerik">
+        <p><a href="#anaSeyrü" id="seyrüEriþim" class="eriþimYardýmý">Seyrüsefere atlayýnýz</a></p>
+        <article>
+            <h1>Göster / Sakla Seyrüseferi (JavaScript)</h1>
+            <p><em>JavaScript</em> kullanarak göster ve gizle seyrüseferinin basit bir teknik örneði. Özellikle mobil tasarýmlar için kullanýþlýdýr.</p>
+            <p>Ayrýca, düðme ikonlarý üretmek için resim kullanmak yerine CSS kademeleme yöntemini kullanmaktadýr.</p>
+            <p>Bol keyifler.</p>
+            <p>Daha fazlasý için <a href="http://www.htmldog.com/techniques/showhide/" target="_">ilgili HTML Dog Technikleri makalesine</a> göz atabilirsiniz.</p>
+        </article>
+
+        <seyrü id="anaSeyrü">
+            <ul>
+                <li><a href="#">Bu açýklama</a></li>
+                <li><a href="#">Þu açýklama</a></li>
+                <li><a href="#">O açýklama</a></li>
+            </ul>
+            <p><a href="#gövde" id="tepeyeEriþim" class="eriþimYardýmý">Tepeye atlayýnýz</a></p>
+        </seyrü>
+
+        <p style="text-align:center; margin:;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+    </div>
+</body>
+<script>
+    var seyrü = document.getElementById ('seyrüEriþim')
+    gövde = document.body;
+    seyrü.addEventListener ('click', function (olay) {
+        gövde.className = gövde.className? '' : 'seyrüyle'
+        olay.preventDefault();
+    });
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html (h508d.html: Dosyalama fiþlerinde sýnýr çizgisizlik örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <style>
+        body {
+            font: small arial, helvetica, sans-serif;
+            text-indent:2em;
+            background-color:RebeccaPurple;
+            color:Purple;}
+        #baþlýk ul {
+            text-indent:0;
+            list-style: none;
+            padding: 0;
+            margin: 0;}
+        #baþlýk li {
+            display: inline;
+            margin: 0 2px 0 0;}
+        #baþlýk a {
+            padding: 0 1em;
+            text-decoration: none;
+            color: #red;
+            background: #fe5;}
+        #baþlýk a:hover {
+            background: #fc0;
+            color: #540;}
+        #baþlýk #selected a {
+            padding-bottom: 2px;
+            font-weight: bold;
+            color: black;
+            background: #fc0;}
+        #içerik {
+            border-top: 2px solid white;
+            background: #fc0;
+            padding: 1em;}
+        #içerik p {
+            margin: 0;
+            padding: 1em;
+            background: PapayaWhip;}
+        h1 {
+            font-size: 2.2em;
+            color: #fc0;
+            text-align:center;
+            margin-bottom:2em;}
+    </style>
+</head>
+<body>
+    <div id="baþlýk">
+        <h1>Dosyalama Fiþleri</h1>
+        <ul>
+            <li><a href="#">Bu dosya</a></li><!-- Bu yorumlar, aksi olursa, "float:left"siz listeler arasýnda beliren fazlaca aralýðý yok eder...
+            --><li id="selected"><a href="#">Þu dosya</a></li><!--
+            --><li><a href="#">O dosya</a></li><!--
+            --><li><a href="#">Diðer dosya</a></li>
+        </ul>
+    </div>
+
+    <div id="içerik">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <p style="text-align:center;margin-top:3em;"><a href="http://www.htmldog.com/examples/" target="_"><img src="resim/rozet.gif" alt="HTML Dog"></a></p>
+</body>
+</html>
