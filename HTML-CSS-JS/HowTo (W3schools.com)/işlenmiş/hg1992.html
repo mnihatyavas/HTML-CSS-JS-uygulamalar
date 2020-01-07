@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1992.html: Þayet tarayýcý classList özelliðini desteklemiyorsa alternatif çözüm örneði.</title>
+    <style>
+        body {
+            background-color:SlateBlue;
+            color:Lime;
+            margin:1em;}
+        .stilim {
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: DodgerBlue;
+            font-size: 35px;
+            box-sizing: border-box;}
+        button {
+            background-color:Yellow;
+            color:Navy;}
+    </style>
+</head>
+<body>
+    <p>DIV blüm elemanýna özel css stil sýnýfý giydirmek için düðmeyi týklamanýz yeterlidir.</p>
+
+    <p><strong>Not:</strong> IE9 ve önceki tarayýcý sürümü classList özelliðini desteklememektedir. Bu durumda className özelliðinden yararlanarak ayný sonuca ulaþýlacaktýr.</p>
+
+    <button onclick="fonk()">Týklayýn</button>
+    <br/><br/>
+    <div id="bölüm">Özel stil giydirilecek DIV elemaný.</div>
+
+    <script>
+        function fonk() {
+            var eleman = document.getElementById ("bölüm");
+            if (eleman.classList) {eleman.classList.toggle ("stilim");
+            }else {
+                var sýnýflar = eleman.className.split (" ");
+                 var i = sýnýflar.indexOf ("stilim");
+                if (i >= 0) sýnýflar.splice (i, 1);
+                else sýnýflar.push ("stilim");
+                eleman.className = sýnýflar.join(" ");
+            } // else sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

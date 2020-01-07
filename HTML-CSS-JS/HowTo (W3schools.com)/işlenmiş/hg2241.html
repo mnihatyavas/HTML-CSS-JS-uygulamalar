@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2241.html: Saniyelerle ileri bir tarihten þuana gerisayým örneði.</title>
+    <style>
+        body {
+            background-color:Brown;
+            color:Yellow;
+            margin:3em;}
+        p {
+            text-align: center;
+            font-size: 60px;}
+    </style>
+</head>
+<body>
+    <p>Sona erme tarihi: 17.04.2021; 14:37:25</p>
+    <p id="geri-sayým"></p>
+
+    <script>
+        // Geri sayýma temel olacak ileri tarihi saptayalým...
+        var gerisayýmTarihi = new Date ("Apr 17, 2021 14:37:25").getTime();
+        // Gerisayýmý her saniye güncelleyelim...
+
+        var x = setInterval (function() {
+            // Þimdinin tarih ve zamaný...
+            var þimdi = new Date().getTime();
+            // Gerisayým tarihiyle þimdi arasýndaki fark...
+            var fark = gerisayýmTarihi - þimdi;
+            // Aradaki farký gün, saat, dakika ve saniye cinsinden hesaplayalým...
+            var günler = Math.floor (fark / (1000 * 60 * 60 * 24) ); // fark'taki tam gün sayýsý...
+            var saatlar = Math.floor ( (fark % (1000 * 60 * 60 * 24) ) / (1000 * 60 * 60) ); // Artýk gündeki saatlar...
+            var dakikalar = Math.floor ( (fark % (1000 * 60 * 60) ) / (1000 * 60) ); // Artýk saattaki dakikalar...
+            var saniyeler = Math.floor ( (fark % (1000 * 60) ) / 1000); // Artýk dakikadaki saniyeler...
+            // id="geri-sayým" paragrafýnda zaman sayacýmýzý kuralým...
+            document.getElementById ("geri-sayým").innerHTML = günler + " gün, " + saatlar + " saat, " + dakikalar + " dakika, " + saniyeler + " saniye";
+            // Eðer gerisayým sona ererse sonucu bildirelim...
+            if (fark < 0) {
+                clearInterval (x);
+                document.getElementById ("geri-sayým").innerHTML = "GERÝSAYIM SONLANDI";
+            } // if sonu...
+        }, 1000); // fonksiyon her saniye þuanla güncellenir...
+    </script>
+</body>
+</html>

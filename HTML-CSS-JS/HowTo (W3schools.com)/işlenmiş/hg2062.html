@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2062.html: DIV elemaný mekan iþgalli görünmez/hidden iken görünür/visible kýlma örneði.</title>
+    <style>
+        body {
+            background-color:ForestGreen;
+            color:Gold;
+            margin:1em;}
+#divElemaný {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  visibility: hidden;
+}
+        button {
+            background-color:Orange;
+            color:Blue;}
+    </style>
+</head>
+<body>
+    <p>DIV elemaný mekan iþgalli lakin görünmez/hidden ise görünür/visible kýlmak için týklamanýz yeterlidir:</p>
+    <br/>
+    <button onclick="fonk()">Týklayýn</button>
+    <br/><br/>
+    <div id="divElemaný" style="color:Brown; font-size:25px;">Bu benim bahsekonu DIV elemanýmdýr.</div>
+    <br/>
+    <p>DIV elemaný sonrasý dizgeler...</p>
+
+    <script>
+        function fonk() {
+            var x = document.getElementById ("divElemaný");
+            if (window.getComputedStyle (x).visibility === "hidden") {x.style.visibility = "visible";
+            }else {x.style.visibility = "hidden";}
+        } // func sonu...
+    </script>
+</body>
+</html>

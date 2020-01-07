@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2234.html: Soldan-saða içi kararan yýldýz animasyonu örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:DarkBlue;
+            color:Coral;
+            margin:3em;}
+        #bölüm1 {font-size:100px;}
+    </style>
+</head>
+<body>
+    <div id="bölüm1" class="fa"></div>
+
+    <script>
+        function kademeliYýldýz() {
+            var a = document.getElementById ("bölüm1");
+            a.innerHTML = "&#xf006;";
+            setTimeout (function() {a.innerHTML = "&#xf123;";}, 1000);
+            setTimeout (function() {a.innerHTML = "&#xf005;";}, 2000);
+        } // func sonu...
+
+        kademeliYýldýz();
+        setInterval (kademeliYýldýz, 3000);
+    </script>
+
+    <p>Bu örnek ikonlar kütüphanesinden soldan-saða içi kararan yýldýz animasyonu efektini sergilemektedir.</p>
+</body>
+</html>

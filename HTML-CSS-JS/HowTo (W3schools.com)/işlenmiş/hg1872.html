@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1872.html: Týklanýnca tamekran, týklanýnca yarýmekran kiplerine geçme örneði.</title>
+    <style>
+        html {/* body için zemin rengi tam temizlenmiyor */
+            background-color: Green;
+            color: Magenta;
+            margin:3em;}
+        :fullscreen {background-color: DarkRed;}
+        button {
+            padding: 20px;
+            font-size: 20px;
+            background-color: Navy;
+            color: Yellow;}
+    </style>
+</head>
+<body>
+    <h1>JS ile Tam ve Yarýmekran Kipleri</h1>
+    <p>Tam veya yarýmekran kiplerine düðmelerini týklayarak geçebilirsiniz.</p>
+
+    <button onclick="tamekranýAç();">Tamekraný aç</button>
+    <button onclick="tamekranýKapa();">Tamekraný kapa/Esc</button>
+
+    <script>
+        var eleman = document;
+        function tamekranýAç() {if (eleman.documentElement.requestFullscreen) {eleman.documentElement.requestFullscreen();} }
+        function tamekranýKapa() {if (eleman.exitFullscreen) {eleman.exitFullscreen();} }
+    </script>
+
+    <p>Not: Internet Explorer 10 ve önceki sürümleri msRequestFullscreen() ve msExitFullscreen() metodlarýný desteklemiyor.</p>
+</body>
+</html>

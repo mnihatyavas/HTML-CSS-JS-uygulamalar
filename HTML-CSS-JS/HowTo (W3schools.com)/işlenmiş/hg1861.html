@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1861.html: Geçici atýþtýrmalýk tost aletipucu açýklamasý örneði.</title>
+    <style>
+        body {
+            background-color:Green;
+            color:Coral;
+            margin:3em;}
+        #atýþtýrmalýk {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: Yellow;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;}
+        #atýþtýrmalýk.göster {
+            visibility: visible;
+            animation: netleþ 0.8s, þeffaflaþ 0.8s 4.2s;}
+        @keyframes netleþ {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;} }
+        @keyframes þeffaflaþ {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;} }
+        button {background-color:Navy; color:Yellow;}
+    </style>
+</head>
+<body>
+    <h1>Atýþtýrmalýk / Tost</h1>
+    <p>Atýþtýrmalýklar ekranýn altýnda sýkça bir aletipucu/fýrlayan þerh mesajlarý için kullanýlýrlar.</p>
+    <p>Düðmeyi týklarsanýz alttaki atýçtýrmalýk mesajý 5 saniye süreliðine göreceksiniz.</p>
+
+    <button onclick="fonk()">Atýþtýrmalýðý göster</button>
+    <div id="atýþtýrmalýk">Bazý þeyleri açýklayan mesaj...</div>
+
+    <script>
+        function fonk() {
+            var x = document.getElementById ("atýþtýrmalýk");
+            x.className = "göster";
+            setTimeout (function(){x.className = x.className.replace ("göster", "");}, 5000);
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1991.html: Týklayýnca metne css stilleri sýnýfýný ekleme yalýtma örneði.</title>
+    <style>
+        body {
+            background-color:LimeGreen;
+            color:Lime;
+            margin:1em;}
+        .stilim {
+            width: 100%;
+            padding: 25px;
+            background-color: Lime;
+            color: DeepPink;
+            font-size: 35px;
+            box-sizing: border-box;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <p>Alttaki metne özel CSS stilleri sýnýfý giydirmek yada soymak için düðmeyi týklamanýz yeterlidir:</p>
+
+    <button onclick="fonk()">Týklayýn</button>
+    <br/><br/>
+    <div id="cssStilSýnýfý">Bu bir DIV bölümü elemanýdýr.</div>
+
+    <script>
+        function fonk() {
+            var eleman = document.getElementById ("cssStilSýnýfý");
+            eleman.classList.toggle ("stilim");
+        } // func sonu...
+    </script>
+</body>
+</html>

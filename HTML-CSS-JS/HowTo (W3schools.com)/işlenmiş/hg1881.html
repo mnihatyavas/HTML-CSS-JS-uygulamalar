@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1881.html: Kaydýrma çubuðuyla üçgen çizme ve silme örneði.</title>
+    <style>
+        body {
+            height: 2000px;
+            background: SeaGreen;
+            color: Magenta;
+            margin:3em;}
+        #üçgenim {
+            position: fixed;
+            top: 15%;
+            width: 600px;
+            height: 410px;
+            margin-left:-50px;}
+    </style>
+</head>
+<body>
+    <h2>Bir üçgen çizmek istiyorsanýz ekraný alta kaydýrýn.</h2>
+    <p>Çizili üçgenin silinip iptali içinse ekraný tekrar yukarý kaydýrmanýz yeterlidir.</p>
+    <p>Çizim d="M250 0 L20 400 L480 400 Z", yani kaydýraç üst ve soldan 450px konumdan
+        alta 400px, soldan 20px aralýk kalýncaya dek iner, saða 480px ilerledikten sonra tekrar
+        yukarýya 400px baþlangýç konumuna týrmanýr. Örneðin fill="Yellow" ile içi sarý dolgulu
+        üçgen çizilir. Çizgi kalýnlýðý ise stroke-width="5" ile saptanýr. Bu ölçekleri istediðiniz gibi
+        deðiþtirebilirsiniz.
+    </p>
+
+    <svg id="üçgenim">
+        <path fill="none" stroke="red" stroke-width="5" id="üçgen" d="M250 0 L20 400 L480 400 Z" />
+        Maalesef tarayýcýnýz SVG içi çizimi desteklememektedir.
+    </svg>
+
+    <script>
+        // <path> elemanýnýn id kimliðini ve uzunluðunu alalým...
+        var üçgen = document.getElementById ("üçgen");
+        var uzunluk = üçgen.getTotalLength();
+
+        // Çizimin baþlangýç konumu...
+        üçgen.style.strokeDasharray = uzunluk;
+
+        // Çizilen üçgenin gizlenmesini saðlar...
+        üçgen.style.strokeDashoffset = uzunluk;
+
+        // Kaydýrma olayýný çizimi yaratan veya tersine iptal eden fonk fonksiyonuna duyarlayalým...
+        window.addEventListener ("scroll", fonk);
+
+        function fonk() {
+            var kaymaYüzdesi = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+            var çiz = uzunluk * kaymaYüzdesi; // Alta kayýþ çizimi ilerletsin...
+            üçgen.style.strokeDashoffset = uzunluk - çiz; // Yukarý kaydýðýnda çizimi gerisin geriye ipal edelim...
+        } // func sonu...
+    </script>
+</body>
+</html>

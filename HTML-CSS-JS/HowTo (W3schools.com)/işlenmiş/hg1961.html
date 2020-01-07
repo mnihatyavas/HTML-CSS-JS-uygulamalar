@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg1961.html: Týklayýnca baþparmak yukarý ve aþaðý efekti örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:DarkSeaGreen;
+            color:Navy;
+            margin:2em;}
+        .fa {
+            font-size: 250px;
+            cursor: pointer;
+            user-select: none;}
+        .fa:hover {color: Purple;}
+    </style>
+</head>
+<body>
+    <p>Baþparmak aþaðý veya yukarý (sevmiyor/seviyor) ikonu için týklamanýz yeterlidir:</p>
+
+    <i onclick="fonk (this)" class="fa fa-thumbs-up"></i>
+
+    <script>
+        function fonk (olay) {olay.classList.toggle ("fa-thumbs-down");}
+    </script>
+</body>
+</html>

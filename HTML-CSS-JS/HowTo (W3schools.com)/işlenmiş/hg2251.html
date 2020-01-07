@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2251.html: 2 farklý daktiloyla soldan saða yazdýrma simülasyonu örneði.</title>
+    <style>
+        body {
+            background-color:Sienna;
+            color:Pink;
+            margin:1em;}
+        #göster {
+            color:Orange;
+            font-size:20px;
+            font-family:Verdana;}
+        #göster2 {
+            color: Magenta;
+            font-size:30px;
+            font-family:"Segoe Script";}
+        button {
+            background-color: Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h1>Daktilo Yazýlýmý</h1>
+    <button onclick="daktilo()">1.Daktiloyu baþlat</button>
+    <button onclick="daktilo2()">2.Daktiloyu baþlat</button>
+
+    <p id="göster"></p>
+    <p id="göster2"></p>
+
+    <script>
+        function daktilo() {
+            var i = 0;
+            var metin = "Daktiloyla soldan saða yazdýrma simülasyonu örneði. Lorem ipsum dummy text blabla.";
+            var hýz = 100;
+            yaz();
+            function yaz() {
+                if (i < metin.length) {
+                    document.getElementById ("göster").innerHTML += metin.charAt (i);
+                    i++;
+                    setTimeout (yaz, hýz / 2);
+                } // if sonu...
+            } // func sonu...
+        } // func sonu...
+        function daktilo2() {
+            var i = 0;
+            var metin = "Daktiloyla soldan saða yazdýrma simülasyonu örneði. Lorem ipsum dummy text blabla.";
+            var hýz = 100;
+            yaz();
+            function yaz() {
+                if (i < metin.length) {
+                    document.getElementById ("göster2").innerHTML += metin.charAt (i);
+                    i++;
+                    setTimeout (yaz, hýz * 2);
+                } // if sonu...
+            } // func sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

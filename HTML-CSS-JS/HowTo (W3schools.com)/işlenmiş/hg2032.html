@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2032.html: Çentikli kutu ikonlu açýlýr/kapanýr altbirimli aðaç görseli örneði.</title>
+    <style>
+        body {
+            background-color:Violet;
+            color:ForestGreen;
+            margin:1em;}
+        ul, #aðaçListem {list-style-type: none;}
+        #aðaçListem {
+            margin: 0;
+            padding: 0;}
+        .çentikKutusu {
+            cursor: pointer;
+            user-select: none;}
+        .çentikKutusu::before {
+            content: "\2610";
+            color: Red;
+            display: inline-block;
+            margin-right: 6px;}
+        .iþaretli-çentikKutusu::before {
+            content: "\2611"; 
+            color: dodgerblue;}
+        .altBirimler {display: none;}
+        .aktif {display: block;}
+    </style>
+</head>
+<body>
+    <h2>Aðaç Görseli</h2>
+    <p>Bir aðaç görseli icabýnda açýlýp kapanabilen çentik kutulu alt birimlerden müteþekkil liste yapýsýndan ibarettir.</p>
+    <p>Aðaç dallarýný açmak için iþaretsiz çentik kutusunu týklamanýz yeterlidir.</p>
+
+    <ul id="aðaçListem">
+        <li><span class="çentikKutusu">Meþrubatlar</span>
+            <ul class="altBirimler">
+                <li>Þiþe Suyu</li>
+                <li>Kahve</li>
+                <li><span class="çentikKutusu">Çay</span>
+                    <ul class="altBirimler">
+                        <li>Siyah Çay</li>
+                        <li>Beyaz Çay</li>
+                        <li><span class="çentikKutusu">Yeþil Çay</span>
+                            <ul class="altBirimler">
+                                <li>Sença</li>
+                                <li>Gýyokuro</li>
+                                <li>Maçça</li>
+                                <li>Pi Lo Çun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        var açKapa = document.getElementsByClassName ("çentikKutusu");
+        var i;
+        for (i = 0; i < açKapa.length; i++) {
+            açKapa [i].addEventListener ("click", function() {
+                this.parentElement.querySelector (".altBirimler").classList.toggle ("aktif");
+                this.classList.toggle ("iþaretli-çentikKutusu");
+            }); // aç.. sonu...
+        } // for sonu...
+    </script>
+</body>
+</html>

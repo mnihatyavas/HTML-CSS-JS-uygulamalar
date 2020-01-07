@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2022.html: Aktifleþtirilecek düðmenin üzerinde (týklayarak) durma örneði.</title>
+    <style>
+        body {
+            background-color:SlateBlue;
+            color:Ivory;
+            margin:3em;}
+        .düðme {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: Moccasin;
+            color:Green;
+            cursor: pointer;
+            font-size: 18px;}
+        .aktif, .düðme:hover {
+            background-color: DeepPink;
+            color: Blue;}
+    </style>
+</head>
+<body>
+    <h1>Aktif Düðme</h1>
+    <p>Aktifleþtirmek istediðiniz düðmenin üzerinde (týklayarak) durun.</p>
+  
+    <div id="bölüm">
+        <button class="düðme">1</button>
+        <button class="düðme">2</button>
+        <button class="düðme">3</button>
+        <button class="düðme">4</button>
+        <button class="düðme">5</button>
+    </div>
+
+    <script>
+        var eleman = document.getElementById ("bölüm");
+        var düðmeler = eleman.getElementsByClassName ("düðme");
+        for (var i = 0; i < düðmeler.length; i++) {
+            düðmeler [i].addEventListener ("click", function() {
+                var aktüel = document.getElementsByClassName ("aktif");
+                if (aktüel.length > 0) {aktüel [0].className = aktüel [0].className.replace (" aktif", "");}
+                this.className += " aktif";
+            }); // düð.. sonu...
+        } // for sonu...
+    </script>
+</body>
+</html>

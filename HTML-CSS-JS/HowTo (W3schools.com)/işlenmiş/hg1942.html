@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1942.html: Kaydýrmanýn üst ve alttaki sabit resimlerle ilgisi örneði.</title>
+    <style>
+        body, html {
+            height: 100%;
+            background-color:ForestGreen;
+            color:Purple;}
+        .zeminResmi {
+            background-image: url('resim/kýz.png');
+            height: 100%; 
+            /* Zemin resminin kaydýraçla baðlantýlý özellikleri: */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;}
+    </style>
+</head>
+<body>
+    <div class="zeminResmi"></div>
+
+    <div style="height:1000px; background-color:tomato; font-size:36px; padding:20px;">
+        Hem üstte hem de altta bulunan zemin resminin kaydýraçla iliþkili efektini gözlemek için kaydýracý aþaðý yukarý sürükleyin.
+        <br/>Bu açýklamalý yüksek bölüm kaydýraç etkisi için burada bulunmaktadýr.
+        <br/>Ýpucu: CSS Sabit zemin resmi baðlantýsýný silerek, artýk sabitlik özelliðini kaybeden resmin nasýl kaydýraçla birlikte sürüklendiðini görün.
+    </div>
+
+    <div class="zeminResmi"></div>
+</body>
+</html>

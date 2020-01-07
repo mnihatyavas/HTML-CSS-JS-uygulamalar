@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2291.html: Çift bölmeli ortalanmýþ açýklamalý avatarlar örneði.</title>
+    <style>
+        body {
+            font-family: Arial;
+            color: Orange;}
+        .bölme {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;}
+        .sol {
+            left: 0;
+            background-color: #111;}
+        .sað {
+            right: 0;
+            background-color: red;}
+        .ortalanmýþ {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;}
+        .ortalanmýþ img {
+            width: 150px;
+            border-radius: 50%;}
+    </style>
+</head>
+<body>
+    <div class="bölme sol">
+        <div class="ortalanmýþ">
+            <img src="resim/avatar2.png" alt="Avatar kadýný">
+            <h2>Gülben Ergen</h2>
+            <p>Bazý açýklamalar.</p>
+        </div>
+    </div>
+
+    <div class="bölme sað">
+        <div class="ortalanmýþ">
+            <img src="resim/avatar.png" alt="Avatar erkeði">
+            <h2>M.Nihat Yavaþ</h2>
+            <p>Buraya da bazý açýklamalar.</p>
+        </div>
+    </div>
+</body>
+</html>

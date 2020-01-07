@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2271.html: Avatarlr mesajlaþma sohbeti örneði.</title>
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 0 20px;
+            font-size:20px;
+            background-color:DarkSlateGray;
+            color: Pink;}
+
+.kab {
+  border: 5px solid #fff;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.daha-koyu {
+  border-color: #eee;
+  background-color: #aaa;
+}
+
+.kab::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.kab img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.kab img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.saat-sað {
+  float: right;
+  color: Magenta;
+}
+
+.saat-sol {
+  float: left;
+  color: Violet;
+}
+    </style>
+</head>
+<body>
+    <h2>Mesajlaþma Sohbeti</h2>
+
+    <div class="kab">
+        <img src="resim/fotoðrafçý2.jpg" alt="Avatar" style="width:100%;">
+        <p>Merhaba. Bugün nasýlsýn bakalým?</p>
+        <span class="saat-sað">11:00</span>
+    </div>
+
+    <div class="kab daha-koyu">
+        <img src="resim/avatar6.jpg" alt="Avatar" class="right" style="width:100%;">
+        <p>Hey! Ýyiyim. Sorduðun için teþekkürler!</p>
+        <span class="saat-sol">11:01</span>
+    </div>
+
+    <div class="kab">
+        <img src="resim/fotoðrafçý2.jpg" alt="Avatar" style="width:100%;">
+        <p>Þeker þey! Söylesene, bugün ne yapmayý düþünüyorsun?</p>
+        <span class="saat-sað">11:02</span>
+    </div>
+
+    <div class="kab daha-koyu">
+        <img src="resim/avatar6.jpg" alt="Avatar" style="width:100%;">
+        <p>Hýmm, emin deðilim. Top oynamak.. yada belki biraz kodlama çalýþmak?..</p>
+        <span class="saat-sol">11:05</span>
+    </div>
+</body>
+</html>

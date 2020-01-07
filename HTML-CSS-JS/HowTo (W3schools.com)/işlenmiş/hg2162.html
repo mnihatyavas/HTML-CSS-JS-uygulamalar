@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" içerik="width=device-width, initial-scale=1">
+    <title>hg2162.html: Bir tarayýcý penceresinin detaylý CSS ayarlarýyla nasýl göründüðü örneði.</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color:OliveDrab;
+            color:Orange;}
+        * {box-sizing: border-box;}
+        .kab {
+            border: 3px solid #f1f1f1;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;}
+        .üst-satýr {
+            padding: 10px;
+            background: #f1f1f1;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;}
+        .üst-satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+        .kolon {float: left;}
+        .sol {width: 15%;}
+        .orta {width: 75%;}
+        .sað {width: 10%;}
+        .iri-nokta {
+            margin-top: 4px;
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;}
+        input [type=text] {
+            width: 100%;
+            /*border-radius: 5px;*/
+            border: none;
+            background-color: white;
+            margin-top: -8px;
+            height: 25px;
+            color: #666;
+            padding: 5px;}
+        .çubuk {
+            width: 17px;
+            height: 3px;
+            background-color: #aaa;
+            margin: 3px 0;
+            cursor: pointer;
+            display: block;}
+        .içerik {
+            padding: 10px;
+            background-color:DarkGreen;}
+    </style>
+</head>
+<body>
+    <div class="kab">
+        <div class="üst-satýr">
+            <div class="kolon sol">
+                <span class="iri-nokta" style="background:#ED594A;"></span>
+                <span class="iri-nokta" style="background:#FDD800;"></span>
+                <span class="iri-nokta" style="background:#5AC05A;"></span>
+            </div>
+            <div class="kolon orta">
+                <input type="text" value="http://www.w3schools.com">
+            </div>
+            <div class="kolon sað">
+                <div style="float:right">
+                    <span class="çubuk"></span>
+                    <span class="çubuk"></span>
+                    <span class="çubuk"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="içerik">
+            <h3>Tarayýcý Penceresi</h3>
+            <p>Detaylý CSS ayarlarýyla bir tarayýcý penceresinin nasýl göründüðü.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1943.html: Zmin resminin kaydýraçla iliþkisini ekran geniþliðiyle deðiþtirme örneði.</title>
+    <style>
+        body, html {
+            height: 100%;
+            background-color:DarkOliveGreen;
+            color:Pink;}
+        .zeminResmi {
+            background-image: url('resim/kýz.png');
+            height: 100%; 
+            /* Zemin resminin kaydýraçla baðlantýlý özellikleri */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;}
+        @media only screen and (min-width: 600px) { /* Sadece geniþ ekranlarda zemin resmi de kaysýn... */
+            .zeminResmi {background-attachment: scroll;} }
+    </style>
+</head>
+<body>
+    <h3>Bu örnekte dar ekranlý mobil ipodlar ve tabletlerde zemin resmi kaydýrmasý iptal edilmiþtir.</h3>
+    <p>Zemin resminin de kaymasý sadece 600px ve üstü ekranlarda mümkün kýlýnmýþtýr. Ekran geniþliðiyle oynayýp zemin resmi etkisini gözleyin.</p>
+
+    <div class="zeminResmi"></div>
+
+    <div style="height:1000px; background-color:tomato; color:Navy; font-size:36px; padding:25px;">
+        Bu bölüm sadece kaydýrma etkisi için buraya konulmuþtur.
+        <br>Ýpucu: Yukardaki CSS 600px ayarýyla oynayarak daha dar yada geniþ ekranlarda zemin resmi kaydýrmasý efektini deðiþtirebilirsiniz.
+    </div>
+
+    <div class="zeminResmi"></div>
+</body>
+</html>

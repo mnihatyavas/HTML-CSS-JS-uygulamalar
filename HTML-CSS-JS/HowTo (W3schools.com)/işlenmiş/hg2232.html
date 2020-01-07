@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2232.html: Kum saatýnýn boþalmasý animasyonu örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Pink;
+            margin:3em;}
+        #bölüm1 {font-size:100px;}
+    </style>
+</head>
+<body>
+    <div id="bölüm1" class="fa"></div>
+
+    <script>
+        function kumsaatý() {
+            var a;
+            a = document.getElementById ("bölüm1");
+            a.innerHTML = "&#xf251;";
+            setTimeout (function() {a.innerHTML = "&#xf252;";}, 750);
+            setTimeout (function() {a.innerHTML = "&#xf253;";}, 1500);
+        } // func sonu...
+
+        kumsaatý();
+        setInterval (kumsaatý, 2250);
+    </script>
+
+    <p>Bu örnek ikonlar kütüphanesinden bir kumsaatýnýn animasyonu efektini sergilemektedir.</p>
+</body>
+</html>

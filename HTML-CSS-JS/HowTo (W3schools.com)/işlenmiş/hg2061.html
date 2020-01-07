@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2061.html: DIV elemaný yok/none ise görünür/block yapma örneði.</title>
+    <style>
+        body {
+            background-color:DarkGreen;
+            color:Gold;
+            margin:1em;}
+        #divElemaný {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+            display: none;}
+        button {
+            background-color:Yellow;
+            color:Red;}
+    </style>
+</head>
+<body>
+    <p>Eðer DIV elemaný mekan iþgalsiz none/yok ise block/görünür kýlmak yada aksi için düðmeyi týklamanýz yeterlidir:</p>
+    <br/>
+    <button onclick="fonk()">Týklayýn</button>
+    <br/><br/>
+    <div id="divElemaný" style="color:Brown; font-size:25px;">Bu benim bahsekonu DIV elemanýmdýr.</div>
+    <br/>
+    <p>DIV elemaný sonrasý metinler...</p>
+
+    <script>
+        function fonk() {
+            var x = document.getElementById ("divElemaný");
+            if (window.getComputedStyle (x).display === "none") {x.style.display = "block";
+            }else {x.style.display = "none";}
+        } // func sonu...
+    </script>
+</body>
+</html>

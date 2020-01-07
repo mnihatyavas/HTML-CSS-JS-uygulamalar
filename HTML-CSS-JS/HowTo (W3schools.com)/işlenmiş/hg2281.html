@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2281.html: Fýrlayan sohbet penceresi örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin:1em;
+            background-color:DarkSlateBlue;
+            color: Moccasin;}
+        * {box-sizing: border-box;}
+        .açma-düðmesi {
+            background-color: Green;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.7;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;}
+        .fýrlayan-form {
+            display: none;
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            border: 3px solid #bbb;
+            z-index: 9;}
+        .form-kabý {
+            max-width: 300px;
+            padding: 10px;
+            background-color: DarkGreen;}
+        .form-kabý textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;}
+        .form-kabý textarea:focus {
+            background-color: #ddd;
+            outline: none;}
+        .form-kabý .düðme {
+            background-color: #4CAF50;
+            color: Yellow;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.7;}
+        .form-kabý .iptal {background-color: red;}
+        .form-kabý .düðme:hover, .açma-düðmesi:hover {opacity: 1;}
+    </style>
+</head>
+<body>
+    <h2>Fýrlayan Sohbet Penceresi</h2>
+    <p>Sohbet penceresini açmak istiyorsanýz, bu sayfanýn sað altýnda gördüðünüz düðmeyi týklayýn.</p>
+    <p>Dikkat ederseniz düðme ve formun konumu sabittir, yani daima tarayýcýnýn sað altýnda konumlanmaktadýr.</p>
+
+    <button class="açma-düðmesi" onclick="formuAç()">Sohbet</button>
+
+    <div class="fýrlayan-form" id="formum">
+        <form action="#" class="form-kabý">
+            <h1>Sohbet</h1>
+
+            <label for="msj"><b>Mesaj</b></label>
+            <textarea placeholder="Mesajýnýzý yazýn..." name="msj" required></textarea>
+
+            <button type="submit" class="düðme">Gönder</button>
+            <button type="button" class="düðme iptal" onclick="formuKapa()">Kapa</button>
+        </form>
+    </div>
+
+    <script>
+        function formuAç() {document.getElementById ("formum").style.display = "block";}
+        function formuKapa() {document.getElementById ("formum").style.display = "none";}
+    </script>
+</body>
+</html>

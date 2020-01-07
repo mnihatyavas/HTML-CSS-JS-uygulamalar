@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1921.html: Kaydýraç hareketiyle baþlýk ebatýný küçültüp büyütme örneði.</title>
+    <style>
+        body { 
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Olive;
+            color:Magenta;}
+        #baþlýk {
+            background-color: Navy;
+            padding: 50px 10px;
+            color: Yellow;
+            text-align: center;
+            font-size: 120px; 
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            transition: 0.8s;}
+    </style>
+</head>
+<body>
+    <div id="baþlýk">Baþlýk</div>
+
+    <div style="margin-top:200px; padding:15px 15px 2500px; font-size:30px">
+        <p><b>Bu örnek, kullanýcý sayfayý aþaðýya kaydýrmaya baþlayýnca, baþlýk ebatýnýn nasýl büzüldüðünü sergilemektedir.</b></p>
+        <p>Bu büzülme etkisini görmek için aþaðýya doðru kaydýrmaya baþlayýn!</p>
+        <p>Büzülmenin tekrar normalleþmesi için ise tekrar yukarý kaydýrmalýsýnýz.</p>
+        <p>Biraz dolgu metni... Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <script>
+        window.onscroll = function() {fonk() };
+
+        function fonk() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {document.getElementById ("baþlýk").style.fontSize = "10px";
+            }else {document.getElementById ("baþlýk").style.fontSize = "120px";}
+        } // func sonu...
+    </script>
+</body>
+</html>

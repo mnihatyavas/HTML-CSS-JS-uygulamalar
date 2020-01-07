@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2041.html: Mevcut nesne özelliðinin "delete" ile silinmesi örneði.</title>
+</head>
+<body style="background-color:SteelBlue; color:Coral; margin:1em;font-size:20px;">
+    <h1>JavaScript Nesne Özellikleri</h1>
+    <p>Mevcut nesne özelliklerini "delete" anahtarkelimesiyle silebilirsiniz.</p>
+    <br/><br/>
+    <p id="göster"></p>
+
+    <script>
+        var kiþi = {
+            adý: "M.Nihat",
+            soyadý: "Yavaþ",
+            yaþý: 2019-1957,
+            boyu: 170,
+            kilosu: 55
+        }; // kiþi sonu...
+        document.getElementById ("göster").innerHTML =
+            "Boyu " + kiþi.boyu + " sm, kilosu " + kiþi.kilosu + " kg ve yaþý " + kiþi.yaþý + " olan " + kiþi.adý + " " + kiþi.soyadý;
+
+        delete kiþi.yaþý;
+        delete kiþi.boyu;
+        delete kiþi.kilosu;
+
+        document.getElementById ("göster").innerHTML +=
+            "<br/><br/>Boyu " + kiþi.boyu + " sm, kilosu " + kiþi.kilosu + " kg ve yaþý " + kiþi.yaþý + " olan " + kiþi.adý + " " + kiþi.soyadý;
+    </script>
+</body>
+</html>

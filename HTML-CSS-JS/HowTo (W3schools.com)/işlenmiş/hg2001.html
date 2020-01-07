@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2001.html: Stil eklemeyi classList.add metoduyla yapma örneði.</title>
+    <style>
+        body {
+            background-color:sienna;
+            color:Lime;
+            margin:1em;}
+        .stilim {
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: Blue;
+            font-size: 25px;
+            box-sizing: border-box;}
+        button {
+            background-color:navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <p>DIV elemanýna "stilim" sýnýfýný eklemek için düðmeyi bir kez týklayýn:</p>
+
+    <button onclick="fonk()">Týklayýn</button>
+    <br><br>
+    <div id="bölüm">Bu bir DIV elemanýdýr.</div>
+
+    <script>
+        function fonk() {
+            var eleman = document.getElementById ("bölüm");
+            eleman.classList.add ("stilim");
+        } // func sonu...
+    </script>
+</body>
+</html>

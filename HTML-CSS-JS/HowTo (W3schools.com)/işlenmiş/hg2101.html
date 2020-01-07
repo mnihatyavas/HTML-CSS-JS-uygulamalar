@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2101.html: Metnin kutu içinde dikey ortalanmasý örneði.</title>
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Orange;
+            margin:1em;}
+        .kab { 
+            height: 200px;
+            position: relative;
+            border: 5px solid LightGreen;}
+        .dikey-ortala {
+            margin: 0;
+            padding:10px;
+            top: 50%;
+            position: absolute;
+            transform: translateY(-50%);}
+    </style>
+</head>
+<body>
+    <h2>Dikey Ortalama</h2>
+    <p>Metni kutu içinde dikey ortalatmak için bu örnekte top/üst position/konumla ve transform/dönüþtür özellikleri kullanýlmýþtýr:</p>
+
+    <div class="kab">
+        <div class="dikey-ortala"><p>Ben kutum içinde dikey ortalandým.</p></div>
+    </div>
+
+    <p>Not: Transform/dönüþtür özelliði IE8 ve önceki sürümlerce desteklenmemektedir.</p>
+</body>
+</html>

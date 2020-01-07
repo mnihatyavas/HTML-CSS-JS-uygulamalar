@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2211.html: Liste sembolü ve renginin deðiþtirilmesi örneði.</title>
+    <style>
+        body {
+            background-color:DarkSlateBlue;
+            color:Lime;
+            margin:3em;}
+        ul {
+            font-size:30px;
+            list-style: none;}
+        ul li::before {
+            content: "\2023";
+            color: red;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1.5em;}
+    </style>
+</head>
+<body>
+    <h1><u>Liste Elemanlarý Ýkonu ve Renginin Deðiþtirilmesi</u></h1>
+
+    <ul>
+        <li>Nihat Kaçar</li>
+        <li>Hamza Candan</li>
+        <li>Adil Özbay</li>
+        <li>Sefer Göktürk</li>
+    </ul>
+</body>
+</html>

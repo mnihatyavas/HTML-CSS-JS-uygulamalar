@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2002.html: Stil eklemeyi className+= metoduyla yapma örneði.</title>
+    <style>
+        body {
+            background-color:Teal;
+            color:Cyan;
+            margin:1em;}
+        .stilim {
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: Blue;
+            font-size: 25px;
+            box-sizing: border-box;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <p>DIV elemanýna "stilim" sýnýfýný eklemek için alttaki düðmeyi bir kez týklayýn:</p>
+
+    <button onclick="fonk()">Týklayýn</button>
+    <br><br>
+    <div id="bölüm">Bu bir DIV elemanýdýr.</div>
+
+    <script>
+        function fonk() {
+            var eleman, ad, dizi;
+            eleman = document.getElementById ("bölüm");
+            ad = "stilim";
+            dizi = eleman.className.split (" ");
+            if (dizi.indexOf (ad) == -1) {eleman.className += " " + ad;}
+        } // func sonu...
+    </script>
+</body>
+</html>

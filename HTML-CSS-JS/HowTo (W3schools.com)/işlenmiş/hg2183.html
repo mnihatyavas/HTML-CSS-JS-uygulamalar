@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2182.html: Dizüstü bilgisayar için çoklu medya içerikleri örneði.</title>
+    <style>
+        body {
+            background:DarkBlue;
+            margin:2em;}
+        .dizüstü {
+            transform-origin: 0 0;
+            transform: scale(.6) translate(-50%);
+            left: 50%;
+            position: absolute;
+            width: 1366px;
+            height: 800px;
+            border-radius: 6px;
+            border-style: solid;
+            border-color: black;
+            border-width: 24px 24px 80px;
+            background-color: black;}
+        /* Dizüstü bilgisayarýn klavyesi */
+        .dizüstü:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1600px;
+            height: 60px;
+            margin: 80px 0 0 -110px;
+            background: black;
+            border-radius: 10px;}
+        /* Klavye üst-önündeki duyarlý alan */
+        .dizüstü:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 250px;
+            height: 30px;
+            bottom: -110px;
+            left: 50%;
+            transform: translate(-50%);
+            background: #f1f1f1;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: 1;}
+        /* Ekran */
+        .dizüstü .içerik {
+            background-color:Moccasin;
+            width: 1366px;
+            height: 800px;
+            overflow: hidden;
+            border: none;}
+    </style>
+</head>
+<body>
+    <div class="dizüstü">
+        <div class="içerik">
+            <iframe src="http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/w3css/tryw3css_templates_band.htm" style="width:100%;border:none;height:100%" />
+        </div>
+    </div>
+</body>
+</html>

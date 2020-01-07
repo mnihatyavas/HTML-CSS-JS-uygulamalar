@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1971.html: Düðmeyi týklayýnca bölüm kutusunu yok ve var etme örneði.</title>
+    <style>
+        body {
+            background-color:CadetBlue;
+            color:Coral;
+            margin:1em;}
+        #kutuBölmesi {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: Blue;
+            margin-top: 20px;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <p>Bölüm kutusunu yok ve var etmek için "Deneyin" düðmesini týklamanýz yeterlidir.</p>
+
+    <button onclick="fonk()">Deneyin</button>
+
+    <div id="kutuBölmesi">
+        Bu benim DIV kutu elemanýmdýr.
+    </div>
+
+    <p><b>Not:</b> Görüntü özelliði  "none" olarak ayarlandýðýnda bölüm elemaný artýk yok sayýlacak ve tarayýcýda da yer iþgal etmez.</p>
+
+    <script>
+        function fonk() {
+            var x = document.getElementById ("kutuBölmesi");
+            if (x.style.display === "none") {x.style.display = "block";
+            }else {x.style.display = "none";}
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1941.html: Sabit zemin resminde kaydýrma efekti örneði.</title>
+    <style>
+        body {
+            background-color:LightSeaGreen;
+            color:Purple;
+            margin:3em;}
+        .zeminResmi {
+            background-image: url("resim/kýz.png");
+            min-height: 500px; 
+            /* Zemin resmiyle kaydýrmanýn iliþkisini özelliklendirelim */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;}
+    </style>
+</head>
+<body>
+    <h3>BU sayfayý aþaðý yukarý kaydýrarak sabit zemin resmiyle ilgisini gözlemleyin.</h3>
+
+    <div class="zeminResmi"></div>
+
+    <div style="height:1000px; background-color:tomato; font-size:36px; padding:20px;">
+        Zemin resmiyle kaydýrmanýn iliþkisini görmek için kaydýracý aþaðý yukarý sürükleyin.
+        <br/>Bu açýklamalý bölüm kaydýrmayý olanaklý kýlmak için buradadýr.
+        <br/>Ýpucu: "background-attachment:fixed" özelliðini iptal ederseniz kaydýracýn (artýk sabit olmayan) zemin resmini de sürüklediðini göreceksiniz.
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2235.html: Açýlan dosya animasyonu örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:DarkGreen;
+            color:Violet;
+            margin:3em;}
+        #bölüm1 {font-size:100px;}
+    </style>
+</head>
+<body>
+    <div id="bölüm1" class="fa"></div>
+
+    <script>
+        function açýlanDosya() {
+            var a = document.getElementById ("bölüm1");
+            a.innerHTML = "&#xf114;";
+            setTimeout (function() {a.innerHTML = "&#xf115;";}, 1000);
+        } // func sonu...
+
+        açýlanDosya();
+        setInterval (açýlanDosya, 2000);
+    </script>
+
+    <p>Bu örnek ikonlar kütüphanesinden açýlan dosya animasyonu efektini sergilemektedir.</p>
+</body>
+</html>

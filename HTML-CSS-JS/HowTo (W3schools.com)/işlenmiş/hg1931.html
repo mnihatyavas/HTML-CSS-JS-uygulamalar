@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hg1931.html: Üzerindeyken vetarayýcý enine duyarlý fiyatlama tablolarý örneði.</title>
+    <style>
+        body {
+            background-color:OliveDrab;
+            color:Magenta;
+            margin:1em;}
+        * {box-sizing: border-box;}
+        .kolonlar {
+            float: left;
+            width: 33.3%;
+            padding: 8px;
+            background-color:Navy;}
+        .fiyatlama {
+            list-style-type: none;
+            border: 1px solid #ddd;
+            margin: 0;
+            padding: 0;
+            transition: 0.5s;}
+        .fiyatlama:hover {box-shadow: 0 25px 30px 0 rgba(255,0,0,0.5); }
+        .fiyatlama .baþlýk {
+            background-color: #111;
+            color: white;
+            font-size: 25px;}
+        .fiyatlama li {
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;}
+        .fiyatlama .gri {
+            background-color: #ddd;
+            font-size: 20px;}
+        .düðme {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;}
+        .düðme:hover {background-color:Green; color:Yellow;}
+        @media only screen and (max-width: 600px) {
+            .kolonlar {width: 100%;} }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center">Duyarlý Fiyatlama Tablolarý</h1>
+    <p style="text-align:center">Efekti görmek isterseniz hem tablolarýn üzerinde gezinin hem de tarayýcý eniyle oynayýn.</p>
+
+    <div class="kolonlar">
+        <ul class="fiyatlama">
+            <li class="baþlýk">Baþlangýç</li>
+            <li class="gri">$ 9.99 / yýl</li>
+            <li>10GB Depolama</li>
+            <li>10 Eposta</li>
+            <li>10 Site</li>
+            <li>1GB Bantgeniþliði</li>
+            <li class="gri"><a href="#" class="düðme">Satýn Al</a></li>
+        </ul>
+    </div>
+
+    <div class="kolonlar">
+        <ul class="fiyatlama">
+            <li class="baþlýk" style="background-color:#4CAF50">Ýleri</li>
+            <li class="gri">$ 24.99 / yýl</li>
+            <li>25GB Depolama</li>
+            <li>25 Eposta</li>
+            <li>25 Site</li>
+            <li>2GB Bantgeniþliði</li>
+            <li class="gri"><a href="#" class="düðme">Satýn Al</a></li>
+        </ul>
+    </div>
+
+    <div class="kolonlar">
+        <ul class="fiyatlama">
+            <li class="baþlýk">Ayrýcalýklý</li>
+            <li class="gri">$ 49.99 / yýl</li>
+            <li>50GB Depolama</li>
+            <li>50 Eposta</li>
+            <li>50 site</li>
+            <li>5GB Bantgeniþliði</li>
+            <li class="gri"><a href="#" class="düðme">Satýn Al</a></li>
+        </ul>
+    </div>
+</body>
+</html>

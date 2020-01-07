@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=iso:8859-9 Türkçe" />
+    <title>hg2237.html: Ýþaret, el ve aralama animasyonu örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:DarkGoldenRod;
+            color:SpringGreen;
+            margin:3em;}
+        #bölüm1 {font-size:100px;}
+    </style>
+</head>
+<body>
+    <div id="bölüm1" class="fa"></div>
+
+    <script>
+        function elÝþaretleri() {
+            var a = document.getElementById ("bölüm1");
+            a.innerHTML = "&#xf25a;"; // parmak...
+            setTimeout (function() {a.innerHTML = "&#xf256;";}, 1000); // el...
+            setTimeout (function() {a.innerHTML = "&#xf259;";}, 2000); // aralýk...
+            setTimeout (function() {a.innerHTML = "&#xf256;";}, 3000); // el...
+        } // func sonu...
+
+        elÝþaretleri();
+        setInterval (elÝþaretleri, 4000);
+    </script>
+
+    <p>Bu örnek ikonlar kütüphanesinden el iþaretleri animasyonu efektini sergilemektedir.</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1981.html: Týklayýnca metni deðiþtirme örneði.</title>
+    <style>
+        body {
+            background-color:DarkCyan;
+            color:Tomato;
+            margin:3em;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+        #metin {
+            font-size:50px;
+            margin-top:2em;
+            color:Violet;}
+    </style>
+</head>
+<body>
+    <p>Alttaki metni deðiþtirmek için düðmeyi týklamanýz yeterlidir:</p>
+
+    <button onclick="fonk()">Týklayýn</button>
+
+    <div id="metin">Herkese Merhabalar!</div>
+
+    <script>
+        function fonk() {
+            var x = document.getElementById ("metin");
+            if (x.innerHTML === "Herkese Merhabalar!") {x.innerHTML = "Ben Artýk Deðiþtim!";
+            }else {x.innerHTML = "Herkese Merhabalar!";}
+        } // func sonu...
+    </script>
+</body>
+</html>

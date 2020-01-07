@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2301.html: Tarayýcý ebatýna duyarlý resimli bonservisler listesi örneði.</title>
+    <style>
+        body {
+            margin:1em;
+            background-color:Olive;
+            color:Magenta;}
+        .kab {
+            border: 2px solid Blue;
+            background-color: #ddd;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 16px 0}
+        .kab::after {
+            content: "";
+            clear: both;
+            display: table;}
+        .kab img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 50%;}
+        .kab span {
+            color:DarkRed;
+            font-size: 20px;
+            margin-right: 15px;}
+        @media (max-width: 600px) {
+            .kab {text-align: center;}
+            .kab img {
+                margin: auto;
+                float: none;
+                display: block;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Bonservisler</h2>
+    <p>Tarayýcýyý 600px altýna düþürüp deðiþikliði gözlemleyin.</p>
+
+    <div class="kab">
+        <img src="resim/fotoðrafçý2.jpg" alt="Avatar" style="width:90px">
+        <p><span>Hamza Candan.</span> Özel Güvenlik Þirketi CEO'su.</p>
+        <p>Yetiþtirdiði özel güvenlik elemanlarý kapýþýlýyor.</p>
+    </div>
+
+    <div class="kab">
+        <img src="resim/avatar6.jpg" alt="Avatar" style="width:90px">
+        <p><span>Hatice Yavaþ Kaçar.</span> Özel Hastane Baþ Tabibi.</p>
+        <p>Hiçbir doktor H.Y.Kaçar'dan daha iyi olamaz.</p>
+    </div>
+
+    <div class="kab">
+        <img src="resim/yönetici.jpg" alt="Avatar" style="height:90px">
+        <p><span>Zafer Nihat Candan.</span> Tüpbebek Merkezi CEO'su.</p>
+        <p>Eposta resminizden bile tüpbebek üretir.</p>
+    </div>
+</body>
+</html>

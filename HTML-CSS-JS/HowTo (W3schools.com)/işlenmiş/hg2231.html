@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2231.html: Çeþitli ikonlarla animasyon örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Magenta;
+            margin:3em;}
+        #bölüm1 {font-size:100px;}
+    </style>
+</head>
+<body>
+    <div id="bölüm1" class="fa"></div>
+
+    <script>
+        function bataryaÞarjý() {
+            var a;
+            a = document.getElementById ("bölüm1");
+            a.innerHTML = "&#xf244;";
+            setTimeout (function() {a.innerHTML = "&#xf243;";}, 500);
+            setTimeout (function() {a.innerHTML = "&#xf242;";}, 1000);
+            setTimeout (function() {a.innerHTML = "&#xf241;";}, 1500);
+            setTimeout (function() {a.innerHTML = "&#xf240;";}, 2000);
+        } // func sonu....
+
+        bataryaÞarjý();
+        setInterval (bataryaÞarjý, 2500);
+    </script>
+
+    <p>Bu örnek ikonlar kütüphanesinden alýnan bir bataryanýn þarj edilmesi animasyonu efektini sergilemektedir.</p>
+</body>
+</html>

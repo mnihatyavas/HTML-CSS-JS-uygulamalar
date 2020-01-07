@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1871.html: Video mp4 filmi tam/yarým-ekran ebatlý oynatma örneði.</title>
+    <style>
+        body {
+            background-color:DarkGreen;
+            color:Gold;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h1>JS ile Tamekran</h1>
+    <p>Düðmeyi veya vidyonun sað-alt ikonu týklarsanýz vidyoyu tamekran kipinde seyredebilirsiniz.</p>
+    <button onclick="tamekran();">Vidyo'yu Tamekran Büyüt</button>
+    <p><strong>Ýpucu:</strong> Tamekran kipinden çýkmak için "Esc" tuþuna basýn.</p>
+
+    <video width="100%" controls id="vidyom">
+        <source src="resim/yaðmur.mp4" type="video/mp4">
+        <!--<source src="rain.ogg" type="video/ogg">-->
+        Tarayýcýnýz vidyo etiketini desteklemiyor.
+    </video>
+
+    <script>
+        var eleman = document.getElementById ("vidyom");
+        function tamekran() {if (eleman.requestFullscreen) {eleman.requestFullscreen(); } }
+    </script>
+
+    <p>Not: Internet Explorer 10 ve önceki sürümleri msRequestFullscreen() metodunu desteklemiyor.</p>
+</body>
+</html>

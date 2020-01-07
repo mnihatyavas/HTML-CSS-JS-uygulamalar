@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2092.html: Üzerindeyken dikey dönen 3-boyutlu kutu örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:DarkRed;
+            color:Linen;
+            margin:1em;}
+        .döner-kutu {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            border: 2px solid #f1f1f1;
+            /*perspective: 1000px;*/}
+        .döner-kutu-iç {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;}
+        .döner-kutu:hover .döner-kutu-iç {transform: rotateX(180deg);}
+        .döner-kutu-ön, .döner-kutu-arka {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;}
+        .döner-kutu-ön {
+            background-color: DarkGreen;
+            color: Yellow;}
+        .döner-kutu-arka {
+            background-color: LightGreen;
+            color: Orange;
+            transform: rotateX(180deg);}
+    </style>
+</head>
+<body>
+    <h1>3Boyutlu Döner Kutu (Dikey)</h1>
+    <h3>Üç boyutlu kutuyu diker döndürmek için üzerinde gezinin:</h3>
+
+    <div class="döner-kutu">
+        <div class="döner-kutu-iç">
+            <div class="döner-kutu-ön"><h2>Ön Yüz</h2></div>
+            <div class="döner-kutu-arka"><h2>Arka Yüz</h2></div>
+        </div>
+    </div>
+</body>
+</html>

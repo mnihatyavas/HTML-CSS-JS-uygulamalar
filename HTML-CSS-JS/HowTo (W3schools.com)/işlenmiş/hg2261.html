@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2261.html: Filmin gösterimine gerisayým örneði.</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;}
+        .zeminResmi {
+            background-image: url("resim/ormanaKöprü.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            color: Red;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 30px;
+            font-weight: strong;}
+        .solüst {
+            position: absolute;
+            top: 0;
+            left: 16px;}
+        .orta {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;}
+        hr {
+            margin: auto;
+            width: 100%;}
+        .solalt {
+            position: absolute;
+            bottom: 0;
+            left: 16px;}
+    </style>
+</head>
+<body>
+    <div class="zeminResmi">
+        <div class="solüst">
+            <p><img src="resim/kaykay.jpg"></p>
+        </div>
+        <div class="orta">
+            <h1>VÝZYONA GERÝSAYIM</h1>
+            <hr/>
+            <p id="göster" style="font-size:40px; font-weight:bold;"></p>
+        </div>
+        <div class="solalt">
+            <p>Film hakkýnda kýsa açýklamalar.</p>
+        </div>
+    </div>
+
+    <script>
+        var vizyonTarihi = new Date ("Jan 5, 2020 15:37:25").getTime();
+        var gerisayýmFonksiyonu = setInterval (function() {
+            var þimdi = new Date().getTime();
+            var fark = vizyonTarihi - þimdi;
+            var günler = Math.floor (fark / (1000 * 60 * 60 * 24) );
+            var saatlar = Math.floor ( (fark % (1000 * 60 * 60 * 24) ) / (1000 * 60 * 60) );
+            var dakikalar = Math.floor ( (fark % (1000 * 60 * 60) ) / (1000 * 60) );
+            var saniyeler = Math.floor ( (fark % (1000 * 60) ) / 1000);
+            document.getElementById ("göster").innerHTML = günler + " gün, " + saatlar + " saat, " + dakikalar + " dakika, " + saniyeler + " saniye";
+            if (fark < 0) {
+                clearInterval (gerisayýmFonksiyonu);
+                document.getElementById ("göster").innerHTML = "GÖSTERÝMDE";
+            } // if sonu...
+        }, 1000); // func sonu...
+    </script>
+</body>
+</html>

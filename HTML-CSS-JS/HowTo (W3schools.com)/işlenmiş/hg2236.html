@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg2236.html: Gülen, ciddi ve somurtan yüz animasyonu örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:Teal;
+            color:Violet;
+            margin:3em;}
+        #bölüm1 {font-size:100px;}
+    </style>
+</head>
+<body>
+    <div id="bölüm1" class="fa"></div>
+
+    <script>
+        function gülümse() {
+            var a = document.getElementById ("bölüm1");
+            a.innerHTML = "&#xf118;"; // gül...
+            setTimeout (function() {a.innerHTML = "&#xf11a;";}, 1000); // ciddi...
+            setTimeout (function() {a.innerHTML = "&#xf119;";}, 2000); // somurt...
+            setTimeout (function() {a.innerHTML = "&#xf11a;";}, 3000); // ciddi...
+        } // func sonu...
+
+        gülümse();
+        setInterval (gülümse, 4000);
+    </script>
+
+    <p>Bu örnek ikonlar kütüphanesinden yüz mimikleri animasyonu efektini sergilemektedir.</p>
+</body>
+</html>

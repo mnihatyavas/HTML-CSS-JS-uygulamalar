@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg2011.html: Mevcut stili classList.remove metoduyla silme örneði.</title>
+    <style>
+        body {
+            background-color:Olive;
+            color:Cyan;
+            margin:1em;}
+        .stilim {
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: Blue;
+            font-size: 25px;
+            box-sizing: border-box;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <p>DIV elemanýna baðlý mevcut "stilim" sýnýfýný silmek için alttaki düðmeyi bir kez týklayýn:</p>
+
+    <button onclick="fonk()">Týkla</button>
+    <br><br>
+    <div id="bölüm" class="stilim">Bu bir DIV elemanýdýr.</div>
+
+    <script>
+        function fonk() {
+            var eleman = document.getElementById ("bölüm");
+            eleman.classList.remove ("stilim");
+        } // func sonu...
+    </script>
+</body>
+</html>
