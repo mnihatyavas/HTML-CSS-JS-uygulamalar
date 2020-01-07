@@ -1,0 +1,50 @@
+<!DOCTYPE html (ha201.html: Ýkonlu sol kenar çubuk menüsü örneði.)>
+<html>
+<head>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: LightSeaGreen;
+            color: Maroon;}
+        .kenarçubuðu {
+            height: 100%;
+            width: 195px;
+            position: fixed;
+            /* z-index: 1; */
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 16px;}
+        .kenarçubuðu a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: MediumOrchid;
+            display: block;}
+        .kenarçubuðu a:hover {color: Magenta;}
+        .gövde {
+            margin-left: 195px; /* kenarçubuðu'yla ayný... */
+            padding: 0px 10px;}
+        @media screen and (max-height: 450px) {
+            .kenarçubuðu {padding-top: 5px;}
+            .kenarçubuðu a {font-size: 13px;} }
+</style>
+</head>
+<body>
+    <div class="kenarçubuðu">
+        <a href="#anasayfa"><img src="resim/ev.png" alt=" " height="36"/> Anasayfa</a>
+        <a href="#hizmetlerimiz"><img src="resim/servisler.png" alt=" " height="36"/> Hizmetlerimiz</a>
+        <a href="#müþterilerimiz"><img src="resim/kullanýcý.png" alt=" " height="36"/> Müþterilerimiz</a>
+        <a href="#bayilerimiz"><img src="resim/dünya.png" alt=" " height="36"/> Bayilerimiz</a>
+        <a href="#iletiþim"><img src="resim/zarf.png" alt=" " height="36"/> Ýletiþim</a>
+    </div>
+
+    <div class="gövde">
+        <h2>Ýkonlu Solkenar Çubuk Menüsü</h2>
+        <p>Bu sol kenar seyrüseferi tam sayfa (%100) yüksekliðinde ve daima görünürdür..</p>
+        <p>Laf, laf, laf... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Laf, laf, laf... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
+</body>
+</html>

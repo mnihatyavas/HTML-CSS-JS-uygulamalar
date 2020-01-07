@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha401.html: Üzerindeyken görünen alt seyrüsefer menü çubuğu örneği.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color:MediumSeaGreen;
+            color:Orange;}
+        .seyrüÇubuğu {
+            overflow: hidden;
+            background-color: #333;
+            margin-bottom:4em;}
+        .seyrüÇubuğu a {
+            float: left;
+            font-size: 16px;
+            color: Cyan;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;}
+        .altseyrü {
+            float: left;
+            overflow: hidden;}
+        .altseyrü .altseyrüDüğmesi {
+            font-size: 16px;    
+            border: none;
+            outline: none;
+            color: Cyan;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;}
+        .seyrüÇubuğu a:hover, .altseyrü:hover .altseyrüDüğmesi {
+            background-color: red;
+            color: Yellow;}
+        .aşağı:after {content:"\25BC";}
+        .altseyrüİçeriği {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: red;
+            width: 100%;
+            z-index: 1;}
+        .altseyrüİçeriği a {
+            float: left;
+            color: Yellow;
+            text-decoration: none;}
+        .altseyrüİçeriği a:hover {
+            background-color: Navy;
+            color: OldLace;}
+        .altseyrü:hover .altseyrüİçeriği {display: block;}
+</style>
+</head>
+<body>
+    <div class="seyrüÇubuğu">
+        <a href="#">Anasayfa</a>
+        <div class="altseyrü">
+            <button class="altseyrüDüğmesi">Hakkımızda&ensp;<b class="aşağı"></b></button>
+            <div class="altseyrüİçeriği">
+                <a href="#">Şirket</a>
+                <a href="#">Takım</a>
+                <a href="#">Kariyerler</a>
+            </div>
+        </div> 
+
+        <div class="altseyrü">
+            <button class="altseyrüDüğmesi">Hizmetlerimiz&ensp;<b class="aşağı"></b></button>
+            <div class="altseyrüİçeriği">
+                <a href="#">Getir</a>
+                <a href="#">Götür</a>
+                <a href="#">Paket</a>
+                <a href="#">Ekspres</a>
+            </div>
+        </div> 
+
+        <div class="altseyrü">
+            <button class="altseyrüDüğmesi">Ortaklarımız&ensp;<b class="aşağı"></b></button>
+            <div class="altseyrüİçeriği">
+                <a href="#">Ortak-1</a>
+                <a href="#">Ortak-2</a>
+                <a href="#">Ortak-3</a>
+                <a href="#">Ortak-4</a>
+            </div>
+        </div>
+        <a href="#">İletişim</a>
+    </div>
+
+    <div style="padding:0 16px">
+        <h3>Seyrüsefer Çubuğu içinde Altseyrü/sarkan Menü Çubuğu</h3>
+        <p>"Hakkımızda", "Hizmetlerimiz" veya "Ortaklarımız" üzerine gelerek beliren alt seyrüsefer menü çubuğunu gözlemleyin.</p>
+    </div>
+</body>
+</html>

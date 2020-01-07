@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha271.html: Orta ve sağa hizalı seçenekli duyarlı üst çubuk menü örneği.</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:SlateGray;
+            color: Snow;}
+        .üstseyrü {
+            position: relative;
+            overflow: hidden;
+            margin-bottom:5em;
+            background-color: #333;}
+        .üstseyrü a {
+            float: left;
+            color: SpringGreen;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;}
+        .üstseyrü a:hover {
+            background-color: Thistle;
+            color: Tomato;}
+        .üstseyrü a.aktif {
+            background-color: #4CAF50;
+            color: Yellow;}
+        .ortalıÜstseyrü a {
+            float: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);}
+        .sağaÜstseyrü {float: right;}
+        @media screen and (max-width: 600px) {
+            .üstseyrü a, .sağaÜstseyrü {
+                float: none;
+                display: block;}
+            .ortalıÜstseyrü a {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;} }
+    </style>
+</head>
+<body>
+    <div class="üstseyrü">
+        <div class="ortalıÜstseyrü">
+            <a href="#anasayfa" class="aktif">Anasayfa</a>
+        </div>
+
+        <a href="#haberler">Haberler</a>
+        <a href="#eğlence">Eğlence</a>
+
+        <div class="sağaÜstseyrü">
+            <a href="#araştır">Araştır</a>
+        </div>
+    </div>
+
+    <div style="padding:10px">
+        <h2>Ortalanmış ve Sağa-hizalı Bağlantılı Duyarlı Üst Seyrüsefer Menüsü</h2>
+        <p>Anasayfa'sı ortalanmış, araştırma bağlantısı sağa hizalanmış ve diğer
+            normal seçenekleri ise sola hizalıdır. Ayrıca tarayıcı daraltıldığında
+            üst çubuk seyrüsefer yerine herbir seçeneğin alt-alta sıralandığı
+            ve sıralama düzeninin de normalleştiği yeni bir duyarlı seyrüsefer
+            görüntüsü ortaya çıkmaktadır.
+        </p>
+    </div>
+</body>
+</html>

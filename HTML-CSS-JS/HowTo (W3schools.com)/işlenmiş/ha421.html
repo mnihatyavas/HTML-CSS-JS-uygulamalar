@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" />
+    <title>ha421.html: Üst seyrüçubuktaki sarkanmenünün mega menüsü örneği.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            margin: 0;
+            background-color: PaleVioletRed;
+            color: PowderBlue;}
+        .seyrüçubuk {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;}
+        .seyrüçubuk a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;}
+        .sarkanMenü {
+            float: left;
+            overflow: hidden;}
+        .aşağı:before {content: "\25BC";}
+        .sarkanMenü .sarkanDüğme {
+            font-size: 16px;    
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font: inherit;
+            margin: 0;}
+        .seyrüçubuk a:hover, .sarkanMenü:hover .sarkanDüğme {
+            background-color: Tomato;
+            color:Yellow;}
+        .sarkanİçeriği {
+            display: none;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            box-shadow: 0px 1px 5px 0px rgba(255,255,20,0.9);
+            z-index: 1;}
+        .sarkanİçeriği .başlık {
+            background: Orange;
+            padding: 16px;
+            color: Orchid;}
+        .sarkanMenü:hover .sarkanİçeriği {display: block;}
+        .sütun {/* Eşit ende 3 sütun olacak */
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            background-color: Olive;
+            height: 250px;}
+        .sütun a {
+            float: none;
+            color: Cyan;
+            padding: 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;}
+        .sütun a:hover {
+            background-color: OliveDrab;
+            color:Pink;}
+        h3 {text-decoration:underline;}
+        @media screen and (max-width: 600px) {
+            .sütun {/* Daralınca enlemesine 3 sütun yerine tek sütun */
+                width: 100%;
+                height: auto;} }
+    </style>
+</head>
+<body>
+    <div class="seyrüçubuk">
+        <a href="#">Anasayfa</a>
+        <a href="#">Hakkımızda</a>
+        <div class="sarkanMenü">
+            <button class="sarkanDüğme">Sarkanmenü&ensp;
+                <b class="aşağı"></b>
+            </button>
+            <div class="sarkanİçeriği">
+                <div class="başlık">
+                    <h2>Mega Menu</h2>
+                </div>
+                <div class="satır">
+                    <div class="sütun">
+                        <h3>Haberler</h3>
+                        <a href="#">Anahaber</a>
+                        <a href="#">Spor</a>
+                        <a href="#">Havadurumu</a>
+                    </div>
+                    <div class="sütun">
+                        <h3>Eğlence</h3>
+                        <a href="#">Müzik</a>
+                        <a href="#">Filim</a>
+                        <a href="#">Yarışma</a>
+                    </div>
+                    <div class="sütun">
+                        <h3>Eğitim</h3>
+                        <a href="#">Belgesel</a>
+                        <a href="#">Açıköğretim</a>
+                        <a href="#">Finans</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#">İletişim</a>
+    </div>
+
+    <main style="padding:16px">
+        <h3>Duyarlı Mega Menü (Seyrüçubuk'ta Tam-enli Sarkanmenü)</h3>
+        <p>Mega menüyü gözlemlemek için "Sarkanmenü" bağlantısı üzerinde gezinin.</p>
+        <p>Duyarlılık etkisini gözlemlemek için de tarayıcı genişliğini daraltın.</p>
+    </main>
+</body>
+</html>

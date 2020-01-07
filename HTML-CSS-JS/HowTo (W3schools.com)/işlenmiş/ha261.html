@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha261.html: Bazı son seçenekleri sağa hizalı üst menü örneği.</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: Teal;
+            color: yellow;}
+        .üstseyrü {
+            overflow: hidden;
+            background-color: #333;
+            margin-bottom: 5em;}
+        .üstseyrü a {
+            float: left;
+            color: SpringGreen;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;}
+        .üstseyrü a:hover {
+            background-color: SlateBlue;
+            color: Tomato;}
+        .üstseyrü a.aktif {
+            background-color: #4CAF50;
+            color: Orange;}
+        .üstseyrüSağa {float: right;}
+    </style>
+</head>
+<body>
+    <div class="üstseyrü">
+        <a class="aktif" href="#anasayfa">Anasayfa</a>
+        <a href="#haberler">Haberler</a>
+        <a href="#eğlence">Eğlence</a>
+        <div class="üstseyrüSağa">
+            <a href="#araştır">Araştır</a>
+        </div>
+    </div>
+
+    <div style="padding-left:16px">
+        <h2>Sağa Hizalı Seçenekli Üst Seyrüsefer Menüsü</h2>
+        <p>Bu üst seyrüsefer menü seçenekleri normalde sola hizalıdır, ancak
+            bazı seçenek-leri sağa da hizalanabilir. Örneğin burada araştırma menü
+            seçeneği dikkat çekmek üzere diğerlerinden yalıtılmış ve sağa hizalanmıştır.
+        </p>
+    </div>
+</body>
+</html>

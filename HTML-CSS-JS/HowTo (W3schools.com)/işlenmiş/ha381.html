@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha381.html: Kenarseyrüde açılır kapanır ikonlu sarkanmenü düğmesi örneği.</title/>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color:Peru;
+            color:Plum;}
+        .kenarseyrü {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            overflow-x: hidden;
+            padding-top: 20px;}
+        .kenarseyrü a, .sarkanDüğme {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;}
+        .ikon:before {content:"\25BC";}
+        .kenarseyrü a:hover, .sarkanDüğme:hover {background-color:Red; color: yellow;}
+        .gövde {
+            margin:0 0 30em 200px; /* üst-sağ-alt/tamponlu-sol */
+            font-size: 20px;
+            padding: 0px 10px;}
+        .active, .kenarseyrü a:active {
+            background-color: green;
+            color: Cyan;}
+        .sarkanİçerik {
+            display: none;
+            background-color: Orchid;
+            color:Gold;
+            padding-left: 12px;}
+        @media screen and (max-height: 450px) {
+            .kenarseyrü {padding-top: 2px;}
+            .kenarseyrü a, .kenarseyrü button {font-size: 10px;} }
+    </style>
+</head>
+<body>
+    <div class="kenarseyrü">
+        <a href="#">Anasayfa</a>
+        <a href="#">Hakkımızda</a>
+        <button class="sarkanDüğme">Sarkanmenü
+            <b class="ikon"></b>
+        </button>
+        <div class="sarkanİçerik">
+            <a href="#">Haberler</a>
+            <a href="#">Spor</a>
+            <a href="#">Müzik</a>
+            <a href="#">Filim</a>
+            <a href="#">Belgesel</a>
+        </div>
+        <a href="#">İletişim</a>
+        <a href="#contact">Araştır&emsp;
+            <img src="resim/araştır.png" height="20" alt="" />
+        </a>
+    </div>
+
+    <div class="gövde">
+        <h2>Kenarçubuğu Sarkanmenüsü</h2>
+        <p>Kenar seyrüsefer çubuğundaki sarkanmenüyü tıklayarak içeriklerini görüntüleyin. Kapatmak için düğmeyi tekrar tıklamalısınız.</p>
+        <p>Bu sağ kenarçubuğu %100 yükseklikte ve daimidir. Tarayıcının yüksekliğine duyarlıdır; deneyin.</p>
+        <p>Alta uzayan farazi tampon metin...</p>
+    </div>
+
+    <script>
+        var sarkanım = document.getElementsByClassName ("sarkanDüğme");
+        var i;
+        for (i = 0; i < sarkanım.length; i++) {
+            sarkanım[i].addEventListener ("click", function() {
+                this.classList.toggle ("active");
+                var sarkanımİçerik = this.nextElementSibling;
+                if (sarkanımİçerik.style.display === "block") sarkanımİçerik.style.display = "none";
+                else sarkanımİçerik.style.display = "block";
+            }); // sar.. ifade sonu...
+        } // for döngü sonu...
+    </script>
+</body>
+</html>

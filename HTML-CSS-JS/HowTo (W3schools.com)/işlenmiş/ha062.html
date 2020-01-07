@@ -1,0 +1,75 @@
+<!DOCTYPE html (ha062.html: Açılır (açık) yafta başlık açıklamaları örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" />
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background:Maroon;
+            color: MistyRose;}
+        .yafta {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: 2px solid #ddd;
+            border-top: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+        .yafta:hover {background-color: #777;}
+        .yaftaAçıklaması {
+            color: OldLace;
+            padding: 50px;
+            text-align: center;
+        }
+        #Londra {background-color:red; height:200px;}
+        #Paris {background-color:green; height:200px;}
+        #Tokyo {background-color:blue; height:200px;}
+        #Oslo {background-color:orange; height:200px;}
+    </style>
+</head>
+<body>
+    <h1>Yafta Başlıkları</h1>
+    <p>Şehre dair açıklamaları görmek için menüdeki düğmelerini tıklayın:</p>
+
+    <div id="Londra" class="yaftaAçıklaması">
+        <h1>Londra</h1>
+        <p>Londra İngirtere'nin baş kentidir.</p>
+    </div>
+
+    <div id="Paris" class="yaftaAçıklaması">
+        <h1>Paris</h1>
+        <p>Paris Fransa'nın baş kentidir.</p> 
+    </div>
+
+    <div id="Tokyo" class="yaftaAçıklaması">
+        <h1>Tokyo</h1>
+        <p>Tokyo Japonya'nın baş kentidir.</p>
+    </div>
+
+    <div id="Oslo" class="yaftaAçıklaması">
+        <h1>Oslo</h1>
+        <p>Oslo Norveç'in baş kentidir.</p>
+    </div>
+
+    <button class="yafta" onclick="şehrinAçıklamasınıGör ('Londra', this, 'red')">Londra</button>
+    <button class="yafta" onclick="şehrinAçıklamasınıGör ('Paris', this, 'green')" id="açılıştaAçık">Paris</button>
+    <button class="yafta" onclick="şehrinAçıklamasınıGör ('Tokyo', this, 'blue')">Tokyo</button>
+    <button class="yafta" onclick="şehrinAçıklamasınıGör ('Oslo', this, 'orange')">Oslo</button>
+
+    <script>
+        function şehrinAçıklamasınıGör (şehrinAdı, düğmeKomponenti, düğmeRengi) {
+            var i, açıklamalar, yaftalar;
+            açıklamalar = document.getElementsByClassName ("yaftaAçıklaması");
+            for (i = 0; i < açıklamalar.length; i++) açıklamalar[i].style.display = "none";
+            yaftalar = document.getElementsByClassName ("yafta");
+            for (i = 0; i < yaftalar.length; i++) yaftalar[i].style.backgroundColor = "";
+            document.getElementById (şehrinAdı).style.display = "block";
+            düğmeKomponenti.style.backgroundColor = düğmeRengi;
+        } // şehrinAçıklamasınıGör(..) fonksiyonu sonu...
+        document.getElementById ("açılıştaAçık").click();
+    </script>
+</body>
+</html>

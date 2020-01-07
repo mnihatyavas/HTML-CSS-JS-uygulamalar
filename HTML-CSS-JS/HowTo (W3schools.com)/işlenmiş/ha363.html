@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha363.html: Seyrü çubuğundaki  ikonlu sarkanmenü düğmesi tıklanınca açılan bağlantılar örneği.</title>
+    <style>
+        body {margin:0;background-color:Sienna; color:Cyan;}
+        .seyrüÇubuk {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom:4em;}
+        .seyrüÇubuk a {
+            float: left;
+            font-size: 16px;
+            color: SeaShell;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;}
+        .sarkanMenü {
+            float: left;
+            overflow: hidden;}
+        .ikon:after {content: "\25BC";}
+        .sarkanMenü .sarkanDüğme {
+            cursor: pointer;
+            font-size: 16px;    
+            border: none;
+            outline: none;
+            color: Yellow;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;}
+        .seyrüÇubuk a:hover, .sarkanMenü:hover .sarkanDüğme, .sarkanDüğme:focus {
+            background-color: red;}
+        .sarkan-içerik {
+            display: none;
+            position: absolute;
+            background-color: Navy;
+            min-width: 144px;
+            box-shadow: 0px 8px 16px 0px rgba(200,200,50,0.9);
+            z-index: 99;}
+        .sarkan-içerik a {
+            float: none;
+            color: Silver;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;}
+        .sarkan-içerik a:hover {background-color: Olive;}
+        .göster {display: block;}
+        .gövde {margin:0 1em;}
+    </style>
+</head>
+<body>
+    <div class="seyrüÇubuk">
+        <a href="#anasayfa">Anasayfa</a>
+        <a href="#haberler">Haberler</a>
+        <div class="sarkanMenü">
+            <button class="sarkanDüğme" onClick="fonk()">Sarkanmenü
+            <b class="ikon"></b>
+            </button>
+            <div class="sarkan-içerik" id="sarkanım">
+                <a href="#">Spor</a>
+                <a href="#">Filim</a>
+                <a href="#">Müzik</a>
+                <a href="#">Belgesel</a>
+            </div>
+        </div>
+        <a href="#hakkımızda">Hakkımızda</a>
+        <a href="#iletişim">İletişim</a>
+    </div>
+
+    <div class="gövde">
+        <h3>Bir Seyrüsefer Çubuğundaki Sarkanmenü</h3>
+        <p>"Sarkanmenü" bağlantısını tıklayarak açılacak olan içerikleri gözlemleyin.</p>
+    </div>
+
+    <script>
+        function fonk() {// Sarkanmenü düğmesi üzerindeki tıklamalar gösterir/saklar...
+            document.getElementById ("sarkanım").classList.toggle ("göster");
+        } // fonk sonu...
+
+        window.onclick = function (olay) {// Sarkan seçeneklerde/dışarda tıklamalar gizler...
+            if (!olay.target.matches ('.sarkanDüğme')) {
+                var sarkanMenüler = document.getElementsByClassName ("sarkan-içerik");
+                var i;
+                for (i = 0; i < sarkanMenüler.length; i++) {
+                    var sarkanıAç = sarkanMenüler[i];
+                    if (sarkanıAç.classList.contains ('göster'))
+                        sarkanıAç.classList.remove ('göster');
+                } // for sonu...
+            } // dış-if sonu...
+        } // win.. sonu...
+    </script>
+</body>
+</html>

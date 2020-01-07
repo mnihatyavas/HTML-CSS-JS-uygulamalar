@@ -1,0 +1,83 @@
+<!DOCTYPE html (ha042.html: Kapatma düğmeli animasyonlu yatay yaftalar örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" />
+    <style>
+        body {font-family: Arial; background:Orchid;}
+        .yafta {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .yafta düğme {
+            background-color: inherit;
+            float: left;
+            border: solid maroon 1px;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.5s;
+            font-size: 17px;
+        }
+        .yafta düğme:hover {background-color: #aaa;}
+        .yafta düğme.actif {background-color: #777; color:#ddd;}
+        .yaftaİçeriği {
+            display: none;
+            padding: 6px 12px;
+            border: 5px solid #ccc;
+            background-color: green;
+            color: white;
+            animation: solmaEtkisi 3s; /* Solma etkisi 3 sn sürecek */
+        }
+        @keyframes solmaEtkisi {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .kapatmaDüğmesi {
+            float: right;
+            cursor: pointer;
+            font-size: 28px;
+        }
+        .kapatmaDüğmesi:hover {color: red;}
+    </style>
+</head>
+<body>
+    <h2>Kapatma düğmeli yaftalar</h2>
+    <p>Açılan yaftayı kapatmak için sağ üst köşedeki X düğmesini tıklayın:</p>
+
+    <div class="yafta">
+        <düğme class="yaftalar" onclick="şehriGöster (event, 'Londra')">Londra</düğme>
+        <düğme class="yaftalar" onclick="şehriGöster (event, 'Paris')" id="varsayılıAçık">Paris</düğme>
+        <düğme class="yaftalar" onclick="şehriGöster (event, 'Tokyo')">Tokyo</düğme>
+    </div>
+    <div id="Londra" class="yaftaİçeriği">
+        <span onclick="this.parentElement.style.display='none'" class="kapatmaDüğmesi">&times</span>
+        <h3>Londra</h3>
+        <p>Londra İngiltere'nin başkentidir.</p>
+    </div>
+    <div id="Paris" class="yaftaİçeriği">
+        <span onclick="this.parentElement.style.display='none'" class="kapatmaDüğmesi">&times</span>
+        <h3>Paris</h3>
+        <p>Paris Fransa'nın başkentidir.</p> 
+    </div>
+    <div id="Tokyo" class="yaftaİçeriği">
+        <span onclick="this.parentElement.style.display='none'" class="kapatmaDüğmesi">&times</span>
+        <h3>Tokyo</h3>
+        <p>Tokyo Japonya'nın başkentidir.</p>
+    </div>
+
+    <script>
+        function şehriGöster (olay, şehirAdı) {
+            var i, yaftaDetayı, yaftalar;
+            yaftaDetayı = document.getElementsByClassName ("yaftaİçeriği");
+            for (i=0; i < yaftaDetayı.length; i++) yaftaDetayı[i].style.display = "none";
+            yaftalar = document.getElementsByClassName ("yaftalar");
+            for (i = 0; i < yaftalar.length; i++) yaftalar[i].className = yaftalar[i].className.replace (" actif", "");
+            document.getElementById (şehirAdı).style.display = "block";
+            olay.currentTarget.className += " actif";
+        } // şehriGöster(..) fonksiyonu sonu...
+
+        document.getElementById ("varsayılıAçık").click();
+    </script>
+</body>
+</html>

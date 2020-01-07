@@ -1,0 +1,45 @@
+<!DOCTYPE html (ha156.html: Daimi değişmez sol seyrüsefer menüsü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background-color:Sienna;
+            color:Silver;}
+        .kenarseyrü {height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: Purple;
+            overflow-x: hidden;
+            padding-top: 20px;}
+        .kenarseyrü a {padding: 6px 6px 6px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: RosyBrown;
+            display: block;}
+        .kenarseyrü a:hover {color: Plum;}
+        .gövde {margin-left: 200px;} /* kenarseyrü genişliğiyle aynı */
+        @media screen and (max-height: 450px) {
+            .kenarseyrü {padding-top: 15px;}
+            .kenarseyrü a {font-size: 18px;} }
+    </style>
+</head>
+<body>
+    <div class="gövde">
+        <h2 style="color:Red;">Daimi KenarSeyrü Örneği</h2>
+        <p>Bu sol kenarseyrüsefer menüsü daimi görüntüdedir.</p>
+        <p>Açma/kapama canlandırması mevcut değildir.</p>
+    </div>
+
+    <div class="kenarseyrü">
+        <a href="#">Hakkımızda</a>
+        <a href="#">Ürünlerimiz</a>
+        <a href="#">Müşterilerimiz</a>
+        <a href="#">Bayilerilerimiz</a>
+        <a href="#">İrtibat</a>
+    </div>
+</body>
+</html>

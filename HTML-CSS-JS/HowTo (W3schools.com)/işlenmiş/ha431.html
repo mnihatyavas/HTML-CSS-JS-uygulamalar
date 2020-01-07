@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha431.html: Tarayıcıda simüle edilen mobil akıllı telefon örneği.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Peru;}
+        .mobilİçerik {
+            max-width: 480px;
+            margin: auto;
+            background-color: #555;
+            height: 500px;
+            color: MintCream;
+            border-radius: 10px;}
+        .üstseyrü {
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+            margin-bottom:5em;}
+        .üstseyrü #sörflerim {display: none;}
+        .üstseyrü a {
+            color: Snow;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            display: block;}
+        .üstseyrü a.ikon {
+            background: black;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;}
+        .üstseyrü a:hover {
+            background-color: Olive;
+            color: Red;}
+        .aktif {
+            background-color: SteelBlue;
+            color: Snow;}
+    </style>
+</head>
+<body>
+    <!-- Bir mobil akıllı telefonu / tableti simüle ediyoruz -->
+    <div class="mobilİçerik">
+
+        <!-- Üst Seyrüsefer Menüsü -->
+        <div class="üstseyrü">
+            <a href="#" class="aktif">Logo&ensp;
+                <img src="resim/dünya.png" height="15" width="25" alt="" />
+            </a>
+            <div id="sörflerim">
+                <a href="#">Haberler</a>
+                <a href="#">İletişim</a>
+                <a href="#">Hakkımızda</a>
+            </div>
+            <a href="javascript:void(0);" class="ikon" onclick="açKapa()">
+                <img src="resim/çubuklar.png" height="15" alt=""/>
+            </a>
+        </div>
+
+    <main style="padding-left:16px">
+        <h3>Dikey Mobil Seyrüçubuk</h3>
+        <p>Bu örnek bir seyrüsefer menünün mobil/akıllı telefonlarda nasıl görünebileceğini sergilemektedir.</p>
+        <p>Menüleri açıp kapamak için sağ üst köşedeki hamburger (üç çubuklu) dügmeyi tıklayın.</p>
+    </main>
+
+    <!-- Mobil akıllı telefon / tablet görüntüsü sonu -->
+    </div>
+
+    <script>
+        function açKapa() {
+            var x = document.getElementById ("sörflerim");
+            if (x.style.display === "block") x.style.display = "none";
+            else x.style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html (ha173.html: Tam-ekran örtüşmeli anlık açma/kapama seyrü menüsü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <script>
+        function seyrüyüAç() {document.getElementById ("seyrüm").style.display = "block";}
+        function seyrüyüKapa() {document.getElementById ("seyrüm").style.display = "none";}
+    </script>
+    <style>
+        body {font-family: 'Lato', sans-serif;
+            background-color:Maroon;
+            color:Gold;}
+        h2 {color:Cyan;}
+        .örtüşüm {height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(10,130,100, 0.9);}
+        .örtüşümİçeriği {position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;}
+        .örtüşüm a {padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: Magenta;
+            display: block;}
+        .örtüşüm a:hover, .örtüşüm a:focus {color: LightYellow;}
+        .örtüşüm .kapaDüğmesi {position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;}
+
+        @media screen and (max-height: 450px) {
+            .örtüşüm a {font-size: 20px}
+            .örtüşüm .kapaDüğmesi {font-size: 40px;
+                top: 15px;
+                right: 35px;} }
+    </style>
+</head>
+<body>
+    <div id="seyrüm" class="örtüşüm">
+        <a href="javascript:void(0)" class="kapaDüğmesi" onclick="seyrüyüKapa()">&times;</a>
+        <div class="örtüşümİçeriği">
+            <a href="#">Hakkımızda</a>
+            <a href="#">Ürünlerimiz</a>
+            <a href="#">Müşterilerimiz</a>
+            <a href="#">Bayilerilerimiz</a>
+            <a href="#">İrtibat</a>
+        </div>
+    </div>
+
+    <h2>Tamekran Örtüşüm Seyrü Örneği</h2>
+    <p>Alttaki "aç" tıklandığında tam ekranı anlık kaplayan ve tekrar kaybolan seyrüsefer menüsü görünecektir:</p>
+    <span style="font-size:30px;cursor:pointer; color:Green;" onclick="seyrüyüAç()">&#9776; aç</span>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html (ha155.html: Sağ kenara sınırlı açılıp kapanan seyrüsefer menüsü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <script>
+        function seyrüyüAç() {document.getElementById ("kenarSeyrüm").style.width = "250px";}
+        function seyrüyüKapa() {document.getElementById ("kenarSeyrüm").style.width = "0";}
+    </script>
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background-color:SaddleBrown;
+            color:Pink;}
+        .kenarseyrü {height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: SeaGreen;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;}
+        .kenarseyrü a {padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: Red;
+            display: block;
+            transition: 0.5s;}
+        .kenarseyrü a:hover {color: #f1f1f1;}
+        .kenarseyrü .kapaDüğmesi {position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;}
+        @media screen and (max-height: 450px) {
+            .kenarseyrü {padding-top: 15px;}
+            .kenarseyrü a {font-size: 18px;} }
+    </style>
+</head>
+<body>
+    <h2>Canlandırmalı Kenarseyrü Tam Ekran Örneği</h2>
+    <p>Aşağıdaki düğmeyi tıklayarak sağa sınırlı seyrüsefer menüsünü açabilirsiniz.</p>
+    <span style="font-size:30px; cursor:pointer; color:PowderBlue;" onclick="seyrüyüAç()">&#9776; aç</span>
+
+    <div id="kenarSeyrüm" class="kenarseyrü">
+        <a href="javascript:void(0)" class="kapaDüğmesi" onclick="seyrüyüKapa()">&times;</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Ürünlerimiz</a>
+        <a href="#">Müşterilerimiz</a>
+        <a href="#">Bayilerilerimiz</a>
+        <a href="#">İrtibat</a>
+    </div>
+</body>
+</html>

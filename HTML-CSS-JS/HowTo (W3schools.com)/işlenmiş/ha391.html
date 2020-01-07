@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha391.html: Genişliğe duyarlı üst seyrüçubuğundaki açılır kapanır ikonlu sarkanmenü örneği.</title>
+    <style>
+        body {
+            margin:0;
+            font-family:Arial;
+            background-color:OliveDrab;
+            color:Cyan;}
+        .üstseyrü {
+            overflow: hidden;
+            background-color: #333;
+            margin-bottom:3em;}
+        .üstseyrü a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;}
+        .üstseyrü a.aktif {
+            background-color: Tomato;
+            color: yellow;}
+        .üstseyrü .çizgiliİkon {display: none;}
+        .sarkanMenü {
+            float: left;
+            overflow: hidden;}
+        .sarkanMenü .sarkanDüğme {
+            font-size: 17px;    
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;}
+        .aşağı:before {content:"\25bc";}
+        .sarkanİçerik {
+            display: none;
+            position: absolute;
+            background-color: PaleGoldenRod;
+            min-width: 158px;
+            box-shadow: 0px 8px 16px 0px rgba(250,200,20,0.9);
+            z-index: 1;}
+        .sarkanİçerik a {
+            float: none;
+            color: Blue;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;}
+        .üstseyrü a:hover, .sarkanMenü:hover .sarkanDüğme {
+            background-color: PaleVioletRed;
+            color: white;}
+        .sarkanİçerik a:hover {
+            background-color: Purple;
+            color: SpringGreen;}
+        .sarkanMenü:hover .sarkanİçerik {display: block;}
+        @media screen and (max-width: 600px) {
+            .üstseyrü a:not(:first-child), .sarkanMenü .sarkanDüğme {display: none;}
+            .üstseyrü a.çizgiliİkon {
+                float: right;
+                display: block;
+                background-color:blue;
+                color:pink;} }
+        @media screen and (max-width: 600px) {
+            .üstseyrü.duyarlı {position: relative;}
+            .üstseyrü.duyarlı .çizgiliİkon {
+                position: absolute;
+                right: 0;
+                top: 0;}
+            .üstseyrü.duyarlı a {
+                float: none;
+                display: block;
+                text-align: left;}
+            .üstseyrü.duyarlı .sarkanMenü {float: none;}
+            .üstseyrü.duyarlı .sarkanİçerik {position: relative;}
+            .üstseyrü.duyarlı .sarkanMenü .sarkanDüğme {
+                display: block;
+                width: 100%;
+                text-align: left;} }
+    </style>
+</head>
+<body>
+    <div class="üstseyrü" id="üstseyrüm">
+        <a href="#" class="aktif">Anasayfa</a>
+        <a href="#">Hakkımızda</a>
+        <div class="sarkanMenü">
+            <button class="sarkanDüğme">Sarkanmenü&ensp;
+                <b class="aşağı"></b>
+            </button>
+            <div class="sarkanİçerik">
+                <a href="#">Haberler</a>
+                <a href="#">Spor</a>
+                <a href="#">Müzik</a>
+                <a href="#">Filim</a>
+                <a href="#">Belgesel</a>
+            </div>
+        </div> 
+        <a href="#">İletişim</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="çizgiliİkon" onclick="açKapa()">&#9776;</a>
+    </div>
+
+    <div style="padding-left:16px">
+        <h3>Sarkanmenülü Duyarlı Üstseyrü</h3>
+        <p>Tarayıcı enini daraltarak üstseyrü duyarlılığını gözlemleyin.</p>
+        <p>Sarkanmenü üzerindeyken açılan içerikleri gezinin.</p>
+        <p>Sarkanmenü üzerinden ayrıldığınızda içerikler de kaybolacaktır.</p>
+    </div>
+
+    <script>
+        function açKapa() {
+            var x = document.getElementById ("üstseyrüm");
+            if (x.className === "üstseyrü") x.className += " duyarlı";
+            else x.className = "üstseyrü";
+        } // açKapa sonu...
+    </script>
+</body>
+</html>

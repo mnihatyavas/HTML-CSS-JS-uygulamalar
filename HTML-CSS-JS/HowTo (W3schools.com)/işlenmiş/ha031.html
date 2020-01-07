@@ -1,0 +1,60 @@
+<!DOCTYPE html (ha031.html: Akordiyonlu aç-kapa bölümleri)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe"/>
+    <style>
+        .akordiyon {background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: solid 0.1px;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.9s;}
+        .aktif .akordiyon: hover {background-color: #ccc;}
+        .panel {padding: 0 18px;
+            display: none;
+            background-color: cyan;
+            overflow: hidden;}
+    </style>
+</head>
+<body style="background:HotPink; color:Green">
+    <h2>İçerdikleri metnin açılıp kapanabildiği bölümler:</h2>
+
+    <button class="akordiyon">Bölüm 1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="akordiyon">Bölüm 2</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="akordiyon">Bölüm 3</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="akordiyon">Bölüm 4</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <script>
+        var bölümler = document.getElementsByClassName ("akordiyon");
+        var i;
+
+        for (i = 0; i < bölümler.length; i++) {
+            bölümler[i].addEventListener ("click", function() {
+                this.classList.toggle ("aktif");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") panel.style.display = "none";
+                else panel.style.display = "block";
+            }); // böl.. ifadesi sonu...
+        } // for döngüsü sonu...
+    </script>
+</body>
+</html>

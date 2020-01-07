@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ha281.html: Eþit baðlantý uzunluklu duyarlý seyrüçubuk örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Khaki;
+            color:Green;}
+        * {box-sizing: border-box}
+        .seyrüçubuk {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;}
+        .seyrüçubuk a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            width: 25%; /* Dört eþit uzunlukta baðlantý */
+            text-align: center;}
+        .seyrüçubuk a:hover {
+            background-color: #000;
+            color:Yellow;}
+        .seyrüçubuk a.aktif {
+            background-color: #4CAF50;
+            color:tomato;}
+        @media screen and (max-width: 500px) {
+            .seyrüçubuk a {
+                float: none;
+                display: block;
+                width: 100%;
+                text-align: left;} }
+    </style>
+</head>
+<body>
+    <h2>Eþit Uzunluklu Baðlantýlý Duyarlý Seyrüçubuk</h2>
+    <p>Tarayýcýyý 500px altýna darattýðýnýzda seyrüçubuk baðlantýlarý yanyanadan altalta deðiþecektir; etkiyi deneyin:</p>
+
+    <div class="seyrüçubuk">
+        <a class="aktif" href="#">Anasayfa</a> 
+        <a href="#">Araþtýr</a> 
+        <a href="#">Ýletiþim</a> 
+        <a href="#">Giriþ</a>
+    </div>
+</body>
+</html>

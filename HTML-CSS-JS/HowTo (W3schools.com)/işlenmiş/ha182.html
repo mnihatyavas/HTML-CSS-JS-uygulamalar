@@ -1,0 +1,69 @@
+<!DOCTYPE html (ha182.html: Tuval dışı sol kenar menü açılışında gövde çerçeve renginin değişmesi örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background-color:Yellow;
+            transition: background-color .5s;}
+        .kenarSeyrü {height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;}
+        .kenarSeyrü a {padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;}
+        .kenarSeyrü a:hover {color: LightYellow;}
+        .kenarSeyrü .kapaDüğmesi {position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;}
+        #gövdeMetni {background-color: SlateGray;
+            color: Tan;
+            height: 100%;
+            transition: margin-left .5s;
+            padding: 20px;}
+        @media screen and (max-height: 450px) {
+            .kenarSeyrü {padding-top: 15px;}
+            .kenarSeyrü a {font-size: 18px;} }
+    </style>
+    <script>
+        function seyrüyüAç() {
+            document.getElementById ("kenarSeyrüm").style.width = "250px";
+            document.getElementById ("gövdeMetni").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(255,50,100,0.4)";
+        } // fonksiyon sonu...
+
+        function seyrüyüKapa() {
+            document.getElementById ("kenarSeyrüm").style.width = "0";
+            document.getElementById ("gövdeMetni").style.marginLeft= "0";
+            document.body.style.backgroundColor = "green";
+        } // fonksiyon sonu...
+    </script>
+</head>
+<body>
+    <div id="kenarSeyrüm" class="kenarSeyrü">
+        <a href="javascript:void(0)" class="kapaDüğmesi" onclick="seyrüyüKapa()">&times;</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Ürünlerimiz</a>
+        <a href="#">Bayilerimiz</a>
+        <a href="#">Müşterilerimiz</a>
+        <a href="#">İletişim</a>
+    </div>
+
+    <div id="gövdeMetni">
+        <h2>Gövdemetnini sağa iten Kenarseyrü Örneği</h2>
+        <p>Alttaki aç düğmesini tıklarsanız kenarseyrü menüsü soldan gövdemetnini sağa iterek açılacaktır. Ayrıca gövdemetninin çerçeve renkleri de değişecektir.</p>
+        <span style="font-size:30px;cursor:pointer; color:DeepPink;" onclick="seyrüyüAç()">&#9776; aç</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html (ha071.html: Tam sayfa açılan etiket başlıkları örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" />
+    <style>
+        * {box-sizing: border-box}
+        body, html {height: 100%;
+            margin: 0;
+            font-family: Arial;}
+        .yafta {background-color: #555;
+            color: MintCream;
+            float: left;
+            border: 2px solid #ddd;
+            border-bottom: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;}
+        .yafta:hover {background-color: #777;}
+        .yaftaİçeriği {color: MintCream;
+            border: 10px solid #ddd;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;}
+        #Anasayfa {background-color: red;}
+        #Haberler {background-color: green;}
+        #İrtibat {background-color: blue;}
+        #Hakkında {background-color: orange;}
+    </style>
+</head>
+<body>
+    <button class="yafta" onclick="sayfayıAç ('Anasayfa', this, 'red')">Anasayfa</button>
+    <button class="yafta" onclick="sayfayıAç ('Haberler', this, 'green')" id="varsayılıAçık">Haberler</button>
+    <button class="yafta" onclick="sayfayıAç ('İrtibat', this, 'blue')">İrtibat</button>
+    <button class="yafta" onclick="sayfayıAç ('Hakkında', this, 'orange')">Hakkında</button>
+
+    <div id="Anasayfa" class="yaftaİçeriği">
+        <h3>Anasayfa</h3>
+        <p>Anasayfa kalbimizin attığı yerdir...</p>
+    </div>
+
+    <div id="Haberler" class="yaftaİçeriği">
+        <h3>Haberler</h3>
+        <p>Bu güzel gün üzerine birkaç haber!</p> 
+    </div>
+
+    <div id="İrtibat" class="yaftaİçeriği">
+        <h3>İrtibat</h3>
+        <p>İletişim kuralım, veya uğrayın bir fincan kahve ikram edelim.</p>
+    </div>
+
+    <div id="Hakkında" class="yaftaİçeriği">
+        <h3>Hakkında</h3>
+        <p>Biz kimiz ve ne yapmaktayız?..</p>
+    </div>
+
+    <script>
+        function sayfayıAç (sayfaAdı, element, renk) {
+            var i, içerikler, yaftalar;
+            içerikler = document.getElementsByClassName ("yaftaİçeriği");
+            for (i = 0; i < içerikler.length; i++) içerikler[i].style.display = "none";
+            yaftalar = document.getElementsByClassName ("yafta");
+            for (i = 0; i < yaftalar.length; i++) yaftalar[i].style.backgroundColor = "";
+            document.getElementById (sayfaAdı).style.display = "block";
+            element.style.backgroundColor = renk;
+        } // fonksiyon sonu...
+        document.getElementById ("varsayılıAçık").click();
+    </script>
+</body>
+</html>

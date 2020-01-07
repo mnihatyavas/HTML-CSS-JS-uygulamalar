@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha432.html: Mobil akıllı telefon küçük ekran simülasyonu örneği.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:MediumAquaMarine;}
+        .mobilİçerik {
+            max-width: 480px;
+            margin: auto;
+            background-color: #444;
+            height: 500px;
+            color: MintCream;
+            border-radius: 10px;}
+        .üstseyrü {
+            overflow: hidden;
+            background-color: #111;
+            position: relative;
+            margin-bottom:3em;}
+        .üstseyrü #sörflerim {display: none;}
+        .üstseyrü a {
+            float: left;
+            color: yellow;
+            padding: 10px 12px;
+            text-decoration: none;
+            font-size: 17px;}
+        .üstseyrü a.ikon {float: right;}
+        .üstseyrü a:hover {
+            background-color: MidnightBlue;
+            color: Linen;}
+        .aktif {
+            background-color: #4CAF50;
+            color: Red;}
+    </style>
+</head>
+<body>
+    <!-- Bir akıllı telefon / tablet görüntü simülasyonu -->
+    <div class="mobilİçerik">
+
+        <!-- Üst Seyrüsefer Menüsü -->
+        <div class="üstseyrü">
+            <a href="#" class="aktif">Logo&ensp;
+                <img src="resim/dünya.png" height="15" alt="" />
+            </a>
+            <div id="sörflerim">
+                <a href="#">Haberler</a>
+                <a href="#">İletişim</a>
+                <a href="#">Hakkımızda</a>
+            </div>
+            <a href="javascript:void(0);" class="ikon" onclick="açKapa()">
+                <img src="resim/çubuklar.png" height="15" alt="" />
+            </a>
+        </div>
+
+        <main style="padding-left:16px">
+            <h3>Yatay Mobil Seyrüçubuğu</h3>
+            <p>Bu örnek bir seyrüsefer menünün mobil akıllı telefonda nasıl görüneceğini göstermektedir.</p>
+            <p>Menüyü açıp kapamak için sağ üst köşedeki üç çubuklu hamburger menü düğmesini tıklayın.</p>
+            <p style="color:red;"><strong>Bu örnek özellikle çok seçenekli seyrüsefer menülerinde kullanılmamalıdır, yoksa kısa kalan ekran genişliği nedeniyle menü seçenekleri kırılacaklardır.</strong></p>
+        </main>
+
+    <!-- Akıllı telefon / tablet görüntüsü sonu -->
+    </div>
+
+    <script>
+        function açKapa() {
+            var x = document.getElementById ("sörflerim");
+            if (x.style.display === "block") x.style.display = "none";
+            else x.style.display = "block";
+        } // func.. sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html (ha031.html: Açýlýr (kapalý) yafta baþlýk açýklamalarý örneði.)>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background:MidnightBlue;
+            color:MintCream;}
+        .yafta {
+            background-color: #aaa;
+            float: left;
+            border: 2px solid #ddd;
+            border-top: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+        .yafta:hover {background-color: #777; color: OldLace;}
+        .yaftaAçýklamasý {
+            color: MediumAquaMarine;
+            display: none;
+            padding: 50px;
+            text-align: center;
+        }
+        #Londra {background-color: red;}
+        #Paris {background-color: green;}
+        #Tokyo {background-color: blue;}
+        #Oslo {background-color: orange;}
+    </style>
+</head>
+<body>
+    <h1>Yafta Baþlýklarý</h1>
+    <p>Yaftalý menü içindeki düðmeleri týklayarak açýklamalarý görün:</p>
+
+    <div id="Londra" class="yaftaAçýklamasý">
+        <h1>Londra</h1>
+        <p>Londra Ýngiltere'nin baþþehridir.</p>
+    </div>
+
+    <div id="Paris" class="yaftaAçýklamasý">
+        <h1>Paris</h1>
+        <p>Paris Fransa'nýn baþþehridir.</p> 
+    </div>
+
+    <div id="Tokyo" class="yaftaAçýklamasý">
+        <h1>Tokyo</h1>
+        <p>Tokyo Japonya'nýn baþþehridir.</p>
+    </div>
+
+    <div id="Oslo" class="yaftaAçýklamasý">
+        <h1>Oslo</h1>
+        <p>Oslo Norveç'in baþþehridir.</p>
+    </div>
+
+    <button class="yafta" onclick="þehrinAçýklamasýnýGör ('Londra', this, 'red')">Londra</button>
+    <button class="yafta" onclick="þehrinAçýklamasýnýGör ('Paris', this, 'green')">Paris</button>
+    <button class="yafta" onclick="þehrinAçýklamasýnýGör ('Tokyo', this, 'blue')">Tokyo</button>
+    <button class="yafta" onclick="þehrinAçýklamasýnýGör ('Oslo', this, 'orange')">Oslo</button>
+
+    <script>
+        function þehrinAçýklamasýnýGör (þehirAdý, düðme, düðmeRengi) {
+            var i, açýklamalar, yaftalar;
+            açýklamalar = document.getElementsByClassName ("yaftaAçýklamasý");
+            for (i = 0; i < açýklamalar.length; i++) açýklamalar[i].style.display = "none";
+            yaftalar = document.getElementsByClassName ("yafta");
+            for (i = 0; i < yaftalar.length; i++) yaftalar[i].style.backgroundColor = "";
+            document.getElementById (þehirAdý).style.display = "block";
+            düðme.style.backgroundColor = düðmeRengi;
+            düðme.style.color = "MintCream";
+        } // þehrinAçýklamasýnýGör(..) fonksiyonu sonu...
+    </script>
+</body>
+</html>

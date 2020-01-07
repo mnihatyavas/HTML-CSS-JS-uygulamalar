@@ -1,0 +1,56 @@
+<!DOCTYPE html (ha161.html: Tarayıcı ebatına duyarlı üstte veya solda menü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {margin: 0;
+            font-family: "Lato", sans-serif;
+            background-color:MediumPurple;
+            color:LightYellow;}
+        h2, h3 {color:Gold;}
+        .kenarçubukMenüsü {margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: black;
+            position: fixed;
+            height: 100%;
+            overflow: auto;}
+        .kenarçubukMenüsü a {display: block;
+            padding: 16px;
+            color:MintCream;
+            text-decoration: none;}
+        .kenarçubukMenüsü a.active {background-color: #4CAF50;
+            color: white;}
+        .kenarçubukMenüsü a:hover:not(.active) {background-color: #777;
+            color: white;}
+        div.içerik {margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;} /* kaydırma çubuğu daim olur */
+
+        @media screen and (max-width: 700px) {
+            .kenarçubukMenüsü {width: 100%;
+                height: auto;
+                position: relative;}
+            .kenarçubukMenüsü a {float: left;}
+            div.içerik {margin-left: 0;} }
+        @media screen and (max-width: 600px) {
+            .kenarçubukMenüsü a {text-align:center;
+                float: none;} }
+    </style>
+</head>
+<body>
+    <div class="kenarçubukMenüsü">
+        <a class="active" href="#home">Anasayfa</a>
+        <a href="#haberler">Haberler</a>
+        <a href="#iletişim">İrtibat</a>
+        <a href="#hakkımızda">Hakkımızda</a>
+    </div>
+
+    <div class="içerik">
+        <h2>Duyarlı Kenarçubuk Menüsü Örneği</h2>
+        <p>Bu örnekte kullanılan "@media screen/ortam ekran" duyarlılığı, ekran ebatı 700-600px arası menüyü üst tek satıra alacaktır.</p>
+        <p>Yani  ebat 700px'i geçince sol kenarda oluşacak, 700-600px arası üstte tek satır olacak ve 600px altında ise üstte çoklu ve ortalanmış satırlı menü oluşacaktır.</p>
+        <h3>Tarayıcı ebatını değiştirerek duyarlılık etkisini gözlemleyin.</h3>
+    </div>
+</body>
+</html>

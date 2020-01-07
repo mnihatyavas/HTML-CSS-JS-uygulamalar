@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" içerik="width=device-width, initial-scale=1">
+    <title>ha331.html: Sticky seyrüçubuk örneği.</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 28px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: MistyRose;
+            color: MediumVioletRed;}
+        .başlık {
+            background-color: Moccasin;
+            padding: 30px;
+            text-align: center;}
+        #seyrüçubuk {
+            overflow: hidden;
+            background-color: #333;}
+        #seyrüçubuk a {
+            float: left;
+            display: block;
+            color: Linen;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;}
+        #seyrüçubuk a:hover {
+            background-color: MediumTurquoise;
+            color: Magenta;}
+        #seyrüçubuk a.aktif {
+            background-color: #4CAF50;
+            color: Yellow;}
+        .içerik {padding: 16px;}
+        .yapış {
+            position: fixed;
+            top: 0;
+            width: 100%;}
+        .yapış + .içerik {padding-top: 60px;}
+    </style>
+</head>
+<body>
+    <div class="başlık">
+        <h2>Aşağı Kaydır</h2>
+        <p>Yapışkan etkiyi görmek için sayfayı aşağıya kaydırın.</p>
+    </div>
+
+    <div id="seyrüçubuk">
+        <a class="aktif" href="javascript:void (0)">Anasayfa</a>
+        <a href="javascript:void (0)">Haberler</a>
+        <a href="javascript:void (0)">İletişim</a>
+    </div>
+
+    <div class="içerik">
+        <h3>Yapışkan Seyrüsefer Örneği</h3>
+        <p>Seyrüçubuk, aşağı kaydırırken sayfa tepesine ulaştığında takılıp kalacak, tepeye yapışacaktır.</p>
+        <p>Kaydırmayı mümkün kılmak için tampon metin... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Kaydırmayı mümkün kılmak için tampon metin... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Kaydırmayı mümkün kılmak için tampon metin... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Kaydırmayı mümkün kılmak için tampon metin... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Kaydırmayı mümkün kılmak için tampon metin... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Kaydırmayı mümkün kılmak için tampon metin... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Kaydırmayı mümkün kılmak için tampon metin... Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
+
+    <script>
+        window.onscroll = function() {fonksiyonum()};
+
+        var seyrüÇubuk = document.getElementById ("seyrüçubuk");
+        var takıl = seyrüÇubuk.offsetTop;
+
+        function fonksiyonum() {
+            if (window.pageYOffset >= takıl) seyrüçubuk.classList.add ("yapış")
+            else seyrüçubuk.classList.remove ("yapış");
+        }
+    </script>
+</body>
+</html>

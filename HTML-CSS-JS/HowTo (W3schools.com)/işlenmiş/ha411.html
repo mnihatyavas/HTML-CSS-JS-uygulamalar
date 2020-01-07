@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha411.html: Üzerindeyken zıplayan yukarı ikonlu menü düğmesi örneği.</title>
+    <style>
+        body {
+            background-color:SlateGray;
+            color:Gold;}
+        .zıplayanDüğme {
+            background-color: #3498DB;
+            color: OrangeRed;
+            padding: 16px;
+            font-size: 16px;
+            border: none;}
+        .yukarı:after {content:"\25B2";}
+        .zıplayanMenü {
+            position: relative;
+            display: inline-block;}
+        .zıplayanİçerik {
+            display: none;
+            position: absolute;
+            background-color: Peru;
+            min-width: 164px;
+            bottom: 50px;
+            z-index: 1;}
+        .zıplayanİçerik a {
+            color: PaleGreen;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;}
+        .zıplayanİçerik a:hover {background-color: Purple;}
+        .zıplayanMenü:hover .zıplayanİçerik {display: block;}
+        .zıplayanMenü:hover .zıplayanDüğme {background-color: #298099;}
+    </style>
+</head>
+<body>
+    <h1>Zıplayan Menü Üzeri</h1>
+    <p>Dolgu metni...</p>
+    <p>Dolgu metni...</p>
+    <p>Zıplayan menü içeriklerini görmek için fareyi düğme üzerinde gezdirin.</p>
+
+    <div class="zıplayanMenü">
+        <button class="zıplayanDüğme">Zıplayan Menü&ensp;<b class="yukarı"></b></button>
+        <div class="zıplayanİçerik">
+            <a href="#">Anasayfa</a>
+            <a href="#">Hizmetlerimiz</a>
+            <a href="#">Hakkımızda</a>
+            <a href="#">İletişim</a>
+        </div>
+    </div>
+</body>
+</html>

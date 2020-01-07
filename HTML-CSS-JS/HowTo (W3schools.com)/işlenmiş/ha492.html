@@ -1,0 +1,56 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" />
+    <title>ha492.html: Yatay genişliğe hizalı düğme grupları örneği.</title>
+    <style>
+        body {
+            margin: 0;
+            background-color:SlateGray;
+            color:Orange;}
+        h1, p {text-align: center;}
+        p {margin-top:3em;}
+        .düğmeGrubu button {
+            background-color: #4CAF50;
+            border: 3px solid Purple;
+            color: Cyan;
+            padding: 10px 24px;
+            cursor: pointer;
+            float: left;}
+        .düğmeGrubu:after {
+            content: "";
+            clear: both;
+            display: table;}
+        .düğmeGrubu button:not(:last-child) {
+            border-right: none;}
+        .düğmeGrubu button:hover {
+            background-color: Olive;
+            color: Yellow;
+            transition: color 1s;}
+    </style>
+</head>
+<body>
+    <h1>Hizalı Düğme Grupları</h1>
+
+    <p>Bir grupta iki düğme:</p>
+    <div class="düğmeGrubu" style="width:100%">
+        <button style="width:50%">Apple</button>
+        <button style="width:50%">Sony</button>
+    </div>
+
+    <p>Bir grupta üç düğme:</p>
+    <div class="düğmeGrubu" style="width:100%">
+        <button style="width:33.3%">Apple</button>
+        <button style="width:33.3%">Samsung</button>
+        <button style="width:33.3%">Sony</button>
+    </div>
+
+    <p>Bir grupta dört düğme:</p>
+    <div class="düğmeGrubu" style="width:100%">
+        <button style="width:25%">Apple</button>
+        <button style="width:25%">Samsung</button>
+        <button style="width:25%">Sony</button>
+        <button style="width:25%">Nokia</button>
+    </div>
+</body>
+</html>

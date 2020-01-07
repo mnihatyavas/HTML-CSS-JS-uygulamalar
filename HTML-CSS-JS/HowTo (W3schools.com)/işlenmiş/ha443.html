@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha443.html: Tamekran anlık kapanan duyarlı ve saydam seyrü menüsü örneği.</title>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: Maroon;
+            color:Lime;}
+        .perde {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(25,255,170,0.95);}
+        .perdeİçeriği {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;}
+        .perde a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: Olive;
+            display: block;
+            transition: 0.5s;}
+        .perde a:hover, .perde a:focus {color: Red;}
+        .perde .kapaDüğmesi {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;}
+        @media screen and (max-height: 450px) {
+            .perde a {font-size: 20px}
+            .perde .kapaDüğmesi {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;} }
+    </style>
+</head>
+<body>
+    <div id="seyrüm" class="perde">
+        <a href="javascript:void(0)" class="kapaDüğmesi" onclick="seyrüyüKapa()">&times;</a>
+        <div class="perdeİçeriği">
+            <a href="#">Hakkımızda</a>
+            <a href="#">Ürünlerimiz</a>
+            <a href="#">Müşterilerimiz</a>
+            <a href="#">Bayilerimiz</a>
+            <a href="#">İletişim</a>
+        </div>
+    </div>
+
+    <main>
+        <h2>Tamekran Anlık Kapanan Seyrü</h2>
+        <p>Tamekran anlık kapanan saydam seyrüsefer perde menüsünü açmak için alttaki "aç" düğmesini tıklayın.</p>
+        <p>Tarayıcı yüksekliği duyarlılığını da test edebiirsiniz:</p>
+
+        <span style="font-size:30px;cursor:pointer" onclick="seyrüyüAç()">&#9776; aç</span>
+    </main>
+
+    <script>
+        function seyrüyüAç() {document.getElementById ("seyrüm").style.display = "block";}
+        function seyrüyüKapa() {document.getElementById ("seyrüm").style.display = "none";}
+    </script>
+</body>
+</html>

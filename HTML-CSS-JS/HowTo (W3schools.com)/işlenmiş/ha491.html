@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" />
+    <title>ha491.html: Yatay düğme gruplu seyrüsefer örneği.</title>
+    <style>
+        body {
+            background-color:Gray;
+            color:Lime;}
+        .düğmeGrubu button {
+            background-color: #4CAF50;
+            border: 3px solid green;
+            padding: 10px 24px;
+            cursor: pointer;
+            margin-top:1em;
+            float: left;}
+        .düğmeGrubu button a {
+            color: Yellow;
+            text-decoration: none;}
+        .düğmeGrubu:after {
+            content: "";
+            clear: both;
+            display: table;}
+        .düğmeGrubu button:not(:last-child) {
+            border-right: none;}
+        .düğmeGrubu button:hover, button a:hover {
+            background-color: #3e8e41;
+            color:Tomato;
+            text-decoration: underline;
+            transition: color 1s;}
+    </style>
+</head>
+<body>
+    <h1>Düğme Gruplu Seyrüsefer</h1>
+
+    <div class="düğmeGrubu">
+        <button><a href="#">Apple</a></button>
+        <button><a href="#">Samsung</a></button>
+        <button><a href="#">Sony</a></button>
+        <button><a href="#">Nokia</a></button>
+    </div>
+</body>
+</html>

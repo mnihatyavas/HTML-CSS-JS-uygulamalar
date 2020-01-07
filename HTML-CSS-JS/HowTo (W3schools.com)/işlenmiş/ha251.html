@@ -1,0 +1,47 @@
+<!DOCTYPE html (ha251.html: Dip sýnýr çizgileriyle seyrüsefer baðlantýsý kurma örneði.)>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin:0;
+            background-color:MidnightBlue;
+            color: SpringGreen;
+            font-size:20px;}
+        .üstseyrü {
+            overflow: hidden;
+            background-color: Olive;}
+        .üstseyrü a {
+            float: left;
+            display: block;
+            color: Gold;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 5px solid transparent;}
+        .üstseyrü a:hover {border-bottom: 5px solid red;}
+        .üstseyrü a.actif {
+            border-bottom: 5px solid yellow;
+            color:Red;}
+    </style>
+</head>
+<body>
+    <div class="üstseyrü">
+        <a class="actif" href="#anasayfa">Anasayfa</a>
+        <a href="#haberler">Haberler</a>
+        <a href="#spor">Spor</a>
+        <a href="#film">Filim</a>
+        <a href="#müzik">Müzik</a>
+        <a href="#belgesel">Belgesel</a>
+        <a href="#iletiþim">Ýletiþim</a>
+    </div>
+
+    <div style="padding-left:16px">
+        <h2>Altsýnýrla Baðlantýlar</h2>
+        <p>Üst seyrüsefer menüçubuðu seçeneklerine geldiðinizde seçeneðin
+            altsýnýr çizgisi belirecek ve týklanýnca ilgili baðlantýya yöneleceðini
+            belirli kýlacaktýr.</p>
+    </div>
+</body>
+</html>

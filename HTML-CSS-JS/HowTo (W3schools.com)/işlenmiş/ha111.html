@@ -1,0 +1,33 @@
+<!DOCTYPE html (ha111.html: Tarayıcı ebatına duyarlı yatay tepe seyrüsefer çubuğu örneği.)>
+<html>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;
+            background:Purple;
+            color:Gold;}
+        .seyrüçubuk {width: 100%;
+            background-color: #555;
+            overflow: auto;}
+        .seyrüçubuk a {float: left;
+            padding: 12px;
+            color: PowderBlue;
+            text-decoration: none;
+            font-size: 22px;}
+        .seyrüçubuk a:hover {background-color: #000;}
+        .active {background-color: Olive;}
+        @media screen and (max-width: 500px) {
+            .seyrüçubuk a {float: none; display: block;}
+        }
+</style>
+<body>
+    <h2>İkonlu Duyarlı Seyrüsefer Çubuğu</h2>
+    <p>Duyarlı etkiyi görmek için tarayıcı ebatıyla oynayın.</p>
+
+    <div class="seyrüçubuk">
+        <a class="active" href="#"><img src="resim\ev.png" alt=" " height="30"/> Ev</a> 
+        <a href="#"><img src="resim\araştır.png" alt=" " height="30"/> Araştır</a> 
+        <a href="#"><img src="resim\zarf.png" alt=" " height="30"/> İletişim</a> 
+        <a href="#"><img src="resim\kullanıcı.png" alt=" " height="30"/> Giriş</a>
+    </div>
+</body>
+</html>

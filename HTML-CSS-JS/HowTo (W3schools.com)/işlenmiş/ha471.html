@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha471.html: Üzerindeyken duyarlı yatay sayfalama örneği.</title>
+    <style>
+        body {
+            background-color:Navy;
+            color:Fuchsia;}
+        .sayfalama a {
+            margin-top:5em;
+            color: Lime;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .5s;}
+        .sayfalama a.aktif {
+            background-color: dodgerblue;
+            color: Black;}
+        .sayfalama a:hover:not(.aktif) {background-color: Black;}
+        .sayfalama a:hover.aktif {color: Yellow;}
+    </style>
+</head>
+<body>
+    <h2>Sayfalama</h2>
+    <p>Duyarlı sayfalama örneğini test etmek için fareyi üzerinde gezdirin:</p>
+
+    <div class="sayfalama">
+        <a href="#">&laquo;</a> <!-- &#x00AB; -->
+        <a href="#">1</a>
+        <a class="aktif" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&#x00BB;</a> <!-- &raquo; -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ha282.html: Eþit uzunluklu ve ikonlu baðlantýlý duyarlý seyrüçubuk örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Khaki;
+            color:Blue;}
+        * {box-sizing: border-box}
+        .seyrüçubuk {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;}
+        .seyrüçubuk a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            width: 25%; /* Dört eþit uzunluklu baðlantý */
+            text-align: center;}
+        .seyrüçubuk a:hover {
+            background-color: #000;
+            color:Yellow;}
+        .seyrüçubuk a.aktif {
+            background-color: #4CAF50;
+            color:tomato;}
+        @media screen and (max-width: 500px) {
+            .seyrüçubuk a {
+                float: none;
+                display: block;
+                width: 100%;
+                text-align: left;} }
+    </style>
+</head>
+<body>
+    <h2>Eþit Uzunluklu ve Ýkonlu Baðlantýlý Duyarlý Seyrüçubuk</h2>
+    <p>Tarayýcýyý 500px altýna daraltýrsanýz yanyana seyrüçubuk baðlantýlarý altalta sýralanacaktýr; etkiyi test edin:</p>
+
+    <div class="seyrüçubuk">
+        <a class="aktif" href="#"><i class="fa fa-fw fa-home"></i> Anasayfa</a> 
+        <a href="#"><i class="fa fa-fw fa-search"></i> Araþtýrma</a> 
+        <a href="#"><i class="fa fa-fw fa-envelope"></i> Ýletiþim</a> 
+        <a href="#"><i class="fa fa-fw fa-user"></i> Giriþ</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha351.html: Üzerindeyken sarkan menüyü görüntüleme örneği.</title>
+    <style>
+        body {
+            background-color: Linen;
+            color: Maroon;}
+        .sarkmaDüğmesi {
+            background-color: #4CAF50;
+            color: Fuchsia;
+            padding: 16px;
+            font-size: 16px;
+            border: none;}
+        .sarkan {
+            position: relative;
+            display: inline-block;}
+        .sarkanKab {
+            display: none;
+            position: absolute;
+            background-color: LightSkyBlue;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+            z-index: 1;}
+        .sarkanKab a {
+            color: Magenta;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;}
+        .sarkanKab a:hover {
+            background-color: Olive;
+            color:Yellow;}
+        .sarkan:hover .sarkanKab {display: block;}
+        .sarkan:hover .sarkmaDüğmesi {
+            background-color: #3e7e41;
+            color: MintCream;}
+    </style>
+</head>
+<body>
+    <h2>Üzerindeyken Sarkanmenü</h2>
+    <p>Sarkan menüyü açmak için sözkonusu butonun üzerine geliniz.</p>
+
+    <div class="sarkan">
+        <button class="sarkmaDüğmesi">Sarkanmenü</button>
+        <div class="sarkanKab">
+            <a href="#a">Anasayfa</a>
+            <a href="#hb">Haberler</a>
+            <a href="#i">İletişim</a>
+            <a href="#hk">Hakkımızda</a>
+        </div>
+    </div>
+</body>
+</html>

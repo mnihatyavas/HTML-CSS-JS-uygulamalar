@@ -1,0 +1,73 @@
+<!DOCTYPE html (ha032html: İkonlu aç-kapa akordiyon bölümleri)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe"/>
+    <style>
+        .akordiyon {
+            background-color: #eee;
+            background:Orchid;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: solid 0.1px;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .aktif, .akordiyon:hover {background-color:MediumOrchid;}
+        .akordiyon:after {
+            content: '\2795'; /* İri + karakteri */
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .aktif:after {content: "\2796";} /* İri - karakteri */
+        .panel {
+            padding: 0 18px;
+            background-color: cyan;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.95s ease-out;
+        }
+    </style>
+</head>
+<body style="background:LightSeaGreen; color:Maroon;">
+    <h2>+/- sembollü akordiyon:</h2>
+    <p>Bu örnekte bölüm sonlarında, kapalıyken "artı", tıklanıp açıldığında ise "eksi" sembolü görünmektedir.</p>
+
+    <button class="akordiyon">Bölüm 1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="akordiyon">Bölüm 2</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="akordiyon">Bölüm 3</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="akordiyon">Bölüm 4</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <script>
+        var bölümler = document.getElementsByClassName ("akordiyon");
+        var i;
+
+        for (i = 0; i < bölümler.length; i++) {
+            bölümler[i].addEventListener ("click", function() {
+                this.classList.toggle ("aktif");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) panel.style.maxHeight = null;
+                else panel.style.maxHeight = panel.scrollHeight + "px";
+            }); // böl.. ifadesi sonu...
+        } // for döngüsü sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha372.html: Üst menüçubuktaki sarkanmenü düğmesinin tıklanma etkisi örneği.</title>
+    <style>
+        body {margin:0; background-color:SlateGray; color: Fuchsia;}
+        .seyrüçubuk {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom:3em;}
+        .seyrüçubuk a {
+            float: left;
+            font-size: 16px;
+            color: Cyan;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;}
+        .sarkanMenü {
+            float: left;
+            overflow: hidden;}
+        .ikon:before {content:"\25bc";}
+        .sarkanMenü .sarkanDüğme {
+            cursor: pointer;
+            font-size: 16px;    
+            border: none;
+            outline: none;
+            color: Cyan;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;}
+        .seyrüçubuk a:hover, .sarkanMenü:hover .sarkanDüğme, .sarkanDüğme:focus {background-color: red; color:Yellow;}
+        .sarkanmenüİçeriği {
+            display: none;
+            position: absolute;
+            background-color: MediumSpringGreen;
+            min-width: 143px;
+            box-shadow: 0px 8px 16px 0px rgba(255,100,20,0.9);
+            z-index: 1;}
+        .sarkanmenüİçeriği a {
+            float: none;
+            color: blue;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;}
+        .sarkanmenüİçeriği a:hover {
+            background-color: Olive;
+            color:Magenta;}
+        .göster {display: block;}
+    </style>
+</head>
+<body>
+    <div class="seyrüçubuk">
+        <a href="#">Anasayfa</a>
+        <a href="#">Hakkımızda</a>
+        <div class="sarkanMenü">
+            <button class="sarkanDüğme" onclick="fonksiyonum()">Sarkanmenü
+                <b class="ikon"></b>
+            </button>
+            <div class="sarkanmenüİçeriği" id="sarkanım">
+                <a href="#">Haberler</a>
+                <a href="#">Spor</a>
+                <a href="#">Müzik</a>
+                <a href="#">Filim</a>
+                <a href="#">Belgesel</a>
+            </div>
+        </div>
+        <a href="#">İletişim</a>
+    </div>
+
+    <div style="margin:0 2em;">
+        <h2>Seyrüsefer Çubuğundaki Sarkanmenü</h2>
+        <p>"Sarkanmenü" düğmesini tıklayarak oluşan JS kodlama etkisini gözlemleyin.</p>
+        <p>Tekrarlı sarkanmenü tıklanması bağlantılarını gösterir/gizler. Ayrıca altbağlantılar veya dışardayken tıklama içeriği gizler.</p>
+    </div>
+
+    <script>
+        // Tekrarlı tıklama içeriği gösterir/gizler...
+        function fonksiyonum() {document.getElementById ("sarkanım").classList.toggle ("göster");}
+
+        // İçerik bağlantıları veya dışındaki tıklama içeriği gizler...
+        window.onclick = function (olay) {
+            if (! olay.target.matches ('.sarkanDüğme')) {
+                var sarkık = document.getElementById ("sarkanım");
+                if (sarkık.classList.contains ('göster')) sarkık.classList.remove ('göster');
+            } // dış-if sonu...
+        } // win.. sonu...
+    </script>
+</body>
+</html>

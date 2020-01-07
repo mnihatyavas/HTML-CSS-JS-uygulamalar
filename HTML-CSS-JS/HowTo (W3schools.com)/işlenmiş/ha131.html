@@ -1,0 +1,71 @@
+<!DOCTYPE html (ha131.html: Araştırma çubuğu örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe"/>
+    <style>
+        * {box-sizing: border-box;}
+        body {background:MediumPurple;
+            color:Lime;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;}
+        .üstseyrü {overflow: hidden;
+            background-color: MediumBlue;}
+        .üstseyrü a {float: left;
+            display: block;
+            color: #ccc;
+            text-align: center;
+            padding: 16px 16px;
+            text-decoration: none;
+            font-size: 21px;}
+        .üstseyrü a:hover {background-color: #777;
+            color: MintCream;}
+        .üstseyrü a.active {background-color: Maroon;
+            color: Yellow;}
+        .üstseyrü .araştırmaKabı {float: right;}
+        .üstseyrü input[type=text] {padding: 6px;
+            margin-top: 8px;
+            font-size: 20px;
+            border: none;
+            background:Linen;
+            color:Salmon;}
+        .üstseyrü .araştırmaKabı button {float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            border: none;
+            cursor: pointer;}
+        .üstseyrü .araştırmaKabı button:hover {background: #bbb;}
+        @media screen and (max-width: 600px) {
+            .üstseyrü .araştırmaKabı {float: none;}
+            .üstseyrü a, .üstseyrü input[type=text], .üstseyrü .araştırmaKabı button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;}
+            .üstseyrü input[type=text] {border: 2px solid LimeGreen;}
+        }
+    </style>
+</head>
+<body>
+    <div class="üstseyrü">
+        <a class="active" href="#anasayfa">Anasayfa</a>
+        <a href="#hakkında">Hakkımızda</a>
+        <a href="#iletişim">İrtibat</a>
+        <div class="araştırmaKabı">
+            <form action="/aktüel_sayfa.php">
+                <input type="text" placeholder="Araştır..." name="araştır">
+                <button type="submit"><img src="resim\araştır.svg" target="_" alt=" " height="23"/></button>
+            </form>
+        </div>
+    </div>
+
+    <div style="padding-left:16px">
+        <h2 style="color:Maroon;">Duyarlı Araştırma Çubuğu</h2>
+        <p>İçinde bir araştırma kutusu ve gönder düğmesi bulunan seyrüsefer çubuğu.</p>
+        <p>Tarayıcı ebatına duyarlılığı test edebilirsiniz.</p>
+    </div>
+</body>
+</html>

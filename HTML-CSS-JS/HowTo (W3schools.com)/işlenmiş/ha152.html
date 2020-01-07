@@ -1,0 +1,64 @@
+<!DOCTYPE html (ha152.html: Metni sağa kaydırarak açılıp kapanan sol kenarseyrüsefer menüsü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <script>
+        function seyrüyüAç() {
+            document.getElementById ("kenarSeyrüm").style.width = "250px";
+            document.getElementById ("gövdeMetni").style.marginLeft = "250px";
+        } // fonksiyon sonu...
+        function seyrüyüKapa() {
+            document.getElementById ("kenarSeyrüm").style.width = "0";
+            document.getElementById ("gövdeMetni").style.marginLeft= "0";
+        } // fonksiyon sonu...
+    </script>
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background: SaddleBrown;
+            color: Gold;}
+        .kenarseyrü {height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: Purple;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;}
+        .kenarseyrü a {padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.5s;}
+        .kenarseyrü a:hover {color: #f1f1f1;}
+        .kenarseyrü .kapaDüğmesi {position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;}
+        #gövdeMetni {transition: margin-left 0.5s;
+            padding: 16px;}
+        @media screen and (max-height: 450px) {
+            .kenarseyrü {padding-top: 15px;}
+            .kenarseyrü a {font-size: 18px;} }
+    </style>
+</head>
+<body>
+    <div id="kenarSeyrüm" class="kenarseyrü">
+        <a href="javascript:void(0)" class="kapaDüğmesi" onclick="seyrüyüKapa()">&times;</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Ürünlerimiz</a>
+        <a href="#">Müşterilerimiz</a>
+        <a href="#">Bayilerimiz</a>
+        <a href="#">İrtibat</a>
+    </div>
+
+    <div id="gövdeMetni">
+        <h2 style="color:PaleGreen;">Öteleyen KenarSeyrü Örneği</h2>
+        <p>Gövde metnini sağa iterek açılan sol kenarseyrüsefer menüsü için alttaki düğmeyi tıklayın.</p>
+        <span style="font-size:30px;cursor:pointer; color: Cyan;" onclick="seyrüyüAç()">&#9776; aç</span>
+    </div>
+</body>
+</html>

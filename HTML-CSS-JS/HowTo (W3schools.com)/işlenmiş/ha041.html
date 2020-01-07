@@ -1,0 +1,71 @@
+<!DOCTYPE html (ha041.html: İçeriği açılır yatay yaftalar örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe"/>
+    <style>
+        body {font-family: Arial;background:AquaMarine;}
+        .yafta {
+            overflow: hidden;
+            border: 1px solid #777;
+            background-color: #f1f1f1;
+        }
+        .yafta buton {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.53s;
+            font-size: 17px;
+        }
+        .yafta buton:hover {background-color: #ddd;}
+        .yafta buton.active {background-color: #aaa;}
+        .yaftaİçeriği {
+            display: none;
+            padding: 6px 12px;
+            border: 5px solid #ccc;
+            /*border-top: none;*/
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Butonlu Yaftalar</h2>
+    <p>Yafta menüsündeki butonları tıklayıp içerikleri görebilirsiniz:</p>
+
+    <div class="yafta">
+        <buton class="yaftaBağlantılar" onclick="şehriAç (event, 'Londra')">Londra</buton>
+        <buton class="yaftaBağlantılar" onclick="şehriAç (event, 'Paris')">Paris</buton>
+        <buton class="yaftaBağlantılar" onclick="şehriAç (event, 'Tokyo')">Tokyo</buton>
+    </div>
+
+    <div id="Londra" class="yaftaİçeriği">
+        <h3>Londra</h3>
+        <p>Londra İngiltere'nin başşehridir.</p>
+    </div>
+
+    <div id="Paris" class="yaftaİçeriği">
+        <h3>Paris</h3>
+        <p>Paris Fransa'nın başşehridir.</p> 
+    </div>
+
+    <div id="Tokyo" class="yaftaİçeriği">
+        <h3>Tokyo</h3>
+        <p>Tokyo Japonya'nın başşehridir.</p>
+    </div>
+
+    <script>
+        function şehriAç (olay, şehirAdı) {
+            var i, yaftaİçeriği, yaftalar;
+            yaftaİçeriği = document.getElementsByClassName ("yaftaİçeriği");
+            for (i = 0; i < yaftaİçeriği.length; i++) yaftaİçeriği[i].style.display = "none";
+            yaftalar = document.getElementsByClassName ("yaftaBağlantılar");
+            for (i = 0; i < yaftalar.length; i++) yaftalar[i].className = yaftalar[i].className.replace (" active", "");
+            document.getElementById (şehirAdı).style.display = "block";
+            olay.currentTarget.className += " active";
+        } // şehriAç(..) fonksiyonu sonu...
+    </script>
+</body>
+</html>

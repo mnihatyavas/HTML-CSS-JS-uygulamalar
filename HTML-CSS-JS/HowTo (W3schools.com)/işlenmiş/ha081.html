@@ -1,0 +1,79 @@
+<!DOCTYPE html (ha081.html: Dikey menü etiketleri üzerindeyken açıklamalar örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe"/>
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: "Lato", sans-serif;
+            background:MediumSeaGreen;
+            color:MediumVioletRed;}
+        .yafta {float: left;
+            border: 5px solid #ccc;
+            border-right:none;
+            background-color: #e1e1e1;
+            width: 30%;
+            height: 300px;}
+        .yafta button {display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 17px;}
+        .yafta button.aktif {background-color: Olive;
+            color:MintCream;}
+        .içerik {background: Olive;
+            color:MintCream;
+            float: left;
+            padding: 0px 12px;
+            border: 5px solid #ccc;
+            width: 70%;
+            border-left: none;
+            height: 300px;
+            display: none;}
+        /*.temizle::after {content: ""; clear: both; display: table;}*/
+    </style>
+</head>
+<body>
+    <h2>Etiketlerin Üzerindeyken</h2>
+    <p>Açıklamaları görmek için fareyi etiketlerin üzerinde gezdirin:</p>
+
+    <div class="yafta">
+        <button class="yaftalar" onmouseover="şehriAç (event, 'Londra')">Londra</button>
+        <button class="yaftalar" onmouseover="şehriAç (event, 'Paris')">Paris</button>
+        <button class="yaftalar" onmouseover="şehriAç (event, 'Tokyo')">Tokyo</button>
+    </div>
+
+    <div id="Londra" class="içerik">
+        <h3>Londra</h3>
+        <p>London İngiltere'nin başkentidir.</p>
+    </div>
+
+    <div id="Paris" class="içerik">
+        <h3>Paris</h3>
+        <p>Paris Fransa'nın başkentidir.</p> 
+    </div>
+
+    <div id="Tokyo" class="içerik">
+        <h3>Tokyo</h3>
+        <p>Tokyo Japonya'nın başkentidir.</p>
+    </div>
+
+    <div class="temizle"></div>
+
+    <script>
+        function şehriAç (olay, şehir) {
+            var i, içerikler, fişler;
+            içerikler = document.getElementsByClassName ("içerik");
+            for (i = 0; i < içerikler.length; i++) içerikler[i].style.display = "none";
+            fişler = document.getElementsByClassName ("yaftalar");
+            for (i = 0; i < fişler.length; i++) fişler[i].className = fişler[i].className.replace (" aktif", "");
+            document.getElementById (şehir).style.display = "block";
+            olay.currentTarget.className += " aktif";
+        } // fonksiyon sonu...
+    </script>
+</body>
+</html> 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha442.html: Tamekran üstten kapanan saydam seyrü perde menüsü örneği.</title>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color:Olive;
+            color:fuchsia;}
+        .perde {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(85,170, 255, 0.7);
+            overflow-y: hidden;
+            transition: 1.5s;}
+        .perdeİçeriği {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;}
+        .perde a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: Tomato;
+            display: block;
+            transition: 0.5s;}
+        .perde a:hover, .perde a:focus {
+            color: Yellow;}
+        .perde .kapamaDüğmesi {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;}
+        @media screen and (max-height: 450px) {
+            .perde {overflow-y: auto;}
+            .perde a {font-size: 20px}
+            .perde .kapamaDüğmesi {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;} }
+    </style>
+</head>
+<body>
+    <div id="seyrüm" class="perde">
+        <a href="javascript:void(0)" class="kapamaDüğmesi" onclick="seyrüyüKapa()">&times;</a>
+        <div class="perdeİçeriği">
+            <a href="#">Hakkımızda</a>
+            <a href="#">Ürünlerimiz</a>
+            <a href="#">Müşterilerimiz</a>
+            <a href="#">Bayilerilerimiz</a>
+            <a href="#">İletişim</a>
+        </div>
+    </div>
+
+    <main>
+        <h2>Tamekran Üstten Kapanan Seyrü</h2>
+        <p>Tamekran üstten kapanan seyrüsefer menüsünü açmak için alttaki hamburger "aç" düğmesini tıklayın.</p>
+        <p>Bu örnekte, seyrüsefer menüsü üstten aşağıya kayarak kapanmaktadır.</p>
+        <p>Ayrıca tarayıcı yüksekliğine duyarlılığı test etmek isterseniz ebatıyla oynayınız:</p>
+
+        <p style="font-size:30px;cursor:pointer" onclick="seyrüyüAç()">&#9776; aç</p>
+    </main>
+
+    <script>
+        function seyrüyüAç() {document.getElementById ("seyrüm").style.height = "100%";}
+        function seyrüyüKapa() {document.getElementById ("seyrüm").style.height = "0%";}
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html (ha142.html: Otomatik sağ kenar sabit menüsü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background:LightSteelBlue;
+            color:Green;}
+        span {color:MediumBlue; font-size:20px;}
+        .kenarSeyrü {width: 180px;
+            position: fixed;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: Linen;
+            overflow-x: hidden;
+            padding: 8px 0;}
+        .kenarSeyrü a {padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196a3;
+            display: block;}
+        .kenarSeyrü a:hover {color: Gold;}
+        .gövde {margin-left: 180px; /* Sol kenar menü genişliği */
+            font-size: 28px; /* Sağ kaydırma çubuğunu oluşturmak için iri puntolu */
+            padding: 0px 10px;}
+        @media screen and (max-height: 450px) {
+            .kenarSeyrü {padding-top: 15px;}
+            .kenarSeyrü a {font-size: 18px;} }
+    </style>
+</head>
+<body>
+    <div class="kenarSeyrü">
+        <a href="#anasayfa">Anasayfa</a>
+        <a href="#hakkında">Hakkımızda</a>
+        <a href="#ürünler">Ürünlerimiz</a>
+        <a href="#müşteri">Müşterilerimiz</a>
+        <a href="#bayi">Bayilerimiz</a>
+        <a href="#iletişim">İrtibat</a>
+    </div>
+
+    <div class="gövde">
+        <h2 style="color:Maroon;">Otomatik Sağkenar Menüsü</h2>
+        <p><span>Sol kenar menü yüksekliği içerikleri (bağlantıları) adedince otomatikmen uzar ve daima görüntülenir.</span></p>
+        <p><span>Sağ kaydıracı gezdirerek tüm metni tarayabilirsiniz.</span></p>
+        <p><span>Sağ kaydırma çubuğunu oluşturmak için birkaç iri puntolu latince dizge...</span> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p><span>Sağ kaydırma çubuğunu oluşturmak için birkaç iri puntolu latince dizge...</span> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p><span>Sağ kaydırma çubuğunu oluşturmak için birkaç iri puntolu latince dizge...</span> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p><span>Sağ kaydırma çubuğunu oluşturmak için birkaç iri puntolu latince dizge...</span> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>    
+</body>
+</html>

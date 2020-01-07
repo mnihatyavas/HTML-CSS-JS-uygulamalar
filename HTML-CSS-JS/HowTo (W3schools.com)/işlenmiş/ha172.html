@@ -1,0 +1,66 @@
+<!DOCTYPE html (ha172.html: Tam-ekran örtüşmeli üstten alta açılan/kapanan seyrü menüsü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <script>
+        function seyrüyüAç() {document.getElementById ("seyrüm").style.height = "100%";}
+        function seyrüyüKapa() {document.getElementById ("seyrüm").style.height = "0%";}
+    </script>
+    <style>
+        body {font-family: 'Lato', sans-serif;
+            background-color:SeaGreen;
+            color:Cyan;}
+        h2 {color:Yellow;}
+        .örtüşüm {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(110,10, 90, 0.85);
+            overflow-y: hidden;
+            transition: 0.5s;}
+        .örtüşümİçeriği {position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;}
+        .örtüşüm a {padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: Tan;
+            display: block;
+            transition: 0.5s;}
+        .örtüşüm a:hover, .örtüşüm a:focus {color: MintCream;}
+        .örtüşüm .kapamaDüğmesi {position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;}
+
+        @media screen and (max-height: 450px) {
+            .örtüşüm {overflow-y: auto;}
+            .örtüşüm a {font-size: 20px}
+            .örtüşüm .kapamaDüğmesi {font-size: 40px;
+                top: 15px;
+                right: 35px;} }
+    </style>
+</head>
+<body>
+    <div id="seyrüm" class="örtüşüm">
+        <a href="javascript:void(0)" class="kapamaDüğmesi" onclick="seyrüyüKapa()">&times;</a>
+        <div class="örtüşümİçeriği">
+            <a href="#">Hakkımızda</a>
+            <a href="#">Ürünlerimiz</a>
+            <a href="#">Müşterilerimiz</a>
+            <a href="#">Bayilerilerimiz</a>
+            <a href="#">İrtibat</a>
+        </div>
+    </div>
+
+    <h2>Tam-ekran Örtüşmeli Seyrü Örneği</h2>
+    <p>Alttaki "aç" düğmesini tıklayınca tam-ekran örtüşmeli şeffaf menü görünecektir.</p>
+    <p>Bu örnekte, seyrüsefer menüsü üstten-alta ekranı kaplayacak ve tekrar alttan-üste açılacaktır:</p>
+    <span style="font-size:30px;cursor:pointer;color:Gold;" onclick="seyrüyüAç()">&#9776; aç</span>
+</body>
+</html>

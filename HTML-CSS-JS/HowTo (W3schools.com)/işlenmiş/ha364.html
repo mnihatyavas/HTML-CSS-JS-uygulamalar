@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha364.html: Solahizalı sarkanmenü düğmesi tıklanınca açılan aramalı bağlantılar örneği.</title>
+    <style>
+        body {background-color:Purple; color:PowderBlue;}
+        .sarkanDüğme {
+            background-color: #4CAF50;
+            color: Yellow;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;}
+        .ikon:after {content: "\25BC";}
+        .sarkanDüğme:hover, .sarkanDüğme:focus {background-color: Olive;}
+        #veriGirişim {
+            border-box: box-sizing;
+            background-image: url('resim/araştır1.png');
+            background-position: 14px 12px;
+            background-repeat:no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 2px solid #aaa;}
+        #veriGirişim:focus {outline: 3px solid #777;}
+        .sarkanMenü {
+            position: relative;
+            display: inline-block;}
+        .sarkan-içerik {
+            display: none;
+            position: absolute;
+            background-color:Cyan;
+            min-width: 230px;
+            overflow: auto;
+            border: 2px solid Yellow;
+            z-index: 1;}
+        .sarkan-içerik a {
+            color: GoldenRod;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;}
+        .sarkanMenü a:hover {background-color: SlateGray;}
+        .göster {display: block;}
+        input {color:Blue;}
+    </style>
+</head>
+<body>
+    <h2>Arama Süzgeçli Sarkanmenü</h2>
+    <p>Sarkanmenü şıkları için düğmeyi tıklayın, ve istediğiniz ibareleri içeren menü seçeneklerini süzmek için de arama veri giriş kutusunu kullanın.</p><br/>
+
+    <div class="sarkanMenü">
+        <button onclick="gösterGizleFonk()" class="sarkanDüğme">Sarkanmenü
+            <b class="ikon"></b>
+        </button>
+        <div id="sarkanım" class="sarkan-içerik">
+            <input type="text" placeholder="Araştır.." id="veriGirişim" onkeyup="süzgeçFonk()" />
+            <a href="#hakkımızda">Hakkımızda</a>
+            <a href="#temel">Temel</a>
+            <a href="#blog">Blog</a>
+            <a href="#iletişim">İletişim</a>
+            <a href="#özelleştir">Özelleştir</a>
+            <a href="#destekleyin">Destekleyin</a>
+            <a href="#araçlar">Araçlar</a>
+            <a href="#projeler">Projelerimiz</a>
+            <a href="#tasarı">Tasarılarımız</a>
+        </div>
+    </div>
+
+    <script>
+        function gösterGizleFonk() {document.getElementById ("sarkanım").classList.toggle ("göster");}
+
+        function süzgeçFonk() {// Veri giriş süzgeç karakterlerini içeren seçenekleri listeler...
+            var girilen, süzgeç, a, i;
+            girilen = document.getElementById ("veriGirişim");
+            süzgeç = girilen.value.toUpperCase();
+            a = document.getElementById ("sarkanım").getElementsByTagName ("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf (süzgeç) > -1) a[i].style.display = "";
+                else a[i].style.display = "none";
+            } // for sonu...
+        } // func.. sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha353.html: Üst seyrüsefer çubuðunun üzerindeyken açýlan sarkan menü örneði.</title>
+    <style>
+        body {
+            background-color: LightSteelBlue;
+            color: MediumVioletRed;}
+        .aþaðýÜçgen:before {
+            font-style: normal;
+            line-height: 1;
+            content: "\25BD";}
+        .seyrüçubuk {
+            margin-bottom:3em;
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;}
+        .seyrüçubuk a {
+            float: left;
+            font-size: 16px;
+            color: Lime;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;}
+        .sarkanMenü {
+            float: left;
+            overflow: hidden;}
+        .sarkanMenü .sarkanDüðme {
+            font-size: 16px;    
+            border: none;
+            outline: none;
+            color: Lime;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;}
+        .seyrüçubuk a:hover, .sarkanMenü:hover .sarkanDüðme {background-color: Tomato;}
+        .sarkan-içerik {
+            display: none;
+            position: absolute;
+            background-color: Magenta;
+            min-width: 140px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+            z-index: 1;}
+        .sarkan-içerik a {
+            float: none;
+            color: Blue;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;}
+        .sarkan-içerik a:hover {background-color: #bbb;}
+        .sarkanMenü:hover .sarkan-içerik {display: block;}
+</style>
+</head>
+<body>
+    <div class="seyrüçubuk">
+        <a href="#anasayfa">Anasayfa</a>
+        <a href="#hakkýmýzda">Hakkýmýzda</a>
+        <a href="#iletiþim">Ýletiþim</a>
+        <div class="sarkanMenü">
+            <button class="sarkanDüðme">Sarkanmenü
+                <i class="aþaðýÜçgen"></i>
+            </button>
+            <div class="sarkan-içerik">
+                <a href="#haberler">Haberler</a>
+                 <a href="#spor">Spor</a>
+                 <a href="#film">Filim</a>
+                 <a href="#müzik">Müzik</a>
+                 <a href="#belgesel">Belgesel</a>
+            </div>
+        </div> 
+    </div>
+
+    <h2>Bir Seyrüsefer Çubuðu Ýçindeki Sarkan Menü</h2>
+    <p>Sarkan menü içeriklerini görebilmek için ilgili seçenek üzerine gidiniz.</p>
+</body>
+</html>

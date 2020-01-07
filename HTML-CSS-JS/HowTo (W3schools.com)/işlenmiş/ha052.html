@@ -1,0 +1,86 @@
+<!DOCTYPE html (ha052.html: Varsayılı açılır içerikli dikey yaftalar örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" />
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: "Lato", sans-serif; background:LightSteelBlue;}
+        .yafta {
+            float: left;
+            border: 4px solid #bbb;
+            background-color: #f1f1f1;
+            width: 30%;
+            height: 300px;
+        }
+        .yafta düğme {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: solid 1px maroon;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.7s;
+            font-size: 17px;
+        }
+        .yafta düğme:hover {background-color: #aaa;}
+        .yafta düğme.active {background-color: #777; color:#eee;}
+        .açıklama {
+            float: left;
+            padding: 0px 12px;
+            border: 5px solid #aaa;
+            width: 70%;
+            /*border-left: none;*/
+            height: 300px;
+            background-color: green;
+            color: white;
+            animation: solmaEtkisi 3s; /* Solma etkisi 3 sn sürecek */
+        }
+        @keyframes solmaEtkisi {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <h2>Dikey Yaftalar</h2>
+    <p>Açıklamaları görmek içind dikey menüdeki şehir düğmelerini tıklayın:</p>
+
+    <div class="yafta">
+        <düğme class="yaftalar" onclick="şehrinAçıklamasınıGöster (event, 'Londra')">Londra</düğme>
+        <düğme class="yaftalar" onclick="şehrinAçıklamasınıGöster (event, 'Paris')" id="varsayılıAçık">Paris</düğme>
+        <düğme class="yaftalar" onclick="şehrinAçıklamasınıGöster (event, 'Tokyo')">Tokyo</düğme>
+    </div>
+
+    <div id="Londra" class="açıklama">
+        <h3>Londra</h3>
+        <p>Londra İngiltere'nin başkentidir.</p>
+    </div>
+
+    <div id="Paris" class="açıklama">
+        <h3>Paris</h3>
+        <p>Paris Fransa'nın başkentidir.</p> 
+    </div>
+
+    <div id="Tokyo" class="açıklama">
+        <h3>Tokyo</h3>
+        <p>Tokyo Japonya'nın başkentidir.</p>
+    </div>
+
+    <script>
+        function şehrinAçıklamasınıGöster (olay, şehirAdı) {
+            var i, izahat, fişler;
+            izahat = document.getElementsByClassName ("açıklama");
+            for (i = 0; i < izahat.length; i++) izahat[i].style.display = "none";
+            fişler = document.getElementsByClassName ("yaftalar");
+            for (i = 0; i < fişler.length; i++) fişler[i].className = fişler[i].className.replace (" active", "");
+            document.getElementById (şehirAdı).style.display = "block";
+            olay.currentTarget.className += " active";
+        } // şehrinAçıklamasınıGöster(..) fonksiyonu sonu...
+
+        document.getElementById ("varsayılıAçık").click();
+    </script>
+</body>
+</html> 

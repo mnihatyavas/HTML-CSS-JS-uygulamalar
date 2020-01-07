@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha361.html: Sarkanmenü düğmesi tıklanınca açılan bağlantılar örneği.</title>
+    <style>
+        body {background-color:SlateGray; color:Fuchsia;}
+        .sarkandüğme {
+            background-color: #3498EB;
+            color: Yellow;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;} /* Düğme üzerindeyken ok değil, parmak */
+        .ikon:after {content: "\25BC";}
+        .sarkandüğme:hover, .sarkandüğme:focus {background-color: Olive;}
+        .sarkanmenü {
+            position: relative;
+            display: inline-block;}
+        .sarkan-içerik {
+            display: none;
+            position: absolute;
+            background-color: Lime;
+            min-width: 155px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(200,20,20,0.9);
+            z-index: 1;}
+        .sarkan-içerik a {
+            color: Blue;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;}
+        .sarkanmenü a:hover {background-color: LimeGreen;}
+        .göster {display: block;}
+    </style>
+</head>
+<body>
+    <h2>Tıklanabilir Sarkanmenü Düğmesi</h2>
+    <p>Sarkanmenü bağlantılarını görmek için düğmesini tıklayın.</p>
+    <p>Sarkanmenü içeriklerini gizlemek için ise tekrar tıklayın.</p>
+
+    <div class="sarkanmenü">
+        <button onclick="fonk()" class="sarkandüğme">Sarkanmenü&emsp;<b class="ikon"></b></button>
+        <div id="sarkanım" class="sarkan-içerik">
+            <a href="#anasayfa">Anasayfa</a>
+            <a href="#hakkımızda">Hakkımızda</a>
+            <a href="#hizmetlerimiz">Hizmetlerimiz</a>
+            <a href="#iletişim">İletişim</a>
+        </div>
+    </div>
+
+    <script>
+        /* Kullanıcı sarkanmenü üzerinde tekrar tekrar tıklarsa,
+            menüseçeneklerini gösterir/gizler...
+         */
+        function fonk() {document.getElementById ("sarkanım").classList.toggle ("göster");}
+
+       /* Bu kodlamaları iptal edebilirsin...
+        window.onclick = function (olay) {// Sarkanseçenek dışı tıklanırsa, gizlenir...
+            if (! olay.target.matches ('.sarkandüğme')) {
+                var sarkanseçenekler = document.getElementsByClassName ("sarkan-içerik");
+                var i;
+                for (i = 0; i < sarkanseçenekler.length; i++) {
+                    var sarkanıAç = sarkanseçenekler[i];
+                    if (sarkanıAç.classList.contains ('göster')) sarkanıAç.classList.remove ('göster');
+                } // for sonu...
+            } // dış-if sonu...
+        } // win.. sonu...
+        */
+    </script>
+</body>
+</html>

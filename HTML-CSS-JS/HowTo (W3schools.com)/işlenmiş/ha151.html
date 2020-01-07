@@ -1,0 +1,54 @@
+<!DOCTYPE html (ha151.html: Açılıp kapanan sol kenarseyrüsefer menüsü örneği.)>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <script>
+        function menüyüAç() {document.getElementById("kenarseyrüm").style.width = "250px";}
+        function menüyüKapat() {document.getElementById("kenarseyrüm").style.width = "0";}
+    </script>
+    <style>
+        body {font-family: "Lato", sans-serif;
+            background:PaleGreen;
+            color:MediumVioletRed;}
+        .kenarseyrü {height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: Purple;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;}
+        .kenarseyrü a {padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.5s;}
+        .kenarseyrü a:hover {color: OldLace;}
+        .kenarseyrü .kapaDüğmesi {position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;}
+        @media screen and (max-height: 450px) {
+            .kenarseyrü {padding-top: 15px;}
+            .kenarseyrü a {font-size: 18px;} }
+    </style>
+</head>
+<body>
+    <div id="kenarseyrüm" class="kenarseyrü">
+        <a href="javascript:void (0)" class="kapaDüğmesi" onclick="menüyüKapat()">&times;</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Ürünlerimiz</a>
+        <a href="#">Müşterilerimiz</a>
+        <a href="#">Bayilerimiz</a>
+        <a href="#">İrtibat</a>
+    </div>
+
+    <h2 style="color:MidnightBlue;">Canlandırmalı Kenarseyrü Örneği</h2>
+    <p>Alttaki elementi tıklayarak kenar seyrüsefer menüsünü açabilirsiniz.</p>
+    <span style="font-size:30px; cursor:pointer; color:Olive;" onclick="menüyüAç()">&#9776; aç</span>
+</body>
+</html>

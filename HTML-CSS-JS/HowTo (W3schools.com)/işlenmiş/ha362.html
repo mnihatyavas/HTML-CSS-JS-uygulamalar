@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha362.html: Sağa hizalı sarkanmenü düğmesi tıklanınca açılan bağlantılar örneği.</title>
+    <style>
+        body {background-color:MidnightBlue; color:Orange;}
+        .sarkanDüğme {
+            background-color: #4CAF50;
+            color: Yellow;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;}
+        .sarkanDüğme:hover, .sarkanDüğme:focus {background-color: #3e6e41;}
+        .sarkanMenü {
+            float: right;
+            position: relative;
+            display: inline-block;}
+       .sarkan-içerik {
+            display: none;
+            position: absolute;
+            background-color: NavajoWhite;
+            min-width: 110px;
+            overflow: auto;
+            box-shadow: 0px 10px 16px 0px rgba(200,200,20,0.9);
+            right: 0;
+            text-align: right;
+            z-index: 1;}
+        .sarkan-içerik a {
+           color: Tomato;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;}
+        .sarkanMenü a:hover {background-color: SlateGray;}
+        .göster {display: block;}
+    </style>
+</head>
+<body>
+    <h2>Sağa hizalı Sarkanmenü</h2>
+    <p>Sarkanmenünün sağda olması için sarkan sınıfında <strong>float: right</strong> kullanılmalıdır, ayrıca sarkan içerik bağlantılarının sağ içeri kaymaması için sarkan-içerik sınıfında <strong>right:0</strong> konulmalıdır.</p>
+
+    <div class="sarkanMenü">
+        <button onClick="fonk()" class="sarkanDüğme">Sarkanmenü</button>
+        <div id="sarkanım" class="sarkan-içerik">
+            <a href="#anasayfa">Anasayfa</a>
+            <a href="#hizmetler">Hizmetlerimiz</a>
+            <a href="#hakkında">Hakkımızda</a>
+            <a href="#eposta">İletişim</a>
+        </div>
+    </div>
+
+    <script>
+        function fonk() {document.getElementById ("sarkanım").classList.toggle ("göster");}
+
+        /* İçeriği aç/kapa'da sadece düğme tıklanması için bu kodlama kullanılmamalı...
+        window.onclick = function (olay) {
+            if (!olay.target.matches ('.sarkanDüğme')) {
+                var sarkanMenüler = document.getElementsByClassName ("sarkan-içerik");
+                var i;
+                for (i = 0; i < sarkanMenüler.length; i++) {
+                    var sarkanıAç = sarkanMenüler[i];
+                    if (sarkanıAç.classList.contains ('göster'))
+                        sarkanıAç.classList.remove ('göster');
+                } // for sonu...
+            } // dış-if sonu...
+        } // win.. sonu...
+        */
+    </script>
+</body>
+</html>

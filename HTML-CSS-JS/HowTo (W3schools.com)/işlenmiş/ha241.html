@@ -1,0 +1,77 @@
+<!DOCTYPE html (ha241.html: Tarayýcý ebatýna duyarlý dip seyrüsefer menü çubuðu örneði.)>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin:0;
+            background-color:GoldenRod;
+            color:Navy;
+            font-size:18px;}
+        .seyrüçubuðu {
+            overflow: hidden;
+            background-color: #333;  
+            position: fixed;
+            bottom: 0;
+            width: 100%;}
+        .seyrüçubuðu a {
+            float: left;
+            display: block;
+            color: MintCream;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 14px;}
+        .seyrüçubuðu a:hover {
+            background-color: PapayaWhip;
+            color: Navy;}
+        .seyrüçubuðu a.active {
+            background-color: #4c8f5a;
+            color: yellow;}
+        .seyrüçubuðu .ikon {display: none;}
+        @media screen and (max-width: 600px) {
+            .seyrüçubuðu a:not(:first-child) {display: none;}
+            .seyrüçubuðu a.ikon {
+                float: right;
+                display: block;} }
+        @media screen and (max-width: 600px) {
+            .seyrüçubuðu.duyarlý .ikon {
+                position: absolute;
+                right: 0;
+                bottom:0;}
+            .seyrüçubuðu.duyarlý a {
+                float: none;
+                display: block;
+                text-align: left;} }
+    </style>
+</head>
+<body>
+    <div class="seyrüçubuðu" id="seyrüÇubuðum">
+        <a href="#anasayfa" class="active">Anasayfa</a>
+        <a href="#haberler">Haberler</a>
+        <a href="#spor">Spor</a>
+        <a href="#filim">Filim</a>
+        <a href="#müzik">Müzik</a>
+        <a href="#belgesel">Belgesel</a>
+        <a href="#iletiþim">Ýletiþim</a>
+        <a href="#hakkýmýzda">Hakkýmýzda</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="ikon" onclick="fonksiyonum()">&#9776;</a>
+    </div>
+
+    <div style="margin:10px">
+        <h2>Duyarlý Dip Seyrüsefer Çubuðu</h2>
+        <p>Tarayýcý enini daralttýðýnýzda anasayfa dýþýndaki seçenekler kaybolup
+            saðda düðme ikonu belirir. Ýkonu týklarsanýz kaybolan menü seçenekleri
+            bu defa alt-alta ve herbiri ayrý birer satýr olmak üzere anasayfalý dip çubuðu altýnda
+            sýralanacaktýr. Tarayýcý geniþlediðinde, yine önceki biçime dönülmektedir.</p>
+    </div>
+
+    <script>
+        function fonksiyonum() {
+            var x = document.getElementById ("seyrüÇubuðum");
+            if (x.className === "seyrüçubuðu") x.className += " duyarlý";
+            else x.className = "seyrüçubuðu";
+        }
+    </script>
+</body>
+</html>
