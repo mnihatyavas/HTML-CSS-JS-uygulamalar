@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hb891.html: Büyütme camýyla istenilen oranda resmin büyütülmesi veya küçültülmesi örneði.</title>
+    <style>
+        body {
+            background-color:DarkKhaki;
+            color: Green;}
+        * {box-sizing: border-box;}
+        .resim-büyütücü-kab {position:relative;}
+        .resim-büyütücü-cam {
+            position: absolute;
+            border: 3px solid #999;
+            border-radius: 50%;
+            cursor: none;
+            /* Büyütme cam ebatýný ayarlayýn (resme orantýlý olarak dilediðinizce deðiþtirebilirsiniz): */
+            width: 150px;
+            height: 150px;}
+    </style>
+
+    <script>
+        function büyüt (idResim, büyütmeOraný) {
+            var resim, cam, en, boy, enKay;
+            resim = document.getElementById (idResim);
+            /* Büyütme cam DIV elemanýný yarat: */
+            cam = document.createElement ("DIV");
+            cam.setAttribute ("class", "resim-büyütücü-cam");
+            /* Cam elemanýný bölüm içinde resim elemaný önüne koy: */
+            resim.parentElement.insertBefore (cam, resim);
+            /* Büyütme camýnýn zemin özelliklerini ayarla: */
+            cam.style.backgroundImage = "url('" + resim.src + "')";
+            cam.style.backgroundRepeat = "no-repeat";
+            cam.style.backgroundSize = (resim.width * büyütmeOraný) + "px " + (resim.height * büyütmeOraný) + "px";
+            enKay = 3; // Yukarý-sola kaydýrma px'i...
+            en = cam.offsetWidth / 2;
+            boy = cam.offsetHeight / 2;
+            /* Büyütme camý resmin üzerinde hareket (olayý) ettirilince bir fonksiyonu iþlet: */
+            cam.addEventListener ("mousemove", büyütücüyüKonumlandýr);
+            resim.addEventListener ("mousemove", büyütücüyüKonumlandýr);
+            /* Ve mevcutsa dokunmatik ekran temaslarýnda da: */
+            cam.addEventListener ("touchmove", büyütücüyüKonumlandýr);
+            resim.addEventListener ("touchmove", büyütücüyüKonumlandýr);
+
+            function büyütücüyüKonumlandýr (olay) {
+                var konum, x, y;
+                /* Resim üzerindeyken olasý diðer varsayýlý olaylarý önle: */
+                olay.preventDefault();
+                /* Ýmlecin yatay x ve dikey y konumlarýný al: */
+                konum = imleçKonumunuAl (olay);
+                x = konum.x;
+                y = konum.y;
+                /* Büyütücü camýn, resim sýnýrlarý (belirli oran dýþýnda) taþmasýný engelle: */
+                if (x > resim.width - (en / büyütmeOraný)) {x = resim.width - (en / büyütmeOraný);}
+                if (x < en / büyütmeOraný) {x = en / büyütmeOraný;}
+                if (y > resim.height - (boy / büyütmeOraný)) {y = resim.height - (boy / büyütmeOraný);}
+                if (y < boy / büyütmeOraný) {y = boy / büyütmeOraný;}
+                /* Büyütücü camýn yeni sol-üst konumunu ayarla: */
+                cam.style.left = (x - en) + "px";
+                cam.style.top = (y - boy) + "px";
+                /* Büyütücü camýn "gördüðü"nü (büyüterek) yansýt: */
+                cam.style.backgroundPosition = "-" + ((x * büyütmeOraný) - en + enKay) + "px -" + ((y * büyütmeOraný) - boy + enKay) + "px";
+            } // alt-func sonu...
+
+            function imleçKonumunuAl (olay) {
+                var a, x = 0, y = 0;
+                olay = olay || window.event;
+                /* Resim üzerindeki aktüel olay konumlarýný al: */
+                a = resim.getBoundingClientRect();
+                /* Resme göreceli olarak imlecin x ve y kordinatlarýný hesapla: */
+                x = olay.pageX - a.left;
+                y = olay.pageY - a.top;
+                /* Olasýlý sayfa kaydýrmasýný gözönünde bulundur: */
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return {x : x, y : y};
+            } // alt-func sonu...
+        } // ana-func sonu...
+    </script>
+</head>
+<body>
+    <h1>Resim Büyütme/Küçültme Camý</h1>
+    <p>Resmin üzerinde gezinin:</p>
+
+    <div class="resim-büyütücü-kab">
+        <img id="resmim" src="resim/ormanaKöprü.jpg" width="600" height="400">
+    </div>
+
+    <p>Büyütme fonksiyonunu baþlatmadan önce, büyütme ve hatta küçültme (0.0 < oran < 1.0) oranýný dilediðinizce deðiþtirebilirsiniz.</p>
+
+    <script>
+        /* Büyütme fonksiyonunu baþlatýn;
+            resmin id/kimliði ve büyütme/küçültme oraný argümanlarýný girerek: */
+        büyüt ("resmim", 2.5); // Sen de 0.5'i dene...
+    </script>
+</body>
+</html>

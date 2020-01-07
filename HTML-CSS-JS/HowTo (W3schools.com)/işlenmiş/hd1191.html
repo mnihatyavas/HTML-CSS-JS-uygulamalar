@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1191.html: Tarayýcý enine duyarlý iletiþim formu yaratma örneði.</title>
+    <style>
+        body {
+            background-color:OliveDrab;
+            color:Gold;
+            margin:30px;}
+        * {box-sizing: border-box;}
+        input[type=text], select, textarea {
+            width: 100%;
+            background-color:Bisque;
+            Color:Magenta;
+            padding: 12px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            resize: vertical;}
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;}
+        input[type=submit] {
+            background-color: Green;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;}
+        input[type=submit]:hover {
+            background-color: DarkGreen;
+            color:Yellow;}
+        .kab {
+            margin-top:3em;
+            border-radius: 10px;
+            background-color: DodgerBlue;
+            padding: 20px;}
+        .kolon-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;}
+        .kolon-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;}
+        .satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+        @media screen and (max-width: 600px) {
+            .kolon-25, .kolon-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Form</h2>
+    <p>Duyarlýlýk efektini gözlemlemek için tarayýcý geniþliðiyle oynayýn. Tarayýcý eni 600px'in altýna düþtüðünde yan-yana kolonlar üst-üste yýðýn düzeni oluþturacak, Gönder düðmesi de tam en'e geniþleyecektir.</p>
+
+    <div class="kab">
+        <form action="/action_page.php">
+
+            <div class="satýr">
+                <div class="kolon-25">
+                    <label for="ad">Adýnýz</label>
+                </div>
+                <div class="kolon-75">
+                    <input type="text" id="ad" name="ad" placeholder="Adýnýz...">
+                </div>
+            </div>
+
+            <div class="satýr">
+                <div class="kolon-25">
+                    <label for="soyad">Soyadýnýz</label>
+                </div>
+                <div class="kolon-75">
+                    <input type="text" id="soyad" name="soyad" placeholder="Soyadýnýz...">
+                </div>
+            </div>
+
+            <div class="satýr">
+                <div class="kolon-25">
+                    <label for="ülke">Ülkeniz</label>
+                </div>
+                <div class="kolon-75">
+                    <select id="ülke" name="ülke">
+                        <option value="avustralya">Avustralya</option>
+                        <option value="kanada">Kanada</option>
+                        <option value="abd">ABD</option>
+                        <option value="türkiye">Türkiye</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="satýr">
+                <div class="kolon-25">
+                    <label for="konu">Konu</label>
+                </div>
+                <div class="kolon-75">
+                    <textarea id="konu" name="konu" placeholder="Açýklama yazýnýz..." style="height:200px;"></textarea>
+                </div>
+            </div>
+
+            <div class="satýr">
+                <input type="submit" value="Gönder">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

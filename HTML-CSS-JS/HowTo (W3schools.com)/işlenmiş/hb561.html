@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb561.html: Tıklayınca yeni pencerede açılan tarayıcı enine duyarlı resim örneği.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Indigo;
+            color: LavenderBlush;}
+        #resmim {
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.85s;}
+        #resmim:hover {opacity: 0.3;}
+        .pencere {
+            display: none; /* Varsayılı kapaİkonu */
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* İcabında kaydırmalı */
+            background-color: rgba(130,100,100,0.95);}
+        .resimKabı {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;}
+        #başlık {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: Yellow;
+            padding: 10px 0;
+            height: 450px;}
+        .resimKabı, #başlık {    
+            animation-name: yaklaş;
+            animation-duration: 0.8s;}
+        @keyframes yaklaş {
+            from {transform:scale(0)} 
+            to {transform:scale(1)} }
+        .kapaİkonu {/* X kapa ikonu */
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: LightSeaGreen;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.5s;}
+        .kapaİkonu:hover, .kapaİkonu:focus {
+            color: LawnGreen;
+            text-decoration: none;
+            cursor: pointer;}
+        @media only screen and (max-width: 700px){
+            .resimKabı {width: 100%;} }
+    </style>
+</head>
+<body>
+    <main>
+        <h2 style="text-align:center;">Resim Penceresi</h2>
+        <p>Bu örnekte, varsayılı kapaİkonu bulunan bir resim penceresi CSS kodlarıyla yaratılmaktadır.</p>
+        <p>İlk resim butonu tıklanınca JS resim penceresini açıp resmi içine koyacak, ayrıca resim başlığı metnini img alt içinden okuyup kullanacaktır.</p>
+        <p>Açılan resim penceresi sağ-üstteki kapatma ikonuyla tekrar kapatılabilecektir.</p>
+        <p>Resim penceresindeki resmin genişliği tarayıcı genişliğine duyarlıdır; test edebilirsiniz.</p>
+    </main>
+
+    <p style="text-align:center; margin-top:4em;">
+        <img id="resmim" src="resim/karlıDağlar.jpg" alt="Karlı Dağlar" style="width:100%; max-width:300px">
+    </p>
+
+    <!-- Resim Penceresi -->
+    <div id="pencerem" class="pencere">
+        <span class="kapaİkonu">&times;</span> <!-- &times; = X ikonu -->
+        <img class="resimKabı" id="resim">
+        <div id="başlık"></div>
+    </div>
+
+    <script>
+        var pencere = document.getElementById ('pencerem');
+        var resim = document.getElementById ('resmim');
+        var pencereResmi = document.getElementById ("resim");
+        var başlıkMetni = document.getElementById ("başlık");
+
+        resim.onclick = function() {
+            pencere.style.display = "block";
+            pencereResmi.src = this.src;
+            başlıkMetni.innerHTML = this.alt;
+        } // res son...
+
+        var xİkonu = document.getElementsByClassName ("kapaİkonu") [0];
+        xİkonu.onclick = function() {pencere.style.display = "none";}
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hc931.html: Ayrýk ve ikonlu sarkanmenü düðmesi örneði.</title>
+    <style>
+        body {
+            background-color:Tan;
+            color:Navy;}
+        .düðme {
+            background-color: #2196F3; /* Mavi */
+            color: Gold;
+            padding: 12px;
+            font-size: 20px;
+            border: none;
+            outline: none;}
+        .sarkanmenü {
+            position: absolute;
+            display: inline-block;}
+        .sarkanmenü-içeriði {
+            display: none;
+            position: absolute;
+            background-color:sienna;
+            min-width: 160px;
+            z-index: 1;}
+        .sarkanmenü-içeriði a {
+            color: Lime;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;}
+        .sarkanmenü-içeriði a:hover {background-color: Teal}
+        .sarkanmenü:hover .sarkanmenü-içeriði {display: block;}
+        .düðme:hover, .sarkanmenü:hover .düðme {background-color: DarkBlue;}
+        .aþaðýÜçgen:after {content: "\25BC";}
+    </style>
+</head>
+<body>
+    <h2>Ayrýk Sarkanmenü Düðmesi</h2>
+    <p>Aþaðý sarkan menü seçeneklerini görmek için ikonun üzerinde gezinin.</p>
+
+    <button class="düðme">Düðme</button>
+    <div class="sarkanmenü">
+        <button class="düðme" style="border-left:1px solid tan">
+            <b class="aþaðýÜçgen"></b>
+        </button>
+        <div class="sarkanmenü-içeriði">
+            <a href="#">1.Baðlantý</a>
+            <a href="#">2.Baðlantý</a>
+            <a href="#">3.Baðlantý</a>
+        </div>
+    </div>
+</body>
+</html>

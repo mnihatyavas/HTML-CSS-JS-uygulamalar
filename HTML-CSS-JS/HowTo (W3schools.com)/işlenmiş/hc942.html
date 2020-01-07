@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hc942.html: Üzerindeyken sola iþaretli kayma animasyon efekti örneði.</title>
+    <style>
+        body {
+            background-color: Navy;
+            color:Cyan;}
+        .düðme {
+            border-radius: 15px;
+            background-color: FireBrick;
+            border: none;
+            color: Lime;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 270px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            margin-top:50px;}
+        .düðme span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;}
+        .düðme span:after {
+            content: '\00ab'; /* veya "\00BB" */
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -40px;
+            transition: 0.5s;}
+        .düðme:hover span {padding-right: 25px;}
+        .düðme:hover span:after {
+            opacity: 1; /* 0'dan */
+            right: 0;} /* -40px'den */
+    </style>
+</head>
+<body>
+    <h2>Animasyonlu Düðmeler - "Üzerinde Efekti"</h2>
+
+    <button class="düðme"><span>Üzerimde Dolaþ</span></button>
+</body>
+</html>

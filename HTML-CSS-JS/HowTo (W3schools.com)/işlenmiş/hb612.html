@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb612.html: Üzerindeyken resmin netliðinin þeffaflaþmasý örneði.</title>
+    <style>
+        body {
+            background-color:BurlyWood;
+            color:DarkBlue;}
+        .resimKabý {
+            position: relative;
+            width: 50%;}
+        .resim {
+            /*opacity: 1;*/
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .8s ease;
+            /*backface-visibility: hidden;*/}
+        .ortaKab {
+            transition: .8s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;}
+        .resimKabý:hover .resim {opacity: 0.2;}
+        .resimKabý:hover .ortaKab {opacity: 1;}
+        .resminAdý {
+            background-color: Green;
+            color: Yellow;
+            font-size: 16px;
+            padding: 16px 32px;}
+    </style>
+</head>
+<body>
+    <h2>Resimli Kabýn Netliði</h2>
+    <p>Þeffaflaþma etkisini gözlemlemek için resmin üzerinde gezinin:</p>
+
+    <div class="resimKabý">
+        <img src="resim/avatar.png" alt="Avatar" class="resim" style="width:100%">
+        <div class="ortaKab">
+            <div class="resminAdý">Avatar Nihat</div>
+        </div>
+    </div>
+</body>
+</html>

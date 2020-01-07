@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb842.html: Arkasý yazýlý döner resim örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Sienna;
+            color:RoyalBlue;}
+        .dönerResim {
+            background-color: transparent;
+            width: 400px;
+            height: 300px;
+            border: 3px solid Red;
+            perspective: 1000px;} /* Dönerken kutudan taþmayý canlandýrýr */
+        .dönerResimKabý {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;}
+        .dönerResim:hover .dönerResimKabý {transform: rotateY(180deg);}
+        .dönerResimÖnü, .dönerResimArkasý {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /*backface-visibility: hidden;*/}
+/*
+        .dönerResimÖnü {
+           background-color: #bbb;
+            color: black;}
+*/
+        .dönerResimArkasý {
+            font-size:30px;
+            background-color: MidnightBlue;
+            color: Lime;
+            transform: rotateY(180deg);}
+    </style>
+</head>
+<body>
+    <h1>Arkasý Metinli Döner Resim</h1>
+    <h3>Resmin arka yazýsýný okumak için üzerinde gezinin:</h3>
+
+    <div class="dönerResim">
+        <div class="dönerResimKabý">
+            <div class="dönerResimÖnü">
+                <img src="resim/paris.jpg" alt="Paris">
+            </div>
+            <div class="dönerResimArkasý">
+                <h2>Paris</h2>
+                <p>Ne muhtaþem bir þehir!..</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

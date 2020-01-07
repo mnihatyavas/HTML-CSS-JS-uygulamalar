@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb751.html: Sabit metinli kayan resimler örneði.</title>
+    <style>
+       body, html {
+           height: 100%; /* url resimli zemin yüksekliði */
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;}
+        /* {box-sizing: border-box;} pading'ler tam zemin url'i etkilemez */
+        .zeminResmi {
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: solid 2px black;}
+        .resim1 { background-image: url("resim/karlýDaðlar.jpg"); }
+        .resim2 { background-image: url("resim/kýz.png"); }
+        .resim3 { background-image: url("resim/kutupIþýklarý.jpg"); }
+        .resim4 { background-image: url("resim/makiliDaðlar.jpg"); }
+        .resim5 { background-image: url("resim/pusluDaðlar.jpg"); }
+        .resim6 { background-image: url("resim/orman.jpg"); }
+        .zeminMetni {
+            background-color: rgba(0,0,0, 0.4); /* Altý þeffaf */
+            color: sienna;
+            font-weight: bold;
+            font-size: 80px;
+            border: 10px solid brown;
+            position: fixed; /* Resim kayarken metin kutusu sabit */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 300px;
+            padding: 20px;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="zeminResmi resim1"></div>
+    <div class="zeminResmi resim2"></div>
+    <div class="zeminResmi resim3"></div>
+    <div class="zeminResmi resim4"></div>
+    <div class="zeminResmi resim5"></div>
+    <div class="zeminResmi resim6"></div>
+
+    <div class="zeminMetni">METÝN</div>
+</body>
+</html>

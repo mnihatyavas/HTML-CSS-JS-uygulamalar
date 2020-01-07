@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hc1051.html: Seyrüsefer çubuðunda aþaðýya açýlan menü seçenekleri örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color:Teal;
+            color:Coral;}
+        .seyrüÇubuk {
+            overflow: hidden;
+            background-color: GoldenRod;
+            font-family: Arial, Helvetica, sans-serif;}
+        .seyrüÇubuk a {
+            float: left;
+            font-size: 16px;
+            color: Blue;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;}
+        .aþaðýAçýlan {
+            float: left;
+            overflow: hidden;}
+        .aþaðýAçýlan .açýlanDüðme {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: Lime;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;}
+        .seyrüÇubuk a:hover, .aþaðýAçýlan:hover .açýlanDüðme {background-color: red;}
+        .açýlanÝçerik {
+            display: none;
+            position: absolute;
+            background-color: Beige;
+            min-width: 160px;
+            box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.7);
+            z-index: 1;}
+        .açýlanÝçerik a {
+            float: none;
+            color: DeepPink;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;}
+        .açýlanÝçerik a:hover {background-color: BurlyWood;}
+        .aþaðýAçýlan:hover .açýlanÝçerik {display: block;}
+    </style>
+</head>
+<body>
+    <div class="seyrüÇubuk">
+        <a href="#anasayfa">Anasayfa</a>
+        <a href="#haberler">Haberler</a>
+        <div class="aþaðýAçýlan">
+            <button class="açýlanDüðme">Aþaðýya-açýlan 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="açýlanÝçerik">
+                <a href="#">Baðlantý 1</a>
+                <a href="#">Baðlantý 2</a>
+                <a href="#">Baðlantý 3</a>
+            </div>
+        </div> 
+    </div>
+
+    <h3>Bir Seyrüsefer Çubuðunda Aþaðýya-açýlan Menü</h3>
+    <p>Aþaðýya-açýlan düðmesi üzerinde gezinirseniz açýlan menü baðlantýlarýna eriþebilirsiniz.</p>
+</body>
+</html>

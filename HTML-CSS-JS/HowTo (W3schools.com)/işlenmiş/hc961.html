@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hc961.html: Resim üstü düðmenin üzerindeyken renk netleþmesi örneði.</title>
+    <style>
+        body {
+            background-color:Sienna;
+            color: Cyan;}
+        .resimKabý {
+            border: solid 5px DarkGreen;
+            position: relative;
+            max-width: 400px;
+            max-height: 265px;
+            margin-top:4em;}
+        .resimKabý .düðme {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #888;
+            color: Pink;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;}
+        .resimKabý .düðme:hover {
+            background-color: black;
+            color:DeepPink;}
+    </style>
+</head>
+<body>
+    <h2>Resim üstüne Düðme</h2>
+    <p>Resmin üstündeki düðme üzerindeyken renk netleþmesi efekti:</p>
+
+    <div class="resimKabý">
+        <img src="resim/karlýDaðlar2.jpg" alt="Karlý Daðlar" style="width:100%">
+        <button class="düðme">Netleþen Düðme</button>
+    </div>
+</body>
+</html>

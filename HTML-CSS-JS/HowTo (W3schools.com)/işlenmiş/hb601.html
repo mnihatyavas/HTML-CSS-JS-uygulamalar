@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb601.html: Etiket açıklamalı resim galerisi örneği.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color:OliveDrab;
+            color:DeepSkyBlue;}
+        .sütun {
+            float: left;
+            width: 20%; /* 5 sütun */
+            padding: 10px;}
+        .sütun img {
+            opacity: 0.6; 
+            cursor: pointer;}
+        .sütun img:hover {opacity: 1;}
+        .satır:after {
+            content: "";
+            display: table;
+            clear: both;}
+        .resimKabı {
+            position: relative;
+            display: none;}
+        #resminEtiketi {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: Yellow;
+            font-size: 20px;}
+        .kapaDüğmesi {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: DeepPink;
+            font-size: 35px;
+            cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div style="text-align:center">
+        <h2>Etiketli Resim Galerisi</h2>
+        <p>Alttaki tırnak-resimleri tıklayarak büyük ebatlı tabloyu seyredebilir, sonra da kapatabilirsiniz:</p>
+    </div>
+
+    <!-- Beş sütun -->
+    <div class="satır">
+        <div class="sütun"><img src="resim/makiliDağlar.jpg" alt="Makili Dağlar" style="width:100%" onclick="fonk (this);"></div>
+        <div class="sütun"><img src="resim/karlıDağlar.jpg" alt="Karlı Dağlar" style="width:100%" onclick="fonk (this);"></div>
+        <div class="sütun"><img src="resim/pusluDağlar.jpg" alt="Puslu Dağlar" style="width:100%" onclick="fonk (this);"></div>
+        <div class="sütun"><img src="resim/kutupIşıkları.jpg" alt="Kutup Işıkları" style="width:100%" onclick="fonk (this);"></div>
+        <div class="sütun"><img src="resim/kayalıkSahil.jpg" alt="Kayalık Sahil" style="width:100%" onclick="fonk (this);"></div>
+    </div>
+
+    <div class="resimKabı">
+        <span onclick="this.parentElement.style.display='none'" class="kapaDüğmesi">&times;</span>
+        <img id="büyükboyResim" style="width:100%">
+        <div id="resminEtiketi"></div>
+    </div>
+
+    <script>
+        function fonk(imgs) {
+            var büyütülenResim = document.getElementById ("büyükboyResim");
+            var açıklamaEtiketi = document.getElementById ("resminEtiketi");
+            büyütülenResim.src = imgs.src;
+            açıklamaEtiketi.innerHTML = imgs.alt;
+            büyütülenResim.parentElement.style.display = "block";
+        } // fonk sonu...
+    </script>
+</body>
+</html>

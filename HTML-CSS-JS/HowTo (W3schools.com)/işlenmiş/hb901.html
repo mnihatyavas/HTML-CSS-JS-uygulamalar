@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hb901.html: Kaydýrmalý paravanlý çift resim örneði.</title>
+    <style>
+        body {
+            background-color: OliveDrab;
+            color: Gold;}
+        * {box-sizing: border-box;}
+        .resim-karþýlaþtýrma-kabý {
+            position: relative;
+            border:solid 3px FireBrick;
+            width:608px;
+            height: 408px;} /* Kab resimle (artý 3+3+1+1) ayný en-boy'da olmalý */
+        .resmi-resimle-karþýlaþtýr {
+            position: absolute;
+            width: auto;
+            height: auto;
+            overflow:hidden;
+            border: solid 1px Coral;}
+        .resmi-resimle-karþýlaþtýr img {
+            display:block;
+            vertical-align:middle;}
+        .resim-karþýlaþtýrma-kaydýracý {
+            position: absolute;
+            z-index:9;
+            cursor: ew-resize; /* sol-sað ok */
+            /* Kaydýraç þeffaf mavi bilye görünümünde olacak: */
+            width: 40px;
+            height: 40px;
+            background-color: #2196F3;
+            opacity: 0.7;
+            border-radius: 50%;}
+    </style>
+
+    <script>
+        function karþýlaþtýrmayýBaþlat() {
+            var x, i;
+            /* "resmi-resimle-perdele" sýnýfýnýn elemanlarýný bul (örneðimizde tek): */
+            x = document.getElementsByClassName ("resmi-resimle-perdele");
+            for (i = 0; i < x.length; i++) {
+                /* "resmi-resimle-perdele" elemanýnýn herbiri için resim elemanýný
+                argüman olarak geçirip resimleriKarþýlaþtýr fonksiyonunu iþlet: */
+                resimleriKarþýlaþtýr (x [i]);
+            } // for sonu...
+
+            function resimleriKarþýlaþtýr (resim) {
+                var kaydýraç, resim, týkla = 0, en, boy;
+                /* Resim elemanýnýn en ve boyunu al */
+                en = resim.offsetWidth;
+                boy = resim.offsetHeight;
+                /* Resim elemanýnýn enini %50 olarak ayarla: */
+                resim.style.width = (en / 2) + "px";
+                /*Kaydýraç div bölüm elemanýný yarat: */
+                kaydýraç = document.createElement ("DIV");
+                kaydýraç.setAttribute ("class", "resim-karþýlaþtýrma-kaydýracý");
+                /* Yeni yaratýlan kaydýraç div elemanýný perde resim elemanýnýn önüne konumlandýr */
+                resim.parentElement.insertBefore (kaydýraç, resim);
+                /* Kaydýraç bilyesini tam ortaya koy: */
+                kaydýraç.style.top = (boy / 2) - (kaydýraç.offsetHeight / 2) + "px";
+                kaydýraç.style.left = (en / 2) - (kaydýraç.offsetWidth / 2) + "px";
+                /* Fare düðmesi bilye üzerinde basýlý tutulduðu sürece kaydýraçHazýr fonksiyonunu iþlet: */
+                kaydýraç.addEventListener ("mousedown", kaydýraçHazýr);
+                /* Ve fare düðmesi býrakýldýðýnda kaydýraçSon'u iþlet: */
+                window.addEventListener ("mouseup", kaydýraçSon);
+                /* Veya ayný fonksiyonlarý dokunmatik ekranlar için de tekrarla: */
+                kaydýraç.addEventListener ("touchstart", kaydýraçHazýr);
+                window.addEventListener ("touchstop", kaydýraçSon);
+
+                function kaydýraçHazýr (olay) {
+                    /* Resim üzerinde kaydýrýrken olasýlý diðer varsayýlý olaylarý engelle: */
+                    olay.preventDefault();
+                    /* Kaydýraç halihazýrda basýlý (imleç sol-sað ok) ve kaydýrýlmaya hazýr: */
+                    týkla = 1;
+                    /* Kaydýraç kayarken kaydýraçHareketli fonksiyonunu (heriki çeþit ekran için de) iþlet: */
+                    window.addEventListener ("mousemove", kaydýraçHareketli);
+                    window.addEventListener ("touchmove", kaydýraçHareketli);
+                } // içiç-func sonu...
+
+                function kaydýraçSon() {
+                    /* Kaydýraç artýk basýlý deðil (imleç sol-sað ok deðil): */
+                    týkla = 0;
+                } // içiç-func sonu...
+
+                function kaydýraçHareketli (olay) {
+                    var konum;
+                    /* Eðer kaydýraç halen basýlý deðilse fonksiyondan çýk: */
+                    if (týkla == 0) return false;
+                    /* Aktüel hareketli imleç konumunu imleçKonumunuAl fonksiyonuyla al:*/
+                    konum = imleçKonumunuAl (olay)
+                    /* Kaydýraç bilyesi ortasýnýn resim kabý sol-sað sýnýrlarýný taþmasýný önle:*/
+                    if (konum < 0) konum = 0;
+                    if (konum > en) konum = en;
+                    /* Ve perde resminin görünen ebatýný bu yeni kaydýraç konumuna göre güncelle: */
+                    kaydýr (konum);
+                } // içiç-func sonu...
+
+                function imleçKonumunuAl (olay) {
+                    var a, x = 0;
+                    olay = olay || window.event;
+                    /* Resmin aktüel yatay konumunu al: */
+                    a = resim.getBoundingClientRect();
+                    /* Resme göreceli olarak imlecin yatay x konumunu hesapla: */
+                    x = olay.pageX - a.left;
+                    /* Olasýlý sayfa kaydýrmasýný gözönünde bulundur: */
+                    x = x - window.pageXOffset;
+                    return x;
+                } // içiç-func sonu...
+
+                function kaydýr (x) {
+                    /* Resmi son kaydýraç konumuna göre yeniden yatay x ebatlandýr: */
+                    resim.style.width = x + "px";
+                    /* Kaydýraç bilyesini yeni ebatlanan resme konumlandýr: */
+                    kaydýraç.style.left = resim.offsetWidth - (kaydýraç.offsetWidth / 2) + "px";
+                } // içiç-func sonu...
+            } // iç-func sonu...
+        } // func sonu...
+    </script>
+</head>
+<body>
+    <h1>Ýki Resmin Karþýlaþtýrýlmasý</h1>
+    <p>Ortadaki mavý bilyeyi basýp paravaný kaydýrarak ayný çerçevedeki iki farklý resmin görüntüsünü karþýlaþtýrabilirsiniz:</p>
+
+    <div class="resim-karþýlaþtýrma-kabý">
+        <div class="resmi-resimle-karþýlaþtýr">
+            <img src="resim/karlýDaðlar2.jpg" width="600" height="400">
+        </div>
+        <div class="resmi-resimle-karþýlaþtýr resmi-resimle-perdele">
+            <img src="resim/ormanaKöprü.jpg" width="600" height="400">
+        </div>
+    </div>
+
+    <script>
+        /* resmi-resimle-karþýlaþtýr sýnýfýnýn herbir resim elemanýyla karþýlaþlaþtýrma yapacak olan fonksiyonu iþlet: */
+        karþýlaþtýrmayýBaþlat();
+    </script>
+</body>
+</html>

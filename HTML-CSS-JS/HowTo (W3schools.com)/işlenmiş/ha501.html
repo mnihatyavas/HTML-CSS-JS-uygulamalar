@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe">
+    <title>ha501.html: Dikey düğme grubu ile seyrüsefer örneği.</title>
+    <style>
+        body {
+            background-color:tan;
+            color:Purple;}
+        h1 {margin-bottom:2em;}
+        .düğmeGrubu düğme {
+            background-color: #4CAF50;
+            border: 2px solid green;
+            padding: 10px 24px;
+            cursor: pointer;
+            width: 50%;
+            text-align: center;
+            display: block;}
+        .düğmeGrubu düğme a {color:yellow; text-decoration:none;}
+        .düğmeGrubu düğme:not(:last-child) {border-bottom: none;}
+        .düğmeGrubu düğme:hover {background-color: #3e8e41;}
+        .düğmeGrubu düğme a:hover {color: Tomato;}
+    </style>
+</head>
+<body>
+    <h1>Dikey Düğme Grubu</h1>
+
+    <div class="düğmeGrubu düğme">
+        <düğme><a href="#">Apple</a></düğme>
+        <düğme><a href="#">Samsung</a></düğme>
+        <düğme><a href="#">Sony</a></düğme>
+        <düğme><a href="#">Nokia</a></düğme>
+    </div>
+</body>
+</html>

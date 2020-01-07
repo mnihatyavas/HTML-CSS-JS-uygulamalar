@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>hb762.html: Taraycý ebatýna duyarlý yanyana resimler örneði.</title>
+    <style>
+        body {
+            background-color:DarkKhaki;
+            color:DarkRed;}
+        * {box-sizing: border-box;}
+        .sütun {
+            float: left;
+            width: 33.33%;
+            padding: 5px;}
+/* Gerekmez...
+        .satýr::after {
+            content: "";
+            clear: both;
+            display: table;}
+*/
+        @media screen and (max-width: 500px) {
+            .sütun {width: 100%;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Yan Yana Resimler</h2>
+    <p>CSS float:left/kay:sol özelliðiyle yan yana resimler konumlandýrma. Ancak tarayýcý eni 500px altýna daralýrsa resimler alt alta sýralanacaktýr.</p>
+    <p>Etkiyi gözlemlemek için tarayýcý ebatýyla oynayabilirsiniz.</p>
+
+    <div class="satýr">
+        <div class="sütun">
+            <img src="resim/karlýDaðlar2.jpg" alt="Karlý Daðlar" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/ormanaKöprü.jpg" alt="Köprülü Orman" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/pusluDaðlar2.jpg" alt="Puslu fiyortlar" style="width:100%">
+        </div>
+    </div>
+</body>
+</html>

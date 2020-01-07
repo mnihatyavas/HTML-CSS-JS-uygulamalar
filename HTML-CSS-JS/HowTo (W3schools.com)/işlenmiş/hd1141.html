@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1141.html: Sosyal medyayla veya manüel kaydolma örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Sienna;
+            color:Cyan;}
+        * {box-sizing: border-box;}
+        .üstKab {
+            position: relative;
+            border-radius: 5px;
+            background-color: OliveDrab;
+            padding: 20px 0 30px 0;
+            margin-top:3em;} 
+        input, .düðme {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px 0;
+            opacity: 0.85;
+            color:white;
+            display: inline-block;
+            font-size: 17px;
+            line-height: 20px;
+            text-decoration: none;} /* çapa altý çizgiler yok */
+        input:hover, .düðme:hover {
+            opacity: 1;
+            color:Pink;}
+        .facebook {background-color: #3B5998;}
+        .twitter {background-color: #55ACEE;}
+        .google {background-color: #dd4b39;}
+        input[type=submit] {
+            background-color: #4CAF50;
+            cursor: pointer;}
+        input[type=submit]:hover {background-color: #45a049;}
+        .kolon {
+            float: left;
+            width: 50%;
+            margin: auto;
+            padding: 0 50px;
+            margin: 6px 0;}
+        .satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+        .dikey-çizgi {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            border: 2px solid #ddd;
+            height: 175px;}
+        .dç-ortametni {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: Olive;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: 8px 10px;}
+        .metni-gizle {display: none;}
+        .altKab {
+            text-align: center;
+            background-color: #333;
+            border-radius: 0px 0px 5px 5px;}
+        @media screen and (max-width: 650px) {
+            .kolon {width: 100%;}
+            .dikey-çizgi {display: none;}
+            .metni-gizle {
+                display: block;
+                text-align: center;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Sosyal Kayýt Formu</h2>
+    <p>Duyarlýlýk efektini gözlemlemek için tarayýcý geniþliðiyle oynayýn. Ekran eni
+        650px'in altýna düþtüðünde yanyana kolonlar alt alta sýralanacak, orta dikey çizgi
+        kaybolacak ve gizlenen manüel metni görünecektir:</p>
+
+    <div class="üstKab">
+        <form action="/action_page.php">
+            <div class="satýr">
+                <h2 style="text-align:center">Sosyal Medyayla veya Manüel Kaydolun</h2>
+                <div class="dikey-çizgi">
+                    <span class="dç-ortametni">veya</span>
+                </div>
+
+                <div class="kolon">
+                    <a href="#" class="facebook düðme">
+                        <i class="fa fa-facebook fa-fw"></i>&nbsp;Facebook'la Kaydol
+                    </a>
+                    <a href="#" class="twitter düðme">
+                        <i class="fa fa-twitter fa-fw"></i> Twitter'le Kaydol
+                    </a>
+                    <a href="#" class="google düðme">
+                        <i class="fa fa-google fa-fw"></i> Google+ ile Kaydol
+                    </a>
+                </div>
+
+                <div class="kolon">
+                    <div class="metni-gizle">
+                        <p>Veya manüel onaylý:</p>
+                    </div>
+
+                    <input type="text" name="kullanýcý" placeholder="Kullanýcý adý veya eposta'nýz" required>
+                    <input type="password" name="þifre" placeholder="Þifreniz" required>
+                    <input type="submit" value="Kaydol">
+                </div>
+      
+            </div>
+        </form>
+    </div>
+
+    <div class="altKab">
+        <div class="satýr">
+            <div class="kolon">
+                <a href="#" style="background:#999;" class="düðme">Yeni Kayýt</a>
+            </div>
+            <div class="kolon">
+                <a href="#" style="background:#999;" class="düðme">Þifrenizi mi unuttunuz?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

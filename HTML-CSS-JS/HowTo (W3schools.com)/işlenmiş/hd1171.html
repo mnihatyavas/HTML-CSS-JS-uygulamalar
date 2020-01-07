@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>hd1171.html: Günlük eposta-haberlerine abonelik formu örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Sienna;
+            color:Lime;
+            margin:30px;}
+        form {
+            border: 5px solid #f1f1f1;
+            font-family: Arial;}
+        .kab {
+            padding: 20px;
+            background-color: SlateGray;}
+        input[type=text], input[type=submit] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid black;
+            background-color:FloralWhite;
+            color: Green;
+            box-sizing: border-box;}
+        input[type=checkbox] {margin-top: 16px;}
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;}
+        input[type=submit]:hover {
+            opacity: 0.8;
+            color:Yellow;}
+    </style>
+<body>
+    <h2>CNN Eposta-haberleri</h2>
+
+    <form action="/action_page.php">
+        <div class="kab">
+            <h2>Günlük Eposta-haberlerimize Abone Olun</h2>
+            <p>Lorem ipsum metni ki niçin günlük eposta haberlerimize abone olmalýsýnýz... Lorem ipsum metni ki niçin günlük eposta haberlerimize abone olmalýsýnýz...</p>
+        </div>
+
+        <div class="kab" style="background-color:Tan">
+            <input type="text" placeholder="Ýsminiz" name="isim" required>
+            <input type="text" placeholder="Eposta adresiniz" name="eposta" required>
+            <label>
+                <input type="checkbox" checked="checked" name="abone">&nbsp;Günlük Eposta-haberler
+            </label>
+        </div>
+
+        <div class="kab">
+            <input type="submit" value="Abone Oluyorum">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe"/>
+    <title>hb581.html: Tarayıcı ebatına duyarlı resimler ızgarası örneği.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color:IndianRed;
+            color:SpringGreen;}
+        .başlık {
+            text-align: center;
+            padding: 32px;}
+        .satır {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;}
+        .sütun {
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;}
+        .sütun img {
+            margin-top: 8px;
+            vertical-align: middle;}
+        /* Tarayıcı < 600px: tek-resim/100%; < 800: çift-resim/50%; > 800: dört-resim/25% */
+        @media screen and (max-width: 800px) {
+            .sütun {
+                flex: 50%;
+                max-width: 50%;} }
+        @media screen and (max-width: 600px) {
+            .sütun {
+                flex: 100%;
+                max-width: 100%;} }
+    </style>
+</head>
+<body>
+    <!-- Başlık -->
+    <div class="başlık">
+        <h1>Duyarlı Resim Izgarası</h1>
+        <p>Duyarlılık etkisini gözlemlemek için tarayıcı genişliğiyle oynayın.</p>
+    </div>
+
+    <!-- Resim Izgarası -->
+    <div class="satır"> 
+        <div class="sütun">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/şelale.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+            <img src="resim/makiliDağlar.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/batış.jpg" style="width:100%">
+            <img src="resim/kayalıkSahil.jpg" style="width:100%">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/batış.jpg" style="width:100%">
+        </div>  
+        <div class="sütun">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/şelale.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+            <img src="resim/makiliDağlar.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/batış.jpg" style="width:100%">
+            <img src="resim/kayalıkSahil.jpg" style="width:100%">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/batış.jpg" style="width:100%">
+        </div>
+    </div>
+</body>
+</html>

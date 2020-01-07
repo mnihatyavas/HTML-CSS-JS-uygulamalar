@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb681.html: Metnin resim üzerine konumlandýrýlabilecek 5 yeri örneði.</title>
+    <style>
+        body {
+            background-color: Purple;
+            color: SpringGreen;}
+        .resimKabý {
+            position: relative;
+            text-align: center;
+            font-weight: bold;
+            color: Tomato;}
+        .alt-sol {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;}
+        .alt-sað {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;}
+        .üst-sol {
+            position: absolute;
+            top: 8px;
+            left: 16px;}
+        .üst-sað {
+            position: absolute;
+            top: 8px;
+            right: 16px;}
+        .merkez {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);}
+    </style>
+</head>
+<body>
+    <h2>Resmin Metni</h2>
+    <p>Bir metni resmin hangi yerlerine konumlandýrabiliriz?</p>
+
+    <div class="resimKabý">
+        <img src="resim/karlýDaðlar.jpg" alt="Karlý Dað" style="width:100%;">
+        <div class="alt-sol">Alt Sol</div>
+        <div class="alt-sað">Alt Sað</div>
+        <div class="üst-sol">Üst Sol</div>
+        <div class="üst-sað">Üst Sað</div>
+        <div class="merkez">Merkez</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb624.html: Üzerindeyken soldan sağa perdeleme örneği.</title>
+    <style>
+        body {
+            background-color:DarkGreen;
+            color:MintCream;}
+        .çerçeve {
+            position: relative;
+            width: 50%;}
+        .resim {
+            display: block;
+            width: 100%;
+            height: auto;}
+        .perde {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /*right: 0;*/
+            background-color: Brown;
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .8s ease;}
+        .çerçeve:hover .perde {width: 100%;}
+        .metin {
+            color: Yellow;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%; /*text-align:center;*/
+            transform: translate(-50%, -50%);
+            white-space: nowrap;}
+</style>
+</head>
+<body>
+    <h2>Soldan Sağa Perdeleme</h2>
+    <p>Soldan sağa perdeleme etkisini gözlemlemek için resmin üzerinde gezinin.</p>
+
+    <div class="çerçeve">
+        <img src="resim/avatar.png" alt="Avatar" class="resim">
+        <div class="perde">
+            <div class="metin">Avatar Mahmut</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Ýkonlar kütüphanesine baðlanalým: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>hc1001.html: Ýnternetten dosya indirme düðmesi örneði.</title>
+    <style>
+        body {
+            background-color:brown;
+            color:Lime;}
+        .düðme {
+            background-color: DodgerBlue;
+            border: none;
+            color: Orange;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;}
+        .düðme:hover {
+            background-color: RoyalBlue;
+            color:Pink;}
+        .fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;}
+        .fa-download:before{content:"\f019"}
+    </style>
+</head>
+<body>
+    <h1>Ýndirme Stilli Düðmeler</h1>
+
+    <p>Varsayýlý geniþlik:</p>
+    <button class="düðme"><i class="fa fa-download"></i> Ýndir</button>
+
+    <p>Tam geniþlik:</p>
+    <button class="düðme" style="width:100%"><i class="fa fa-download"></i> Ýndir</button>
+</body>
+</html>

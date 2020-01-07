@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>hb761.html: Tarayýcýya duyarsýz yan-yana resimler örneði.</title>
+    <style>
+        body {
+            background-color:Tan;
+            color:Navy;}
+        * {box-sizing: border-box;} /* resim içi sütun pading'le taþacak resim var */
+        .sütun {
+            float: left;
+            width: 33.33%;
+            padding: 5px;}
+/* Gerekmez...
+        .satýr::after {
+            content: "";
+            clear: both;
+            display: table;}
+*/
+    </style>
+</head>
+<body>
+    <h2>Yan Yana Resimler</h2>
+    <p>CSS float:left/kay:sol özellikli resimlerin, tarayýcý daralsa da yan yana ayrýlmaz birlikteliði:</p>
+
+    <div class="satýr">
+        <div class="sütun">
+            <img src="resim/karlýDaðlar2.jpg" alt="Karlý Daðlar" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/ormanaKöprü.jpg" alt="Ormana Köprü" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/pusluDaðlar2.jpg" alt="Puslu Daðlar" style="width:100%">
+        </div>
+    </div>
+</body>
+</html>

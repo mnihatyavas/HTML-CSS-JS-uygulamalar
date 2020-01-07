@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb721.html: Duyarlý resim üstü kayýt formu örneði.</title>
+    <style>
+        body, html {
+            background-color: DarkKhaki;
+            color:Navy;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;} /* Padding kutu dahilinedir. */
+        .zeminResmi {
+            background-image: url("resim/makiliDaðlar.jpg");
+            min-height: 380px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;}
+        .kayýtKabý {
+            position: absolute;
+            right: 0;
+            margin: 20px;
+            max-width: 300px;
+            padding: 16px;
+            background-color: Peru;}
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            color:SpringGreen;
+            background: Plum;}
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: Orchid;
+            color: White;
+            outline: none;}
+        .düðme {
+            background-color: #4CAF50;
+            color: Yellow;
+            padding: 16px 20px;
+            border: solid 1px Yellow;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.7;}
+        .düðme:hover {opacity: 1;}
+        input::placeholder {color:pink;}
+    </style>
+</head>
+<body>
+    <h2>Resim üstü Kayýt Formu</h2>
+
+    <div class="zeminResmi">
+            <form action="#" class="kayýtKabý">
+            <h1>Kaydol</h1>
+
+            <label for="eposta"><b>Eposta</b></label>
+            <input type="text" placeholder="Epostanýzý girin" name="eposta" required>
+
+            <label for="þifre"><b>Þifre</b></label>
+            <input type="password" placeholder="Þifrenizi girin" name="þifre" required>
+
+            <button type="submit" class="düðme">Gönder</button>
+        </form>
+    </div>
+
+    <p>Bu örnek tarayýcý ebatýna duyarlý bir resim üstünde kayýt formu yaratýr. Tarayýcý ebatýnýzý deðiþtirerek, resmin daima ayný sabit yükseklik ve tam geniþliði muhafaza ederek resmin görünür içeriðini en uygun þekilde ölçeklendirdiðini gözlemleyin.</p>
+</body>
+</html>

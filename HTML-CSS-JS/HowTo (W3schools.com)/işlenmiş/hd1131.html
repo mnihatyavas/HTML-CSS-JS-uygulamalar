@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1131.html: Ýletiþim formunu doldurma ve gönderme örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin:30px;
+            background-color:Navy;
+            color:Lime;}
+        * {box-sizing: border-box;}
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid Linen;
+            border-radius: 5px;
+            background-color:Cyan;
+            color:Magenta;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            resize: vertical;}
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;}
+        input[type=submit]:hover {
+            background-color: Green;
+            color:Yellow;}
+        .kab {
+            border-radius: 5px;
+            background-color: DarkKhaki;
+            padding: 20px;}
+    </style>
+</head>
+<body>
+    <h3>Ýletiþim Formu</h3>
+
+    <div class="kab">
+        <form action="/action_page.php">
+            <label for="ad">Adýnýz</label>
+            <input type="text" id="ad" name="ad" placeholder="M.Nihat..." required>
+
+            <label for="soyad">Soyadýnýz</label>
+            <input type="text" id="soyad" name="soyad" placeholder="Yavaþ..." required>
+
+            <label for="ülke">Ülkeniz</label>
+            <select id="ülke" name="ülke">
+                <option value="avustralya">Avustralya</option>
+                <option value="kanada">Kanada</option>
+                <option value="abd">ABD</option>
+                <option value="türkiye">Türkiye</option>
+            </select>
+
+            <label for="eposta">Epostanýz</label>
+            <input type="text" id="eposta" name="eposta" placeholder="mnyavas@hotmail.com..." required>
+
+            <label for="konu">Konu</label>
+            <textarea id="konu" name="konu" placeholder="Haberleþme detaylarýný giriniz..." style="height:200px"></textarea>
+
+            <input type="submit" value="Gönder">
+        </form>
+    </div>
+</body>
+</html>

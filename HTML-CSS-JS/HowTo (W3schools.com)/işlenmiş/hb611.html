@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb611.html: Üzerindeyken tamamen solan resim örneği.</title>
+    <style>
+        body {
+            background-color:DarkGoldenRod;
+            color: SpringGreen;}
+        .avatarKabı {
+            position: relative;
+            width: 50%;
+            margin-left:25%;}
+        .resim {
+            display: block;
+            width: 100%;
+            /*max-width: 500px;*/
+            height: auto;}
+        .soldur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            /*max-width: 500px;*/
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #008CBA;}
+        .avatarKabı:hover .soldur {opacity: 1;}
+        .metin {
+            color: DarkOrange;
+            font-size: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <div style="text-align:center;">
+        <h2>Üzerindeyken Solan</h2>
+        <p>Resmin tamamen silikleşip kaybolma etkisini gözlemlemek için üzerinde gezinin:</p>
+    </div>
+
+    <div class="avatarKabı">
+        <img src="resim/avatar.png" alt="Avatar" class="resim">
+        <div class="soldur">
+            <div class="metin">Sahne Kapandı</div>
+        </div>
+    </div>
+</body>
+</html>

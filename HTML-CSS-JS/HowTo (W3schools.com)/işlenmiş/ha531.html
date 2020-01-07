@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>ha531.html: Seyrüsefer başlığının tarayıcı enine duyarlılığı örneği.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body { 
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:CadetBlue;
+            color:Coral;}
+        .başlık {
+           overflow: hidden;
+            background-color: SaddleBrown;
+            padding: 2px 2px;
+            margin-bottom:5em;}
+        .başlık a {
+            float: left;
+            color: Chartreuse;
+            text-align: center;
+            padding:20px 12px;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 15px;}
+        .başlık a.logo {
+            font-size: 35px;
+            font-weight: bold;}
+        .başlık a:hover {
+            background-color: BurlyWood;
+            color: Navy;}
+        .başlık a.aktif {
+            background-color: dodgerblue;
+            color: Red;}
+        .başlığınSağı {float: right;}
+        @media screen and (max-width: 660px) {
+            .başlık a {
+                float: none;
+                display: block;
+                text-align: left;}
+            .başlığınSağı {float: none;} }
+    </style>
+</head>
+<body>
+    <header class="başlık">
+        <a href="#" class="logo">Şirket Logosu&ensp;
+            <img src="resim/kaykay.jpg" alt="" height="55" />
+        </a>
+        <div class="başlığınSağı">
+            <a class="aktif" href="#">Anasayfa</a>
+            <a href="#">İletişim</a>
+            <a href="#">Hakkımızda</a>
+        </div>
+    </header>
+
+    <main style="padding-left:20px">
+        <h1>Tarayıcı Enine Duyarlı Başlık</h1>
+        <p>Duyarlılık etkisini test etmek için tarayıcı genişliğiyle oynayın.</p>
+        <p>Biraz dolgu metni...</p>
+        <p>Biraz dolgu metni...</p>
+        <p>Biraz dolgu metni...</p>
+    </main>
+</body>
+</html>

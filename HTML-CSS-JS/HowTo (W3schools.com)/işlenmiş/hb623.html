@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb623.html: Üzerindeyken sağdan sola perdeleme etkisi örneği.</title>
+    <style>
+        body {
+            background-color:Sienna;
+            color:Cyan;}
+        .resimKabı {
+            position: relative;
+            width: 50%;}
+        .resim {
+            display: block;
+            width: 100%;
+            height: auto;}
+        .perde {
+            position: absolute;
+            bottom: 0;
+            left: 100%;
+            right: 0;
+            background-color: DarkGreen;
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .8s ease;}
+        .resimKabı:hover .perde {
+            width: 100%;
+            left: 0;}
+        .perdeMetni {
+            color: Pink;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;}
+</style>
+</head>
+<body>
+    <h2>Sağdan Sola Perdeleme</h2>
+    <p>Resmin üzerinde gezinerek sağdan sola kapanan perdeleme etkisini gözlemleyin.</p>
+
+    <div class="resimKabı">
+        <img src="resim/avatar.png" alt="Avatar" class="resim">
+        <div class="perde">
+            <div class="perdeMetni">Avatar Mahmut</div>
+        </div>
+    </div>
+</body>
+</html>

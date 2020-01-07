@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hb881.html: Resmin üzerinde dolaþtýrýlan mercek kýsmýnýn 6 kat büyütülmesi örneði.</title>
+    <style>
+        body {
+            background-color:DimGray;
+            color:GainsBoro;}
+        * {box-sizing: border-box;}
+        .mercekKabý {position: relative;}
+        .resmi-büyütme-mercekleri {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            /* Büyütme merceðinin ebatý: */
+            width: 50px;
+            height: 50px;}
+        .merceklemeSonucu {
+            border: 1px solid #d4d4d4;
+            /* Mercekle büyütülen sonucun ebatý:*/
+            width: 300px;
+            height: 300px;}
+    </style>
+
+    <script>
+        function resmiMercekle (resimID, sonuçID) {
+            var resimElemaný, mercekElemaný, sonuçElemaný, xOraný, yOraný;
+            resimElemaný = document.getElementById (resimID);
+            sonuçElemaný = document.getElementById (sonuçID);
+            /* Mercek yaratýlýyor:*/
+            mercekElemaný = document.createElement ("DIV");
+            mercekElemaný.setAttribute ("class", "resmi-büyütme-mercekleri");
+            /* Yaratýlan mercek elemanýný resim elemaný önüne ekle:*/
+            resimElemaný.parentElement.insertBefore (mercekElemaný, resimElemaný);
+            /* Büyütme oranlarýn yatay ve dikey deðerlerini hesapla: */
+            xOraný = sonuçElemaný.offsetWidth / mercekElemaný.offsetWidth;
+            yOraný = sonuçElemaný.offsetHeight / mercekElemaný.offsetHeight;
+            /* Sonuç DIV elemaný için zemin yurel resmini ve ebatýný ayarla: */
+            sonuçElemaný.style.backgroundImage = "url('" + resimElemaný.src + "')";
+            sonuçElemaný.style.backgroundSize = (resimElemaný.width * xOraný) + "px " + (resimElemaný.height * yOraný) + "px";
+            /* Resmin üzerinde gezinilirse yada mercek elemaný gezdirilirse bir fonksiyonu iþlet: */
+            mercekElemaný.addEventListener ("mousemove", mercekKonumu);
+            resimElemaný.addEventListener ("mousemove", mercekKonumu);
+            /* Ve ayrýca (duyarlýysa) dokunmatik ekran temasý da yapýlýrsa: */
+            mercekElemaný.addEventListener ("touchmove", mercekKonumu);
+            resimElemaný.addEventListener ("touchmove", mercekKonumu);
+
+            function mercekKonumu (olay) {
+                var konum, x, y;
+                /* Resmin üzerinde gezinirken (varsa) diðer olasýlý faaliyetleri önle: */
+                olay.preventDefault();
+                /* Ýmlecin x ve y konumlarýný al: */
+                konum = imleçKonumunuAl (olay);
+                /* Mercek elemanýnýn konumunu hesapla: */
+                x = konum.x - (mercekElemaný.offsetWidth / 2);
+                y = konum.y - (mercekElemaný.offsetHeight / 2);
+                /* Mercek elemanýnýn resim kabý sýnýrlarý dýþýna taþmasýný önle: */
+                if (x > resimElemaný.width - mercekElemaný.offsetWidth) {x = resimElemaný.width - mercekElemaný.offsetWidth;}
+                if (x < 0) {x = 0;}
+                if (y > resimElemaný.height - mercekElemaný.offsetHeight) {y = resimElemaný.height - mercekElemaný.offsetHeight;}
+                if (y < 0) {y = 0;}
+                /* Mercek elemanýnýn yeni taþýnan konumunu sol-üst göreceli ayarla: */
+                mercekElemaný.style.left = x + "px";
+                mercekElemaný.style.top = y + "px";
+                /* Mercek elemanýnýn "gördüðünü" sonuç penceresinde büyüterek yansýt: */
+                sonuçElemaný.style.backgroundPosition = "-" + (x * xOraný) + "px -" + (y * yOraný) + "px";
+            } // func sonu...
+
+            function imleçKonumunuAl (olay) {
+                var a, x = 0, y = 0;
+                olay = olay || window.event;
+                /* Resmin x ve y konumlarýný al: */
+                a = resimElemaný.getBoundingClientRect();
+                /* Resme göreceli olarak imlecin x ve y kordinatlarýný hesapla: */
+                x = olay.pageX - a.left;
+                y = olay.pageY - a.top;
+                /* Varsa sayfa kaydýrmasý, gözönünde bulundur: */
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return {x : x, y : y};
+            } // func sonu...
+        } // func sonu...
+    </script>
+</head>
+<body>
+    <h1>Resmi Mercekle</h1>
+    <p>Resmin üzerinde gezinin:</p>
+
+    <div class="mercekKabý">
+        <img id="resmim" src="resim/kýz.png" width="300" height="240">
+        <div id="sonucum" class="merceklemeSonucu"></div>
+    </div>
+
+    <p>Resim bir kab içine göreceli/relative konumlamayla yerleþtirilmelidir.</p>
+    <p>Sonuç ("sonucum") sayfanýn herhangibir yerine konulabilir, lakin sýnýf adý "merceklemeSonucu" olmalýdýr.</p>
+    <p>Resim ve sonucun herikisinin de kimlik/id'leri olduðundan emin olun. Bu kimlikler JS'in mercekleme etkisini baþlatmakta kullanýlmaktadýr.</p>
+
+    <script>
+        resmiMercekle ("resmim", "sonucum");
+    </script>
+</body>
+</html>

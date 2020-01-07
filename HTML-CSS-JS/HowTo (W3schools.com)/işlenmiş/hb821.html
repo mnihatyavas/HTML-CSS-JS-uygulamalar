@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb821.html: Þirket yönetimiyle tanýþma duyarlý kartlarý örneði.</title>
+    <style>
+        html {
+            background-color: Teal;
+            color: DeepPink;
+            box-sizing: border-box;}
+        *, *:before, *:after {box-sizing: inherit;}
+        .sütun {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;}
+        @media screen and (max-width: 650px) {
+            .sütun {
+                width: 100%;
+                display: block;} }
+        .tanýtýmKartý {
+            border: solid 2px GoldenRod;
+            background-color:Tan;
+            box-shadow: 5px 4px 8px 0 rgba(250, 0, 250, 0.8);}
+        .metinKabý {
+            color:Yellow;
+            padding: 0 16px;}
+/*
+        .metinKabý::after, .satýr::after {
+            content: "";
+            clear: both;
+            display: table;}
+*/
+        .baþlýk {color: Cyan;}
+        .düðme {
+            border: solid 2pg Azure;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: MintCream;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;}
+        .düðme:hover {
+            background-color: #b92;
+            color:AquaMarine;}
+    </style>
+</head>
+<body>
+    <h2>Duyarlý "Takýmýmýzla Tanýþýn" Faslý</h2>
+    <p>Tarayýcýnýzý daraltýp geniþleterek tanýtým kartlarýnýn ölçeklenmesi ve konumlanmasýný gözlemleyin:</p>
+    <br>
+
+    <div class="satýr">
+
+        <div class="sütun">
+            <div class="tanýtýmKartý">
+                <img src="resim/kurucu.jpg" alt="Jale" style="width:100%">
+                <div class="metinKabý">
+                    <h2>Jale Tümer</h2>
+                    <p class="baþlýk">CEO ve Kurucu</p>
+                    <p>Þirket þöyle kuruldu, böyle CEO atandým vb... lorem ipsum ipsum lorem.</p>
+                    <p>jtümer@hotmail.com</p>
+                    <p><button class="düðme">Yakýnlaþalým</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sütun">
+            <div class="tanýtýmKartý">
+                <img src="resim/yönetici.jpg" alt="Metin Kaptan" style="width:100%">
+                <div class="metinKabý">
+                    <h2>Metin Kaptan</h2>
+                    <p class="baþlýk">Sanat Yönetmeni</p>
+                    <p>Þöyle sanatçý oldum, böyle sanatlarý icra ettim vb... lorem ipsum ipsum lorem.</p>
+                    <p>mkaptan@gmail.com</p>
+                    <p><button class="düðme">Tanýþalým</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sütun">
+            <div class="tanýtýmKartý">
+                <img src="resim/fotoðrafçý.jpg" alt="Cumali" style="width:100%">
+                <div class="metinKabý">
+                    <h2>Cumali Tümer</h2>
+                    <p class="baþlýk">Tasarýmcý</p>
+                    <p>Þunlarý tasarladým, bunlarý tasarlayacaðým vb... lorem ipsum ipsum lorem.</p>
+                    <p>ctümer@haomail.com</p>
+                    <p><button class="düðme">Görüþelim</button></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

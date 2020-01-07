@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="is0:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb651.html: Resmin üzerindeyken beliren perdeli ikon efekti örneði.</title>
+    <style>
+        body {
+            background-color:DarkSlateBlue;
+            color:Gold;}
+        .resimKabý {
+            position: relative;
+            width: 50%;
+            /* max-width: 400px; */}
+        .resim {
+            display: block;
+            width: 100%;
+            height: auto;}
+        .perde {
+            position: absolute;
+            top: 0; left: 0;
+            /* bottom: 0; right: 0; */
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .8s ease;
+            background-color: Tomato;}
+        .resimKabý:hover .perde {opacity: 1;}
+        .ikon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* text-align: center; */}
+        .ikon:hover {background-color: Black;}
+    </style>
+</head>
+<body>
+    <h2>Perdeli Ýkon Örneði</h2>
+    <p>Resmin üzerindeyken perde ve üstüne de ikon serilmesi efektini gözlemleyebilirsiniz:</p>
+
+    <div class="resimKabý">
+        <img src="resim/avatar.png" alt="Avatar" class="resim">
+        <div class="perde">
+            <a href="#" class="ikon" title="Dinamik Sürüþ">
+                <img src="resim/ikon2.png">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

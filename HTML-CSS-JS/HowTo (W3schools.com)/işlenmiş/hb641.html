@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb641.html: Resmin üzerindeyken þeffaf alt baþlýk efekti örneði.</title>
+    <style>
+        body {
+            background-color: DarkRed;
+            color: cyan;}
+        /* {box-sizing: border-box;} */
+        .resimKabý {
+            position: relative;
+            width: 50%;
+            /* max-width: 300px; */}
+        .resim {
+            display: block;
+            width: 100%;
+            height: auto;}
+        .üstYazý {
+            position: absolute; 
+            bottom: 0; 
+            background: rgba(50, 200, 100, 0.5);
+            color: Brown;
+            width: 100%;
+            transition: .8s ease;
+            opacity:0;
+            font-size: 50px;
+            /*padding: 20px;*/
+            text-align: center;}
+        .resimKabý:hover .üstYazý {opacity: 1;}
+    </style>
+</head>
+<body>
+    <h2>Resim Üstü Baþlýk</h2>
+    <p>Resmin altyazý kýsmýnda belirecek þeffaf baþlýk adýný gözlemlemek için üzerinde gezinebilirsiniz:</p>
+
+    <div class="resimKabý">
+        <img src="resim/avatar.png" alt="Avatar" class="resim">
+        <div class="üstYazý">Adým Avatar Mahmut</div>
+    </div>
+</body>
+</html>

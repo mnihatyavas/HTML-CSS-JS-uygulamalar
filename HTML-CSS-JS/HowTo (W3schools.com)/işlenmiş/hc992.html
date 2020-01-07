@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hc992.html: Üç ayrý yükleniyor animasyonlu bekletme düðmesi örneði.</title>
+    <style>
+        body {
+            background-color:Tan;
+            color:Navy;}
+        .yüklemeDüðmesi {
+            background-color: DarkGreen;
+            border: none;
+            color: DeepPink;
+            padding: 12px 24px;
+            font-size: 25px;}
+        .fa {margin-left: -12px;}
+        .fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;}
+        .fa-spinner:before{content:"\f110"}
+        .fa-circle-o-notch:before{content:"\f1ce"}
+        .fa-refresh:before{content:"\f021"}
+        .fa-spin{animation:fa-spin 2s infinite linear}
+    </style>
+</head>
+<body>
+    <h1>Yükleniyor Düðmeleri</h1>
+
+    <button class="yüklemeDüðmesi">
+        <i class="fa fa-spinner fa-spin"></i>Yükleniyor
+    </button>
+
+    <button class="yüklemeDüðmesi">
+        <i class="fa fa-circle-o-notch fa-spin"></i>Yükleniyor
+    </button>
+
+    <button class="yüklemeDüðmesi">
+        <i class="fa fa-refresh fa-spin"></i>Yükleniyor
+    </button>
+</body>
+</html>

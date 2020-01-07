@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb542.html: Otomatikmen her 4 sn'de değişen resim slaytı örneği.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: DarkSeaGreen;
+            color: DarkRed;}
+        .slaytlarım {display: none;}
+        img {vertical-align: middle;}
+        .slaytKabı {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;}
+     .başlık {
+            color: DeepPink;
+            font: 15px bold;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;}
+        .slaytNo {
+            color: Magenta;
+            font: 15px strong;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;}
+        .nokta {
+            height: 20px;
+            width: 20px; /* (20x20) kare köşeleri yuvarlatılıp daireleştirilir...*/
+            margin: 0 2px;
+            background-color: FireBrick;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.5s ease;}
+        .aktif {background-color: Yellow;}
+        .netleşir {/* Her yeni resim 1.5 sn'de netleşir... */
+            animation-name: netleşir; /* @keyframes'e bak... */
+            animation-duration: 1.5s;}
+        @keyframes netleşir {
+            from {opacity: .1} 
+            to {opacity: 1} }
+        @media only screen and (max-width: 550px) {
+            .başlık, .slaytNo {font-size: 8px} }
+    </style>
+</head>
+<body>
+    <h2>Otomatik Resim Slaytı Gösterisi</h2>
+    <p>Resimler her 4 sn'de bir değişirler:</p>
+
+    <div class="slaytKabı">
+
+        <div class="slaytlarım netleşir">
+            <div class="slaytNo">1 / 3</div>
+            <img src="resim/nehirliDağlar.jpg" style="width:100%">
+            <div class="başlık">Birinci Resim</div>
+        </div>
+
+        <div class="slaytlarım netleşir">
+            <div class="slaytNo">2 / 3</div>
+            <img src="resim/karlıDağlar.jpg" style="width:100%">
+            <div class="başlık">İkinci Resim</div>
+        </div>
+
+        <div class="slaytlarım netleşir">
+            <div class="slaytNo">3 / 3</div>
+            <img src="resim/makiliDağlar.jpg" style="width:100%">
+            <div class="başlık">Üçüncü Resim</div>
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="nokta"></span> 
+        <span class="nokta"></span> 
+        <span class="nokta"></span> 
+    </div>
+
+    <script>
+        var slaytEndeksi = 0;
+        slaytlarıGöster();
+
+        function slaytlarıGöster() {
+            var i;
+            var slaytlar = document.getElementsByClassName ("slaytlarım");
+            var noktalar = document.getElementsByClassName ("nokta");
+            for (i = 0; i < slaytlar.length; i++) {slaytlar[i].style.display = "none";}
+            slaytEndeksi++;
+            if (slaytEndeksi > slaytlar.length) {slaytEndeksi = 1}    
+            for (i = 0; i < noktalar.length; i++) {noktalar [i].className = noktalar [i].className.replace (" aktif", "");}
+            slaytlar [slaytEndeksi-1].style.display = "block";
+            noktalar [slaytEndeksi-1].className += " aktif";
+            setTimeout (slaytlarıGöster, 4000); // Her 4 sn'de bir resmi değiştir...
+        } // func sonu...
+    </script>
+</body>
+</html>

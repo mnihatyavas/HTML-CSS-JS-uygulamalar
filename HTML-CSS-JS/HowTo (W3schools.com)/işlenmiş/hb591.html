@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="iso-8859-9 Türkçe"/>
+    <title>hb591.html: Butonlarla resim ızgarasını değiştirme örneği.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: DarkGoldenRod;
+            color: SpringGreen;}
+        .başlık {
+            text-align: center;
+            padding: 32px;}
+        .satır {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;}
+        .sütun {/* İlk anda 1.düğme ve tek-resim */
+            flex: 100%;
+            padding: 0 4px;}
+        .sütun img {
+            margin-top: 8px;
+            vertical-align: middle;}
+        .düğme {
+            border: solid 2px FloralWhite;
+            outline: none;
+            padding: 10px 16px;
+            background-color: DeepPink;
+            cursor: pointer;
+            font-size: 18px;}
+        .düğme:hover {
+            background-color: FireBrick;
+            color:Ivory;}
+        .düğme.aktif {
+            background-color: Yellow;
+            color: Red;
+            font-weight: bold;}
+        .düğme.aktif:hover {
+            background-color: Gold;
+            color:Ivory;}
+    </style>
+<body>
+    <!-- Başlık -->
+    <div class="başlık" id="başlığım">
+        <h1>Resim Izgarası</h1>
+        <p>Tarayıcı ebatına duyarsız resimlerin yerleşimini değiştirmek için butonları tıklayın.<br/>1: Tek resim=100%, 2: Çift resim=50%, 3: Dört resim=25%</p>
+        <button class="düğme aktif" onclick="tekResim()">1</button>
+        <button class="düğme" onclick="çiftResim()">2</button>
+        <button class="düğme" onclick="dörtResim()">4</button>
+    </div>
+
+    <!-- Resim Izgarası -->
+    <div class="satır"> 
+        <div class="sütun">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/şelale.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+            <img src="resim/makiliDağlar.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/batış.jpg" style="width:100%">
+            <img src="resim/kayalıkSahil.jpg" style="width:100%">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/batış.jpg" style="width:100%">
+        </div>  
+        <div class="sütun">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/şelale.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+            <img src="resim/makiliDağlar.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/paris.jpg" style="width:100%">
+        </div>
+        <div class="sütun">
+            <img src="resim/batış.jpg" style="width:100%">
+            <img src="resim/kayalıkSahil.jpg" style="width:100%">
+            <img src="resim/arabadakiGelin.jpg" style="width:100%">
+            <img src="resim/sisliDağlar.jpg" style="width:100%">
+            <img src="resim/kayalıkDağlar.jpg" style="width:100%">
+            <img src="resim/batış.jpg" style="width:100%">
+        </div>
+        </div>
+
+    <script>
+        var resimler = document.getElementsByClassName("sütun");
+        var i;
+
+        function tekResim() {for (i = 0; i < resimler.length; i++) {resimler[i].style.flex = "100%";} }
+        function çiftResim() {for (i = 0; i < resimler.length; i++) {resimler[i].style.flex = "50%";} }
+        function dörtResim() {for (i = 0; i < resimler.length; i++) {resimler[i].style.flex = "25%";} }
+
+        // Aktif sınıf ışıldayan aktüel düğmeye eklenecek...
+        var başlık = document.getElementById ("başlığım");
+        var düğmeler = başlık.getElementsByClassName ("düğme");
+        for (var i = 0; i < düğmeler.length; i++) {
+            düğmeler[i].addEventListener (
+                "click", function() {
+                    var aktüel = document.getElementsByClassName ("aktif");
+                    aktüel [0].className = aktüel [0].className.replace (" aktif", "");
+                    this.className += " aktif";
+        }); } // for sonu...
+    </script>
+</body>
+</html>

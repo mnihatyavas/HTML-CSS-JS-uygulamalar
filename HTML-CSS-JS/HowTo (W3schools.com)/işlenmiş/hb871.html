@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hb871.html: Galeri resimlerinin farklý kategorilerle süzgeçlenerek görüntülendirilmesi örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" içerik="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: DarkGreen;
+            color:Magenta;
+            margin:1em;
+            padding: 20px;
+            font-family: Arial;}
+        * {box-sizing: border-box;}
+        .gövde {
+            max-width: 1000px;
+            margin: auto;}
+        h1 {
+            font-size: 50px;
+            word-break: break-all;}
+        .satýr {margin: 10px -16px;}
+        .satýr, .satýr > .kolon {padding: 8px;}
+        .kolon {
+            float: left;
+            width: 33.33%;
+            display: none;} /* Ýlk anda elemanlar gizli */
+        .satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+        .içerik {
+            background-color: Khaki;
+            padding: 10px;}
+        .göster {display: block;}
+        .düðme {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: Navy;
+            color:Lime;
+            cursor: pointer;}
+        .düðme:hover {background-color: DarkGray;}
+        .düðme.aktif {
+            background-color: Red;
+            color: Yellow;}
+    </style>
+</head>
+<body>
+    <div class="gövde">
+        <h1 style="text-align:center;">LOGOM.COM&nbsp;&nbsp;&nbsp;<img src="resim/ikon2.png" alt="Logo" height="50"></h1>
+        <hr>
+
+        <h2>RESÝM PORTFÖYÜ</h2>
+
+        <div id="düðmelerKabý">
+            <button class="düðme aktif" onclick="süzgeçle ('tüm')"> Hepsini Göster</button>
+            <button class="düðme" onclick="süzgeçle ('doða')"> Doða</button>
+            <button class="düðme" onclick="süzgeçle ('arabalar')"> Arabalar</button>
+            <button class="düðme" onclick="süzgeçle ('insan')"> Ýnsanlar</button>
+        </div>
+
+        <div class="satýr">
+            <div class="kolon doða">
+                <div class="içerik">
+                    <img src="resim/nehirliDaðlar2.jpg" alt="Daðlar" style="width:100%">
+                    <h4>Daðlar</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+            <div class="kolon doða">
+                <div class="içerik">
+                    <img src="resim/kutupIþýklarý2.jpg" alt="Iþýklar" style="width:100%">
+                    <h4>Iþýklar</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+            <div class="kolon doða">
+                <div class="içerik">
+                    <img src="resim/makiliDaðlar2.jpg" alt="Doða" style="width:100%">
+                    <h4>Orman</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+  
+            <div class="kolon arabalar">
+                <div class="içerik">
+                    <img src="resim/araba1.jpg" alt="Araba" style="width:100%">
+                    <h4>Antika</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+            <div class="kolon arabalar">
+                <div class="içerik">
+                    <img src="resim/araba2.jpg" alt="Araba" style="width:100%">
+                    <h4>Sürat</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+            <div class="kolon arabalar">
+                <div class="içerik">
+                    <img src="resim/araba3.jpg" alt="Araba" style="width:100%">
+                    <h4>Klasik</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+
+            <div class="kolon insan">
+                <div class="içerik">
+                    <img src="resim/yurttaþ1.jpg" alt="Car" style="width:100%">
+                    <h4>Kýz</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+            <div class="kolon insan">
+                <div class="içerik">
+                    <img src="resim/yurttaþ2.jpg" alt="Car" style="width:100%">
+                    <h4>Erkek</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+            <div class="kolon insan">
+                <div class="içerik">
+                    <img src="resim/yurttaþ3.jpg" alt="Car" style="width:100%">
+                    <h4>Kadýn</h4>
+                    <p>Resim hakkýnda: Lorem ipsum dolor...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        süzgeçle ("tüm")
+
+        function süzgeçle (c) {
+            var x, i;
+            x = document.getElementsByClassName ("kolon");
+            if (c == "tüm") c = "";
+            for (i = 0; i < x.length; i++) {
+                sil (x[ i], "göster");
+                if (x [i].className.indexOf (c) > -1) ekle (x [i], "göster");
+            } // for sonu...
+        } // func sonu...
+
+        function sil (eleman, ad) {
+            var i, dizi1, dizi2;
+            dizi1 = eleman.className.split (" ");
+            dizi2 = ad.split (" ");
+            for (i = 0; i < dizi2.length; i++) {
+                while (dizi1.indexOf (dizi2 [i]) > -1) {dizi1.splice (dizi1.indexOf (dizi2 [i]), 1);}
+            } // for sonu...
+            eleman.className = dizi1.join (" ");
+        } // func sonu...
+
+        function ekle (eleman, ad) {
+            var i, dizi1, dizi2;
+            dizi1 = eleman.className.split (" ");
+            dizi2 = ad.split (" ");
+            for (i = 0; i < dizi2.length; i++) {
+                if (dizi1.indexOf (dizi2 [i]) == -1) {eleman.className += " " + dizi2 [i];}
+            } // for sonu...
+        } // func sonu...
+
+        // Aktif süzgeç düðmesi kýrmýzý ýþýldasýn...
+        var düðmeKabý = document.getElementById ("düðmelerKabý");
+        var düðmeler = düðmeKabý.getElementsByClassName ("düðme");
+        for (var i = 0; i < düðmeler.length; i++) {
+            düðmeler [i].addEventListener ("click", function() {
+                var aktüel = document.getElementsByClassName ("aktif");
+                aktüel [0].className = aktüel [0].className.replace (" aktif", "");
+                this.className += " aktif";
+            }); // düð..sonu...
+        } // for sonu...
+    </script>
+</body>
+</html>

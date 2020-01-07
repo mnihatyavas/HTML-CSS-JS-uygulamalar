@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hc981.html: Metnin daha fazlasýný/azýný okutma seçenekli düðme örneði.</title>
+    <style>
+        body {
+            background-color:DimGray;
+            color:Gold;}
+        #fazlasý {display: none;}
+        button {
+            background-color:Green;
+            color:Cyan;}
+    </style>
+</head>
+<body>
+    <h2>Fazlasýný Oku Azýný Oku Düðmesi</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="üçnokta">...</span><span id="fazlasý">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+    <button onclick="fonk()" id="düðmem">Fazlasýný oku</button>
+
+    <script>
+        function fonk() {
+            var noktalar = document.getElementById ("üçnokta");
+            var fazlasýMetni = document.getElementById ("fazlasý");
+            var düðmeMetni = document.getElementById ("düðmem");
+
+            if (noktalar.style.display === "none") {
+                noktalar.style.display = "inline";
+                düðmeMetni.innerHTML = "Fazlasýný oku"; 
+                fazlasýMetni.style.display = "none";
+            } else {
+                noktalar.style.display = "none";
+                düðmeMetni.innerHTML = "Azýný oku"; 
+                fazlasýMetni.style.display = "inline";
+            } // else sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

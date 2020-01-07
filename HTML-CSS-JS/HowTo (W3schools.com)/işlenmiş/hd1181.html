@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>hd118.html: CSS kodlamasýyla yýðýn formu düzenleme örneði.</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin:30px;
+            background-color:CadetBlue;
+            color:Green;}
+        input[type=text], select {
+            width: 100%;
+            background-color:Chocolate;
+            color:Cyan;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-sizing: border-box;}
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;}
+        input[type=submit]:hover {
+            background-color: #459049;
+            color:Yellow;}
+        .kab {
+            border-radius: 10px;
+            background-color: BurlyWood;
+            padding: 20px;
+            border: solid 3px pink;}
+    </style>
+</head>
+<body>
+    <h2>Yýðýn Formu</h2>
+    <p>Bir yýðýn formu yaratmak için CSS kodlamasý nasýl kullanýlýr:</p>
+
+    <div class="kab">
+        <form action="/action_page.php">
+            <label for="ad">Adýnýz</label>
+            <input type="text" id="ad" name="ad" placeholder="Adýnýz...">
+
+            <label for="soyad">Soyadýnýz</label>
+            <input type="text" id="soyad" name="soyad" placeholder="Soyadýnýz...">
+
+            <label for="ülke">Ülkeniz</label>
+            <select id="ülke" name="ülke">
+                <option value="avustralya">Avustralya</option>
+                <option value="kanada">Kanada</option>
+                <option value="abd">ABD</option>
+                <option value="türkiye">Türkiye</option>
+            </select>
+
+            <input type="submit" value="Gönder">
+        </form>
+    </div>
+</body>
+</html>

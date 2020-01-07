@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>hd1111.html: Kalýpsal imzalý onay formu doldurna örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Sienna;
+            color:Lime;}
+        * {box-sizing: border-box;}
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: solid 1px black;
+            background: ivory;
+            color:Blue;}
+        input[type=text]:focus, input[type=password]:focus {
+            background-color:LemonChiffon;
+            outline: none;}
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.8;}
+        button:hover {
+            opacity:1;
+            color:Yellow;}
+        .iptalDüðmesi {
+            padding: 14px 20px;
+            background-color: #f44336;}
+        .iptalDüðmesi, .imzaDüðmesi {
+            float: left;
+            width: 50%;}
+        .kab {padding: 16px;}
+        .kalýp {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Taþmada kaydýraçlý */
+            color:Navy;
+            background-color: #474e5d;
+            padding-top: 50px;}
+        .kalýpÝçeriði {
+            background-color: DarkKhaki;
+            margin: 5% auto 15% auto;
+            border: 5px solid #bbb;
+            width: 80%;}
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;}
+        .kapat { /* X kapa düðmesi */
+            position: absolute;
+            right: 35px;
+            top: 15px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f1f1f1;}
+        .kapat:hover, .kapat:focus {
+            color: #f44336;
+            cursor: pointer;}
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;}
+        @media screen and (max-width: 500px) {
+            .iptalDüðmesi, .imzaDüðmesi {width: 100%;} }
+    </style>
+<body>
+    <h2>Kalýpsal Ýmza Formu</h2>
+
+    <button onclick="document.getElementById ('kimlik01').style.display='block'" style="width:auto;">Ýmzalý Onay</button>
+
+    <div id="kimlik01" class="kalýp">
+        <span onclick="document.getElementById ('kimlik01').style.display='none'" class="kapat" title="Ýmza formunu kapat">&times;</span>
+
+        <form class="kalýpÝçeriði" action="/action_page.php">
+            <div class="kab">
+                <h1>Ýmzalý Onay</h1>
+                <p>Adýnýza kayýtlý bir hesap yaratmak için lütfen bu formu doldurun.</p>
+                <hr>
+                <label for="eposta"><b>Eposta</b></label>
+                <input type="text" placeholder="Eposta'nýzý girin" name="eposta" required>
+
+                <label for="þifre"><b>Þifre</b></label>
+                <input type="password" placeholder="Þifrenizi girin" name="þifre" required>
+
+                <label for="þifre-tekrarý"><b>Þifrenizi tekrar girin</b></label>
+                <input type="password" placeholder="Þifrenizi tekrar girin" name="þifre-tekrarý" required>
+
+                <label><input type="checkbox" checked="checked" name="hatýrla" style="margin-bottom:15px"> Beni hatýrla</label>
+
+                <p>Bu hesabý yaratarak bizim <a href="#" style="color:dodgerblue">Anlaþma & Gizlilik</a> koþullarýmýzý kabul ediyorsunuz.</p>
+
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById ('kimlik01').style.display='none'" class="iptalDüðmesi">Ýptal</button>
+                    <button type="submit" class="imzaDüðmesi">Onay Ýmzasý</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var kalýp = document.getElementById ('kimlik01');
+        window.onclick = function (olay) {
+            if (olay.target == kalýp) {// imza formu dýþýndaki kalýp týklanýrsa...
+                kalýp.style.display = "none";}
+        } // win.. sonu...
+    </script>
+</body>
+</html>

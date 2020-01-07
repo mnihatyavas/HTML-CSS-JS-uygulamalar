@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb543.html: Çoklu slayt kutulu resim gösterisi örneği.</title>
+    <style>
+        * {box-sizing: border-box}
+        body {background-color:DarkRed; color: Cyan;}
+        .slaytlarım1, .slaytlarım2 {display: none}
+        img {vertical-align: middle;}
+        .slaytKabı {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;}
+        .önceki, .sonraki {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: Yellow;
+            font-weight: bold;
+            font-size: 22px;
+            transition: 0.5s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;}
+        .sonraki {
+            right: 0;
+            border-radius: 3px 0 0 3px;}
+        .önceki:hover, .sonraki:hover {
+            background-color: Yellow;
+            color: Tomato;}
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Çoklu Slayt Gösterisi</h2>
+    <p style="text-align:center">Her slayt kutusundaki resimleri kaydırarak değiştirebilirsiniz:</p>
+    <br/>
+
+    <p>Slaytgösterisi 1:</p>
+    <div class="slaytKabı">
+        <div class="slaytlarım1"><img src="resim/nehirliDağlar.jpg" style="width:100%"></div>
+        <div class="slaytlarım1"><img src="resim/karlıDağlar.jpg" style="width:100%"></div>
+        <div class="slaytlarım1"><img src="resim/makiliDağlar.jpg" style="width:100%"></div>
+
+        <a class="önceki" onclick="slaytıKaydır(-1, 0)">&#10094;</a>
+        <a class="sonraki" onclick="slaytıKaydır(1, 0)">&#10095;</a>
+    </div>
+
+    <p>Slaytgösterisi 2:</p>
+    <div class="slaytKabı">
+        <div class="slaytlarım2"><img src="resim/cazNY.jpg" style="width:100%"></div>
+        <div class="slaytlarım2"><img src="resim/cazLA.jpg" style="width:100%"></div>
+        <div class="slaytlarım2"><img src="resim/cazCH.jpg" style="width:100%"></div>
+
+        <a class="önceki" onclick="slaytıKaydır (-1, 1)">&#10094;</a>
+        <a class="sonraki" onclick="slaytıKaydır (1, 1)">&#10095;</a>
+    </div>
+
+    <script>
+        var slaytEndeksi = [1,1];
+        var slaytKimliği = ["slaytlarım1", "slaytlarım2"]
+        slaytlarıGöster (1, 0);
+        slaytlarıGöster (1, 1);
+
+        function slaytıKaydır (n, no) {slaytlarıGöster (slaytEndeksi[no] += n, no);}
+
+        function slaytlarıGöster (n, no) {
+            var i;
+            var x = document.getElementsByClassName (slaytKimliği [no]);
+            if (n > x.length) {slaytEndeksi [no] = 1}
+            if (n < 1) {slaytEndeksi [no] = x.length}
+            for (i = 0; i < x.length; i++) {x [i].style.display = "none";}
+            x [slaytEndeksi [no] - 1].style.display = "block";
+        } // func sonu...
+    </script>
+</body>
+</html>

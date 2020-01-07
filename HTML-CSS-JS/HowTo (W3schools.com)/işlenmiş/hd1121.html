@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1121.html: Alýþveriþ çýkýþ kontrol ve faturalama formu örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 17px;
+            padding: 8px;
+            background-color:OliveDrab;
+            color:Navy;}
+        * {box-sizing: border-box;}
+        .satýr {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -16px;}
+        .kolon-25 {flex: 25%;}
+        .kolon-50 {flex: 50%;}
+        .col-75 {flex: 75%;}
+        .kolon-25, .kolon-50, .col-75 {padding: 0 16px;}
+        .kab {
+            background-color: DarkKhaki;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid black;
+            border-radius: 10px;}
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color:LightBlue;
+            color:DeepPink;}
+        label {
+            margin-bottom: 10px;
+            display: block;}
+        .ikon-kabý {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;}
+        .düðme {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 17px;}
+        .düðme:hover {
+            background-color: green;
+            color:yellow;}
+        a {color: #2196a3;}
+        hr {border: 1px solid lightgrey;}
+        span.fiyat {
+            float: right;
+            color: DimGrey;}
+        @media (max-width: 800px) {
+            .satýr {flex-direction: column-reverse;}
+            .kolon-25 {margin-bottom: 20px;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Çýkýþkontrol Formu</h2>
+    <p>Tarayýcý ebatýný daraltýp geniþleterek etkisini gözlemleyin. Ekran geniþliði 800px'in altýna düþünce yanyana duran üç kolon ensaðdaki enüstte olacak þekilde alt alta sýralanmaktadýr.</p>
+
+    <div class="satýr">
+        <div class="col-75">
+            <div class="kab">
+                <form action="/action_page.php">
+      
+                <div class="satýr">
+                    <div class="kolon-50">
+                        <h3>Faturalama Adresi</h3>
+                        <label for="tamad"><i class="fa fa-user"></i> Tam Ýsim</label>
+                        <input type="text" id="tamad" name="tamad" placeholder="M.Nihat Yavaþ">
+                        <label for="eposta"><i class="fa fa-envelope"></i> Eposta</label>
+                        <input type="text" id="eposta" name="eposta" placeholder="mnyavas@hotmail.com">
+                        <label for="adres"><i class="fa fa-address-card-o"></i> Adres</label>
+                        <input type="text" id="adres" name="adres" placeholder="Yusufkýlýnç Mh., 15.Cd, Toroslar">
+                        <label for="þehir"><i class="fa fa-institution"></i> Þehir</label>
+                        <input type="text" id="þehir" name="þehir" placeholder="Mersin">
+
+                        <div class="satýr">
+                            <div class="kolon-50">
+                                <label for="eyalet">Eyalet</label>
+                                <input type="text" id="eyalet" name="eyalet" placeholder="MR">
+                            </div>
+                            <div class="kolon-50">
+                                <label for="pk">PK</label>
+                                <input type="text" id="pk" name="pk" placeholder="33900">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kolon-50">
+                        <h3>Ödeme</h3>
+                        <label for="kartlar">Geçerli Kartlar</label>
+                        <div class="ikon-kabý">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="karttakiad">Kartaki Ýsim</label>
+                        <input type="text" id="karttakiad" name="karttakiad" placeholder="Mahmut Nihat Yavaþ">
+                        <label for="kkno">Kredi kartý numarasý</label>
+                        <input type="text" id="kkno" name="kkno" placeholder="1111-2222-3333-4444">
+                        <label for="sonay">Son Ay</label>
+                        <input type="text" id="sonay" name="sonay" placeholder="Eylül">
+                        <div class="satýr">
+                            <div class="kolon-50">
+                                <label for="sonyýl">Son Yýl</label>
+                                <input type="text" id="sonyýl" name="sonyýl" placeholder="2021">
+                            </div>
+                            <div class="kolon-50">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="352">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="aynýadres"> Malteslim adresi faturalama adresiyle aynýdýr
+                </label>
+                <input type="submit" value="Çýkýþ kontrolunu tamamla" class="düðme">
+                </form>
+            </div>
+        </div>
+
+        <div class="kolon-25">
+            <div class="kab">
+                <h4>Sele <span class="fiyat" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+                <p><a href="#">Ürün 1</a> <span class="fiyat">$15</span></p>
+                <p><a href="#">Ürün 2</a> <span class="fiyat">$5</span></p>
+                <p><a href="#">Ürün 3</a> <span class="fiyat">$8</span></p>
+                <p><a href="#">Ürün 4</a> <span class="fiyat">$2</span></p>
+                <hr>
+                <p>Toplam <span class="fiyat" style="color:black"><b>$30</b></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

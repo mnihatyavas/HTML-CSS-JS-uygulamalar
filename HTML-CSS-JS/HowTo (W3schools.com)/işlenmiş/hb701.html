@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" þeffafMetin="width=device-width, initial-scale=1">
+    <title>hb701.html: Þeffef altyazý metnini duyarlý resme konumlandýrma örneði.</title>
+    <style>
+        body {
+            background-color:Peru;
+            color:DarkGreen;
+            /* margin: 0; */
+            font-family: Arial;
+            font-size: 17px;}
+        * {box-sizing: border-box;} /* Metnin pading/tampon taþmasýný önler. */
+        .resimKabý {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;}
+        .resimKabý img {vertical-align: middle;}
+        .resimKabý .þeffafMetin {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* %50 þeffaflýkta siyah zemin */
+            color: MintCream;
+            width: 100%;
+            padding: 20px;}
+        h1, h2 {text-align: center;}
+    </style>
+</head>
+<body>
+    <h2>Þeffaf Metinli Duyarlý Resim</h2>
+
+    <div class="resimKabý">
+        <img src="resim/defter.jpg" alt="Bloknot" style="width:100%;">
+        <div class="þeffafMetin">
+            <h1>Baþlýk</h1>
+            <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei.</p>
+        </div>
+    </div>
+</body>
+</html>

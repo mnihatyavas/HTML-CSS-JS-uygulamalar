@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" kab="width=device-width, initial-scale=1">
+    <title>hb861.html: Tarayýcýya duyarlý resimli tanýtým kartlarý portföyü örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            background-color: #a1a1a1;
+            padding: 20px;
+            font-family: Arial;}
+        .anaBölüm {
+            max-width: 1000px;
+            border:solid 10px dimgray;
+            padding:3px;
+            margin: auto;}
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+            float:left;}
+        .satýr {margin: 8px -16px;}
+        .satýr, .satýr > .sütun {padding: 8px;}
+        .sütun {
+            float: left;
+            width: 25%;
+            background-color: #c1c1c1;}
+        .satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+        .kab {
+            background-color: khaki;
+            padding: 10px;}
+        @media screen and (max-width: 900px) {
+            .sütun {width: 50%;} }
+        @media screen and (max-width: 600px) {
+            .sütun {width: 100%;} }
+    </style>
+</head>
+<body>
+    <!-- Portföy Baþý -->
+    <div class="anaBölüm">
+
+        <h1>BÝZÝMLOGO.COM</h1>
+        <img src="resim/kaykay.jpg" alt="Kaykay" height="60">
+        <hr>
+        <h2>PORTFÖY</h2>
+
+        <p>Tarayýcý geniþliðine tüm portföyün duyarlýlýk etkisini test etmek isterseniz deneyin:</p>
+
+        <!-- Portföy Galeri Igarasý -->
+        <div class="satýr">
+
+            <div class="sütun">
+                <div class="kab">
+                    <img src="resim/nehirliDaðlar2.jpg" alt="Fiyortlar" style="width:100%">
+                    <h3>Tasarýmlarýmýz</h3>
+                    <p>Falan filan. Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+                </div>
+            </div>
+
+            <div class="sütun">
+                <div class="kab">
+                    <img src="resim/karlýDaðlar2.jpg" alt="Kar" style="width:100%">
+                    <h3>Tasarýmlarýmýz</h3>
+                    <p>Falan filan. Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+                </div>
+            </div>
+
+            <div class="sütun">
+                <div class="kab">
+                    <img src="resim/ormanaKöprü.jpg" alt="Orman" style="width:100%">
+                    <h3>Tasarýmlarýmýz</h3>
+                    <p>Falan feþmekan. Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+                </div>
+            </div>
+
+            <div class="sütun">
+                <div class="kab">
+                    <img src="resim/pusluDaðlar2.jpg" alt="Daðlar" style="width:100%">
+                    <h3>Tasarýmlarýmýz</h3>
+                    <p>Falan feþmekan. Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+                </div>
+            </div>
+
+        <!-- Izgara Sonu -->
+        </div>
+
+        <div class="kab">
+            <img src="resim/ayý.jpg" alt="Ayý" style="width:100%">
+            <h3>Diðer Bazý Eserlerimiz</h3>
+            <p>Falan filan. Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+            <p>Falan feþmekan. Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+        </div>
+
+    <!-- Portföy Sonu -->
+    </div>
+</body>
+</html>

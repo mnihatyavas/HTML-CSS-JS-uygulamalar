@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hb631.html: Üzerindeyken merkezden çevreye perdeleme örneği.</title>
+<style>
+        body {
+            background-color:DarkKhaki;
+            color: SpringGreen;}
+        .resimKabı {
+            position: relative;
+            width: 50%;}
+        .resim {
+            display: block;
+            width: 100%;
+            height: auto;}
+        .perde {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /*right: 0;*/
+            background-color: Navy;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            transform: scale(0); /* %0 en-boy ölçekleme */
+            transition: .8s ease;}
+        .resimKabı:hover .perde {
+            transform: scale(1); /* %100 en-boy ölçekleme */}
+        .perdeMetni {
+            color: Pink;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /*text-align: center;*/}
+</style>
+</head>
+<body>
+    <h2>Merkezden Çevreye Perdeleme</h2>
+    <p>Resmin orta noktasından çevreyi kaplayan perdeleme etkisini gözlemlemek için resmin üzerinde gezinin:</p>
+
+    <div class="resimKabı">
+        <img src="resim/avatar.png" alt="Avatar" class="resim">
+        <div class="perde">
+            <div class="perdeMetni">Avatar Mahmut</div>
+        </div>
+    </div>
+</body>
+</html>

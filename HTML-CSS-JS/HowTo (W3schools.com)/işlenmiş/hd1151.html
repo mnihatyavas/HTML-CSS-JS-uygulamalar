@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe"  name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1151.html: Eposta'lý ve þifreli yeni hesap yaratma örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            color:ForestGreen;
+            margin:30px;}
+        * {box-sizing: border-box;}
+        .kab {
+            padding: 20px;
+            background-color:Tan;}
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: solid 1px black;
+            color: DeepPink;
+            background: FloralWhite;}
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: Khaki;
+            color:Magenta;
+            outline: none;}
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;}
+        .yenikayýtDüðmesi {
+            background-color: DarkGreen;
+            color: Linen;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.8;}
+        .yenikayýtDüðmesi:hover {
+            opacity: 1;
+            color:Yellow;}
+        a {color: dodgerblue;}
+        .giriþ {
+            background-color: LightGray;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <form action="/action_page.php">
+        <div class="kab">
+            <h1>Yeni Kayýt</h1>
+            <p>Yeni hesap yaratmak için lütfen bu formu doldurun:</p>
+            <hr>
+
+            <label for="eposta"><b>Eposta</b></label>
+            <input type="text" placeholder="Eposta'nýzý Girin" name="eposta" required>
+
+            <label for="þifre"><b>Þifre</b></label>
+            <input type="password" placeholder="Þifrenizi Girin" name="þifre" required>
+
+            <label for="tekrar-þifre"><b>Þifre Tekrarý</b></label>
+            <input type="password" placeholder="Þifrenizi Tekrar Girin" name="þifre-tekrarý" required>
+            <hr>
+            <p>Yeni hesabýnýzý yaratýrken, bizim <a href="#">Sözleþme & Gizlilik</a> koþullarýmýzý kabul ediyorsunuz.</p>
+
+            <button type="submit" class="yenikayýtDüðmesi">Yeni Kayýt</button>
+        </div>
+  
+        <div class="kab giriþ">
+            <p>Elan bir hesabýnýz var mý? <a href="#">Giriþ</a></p>
+        </div>
+    </form>
+</body>
+</html>
