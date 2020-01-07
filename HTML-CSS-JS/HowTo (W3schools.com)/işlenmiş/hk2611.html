@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <title>hk2611.html: Uzunluk birimleri çevrimleri örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" />
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Orange;
+            margin:1em;}
+        input {background-color:Cyan;}
+    </style>
+</head>
+<body>
+    <h2>Uzunluklararasý Çevrimler</h2>
+    <p>Sol kutudan gireceðiniz uzunluklar saðda metre olarak spontane çevrilecektir:</p>
+
+    <p>
+        <label>Feet</label>
+        <input id="feet" type="number" placeholder="0" oninput="çevirici1 (this.value)" onchange="çevirici1 (this.value)">
+        Metre: <span id="metre1"></span>
+    </p>
+    <p>
+        <label>Inch</label>
+        <input id="inç" type="number" placeholder="0" oninput="çevirici2 (this.value)" onchange="çevirici2 (this.value)">
+        Metre: <span id="metre2"></span>
+    </p>
+    <p>
+        <label>Santim</label>
+        <input id="sm" type="number" placeholder="0" oninput="çevirici3 (this.value)" onchange="çevirici3 (this.value)">
+        Metre: <span id="metre3"></span>
+    </p>
+    <p>
+        <label>Yard</label>
+        <input id="yard" type="number" placeholder="0" oninput="çevirici4 (this.value)" onchange="çevirici4 (this.value)">
+        Metre: <span id="metre4"></span>
+    </p>
+    <p>
+        <label>Kilometre</label>
+        <input id="km" type="number" placeholder="0" oninput="çevirici5 (this.value)" onchange="çevirici5 (this.value)">
+        Metre: <span id="metre5"></span>
+    </p>
+    <p>
+        <label>Mil</label>
+        <input id="mil" type="number" placeholder="0" oninput="çevirici6 (this.value)" onchange="çevirici6 (this.value)">
+        Metre: <span id="metre6"></span>
+    </p>
+
+    <script>
+        function çevirici1 (deðer) {document.getElementById ("metre1").innerHTML = deðer / 3.2808;}
+        function çevirici2 (deðer) {document.getElementById ("metre2").innerHTML = deðer / 39.37;}
+        function çevirici3 (deðer) {document.getElementById ("metre3").innerHTML = deðer / 100;}
+        function çevirici4 (deðer) {document.getElementById ("metre4").innerHTML = deðer / 1.0936;}
+        function çevirici5 (deðer) {document.getElementById ("metre5").innerHTML = deðer * 1000;}
+        function çevirici6 (deðer) {document.getElementById ("metre6").innerHTML = deðer / 0.00062137;}
+    </script>
+</body>
+</html>

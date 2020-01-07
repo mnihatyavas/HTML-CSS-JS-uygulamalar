@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2484.html: Tarayýcýya duyarlý iki eþit table kolon örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color:Sienna;
+            color:Magenta;}
+        * {box-sizing: border-box;}
+        .satýr:after {
+            /* content: ""; */
+            /* clear: both; */
+            display: table;}
+        .kolon {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 500px;}
+        @media screen and (max-width: 600px) {
+            .kolon {width: 100%;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Çift Kolon Serilimi</h2>
+    <p>Tarayýcý geniþliði 600 piksel altýna düþtüðünde kolonlar eþit ve yanyana deðil, tamekran ve altalta kayacaktýr. Etkiyi gözlemlemek için tarayýcý ebatýyla oynayýn:</p>
+
+    <div class="satýr">
+        <div class="kolon" style="background-color:#888;">
+            <h2>Kolon 1</h2>
+            <p>Bazý metinler...</p>
+        </div>
+        <div class="kolon" style="background-color:#aaa;">
+            <h2>Kolon 2</h2>
+            <p>Bazý metinler...</p>
+        </div>
+    </div>
+</body>
+</html>

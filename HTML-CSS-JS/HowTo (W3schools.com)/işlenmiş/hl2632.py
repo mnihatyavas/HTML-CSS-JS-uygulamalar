@@ -1,0 +1,13 @@
+# coding:iso-8859-9 Türkçe
+# hl2632.py: Dizi liste elemanlarýný fonksiyonlu yegane sözlük süzgeciyle yansýtma örneði.
+
+def fonk (x): return list (dict.fromkeys (x) )
+listem = fonk ( ["a", "b", "a", "c", "c", "a", "b", "b"] )
+
+print ("Yegane listem:", listem, len (listem) )
+
+
+"""Çýktý:
+>python hl2632.py
+Yegane listem: ['a', 'b', 'c'] 3
+"""

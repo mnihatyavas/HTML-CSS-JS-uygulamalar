@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>hj2571.html: Çevrimiçi google börek grafik çizimi örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" />
+    <style>
+        body {
+            background-color: SkyBlue;
+            color:Brown;
+            margin:2em;}
+    </style>
+</head>
+<body>
+    <h1>Google Börek Grafikli Aðsayfam</h1>
+
+    <div id="börekgrafiði"></div>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+   <script>
+        // Google grafikleri yüklensin...
+        google.charts.load ('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback (grafiðiÇiz);
+
+        // Börek grafiðini dilim bilgileriyle çizer...
+        function grafiðiÇiz() {
+            var veri = google.visualization.arrayToDataTable ([
+                ['Faaliyet', 'Günlük Saatý'],
+                ['Mesai', 8],
+                ['Yemek', 2],
+                ['TV', 4],
+                ['Spor', 2],
+                ['Uyku', 8]
+            ]); // var sonu...
+
+            // Grafik baþlýðý, eni ve boyu tercihleri...
+            var tercihler = {'title':'Olaðan Bir Günüm', 'width':600, 'height':400};
+
+            var grafik = new google.visualization.PieChart (document.getElementById ('börekgrafiði'));
+            grafik.draw (veri, tercihler);
+        } // func sonu...
+    </script>
+</body>
+</html>

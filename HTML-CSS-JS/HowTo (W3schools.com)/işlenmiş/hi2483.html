@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2483.html: Ýki eþitsiz table kolon örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color:Sienna;
+            color:Cyan;}
+        * {box-sizing: border-box;}
+        .satýr:before {
+            /* content: ""; */
+            /* clear: both; */
+            display: table;}
+        .kolon {
+            float: left;
+            padding: 10px;
+            height: 500px;}
+        .soldaki {width: 25%;}
+        .saðdaki {width: 75%;}
+    </style>
+</head>
+<body>
+    <h2>Ýki Eþitsiz Table Kolon</h2>
+
+    <div class="satýr">
+        <div class="kolon soldaki" style="background-color:#888;">
+            <h2>Kolon 1</h2>
+            <p>Bazý metinler...</p>
+        </div>
+        <div class="kolon saðdaki" style="background-color:#aaa;">
+            <h2>Kolon 2</h2>
+            <p>Bazý metinler...</p>
+        </div>
+    </div>
+</body>
+</html>

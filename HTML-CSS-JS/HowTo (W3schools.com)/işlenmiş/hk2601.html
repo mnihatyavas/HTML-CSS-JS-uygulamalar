@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <title>hk2601.html: Sýcaklýk birimleri çevrimleri örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" />
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Orange;
+            margin:1em;}
+        input {background-color:Cyan;}
+    </style>
+</head>
+<body>
+    <h2>Sýcaklýklararasý Çevrimler</h2>
+    <p>Sol kutudan gireceðiniz sýcaklýklar saðda selsiyüs derece olarak spontane çevrilecektir:</p>
+
+    <p>
+        <label>Fahrenhayt</label>
+        <input id="fahrenhayt" type="number" placeholder="0" oninput="çevirici1 (this.value)" onchange="çevirici1 (this.value)">
+        Selsiyüs derece: <span id="ýsý1"></span>
+    </p>
+    <p>
+        <label>Kelvin</label>
+        <input id="kelvin" type="number" placeholder="0" oninput="çevirici2 (this.value)" onchange="çevirici2 (this.value)">
+        Selsiyüs derece: <span id="ýsý2"></span>
+    </p>
+
+    <script>
+        function çevirici1 (deðer) {document.getElementById ("ýsý1").innerHTML = (deðer - 32) / 1.8;}
+        function çevirici2 (deðer) {document.getElementById ("ýsý2").innerHTML = deðer - 273.15;}
+    </script>
+</body>
+</html>

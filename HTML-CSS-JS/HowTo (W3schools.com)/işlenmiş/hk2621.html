@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <title>hk2621.html: Hýz birimleri çevrimleri örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" />
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Orange;
+            margin:1em;}
+        input {background-color:Cyan;}
+    </style>
+</head>
+<body>
+    <h2>Hýzlararasý Çevrimler</h2>
+    <p>Sol kutudan gireceðiniz hýzlar saðda km/s (kilometre/saat) olarak spontane çevrilecektir:</p>
+
+    <p>
+        <label>Mil/Saat</label>
+        <input id="mis" type="number" placeholder="0" oninput="çevirici1 (this.value)" onchange="çevirici1 (this.value)">
+        Kilometre: <span id="hýz1"></span>
+    </p>
+    <p>
+        <label>Knot/Saat</label>
+        <input id="ks" type="number" placeholder="0" oninput="çevirici2 (this.value)" onchange="çevirici2 (this.value)">
+        Kilometre: <span id="hýz2"></span>
+    </p>
+    <p>
+        <label>Mach/Saat</label>
+        <input id="mas" type="number" placeholder="0" oninput="çevirici3 (this.value)" onchange="çevirici3 (this.value)">
+        Kilometre: <span id="hýz3"></span>
+    </p>
+
+    <script>
+        function çevirici1 (deðer) {document.getElementById ("hýz1").innerHTML = deðer * 1.609344;}
+        function çevirici2 (deðer) {document.getElementById ("hýz2").innerHTML = deðer * 1.852;}
+        function çevirici3 (deðer) {document.getElementById ("hýz3").innerHTML = deðer * 1225.044;}
+    </script>
+</body>
+</html>

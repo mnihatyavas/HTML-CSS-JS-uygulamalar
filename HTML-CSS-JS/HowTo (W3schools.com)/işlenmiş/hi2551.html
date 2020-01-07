@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2551.html: Tarayýcýya duyarlý almaþýk resim konumlandýrma örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Black;
+            color:Blue;}
+        * {box-sizing:border-box;}
+        .kab {padding: 64px;}
+        .satýr:after {
+            content: "";
+            clear: both;
+            display: table;}
+        .kolon-66 {
+            float: left;
+            width: 66.66666%;
+            padding: 20px;}
+        .kolon-33 {
+            float: left;
+            width: 33.33333%;
+            padding: 20px;}
+        .büyük-fon {font-size: 48px;}
+        .enbüyük-fon {font-size: 64px;}
+        .düðme {
+            border: none;
+            color:Yellow;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;}
+        img {
+            display: block;
+            height: auto;
+            max-width: 100%;}
+        @media screen and (max-width: 1000px) {
+            .kolon-66, .kolon-33 {
+                width: 100%;
+                text-align: center;}
+            img {margin: auto;} }
+    </style>
+</head>
+<body>
+    <div style="text-align:center">
+        <h2>Duyarlý Zig Zag Almaþýk Serilim</h2>
+        <p>Tarayýcý eni 1000px üstünde resim-metin altalta deðil yanyana ve ardýþýk resim konumlarýysa saðlý-sollu zigzag almaþýk serimlenmektedir; duyarlý zigzag etkiyi test edin:</p>
+    </div>
+
+    <!-- Uygulama Kýsmý -->
+    <div class="kab">
+        <div class="satýr">
+            <div class="kolon-66">
+                <h1 class="enbüyük-fon"><b>Uygulama</b></h1>
+                <h1 class="büyük-fon" style="color:MediumSeaGreen;"><b>Niçin Satýn Alayým?</b></h1>
+                <p><span style="font-size:36px">Canavar gibi resimler çekiyor.</span> Bu uygulamayý hemen satýn almalýsýn zira: lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button class="düðme">Uygulamayý Ýndir</button>
+            </div>
+            <div class="kolon-33">
+                <img src="resim/uygulama2.jpg" width="335" height="471">
+            </div>
+        </div>
+    </div>
+
+    <!-- Berraklýk Kýsmý -->
+    <div class="kab" style="background-color:DarkKhaki;">
+        <div class="satýr">
+            <div class="kolon-33">
+                <img src="resim/uygulama1.jpg" alt="Uyg" width="335" height="471">
+            </div>
+            <div class="kolon-66">
+                <h1 class="enbüyük-fon"><b>Berraklýk</b></h1>
+                <h1 class="büyük-fon" style="color:red;"><b>Pikseller, kim?</b></h1>
+                <p><span style="font-size:24px">Bir çözünürlük devrimi.</span> Dünyanýn eniyi fotoðraf motoruyla keskin ve berrak resimler: incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <button class="düðme" style="background-color:red">Devamýný Okuyun</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uygulama Kýsmý -->
+    <div class="kab">
+        <div class="satýr">
+            <div class="kolon-66">
+                <h1 class="enbüyük-fon"><b>Uygulama</b></h1>
+                <h1 class="büyük-fon" style="color:MediumSeaGreen;"><b>Niçin Satýn Alayým?</b></h1>
+                <p><span style="font-size:36px">Canavar gibi resimler çekiyor.</span> Bu uygulamayý hemen satýn almalýsýn zira: lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button class="düðme">Uygulamayý Ýndir</button>
+            </div>
+            <div class="kolon-33">
+                <img src="resim/uygulama2.jpg" width="335" height="471">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

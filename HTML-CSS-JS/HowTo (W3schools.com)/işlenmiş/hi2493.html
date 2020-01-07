@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2493.html: Tarayýcý ebatýna duyarlý üç eþit kolon serilimi örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color:DarkGreen;
+            color:Violet;}
+        * {box-sizing: border-box;}
+        .satýr:after {display: table;}
+        .kolon {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 500px;}
+        @media screen and (max-width: 600px) {
+            .kolon {width: 100%;} }
+    </style>
+</head>
+<body>
+    <h2>Üç Eþit Duyarlý Kolon</h2>
+    <p>Tarayýcý geniþliði 600px altýna düþünce kolonlar yanyana deðil altalta sýralanacaktýr. Efekti test etmek için tarayýcý ebatýyla oynayýn:</p>
+
+    <div class="satýr">
+        <div class="kolon" style="background-color:#aaa;">
+            <h2>Kolon 1</h2>
+            <p>Bazý metinler...</p>
+        </div>
+        <div class="kolon" style="background-color:#bbb;">
+            <h2>Kolon 2</h2>
+            <p>Bazý metinler...</p>
+        </div>
+        <div class="kolon" style="background-color:#ccc;">
+            <h2>Kolon 3</h2>
+            <p>Bazý metinler...</p>
+        </div>
+    </div>
+</body>
+</html>

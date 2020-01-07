@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>hh2471.html: Hazýr deðil kendi ayarlarýmýzla duyarlý bir aðsayfasý tasarýmý örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color:MidnightBlue;}
+        * {box-sizing: border-box;}
+        .baþlýk {
+            padding: 80px;
+            text-align: center;
+            background: #1abc9c;
+            color: DarkRed;}
+        .baþlýk h1 {font-size: 40px;}
+        .seyrüçubuk {/* Yapýþkan konumla kaydýraca raðmen sayfa baþýnda takýlýr */
+            overflow: hidden;
+            background-color: #333;
+            position: sticky;
+            top: 0;}
+        .seyrüçubuk a {
+            float: left;
+            display: block;
+            color: Orange;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;}
+        .seyrüçubuk a.sað {float: right;}
+        .seyrüçubuk a:hover {
+            background-color: DarkRed;
+            color: Yellow;}
+        .seyrüçubuk a.aktif {
+            background-color: #666;
+            color: DeepPink;}
+        .satýr {
+            display: flex;
+            flex-wrap: wrap;}
+        .kenar {
+            flex: 30%;
+            background-color: Linen;
+            padding: 20px;}
+        .asýl {
+            flex: 70%;
+            background-color: Moccasin;
+            padding: 20px;}
+        .resimlik {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;}
+        .ayaklýk {
+            padding: 20px;
+            text-align: center;
+            background: DarkGreen;
+            color:Magenta;}
+        @media screen and (max-width: 700px) {/* Kenar ve asýl altalta */
+            .satýr {flex-direction: column;} }
+        @media screen and (max-width: 500px) {/* Baðlantýlar altalta, baþlýk fonu küçülür */
+            .seyrüçubuk a {
+                float: none;
+                width: 100%;}
+            .baþlýk h1 {font-size: 20px;} }
+    </style>
+</head>
+<body>
+    <div class="baþlýk">
+        <h1>Aðsayfa Tasarýmým</h1>
+        <p>Tarafýmdan tasarlanan <b>duyarlý</b> bir aðsayfasý.</p>
+    </div>
+
+    <div class="seyrüçubuk">
+        <a href="#" class="aktif">Anasayfa</a>
+        <a href="#">1.Baðlantý</a>
+        <a href="#">2.Baðlantý</a>
+        <a href="#" class="sað">Son Baðlantý</a>
+    </div>
+
+    <div class="satýr">
+        <div class="kenar">
+            <h2>Hakkýmda</h2>
+            <h5>Fotoðrafým:</h5>
+            <div class="resimlik" style="height:200px;">Resim Çerçevesi</div>
+            <p>Hakkýmda bazý açýklamalar in culpa qui officia deserunt mollit anim..</p>
+            <h3>Açýklamalarýn Devamý</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="resimlik" style="height:60px;">Resim Çerçevesi</div><br>
+            <div class="resimlik" style="height:60px;">Resim Çerçevesi</div><br>
+            <div class="resimlik" style="height:60px;">Resim Çerçevesi</div>
+        </div>
+        <div class="asýl">
+            <h2>MANÞET BAÞLIK-1</h2>
+            <h5>Baþlýk tarihi: Aralýk 26, 2019</h5>
+            <div class="resimlik" style="height:200px;">Resim Çerçevesi</div>
+            <p>Bazý açýklamalar...</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <br>
+            <h2>MANÞET BAÞLIK-2</h2>
+            <h5>Baþlýk tarihi: Eylül 2, 2019</h5>
+            <div class="resimlik" style="height:200px;">Resim Çerçevesi</div>
+            <p>Bazý açýklamalar...</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+    </div>
+
+    <div class="ayaklýk">
+        <h2>Ayaklýk</h2>
+    </div>
+</body>
+</html>

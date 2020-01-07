@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2511.html: Týklanýnca açýmlanan üçlü ýzgara kolonlarý örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Violet;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+        .satýr:after {
+            /* content: ""; */
+            /* clear: both; */
+            display: table;}
+        .kolon {
+            float: left;
+            width: 33.33%;
+            padding: 50px;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+            color: Linen;}
+        .kolon:hover {color:Yellow;}
+        .kutuKabý {
+            padding: 20px;
+            color: Moccasin;}
+.kapaDüðmesi {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div style="text-align:center">
+        <h2>Açýmlanan Üçlü Izgara Kolonlarý</h2>
+        <p>Alttaki ýzgara kolon baþlýklarýný týklarsanýz bir alt satýrda detay açýklamalar neþredilir:</p>
+    </div>
+
+    <!-- Üç eþit kolon -->
+    <div class="satýr">
+        <div class="kolon" onclick="kutuyuAç ('kutu1');" style="background:green;">
+            Kutu 1
+        </div>
+        <div class="kolon" onclick="kutuyuAç ('kutu2');" style="background:blue;">
+            Kutu 2
+        </div>
+        <div class="kolon" onclick="kutuyuAç ('kutu3');" style="background:red;">
+            Kutu 3
+        </div>
+    </div>
+
+    <!-- Tam-geniþlikli kolon altsatýr açýklamasý: (varsayýlý olarak gizli) -->
+    <div id="kutu1" class="kutuKabý" style="display:none;background:green">
+        <span onclick="this.parentElement.style.display='none'" class="kapaDüðmesi">&times;</span>
+        <h2>Kutu 1</h2>
+        <p>Bazý açýklamalar... Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+    </div>
+
+    <div id="kutu2" class="kutuKabý" style="display:none;background:blue">
+        <span onclick="this.parentElement.style.display='none'" class="kapaDüðmesi">&times;</span>
+        <h2>Kutu 2</h2>
+        <p>Bazý açýklamalar... Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+    </div>
+
+    <div id="kutu3" class="kutuKabý" style="display:none;background:red">
+        <span onclick="this.parentElement.style.display='none'" class="kapaDüðmesi">&times;</span>
+        <h2>Kutu 3</h2>
+        <p>Bazý açýklamalar... Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+    </div>
+
+    <script>
+        function kutuyuAç (kutuAdý) {
+            var i, x;
+            x = document.getElementsByClassName ("kutuKabý");
+            for (i = 0; i < x.length; i++) {x [i].style.display = "none";  }
+            document.getElementById (kutuAdý).style.display = "block";
+        } // func sonu...
+    </script>
+</body>
+</html>

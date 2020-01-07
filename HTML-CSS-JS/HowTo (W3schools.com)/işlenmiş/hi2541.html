@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2541.html: Duyarlý gölgeli kolon kartlarý örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:SlateGray;
+            color:DarkRed;}
+        * {box-sizing: border-box;}
+        .satýr:after {
+            /* content: ""; */
+            /* clear: both; */
+            display: table;
+            margin: 0 -5px;}
+        .kolon {
+            float: left;
+            width: 25%;
+            padding: 0 10px;}
+        .kart {
+            box-shadow: 0 7px 15px 0 rgba(255, 255, 0, 0.5);
+            padding: 16px;
+            text-align: center;
+            background-color: Linen;
+            border-radius: 16px;}
+        @media screen and (max-width: 600px) {
+            .kolon {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Kolon Kartlarý</h2>
+    <p>Tarayýcý eni 600px altýna düþtüðünde kartlar altalta serimlenecektir; duyarlýlýk etkisini test edin:</p>
+
+    <div class="satýr">
+        <div class="kolon">
+            <div class="kart">
+                <h3>Kart 1</h3>
+                <p>Bazý açýklamalar</p>
+                <p>Bazý açýklamalar</p>
+            </div>
+        </div>
+
+        <div class="kolon">
+            <div class="kart">
+                <h3>Kart 2</h3>
+                <p>Bazý açýklamalar</p>
+                <p>Bazý açýklamalar</p>
+            </div>
+        </div>
+  
+        <div class="kolon">
+            <div class="kart">
+                <h3>Kart 3</h3>
+                <p>Bazý açýklamalar</p>
+                <p>Bazý açýklamalar</p>
+            </div>
+        </div>
+  
+        <div class="kolon">
+            <div class="kart">
+                <h3>Kart 4</h3>
+                <p>Bazý açýklamalar</p>
+                <p>Bazý açýklamalar</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

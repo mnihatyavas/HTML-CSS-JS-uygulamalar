@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2481.html: Çift kolonlu ýzgara serilim örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color:Sienna;
+            color:SpringGreen;
+            margin:1em;}
+        * {box-sizing: border-box;}
+        .kolon {
+            float: left;
+            width: 48%;
+            padding: 10px;
+            /*margin:0.5em;*/
+            height: 500px;}
+        .satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+    </style>
+</head>
+<body>
+    <h2>Ýki Eþit Kolon Serilimi</h2>
+
+    <div class="satýr">
+        <div class="kolon" style="background-color:#888;">
+            <h2>1.Sütun</h2>
+            <p>Bazý açýklamalar...</p>
+        </div>
+        <div class="kolon" style="background-color:#aaa;">
+            <h2>2.Sütun</h2>
+            <p>Bazý açýklamalar...</p>
+        </div>
+    </div>
+</body>
+</html>

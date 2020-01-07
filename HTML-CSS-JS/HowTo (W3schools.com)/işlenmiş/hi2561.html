@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2561.html: Baþlýk, büyük/küçük gövde ve ayaklýk serilimli duyarlý blog örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: DarkSlateGray;
+            color:DarkRed;
+           margin:.5em;}
+        * {box-sizing: border-box;}
+        .baþlýk {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: Olive;}
+        .satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+        .solkolon {   
+            float: left;
+            width: 75%;}
+        .saðkolon {
+            float: left;
+            width: 25%;
+            padding-left: 20px;}
+        .kart {
+            background-color: SkyBlue;
+            padding: 20px;
+            margin-top: 20px;}
+        .resimlik {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;}
+        .ayaklýk {
+            padding: 20px;
+            text-align: center;
+            background: Olive;
+            margin-top: 20px;}
+        @media screen and (max-width: 800px) {
+            .solkolon, .saðkolon {
+                width: 100%;
+                padding: 0;} }
+    </style>
+</head>
+<body>
+    <div class="baþlýk">
+        <h2>Blog Adý</h2>
+    </div>
+
+    <div class="satýr">
+        <div class="solkolon">
+            <div class="kart">
+                <h2>MANÞET BAÞLIK</h2>
+                <h5>Baþlýk tarihi: Ocak 1, 2020</h5>
+                <div class="resimlik" style="height:200px;">Resim Çerçevesi</div>
+                <p>Bazý açýklama metinleri...</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+            <div class="kart">
+                <h2>MANÞET BAÞLIK</h2>
+                <h5>Baþlýk tarihi: Aralýk 31, 2019</h5>
+                <div class="resimlik" style="height:200px;">Resim Çerçevesi</div>
+                <p>Bazý açýklama metinleri...</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+        <div class="saðkolon">
+            <div class="kart">
+                <h2>Hakkýmda</h2>
+                <div class="resimlik" style="height:100px;">Resim Çerçevesi</div>
+                <p>Bazý açýklama metinleri... hakkýmdaki in culpa qui officia deserunt mollit anim..</p>
+            </div>
+            <div class="kart">
+                <h3>Popular Görevler</h3>
+                <div class="resimlik">Resim</div><br>
+                <div class="resimlik">Resim</div><br>
+                <div class="resimlik">Resim</div>
+            </div>
+            <div class="kart">
+                <h3>Beni takip edin</h3>
+                <p>Bazý açýklama metinleri...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ayaklýk">
+        <h2>Ayaklýk</h2>
+    </div>
+</body>
+</html>

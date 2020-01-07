@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi2502.html: Tarayýcý ebatýna duyarlý dört eþit table kolon serilimi örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color:MidnightBlue;
+            color:Pink;}
+        * {box-sizing: border-box;}
+        .satýr:before {display: table;}
+        .kolon {
+            float:left;
+            width: 25%;
+            padding: 10px;
+            height: 500px;}
+        @media screen and (max-width: 600px) {/* Flex kolon duyarlanmýyor */
+            .kolon {width: 100%;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Dört Eþit Table Kolon</h2>
+    <p>Tarayýcý geniþliði 600px altýna düþtüðünde kolonlar yanyana deðil altalta serimlenecektir. Efektin testini tarayýcý ebatýyla oynayarak gözlemleyebilirsiniz:</p>
+
+    <div class="satýr">
+        <div class="kolon" style="background-color:#aaa;">
+            <h2>Kolon 1</h2>
+            <p>Bazý metinler...</p>
+        </div>
+        <div class="kolon" style="background-color:#bbb;">
+            <h2>Kolon 2</h2>
+            <p>Bazý metinler...</p>
+        </div>
+        <div class="kolon" style="background-color:#ccc;">
+            <h2>Kolon 3</h2>
+            <p>Bazý metinler...</p>
+        </div>
+        <div class="kolon" style="background-color:#ddd;">
+            <h2>Kolon 4</h2>
+            <p>Bazý metinler...</p>
+        </div>
+    </div>
+</body>
+</html>

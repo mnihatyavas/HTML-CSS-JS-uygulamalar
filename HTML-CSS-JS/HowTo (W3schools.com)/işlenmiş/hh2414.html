@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="hh_w3.css">
+    <title>hh2414.html: Hazýr w3.css stilleriyle bir aðsayfasý yaratmanýn 4.kademesi örneði.</title>
+</head>
+<body style="background-color:DarkKhaki; color:DeepPink;">
+    <!-- 1.Yatay seyrüsefer çubuðu -->
+    <nav class="w3-bar w3-black">
+        <a href="#anasayfa" class="w3-button w3-bar-item">Anasayfa</a>
+        <a href="#bando" class="w3-button w3-bar-item">Orkestra</a>
+        <a href="#tur" class="w3-button w3-bar-item">Tur</a>
+        <a href="#temas" class="w3-button w3-bar-item">Ýletiþim</a>
+    </nav>
+
+    <!-- 2.Resim Gösterisi -->
+    <section>
+        <img class="slaytlarým" src="resim/cazLA.jpg" style="width:100%">
+        <img class="slaytlarým" src="resim/cazNY.jpg" style="width:100%">
+        <img class="slaytlarým" src="resim/cazCH.jpg" style="width:100%">
+    </section>
+
+    <!-- 3.Her 5 saniyede bir deðiþen otomatik resim slaytý gösterisi -->
+    <script>
+        var endeksim = 0;
+        deðiþtir();
+
+        function deðiþtir() {
+            var i;
+            var x = document.getElementsByClassName ("slaytlarým");
+            for (i = 0; i < x.length; i++) {x [i].style.display = "none";}
+            endeksim++;
+            if (endeksim > x.length) {endeksim = 1}
+            x [endeksim - 1].style.display = "block";
+            setTimeout (deðiþtir, 5000);
+        } // func sonu...
+    </script>
+
+    <!-- 4.Orkestranýn Tasviri -->
+    <section class="w3-container w3-center w3-content" style="max-width:600px">
+        <h2 class="w3-wide">ORKESTRA</h2>
+        <p class="w3-opacity"><i>Hepimiz müziðe sevdalýyýz</i></p>
+    </section>
+</body>
+</html>

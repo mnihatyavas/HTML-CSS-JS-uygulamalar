@@ -1,0 +1,16 @@
+# coding:iso-8859-9 Türkçe
+# hl2642.py: Verili bir dizgeyi fonksiyonla tersine çevirme örneði.
+
+def fonk (x): return x [::-1]
+
+dizgem = "Bu metnin tersten yazýlýþýný çok merak ediyorum!.."
+
+print ("Dizgem:", dizgem)
+print ("Ters dizgem:", fonk (dizgem) )
+
+
+"""Çýktý:
+>python hl2642.py
+Dizgem: Bu metnin tersten yazýlýþýný çok merak ediyorum!..
+Ters dizgem: ..!muroyide karem koç ýnýþýlýzay netsret nintem uB
+"""

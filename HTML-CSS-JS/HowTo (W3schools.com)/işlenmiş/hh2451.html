@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hh251.html: Tarayýcý enine duyarlý harita ve iletiþim kolonlarý örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:DarkSlateGray;
+            color:Violet;}
+        * {box-sizing: border-box;}
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            color:Blue;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;}
+        option {background-color:Moccasin;}
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;}
+        input[type=submit]:hover {
+            background-color: #40a030;
+            color:Yellow;}
+        .kab {
+            border-radius: 15px;
+            background-color: DarkGoldenRod;
+            padding: 10px;
+            color:Magenta;}
+        .kolon {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 20px;}
+        .satýr:after {
+            content: "";
+            display: table;
+            clear: both;}
+        @media screen and (max-width: 600px) {
+            .kolon, input[type=submit] {
+                width: 100%;
+                margin-top: 0;} }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Duyarlý Ýletiþim Bölümü</h1>
+    <p style="text-align:center;">Efekti gözlemlemek için tarayýcý eniyle oynayýn.</p>
+
+    <div class="kab">
+        <div style="text-align:center">
+            <h2>Haberleþelim</h2>
+            <p>Bir fincan kahvemizi içmeye bekleriz, yada bize mesaj býrakýn lütfen:</p>
+        </div>
+        <div class="satýr">
+            <div class="kolon">
+                <img src="resim/harita.jpg" style="width:100%">
+            </div>
+            <div class="kolon">
+                <form action="/hedef_sayfa.php">
+                    <label for="ad">Adýnýz</label>
+                    <input type="text" id="ad" name="ad" placeholder="Adýnýz...">
+                    <label for="soyad">Soyadýnýz</label>
+                    <input type="text" id="soyad" name="soyad" placeholder="Soyadýnýz...">
+                    <label for="ülke">Memleketiniz</label>
+                    <select id="ülke" name="ülke">
+                        <option value="avustralya">Avustralya</option>
+                        <option value="kanada">Kanada</option>
+                        <option value="abd">ABD</option>
+                        <option value="türkiye">Türkiye</option>
+                    </select>
+                    <label for="konu">Açýklamalarýnýz</label>
+                    <textarea id="konu" name="konu" placeholder="Açýklamalarýnýz..." style="height:170px"></textarea>
+                    <input type="submit" value="Gönder">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

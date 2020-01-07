@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <title>hk2591.html: Aðýrlýk birimleri çevrimleri örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" />
+    <style>
+        body {
+            background-color:DarkSlateGray;
+            color:Orange;
+            margin:1em;}
+        input {background-color:Cyan;}
+    </style>
+</head>
+<body>
+    <h2>Aðýrlýklararasý Çevrimler</h2>
+    <p>Sol kutudan gireceðiniz aðýrlýklar saðda kilogram olarak spontane çevrilecektir:</p>
+
+    <p>
+        <label>Pound</label>
+        <input id="pound" type="number" placeholder="0" oninput="çevirici1 (this.value)" onchange="çevirici1 (this.value)">
+        Kilogram: <span id="kilo1"></span>
+    </p>
+    <p>
+        <label>Ounce</label>
+        <input id="ounce" type="number" placeholder="0" oninput="çevirici2 (this.value)" onchange="çevirici2 (this.value)">
+        Kilogram: <span id="kilo2"></span>
+    </p>
+    <p>
+        <label>Gram</label>
+        <input id="gram" type="number" placeholder="0" oninput="çevirici3 (this.value)" onchange="çevirici3 (this.value)">
+        Kilogram: <span id="kilo3"></span>
+    </p>
+    <p>
+        <label>Stone</label>
+        <input id="stone" type="number" placeholder="0" oninput="çevirici4 (this.value)" onchange="çevirici4 (this.value)">
+        Kilogram: <span id="kilo4"></span>
+    </p>
+
+    <script>
+        function çevirici1 (deðer) {document.getElementById ("kilo1").innerHTML = deðer / 2.2046;}
+        function çevirici2 (deðer) {document.getElementById ("kilo2").innerHTML = deðer / 35.274;}
+        function çevirici3 (deðer) {document.getElementById ("kilo3").innerHTML = deðer / 1000;}
+        function çevirici4 (deðer) {document.getElementById ("kilo4").innerHTML = deðer / 0.15747;}
+    </script>
+</body>
+</html>
