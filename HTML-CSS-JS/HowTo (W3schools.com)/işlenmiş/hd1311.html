@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1311.html: Gölgeli ve renk koyulaþmalý iki farklý açma-kapama düðmesi örneði.</title>
+    <style>
+        body {
+            background-color:RosyBrown;
+            color: Lime;
+            margin:30px;}
+        .düðme {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 34px;
+            margin-right:1em;}
+        .düðme input {
+            opacity: 0;
+            width: 0;
+            height: 0;}
+        .sürgü {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: SkyBlue;
+            transition: .5s;}
+        .sürgü:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: DarkRed;
+            transition: .5s;}
+        input:checked + .sürgü {background-color: MidnightBlue;}
+        input:focus + .sürgü {box-shadow: 0 2px 5px Tomato;}
+        input:checked + .sürgü:before {transform: translateX(60px);}
+        .sürgü.round {border-radius: 34px;}
+        .sürgü.round:before {border-radius: 50%;}
+    </style>
+</head>
+<body>
+    <h1>Aç-Kapa Düðmeleri</h1>
+    <br><br>
+    <label class="düðme">
+        <input type="checkbox">
+        <span class="sürgü"></span>
+    </label>
+    <label class="düðme">
+        <input type="checkbox" checked>
+        <span class="sürgü"></span>
+    </label><br><br>
+
+    <label class="düðme">
+        <input type="checkbox">
+        <span class="sürgü round"></span>
+    </label>
+    <label class="düðme">
+        <input type="checkbox" checked>
+        <span class="sürgü round"></span>
+    </label>
+</body>
+</html>

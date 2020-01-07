@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>he1443.html: Bir html tablosunu baþlýklarla alfabetik/sayýsal artan ve azalan sýralama örneði.</title>
+    <style>
+        body {
+            background-color:Teal;
+            color:DarkRed;
+            margin:2em;}
+        table {
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid DarkRed;}
+        th {
+            cursor: pointer;
+            background-color:DarkKhaki;}
+        th, td {
+            text-align: left;
+            padding: 16px;}
+        tr:nth-child(even) {background-color: Linen;}
+        tr:nth-child(odd) {background-color: Moccasin;
+    </style>
+</head>
+<body>
+    <h3>Baþlýklarý týklayarak sýralama yapabilirsiniz.</h3>
+    <p>Ýlk týklayýþta artan (a->z) sýralanýr.</p>
+    <p>Sonraki týklayýþta azalan (z->a) sýralanýr.</p>
+    <p>Yýllýk Kar/Zarar kolonu alfabetik deðil sayýsal irdelenmiþtir.</p>
+
+    <table id="tablom">
+        <tr>
+            <!--Ayný fonksiyon farklý parametreler:-->  
+            <th onclick="tabloyuSýrala (0)">Ýsim</th>
+            <th onclick="tabloyuSýrala (1)">Ülke</th>
+            <th onclick="tabloyuSýrala (2)">GSM</th>
+            <th onclick="tabloyuSýrala (3)">Yýllýk Kar/Zarar (M$)</th>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Ýsviçre</td>
+            <td>+905515559464</td>
+            <td>-3.78</td>
+        </tr>
+        <tr>
+            <td>Kuzey/Güney</td>
+            <td>BK</td>
+            <td>+901111111111</td>
+            <td>113.50</td>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Almanya</td>
+            <td>+902222222222</td>
+            <td>9.57</td>
+        </tr>
+        <tr>
+            <td>Koniglich Essen</td>
+            <td>Almanya</td>
+            <td>+903333333333</td>
+            <td>218.12</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Ýtalya</td>
+            <td>+904444444444</td>
+            <td>9.65</td>
+        </tr>
+        <tr>
+            <td>Paris specialites</td>
+            <td>Fransa</td>
+            <td>+908888888888</td>
+            <td>-11.12</td>
+        </tr>
+        <tr>
+            <td>Ada Ticaret</td>
+            <td>BK</td>
+            <td>+906666666666</td>
+            <td>62.37</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Kanada</td>
+            <td>+907777777777</td>
+            <td>38.45</td>
+        </tr>
+    </table>
+
+    <script>
+        function tabloyuSýrala (n) {
+            var tablo, satýrlar, yerdeðiþtiMi, i, x, y, yerdeðiþtirmeliMi, yön, yöndeðiþsinMi = false;
+            tablo = document.getElementById ("tablom");
+            yerdeðiþtiMi = true;
+            yön = "artan";
+            while (yerdeðiþtiMi) {
+                yerdeðiþtiMi = false;
+                satýrlar = tablo.rows;
+                for (i = 1; i < (satýrlar.length - 1); i++) {
+                    yerdeðiþtirmeliMi = false;
+                    x = satýrlar [i].getElementsByTagName ("TD") [n];
+                    y = satýrlar [i + 1].getElementsByTagName ("TD") [n];
+                    if (yön == "artan" & n == 3 & Number (x.innerHTML) > Number (y.innerHTML) ) {
+                        yerdeðiþtirmeliMi= true;
+                        break;
+                    } // if sonu...
+                    if (yön == "artan" & n != 3 & x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() ) {
+                        yerdeðiþtirmeliMi= true;
+                        break;
+                    } // if sonu...
+                    if (yön == "azalan" & n == 3 & Number (x.innerHTML) < Number (y.innerHTML) ) {
+                        yerdeðiþtirmeliMi= true;
+                        break;
+                    } // if sonu...
+                    if (yön == "azalan" & n != 3 & x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() ) {
+                        yerdeðiþtirmeliMi= true;
+                        break;
+                    } // if sonu...
+                } // for sonu...
+                if (yerdeðiþtirmeliMi) {
+                    satýrlar [i].parentNode.insertBefore (satýrlar [i + 1], satýrlar [i]);
+                    yerdeðiþtiMi = true;
+                    yöndeðiþsinMi = true;
+                }else {
+                    if (yöndeðiþsinMi == 0 && yön == "artan") {
+                        yön = "azalan";
+                        yerdeðiþtiMi = true;
+                    } // iç-if sonu...
+                } // else sonu...
+            } // while sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

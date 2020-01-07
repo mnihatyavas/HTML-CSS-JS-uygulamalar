@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg1591.html: AJAX'la html dosyasýndan baðlantý kayýtlarýný okuma örneði.</title>
+</head>
+<body style="background-color:DarkKhaki; margin:3em; font-size:20px;">
+    <div w3-html-oku="hg1591x.html"></div>
+
+    <script>
+        function htmlOku() {
+            var z, i, eleman, dosya, xhr;
+            /* Tüm html etiket elemanlarýný koleksiyonla: */
+            z = document.getElementsByTagName ("*");
+            for (i = 0; i < z.length; i++) {
+                eleman = z [i];
+                /* Dosya adlý deðeri alacaðýmýz elemanýn vasfýný araþtýralým: */
+                dosya = eleman.getAttribute ("w3-html-oku");
+                if (dosya) {
+                    xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {eleman.innerHTML = this.responseText;}
+                            if (this.status == 404) {eleman.innerHTML = "Sayfa bulunamadý.";}
+                            /* Vasfý sil ve fonksiyonu tekrar çaðýr: */
+                            eleman.removeAttribute ("w3-html-oku");
+                            htmlOku();
+                        } // iç-if sonu...
+                    } // xhr sonu...
+                    xhr.open ("GET", dosya, true);
+                    xhr.send();
+                    return;
+                } // dýþ-if sonu...
+            } // for sonu...
+       } // func sonu...
+
+        htmlOku();
+    </script>
+</body>
+</html>

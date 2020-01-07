@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" içerik="width=device-width, initial-scale=1">
+    <title>hg1572.html: Týklayýnca alt açýklamalarý yavaþça açýlan veya kapanan baþlýklar örneði.</title>
+    <style>
+        body {
+            background-color:SlateBlue;
+            color:Pink;
+            margin:3em;}
+        .çökebilen {/* Kab */
+            background-color: DarkRed;
+            color: Lime;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;}
+        .aktif, .çökebilen:hover {color: Yellow;}
+        .içerik {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background-color: Green;}
+    </style>
+</head>
+<body>
+    <h2>Canlandýrmalý Çökebilenler</h2>
+
+    <p>Bir Çökebilen Baþlýk:</p>
+    <button class="çökebilen">Çökebilen Baþlýðý Aç/Kapa</button>
+    <div class="içerik">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <p>Bir Çökebilen Kýsýmlar Kümesi:</p>
+    <button class="çökebilen">Çökebilen Kýsým-1'i Aç/Kapa</button>
+    <div class="içerik">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button class="çökebilen">Çökebilen Kýsým-2'yi Aç/Kapa</button>
+    <div class="içerik">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button class="çökebilen">Çökebilen Kýsým-3'ü Aç/Kapa</button>
+    <div class="içerik">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <script>
+        var çök = document.getElementsByClassName ("çökebilen");
+        var i;
+        for (i = 0; i < çök.length; i++) {
+            çök [i].addEventListener ("click", function() {
+                this.classList.toggle ("aktif");
+                var içerik = this.nextElementSibling;
+                if (içerik.style.maxHeight) {içerik.style.maxHeight = null;
+                }else {içerik.style.maxHeight = içerik.scrollHeight + "px";}
+            }); // çök sonu...
+        } // for sonu...
+    </script>
+</body>
+</html>

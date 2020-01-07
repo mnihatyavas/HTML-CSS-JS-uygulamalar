@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1671.html: Önü resim arkasý kariyer tanýtýmlý döner kartvizit örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Sienna;
+            color:Cyan;
+            margin:2em;}
+        .döner-kartvizit {
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;}
+        .döner-kartvizit-içi {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 15px 0 rgba(255,255,0,0.7);}
+        .döner-kartvizit:hover .döner-kartvizit-içi {transform: rotateY(180deg);}
+        .döner-kartvizit-önü, .döner-kartvizit-arkasý {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;}
+        /*.döner-kartvizit-önü {
+            background-color: #bbb;
+            color: black;}*/
+        .döner-kartvizit-arkasý {
+            background-color: #2980b9;
+            color: Coral;
+            transform: rotateY(180deg);}
+    </style>
+</head>
+<body>
+    <h1>Metinli Döner Kartvizit</h1>
+    <h4>Döner efekti için resmin üzerinde gezinin:</h4>
+
+    <div class="döner-kartvizit">
+        <div class="döner-kartvizit-içi">
+            <div class="döner-kartvizit-önü">
+                <img src="resim/avatar.png" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="döner-kartvizit-arkasý">
+                <h1>Yücel Küçükbay</h1>
+                <p><b>Otolastik Ustasý</p> 
+                <p>Lastiklerimizin baþ tacý</b></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

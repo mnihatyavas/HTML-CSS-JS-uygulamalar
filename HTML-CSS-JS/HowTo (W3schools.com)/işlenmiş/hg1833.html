@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1833.html: Eþit yükseklik kolonlarýnýn table yerine flex görüntülenmesi örneði.</title>
+    <style>
+        body {
+            background-color:SlateBlue;
+            color:#ada;
+            margin:1em;}
+.kolon-kabý {
+  display: flex;
+  width: 100%;
+}
+.kolon {
+  flex: 1;
+  padding: 16px;
+}
+    </style>
+</head>
+<body>
+    <h1>Flexbox'lý Eþit Yükseklik Kolonlarý</h1>
+    <p>Tüm kolonlar otomatikmen kendini enyüksek kolonla eþleþtirecektir.</p>
+
+    <div class="kolon-kabý">
+        <div class="kolon" style="background:orange">
+            <h2>1.Kolon</h2>
+            <p>Merhaba Dünya...</p>
+        </div>
+
+        <div class="kolon" style="background:yellow">
+            <h2>2.Kolon</h2>
+            <p>Merhaba Dünya!</p>
+            <p>Merhaba Dünya!</p>
+            <p>Merhaba Dünya!</p>
+            <p>Merhaba Dünya!</p>
+        </div>
+
+        <div class="kolon" style="background:orange">
+            <h2>3.Kolon</h2>
+            <p>Baþka bir metin...</p>
+            <p>Baþka bir metin...</p>
+        </div>
+    </div>
+</body>
+</html>

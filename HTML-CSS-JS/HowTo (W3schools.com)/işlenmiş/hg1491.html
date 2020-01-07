@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1491.html: Dýþ düðmeyle açýlýp iç düðmeyle kapanan pencere örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:SlateGray;
+            color:Cyan;
+            margin:2em;}
+        .pencere {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 200px;
+            left: 0;
+            top: 0;
+            width: 100%; /* body margin etkisiz */
+            height: 100%;
+            overflow: auto; /* Pencereden taþma olursa kaydýraçla */
+            background-color: rgba(0,0,0,0.4); /* Arkaplaný þeffaf pencere */}
+        .içerik {
+            background-color: Green;
+            margin: auto;
+            padding: 20px;
+            border: 3px solid Pink;
+            width: 80%;}
+        .kapat {
+            color: Linen;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;}
+        .kapat:hover, .kapat:focus {
+            color: Red;
+            text-decoration: none;
+            cursor: pointer;}
+        button {
+            background-color:Navy;
+            color:yellow;}
+    </style>
+</head>
+<body>
+    <h2>Pencere Örneði</h2>
+
+    <button id="düðmem">Pencereyi Aç</button>
+
+    <div id="pencerem" class="pencere">
+        <div class="içerik">
+            <span class="kapat">&times;</span> <!-- &times=X -->
+            <p>Pencere içinde açýklama metni. Pencere geniþliði %80, yüksekliði içerik metni hacmiyle deðiþir. Metin arttýkça pencere boyu artar, ta ki tarayýcý (padding hariç) dolana dek, sonra da dikey kaydýraçlanýr.</p>
+        </div>
+    </div>
+
+    <script>
+        var pencere = document.getElementById ('pencerem');
+        var düðme = document.getElementById ("düðmem");
+        var þerh = document.getElementsByClassName ("kapat") [0];
+
+        düðme.onclick = function() {pencere.style.display = "block";}
+        þerh.onclick = function() {pencere.style.display = "none";}
+
+        //kapat=X dýþýndaki týklamalar pencereyi kapatmasýn...
+        //window.onclick = function (olay) {if (olay.target == pencere) {pencere.style.display = "none";} }
+    </script>
+</body>
+</html>

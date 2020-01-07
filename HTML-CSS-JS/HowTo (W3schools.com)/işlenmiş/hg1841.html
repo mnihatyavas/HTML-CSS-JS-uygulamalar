@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg1841.html: Resmin kutu taþmasýný averflow:auto ile halletme örneði.</title>
+    <style>
+        body {
+            background-color:DodgerBlue;
+            color:DarkRed;
+            margin:1em;}
+        div {
+            border: 5px solid #4CAF50;
+            padding: 5px;
+            background-color:Linen;}
+        .resim1, .resim2 {float: right;}
+        .taþmasýz {overflow: auto;}
+    </style>
+</head>
+<body>
+    <p>Bu örnekte resmin yüksekliði metin kutusunu taþmakta ve saðda aykýrý bir görüntü yaratmaktadýr:</p>
+    <div>
+        <img class="resim1" src="resim/ananas.jpg" alt="Ananas" width="170" height="170">
+        Dolgu metni. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+    </div>
+
+    <p style="clear:right">Bu örnekte ise metin kutusu taþmasý overflow:auto ile önlenmekte ve resim saðda kutu içinde yer almaktadýr.:</p>
+    <div class="taþmasýz">
+        <img class="resim2" src="resim/ananas.jpg" alt="Ananas" width="170" height="170">
+        Dolgu metni. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+    </div>
+</body>
+</html>

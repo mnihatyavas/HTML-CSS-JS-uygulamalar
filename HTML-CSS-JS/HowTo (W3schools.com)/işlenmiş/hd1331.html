@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1331.html: Verigiriþ kutusundayken büyükharf kilidi tuþuna basýldýðýnda mesaj yansýtma örneði.</title>
+    <style>
+        body {
+            background-color:SteelBlue;
+            color:coral;
+            margin:2em;}
+        #metin {
+            display:none;
+            color:Yellow;}
+        input {
+            background-color:Moccasin;
+            color:Green;}
+    </style>
+<head>
+<body>
+    <h3>Büyükharf Kilidine Duyarlýlýk</h3>
+    <p>Verigiriþ kutusu içindeyken "Büyükharf Kilidi" tuþuna basarak mesaj yansýtýlmasýný tetikleyin:</p>
+    <br><br>
+    <input id="giriþ" value="Herhangi bir dizge giriþi...">
+    <p id="metin">ÝKAZ! Büyükharf kilidi AÇIK!..</p>
+
+    <script>
+        var veri = document.getElementById ("giriþ");
+        var mesaj = document.getElementById ("metin");
+        veri.addEventListener ("keyup", function (olay) {
+            if (olay.getModifierState ("CapsLock") ) {mesaj.style.display = "block";
+            } else {mesaj.style.display = "none"}
+        }); // veri sonu...
+    </script>
+</body>
+</html>

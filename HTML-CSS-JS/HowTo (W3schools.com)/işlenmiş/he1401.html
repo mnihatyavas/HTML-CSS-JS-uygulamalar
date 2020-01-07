@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>he1401.html: Aranmaya otomatik odaklanan müþteri tablosu örneði.</title>
+    <style>
+        body {
+            background-color:Violet;
+            color:Brown;
+            margin:3em;}
+        * {box-sizing: border-box;}
+        #veri {
+            background-image: url("resim/araþtýr1.png");
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid black;
+            margin-bottom: 12px;}
+        #tablom {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;}
+        #tablom th, #tablom td {
+            text-align: left;
+            padding: 12px;}
+        #tablom tr {border-bottom: 1px solid #ddd;}
+        #tablom th {background-color:Black;}
+        /* #tablom td {background-color:Orchid;} */
+        #tablom tr:hover {background-color: #ba70b6;}
+    </style>
+</head>
+<body>
+    <h2>Müþteri Bilgileri</h2>
+    <br>
+    <input type="text" id="veri" onkeyup="fonk()" placeholder="Ýsim araþtýrýn..." title="Bir müþteri ismi girin">
+
+    <table id="tablom">
+        <tr class="baþlýk">
+            <th style="width:60%;">Müþteri Ýsmi</th>
+            <th style="width:40%;">Ülkesi</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Almanya</td>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Ýsviçre</td>
+        </tr>
+        <tr>
+            <td>Ada Ticaret</td>
+            <td>BK</td>
+        </tr>
+        <tr>
+            <td>Koniglich Essen</td>
+            <td>Almanya</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Kanada</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Ýtalya</td>
+        </tr>
+        <tr>
+            <td>Kuzey/Güney Ltd.</td>
+            <td>BK</td>
+        </tr>
+        <tr>
+            <td>Paris spesiyaliteleri</td>
+            <td>Fransa</td>
+        </tr>
+        <tr>
+            <td>Miþmiþ kaysýlarý</td>
+            <td>Türkiye</td>
+        </tr>
+    </table>
+
+    <script>
+        function fonk() {
+            var giriþ, süzgeç, tablo, tr, td, i;
+            giriþ = document.getElementById ("veri");
+            süzgeç = giriþ.value.toUpperCase();
+            tablo = document.getElementById ("tablom");
+            tr = tablo.getElementsByTagName ("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr [i].getElementsByTagName ("td") [0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf (süzgeç) > -1) {tr [i].style.display = "";
+                    }else {tr [i].style.display = "none";}
+                } // if sonu...
+            } // for sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1641.html: Düðme týklayarak netleþtirme dereceli üst-perdeleme örneði.</title>
+    <style>
+        body {
+            background-color:Khaki;
+            color:Magenta;
+            font-size:25px;
+            margin:2em;}
+        #perdeleme {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /*right: 0; bottom: 0;*/
+            background-color: rgba(0,100,0,0.9); /* Koyu yeþil ve %90 net */
+            z-index: 2;
+            cursor: pointer;} /* Perde kapalýyken her konumda parmak iþareti */
+        button {
+            background-color:Navy;
+            color:Yellow;
+            cursor:pointer;} /* Sadec düðme üstündeyken parmak iþareti */
+    </style>
+</head>
+<body>
+    <div id="perdeleme" onclick="perdeyiAç()"></div> <!--Örtülü perdeyi herhangibir %100 kapalý perde konumu týklanýnca açar -->
+
+    <div style="padding:20px">
+        <h2>Perdeleme Efekti</h2>
+        <p>Sayfa içeriðine perdeleme efekti ekleyin (100% geniþlik ve yükseklikte, %90 netlikte koyu yeþil zemin rengi).</p>
+        <button onclick="perdeyiÖrt()">Perdeyi ört</button> <!--Perdeyi sadece düðme týklanýrsa kapar-->
+    </div>
+
+    <script>
+        function perdeyiÖrt() {document.getElementById ("perdeleme").style.display = "block";}
+        function perdeyiAç() {document.getElementById("perdeleme").style.display = "none";}
+    </script>
+</body>
+</html>

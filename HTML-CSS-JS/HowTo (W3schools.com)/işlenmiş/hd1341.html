@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1341.html: Verigiriþ kutusunda Ent tuþuna basarak düðme iþlevini tetikleme örneði.</title>
+    <style>
+        body {
+            background-color:SlateBlue;
+            color:Pink;
+            margin:2em;}
+        input {
+            background-color:Moccasin;
+            color:Blue;}
+        button {
+            background-color:Maroon;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h3>Ent'le Düðmeyi Tetikletme</h3>
+    <p>Düðmenin alert mesajý yansýtma iþlevini verigiriþ kutusu içindeyken "Enter" tuþuna basarak da gerçekleþtirebilirsiniz:</p>
+    <br><br>
+    <input id="giriþ" value="Herhangibir metin giriþi...">
+    <button id="düðmem" onclick="javascript:alert ('Merhaba JavaScript Dünyasý!..')">Düðme</button>
+
+    <script>
+        var veri = document.getElementById ("giriþ");
+        veri.addEventListener ("keyup", function (olay) {
+            //olay.preventDefault();
+            if (olay.keyCode === 13) {document.getElementById ("düðmem").click();}
+        }); // veri sonu...
+    </script>
+</body>
+</html>

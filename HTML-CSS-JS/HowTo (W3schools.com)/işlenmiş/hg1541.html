@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1541.html: Varsayýlý ve özel aralýk sürgüsü örneði.</title>
+    <style>
+        body {
+            background-color:Sienna;
+            color:Gold;
+            margin:1em;}
+        .sürgüKabý {
+            border: solid 2px Magenta;
+            background-color:Teal;
+            width: 100%;}
+        .sürgü {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.5;
+            -webkit-transition: .5s;}
+        .sürgü:hover {opacity: 1;}
+        .sürgü::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: DarkGreen;
+            cursor: pointer;}
+    </style>
+</head>
+<body>
+    <h1>Özel Aralýk Sürgüsü</h1>
+
+    <div class="sürgüKabý">
+        <p>Varsayýlý aralýk sürgüsü:</p>
+        <input type="range" min="1" max="100" value="50">
+
+        <p>Özel aralýk sürgüsü:</p>
+        <input type="range" min="1" max="100" value="50" class="sürgü">
+    </div>
+</body>
+</html>

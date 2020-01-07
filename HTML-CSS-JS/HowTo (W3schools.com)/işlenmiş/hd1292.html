@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1292.html: Kullanýcý tarafýndan özelleþtirilebilen radyo düðmeleri örneði.</title>
+    <style>
+        body {
+            background: SlateGray;
+            color:Pink;
+            margin:30px;}
+        .kab {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            /*user-select: none;*/}
+        .kab input {/* Varsayýlý radyo düðmelerini gizleyelim */
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;}
+        .iþaret {/* Özel radyo düðmesi tasarlayalým */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: Moccasin;
+            border-radius: 50%;}
+        .kab:hover input ~ .iþaret {background-color: Yellow;}
+        .kab input:checked ~ .iþaret {background-color: DodgerBlue;}
+        .kab:hover input:checked ~ .iþaret {background-color: RoyalBlue;}
+        .iþaret:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .kab input:checked ~ .iþaret:after {display: block;}
+        .kab .iþaret:after {/* Orta nokta tasarýmý */
+            top: 5px;
+            left: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: Tomato;}
+    </style>
+<body>
+    <h1>Özelleþtirilen Radyo Düðmeleri</h1>
+    <br><br>
+    <label class="kab">Ankara radyosu
+        <input type="radio" name="radyo">
+        <span class="iþaret"></span>
+    </label>
+
+    <label class="kab">Ýstanbul radyosu
+        <input type="radio" name="radyo">
+        <span class="iþaret"></span>
+    </label>
+
+    <label class="kab">Ýzmir radyosu
+        <input type="radio" name="radyo">
+        <span class="iþaret"></span>
+    </label>
+
+    <label class="kab">Mersin radyosu
+        <input type="radio" checked="checked" name="radyo">
+        <span class="iþaret"></span>
+    </label>
+</body>
+</html>

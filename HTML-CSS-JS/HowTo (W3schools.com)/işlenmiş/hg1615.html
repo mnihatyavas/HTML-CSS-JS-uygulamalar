@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1615.html: Dönmeyi tamamlayan üst halkalý  yükleme bekletmesi sembolü örneði.</title>
+    <style>
+        body {
+            background-color:Peru;
+            color:Lime;
+            margin:1em;}
+        #yükleyici {
+            position: absolute;
+            left: 50%; /* Dönen halka tam ortaya  */
+            top: 50%;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            margin: -75px 0 0 -75px;
+            border: 16px solid Linen;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            animation: dön 2.5s linear infinite;}
+        @keyframes dön {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);} }
+        .alttan-canlandýr {/* Yükleme sonlanýnca alttan üste netleþecek mesaj */
+            position: relative;
+            font-size:30px;
+            color:Cyan;
+            animation-name: alttanNetleþtir;
+            animation-duration: 2s}
+        @keyframes alttanNetleþtir { 
+            from {bottom:-200px; opacity:0}
+            to {bottom:0; opacity:1} }
+        #mesajým {
+            display: none;
+            text-align: center;}
+    </style>
+</head>
+<body onload="fonk()">
+    <h2>Bir Yükleyici Nasýl Yaratýlýr</h2>
+
+    <div id="yükleyici"></div>
+
+    <div style="display:none;" id="mesajým" class="alttan-canlandýr">
+        <h2>Tada!</h2>
+        <p>Nihayet yüklemeyi 5 saniyede tamamlayabildim...</p>
+    </div>
+
+    <script>
+        function fonk() {setTimeout (mesajýGöster, 5000);} // 5sn sonra mesajý gösterir...
+        function mesajýGöster() {// Yükleme dönen halkayý gizler ve mesajý gösterir...
+            document.getElementById ("yükleyici").style.display = "none";
+            document.getElementById ("mesajým").style.display = "block";
+        } // func sonu...
+    </script>
+</body>
+</html>

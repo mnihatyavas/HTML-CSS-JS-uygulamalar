@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1561.html: Týklayýnca beliren veya kaybolan fýrlayan açýklama örneði.</title>
+    <style>
+        body {
+            background-color:Navy;
+            color:Lime;
+            text-align:center;
+            margin:3em;}
+        .fýrlayan {/* Fýrlayan açýklama kabý */
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;}
+        .fýrlayan .fýrlayan-açýklama {
+            visibility: hidden;
+            width: 250px;
+            background-color: DarkRed;
+            color: Yellow;
+            opacity:0.7;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;}
+        .fýrlayan .fýrlayan-açýklama::after {/* Açýklama alt-oku */
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: Lime transparent transparent transparent;}
+        .fýrlayan .göster {
+            visibility: visible;
+            animation: netleþ 1s;}
+        @keyframes netleþ {
+            from {opacity: 0;}
+            to {opacity:0.7 ;} }
+    </style>
+</head>
+<body>
+    <h2>Fýrlayan Açýklama</h2>
+
+    <div class="fýrlayan" onclick="fonk()">Fýrlayan açýklamayý aç/kapa için týkla
+        <span class="fýrlayan-açýklama" id="fýrlayaným">Ben basit bir fýrlayan açýklamayým!</span>
+    </div>
+
+    <script>
+        function fonk() {document.getElementById ("fýrlayaným").classList.toggle ("göster"); }
+    </script>
+</body>
+</html>

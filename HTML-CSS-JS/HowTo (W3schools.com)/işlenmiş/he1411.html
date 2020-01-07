@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>he1411.html: Sayfada mevcut süzgeçDiv elemanlarýný farklý gruplarla süzgeçleme örneði.</title>
+    <style>
+        body {
+            background-color:DarkKhaki;
+            color:DarkRed;
+            margin:2em;}
+        .süzgeçDiv {
+            display: none;
+            float: left;
+            background-color: #2196F3;
+            color: Lime;
+            width: 100px;
+            line-height: 100px;
+            text-align: center;
+            margin: 2px;}
+        .göster {display: block;}
+        .kab {
+            margin-top: 20px;
+            overflow: hidden;}
+        .düðme {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: Linen;
+            cursor: pointer;}
+        .düðme:hover {background-color: Moccasin;}
+        .düðme.aktif {
+            background-color: Tomato;
+            color: Yellow;}
+    </style>
+</head>
+<body>
+    <h2>süzgeçDiv Elemanlarýný Süzgeçleme</h2>
+    <br><br>
+    <div id="düðmeKabý">
+        <button class="düðme" onclick="seçileceklerinSüzgeçlenmesi ('tümü')">Hepsini göster</button>
+        <button class="düðme aktif" onclick="seçileceklerinSüzgeçlenmesi ('arabalar')">Arabalar</button>
+        <button class="düðme" onclick="seçileceklerinSüzgeçlenmesi ('hayvanlar')">Hayvanlar</button>
+        <button class="düðme" onclick="seçileceklerinSüzgeçlenmesi ('meyveler')">Meyvalar</button>
+        <button class="düðme" onclick="seçileceklerinSüzgeçlenmesi ('renkler')">Renkler</button>
+    </div>
+
+    <div class="kab">
+        <div class="süzgeçDiv arabalar">BMW</div>
+        <div class="süzgeçDiv renkler meyveler">Portakal</div>
+        <div class="süzgeçDiv arabalar">Volvo</div>
+        <div class="süzgeçDiv renkler">Kýrmýzý</div>
+        <div class="süzgeçDiv arabalar hayvanlar">Mustang</div>
+        <div class="süzgeçDiv renkler">Mavi</div>
+        <div class="süzgeçDiv hayvanlar">Kedi</div>
+        <div class="süzgeçDiv hayvanlar">Köpek</div>
+        <div class="süzgeçDiv meyveler">Kavun</div>
+        <div class="süzgeçDiv meyveler hayvanlar">Kiwi</div>
+        <div class="süzgeçDiv meyveler">Muz</div>
+        <div class="süzgeçDiv meyveler renkler">Limon</div>
+        <div class="süzgeçDiv hayvanlar">Ýnek</div>
+    </div>
+
+    <script>
+        seçileceklerinSüzgeçlenmesi ("arabalar");
+
+        // Aktif düðmeyi ýþýldat ve uyanlarý göster...
+        var düðmelerinKabý = document.getElementById ("düðmeKabý");
+        var düðmeler = düðmelerinKabý.getElementsByClassName ("düðme");
+        for (var i = 0; i < düðmeler.length; i++) {
+            düðmeler [i].addEventListener ("click", function() {
+                var aktüel = document.getElementsByClassName ("aktif");
+                aktüel [0].className = aktüel [0].className.replace (" aktif", "");
+                this.className += " aktif";
+            }); // düð.. sonu...
+        } // for sonu...
+
+        function seçileceklerinSüzgeçlenmesi (a) {
+            var x, i;
+            x = document.getElementsByClassName ("süzgeçDiv");
+            if (a == "tümü") a = "";
+            for (i = 0; i < x.length; i++) {
+                sil (x [i], "göster"); // Önce hepsini sil...
+                if (x [i].className.indexOf (a) > -1) ekle (x [i], "göster"); // Sonra seçilenleri göster...
+            } // for sonu...
+        } // func sonu...
+
+        function sil (eleman, ad) {
+            var i, dizi1, dizi2;
+            dizi1 = eleman.className.split (" ");
+            dizi2 = ad.split (" ");
+            for (i = 0; i < dizi2.length; i++) {
+                while (dizi1.indexOf (dizi2 [i]) > -1) {dizi1.splice (dizi1.indexOf (dizi2 [i]), 1);}
+            } // for sonu...
+            eleman.className = dizi1.join (" ");
+        } // func sonu...
+
+        function ekle (eleman, ad) {
+            var i, dizi1, dizi2;
+            dizi1 = eleman.className.split (" ");
+            dizi2 = ad.split (" ");
+            for (i = 0; i < dizi2.length; i++) {
+                if (dizi1.indexOf (dizi2 [i]) == -1) {eleman.className += " " + dizi2 [i];}
+            } // for sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

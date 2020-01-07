@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>hd1251.html: Tamekran ve 300px eninde iki adet ikonlu araþtýrma alaný örneði.</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color:DarkGoldenRod;
+            color:Lime;}
+        * {box-sizing: border-box;}
+        form.örnek input[type=text] {
+            padding: 8px;
+            font-size: 17px;
+            border: 2px solid Cyan;
+            border-radius:10px 0 0 10px;
+            float: left;
+            width: 80%;
+            color:Magenta;
+            background: Moccasin;}
+        form.örnek button {
+            float: left;
+            width: 20%;
+            padding: 8px;
+            background: #2196F3;
+            color: Pink;
+            font-size: 18px;
+            border: 2px solid Cyan;
+            border-left: none;
+            cursor: pointer;}
+        form.örnek button:hover {
+            background: #0b7dda;
+            color:Coral;}
+        form.örnek::after {
+            content: "";
+            clear: both;
+            display: table;}
+    </style>
+</head>
+<body>
+    <h2>Araþtýrma Düðmesi</h2>
+
+    <p>Tam tarayýcý geniþliði:</p>
+    <form class="örnek" action="#">
+        <input type="text" placeholder="Araþtýr..." name="araþtýr">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <p>Azami en:300px ölçüsüyle mevcut tarayýcýyý ortalar:</p>
+    <form class="örnek" action="#" style="margin:auto; max-width:300px">
+        <input type="text" placeholder="Araþtýr..." name="araþtýr2">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</body>
+</html>

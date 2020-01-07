@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1832.html: Eþit yükseklikteki yanyana kolonlarýn ekran daralýnca üstüsteliði örneði.</title>
+    <style>
+        body {
+            background-color:SteelBlue;
+            color:#5e5;
+            margin:1em;}
+        * {box-sizing: border-box;}
+        .kolon-kabý {
+            display: table;
+            width: 100%;}
+        .kolon {
+            display: table-cell;
+            padding: 16px;}
+        @media only screen and (max-width: 600px) {
+            .kolon {
+                display: block;
+                width: 100%;} }
+    </style>
+</head>
+<body>
+    <h1>Duyarlý Eþit Yükseklik Kolonlarý</h1>
+    <p>Eþit yükseklikteki yanyana kolonlar, ekran eni 600px altýna düþtüðünde üstüste yýðýlacaktýr.</p>
+
+    <div class="kolon-kabý">
+        <div class="kolon" style="background:orange">
+            <h2>1.Kolon</h2>
+            <p>Selam Dünya...</p>
+        </div>
+
+        <div class="kolon" style="background:yellow">
+            <h2>2.Kolon</h2>
+            <p>Selam Dünya!</p>
+            <p>Selam Dünya!</p>
+            <p>Selam Dünya!</p>
+            <p>Selam Dünya!</p>
+        </div>
+
+        <div class="kolon" style="background:orange">
+            <h2>3.Kolon</h2>
+            <p>Baþkaca metin...</p>
+            <p>Baþkaca metin...</p>
+        </div>
+    </div>
+</body>
+</html>

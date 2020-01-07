@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg1522.html: Canlandýrmalý ilerleme çubuðu örneði.</title>
+    <style>
+        body {
+            background-color:Teal;
+            color:Cyan;
+            margin:1em;}
+        #çubuk {
+            width: 100%;
+            height:25px;
+            padding:2px 0;
+            background-color: Moccasin;}
+        #iç-çubuk {
+            width: 10%;
+            height: 25px;
+            background-color: Green;
+            text-align: center;
+            color: Magenta;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h1>JavaScript Ýlerleme Çubuðu</h1>
+
+    <div id="çubuk">
+        <div id="iç-çubuk">10%</div>
+    </div>
+    <br>
+    <button onclick="fýrla()">Ýlerlet beni</button> 
+
+    <script>
+        function fýrla() {
+            var eleman = document.getElementById ("iç-çubuk");
+            var en = 10;
+            var canlandýr = setInterval (ilerlet, 20); // 20mS'de bir tekrar iþlet...
+
+            function ilerlet() {
+                if (en >= 100) {clearInterval (canlandýr);
+                }else {
+                    en++;
+                    eleman.style.width = en + '%';
+                    eleman.innerHTML = en + '%';
+                } // else sonu...
+            } // func sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1601.html: Yapýlacaklar ve yapýlanlar listesi örneði.</title>
+    <style>
+        body {
+            margin: 0;
+            min-width: 250px;
+            background-color:SteelBlue;
+            color:DarkRed;}
+        /* Elemanýn olasý sýnýr ve tamponlarý en-boy dahilinde kalsýn */
+        * {box-sizing: border-box;}
+        ul {
+            margin: 0;
+            padding: 0;}
+        ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            list-style-type: none;
+            font-size: 18px;
+            transition: 0.5s;
+            user-select: none;}
+        /* Tek-çift numaralý listeler farklý zebra zemin renkli olsun */
+        ul li:nth-child(odd) {background-color: Linen;}
+        ul li:nth-child(even) {background-color: Moccasin;}
+        ul li:hover {background-color: Coral;}
+        ul li.çentikli {
+            background: Navy;
+            color: Lime;
+            text-decoration: line-through;}
+        ul li.çentikli::before {/* Týklanan satýr çentiklensin */
+            content: '';
+            position: absolute;
+            border-color: Lime;
+            border-style: solid;
+            border-width: 0 3px 3px 0;
+            top: 10px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;}
+        .kapat {/* X sembollü kapat düðmesi */
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px 12px 16px;
+            font-size:25px;
+            font-weight:bold;}
+        .kapat:hover {
+            background-color: #f44336;
+            color: Yellow;}
+        .baþlýk {
+            background-color: #f44336;
+            padding: 30px 40px;
+            color: SpringGreen;
+            text-align: center;}
+        .baþlýk:after {/* Veriyi ekledikten sonra temizlensin  */
+            content: "";
+            display: table;
+            clear: both;}
+        input {
+            margin: 0;
+            background-color:Cyan;
+            border: none;
+            /*border-radius: 0;*/
+            width: 75%;
+            padding: 10px;
+            float: left;
+            font-size: 16px;}
+        .ekleDüðmesi {
+            padding: 10px;
+            width: 25%;
+            background: SkyBlue;
+            color: #555;
+            float: left;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.5s;
+            /*border-radius: 0;*/}
+        .ekleDüðmesi:hover {
+            background-color: RoyalBlue;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <div id="bölüm" class="baþlýk">
+        <h2 style="margin:5px">Yapýlacaklar ve Yapýlanlar Listesi</h2>
+        <input type="text" id="girilen" placeholder="Baþlýk...">
+        <aralýk onclick="yeniListeElemaný()" class="ekleDüðmesi">Ekle</aralýk>
+    </div>
+
+    <ul id="listem">
+        <li>Sabah Jimnastiði</li>
+        <li>Ýnternet gazetelerine göz at</li>
+        <li class="çentikli">Faturalarý internetten öde</li>
+        <li>Nuri'yle buluþ</li>
+        <li>Büronu düzenle</li>
+        <li>30'luk paket yumurta al</li>
+    </ul>
+
+    <script>
+        // Herbir liste elemaný sonuna X sembollü "kapat" düðmesi ekleyelim...
+        var listeYumrularý = document.getElementsByTagName ("LI");
+        var i;
+        for (i = 0; i < listeYumrularý.length; i++) {
+            var aralýk = document.createElement ("SPAN");
+            var sembol = document.createTextNode("\u00D7"); // X sembolü...
+            aralýk.className = "kapat";
+            aralýk.appendChild (sembol);
+            listeYumrularý [i].appendChild (aralýk);
+        } // for sonu...
+
+        // Kapat düðmesi týklanýnca bu liste elemaný görünmez olsun...
+        var kapat = document.getElementsByClassName ("kapat");
+        var i;
+        for (i = 0; i < kapat.length; i++) {
+            kapat [i].onclick = function() {
+                var görünmez = this.parentElement;
+                görünmez.style.display = "none";
+            } // kap.. sonu...
+        } // for sonu...
+
+        // Bir liste elemaný týklanýnca baþa çentik sembolü konsun...
+        var liste = document.querySelector ('ul');
+        liste.addEventListener ('click', function (olay) {
+            if (olay.target.tagName === 'LI') {olay.target.classList.toggle ('çentikli');}
+        }, false); // lis.. sonu...
+
+        // Ekle düðmesi týklanýnca sona yeni bir liste elemaný eklensin...
+        function yeniListeElemaný() {
+            var li = document.createElement ("li");
+            var giriþ = document.getElementById ("girilen").value;
+            var my = document.createTextNode (giriþ);
+            li.appendChild (my);
+            if (giriþ === '') {alert ("Birþeyler girmeden eklenmez!");
+            }else {document.getElementById ("listem").appendChild (li);}
+            document.getElementById ("girilen").value = "";
+            var aralýk = document.createElement ("SPAN");
+            var sembol = document.createTextNode ("\u00D7"); // X
+            aralýk.className = "kapat";
+            aralýk.appendChild (sembol);
+            li.appendChild (aralýk);
+           for (i = 0; i < kapat.length; i++) {// Sonradan eklenenleri de icabýnda siler...
+                kapat [i].onclick = function() {
+                    var blm = this.parentElement;
+                    blm.style.display = "none";
+                } // kap.. sonu...
+            } // for sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

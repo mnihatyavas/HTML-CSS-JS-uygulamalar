@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1281.html: Üst seyrüsefer çubuðunda siteye giriþ form ve düðmesi örneði.</title>
+    <style>
+       * {box-sizing: border-box;}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:SlateGray;
+            color:Coral;}
+        .üstseyrü {
+            margin-bottom:4em;
+            overflow: hidden;
+            background-color: #eee;}
+        .üstseyrü a {
+            float: left;
+            display: block;
+            background-color:#ddd;
+            color: black;
+            border-right: solid 2px #eee;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;}
+        .üstseyrü a:hover {background-color: #ccc;}
+        .üstseyrü a.aktif {
+            background-color: #2196F3;
+            color: white;}
+        .üstseyrü a.aktif:hover {color:Yellow;}
+        .üstseyrü .giriþ-kabý {float: right;}
+        .üstseyrü input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+            width:120px;}
+        .üstseyrü .giriþ-kabý button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background-color: #555;
+            color: white;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;}
+        .üstseyrü .giriþ-kabý button:hover {background-color: green;}
+        .üstseyrü .giriþ-kabý input:hover {background-color: Moccasin;}
+        @media screen and (max-width: 600px) {
+            .üstseyrü .giriþ-kabý {float: none;}
+            .üstseyrü a, .üstseyrü input[type=text], .üstseyrü .giriþ-kabý button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;}
+            .üstseyrü input[type=text] {border: 1px solid black;} }
+    </style>
+</head>
+<body>
+    <div class="üstseyrü">
+        <a class="aktif" href="#anasayfa">Anasayfa</a>
+        <a href="#hakkýmýzda">Hakkýmýzda</a>
+        <a href="#iletiþim">Ýletiþim</a>
+        <div class="giriþ-kabý">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Kullanýcý adýnýz" name="kullanýcýAdý">
+                <input type="text" placeholder="Þifreniz" name="þifre">
+                <button type="submit">Giriþ</button>
+            </form>
+        </div>
+    </div>
+
+    <div style="padding-left:16px">
+        <h2>Üst Seyrüçubukta Duyarlý Giriþ Formu</h2>
+        <p>Üst seyrüsefer çubuðu menüsü ve sað-içinde siteye giriþ formu ve düðmesi.</p>
+        <p>Tarayýcý geniþliðine duyarlýlýðý gözlemlemek için ebatýyla oynayabilirsiniz:</p>
+    </div>
+</body>
+</html>

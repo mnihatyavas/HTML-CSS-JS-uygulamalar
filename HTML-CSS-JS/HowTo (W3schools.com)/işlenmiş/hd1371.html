@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hd1371.html: Çoklu adýmlý kayýt formlarý örneði.</title>
+    <!-- Aþaðýdaki baðlantýdan hertürlü yazý tipi alýnabilir...
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    -->
+    <style>
+        body {
+            background-color: SteelBlue;
+            color:Brown;
+            margin:2em;}
+        * {box-sizing: border-box;}
+        #kayýtFormu {
+            background-color: DarkKhaki;
+            margin: 100px auto;
+            font-family: Arial;
+            padding: 40px;
+            width: 70%;
+            min-width: 300px;}
+        h1 {text-align: center;}
+        input {
+            background-color:Moccasin;
+            color:Green;
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Times;
+            border: 1px solid black;}
+        input.geçersiz {background-color: Tomato;} /* Boþ geçiliyorsa */
+        .fiþ {display: none;} /* Diðer adýmlar gizli */
+        button {
+            background-color: Green;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-family: Verdana;
+            cursor: pointer;}
+        button:hover {
+            color:Pink;
+            opacity: 0.5;}
+        #öncekiDüðme {background-color: #888;}
+        .adým { /* Bilyeler */
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: Blue;
+            border: none;  
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.3;}
+        .adým.aktif {opacity: 1;}
+        .adým.son {background-color: #4CAF50;}
+    </style>
+<body>
+    <form id="kayýtFormu" action="/action_page.php">
+        <h1>Kaydol:</h1>
+        <!-- Formdaki herbir adým için bir "fiþ": -->
+        <div class="fiþ">Ad ve soyad:
+            <p><input placeholder="Adýnýz..." oninput="this.className = ''" name="ad"></p>
+            <p><input placeholder="Soyadýnýz..." oninput="this.className = ''" name="soyad"></p>
+        </div>
+
+        <div class="fiþ">Ýletiþim Bilgileri:
+            <p><input placeholder="E-posta..." oninput="this.className = ''" name="eposta"></p>
+            <p><input placeholder="GSM..." oninput="this.className = ''" name="gsm"></p>
+        </div>
+
+        <div class="fiþ">Doðum tarihi:
+            <p><input placeholder="gg" oninput="this.className = ''" name="gg"></p>
+            <p><input placeholder="aa" oninput="this.className = ''" name="aa"></p>
+            <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+        </div>
+
+        <div class="fiþ">Giriþ Bilgisi:
+            <p><input placeholder="Kullanýcýadý..." oninput="this.className = ''" name="kullanýcý"></p>
+            <p><input placeholder="Þifre..." oninput="this.className = ''" name="þifre" type="password"></p>
+        </div>
+
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="öncekiDüðme" onclick="önceSonra (-1)">Önceki</button>
+                <button type="button" id="sonrakiDüðme" onclick="önceSonra (1)">Sonraki</button>
+            </div>
+        </div>
+
+        <!-- Form adýmlarýný gösteren bilyeler: -->
+        <div style="text-align:center; margin-top:40px;">
+            <span class="adým"></span>
+            <span class="adým"></span>
+            <span class="adým"></span>
+            <span class="adým"></span>
+        </div>
+    </form>
+
+    <script>
+        var aktüelFiþ = 0;
+        fiþiGöster (aktüelFiþ);
+
+        function fiþiGöster (n) {
+            var x = document.getElementsByClassName ("fiþ");
+            x [n].style.display = "block";
+            if (n == 0) {document.getElementById ("öncekiDüðme").style.display = "none";
+            } else {document.getElementById ("öncekiDüðme").style.display = "inline";}
+            if (n == (x.length - 1)) {document.getElementById ("sonrakiDüðme").innerHTML = "Gönder";
+            } else {document.getElementById ("sonrakiDüðme").innerHTML = "Sonraki";}
+            adýmlarýDüzenle (n);
+        } // func sonu...
+
+        function adýmlarýDüzenle (n) {
+            var i, x = document.getElementsByClassName ("adým");
+            for (i = 0; i < x.length; i++) {x [i].className = x [i].className.replace (" aktif", "");}
+            x [n].className += " aktif";
+        } // func sonu...
+
+        function önceSonra (n) {
+            var x = document.getElementsByClassName ("fiþ");
+            if (n == 1 && !formuGeçerlile()) return false;
+            x [aktüelFiþ].style.display = "none";
+            aktüelFiþ = aktüelFiþ + n;
+            if (aktüelFiþ >= x.length) {
+                document.getElementById ("kayýtFormu").submit();
+                return false;
+            } // if sonu...
+            fiþiGöster (aktüelFiþ);
+        } // func sonu...
+
+        function formuGeçerlile() {
+            var x, y, i, geçerliMi = true;
+            x = document.getElementsByClassName ("fiþ");
+            y = x [aktüelFiþ].getElementsByTagName ("input");
+            for (i = 0; i < y.length; i++) {
+                if (y [i].value == "") {
+                    y [i].className += " geçersiz";
+                    geçerliMi = false;
+                } // if sonu...
+            } // for sonu...
+            if (geçerliMi) {document.getElementsByClassName ("adým") [aktüelFiþ].className += " son";}
+            return geçerliMi;
+        } // func sonu...
+    </script>
+</body>
+</html>
+
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script>
+  WebFont.load ({google: {families: ['Droid Sans', 'Droid Serif']} });
+</script>
+-->

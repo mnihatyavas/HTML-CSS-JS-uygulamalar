@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1232.html: Girilen verinin ipucu açýklamalarýyla panoya kopyalanmasý örneði.</title>
+    <style>
+        body {
+            background-color:SlateGray;
+            color:fuchsia;}
+        input {
+            width:250px;
+            background-color:Lime;
+            color:Tomato;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+        .ip-ucu {
+            position: relative;
+            display: inline-block;}
+        .ip-ucu .ipucuMetni {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: Cyan;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -75px;
+            opacity: 0;
+            transition: opacity .5s;}
+        .ip-ucu .ipucuMetni:before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 15px;
+            border-style: solid;
+            border-color: red transparent transparent transparent;}
+        .ip-ucu:hover .ipucuMetni {
+            visibility: visible;
+            opacity: 1;}
+    </style>
+</head>
+<body>
+    <p>Girilen dizgesel verinin panoya kopyalanmasý için alttaki düðmeyi týklayýn. Kopyalamanýn geçerliliðini test etmek için baþka bir pencerede (örn. ctrl+v ile) bu kopyayý yapýþtýrýn.</p>
+
+    <input type="text" value="Merhaba JavaScript Dünyasý!.." id="veri">
+
+    <div class="ip-ucu">
+        <button onclick="fonk1()" onmouseout="fonk2()">
+            <span class="ipucuMetni" id="ipucum">Metni Panoya Kopyalar</span>
+            Metni panoya kopyala
+        </button>
+    </div>
+
+    <script>
+        function fonk1() {
+            var metin = document.getElementById ("veri");
+            metin.select();
+            document.execCommand ("copy");
+            var ipucu = document.getElementById ("ipucum");
+            ipucu.innerHTML = "Kopyalanan metin: " + metin.value;
+        } // func sonu...
+        function fonk2() {
+            var ipucu = document.getElementById ("ipucum");
+            ipucu.innerHTML = "Metni panoya kopyalar";
+        } // func sonu...
+    </script>
+</body>
+</html>

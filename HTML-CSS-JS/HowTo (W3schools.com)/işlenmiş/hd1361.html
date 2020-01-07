@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1361.html: Þifrenin görünürlüðünü deðiþtiren çentikkutusu örneði.</title>
+    <style>
+        body {
+            background-color:Brown;
+            color:Lime;
+            margin:2em;}
+        input {
+            background-color:Moccasin;
+            color:Blue;}
+        input[type=checkbox] {
+            width:20px;
+            height:20px;}
+    </style>
+</head>
+<body>
+    <h3>Þifre görünürlüðünü deðiþtirmek için çentikkutusunu týklayýn:</h3>
+    <br>
+    Þifre: <input type="password" value="SahteÞifre" id="girilen"><br><br>
+    <input type="checkbox" onclick="fonk()" />Þifreyi Göster
+
+    <script>
+        function fonk() {
+            var x = document.getElementById ("girilen");
+            if (x.type === "password") {x.type = "text";
+            } else {x.type = "password";}
+        } // func sonu...
+    </script>
+</body>
+</html>

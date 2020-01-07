@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg1521.html: Animasyonlu ilerleme çubuðu örneði.</title>
+    <style>
+        body {
+            background-color:DarkKhaki;
+            color:Blue;
+            margin:1em;}
+        #ilerlemem {
+            width: 100%;
+            height:25px;
+            padding:2px 0;
+            background-color: Linen;}
+        #çubuðum {
+            width: 1%;
+            height: 25px;
+            background-color: Green;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h1>JavaScript Ýlerleme Çubuðu</h1>
+
+    <div id="ilerlemem">
+        <div id="çubuðum"></div>
+    </div>
+
+    <br>
+    <button onclick="ilerle()">Týkla beni</button> 
+
+    <script>
+        function ilerle() {
+            function artýr() {
+                if (geniþlik >= 100) {clearInterval (tekrarla);
+                }else {
+                    geniþlik++;
+                    eleman.style.width = geniþlik + '%';
+                } // else sonu...
+            } // func sonu...
+
+            var eleman = document.getElementById ("çubuðum");
+            var geniþlik = 1;
+            var tekrarla = setInterval (artýr, 20); // 20mS'de bir tekrarla...
+        } // func sonu...
+    </script>
+</body>
+</html>

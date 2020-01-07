@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1782.html: Metnin ölçeklendirilmesinde px biriminin kullanýlmasý örneði.</title>
+    <style>
+        body {
+            background-color:Magenta;
+            color:Green;
+            margin:2em;}
+        div.örnek {
+            background-color: LightGrey;
+            padding: 20px;}
+        @media screen and (min-width: 821px) {
+            div.örnek {font-size: 80px;} }
+        @media screen and (max-width: 820px) {
+            div.örnek {font-size: 30px;} }
+    </style>
+</head>
+<body>
+    <h2>Farklý tarayýcý ebatlarýnda farklý px ölçekleri kullanýlmýþtýr</h2>
+
+    <div class="örnek">Numüne DIV Bölümü</div>
+
+    <p>Tarayýcý eni 820px ve altýnda karakter ebatý 30px, 821 ve üstünde ise 80px olarak ölçeklendirilmiþtir. Efekti gözlemlemek için tarayýcý eniyle oynayýn.</p>
+</body>
+</html>

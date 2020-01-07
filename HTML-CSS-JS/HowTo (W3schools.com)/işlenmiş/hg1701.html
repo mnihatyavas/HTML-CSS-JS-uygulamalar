@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1701.html: Kapatma düðmeli uyarý mesajý kutusu örneði.</title>
+    <style>
+        body {
+            background-color:Olive;
+            color:Cyan;
+            margin:1em;}
+        .uyarý {
+            padding: 20px;
+            background-color: #f44336;
+            color: Lime;}
+        .kapaDüðmesi {
+            margin-left: 15px;
+            color: Lime;
+            font-weight: bold;
+            float: right;
+            font-size: 35px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.8s;}
+        .kapaDüðmesi:hover {color: Blue;}
+    </style>
+</head>
+<body>
+    <h1>Uyarý Mesajlarý</h1>
+
+    <p>Uyarý mesaj kutusunu kapatmak için saðýndaki "X" sembolünü týklayýn.</p>
+    <div class="uyarý">
+        <span class="kapaDüðmesi" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>TEHLÝKE!</strong> Tehlikeli veya potansiyel negatif bir eylemi gösterir.
+    </div>
+</body>
+</html>

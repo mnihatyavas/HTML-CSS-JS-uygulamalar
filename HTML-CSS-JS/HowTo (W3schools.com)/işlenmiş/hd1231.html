@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1231.html: Girilen verinin panoya kopyalanmasý örneði.</title>
+    <style>
+        body {
+            background-color:SlateGray;
+            color:fuchsia;}
+        input {
+            background-color:Lime;
+            color:Tomato;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+<body>
+    <p>Girilen dizgesel verinin panoya kopyalanmasý için alttaki düðmeyi týklayýn. Kopyalamanýn geçerliliðini test etmek için baþka bir pencerede (örn. ctrl+v ile) bu kopyayý yapýþtýrýn.</p>
+
+    <input type="text" value="Merhaba JS Dünyasý" id="veri">
+    <button onclick="fonk()">Metni kopyala</button>
+
+    <script>
+        function fonk() {
+            var metninKopyasý = document.getElementById ("veri");
+            metninKopyasý.select();
+            document.execCommand ("copy"); // Seçileni panoya kopyalar...
+            alert ("Panoya kopyalanan metin: " + metninKopyasý.value);
+        } // func sonu...
+    </script>
+</body>
+</html>

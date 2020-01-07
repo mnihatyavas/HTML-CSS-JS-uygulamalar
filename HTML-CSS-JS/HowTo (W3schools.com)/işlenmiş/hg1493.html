@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1493.html: Canlandýrmalý alttan çýkan pencere örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Sienna;
+            color:Blue;
+            margin:2em;}
+        .pencere {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 150px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            animation-name: belirginleþ;
+            animation-duration: 2s;}
+        @keyframes belirginleþ {
+            from {opacity: 0} 
+            to {opacity: 1} }
+        .pencere-içeriði {
+            position: fixed;
+            bottom:0;
+            background-color: Moccasin;
+            margin: auto;
+            padding: 0px;
+            border: 5px solid Magenta;
+            width: 100%;
+            box-shadow: 5px 0 10px 5px rgba(255,255,255,0.5), 5px 0 10px 5px rgba(255,255,255,0.49);
+            animation-name: alttan-çýkmalý;
+            animation-duration: 0.8s;}
+        @keyframes alttan-çýkmalý {
+            from {bottom:-300px; opacity:0}
+            to {bottom:0; opacity:1} }
+        .kapat {
+            color: Yellow;
+            float: right;
+            font-size: 50px;
+            font-weight: bold;}
+        .kapat:hover, .kapat:focus {
+            color: Red;
+            text-decoration: none;
+            cursor: pointer;}
+        .pencere-baþlýðý {
+            padding: 2px 16px;
+            background-color: Green;
+            color: Coral;}
+        .pencere-gövdesi {padding: 2px 16px;}
+        .pencere-dipliði {
+            padding: 2px 16px;
+            background-color: Green;
+            color: Coral;}
+        button {
+            background-color:Navy;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h2>Baþlýk ve Diplikli Canlandýrmalý Pencere</h2>
+
+    <button id="düðmem">Pencereyi Aç</button>
+
+    <div id="pencerem" class="pencere">
+        <div class="pencere-içeriði">
+            <div class="pencere-baþlýðý">
+                <span class="kapat">&times;</span>
+                <h2>Pencere Baþlýðý</h2>
+            </div>
+            <div class="pencere-gövdesi">
+                <p>Pencere Gövdesi içindeki bazý açýklamalar:</p>
+                <p>Pencere içeriðinin eni %100 verilip, boyu belirtilmemiþtir; yani ne kadar metin içeriyorsa o kadar boy uzayacaktýr.</p>
+                <p>Pencere alttan animasyonlu çýkar. Sadece kapatma düðmesiyle kapatýlýr. Üstü gölge efektlidir. Boy taþmasýnda dikey kaydýrýçlanýr.</p>
+                <p>Pencereye ayrýca farklý tonda birer baþlýk ve diplik eklenmiþtir.</p>
+            </div>
+            <div class="pencere-dipliði">
+                <h3>Pencere Dipliði</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var pencere = document.getElementById ('pencerem');
+        var düðme1 = document.getElementById ("düðmem"); // Açma düðmesi...
+        var düðme2 = document.getElementsByClassName ("kapat") [0]; // Kapatma düðmesi...
+
+        düðme1.onclick = function() {pencere.style.display = "block";}
+        düðme2.onclick = function() {pencere.style.display = "none";}
+
+        //Sadece kapatma düðmesi pencereyi kapatsýn...
+        //window.onclick = function (olay) {if (olay.target == pencere) {pencere.style.display = "none";} }
+    </script>
+</body>
+</html>

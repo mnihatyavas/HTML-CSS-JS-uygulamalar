@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hd1381.html: Mevcut listeden girilene uygununun otomatikmen elenip seçilmesi örneði.</title>
+    <style>
+        body {
+            font: 16px Arial;
+            background-color:SlateGray;
+            color:Gold;
+            margin:2em;}
+        * {box-sizing: border-box;}
+        .otomatikTamamlama {
+            position: relative;
+            display: inline-block;}
+        input {
+            border: 1px solid transparent;
+            padding: 10px;
+            font-size: 16px;}
+        input[type=text] {
+            background-color: Linen;
+            color:Green;
+            width: 100%;}
+        input[type=submit] {
+            background-color: RoyalBlue;
+            color: Yellow;
+            cursor: pointer;}
+        input[type=submit]:hover {color:Red;}
+        .otomatikTamamlama-birimler {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            border-top: none;
+            z-index: 99;
+            top: 100%;
+            left: 0;
+            right: 0;}
+        .otomatikTamamlama-birimler div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: OliveDrab;
+            border-bottom: 1px solid #d4d4d4;}
+        .otomatikTamamlama-birimler div:hover {background-color: Green;}
+        .otomatikTamamlama-aktif {/* Alt-üst oklarla geziniliyorsa...*/
+            background-color: DodgerBlue !important;
+            color: Brown;}
+    </style>
+</head>     
+<body>
+    <h1>Otomatik Tamamlama</h1>
+    <br>
+    <p>Verigiriþine odaklan:</p>
+
+    <form action="/action_page.php">
+        <div class="otomatikTamamlama" style="width:300px;">
+            <input id="giriþ" type="text" name="ülkem" placeholder="Ülkeniz">
+        </div>
+        <input type="submit">
+    </form>
+
+    <script>
+        function otomatikTamamlama (veri, dizi) {
+            var aktüelOdaklanma;
+
+            /* Veri giriþi yapýlýrken alttaki fonksiyon duyarlanýr: */
+            veri.addEventListener ("input", function (olay) {
+                var a, b, i, deðer = this.value;
+                tümListeyiKapa();
+                if (!deðer) {return false;}
+                aktüelOdaklanma = -1;
+                a = document.createElement ("DIV"); // Listeyi gösterecek DIV yaratýlýr...
+                a.setAttribute ("id", this.id + "otomatikTamamlama-liste");
+                a.setAttribute ("class", "otomatikTamamlama-birimler");
+                this.parentNode.appendChild (a); // ototamamlama kabýna eklendi...
+                for (i = 0; i < dizi.length; i++) {// 222 ülke için...
+                    if (dizi [i].substr (0, deðer.length).toUpperCase() == deðer.toUpperCase()) {
+                        b = document.createElement ("DIV");
+                        b.innerHTML = "<strong>" + dizi [i].substr (0, deðer.length) + "</strong>";
+                        b.innerHTML += dizi [i].substr (deðer.length);
+                        b.innerHTML += "<input type='hidden' value='" + dizi [i] + "'>";
+                        b.addEventListener ("click", function (olay) {// Listeden seçilirse...
+                            veri.value = this.getElementsByTagName ("input") [0].value; // Seçileni üste koy...
+                            tümListeyiKapa();
+                        }); // b.ad.. sonu...
+                        a.appendChild (b);
+                    } // if sonu...
+                } // for sonu...
+            }); // veri sonu...
+
+            veri.addEventListener ("keydown", function (olay) {// Her harf giriþine liste elemanlarýný duyarlayalým...
+                var x = document.getElementById (this.id + "otomatikTamamlama-liste");
+                if (x) x = x.getElementsByTagName ("div");
+                if (olay.keyCode == 40) {// aþaðý oka basýlmýþsa...
+                    aktüelOdaklanma++;
+                    aktifiEkle (x); // Biralttaki liste birimi aktiflenir...
+                } else if (olay.keyCode == 38) { // Yukarý ok...
+                    aktüelOdaklanma--;
+                    aktifiEkle (x);
+                    } else if (olay.keyCode == 13) {// Ent tuþunu Gönder sanma...
+                        olay.preventDefault();
+                        if (aktüelOdaklanma > -1) {if (x) x [aktüelOdaklanma].click();} }
+            }); // veri sonu...
+
+            function aktifiEkle(x) {
+                if (!x) return false;
+                aktifiSil (x);
+                if (aktüelOdaklanma >= x.length) aktüelOdaklanma = 0;
+                if (aktüelOdaklanma < 0) aktüelOdaklanma = (x.length - 1);
+                x [aktüelOdaklanma].classList.add ("otomatikTamamlama-aktif");
+            } // func sonu...
+
+            function aktifiSil (x) {
+                for (var i = 0; i < x.length; i++) {x [i].classList.remove ("otomatikTamamlama-aktif");}
+            } // func sonu...
+
+            function tümListeyiKapa (eleman) {
+                var x = document.getElementsByClassName ("otomatikTamamlama-birimler");
+                for (var i = 0; i < x.length; i++) {
+                    if (eleman != x [i] && eleman != veri) {x [i].parentNode.removeChild (x [i]);}
+                } // for sonu...
+            } // func sonu...
+
+            document.addEventListener ("click", function (olay) {// Liste dýþý týklanýrsa, listeyi kapa...
+                tümListeyiKapa (olay.target);
+            }); // doc.. sonu...
+        } // func sonu...
+
+        /* Dünyadaki tüm (222) ülkeleri A->Z içeren dizi: */
+        var ülkeler = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan",
+            "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+            "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic",
+            "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia",
+            "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies",
+            "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana",
+            "Haiti", "Honduras", "Hong Kong", "Hungary",
+            "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy",
+            "Jamaica", "Japan", "Jersey", "Jordan",
+            "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan",
+            "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+            "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia","Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar",
+            "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway",
+            "Oman",
+            "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico",
+            "Qatar",
+            "Reunion", "Romania", "Russia", "Rwanda",
+            "Saint Pierre & Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts & Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria",
+            "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks & Caicos", "Tuvalu",
+            "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan",
+            "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)",
+            "Yemen",
+            "Zambia","Zimbabwe"];
+        /*initiate the otomatikTamamlama function on the "giriþ" element, and pass along the ülkeler array as possible otomatikTamamlama values:*/
+        otomatikTamamlama (document.getElementById ("giriþ"), ülkeler);
+    </script>
+</body>
+</html>

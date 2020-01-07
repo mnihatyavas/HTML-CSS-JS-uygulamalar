@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1211.html: Tarayýcý enine duyarlý kolonvari yerine satýrvari dizilim efektli form örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Sienna;
+            color:Cyan;
+            margin:30px;}
+        * {box-sizing: border-box;}
+        .teksatýrlýk-form {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;}
+        .teksatýrlýk-form label {margin: 5px 10px 5px 0;}
+        .teksatýrlýk-form input {
+            vertical-align: middle;
+            margin: 5px 10px 5px 0;
+            padding: 10px;
+            background-color: moccasin;
+            border: 2px solid yellow;}
+        .teksatýrlýk-form button {
+            padding: 10px 20px;
+            background-color: dodgerblue;
+            border: 1px solid Yellow;
+            color: white;
+            cursor: pointer;}
+        .teksatýrlýk-form button:hover {
+            background-color: royalblue;
+            color:Yellow;}
+        .teksatýrlýk-form input:hover {border:solid 2px orange;}
+        @media (max-width: 800px) {
+            .teksatýrlýk-form input {margin: 10px 0;}
+            .teksatýrlýk-form {
+                flex-direction: column;
+                align-items: stretch;} }
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Teksatýr Formu</h2>
+    <p>Tarayýcý eni 800px üzerinde yatay teksatýrlýk form görüntüsündeyken, bu deðerin altýnda dikey kolonvari alt-alta dizilime geçmektedir.</p>
+    <p>Efekti gözlemlemek için tarayýcý eniyle oynayýnýz:</p>
+
+    <form class="teksatýrlýk-form" action="/action_page.php">
+        <label for="eposta">Epostanýz:</label>
+        <input type="input" id="eposta" placeholder="Epostanýzý girin" name="eposta" required>
+
+        <label for="þifre">Þifreniz:</label>
+        <input type="password" id="þifre" placeholder="Þifrenizi girin" name="þifre" required>
+
+        <label>
+            <input type="checkbox" name="hatýrla">&nbsp;Hatýrla beni
+        </label>
+
+        <button type="submit">Gönder</button>
+    </form>
+</body>
+</html>

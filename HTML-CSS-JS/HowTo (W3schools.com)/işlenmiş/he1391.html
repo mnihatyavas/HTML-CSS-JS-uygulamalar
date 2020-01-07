@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9: Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>he1391.html: Otomatik odaklanan telefon rehberi listesi örneði.</title>
+    <style>
+        body {
+            background-color:Orchid;
+            color: DarkRed;}
+        * {box-sizing: border-box;}
+        #veri {
+            background-image: url("resim/araþtýr1.png");
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid black;
+            margin-bottom: 12px;}
+        #listem {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;}
+        #listem li a {
+            border: 1px solid #aaa;
+            margin-top: -1px; /* Çift sýnýrý engeller */
+            background-color: Khaki;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: Green;
+            display: block}
+        #listem li a:hover:not(.header) {background-color: DarkKhaki;}
+    </style>
+</head>
+<body>
+    <h2>Þahsi Telefon Rehberim</h2>
+    <br>
+    <input type="text" id="veri" onkeyup="fonk()" placeholder="Ýsim arayýn..." title="Bir isim girin">
+
+    <ul id="listem">
+        <li><a href="#">Adele</a></li>
+        <li><a href="#">Agnes</a></li>
+
+        <li><a href="#">Billy</a></li>
+        <li><a href="#">Bob</a></li>
+
+        <li><a href="#">Calvin</a></li>
+        <li><a href="#">Christina</a></li>
+        <li><a href="#">Cindy</a></li>
+
+        <li><a href="#">Sevim</a></li>
+        <li><a href="#">Nedim</a></li>
+        <li><a href="#">Songül</a></li>
+        <li><a href="#">Nihat</a></li>
+        <li><a href="#">Nihal</a></li>
+        <li><a href="#">Süheyla</a></li>
+        <li><a href="#">Hatice</a></li>
+    </ul>
+
+    <script>
+        function fonk() {
+            var giriþ, süzgeç, ul, li, a, i;
+            giriþ = document.getElementById ("veri");
+            süzgeç = giriþ.value.toUpperCase();
+            ul = document.getElementById ("listem");
+            li = ul.getElementsByTagName ("li");
+            for (i = 0; i < li.length; i++) {
+                a = li [i].getElementsByTagName ("a") [0];
+                if (a.innerHTML.toUpperCase().indexOf (süzgeç) > -1) {li [i].style.display = "";
+                }else { li [i].style.display = "none";}
+            } // for sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

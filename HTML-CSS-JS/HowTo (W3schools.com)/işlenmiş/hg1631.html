@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1631.html: Yatay çubuk grafiðiyle derecelendirilen duyarlý kritikler örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            background-color:Teal;
+            color:Yellow;
+            margin:2em;
+            max-width: 800px;
+            padding: 20px;}
+        * {box-sizing: border-box;}
+        .baþlýk {
+            font-size: 25px;
+            margin-right: 25px;}
+        .fa {font-size: 25px;}
+        .niþane-rengi {color: orange;}
+        .kritikler-kabý:after {
+            content: "";
+            display: table;
+            clear: both;}
+        .niþanelendirme {
+            float: left;
+            width: 15%;
+            margin-top:10px;}
+        .derecelendirme {
+            margin-top:10px;
+            float: left;
+            width: 70%;}
+        .çubuk-kabý {
+            width: 100%;
+            background-color: Linen;
+            text-align: center;}
+        .çubuk-5 {width: 60%; height: 18px; background-color: #4CAF50;}
+        .çubuk-4 {width: 30%; height: 18px; background-color: #2196F3;}
+        .çubuk-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+        .çubuk-2 {width: 4%; height: 18px; background-color: #ff9800;}
+        .çubuk-1 {width: 15%; height: 18px; background-color: #f44336;}
+        .sað {text-align: right;}
+        @media (max-width: 500px) {/* Tarayýcý eni < 500px olursa: */
+            .niþanelendirme, .derecelendirme {width: 100%;} /* Sol yýldýz ve çubuk alt-alta */
+            .sað {display: none;} } /* Sað kritik sayýsý gizlenecek */
+    </style>
+</head>
+<body>
+    <span class="baþlýk">Kritik Dereceleri</span>
+    <span class="fa fa-star niþane-rengi"></span>
+    <span class="fa fa-star niþane-rengi"></span>
+    <span class="fa fa-star niþane-rengi"></span>
+    <span class="fa fa-star niþane-rengi"></span>
+    <span class="fa fa-star"></span>
+    <p>254 kritiðin ortalama derecesi 4.1 niþanedir.</p>
+    <hr style="border:3px solid Linen">
+
+    <div class="kritikler-kabý">
+        <div class="niþanelendirme">
+            <div>5 yýldýz</div>
+        </div>
+        <div class="derecelendirme">
+            <div class="çubuk-kabý">
+                <div class="çubuk-5"></div>
+            </div>
+        </div>
+        <div class="niþanelendirme sað">
+            <div>150</div>
+        </div>
+
+        <div class="niþanelendirme">
+            <div>4 yýldýz</div>
+        </div>
+        <div class="derecelendirme">
+            <div class="çubuk-kabý">
+                <div class="çubuk-4"></div>
+            </div>
+        </div>
+        <div class="niþanelendirme sað">
+            <div>63</div>
+        </div>
+
+        <div class="niþanelendirme">
+            <div>3 yýldýz</div>
+        </div>
+        <div class="derecelendirme">
+            <div class="çubuk-kabý">
+                <div class="çubuk-3"></div>
+            </div>
+        </div>
+        <div class="niþanelendirme sað">
+            <div>15</div>
+        </div>
+
+        <div class="niþanelendirme">
+            <div>2 yýldýz</div>
+        </div>
+        <div class="derecelendirme">
+            <div class="çubuk-kabý">
+                <div class="çubuk-2"></div>
+            </div>
+        </div>
+        <div class="niþanelendirme sað">
+            <div>6</div>
+        </div>
+
+        <div class="niþanelendirme">
+            <div>1 yýldýz</div>
+        </div>
+        <div class="derecelendirme">
+            <div class="çubuk-kabý">
+                <div class="çubuk-1"></div>
+            </div>
+        </div>
+        <div class="niþanelendirme sað">
+            <div>20</div>
+        </div>
+    </div>
+</body>
+</html>

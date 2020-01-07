@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1291.html: Kullanýcý tarafýndan özelleþtirilebilen çentik kutularý örneði.</title>
+    <style>
+        body {
+            background-color:DarkKhaki;
+            color:DeepPink;
+            margin:30px;}
+        .çentik-kutusu {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            user-select: none;}
+        .çentik-kutusu input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;}
+        .çentik-iþareti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: Lime;}
+        .çentik-kutusu:hover input ~ .çentik-iþareti {background-color: LightGreen;}
+        .çentik-kutusu input:checked ~ .çentik-iþareti {background-color: DodgerBlue;}
+        .çentik-kutusu input:checked:hover ~ .çentik-iþareti {
+            background-color: RoyalBlue;
+            color:Yellow;}
+        .çentik-iþareti:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .çentik-kutusu input:checked ~ .çentik-iþareti:after {display: block;}
+        .çentik-kutusu .çentik-iþareti:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid FireBrick;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);}
+    </style>
+<body>
+    <h1>Özelleþtirilen Çentikkutularý</h1>
+    <br><br>
+    <label class="çentik-kutusu">Ýlk seçenek
+        <input type="checkbox">
+        <span class="çentik-iþareti"></span>
+    </label>
+
+    <label class="çentik-kutusu">Ýkinci seçenek
+        <input type="checkbox">
+        <span class="çentik-iþareti"></span>
+    </label>
+
+    <label class="çentik-kutusu">Üçüncü seçenek
+        <input type="checkbox" checked="checked"> <!-- Varsayýlý seçili -->
+        <span class="çentik-iþareti"></span>
+    </label>
+
+    <label class="çentik-kutusu">Son seçenek
+        <input type="checkbox">
+        <span class="çentik-iþareti"></span>
+    </label>
+</body>
+</html>

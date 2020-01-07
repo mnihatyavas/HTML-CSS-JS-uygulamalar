@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1481.html: Tamekran vidyoyu arkaplanda oynatma örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;}
+        #vidyom {
+            position: fixed;
+            left: 0;
+            top: 0;
+            min-width: 100%;
+            min-height: 100%;}
+        .içerik {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: Cyan;
+            width: 100%;
+            padding: 20px;}
+        #düðmem {
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: Yellow;
+            cursor: pointer;}
+        #düðmem:hover {
+            background: Yellow;
+            color: black;}
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="vidyom">
+        <source src="hg1481x1.mp4" type="video/mp4" />
+        Tarayýcýnýz HTML5 vidyoyu desteklemiyor.
+    </video>
+
+    <div class="içerik">
+        <h1>Baþlýk</h1>
+        <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+        <button id="düðmem" onclick="fonk()">Duraksat</button>
+    </div>
+
+    <script>
+        var vidyo = document.getElementById ("vidyom");
+        var düðme = document.getElementById ("düðmem");
+
+        function fonk() {
+            if (vidyo.paused) {
+                vidyo.play();
+                düðme.innerHTML = "Duraksat";
+            }else {// video.played
+                vidyo.pause();
+                düðme.innerHTML = "Oynat";}
+        } // func sonu...
+    </script>
+</body>
+</html>

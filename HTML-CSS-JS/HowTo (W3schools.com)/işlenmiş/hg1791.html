@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1791.html: Duyarlý resimüstü çýkartma metin örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Navy;
+            color: Lime;
+            margin:1em;}
+        .resim-kabý {
+            background-image: url("resim/makiliDaðlar.jpg");
+            background-size: cover;
+            position: relative;
+            height: 300px;
+            border: 5px solid violet;}
+        .metin {
+            background-color: violet;
+            border: 3px dashed lime;
+            color:black;
+            font-size: 10vw;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 10px;
+            width: 50%;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;} /* Transparanlýk */
+    </style>
+</head>
+<body>
+    <h1>Duyarlý Resimüstü Çýkartma Metin Efekti</h1>
+
+    <div class="resim-kabý">
+      <div class="metin">TABÝAT</div>
+    </div>
+
+    <p>Bu örnek zemin resmi üzerinde tarayýcý enine duyarlý vw/viewport otomatik ölçekli çýkartma metin efektlidir.</p>
+    <p>Çýkartma metnin tarayýcýya duyarlýlýðýný gözlemlemek için ekran boyutuyla oynayýn.</p>
+    <p><strong>Not:</strong> Bu örnek Internet Explorer veya Edge tarayýlarýnda çalýþmaz.</p>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1271.html: Üst seyrüçubuktaki tarayýcý geniþliðine duyarlý araþtýrma kutusu örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            background-color: Green;
+            color:Gold;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;}
+        .üstseyrü {
+            overflow: hidden;
+            background-color: #eee;
+            margin-bottom:4em;}
+        .üstseyrü a {
+            float: left;
+            display: block;
+            background-color:#ddd;
+            border-right: solid 2px #eee;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;}
+        .üstseyrü a:hover {background-color: #ccc;}
+        .üstseyrü a.aktif {
+            background-color: #2196F3;
+            color: white;}
+        .üstseyrü a.aktif:hover {color:Yellow;}
+        .üstseyrü .araþtýrma-kabý {float: right;}
+        .üstseyrü input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;}
+        .üstseyrü input[type=text]:hover {background-color:Moccasin;}
+        .üstseyrü .araþtýrma-kabý button {
+            float: right;
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;}
+        .üstseyrü .araþtýrma-kabý button:hover {background: #ccc;}
+        @media screen and (max-width: 630px) {
+            .üstseyrü .araþtýrma-kabý {float: none;}
+            .üstseyrü a, .üstseyrü input[type=text], .üstseyrü .araþtýrma-kabý button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;}
+            .üstseyrü input[type=text] {border: 1px solid black;} }
+    </style>
+</head>
+<body>
+    <div class="üstseyrü">
+        <a class="aktif" href="#anasayfa">Anasayfa</a>
+        <a href="#hakkýmýzda">Hakkýmýzda</a>
+        <a href="#iletiþim">Ýletiþim</a>
+        <div class="araþtýrma-kabý">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Araþtýr..." name="araþtýr">
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <div style="padding-left:16px">
+        <h2>Üst Seyrüçubukta Duyarlý Araþtýrma Kutusu</h2>
+        <p>Ýçinde gönderme düðmeli araþtýrma kutusu bulunan üst seyrüsefer çubuðu menüsü.</p>
+        <p>Tarayýcý geniþliðiyle oynayarak araþtýrma kutusunun duyarlýlýk efektini gözlemleyin:</p>
+    </div>
+</body>
+</html>

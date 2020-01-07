@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hf1461.html: Tarayýcý geniþliðine duyarlý tablo örneði.</title>
+    <style>
+        body {
+            background-color:Tan;
+            color:Blue;
+            margin:1em;}
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 2px solid Brown;}
+        th {background-color:Violet;}
+        th, td {
+            text-align: left;
+            padding: 8px;}
+        tr:nth-child(odd){background-color: #0f0;}
+        tr:nth-child(even){background-color: #5d5;}
+    </style>
+</head>
+<body>
+    <h2>Duyarlý Tablo</h2>
+    <p>Þayet tablonuzun eni uzunsa, tabloyu bir div kabýna koyup owerflow-x:auto css ayarýyla, tarayýcý daraldýðýnda otomatikmen yatay-x tablo kaydýracý yaratmýþ olursunuz.</p>
+    <p>Efekti gözlemlemek için tarayýcýnýzý daraltýn. Ayrýca div kabýný silip, duyarlýlýðýn iptalini test edin:</p>
+
+    <div style="overflow-x:auto;">
+        <table>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Puan</th><th>Puan</th><th>Puan</th><th>Puan</th><th>Puan</th><th>Puan</th><th>Puan</th><th>Puan</th><th>Puan</th><th>Puan</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td>
+            </tr>
+            <tr>
+                <td>Adam</td>
+                <td>Johnson</td>
+                <td>67</td><td>67</td><td>67</td><td>67</td><td>67</td><td>67</td><td>67</td><td>67</td><td>67</td><td>67</td>
+            </tr>
+            <tr>
+                <td>M.Nihat</td>
+                <td>Yavaþ</td>
+                <td>35</td><td>35</td><td>35</td><td>35</td><td>35</td><td>35</td><td>35</td><td>35</td><td>35</td><td>35</td>
+            </tr>
+            <tr>
+                <td>Belkýs</td>
+                <td>Candan</td>
+                <td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td>
+            </tr>
+            <tr>
+                <td>Serap</td>
+                <td>Küçükbay</td>
+                <td>95</td><td>95</td><td>95</td><td>95</td><td>95</td><td>95</td><td>95</td><td>95</td><td>95</td><td>95</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

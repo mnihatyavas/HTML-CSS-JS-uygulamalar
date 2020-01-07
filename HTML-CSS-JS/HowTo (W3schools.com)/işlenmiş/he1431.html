@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe"/>
+    <title>he1431.html: Bir html listesinin artan sýralanmasý örneði.</title>
+    <style>
+        body {
+            background-color:Teal;
+            color:Orange;
+            margin:2em;}
+        button {
+            background-color:Black;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h3>Listeyi a->z sýralamak için düðmeyi týklayýn:</h3>
+
+    <button onclick="listeyiSýrala()">Sýrala</button>
+
+    <ul id="göster">
+        <li>Oslo</li>
+        <li>Stokholm</li>
+        <li>Helsinki</li>
+        <li>Berlin</li>
+        <li>Roma</li>
+        <li>Madrid</li>
+        <li>Ankara</li>
+        <li>Astana</li>
+        <li>Bangkok</li>
+        <li>Kiev</li>
+        <li>Moskova</li>
+    </ul>
+
+    <script>
+        function listeyiSýrala() {
+            var liste, i, yerdeðiþtiMi, b, yerdeðiþtirmeliMi;
+            liste = document.getElementById ("göster");
+            yerdeðiþtiMi = true; // Ýlk anda döngüye girilsin...
+            while (yerdeðiþtiMi) {
+                yerdeðiþtiMi = false; // Henüz deðiþtirme olmadý...
+                b = liste.getElementsByTagName ("LI"); // LI=li
+                for (i = 0; i < (b.length - 1); i++) {
+                    yerdeðiþtirmeliMi = false; // Henüz gerekçe oluþmadý...
+                    if (b [i].innerHTML.toLowerCase() > b [i + 1].innerHTML.toLowerCase()) {
+                        yerdeðiþtirmeliMi = true; // Artan sýralama gerekçesi oluþtu...
+                        break;
+                    } // if sonu...
+                } // for sonu...
+                if (yerdeðiþtirmeliMi) {
+                    b [i].parentNode.insertBefore (b [i + 1], b [i]);
+                    yerdeðiþtiMi = true;
+                } // if sonu...
+            } // while sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1613.html: Dönen üst, alt ve sað-sýnýr halkalý  yükleme bekletmesi sembolü örneði.</title>
+    <style>
+        body {
+            background-color: DarkRed;
+            color:Lime;
+            margin:1em;}
+        .yükleyici {
+            border: 16px solid Linen;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-right: 16px solid green;
+            border-bottom: 16px solid red;
+            width: 120px;
+            height: 120px;
+            animation: dön 2.5s linear infinite;}
+        @keyframes dön {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);} }
+    </style>
+</head>
+<body>
+    <h2>Bir Yükleyici Nasýl Yaratýlýr</h2>
+
+    <div class="yükleyici"></div>
+</body>
+</html>

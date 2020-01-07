@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1542.html: Özel aralýk sürgü derecesini rakamla da gösterme örneði.</title>
+    <style>
+        body {
+            background-color:SlateBlue;
+            color:Linen;
+            margin:1em;}
+        .sürgü { /* Sürgü çubuðu */
+            -webkit-appearance: none; /* Standart sürgü */
+            width: 100%;
+            padding:1px 0;
+            height: 25px;
+            background: Moccasin;
+            outline: none;
+            opacity: 0.5;
+            -webkit-transition: .5s;}
+        .sürgü:hover {opacity: 1;}
+        .sürgü::-webkit-slider-thumb {/* Sürgü kaydýracý */
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            background: DarkGreen;
+            cursor: pointer;}
+    </style>
+</head>
+<body>
+    <h1>Özel Aralýk Sürgüsü</h1>
+    <p>Sürgüyü oynatarak, rakamlý derecesici gözlemleyin.</p>
+
+    <input type="range" min="1" max="100" value="50" class="sürgü" id="aralýk">
+    <p>Deðeri: %<span id="göster"></span></p>
+
+    <script>
+        var sürgü = document.getElementById ("aralýk");
+        var çýktý = document.getElementById ("göster");
+        çýktý.innerHTML = sürgü.value;
+        sürgü.oninput = function() {çýktý.innerHTML = this.value;}
+    </script>
+</body>
+</html>

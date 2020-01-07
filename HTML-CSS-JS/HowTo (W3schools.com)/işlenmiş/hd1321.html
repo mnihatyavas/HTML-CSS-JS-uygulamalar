@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1321.html: Týklanýnca mesaj yansýtan çentik kutusu örneði.</title>
+<head>
+<body style="background-color:Maroon; color:Lime; margin:2em;">
+    <h4>Çentik kutusu týklandýðýnda istediðiniz bir mesajý yansýtýn:"</h4>
+    <br><br>
+    Çentik kutusu: <input type="checkbox" id="çentiðim"  onclick="fonk()">
+
+    <p id="mesaj" style="display:none">Çentik kutusunu týklayarak iþaretlediniz!</p>
+
+    <script>
+        function fonk() {
+            var çentikKutusu = document.getElementById ("çentiðim");
+            var metin = document.getElementById ("mesaj");
+            if (çentikKutusu.checked == true) {metin.style.display = "block";
+            } else {metin.style.display = "none";}
+        } // func sonu...
+    </script>
+</body>
+</html>

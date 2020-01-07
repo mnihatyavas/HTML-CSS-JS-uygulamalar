@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hd1261.html: Ekraný kaplayan araþtýrma perdesi örneði.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            background-color:DarkGoldenRod;
+            color:Lime;}
+        * {box-sizing: border-box;}
+        .açmaDüðmesi {
+            background: Moccasin;
+            border: none;
+            padding: 10px 15px;
+            font-size: 20px;
+            cursor: pointer;}
+        .açmaDüðmesi:hover {background: Coral;}
+        .serilim {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0, 0.7);}
+        .serilim-içeriði {
+            position: relative;
+            top: 46%;
+            width: 80%;
+            text-align: center;
+            margin-top: 30px;
+            margin: auto;}
+        .serilim .kapamaDüðmesi {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            cursor: pointer;
+            color: Orange;}
+        .serilim .kapamaDüðmesi:hover {color: Tomato;}
+        .serilim input[type=text] {
+            padding: 15px;
+            font-size: 17px;
+            border: none;
+            float: left;
+            width: 80%;
+            background: Cyan;
+            color:Magenta;}
+        .serilim input[type=text]:hover {background: DodgerBlue;}
+        .serilim button {
+            float: left;
+            width: 20%;
+            padding: 15px;
+            background: LightSlateGray;
+            color:Pink;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;}
+        .serilim button:hover {background: DarkSlateGray;}
+    </style>
+</head>
+<body>
+    <div id="perdem" class="serilim">
+        <span class="kapamaDüðmesi" onclick="araþtýrmayýKapa()" title="Perdeyi Kapat">x</span>
+        <div class="serilim-içeriði">
+            <form action="#">
+                <input type="text" placeholder="Araþtýr..." name="araþtýr">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <h2>Tamekranlý Araþtýrma</h2>
+    <p>Araþtýrma perdesinin kaplamasý için alttaki düðmeyi týklayýn:</p>
+    <button class="açmaDüðmesi" onclick="araþtýrmayýAç()">Araþtýrma Kutusunu Aç</button>
+
+    <script>
+        function araþtýrmayýAç() {document.getElementById ("perdem").style.display = "block";}
+        function araþtýrmayýKapa() {document.getElementById ("perdem").style.display = "none";}
+    </script>
+</body>
+</html>

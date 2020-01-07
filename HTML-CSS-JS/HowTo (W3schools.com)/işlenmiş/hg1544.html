@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg144.html:Resimli özel aralýk sürgüsü örneði.</title>
+    <style>
+        body {
+            background-color:DarkRed;
+            color:Lime;
+            margin:1em;}
+        * {box-sizing: border-box}
+        .sürgü-kabý {
+            width:100%;
+            height:100px;
+            padding: 20px 5px;
+            background-color:White;
+            color:Blue;
+            border: solid 5px Magenta;}
+        .sürgü {/* Çubuk */
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background-color: Coral;
+            outline: none;
+            opacity: 0.5;
+            -webkit-transition: .5s;}
+        .sürgü:hover {opacity: 1;}
+        .sürgü::-webkit-slider-thumb {/* Sürgü resmi */
+            -webkit-appearance: none;
+            width: 23px;
+            height: 24px;
+            background: url('resim/skala.png');
+            cursor: pointer;}
+    </style>
+</head>
+<body>
+    <h1>Resimli Aralýk Sürgüsü</h1>
+
+    <div class="sürgü-kabý">
+        <input type="range" min="0" max="100" value="50" class="sürgü" id="aralýk">
+        <p><b>Derecesi: %<span id="göster"></span></b></p>
+    </div>
+
+    <script>
+        var sürgü = document.getElementById ("aralýk");
+        var sonuç = document.getElementById ("göster");
+        sonuç.innerHTML = sürgü.value;
+        sürgü.oninput = function() {sonuç.innerHTML = this.value;}
+    </script>
+</body>
+</html>

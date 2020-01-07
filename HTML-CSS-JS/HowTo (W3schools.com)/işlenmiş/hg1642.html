@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1642.html: Düðme týklanýnca netlik dereceli metinli tam perdeleme efekti örneði.</title>
+    <style>
+        body {
+            background-color:Orange;
+            color:Green;
+            margin:2em;}
+        #perdeleme {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /*right: 0; bottom: 0;*/
+            background-color: rgba(0,0,100,0.7); /* Koyu mavi ve %70 net */
+            z-index: 2;
+            cursor: pointer;}
+        #metin {/* Tam ortalanmýþ metin */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: Yellow;
+            transform: translate(-50%,-50%);}
+        button {
+            background-color:Lime;
+            color:Red;
+            cursor:pointer;}
+    </style>
+</head>
+<body>
+    <div id="perdeleme" onclick="perdeÝptal()">
+        <div id="metin">Perdeüstü Metin</div>
+    </div>
+
+    <div style="padding:20px">
+        <h1>Metinli Perdeleme Efekti</h1>
+        <button onclick="perdele()">Perdelemeyi etkinleþtir</button>
+    </div>
+
+    <script>
+        function perdele() {document.getElementById ("perdeleme").style.display = "block";}
+        function perdeÝptal() {document.getElementById ("perdeleme").style.display = "none";}
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hd1201.html:Sað-alttaki düðme týklanýnca fýrlayan kayýt formu örneði.</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:Tan;
+            color:Navy;
+            margin:30px;}
+        * {box-sizing: border-box;}
+        .açma-butonu {
+            background-color: #000;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;}
+        .fýrlayan-form {
+            display: none; /* Varsayýlý gizli */
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;}
+        .form-kabý {
+            max-width: 300px;
+            padding: 10px;
+            background-color: Bisque;}
+        .form-kabý input[type=text], .form-kabý input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: solid 1px black;
+            background: DodgerBlue;
+            color:Magenta;}
+        .form-kabý input[type=text]:focus, .form-kabý input[type=password]:focus {
+            background-color: Pink;
+            outline: none;}
+        .form-kabý .buton {
+            background-color: DarkGreen;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.8;}
+        .form-kabý .iptal {background-color: red;}
+        .form-kabý .buton:hover, .açma-butonu:hover, .iptal:hover {
+            opacity: 1;
+            color:Yellow;}
+    </style>
+</head>
+<body>
+    <h2>Fýrlayan Form</h2>
+    <p>Ýletiþim formunu açmak için ekranýn sað-alt köþesindeki butonu týklayýn.</p>
+    <p>Dikkat edilirse form ve buton sabit konumludur, yani daima tarayýcý penceresinin sað-alt köþesine sabitlenmiþtir.</p>
+
+    <button class="açma-butonu" onclick="formuAç()">Formu Aç</button>
+
+    <div class="fýrlayan-form" id="formum">
+        <form action="/action_page.php" class="form-kabý">
+            <h1>Oturum Aç</h1>
+
+            <label for="eposta"><b>Eposta</b></label>
+            <input type="text" placeholder="Epostanýzý girin" name="eposta" required>
+
+            <label for="þifre"><b>Þifre</b></label>
+            <input type="password" placeholder="Þifrenizi Girin" name="þifre" required>
+
+            <button type="submit" class="buton">Gönder</button>
+            <button type="button" class="buton iptal" onclick="formuKapa()">Formu Kapa</button>
+        </form>
+    </div>
+
+    <script>
+        function formuAç() {document.getElementById ("formum").style.display = "block";}
+        function formuKapa() {document.getElementById ("formum").style.display = "none";}
+    </script>
+</body>
+</html>

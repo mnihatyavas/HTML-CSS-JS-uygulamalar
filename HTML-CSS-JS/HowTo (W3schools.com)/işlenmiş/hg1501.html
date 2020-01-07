@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" içerik="width=device-width, initial-scale=1.0">
+    <title>hg1501.html: Bugüne týrmanan açýklamalý zaman hattý örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            background-color: #474e6d;
+            color:DarkRed;
+            font-family: Helvetica, sans-serif;}
+        .zamanhattý {/* Dikey çizgi...*/
+            position: relative;
+            max-width: 1200px; /* Biraltta incetilecek...*/
+            margin: 0 auto;}
+        .zamanhattý::after {
+            content: '';
+            position: absolute;
+            width: 6px; /* Hat geniþliði...*/
+            background-color: DeepPink;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;}
+        .kab {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;}
+        .kab::after {/* Hatüstü halkalar...*/
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: LightGreen;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;}
+        .left {left: 0;} /* Sol pencere...*/
+        .right {left: 50%;} /* Sað pencere...*/
+        .left::before {/* Sol pencere (saða) oku...*/
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent Tomato;}
+        .right::before {/* Sað pencere (sola) oku...*/
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent  Tomato transparent transparent;}
+        .right::after {left: -16px;} /* Sað pencere halkasýný sabitle...*/
+        .içerik {/* Pencerelerin içeriði...*/
+            padding: 20px 30px;
+            background-color: LightGreen;
+            position: relative;
+            border-radius: 6px;}
+        @media screen and (max-width: 600px) {/* Daraltýldýðýnda...*/
+            .zamanhattý::after {left: 31px;} /* Zamanhattý sola hizalý...*/
+            .kab {/* Pencereler ayný hizalý ve %100 geniþ...*/
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;}
+            .kab::before {/* Oklar hepsi sola...*/
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent Tomato transparent transparent;  }
+            .left::after, .right::after {left: 15px;} /* Halkalar hat üstüne sabit...*/
+            .right {left: 0%;} } /* Sað pencereler de solla ayný hizalý...*/
+    </style>
+</head>
+<body>
+    <div class="zamanhattý">
+        <div class="kab left">
+            <div class="içerik">
+                <h2>2019</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="kab right">
+            <div class="içerik">
+                <h2>2016</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="kab left">
+            <div class="içerik">
+                <h2>2015</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="kab right">
+            <div class="içerik">
+                <h2>2012</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="kab left">
+            <div class="içerik">
+                <h2>2011</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="kab right">
+            <div class="içerik">
+                <h2>2007</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

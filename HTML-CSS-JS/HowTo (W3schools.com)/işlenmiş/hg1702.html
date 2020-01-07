@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1702.html: Kapatýlabilir tehlike, baþarý, bilgilendirme ve ikaz mesaj kutularý örneði.</title>
+    <style>
+        body {
+            background-color:Khaki;
+            color:RoyalBlue;
+            margin:1em;}
+        .uyarý {
+            padding: 20px;
+            background-color: #f44336; /* Tehlike...*/
+            color: Cyan;
+            opacity: 1;
+            transition: opacity 0.8s;
+            margin-bottom: 15px;}
+        .uyarý.baþarý {background-color: #4CAF50;}
+        .uyarý.bilgilendirme {background-color: #2196F3;}
+        .uyarý.ikaz {background-color: #ff9800;}
+        .kapaDüðmesi {
+            margin-left: 15px;
+            color: Yellow;
+            font-weight: bold;
+            float: right;
+            font-size: 35px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.8s;}
+        .kapaDüðmesi:hover {color: RoyalBlue;}
+    </style>
+</head>
+<body>
+    <h1>Uyarý Mesajlarý</h1>
+    <p>Herhangibir uyarý mesajýný kapatmak için saðýndaki "X" sembolünü týklayýn.</p>
+
+    <div class="uyarý">
+        <span class="kapaDüðmesi">&times;</span>  
+        <strong>TEHLÝKE!</strong> Tehlikeli veya potansiyel bir negatif eylemi gösterir.
+    </div>
+
+    <div class="uyarý baþarý">
+        <span class="kapaDüðmesi">&times;</span>  
+        <strong>BAÞARI!</strong> Baþarýlý veya pozitif bir eylemi gösterir.
+    </div>
+
+    <div class="uyarý bilgilendirme">
+        <span class="kapaDüðmesi">&times;</span>  
+        <strong>BÝLGÝLENDÝRME!</strong> Nötr bir bilgilendirme deðiþikliðini veya eylemini gösterir.
+    </div>
+
+    <div class="uyarý ikaz">
+        <span class="kapaDüðmesi">&times;</span>  
+        <strong>ÝKAZ!</strong> Dikkat edilmesi gereken bir uyarýyý gösterir.
+    </div>
+
+    <script>
+        var kapa = document.getElementsByClassName ("kapaDüðmesi");
+        var i;
+        for (i = 0; i < kapa.length; i++) {
+            kapa [i].onclick = function() {
+                var kutu = this.parentElement;
+                kutu.style.opacity = "0"; // Önce kutu kaybolur...
+                setTimeout (function() {kutu.style.display = "none"; }, 1000); // 1 sn sonra ara-boþluk kapanýr...
+            } // kap.. sonu...
+        } // for sonu...
+    </script>
+</body>
+</html>

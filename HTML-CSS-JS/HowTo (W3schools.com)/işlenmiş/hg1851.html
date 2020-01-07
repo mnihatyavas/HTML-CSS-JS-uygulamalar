@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" name="viewport" content="width=device-width, initial-scale=1">
+    <title>hg1851.html: Ýstenen saða-kaydýrma ayarýnýn enaz ve ençok geçerlilik mesafeleri örneði.</title>
+    <style>
+        body {
+            background-color:Olive;
+            color:Magenta;
+            margin:2em;}
+        .azami-sað {background-color: yellow;}
+        .asgari-sað {background-color: Blue;}
+        @media (max-width: 760px) {
+            .azami-sað {float: right;} }
+        @media (min-width: 770px) {
+            .asgari-sað {float: right;} }
+        .temiz-görüntü::after {
+            display: block;
+            clear: both;
+            content: "";}
+    </style>
+</head>
+<body>
+    <h1>Duyarlý Saða-kaydýrmalar</h1>
+    <p>Sarý zeminli azami-sað sýnýfý ekran eni azami 760px ve altýnda olursa geçerlilik kazanýr ve saða kaydýrýr. Mavi zeminli asgari-sað ise asgari en 770px ve üstü olursa geçerlilik kazanýr ve saða kaydýrýr. En, örneðin 765px ise herikisi de geçersiz olacaðýndan saða kaydýrmayý gerçekleþtiremezler. Ayrýca satýrýn önceki sol-sað görünrü kalýntýlarý temizlenmektedir.</p>
+    <p>Saða kaydýrma etkilerini test için tarayýcý enini 760-770px aralýklarýnda oynatýn:</p>
+
+    <div class="temiz-görüntü">
+        <span class="azami-sað">Saða kaydýr =&lt; 760px</span><br>
+        <span class="asgari-sað">Saða kaydýr =&gt; 770px</span><br>
+    </div>
+</body>
+</html>

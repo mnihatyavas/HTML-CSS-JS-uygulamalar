@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>he1441.html: Bir html tablosunu ilk kolona göre alfabetik artan sýralama örneði.</title>
+    <style>
+        body {
+            background-color: DodgerBlue;
+            color:Green;
+            margin:2em;}
+        button {
+            background-color: Black;
+            color:Yellow;
+            padding:10px;}
+        table {
+            border-spacing: 0;
+            width: 100%;
+            border: 2px solid Green;}
+        th, td {
+            text-align: left;
+            padding: 16px;}
+        th {background-color:DarkKhaki;}
+        tr:nth-child(even) {background-color: Linen;}
+        tr:nth-child(odd) {background-color: Moccasin;}
+    </style>
+</head>
+<body>
+    <h3>Düðme týklanýnca tablo kayýtlarý ismen artan sýralanýr:</h3>
+    <button onclick="tabloyuSýrala()">Sýrala</button>
+
+    <table id="tablom">
+        <tr>
+            <th>Ýsim</th>
+            <th>Ülke</th>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Ýsviçre</td>
+        </tr>
+        <tr>
+            <td>Kuzey/Güney</td>
+            <td>BK</td>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Almanya</td>
+        </tr>
+        <tr>
+           <td>Koniglich Essen</td>
+            <td>Almanya</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Ýtalya</td>
+        </tr>
+        <tr>
+            <td>Paris specialites</td>
+            <td>Fransa</td>
+        </tr>
+        <tr>
+            <td>Ada Ticaret</td>
+            <td>BK</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Kanada</td>
+        </tr>
+    </table>
+
+    <script>
+        function tabloyuSýrala() {
+            var tablo, satýrlar, yerdeðiþtiMi, i, x, y, yerdeðiþtirmeliMi;
+            tablo = document.getElementById ("tablom");
+            yerdeðiþtiMi = true;
+            while (yerdeðiþtiMi) {
+                yerdeðiþtiMi = false;
+                satýrlar = tablo.rows;
+                for (i = 1; i < (satýrlar.length - 1); i++) {// Ýlk 0.satýr baþlýktýr...
+                    yerdeðiþtirmeliMi = false;
+                    x = satýrlar [i].getElementsByTagName ("TD") [0];
+                    y = satýrlar [i + 1].getElementsByTagName ("TD") [0];
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        yerdeðiþtirmeliMi = true;
+                        break;
+                    } // if sonu...
+                } // for sonu...
+                if (yerdeðiþtirmeliMi) {
+                    satýrlar [i].parentNode.insertBefore (satýrlar [i + 1], satýrlar [i]);
+                    yerdeðiþtiMi = true;
+                } // if sonu...
+            } // while sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>hg1551.html: Üzerindeyken aletucu açýklamasý örneði.</title>
+    <style>
+        body {
+            text-align:center;
+            background-color:OliveDrab;
+            color:Fuchsia;
+            margin:3em;}
+        .aletucu {
+            position: relative;
+            display: inline-block;
+            border-bottom: 2px dotted Cyan;}
+        .aletucu .aletucuMetni {
+            visibility: hidden;
+            width: 260px;
+            background-color: DarkRed;
+            color: Yellow;
+            text-align: center;
+            border-radius: 10px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 1s;}
+        .aletucu .aletucuMetni::after {/* Metnin üst ucuna alta ok */
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: Cyan transparent transparent transparent;}
+        .aletucu:hover .aletucuMetni {
+            visibility: visible;
+            opacity: 1;}
+    </style>
+</head>
+<body>
+    <h2>Aletucu Açýklamasý</h2>
+    <p>Fareyi alttaki metnin üzerinde biraz bekletin:</p>
+
+    <div class="aletucu">Üzerimde fareyi dolaþtýr
+        <span class="aletucuMetni">Ben bu bileþenin ipucu açýklamasýyým</span>
+    </div>
+</body>
+</html>
