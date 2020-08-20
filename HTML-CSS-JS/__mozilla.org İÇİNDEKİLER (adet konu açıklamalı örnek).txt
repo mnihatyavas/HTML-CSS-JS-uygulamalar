@@ -1,0 +1,111 @@
+https://developer.mozilla.org/en-US/docs/Web/Tutorials
+
+For complete beginners to the Web
+Getting started with the Web
+
+Complete beginners start here!
+Getting started with the Web
+Getting started with the Web overview
+Installing basic software
+What will your website look like?
+Dealing with files
+HTML basics
+CSS basics
+JavaScript basics
+Publishing your website
+How the Web works
+HTML — Structuring the Web
+Introduction to HTML
+Multimedia and embedding
+HTML tables
+CSS — Styling the Web
+CSS first steps
+CSS building blocks
+Styling text
+CSS layout
+JavaScript — Dynamic client-side scripting
+JavaScript first steps
+JavaScript building blocks
+Introducing JavaScript objects
+Asynchronous JavaScript
+Client-side web APIs
+Web forms — Working with user data
+Core forms learning pathway
+Advanced forms articles
+Accessibility — Make the web usable by everyone
+Accessibility guides
+Accessibility assessment
+Tools and testing
+Client-side web development tools
+Introduction to client-side frameworks
+React
+Ember
+Vue
+Git and GitHub
+Cross browser testing
+Server-side website programming
+First steps
+Django web framework (Python)
+Express Web Framework (node.js/JavaScript)
+Further resources
+Common questions
+How to contribute
+
+-----------------------------------------------------------------------------------------------
+
+HTML Tutorials
+Introductiory level
+    Introduction to the HTML
+    Creating a Simple Web Page with HTML
+    HTML Challenges
+    MDN HTML element reference
+Intermediate level
+    Multimedia and embedding
+    HTML tables
+Advanced level
+    HTML forms
+    Tips for authoring fast-loading HTML pages
+-----------------------------------------------------------------------------------------------
+CSS Tutorials
+Introductory level
+    CSS first steps
+    CSS building blocks
+    Styling text
+    Common CSS Questions
+Intermediate level
+    CSS layout
+    Fluid Grids
+    CSS Challenges 
+    CSS reference
+Advanced level
+    Using CSS transforms
+    CSS transitions
+    Quick Guide to Implement Web Fonts  (with @font-face) 
+    Starting to Write CSS 
+Canvas tutorial
+HTML5 Doctor
+-----------------------------------------------------------------------------------------------
+JavaScript Tutorials
+Introductory level
+    JavaScript first steps
+    Getting started with JavaScript
+    JavaScript building blocks
+    Codecademy
+    freeCodeCamp
+Intermediate level
+    Introducing JavaScript objects
+    A re-Introduction to JavaScript
+    Client-side web APIs
+    Eloquent JavaScript
+    Speaking JavaScript
+    Essential JavaScript Design Patterns
+Advanced level
+    JavaScript Guide
+    Exploring ES6
+    You Don't Know JS
+    JavaScript Garden
+    JavaScript Patterns
+    How browsers work
+    JavaScript Videos
+Extension Development
+    WebExtensions
