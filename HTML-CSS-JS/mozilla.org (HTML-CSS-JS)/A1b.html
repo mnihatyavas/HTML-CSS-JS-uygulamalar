@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>A1b.html: Aðsayfasýnýn resim ve mesajlý olay yönetimi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        img, h4 {display:block; text-align:center; margin:0 auto;}
+     </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Aðsayfasý Olay Yönetimi</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h4>Resmi týklayýn deðiþsin:</h4>
+    <img src="resim/firefox.png" alt="" width="300" />
+    <hr/>
+    <h1 style="color:orange;"></h1>
+    <button>Kullanýcýyý deðiþtir</button>
+
+    <script>
+        function fonk2() {
+            let resim = document.querySelector ("img");
+            resim.onclick = function() {
+                let kaynak = resim.getAttribute ("src");
+                if (kaynak === "resim/firefox.png") {resim.setAttribute ("src", "resim/firefox2.png");
+                }else if (kaynak === "resim/firefox2.png") {resim.setAttribute ("src", "resim/arkadaþ.jpg");
+                }else {resim.setAttribute ("src", "resim/firefox.png");}
+            } // res..sonu...
+        } // func sonu....
+        function fonk3() {
+            let düðme = document.querySelector ("button");
+            let baþlýk = document.querySelector ("h1");
+
+            function kullanýcýAdýnýDeðiþtir() {
+                let ad = prompt ("Lütfen adýnýzý girin");
+                if (!ad) return false;
+                localStorage.setItem ("name", ad);
+                baþlýk.textContent = "Hoþgeldin, " + ad;
+            } // func sonu...
+
+            if (! localStorage.getItem ("name") ) {kullanýcýAdýnýDeðiþtir();
+            }else {baþlýk.textContent = "Hoþgeldin, " + localStorage.getItem ("name") + "!..";}
+ 
+            düðme.onclick = function() {kullanýcýAdýnýDeðiþtir();}
+        } // func sonu....
+
+        document.getElementById ("göster").innerHTML =
+            "1) Ýlk basit aðsayfasý tasarým denememizden sonra þimdi de týklayýnca deðiþen resimler \
+            ve kullanýcý adlý mesaj baþlýklý olay yönetimini kodlayalým." +
+            "<br/>2) Resim týklanmasýna duyarlý fonksiyon, if-else kontroluyla mevcut 3 resimden hangisiyse \
+            yerine birsonrakini src kaynaða koymakta ve böylece resim deðiþmektedir. " + fonk2() +
+            "<br/>3) Sayfa yüklendiðinde otomatikmen h1 baþlýk için localStorage tarayýcý yerelDepo'ya \
+            bakýlýr, kullanýcý adý yoksa, promt'la ad giriþi istenir, varsa bu mevcut ad baþlýkta yansýtýlýr. \
+            Ayrýca 'Kullanýcýyý deðiþtir' düðmesini týklarsanýz prompt iletisi sizden ad ister, girmezsenir \
+            iþlem yapmaz döner, girerseniz baþlýða bu yeni ad yansýtýlýr, ayrýca  da tarayýcý yerelDepo'ya \
+            bu yeni ad saklanarak, bu programý yeniden çalýþtýrdýðýnýzda son kullanýcý adýný hatýrlayarak \
+            baþtan onu h1 mesajla yansýtýr. " + fonk3()
+    </script>
+  </body>
+</html> 

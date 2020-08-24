@@ -1,0 +1,26 @@
+https://developer.mozilla.org/en-US/docs/Web/Tutorials
+https://github.com/mdn
+
+A. Beginner HTML
+    A1. Beginner HTML Site
+        A1a.html: Basit bir web aðsayfasýnýn HTML-CSS ve JS ile tasarýmý örneði.
+        A1a.css: Basit bir web aðsayfasýnýn CSS stil ayarlarý harici dosyasý alt-örneði.
+        A1a.js: Basit bir web aðsayfasýnýn JS taslak kodlarý harici dosyasý alt-örneði.
+        A1b.html: Aðsayfasýnýn resim ve mesajlý olay yönetimi örneði.
+        A1c.html: Tasarladýðýnýz HTML aðsayfanýzý Web'de nasýl yayýnlarsýnýz örneði.
+    A2. Beginner Styled HTML Site
+    A3. Beginner Scripted HTML Site
+    A4. Beginning Programming with HTML-CSS-JS Advices
+B. HTML-CSS-JS
+    B1. HTML Examples
+    B2. CSS Examples
+    B3. JS Examples
+C. Learning web site design with html-css-js
+    C1. Learning Area Examples
+    C2. Interactive Examples
+D. Advanced html-css-js Examples
+    D1. DOM Examples
+    D2. Fetch Examples
+    D3. indexedDB Examples
+    D4. Canvas Examples
+    D5. A Browser API Demo

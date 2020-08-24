@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>A1a.html: Basit bir web aðsayfasýnýn HTML-CSS ve JS ile tasarýmý örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+     </style>
+    <!-- Ýnternet baðlantýsý gerektirmekte -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link href="A1a.css" rel="stylesheet" />
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>WEB Aðsayfasý Tasarýmý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h1>Firefox tarayýcý sembolü:</h1>
+    <img src="resim/firefox2.png" alt="Firefox tarayýcý ikonu" />
+    <hr/>
+    Bu bir HTML gövde içi etiketsiz metnidir.
+    <p style="color:tomato;">Bu bir HTML gövde içi baðýmsýz <b>p</b> etiketli metindir.</p>
+    <hr/>
+    <h4>Çoðu büyük üniversitelerin þu fakülteleri vardýr:</h4>
+        <ul>
+            <li>Týb</li>
+            <li>Mühendislik</li>
+            <li>Ýþletme</li>
+        </ul>
+    <hr/>
+    <h4>Türkiye futbol liginin 3 büyükleri:</h4>
+        <ol>
+            <li>Galatasaray</li>
+            <li>Fenerbahçe</li>
+            <li>Beþiktaþ</li>
+        </ol>
+        <hr/>
+        <h6>Mozilla eðitim ana sayfasýna gitmek için <h5>==>altý týklayýn:</h5></h6>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials" target="_">Mozilla Eðitim</a>
+        <br/>
+
+    <script src="A1a.js"></script>
+    <script>
+        function fonk3() {
+            let deðiþken = "M.Nihat Yavaþ"; console.log (deðiþken); // dizge...
+            deðiþken = 1957; console.log (deðiþken); // sayý...
+            deðiþken = true; console.log (deðiþken); // boolean/ikili...
+            deðiþken = ["M.Nihat Yavaþ", 1957, true, (2020-1957)]; console.log (deðiþken, deðiþken [3]); // Dizi: ["M.Nihat Yavaþ", 1957, true, 63] 63
+            deðiþken = {isim: "M.Nihat Yavaþ", doðum: 1957, erkek: true, yaþ: (2020-1957)}; console.log (deðiþken, deðiþken ["yaþ"], deðiþken.yaþ);
+            /* Nesne: {isim: "M.Nihat Yavaþ", doðum: 1957, erkek: true, yaþ: 63}
+                63
+                63 */
+//-------------------------------------------------------------------------------------------------------------------
+            console.log ("M." + "Nihat " + "Yavaþ"); // Ekle
+            console.log (1957 + 63); // Topla
+            console.log (1957 % 365); // Modulus: kalan
+            console.log (1957 / 365);
+            console.log (2 ** 8); // Üs
+            deðiþken = 3; console.log (deðiþken === 3); // true
+            console.log (deðiþken !== 4); // true
+//-------------------------------------------------------------------------------------------------------------------
+            let dondurma = "çikolatalý";
+            if (dondurma === "çikolatalý") {console.log ("Vay, çikolatalý dondurma favorimdir!");
+            }else console.log ("Çikolatalýyý tercih ederdim!"); // {} kullanýlmamýþ...
+//-------------------------------------------------------------------------------------------------------------------
+            function çarp (sayý1, sayý2) {return sayý1 * sayý2;}
+            console.log (çarp (4, 7) );
+            console.log (çarp (20, 20) );
+            console.log (çarp (0.5, 3) );
+//-------------------------------------------------------------------------------------------------------------------
+            let i = 0;
+           document.querySelector ("html").onclick = function() {console.log ("Hoop! " + ++i + ".keredir beni gýdýklamasana!");}
+        } // func sonu....
+
+        document.getElementById ("göster").innerHTML =
+            "1) HTML/HypertextMarkupLanguage/YoðunMetinÝþaretDili genelde etiket adlý elemanlardan \
+            müteþþekküldür. Örn.Öncelikle img/resim etiketadlý elemanla tarayýcý solüst köþesine bir resim \
+            ekleyelim. Eleman body/gövde içinde yazýlacak her metin görünür. Bu cümleyi baðýmsýz p/paragraf \
+            etiketiyle de sarabiliriz. Eleman p, açýlýþ etiketi, kapanýþ etiketi ve içteki metin içeriðinden \
+            oluþmaktadýr. Açýlýþ etiketinde vasýflar bulunabilir; burada style bir vasýf olup = ve çift-týrnakla \
+            vasýf deðer atamasý alýr. Etiketler içiçe olabilir; p etiketi içinde b/bold/koyu aç/kapa etiketi \
+            kullanýlabilir. Bazý elemanlar, örn.img boþ etiket olup kapanýþý yoktur, sadece vasýflarý verdýr, \
+            bu vasýflarla HTML sayfasýna bir resim embed/gömülmektedir; alt vasfý, þayet resim namevcutsa \
+            yerine alternatif açýklamadýr.\
+            <br/>Baþlýk etiketleri: h1, h2, h3,.. h6 küçülen ebatlýdýr.\
+            <br/>Listeleme için ol/OrderedList ve ul/UnorderedList baþlýðý ve içteki herbir þýk için de li/List \
+            etiketadý kullanýlýr.\
+            <br/>Web aðsayfalarýnýn olmazsa olmazý link/baðlantý adresleridir; a/anchor/çapa etiketadýyla \
+            ve href adres vasfýyla tamamlanýr." +
+            "<br/>2) CSS/CascadingStyleSheets etiket vasýflarýna her türlü stil ayarlarý ekler. Örn.yukarda style \
+            etiketli bölmede, body, input, button ve select etiketli elemanlarýna bu örnekte geçerli olacak \
+            renk, büyüklük, marj vb CSS ayarlarý atanmýþtýr. Ayrýca CSS ayarlarý baðýmsýz bir .css uzantýlý \
+            dosyada tanýmlanýp head bölümüne (img src benzeri) link ile de eklenebilir; h5 ayarlarýný böyle \
+            atayýp head'e link/baðlayýp, body/gövdede kullanalým. Burada h5 seçicisine özellik ve ':' ile \
+            deðerleri beyan edimiþ; herbir beyan birbirinden ';' ile ayrýlmýþ, tüm seçici beyanlarý '{}' içinde \
+            bloklanmýþtýr. Ayný beyanlý seçiciler virgüllerle ardýþýk sýralanabilir (örn.h5, h6, h7 gibi).\
+            <br/>Seçici çeþitleri: etiket adlarý (p, h1), id kimlikleri (#kimlik), class sýnýflarý (.sýnýf), eleman \
+            vasýflarý (img[src]), sanal sýnýf (a:hover) gibi.\
+            <br/>link href google fonts ile yazýfonu aile çeþitlemelerine baðlanalým. Önceki A1.css ayar \
+            dosyasýna bazý yeni yazýfonu ayarlarý ekleyelim. CSS ayarlarýnda /*...*/ yorum satýr-larý demektir. \
+            Ayný CSS ayarlarýný 2.kez girmiþsek sonuncuusu geçerlidir.\
+            <br/>CSS serilim kutu modellidir: padding, iç metinle sýnýr arasý tampon; border, tampon çevresi \
+            katý sýnýrý; margin ise sýnýr etrafýndaki boþluðu tanýmlar. Ayrýca width/height, kutu eni/boyu; \
+            color/background-color, yazý/zemin rengini; text-shadow, yazý gölgesini; display, elemanýn \
+            görüntü modelini tanýmlar." +
+            "<br/>3) JS veya JavaScript Mozilla projesinin kurucusu Brendan Eich tarafýndan geliþtirilmiþtir. \
+            Tarayýcý aðsayfasýndaki dinamik karþýlýklý etkileþimli, animasyonlu, grafikli, veritabanlý vb API\
+            /ApplicationProgrammingInterface iþlemlerin kodlamasýdýr.\
+            <br/>'Merhaba dünya!' baþlýðýný, önceki h1 etiketli firefox sembolü metniyle deðiþtirip \
+            yansýtmak için gerekli JS kodlamayý yazýp, A1.js dosya adýyla saklayýp, link href A1.css benzeri, \
+            script src elemanýyla body/gövde sonuna ekleyelim. ÖnceHTML sayfasý yüklenip sonra script src \
+            eklenmezse h1'i göremeyebilir.\
+            <br/>Deðiþken adlarý baþýna var'dan ziyade let tavsiye edilir; her JS ifadesi sonuna ';' konursa \
+            tek satýrda icabýnda çoklu ifade sýralanabilir. Deðiþken tipi, ayný deðiþken adýna farklý \
+            veri tipleri atandýkca deðiþir.\
+            <br/>Tek satýrlý JS yorumlarý '//' ile, çoksatýrlýlar (style içindeki gibi) '/*...*/' ile yapýlýr.\
+            <br/>JS iþlemcileri/operatör: matematik (+-*/%**), atama (=), eþitlik (===), deðil (!), eþit deðil \
+            (!==). Ekleme + iþlemcisi dizgeleri ekler, sayýlarý toplar, dizge/sayý karmada öncekinin tipiyle \
+            toplar/ekler.\
+            <br/>Þartlar if-else ifadeleridir, derlitopluluk bakýmýndan {} blok kullanýlmasý iyidir.\
+            <br/>Sýk kullanýlan JS kod grubu parametreli/parametresiz düzenlenip, ihtiyaç anýnda \
+            iþletilir. Örn.document.querySelector, alert ve console.log tarayýcýda hazýr JS fonksiyonlarýdýr.\
+            Fonksiyon parametre tiplerine uygun farklý argüman deðerleriyle fonksiyon sonucunu \
+            döndürürüz.\
+            <br/>Gerçek karþýlýklý etkileþim, olaylara duyarlý tepkiler almak ve yönetmektir. Örneðin HTML \
+            að sayfasýný her týklayýþýmýzda konsol mesajý alalým. " + fonk3()
+    </script>
+  </body>
+</html> 

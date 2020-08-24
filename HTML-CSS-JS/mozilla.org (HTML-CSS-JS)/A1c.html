@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>A1c.html: Tasarladýðýnýz HTML aðsayfanýzý Web'de nasýl yayýnlarsýnýz örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+     </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Aðsayfanýzýn Yayýnlanmasý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <script>
+        function fonk2() {
+        } // func sonu....
+
+        document.getElementById ("göster").innerHTML =
+            "1) Ýnternet sayfanýzý (HTML, CSS ve JS ayarlarýyla) tamamladýktan sonraki arayýþ, bu sayfanýzýn \
+            çevrimiçi nasýl yayýmlanacaðýdýr. Bunu 3 farklý þekilde yapabilirsiniz." +
+            "<br/>2) Ýlk yöntem bir sunucu yada kayýtçýdan site adý kiralarsýnýz (Örn. http://www.mozilla.org). \
+            Yada www.wordpress.com gibi sunuculardan ücretsiz sade sayfa (mnihatyavas.wordpress.com) \
+            açar veya daha üst özellikli ücretli sayfa kiralarsýnýz.\
+            <br/>Ýkinci yöntem, www.github.com gibi bazý ücretsiz açýk sosyal kodlama sitesinde istediðiniz \
+            sayýda sayfa/repository açar ve burada bilhassa program kodlama emeklerinizi tüm dünyaya \
+            sergilersiniz (Örn. github.com/mnihatyavas, github.com/mnihatyavas/JavaScript-uygulama). \
+            <br/>Son yöntem CodePen gibi bazý anonim proje geliþtirici siteler ayný tarayýcý sekmesinde \
+            HTML-CSS-JS kodlamasý girmenizi, çalýþtýrmanýzý, herkese açýk yayýmlamanýzý ücretsiz \
+            desteklemektedir." +
+            "<br/>3) Örnek olarak www.github.com sitesine kaydolun (eposta: mnihatyavas@gmail.com ve \
+            þifre:***********; önce epostana aktivasyon linki gönderir, aktif kýlar, girer, istediðiniz sayýda \
+            repository/sayfa yaratýr, hersayfaya README.md ile önsöz açýklamasý ve hertürlü -yönetim \
+            kontrollu- commit/onayýyla upload/sürükle-býrak yükleme yapabilirsiniz). Bu sayfalarý sonradan \
+            deðiþtirebilir, tamamen silebilir, yeni sayfalar yaratabilir, hatta tüm repository sil baþtan zaman \
+            içinde geliþtirmek için siler yeniden kurabilirsiniz.\
+            <br/>Bu sayfalardaki emeklerinizin daha çok týklanmasý için de facebook.com'da reklam yapabilirsiniz."
+    </script>
+  </body>
+</html> 

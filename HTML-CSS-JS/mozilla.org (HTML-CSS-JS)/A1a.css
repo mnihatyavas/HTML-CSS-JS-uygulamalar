@@ -1,0 +1,30 @@
+h5, h6 {
+    color:blue;
+    background-color: yellow;
+    font-family: verdana;}
+html {
+    font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high  */
+    font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google fonts */
+    background-color: #00539F;}
+h1 {
+    font-size: 40px;
+    text-align: center;}
+p, li {
+    font-size: 16px;    
+    line-height: 2;
+    letter-spacing: 1px;}
+body {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #559500;
+    padding: 0 20px 20px 20px; /* üst sað alt sol */
+    border: 5px solid black;}
+h1 {
+    margin: 0;
+    padding: 20px 0; /* üst/alt sol/sað */
+    color: #00539F;
+    text-shadow: 13px 13px 10px black;} /* yatay dikey flu renk: sað alta doðru kara gölgeleme */
+img {
+    display: block; /* block inline flex */
+    width: 200px;
+    margin: 0 auto;} /* img resim elemanlarýný yatay ortalar */
