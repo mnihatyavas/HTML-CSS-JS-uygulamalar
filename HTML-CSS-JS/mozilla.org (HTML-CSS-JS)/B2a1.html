@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2a1.html: CSS animation-timing-function vasfýnýn frames, steps ve ease-in deðerleri örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:0em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        div {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: red;
+            animation: ilerle;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;}
+        p {
+            position: relative;
+            top: 10px;
+            left: 10px;}
+        .kutu1 {animation-timing-function: frames(10);}
+        .kutu2 {animation-timing-function: steps(10);}
+        .kutu3 {animation-timing-function: ease-in;}
+        @keyframes ilerle {
+            from {
+                width: 0%;
+                background-color: red;}
+            to {
+                width: 100%;
+                background-color: blue;} }
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Animasyon Zamanlama Fonksiyonu</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <div class="kutu1"><p>animation-timing-function: frames(10)<p></div>
+    <div class="kutu2"><p>animation-timing-function: steps(10);<p></div>
+    <div class="kutu3"><p>animation-timing-function: ease-in;<p></div>
+
+    <script>
+        function fonk2() {
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) CSS vasýflarýndan animation-timing-function ve aldýðý deðerler canlandýrýlacaktýr." +
+            "<br/>2) Canlandýrma-zamanlama-fonksiyonu deðerleri frame/çerçeve, step/adým ve ease-in/yavaþ-baþla \
+            olabilir. HTML div etiketli kutularýn CSS kutu ebat, renk, animation:ilerle anahtar kelime, \
+            canlandýrma süresi ve sýklýðý tanýmlanýr." +
+            "<br/>3) Sýnýf/class .kutu'larla HTML sayfasýna bu div ve özellikli fonksiyon içeren kutu'lar \
+            tanýmlanýr." +
+            "<br/>4) @keyframes ilerle CSS bloðunda from-to ile bu kutularýn %0 enden %100' ve \
+            zemin renklerinin de kýrmýzýdan maviye döneceði kararlaþtýrýlýr. Canlandýrma sonsuz döngü \
+            olduðundan pencere kapatýlmadýðý sürece, biteviye yenibaþtan tekrarlanýr."
+    </script>
+</body>
+</html>

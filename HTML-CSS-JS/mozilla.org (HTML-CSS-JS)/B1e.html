@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B1e.html: Aðsayfasý tasarýmýnda JS canvas/tuval animasyonla zýplayan çokrenkli toplar örneði.</title>
+<!--
+    <link rel="preload" href="B1/js-and-css/B1e.css" as="style">
+    <link rel="preload" href="B1/js-and-css/B1e.js" as="script">
+-->
+    <link rel="stylesheet" href="B1/js-and-css/B1e.css">
+
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Aðsayfasýnda JS Canvas Animasyonu</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h1>Zýplayan Toplar</h1>
+    <canvas></canvas>
+
+    <script>
+        function fonk2() {
+            // Tuvalin kurulmasý...
+            let tuval = document.querySelector ("canvas");
+            let içerik = tuval.getContext ("2d");
+            let en = tuval.width = window.innerWidth;
+            let boy = tuval.height = window.innerHeight;
+
+            // Geliþigüzel sayý üretme fonksiyonu...
+            function tesadüfi (küçük, büyük) {
+                let sayý = Math.floor (Math.random() * (büyük - küçük) ) + küçük;
+                return sayý;
+            } // func sonu...
+
+            // Top kurucu fonksiyonu...
+            function Top (x, y, hýzX, hýzY, renk, tesadüfiEbat) {
+                this.x = x;
+                this.y = y;
+                this.hýzX = hýzX;
+                this.hýzY = hýzY;
+                this.renk = renk;
+                this.tesadüfiEbat = tesadüfiEbat;
+            } // func sonu...
+
+            // Toplarýn çizilme metodu...
+            Top.prototype.çiz = function() {
+                içerik.beginPath();
+                içerik.fillStyle = this.renk;
+                içerik.arc (this.x, this.y, this.tesadüfiEbat, 0, 2 * Math.PI);
+                içerik.fill();
+            }; // Top..sonu...
+
+            // Toplarýn güncellenme metodu...
+            Top.prototype.güncelle = function() {
+                if ( (this.x + this.tesadüfiEbat) >= en) {this.hýzX = -(this.hýzX);}
+                if ( (this.x - this.tesadüfiEbat) <= 0) {this.hýzX = -(this.hýzX);}
+                if ( (this.y + this.tesadüfiEbat) >= boy) {this.hýzY = -(this.hýzY);}
+                if ( (this.y - this.tesadüfiEbat) <= 0) {this.hýzY = -(this.hýzY);}
+                this.x += this.hýzX;
+                this.y += this.hýzY;
+            }; // Top..sonu...
+
+            // Toplarýn çarpýþma kontrolu...
+            Top.prototype.çarpýþmaKontrolü = function() {
+                for (let j = 0; j < toplar.length; j++) {
+                    if(! (this === toplar [j] ) ) {
+                        let dx = this.x - toplar[j].x;
+                        let dy = this.y - toplar[j].y;
+                        let mesafe = Math.sqrt (dx * dx + dy * dy);
+                        if (mesafe < this.tesadüfiEbat + toplar [j].tesadüfiEbat) toplar [j].renk = this.renk = "rgb(" + tesadüfi (0, 255) + "," + tesadüfi (0, 255) + "," + tesadüfi (0, 255) +")";
+                    } // if sonu...
+                } // for sonu...
+            }; // Top..sonu...
+
+            // Sahneyi sürekli hareketli kýlan zýpla() tekrarlamalý fonksiyon tanýmý...
+            function zýpla() {
+                içerik.fillStyle = "rgba(0,0,0,0.25)";
+                içerik.fillRect (0, 0, en, boy);
+                while (toplar.length < 25) {
+                    let top = new Top (
+                        tesadüfi (0, en),
+                        tesadüfi (0, boy),
+                        tesadüfi (-hýz, hýz),
+                        tesadüfi (-hýz, hýz),
+                        "rgb(" + tesadüfi(0,255) + "," + tesadüfi(0,255) + "," + tesadüfi(0,255) +")",
+                        tesadüfi (5, ebat)
+                    ); // let sonu...
+                    toplar.push (top);
+                } // while sonu...
+                for (let i = 0; i < toplar.length; i++) {
+                    toplar [i].çiz();
+                    toplar [i].güncelle();
+                    toplar [i].çarpýþmaKontrolü();
+                } // for sonu...
+                requestAnimationFrame (zýpla); // zýpla()'yý tekrarlar...
+            } // func sonu...
+
+            let hýz = +prompt ("Toplarýn hýzýný girin [1-100]", "7");
+            if (hýz < 1) hýz = 1;
+            else if (hýz > 100) hýz = 100;
+            let ebat = +prompt ("Toplarýn azami ebatýný girin [5-50]", "20");
+            if (ebat < 5) ebat = 5;
+            else if (ebat > 50) ebat = 50;
+            var toplar = []; // Tüm 25 adet toplar'ýn dizisi tanýmý...
+
+            zýpla();
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) Etiket canvas tuvali içinde JS kodlamasýyla renkli ve hareketli çarpýþan toplar üretilmektedir." +
+            "<br/>2) Harici CSS stil dosyasýyla canvas tuval en ve boyu sýnýrlanmýþ, tuvalin taþmasý sýnýrlanmýþ, \
+            artan kýsýmlarýn yatay-dikey kaydýraçla görüntüye getirilmesi saðlanmýþtýr. Ayrýca h1 baþlýðý þeffaf \
+            gölgeli sayfanýn sað-üst köþesine konumlandýrýlmýþtýr." +
+            "<br/>3) JS animasyonunda öncelikle tarayýcý prompt iletisiyle top hýzý ve ebatý girilir (varsayýlý \
+            deðerleri önerilir). Azami 25 (farklý renk ve ebatlý) topu depolayacak dizi tanýmlanýr ve animasyonu \
+            baþlatacak olan zýpla() fonksiyonu çaðrýlýr. Bu fonksiyon kendi içinde requestAnimationFrame ile \
+            uygun canlandýrma süreli zýpla()'yý tekrarlatýr." + fonk2() +
+            "<br/>4) zýpla() fonksiyonu önce dikdörtgen canvas tuval alanýný siyah zeminle doldurur, 'new Top' \
+            kurucu fonksiyonla 25 adet tesadüfi ebat ve renkte top yaratýr, sonra da bu toplarý çiz(), güncelle() \
+            ve çarpýþmaKontrolü() metodlarýyla gözlemlenen canlandýrmayý saðlar." +
+            "<br/>5) Bu JS canlandýrma kodlamasý baþlangýç öðrencisine henüz pek anlamlý olmasa da \
+            HTML, CSS, resim ve video'dan sonra görülmesi gereken animasyon basamaðýdýr."
+    </script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>A4.html: HTML-CSS-JS stilli aðsayfasý kodlamacýlýðýna baþlangýç dersleri örneði.</title>
+    <style>
+        /* HERHANGÝBÝR CSS STÝL AYARLARI HEAD BAÞLIK ÝÇÝNDE style KISMINDA
+        BULUNMALIDIR, style ÜSTÜNE YADA /style ALTINDA DEÐÝL.  */
+
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        h1 {color: red;}
+        p span {background-color: DarkRed;
+            color: magenta;
+            padding: 10px;
+            text-align: center;}
+
+        /* CSS SONU */
+     </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <!-- YAZACAÐINIZ HERHANGÝBÝR HTML BU AÇ-KAPA YORUMLAR ARASINDA OLMALIDIR.
+    GÖVDE ÝÇÝNE ÖNCE HTML SONRA SCRÝPT JS KODLAMASI GELMELÝDÝR. ÇÜNKÜ
+    KODLAMA HTML SAYFASI TAMAMLANDIKTAN SONRA ÝÞLETÝLMEZSE NULL HATA VEREBÝLÝR.
+    bÝR H1 BAÞLIK VE BÝR SPAN'LÝ P PARAGRAF KOYACAÐIZ. -->
+
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>HTML-CSS-JS'li Örnek Programlar</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h1 class="baþlýk">Örnek Baþlýk</h1>
+    <p><span>Ben bir paragrafým.</span></p>
+    <hr/>
+    <h1>Sayý tahmini oyunu</h1>
+    [1-100] <input type="text" class="tahminGir"/>
+    <button class="gönder">Gönder</button>
+    <p class="tahminler"></p>
+    <p class="sonuç"></p>
+    <p class="düþükYüksek"></p>
+    <hr/>
+    <canvas width="500" height="220"></canvas>
+    <canvas id="tuval2" width="400" height="220"></canvas>
+    <canvas id="tuval3" width="400" height="220"></canvas>
+    <canvas id="tuval4" width="400" height="220"></canvas>
+    <canvas id="tuval5" width="400" height="220"></canvas>
+    <canvas id="tuval6" width="400" height="220"></canvas>
+    <hr/>
+    <button class="selam">Týkla beni!</button>
+    <button id="selam">Beni de týkla!</button>
+    <hr/>
+    <div>
+        <label >Ýlk sayý: </label><input type="text" id="sayý1"><br/>
+        <label>Ýkinci sayý: </label><input type="text" id="sayý2"><br/>
+        <label>Ýþlemci [1:+, 2:-, 3:*, 4:/, 5:%]: </label><input type="text" id="iþlemci"><br/>
+        <button id="hesapla">Hesabý sonuçlandýr</button>
+        <p id="sonuç">Sonuç:</p>
+    </div>
+    <hr/>
+   <h1>Yeni sayý tahmini oyunu</h1>
+    <div id = "form2">
+        <label>Tahmininizi girin: </label><input type="text" id="tahmin">
+        <button id="gönder">Gönder</button>
+    </div>
+    <p id="tahminler"></p>
+    <p id="sonuç2"></p>
+    <p id="düþükYüksek"></p>
+    <hr/>
+    <h4 style="text-decoration:underline; color:red; background-color:gray; width:200px;">ALIÞVERÝÞ LÝSTESÝ</h4>
+    <div class="form1">
+        <label>Listeye eklenecek mallar: </label><input type="text" id="malzeme"><br/>
+        <button id="gönder2">Malzemeyi sepete ekle</button><br/>
+        <button id="sil">Malzemeleri sýfýrla</button>
+    </div>
+    <ul id = "liste">
+    </ul>
+    <hr/>
+    <div style="background-color:green;">
+        <div>
+            <label for="metin">Ana metni girin: </label><textarea id="metin" cols="80" rows="15"></textarea>
+        </div>
+        <div>
+            <label for="araþtýr">Araþtýrýlacak dizgeyi girin: </label><input type="text" id="araþtýr">
+        </div>
+        <button id="gönder3">Araþtýr</button><button id="sil2">Sil</button>
+    </div>
+    <p id="mesaj"></p>
+    <p id="sonuçlar"></p>
+    <hr/>
+    <div style="background-color:Yellow; padding:10px; font-size:30px; width:450px;"><a href="A4/index.html" target="_">Orijinal Ýngilizce Dersler Ýçin Týkla:</a></div>
+
+    <!-- HTML SAYFASI SONU -->
+
+    <script>
+        // JAVASCRIPT KODLAMASI BODY GÖVDE SONU script KISMINA KONULMALIDIR.
+        // JS TEKSATIRLIK YORUMLAR, AYRICA
+        /*  JS ÇOKSATIRLIK
+        YORUMLAR DA YAPILABÝLÝR. */
+
+        function fonk3() {
+            console.log ("JavaScript Deneme!..");
+            setTimeout (()=>{document.querySelector ("h1").innerHTML = "Güncellenen Baþlýk!!";}, 5000);
+        return "";} // func sonu....
+//==>
+        function fonk4() {
+            var saçRengim = "kahve"; // Ýlk deðerli var(iable) deðiþken tanýmý...
+            console.log (saçRengim);
+            saçRengim = "siyah"; // Deðiþken deðeri sonradan deðiþtirilebilir...
+            console.log (saçRengim);
+            saçRengim = false; // Deðiþken tipi sonradan deðiþtirilebilir...
+            console.log (saçRengim);
+
+            let adým = "Nihat"; // dizge tipli. var yerine let ile deðiþken tanýmý daha kullanýþlýdýr.
+            let yaþým = 63; // sayý
+            let emekliMi = true; // ikili
+            let hobilerim = ["yüzme", "yürüyüþ", "koþu", "bisiklet", "diyet"] // dizi
+            console.log (adým, yaþým, emekliMi, hobilerim);
+
+            //saçRengim = prompt ("Lütfen saç renginizi girin:");
+            //alert ("Benim " + saçRengim + " saçlarým var.");
+
+            console.log ("Deðiþken tipleri: " + (typeof adým) + ", " + (typeof yaþým) + ", " + (typeof emekliMi) + ", " + (typeof hobilerim) );
+            // Deðiþken tipleri: string, number, boolean, object
+            // Array/dici tipi object/nesne yansýr...
+
+            let alan = function (en, boy) {
+                let sonuç = en * boy;
+                return sonuç;
+            }; // let sonu...
+            console.log ("Ýlk dikdörtgen alaný: " + alan (3, 5) );
+            console.log ("Ýkinci dikdörtgen alaný: " + alan (5, 5) );
+
+            console.log (yaþým + 35);
+            let sayý1="63", sayý2="35"; console.log (sayý1+sayý2); console.log (Number (sayý1) + Number (sayý2) - 4);
+            console.log (8 % 3);
+            console.log (8 + 4 / 3 * 4); console.log ( (8 + 4 / 3 * 4).toFixed (2) ); console.log ( (8 + 4 / 3 * 4).toFixed() );
+            console.log ( (8 + 4) / (3 * 4) );
+        return "";} // func sonu....
+//==>
+        function fonk5() {
+/* Programý çalýþtýrmak için yorumu iptal edin...
+            let doðumYeri = prompt ("Doðum yerinizi girin:").toLowerCase();
+            if (doðumYeri === "malatya") {alert ("Kernek düþülü havuzu hala duruyor mu?");
+            }else if (doðumYeri === "yeþilyurt") {alert ("Çýrmýðdýnýn deymensuyu gapýlýðdan mý çýðýyý?");
+            }else {alert ("Maalesef þehrinizin özelliklerine yakinen vakýf deðilim."); };
+
+            let mevsim = prompt ("Þimdi hangi mevsimdeyiz").toLowerCase();
+            if (doðumYeri === "malatya" || doðumYeri === "yeþilyurt") {
+                if (mevsim === "yaz") alert ("Malatya baðlarýnýn miþmiþ ve dalbastý zamaný.");
+                else if (mevsim === "kýþ") alert ("Çocuklarýn bayýr sokak ve cadde buzlarýnda kaykay zamaný.");
+            }else alert ("Oralarda havalar serindir bu aralar.");
+*/
+            for (let i = 1; i <= 10 ; i++) {console.log (i, i ** 2, +(i ** 0.5).toFixed (2) );}
+
+/* Programý çalýþtýrmak için yorumu iptal edin...
+            let i, geliþigüzelSayý = Math.floor (Math.random() * 99) + 1;
+            for (i = 1; i <= 10 ; i++) {
+                var tahminin = +prompt ("Tutuðum [1-100] sayýyý " + i + ".kerede tahmin et:");
+                if (tahminin === geliþigüzelSayý ) {
+                    alert ("Bravo. Tuttuðum sayýyý " + i + " kerede bildin!");
+                    break;
+                }else {
+                    if (tahminin < geliþigüzelSayý ) alert ("Bilemedin. Tahminin çok düþük, yükselt!");
+                    else alert ("Bilemedin. Tahminin çok büyük, düþür!");
+                } // else sonu...
+            } // for sonu...
+            if (i == 11) alert ("Yuh gerzek, 10 kerede bilinmez mi?..");
+*/
+        return "";} // func sonu....
+//==>
+        function fonk6() {
+            let h1Baþlýk = document.querySelector (".baþlýk"); // id="" olsaydý (#baþlýk)...
+            setTimeout ( ()=>{h1Baþlýk.innerHTML = "Tekrar Güncellenen Baþlýk"}, 10000);
+//------------------------------------------------------------------------------------------------------------------------
+            let tahminGir = document.querySelector (".tahminGir");
+            let gönder = document.querySelector (".gönder");
+            let tahminler = document.querySelector (".tahminler");
+            let sonuç = document.querySelector (".sonuç");
+            let düþükYüksek = document.querySelector (".düþükYüksek");
+            let i = 1, tutulanSayý = Math.floor (Math.random() * 99) + 1;
+
+            gönder.onclick = tahminOyunu;
+            function tahminOyunu() {
+                let tahmin = +tahminGir.value;
+                tahminler.innerHTML += tahmin + ", ";
+                if (tahmin === tutulanSayý) {
+                    sonuç.innerHTML = "Tebrikler! " + i + ".inci tahminde bildiniz!";
+                    düþükYüksek.innerHTML = "";
+                    gönder.setAttribute ("disabled", "disabled");
+                }else {
+                    if (tahmin < tutulanSayý) düþükYüksek.innerHTML = "Tahminin düþük, yükselt!";
+                    else düþükYüksek.innerHTML = "Tahminin yüksek, düþür!";
+                } // else sonu...
+                i++; tahminGir.value="";
+                if (i == 11) {
+                    sonuç.innerHTML = "Yuh gerzek, 10 kerede bilinmez mi?..";
+                    gönder.setAttribute ("disabled", "disabled");
+                } // if sonu...
+            } // func sonu...
+        return "";} // func sonu....
+//==>
+        function fonk7() {
+            let tuval = document.querySelector ("canvas");
+            let içerik = tuval.getContext ("2d");
+            içerik.fillStyle = "rgba(200,80,200,0.7)"; // rgb renkler ve netlik...
+            içerik.fillRect (10,10, 400,200); // x1,y1-->x2,y2
+
+            içerik.lineWidth = 10;
+            içerik.strokeStyle = "rgba(255,0,0,0.6)"; // Kýrmýzý sýnýr...
+            içerik.strokeRect (50,50, 320,120); // Sýnýr sol-üst ve x,y
+//------------------------------------------------------------------------------------------------------------------------
+            let içerik2 = tuval2.getContext ("2d");
+            içerik2.fillStyle = "rgba(0,0,255,0.15)";
+            for (i = 0; i <= 20; i++) {içerik2.fillRect (i, i, 180+i, 180+i);}
+//------------------------------------------------------------------------------------------------------------------------
+            let içerik3 = tuval3.getContext ("2d");
+            for (i = 0; i <= 20; i++) {
+                içerik3.fillStyle = "rgba(0,0," + (150+(i*5)) + ",0.25)";
+                içerik3.fillRect ((i*6),(i*4),25+(i*8),25+(i*8));
+            } // for sonu...
+//------------------------------------------------------------------------------------------------------------------------
+            let içerik4 = tuval4.getContext ("2d");
+            for (i = 0; i <= 200; i++) {
+                içerik4.fillStyle = "rgba(0,0," + (150+(i*5)) + ",0.55)";
+                içerik4.fillRect ((i*4),(70+(Math.sin(i/6))*80), 10,10); 
+               içerik4.rotate (0.008);
+            } // for sonu...
+//------------------------------------------------------------------------------------------------------------------------
+            let içerik5 = tuval5.getContext ("2d");
+            for (i = 0; i <= 100; i++) {
+                içerik5.fillStyle = "rgba(0,0," + (Math.floor (Math.random() * 200) ) + ",0.45)";
+                içerik5.beginPath();
+                içerik5.arc ((i*5),(100+(Math.sin(i/6))*70), 10,0, Math.PI*2, true);
+                içerik5.fill();
+            } // for sonu...
+        return "";} // func sonu...
+//==>
+        function fonk8() {
+            function tesadüfi100() { // 1-100 arasý geliþigüzel tamsayý üreteci...
+                let tesadüfiTamsayý = Math.floor (Math.random() * 100) + 1;
+                return tesadüfiTamsayý; // fonksiyon geridönüþü...
+            }; // func sonu...
+            console.log (tesadüfi100(), tesadüfi100(), tesadüfi100() ); // 3 farklý tesadüfi [1-100 arasý] tamsayý...
+            console.log (tesadüfi100 ); // () iþlemci kullanýlmazsa fonksiyonun icrasý deðil tanýmý yansýr...
+//------------------------------------------------------------------------------------------------------------------------
+            function tesadüfi (üstLimit) {return Math.floor (Math.random() * üstLimit) + 1; };
+            console.log (tesadüfi (100), tesadüfi (1000), tesadüfi (10000) ); // 1-100, 1-1000 ve 1-10000 arasý tesadüfi tamsayý...
+//------------------------------------------------------------------------------------------------------------------------
+            let içerik6 = tuval6.getContext ("2d");
+            function sinüsDalgasý (k, y) { // k: kareSayýsý, y: yükseklik
+                for (let i = 0; i <= k; i++) {
+                    içerik6.fillStyle = "rgba(0,0," + (Math.floor (Math.random() * 256) ) + ",0.5)";
+                    içerik6.fillRect ((i*5),(y+(Math.sin(i/4))*55), 15,15);
+                } // for sonu...
+            }; // func sonu...
+            sinüsDalgasý (100, 200); sinüsDalgasý (150, 150); sinüsDalgasý (50, 100); sinüsDalgasý (70, 50);
+//------------------------------------------------------------------------------------------------------------------------
+            let düðme = document.querySelector (".selam");
+            düðme.onclick = function() {console.log ("Off, baþýmý acýttýn!.."); };
+            function týkla() {console.log ("Ben isimli fonksiyon olay yönetimiyim!.."); };
+            selam.onclick = týkla; // týkla() yazarsanýz sayfa yüklenince týklanmadan çalýþýr...
+//------------------------------------------------------------------------------------------------------------------------
+            function hesap() {
+                if (iþlemci.value == 1) sonuç.innerHTML = Number (sayý1.value) + Number (sayý2.value);
+                else if (iþlemci.value == 2) sonuç.innerHTML = sayý1.value - sayý2.value;
+                else if (iþlemci.value == 3) sonuç.innerHTML = sayý1.value * sayý2.value;
+                else if (iþlemci.value == 4) sonuç.innerHTML = sayý1.value / sayý2.value;
+                else if (iþlemci.value == 5) sonuç.innerHTML = sayý1.value % sayý2.value;
+                else sonuç.innerHTML = "Hatalý giriþ";
+            } // hes..sonu...
+            hesapla.onclick = hesap; // Týklayýnca hesaplar...
+            //sayý1.onblur = hesap; // Odaksýzlanýnca hesaplar...
+            //sayý2.onblur = hesap;
+            //iþlemci.onblur = hesap;
+        return "";} // func sonu...
+//==>
+        function fonk9() {
+            let i = 1, tahminim, tutulanSayý = Math.floor (Math.random() * 100) + 1;
+            function tahminKontrolu() {
+                if (i === 11) {
+                    sonuç2.innerHTML = "!!!OYUN BÝTTÝ!!! Yuh, 10 kerede bilemedin.";
+                    formuKapa();
+                     return;
+                } // if sonu...
+                tahminim = +tahmin.value;
+                tahminler.innerHTML += tahminim + ", ";
+                if (tahminim == tutulanSayý) {
+                    sonuç2.innerHTML = "Tebrikler! " + i + ".kerede bildiniz!";
+                    düþükYüksek.innerHTML = "";
+                    formuKapa();
+                }else {
+                    sonuç2.innerHTML = "Yanlýþ tahmin.";
+                    if (tahminim < tutulanSayý) düþükYüksek.innerHTML = "Tahminin düþük, yükselt!";
+                    else düþükYüksek.innerHTML = "Tahminin yüksek, düþür!";
+                    i++;
+                    tahmin.value = "";
+                } // else sonu...
+            } // func sonu...
+            function formuKapa() {
+                form2.style.opacity = 0.3;
+                tahmin.setAttribute ("disabled", "disabled");
+                gönder.setAttribute ("disabled", "disabled");
+            } // func sonu...
+            gönder.onclick = tahminKontrolu;
+        return "";} // func sonu...
+//==>
+        function fonk10() {
+            function sepeteEkle() {
+                let malzemem = malzeme.value;
+                let listem = document.createElement ("li");
+                listem.innerHTML = malzemem;
+                liste.appendChild (listem);
+                malzeme.value = "";
+            } // func sonu...
+            sil.onclick = function() {liste.innerHTML = ""; malzeme.value = "";} // Anonim fonksiyon...
+            gönder2.onclick = sepeteEkle; // isimli fonksiyon...
+        return "";} // func sonu...
+//==>
+        function fonk11() {
+            function metniAraþtýr() {
+                let metnim = metin.value.toLowerCase();
+                let dizgem = araþtýr.value.toLowerCase();
+                let aramaSonucu = metnim.indexOf (dizgem);
+                if (metnim === "" || dizgem === "") mesaj.innerHTML = "Metniniz veya aranacak dizgeniz girilmemiþ!";
+                else {
+                    if (aramaSonucu !== -1) {
+                        let yeniMetin = metnim.replaceAll (dizgem, "<b style='color:red;background-color:orange;'><i>" + dizgem + "</i></b>");
+                        sonuçlar.innerHTML = yeniMetin;
+                        mesaj.innerHTML = "Aranan terim-ler metinde vurgulandý";
+                    }else {
+                        mesaj.innerHTML = "Aranan dizge metinde bulunamadý";
+                        sonuçlar.innerHTML = "";
+                    } // else sonu...
+                } // else sonu...
+            } // func sonu...
+            function aramayýSýfýrla() {
+                metin.value = "";
+                araþtýr.value = "";
+                mesaj.innerHTML = "";
+                sonuçlar.innerHTML = "";
+            } // func sonu...
+            gönder3.onclick = metniAraþtýr;
+            sil2.onclick = aramayýSýfýrla;
+        return "";} // func sonu...
+
+        document.getElementById ("göster").innerHTML =
+            "1) Dersler 3 gruptan müteþekküldür. Guides/Kýlavuzlar, Slides/Slaytlar, Slide script/Slaytlarýn \
+            kýsa açýklamalarý. Öðrenciler toplam 8 dersten oluþan guides sayfasýný açacaklar; öðretmen ise \
+            tarayýcýda 3 pencerede her üç grubu da açýk tutacaktýr. Derslerin sol kenarýndaki sýralý toplam \
+            50 slayt kursun hangi aþamasýnda hangi slayt ve açýklamasýnýn olacaðýný öðretmene hatýrlatmak \
+            içindir.\
+            <br/>Öðrenciler takýldýklarý hususlarý, daha iyi bilen bir arkadaþýndan, öðretmeninden, google \
+            sorun tarama seçeneklerinden, bilhassa da 'http://stackoverflow.com/' sayfasýndaki mevcut \
+            sorun çözümlerini inceleyerek yada bizzat kendisi sorusunu forumdaki diðer katýlýmcýlardan \
+            yazýlý sorarak öðrenebilir. Bu kursu hazýrlayan mdn mozilla takýmýnýn eposta adresi de en altta \
+            mevcuttur, týklanýp eposta mesajý gönderilebilir." +
+            "<br/>2) Guides/Kýlavuz týklanýp, gelen dizin dökümünden index.html ile 'Programcýlýða Giriþ'in \
+            anasayfasý açýlýr. Programcýlýktan kasýt tüm tarayýcý açýk kodlamasýnýn yazýldýðý JavaScript dilidir. \
+            Tavsiye edilen masaüstü yada dizüstü bilgisayarýnýzda Chrome/Firefox tarayýcýnýn son sürümü \
+            indirilmelidir. Kodlama editörü olarak NotePad (benim daima tercihim) yada NotePad++ yeterlidir.\
+            <br/>Halihazýrda toplam 8 ders sunulmuþtur: 1.Kodlamaya giriþ, 2.Deðiþkenler, 3.Þartlar ve \
+            döngüler, 4.DOM/DocumentObjectModule/DökümanNesneModülü, 5.HTML5 Canvas ile basit \
+            grafik çizimleri, 6.Fonksiyonlar ve Olaylar, 7.Olay duyarlý JS sayý tahmini kodlamasý, 8.Pek çok \
+            baþka basit JS örnekleri. Tüm dersler buradan kýsa konu açýklamalý örneklenecektir." +
+            "<br/>3) Ýlk dersimiz olan JS kodlamaya giriþle baþlayalým. Her aðsayfasý HTML/HyperTextMarupLanguage \
+            etiket adlý elemanlarý, CSS/CascadedStyleSheet ve JS/JavaScript içerebilir. JS, derleyiciye \
+            gerek duymadan .html dosyasýnda body gövdede script etiket elemaný içinde çift týklanýnca \
+            tarayýcý yorumcusu/motoru tarafýndan doðrudan çalýþtýrýlýr. Örnek olarak canvas/tuval etiketli \
+            JS kademeli resimdeki firefox ve top ile, ayrýca flash oynatýcýlý yazý canlandýrmasýný týklayabilirsiniz. \
+            Daha ilerde bu örneklerin JS kodlamalarý incelenecektir. JS müþteri/kullanýcý taraflý dildir, PHP ise \
+            sunucu (veritabaný dosya/resim/veri vb arayýp bulup müþteriye sunan) taraflý dildir.\
+            <br/>Þimdi basit bir HTML-CSS-JS üçlü rötuþlamasý yapalým: html sayfasýnýn body gövdeye \
+            h1 baþlýkla 'Örnek Baþlýk' yazdýrýp, altýna birkaç stil vasýflý p paragrafýnda 'Ben bir paragrafým.' \
+            ve gövde ile html sonu arasýna script taslaðýnda JS kodlamasýyla konsola 'JavaScript Deneme' \
+            mesajý, sonrada 5 sn gecikmeli html baþlýk içeriðini kodlamayla deðiþtirelim." + fonk3() +
+            "<br/>4) Ýkinci dersimiz olan deðiþkenlere geçelim. Deðiþkenlere programda kullanacaðýmýz \
+            deðerler atanýr (sayý, dizge, ikili, dizi, nesne vb). Programda kullanýlan deðiþken tipini öðrenmek \
+            için typeof iþlemcisi kullanýlabilir. Dikdörtgen alanýný hesaplayan fonksiyon kodlamasý yapalým. \
+            Sýk kullanýlan JS iþlemcileri: (+ * / - % = == === || && ! typeof)." + fonk4() +
+            "<br/>5) Þimdi de sýra þartlar ve döngüler konulu 3.dersimizde. Þartlar if-else yapýsýndadýr. \
+            Tek satýrlýk if-else cevaplarýnda {} bloðu zorunlu deðildir. Þartlarý || VEYA ve && VE iþlemcilerle \
+            besleyebilir, yada içiçe if-if'lerle derinleþtirebiliriz.\
+            <br/>Bazý küçük deðiþikliklerle tekrarlý kullanýlacak kodlamalar for(3ÝfadeliÞart){kodlar} \
+            döngüsüyle þart true olduðu sürece tekrarlanýr. Örnekte for(i=0;i<=10;i++){} dögüsüyle 1-10 \
+            sayýlarýn kendisi, karesi, ve 2 ondalýk haneli karekökü görülmektedir.\
+            <br/>1-100 arasý Math.floor(Math.random()*99)+1 tahmini tamsayýyý azami 10 tahminlemede \
+            bulmamýz istenen kodlamayý for(i=1;i<=10;i++){} döngüsüyle yazalým." + fonk5() +
+            "<br/>6) 4.ders DOM/DocumentObjectModule: HTML sayfasýndaki tüm etiketli elemanlar birer \
+            DOM elemanlarýdýr.\
+            <br/>Örn.Önceki h1 baþlýðý, baþlýða class='baþlýk' referansýyla querySelector eriþip, baþlýðý \
+            tekrar deðiþtirelim.\
+            <br/>Bir önceki sayý tahmini verigiriþ ve mesajlarý hep prompt ve alert tarayýcýda yansýyordu. \
+            Bu mesajlarý HTML sayfasýnýn farklý p paragraf DOM elemanlarýnda yansýtalým. Sayý giriþi için \
+            input, gönder için button, mesajlar için p DOM elemanlarý kullanýldý. Azami 10 giriþ kontrolu \
+            yapýldý. Bilinince yada 10 tahminleme dolunca gönder butonu etkinsizleþtirildi." + fonk6() +
+            "<br/>7) 5.dersimiz HTML5 canvas tuvalde þekil/grafik çizimi. Öncelikle kullanacaðýmýz \
+            tuvalin en ve boyunu HTML sayfasýnda tanýmlarýz. Tuval DOM eleman referansý ve 2d \
+            çift boyutlu içeriði yaratýlýr. içerik.fillStyle þekli dolduracak rengi, içerik.fillRect dikdörtgen \
+            alaný, içerik.strokeStyle sýnýr rengini, içerik.strokeRect kenar çizgili dikdörtgeni, içerik.lineWidth \
+            sýnýr geniþliðini tanýmlar.\
+            <br/>Döngü içinde sol-üst ve en-boy ebatlarý döngü sayýsýnca artan, böylece 3 boyutlu \
+            kare görünümünü kazanan döngülü çizimi yapalým.\
+            <br/>Döngü içinde hem mavi renk tonu artan, hem de sol-üst ve en-boy deðerleri perspektifvari \
+            gittikce büyüyen kareler çizelim.\
+            <br/>60'lýk döngüyle bir trigonometrik sinüsü içerik.rotate ile hafif saða döner çizebiliriz.\
+            <br/>Kare deðil arc/yay/daire için içerik.beginPath ile içerik.arc ve içerik.fill() kulanarak bir \
+            önceki sinüs eðrisini çüçük (kareler yerine) bilyelerle çizdirebiliriz." + fonk7() +
+            "<br/>8) 6.dersimizde fonksiyonlar ve olaylarý iþleyeceðiz. Kodlama grubunun for döngü \
+            bloðunda tekrarý gibi, þimdi de benzer kod grubunun argümansýz/argümanlý fonksiyon \
+            bloðunda icrasýný yapalým. Hazýr alert(), prompt(), random() fonksiyonlarý gibi kendi özel \
+            fonksiyonlarýnýmýzý da kullanabiliriz. Fonksiyon içi deðiþkenkenleri lokaldir, dýþarýya yansýmaz, \
+            ancak return fonksiyona sonucu geridöndürebilir.\
+            <br/>Örn.Math.random()*100 yerine bunu bir fonksiyonla tanýmlayabiliriz.\
+            <br/>Tesadüfi sayý üretecinin argüman giriþiyle üst limitini deðiþtirebiliriz.\
+            <br/>Birönceki canvas tuval kareli sinüs dalgasýný, kareSayýsý ve yükseklik deðerlerini argümansal \
+            deðiþtirilebilir giriþli fonksiyonla tanýmlayabiliriz.\
+            <br/>Olaylar, kullanýcýnýn aðsayfasýyla etkileþimini saðlayan çþitli duyarlýlýklardýr. Örn.Týklayýnca \
+            hoþgeldin mesajý yansýtan button onclick olayýný tanýmlayalým. Olay yönetimini burdaki anonim \
+            adsýz fonksiyon yada adlý fonksiyon þeklinde tanýmlayabiliriz.\
+            <br/>Ýki sayý ve iþlemci no girince istenen iþlemi týklayýnca sonuçlandýran, hatalý giriþte ikaz veren; \
+            istenirse herhangibir veriden odaksýzlanýnca da hesabý sonuçlayan onclick() ve onblur() olay \
+            yönetimlerini kodlayalým." + fonk8() +
+            "<br/>9) 7.dersimizde tarayýcý mesaj kutularýndan HTML sayfasýna yansýttýðýmýz sayý tahmini \
+            oyununu onclick() olay yönetimiyle profesyonelleþtirelim. Öncekine ilaveten, tahmin bilindiðinde \
+            yada 10 kere dolduðunda, input ve button elemanlarý netliði solsun ve etkinsizleþtirilsin." + fonk9() +
+            "<br/>10) 8.dersimizde herbiri diðerlerinden baðýmsýz iki örnek çalýþmasý yapýlacaktýr." +
+            "<br/>Alýþveriþ listemizde, alýþveriþ sepetine konulan her malzeme, gönder tuþuna basýlýnca\
+            dinamik yaratýlan ul-li HTML listesinde altalta yansýtýlacak; sil tuþu da bu listeyi silecektir. HTML \
+            etiket elemanlarý (input, button ve ul) referansý olarak id adlarý kullanýlmýþtýr; böylece sýnýf adlarýný \
+            querySelector'a aratmaya gerek yoktur." + fonk10() +
+            "<br/>Metnin içinde ibare arama örneðinde, metin yada ibare girilmezse uyarý verecek. \
+            Sonuçlanan aramada eþleþenlerin zemin-yazý rengi parlatýlýp alt sonuçlarda yansýtýlacak. \
+            Aratma replace metodunda RegExp /dizge/gi kullanýlsaydý iyiydi, ancak RE deðiþken kabul \
+            etmediðinden, replaceAll kullanýlýp, metin ve aranan dizge küçükharfe çevrilecek. Eþleþme \
+            yoksa mesajla yansýtýlacak. Sil düðmesi metni, arananý, mesajý ve sonuçlarý temizleyecek. \
+            Metin giriþini dýþardan seç/yapýþtýr yapabilirsiniz." + fonk11()
+
+        // JAVASCRIPT KODLAMALARI SONU...
+    </script>
+</body>
+</html>

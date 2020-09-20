@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2b2.html: CSS flex kutu hizalanmasýnda  justify-content (esnek kutu eþit aralýk) etkisi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        body {
+            font: 1.2em Helvetica, Arial, sans-serif;
+            margin: 20px;
+            padding: 0;}
+        textarea {
+            font-family: monospace;
+            display: block;
+            margin-bottom: 10px;
+            background-color: #F4F7F9;
+            border: none;
+            border-left: 6px solid #558ABB;
+            color: #4D4E53;
+            width: 90%;
+            max-width: 700px;
+            padding: 10px 10px 0px;
+            font-size: 90%;}
+        textarea:nth-of-type(1) {height: 100px}
+        textarea:nth-of-type(2) {height: 200px}
+        .düðme-kutusu {
+            text-align: right;
+            width: 90%;
+            max-width: 700px;
+            padding: 10px 14px 10px 10px;
+            font-size: 100%;
+            background-color:LightGray;}
+        section {
+            width: 90%;
+            max-width: 700px;
+            border: 2px solid #4D4E53;
+            border-radius: 10px;
+            padding: 10px 14px 10px 10px;
+            margin-bottom: 10px;
+            background-color:LightGray;}
+        .kutu {
+            width: 700px;
+            background-color: DarkKhaki;
+            border: 3px dotted rgb(0,139,168);}
+        .kutu >* {
+            width: 40px;
+            padding: 20px;
+            color:tomato;
+            border: 2px solid rgb(96,139,168);
+            border-radius: 10px;
+            background-color: rgba(96,139,168,0.7);}
+    </style>
+    <style class="deðiþtirilebilir">
+        .kutu {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;}
+        .kutu :first-child, :last-child {align-self: center;}
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Esnek Kutu Eþit Aralýk</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section>
+        <div class="kutu">
+            <div>Bir</div>
+            <div>Ýki</div>
+            <div>Üç
+                <br/>ek
+                <br/>metni
+                <br/>var
+            </div>
+            <div>Dört</div>
+            <div>Beþ<br/>artý</div>
+        </div>
+    </section>
+
+    <textarea class="deðiþtirilebilir-css">
+.kutu {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;}
+.kutu :first-child, :last-child {align-self: center;}
+    </textarea>
+
+    <textarea class="deðiþtirilebilir-html">
+        <div class="kutu">
+            <div>Bir</div>
+            <div>Ýki</div>
+            <div>Üç
+                <br/>ek
+                <br/>metni
+                <br/>var
+            </div>
+            <div>Dört</div>
+            <div>Beþ<br/>artý</div>
+        </div>
+    </textarea>
+
+    <div class="düðme-kutusu">
+        <input id="yenidenBaþlat" type="button" value="Yeniden Baþlat">
+    </div>
+
+    <script>
+        function fonk2() {
+            let kýsým = document.querySelector ("section");
+            let deðiþtirilebilir = document.querySelector (".deðiþtirilebilir");
+            let metinalanýHTML = document.querySelector (".deðiþtirilebilir-html");
+            let metinalanýCSS = document.querySelector (".deðiþtirilebilir-css");
+            let yenidenBaþlat = document.getElementById ("yenidenBaþlat");
+            let htmlKod = metinalanýHTML.value;
+            let cssKod = metinalanýCSS.value;
+
+            function kodla() {
+                deðiþtirilebilir.innerHTML = metinalanýCSS.value;
+                kýsým.innerHTML = metinalanýHTML.value;
+            } // func sonu...
+
+            yenidenBaþlat.addEventListener ("click", function () {
+                metinalanýHTML.value = htmlKod;
+                metinalanýCSS.value = cssKod;
+                kodla();
+            }); // yen..sonu...
+
+            metinalanýHTML.addEventListener ("input", kodla);
+            metinalanýCSS.addEventListener ("input", kodla);
+            window.addEventListener ("load", kodla);
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) Bu örnekte kutu CSS ayarlarý display:flex, align-items:flex-start, justify-content:space-between \
+            ve first/last-child için align-self:center gözlenecektir." +
+            "<br/>2) Küçük kutu geniþliði sabit width:40px, fakat içerik metni uzun yada çok satýrlýysa kutu \
+            yüksekliði ve dolayýsýyla kutularý kapsayan section ana kutusunun yüksekliði artar. Bu durumda \
+            küçük kýsa kutular normalde üste yanaþýk kalýr. Ama kutu:first-child,last-child için self-align:center \
+            CSS ayarýyla, ilk ve son kutunun üste yanaþýk deðil dikey ortalanmasýný saðlarýz." + fonk2() +
+            "<br/>3) Kutucuklar için display:flex onlarýn normalen sola yanyana yanaþýklýðýný saðlarken, \
+            justify-content:space-between CSS ayarýyla kutucuklarý bir satýrdaki kelimeler gibi eþit aralýklarla \
+            büyük kutu içinde yayar." +
+            "<br/>4) Ýlk ve son kutu align:self:center dýþýndaki 2 ve 4.kutucuklar normalen üste yanaþýk ve \
+            tek satýrlýk boydadýr. Ama align-items:flex-start CSS ayarýyla boylarý en yüksek kutucukla eþitlenir."
+    </script>
+</body>
+</html>

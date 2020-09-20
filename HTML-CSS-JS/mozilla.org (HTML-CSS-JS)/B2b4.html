@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2b4.html: CSS grid kutu hizalanmasýnda  grid-gap (ýzgara hücreleri arasý boþluk) etkisi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        body {
+            font: 1.2em Helvetica, Arial, sans-serif;
+            margin: 20px;
+            padding: 0;}
+        textarea {
+            font-family: monospace;
+            display: block;
+            margin-bottom: 10px;
+            background-color: #F4F7F9;
+            border: none;
+            border-left: 6px solid #558ABB;
+            color: #4D4E53;
+            width: 90%;
+            max-width: 700px;
+            padding: 10px 10px 0px;
+            font-size: 90%;}
+        textarea:nth-of-type(1) {height: 100px}
+        textarea:nth-of-type(2) {height: 230px}
+        .düðme-kutusu {
+            text-align: right;
+            width: 90%;
+            max-width: 700px;
+            padding: 10px 14px 10px 10px;
+            font-size: 100%;
+            background-color:LightGray;}
+        section {
+            width: 90%;
+            max-width: 700px;
+            border: 2px solid #4D4E53;
+            border-radius: 10px;
+            padding: 10px 14px 10px 10px;
+            margin-bottom: 10px;
+            background-color:LightGray;}
+        .kutu {
+            width: 690px;
+            background-color: DarkKhaki;
+            border: 3px dotted rgb(0,139,168);}
+        .kutu >* {
+            padding: 20px;
+            color:tomato;
+            border: 2px solid rgb(96,139,168);
+            border-radius: 10px;
+            background-color: rgba(96,139,168,0.7);}
+    </style>
+    <style class="deðiþtirilebilir">
+        .kutu {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap:10px 5em;}
+        .kutu :first-child, :last-child {align-self: center;}
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Izgara Serbest Kolonlu  Aralýk Tanýmý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section>
+        <div class="kutu">
+            <div>Bir</div>
+            <div>Ýki</div>
+            <div>Üç
+                <br/>ek
+                <br/>metni
+                <br/>var
+            </div>
+            <div>Dört</div>
+            <div>Beþ<br/>artý</div>
+            <div>Altý</div>
+        </div>
+    </section>
+
+    <textarea class="deðiþtirilebilir-css">
+.kutu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:10px 5em;}
+.kutu :first-child, :last-child {align-self: center;}
+    </textarea>
+
+    <textarea class="deðiþtirilebilir-html">
+        <div class="kutu">
+            <div>Bir</div>
+            <div>Ýki</div>
+            <div>Üç
+                <br/>ek
+                <br/>metni
+                <br/>var
+            </div>
+            <div>Dört</div>
+            <div>Beþ<br/>artý</div>
+            <div>Altý</div>
+        </div>
+    </textarea>
+
+    <div class="düðme-kutusu">
+        <input id="yenidenBaþlat" type="button" value="Yeniden Baþlat">
+    </div>
+
+    <script>
+        function fonk2() {
+            let kýsým = document.querySelector ("section");
+            let deðiþtirilebilir = document.querySelector (".deðiþtirilebilir");
+            let metinalanýHTML = document.querySelector (".deðiþtirilebilir-html");
+            let metinalanýCSS = document.querySelector (".deðiþtirilebilir-css");
+            let yenidenBaþlat = document.getElementById ("yenidenBaþlat");
+            let htmlKod = metinalanýHTML.value;
+            let cssKod = metinalanýCSS.value;
+
+            function kodla() {
+                deðiþtirilebilir.innerHTML = metinalanýCSS.value;
+                kýsým.innerHTML = metinalanýHTML.value;
+            } // func sonu...
+
+            yenidenBaþlat.addEventListener ("click", function () {
+                metinalanýHTML.value = htmlKod;
+                metinalanýCSS.value = cssKod;
+                kodla();
+            }); // yen..sonu...
+
+            metinalanýHTML.addEventListener ("input", kodla);
+            metinalanýCSS.addEventListener ("input", kodla);
+            window.addEventListener ("load", kodla);
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) Kutu CSS ayarlarýndan display:grid, grid-template-columns:fr, grid-gap:'px px', first/last-child \
+            align-self:center gözlenecektir." +
+            "<br/>2) Izgara kolonlar 'grid-template-columns:1fr 1fr 1fr' ile 3 serbest enli kolona ayrýlýr. \
+            Section ve kutu 700px-690px olduðundan bu aralýk 3 serbest kolona eþit aralýklý paylaþýlacak, \
+            kutucuk sayýsý arttýkca 3 kolonu dolan satýr otomatikmen bir alt satýra artacaktýr." + fonk2() +
+            "<br/>3) Herbir hücredeki kutucuk eni tanýmsýz olup, 'grid-gap:10px 5em' gereði iki kolon \
+            5em, satýr arasý ise 10px olarak arasý mesafelenecektir." +
+            "<br/>4) Þayet fist/last-child için align-self:center tanýmlýysa hücrede dikey ortalanacak, \
+            tanýmsýzlar ise satýrýn azami boylusuyla eþitlenecektir." +
+            "<br/>5) Yeni kutucuk ekleyip satýr artýþýný gözleyin, first/last-child'ý iptal edin, grid-gap \
+            dikey ve yatay aralýklarýný deðiþtirin, etkilerini gözlemleyin."
+    </script>
+</body>
+</html>

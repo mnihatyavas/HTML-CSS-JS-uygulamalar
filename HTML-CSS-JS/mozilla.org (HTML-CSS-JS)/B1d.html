@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B1d.html: Aðsayfasý tasarýmýnda sayfaya mp4 video ilavesi örneði.</title>
+    <!-- <link rel="preload" href="B1/video/sintel-short.mp4" as="video" type="video/mp4"> -->
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Aðsayfasýnda mp4 Video</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <video controls>
+        <source src="B1/video/sintel-short.webm" type="video/webm">
+        <!-- <source src="B1/video/sintel-short.mp4" type="video/mp4"> -->
+    </video>
+    <p>Þayet tarayýcýnýz HTML5 video'yu desteklemiyorsa bu baðlantýyý doðrudan týklayýp
+        çalýþtýrabilirsiniz: <a href="B1/video/sintel-short.webm">Video Baðlantýsý</a></p>
+
+    <script>
+        function fonk2() {
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) Uzantýsý mp4 yada webm olan video filimlerini HTML sayfasýnda çalýþtýrabilirsiniz." +
+            "<br/>2) Tarayýcýnýz HTML5 video'yu destekliyorsa video controls etiketiyle ve source elemanlý \
+            src kaynak göstermekle çalýþtýrýlabilir." +
+            "<br/>3) Desteklenmiyorsa doðrudan a/anchor çapa içinde href link baðlantýsýyla çelýþtýrýlabilir."
+    </script>
+</body>
+</html>

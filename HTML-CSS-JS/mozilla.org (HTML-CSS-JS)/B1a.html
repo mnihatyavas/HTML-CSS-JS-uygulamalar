@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B1a.html: Aðsayfasý tasarýmýnda ilk seviye HTML örnekleri.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        html {font-family: arial;}
+        ust, [rol="üstÇizgi"] {
+            color: #00c;
+            text-decoration: overline;}
+        orta, [rol="ortaÇizgi"] {
+            color: red;
+            text-decoration: line-through;}
+        alt, [rol="altÇizgi"] {
+            color: #0c0;
+            text-decoration: underline;}
+        altust, [rol="altüstÇizgi"] {
+            color: #cc0;
+            text-decoration: underline overline;}
+        ust, [rol="üstÇizgi"], orta, [rol="ortaÇizgi"], alt, [rol="altÇizgi"], altust, [rol="altüstÇizgi"] {
+            text-decoration-thickness: 2px;
+            background-color: #fcc;
+            padding: 2px 4px;
+            margin: 0 1px;}
+
+        [rol="yorum"] {
+            padding: 5px 10px 10px 15px;
+            background: #eee;
+            border: 1px solid #ccc;
+            width: 250px;
+            margin-bottom: 10px;}
+        [rol="yorum"] > [rol="yorum"] {width: 84%;}
+        [veri-yazarý="mahmut"] {border-left: 7px solid red;}
+        [veri-yazarý="nihat"] {border-left: 7px solid blue;}
+        [rol="yorum"] .yorum-metni {
+            line-height: 1.5;
+            font-size: 0.9rem;}
+        [rol="yorum"] h3 {font-size: 1.1rem;}
+        [rol="yorum"] time {font-size: 0.7rem;}
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Ýlkseviye HTML Örnekleri</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section taným="Örnek1">
+        <h2>Radyo Buton Seçimi</h2>
+        <div taným="Favori meyveni seç: Anket sonucu enyüksek puanlý meyve gelecek haftanýn menüsüne koyulacak.">
+            <p>Tek bir favori meyvaný iþaretle:</p>
+            <form>
+                <ul>
+                    <li><label>Elma: <input type="radio" name="meyva" value="elma"></label></li>
+                    <li><label>Portakal: <input type="radio" name="meyva" value="portakal"></label></li>
+                    <li><label>Muz: <input type="radio" name="meyva" value="muz"></label></li>
+                    <li><label>Üzüm: <input type="radio" name="meyva" value="üzüm"></label></li>
+                    <li><label>Þeftali: <input type="radio" name="meyva" value="þeftali"></label></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+    <hr/>
+
+    <section taným="Örnek2">
+        <h2>Kelime Üstü Çizgiler</h2>
+        <p>Feride'nin kedisi <ust>Pamuk adlý beyaz Van kedisidir.</ust><alt>Sarýoðlan adlý sarý Ankara kedisidir.</alt></p>
+        <p>Feride'nin kedisi <span rol="ortaÇizgi">Pamuk adlý beyaz Van kedisidir.</span><span rol="altÇizgi">Sarýoðlan adlý sarý Ankara kedisidir.</span></p>
+        <p>Feride'nin kedisi <span rol="altüstÇizgi">Pamuk adlý beyaz Van kedisidir.</span><span rol="altÇizgi">Sarýoðlan adlý sarý Ankara kedisidir.</span></p>
+    </section>
+    <hr/>
+
+    <section taným="Örnek3">
+        <h2>Yorumlar</h2>
+        <p>Þarkýnýn son yarýsý, keskin sonuç bitimi öncesi <mark arya-detaylarý="sicim-1 sicim-2">gitar solosunun sonunda</mark> zirve yapan yavaþ hilalimsi yükseliþ hissettirir.</p>
+
+        <div rol="yorum" id="sicim-1" veri-yazarý="mahmut">
+            <h3>Mahmut þöyle dedi</h3>
+            <p class="yorum-metni">Tam bu anda daha çok çýngýraklý zil sesleri olmasýný tavsiye ederim.</p>
+            <p><time gününtarihi="2020-09-03T13:25">Eylül 03 2020, 13:25</time></p>
+        </div>
+
+        <div rol="yorum" id="sicim-2" veri-yazarý="nihat">
+            <h3>Nihat þunu söyledi</h3>
+            <p class="yorum-metni">Gitar solosu daha fazla koro dokunuþu ve biraz daha düþük volümle fena olmazdý.</p>
+            <p><time gününtarihi="2020-09-03T13:28">Eylül 03 2020, 13:28</time></p>
+        </div>
+
+        <p>Þarkýnýn son yarýsý, keskin sonuç bitimi öncesi <mark aria-detaylarý="sicim-3">gitar solosunun sonunda</mark> zirve yapan yavaþ hilalimsi yükseliþ hissettirir.</p>
+
+        <div rol="yorum" id="sicim-1" veri-yazarý="mahmut">
+            <h3>Mahmut þöyle dedi</h3>
+            <p class="yorum-metni">Tam bu anda daha çok çýngýraklý zil sesleri olmasýný tavsiye ederim.</p>
+            <p><time gününtarihi="2020-09-03T13:25">Eylül 03 2020, 13:25</time></p>
+
+            <div rol="yorum" veri-yazarý="nihat">
+                <h3>Nihat þunu söyledi</h3>
+                <p class="yorum-metni">Bilemiyorum. Ancak görüþüm sanki çýngýraklý zil solodan çýkarýlmalýydý.</p>
+                <p><time gününtarihi="2020-09-03T13:34">Eylül 03 2020, 13:34</time></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function fonk2() {
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) HTML metin ayarlarý, yazý fonlarý, resim, vidyo ve animasyon örnekleri çalýþýlacaktýr." +
+            "<br/>2) Ýlk örnek div ve form gruplamasý içindeki input type='radio' radyo düðmeleri tikel \
+            seçimidir. Herbir radio input name='meyva' ayný adla, seçilenin sadece birinin geçerliliði \
+            saðlanýr; diðerini seçerseniz önceki seçilen çentiksizleþir." +
+            "<br/>3) Ýkinci örnek kelimeler üstüne çizilen çizgilerdir, ve 4 çeþittir: text-decoration: overline, \
+            underline, line-through, underline overline. Bu örnek düzgün cümleyi altçizgili; hatalýlarý \
+            ise üst, orta ve alt çizgili karalamýþtýr. CSS ayarlarý hem ust/utf-8 etiketadý hem de rol='üstÇizgi' \
+            span kimliðiyle yapýlmýþtýr." +
+            "<br/>4) Üçüncü örnek, yorumlarýn cümle içinde ýþýldatýlmasý veya küçük þerh kutucuklarýyla \
+            biçimlendirilmesidir. Yorumlarýn CSS ayarlarý rol='yorum' kutu zemin renk ve ebatlarý, ve \
+            class='yorum-metni' paragraf özellikleri, ile veri-yazarý='mahmut', veri-yazarý='nihat' sol sýnýr renk \
+            ayarlarýyla, yorumun zamaný time etiket adlý font-size ebatlamalarýný belirleyerek tamamlanmýþtýr.\
+            Iþýldayan paragraf ibareleri ise mark etiketiyle saðlanmýþtýr."
+    </script>
+</body>
+</html>

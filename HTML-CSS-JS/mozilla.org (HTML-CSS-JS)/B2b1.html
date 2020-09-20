@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2b1.html: CSS kutu hizalanmasýnda flex box auto margin (esnek kutu otomarj) etkisi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        body {
+            font: 1.2em Helvetica, Arial, sans-serif;
+            margin: 20px;
+            padding: 0;}
+        textarea {
+            font-family: monospace;
+            display: block;
+            margin-bottom: 10px;
+            background-color: #F4F7F9;
+            border: none;
+            border-left: 6px solid #558ABB;
+            color: #4D4E53;
+            width: 90%;
+            max-width: 700px;
+            padding: 10px 10px 0px;
+            font-size: 90%;}
+        textarea:nth-of-type(1) {height: 60px}
+        textarea:nth-of-type(2) {height: 140px}
+        .düðme-kutusu {
+            text-align: right;
+            width: 90%;
+            max-width: 700px;
+            padding: 10px 14px 10px 10px;
+            font-size: 100%;
+            background-color:LightGray;}
+        section {
+            width: 90%;
+            max-width: 700px;
+            border: 2px solid #4D4E53;
+            border-radius: 10px;
+            padding: 10px 14px 10px 10px;
+            margin-bottom: 10px;
+            background-color:LightGray;}
+        .kutu {
+            width: 700px;
+            background-color: DarkKhaki;
+            border: 3px dotted rgb(0,139,168);}
+        .kutu >* {
+            width: 40px;
+            padding: 20px;
+            border: 2px solid rgb(96,139,168);
+            border-radius: 10px;
+            background-color: rgba(96,139,168,0.7);}
+    </style>
+    <style class="deðiþtirilebilir">
+        .kutu {display: flex;}
+        .kaydýr {margin-left: auto;}
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Kutu Flex Auto Margin</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section>
+        <div class="kutu">
+            <div>Bir</div>
+            <div>Ýki</div>
+            <div>Üç</div>
+            <div class="kaydýr">Dört</div>
+            <div>Beþ</div>
+        </div>
+    </section>
+
+    <textarea class="deðiþtirilebilir-css">
+.kutu {display: flex;}
+.kaydýr {margin-left: auto;}
+    </textarea>
+
+    <textarea class="deðiþtirilebilir-html">
+<div class="kutu">
+    <div>Bir</div>
+    <div>Ýki</div>
+    <div>Üç</div>
+    <div class="kaydýr">Dört</div>
+    <div>Beþ</div>
+</div>
+    </textarea>
+
+    <div class="düðme-kutusu">
+        <input id="yenidenBaþlat" type="button" value="Yeniden Baþlat">
+    </div>
+
+    <script>
+        function fonk2() {
+            let kýsým = document.querySelector ("section");
+            let deðiþtirilebilir = document.querySelector (".deðiþtirilebilir");
+            let metinalanýHTML = document.querySelector (".deðiþtirilebilir-html");
+            let metinalanýCSS = document.querySelector (".deðiþtirilebilir-css");
+            let yenidenBaþlat = document.getElementById ("yenidenBaþlat");
+            let htmlKod = metinalanýHTML.value;
+            let cssKod = metinalanýCSS.value;
+
+            function kodla() {
+                deðiþtirilebilir.innerHTML = metinalanýCSS.value;
+                kýsým.innerHTML = metinalanýHTML.value;
+            } // func sonu...
+
+            yenidenBaþlat.addEventListener ("click", function () {
+                metinalanýHTML.value = htmlKod;
+                metinalanýCSS.value = cssKod;
+                kodla();
+            }); // yen..sonu...
+
+            metinalanýHTML.addEventListener ("input", kodla);
+            metinalanýCSS.addEventListener ("input", kodla);
+            window.addEventListener ("load", kodla);
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) Ardýþýk kutularýn CSS display:flex ve margin-left:auto vasýflarýyla oynanacaktýr." +
+            "<br/>2) Azami 700px geniþliðinde section kutusuna, herbiri 40px geniþliðinde 5 küçük \
+            kutucuk flex/esnek display göster vasýf deðeriyle yerleþtirilmiþtir. Ancak bu kutucuklardan \
+            dördüncüsüne diðerlerinden farklý olarak margin-left:auto css vasýf deðeri atanmýþtýr. \
+            Bu sebeple son 2 kutucuk 700px enindeki section kutusunun (auto gereði) saðýna kaymýþtýr." + fonk2() +
+            "<br/>3) Biz bu CSS ve alttaki div HTML ayarlarýný istediðimiz gibi oynayabilir, etkilerini kutu \
+            hizalamalarýndan gözlemleyebilir; yeniden baþlat sað alt düðmeyi týklayarak tekrar baþtaki \
+            orijinal ayara dönebiliriz." +
+            "<br/>4) Örneðin display:block/none/inline, margin-left:0/50px/-100px/1000px, yeni bir/çok div kutu \
+            ilavesi yada mevcudun eksiltilmesi deðiþiklikleri yapabiliriz."
+    </script>
+</body>
+</html>

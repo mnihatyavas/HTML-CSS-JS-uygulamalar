@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2a2.html: CSS transition-timing-function vasfýnýn frames, steps ve ease-in deðerleri örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:0em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        div {
+            position: relative;
+            width: 5%;
+            height: 200px;
+            background-color: red;
+            transition-property: all;
+            transition-duration: 5s;
+            transition-iteration-count: infinite;}
+        p {
+            position: relative;
+            min-width: 350px;
+            top: 10px;
+            left: 10px;}
+        .kutu1 {transition-timing-function: frames(5);}
+        .kutu2 {transition-timing-function: steps(5);}
+        .kutu3 {transition-timing-function: ease-in;}
+        div:hover {
+            width: 100%;
+            background-color: blue;}
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Geçiþ Zamanlama Fonksiyonu</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <div class="kutu1"><p>transition-timing-function: frames(5)<p></div>
+    <div class="kutu2"><p>transition-timing-function: steps(5);<p></div>
+    <div class="kutu3"><p>transition-timing-function: ease-in;<p></div>
+
+    <script>
+        function fonk2() {
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) CSS vasýflarýndan transition-timing-function ve aldýðý deðerler canlandýrýlacaktýr." +
+            "<br/>2) Geçiþ-zamanlama-fonksiyonu deðerleri frame/çerçeve, step/adým ve ease-in/yavaþ-baþla \
+            olabilir. HTML div etiketli kutularýn CSS kutu ebat, renk, geçiþ süresi ve sýklýðý tanýmlanýr. \
+            Önceki örnekteki @keyframes yerine div.hover fare üzerinde duyarlýlýðý saðlanýr." +
+            "<br/>3) Sýnýf/class .kutu'larla HTML sayfasýna bu div ve özellikli fonksiyon içeren kutu'lar \
+            tanýmlanýr." +
+            "<br/>4) Üzerinde hover bloðuna son en %100 ve son zemin rengi mavi tanýmlanarak, \
+            ne zaman sadece sayfa solunda %5'i görünen kutucuklarýn hangisi üzerinde fare dolaþtýrýlýrsa \
+            kalýndýðý sürece kutu sona kadar ilerler ve durur. Kutudan uzaklaþýldýðýnda kutu tekrar sol baþa \
+            %5 ebata büzülür." +
+            "<br/>5) Tüm kutular sonsuz tekrar yerine, sadece kullanýcýnýn hangi sol kutu üzerini iþaretlerse \
+            üzerinde kalýndýðý sürece kutu %100 en'e geniþler ve durur."
+    </script>
+</body>
+</html>

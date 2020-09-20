@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>A3.html: HTML sayfasýný harici JS script taslak dosyasýyla vasýflandýrma örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: Navy; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+     </style>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> -->
+    <link href="A3.css" rel="stylesheet">
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>JS'li HTML</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h1>Mozilla muhteþem!</h1>
+    <img src="resim/firefox4.png" alt="Firefox logosu: Dünyayý çevreleyen ak tilki." width="256" />
+    <h4>Resmi týkla, deðiþsin</h4>
+    <ul>
+        <li>Teknisyenler</li>
+        <li>Düþünürler</li>
+        <li>Kurucular</li>
+    </ul>
+    <p>Beraberce Ýnterneti canlý ve eriþilebilir kýlmak için gece gündüz beraberce çalýþmaktalar;
+        böylece dünyadaki her isteyen aðsayfalarýnýn yaratýcýlarý ve katkýcýlarý hakkýnda bilgilendirilebilir.
+        Ýnanýyoruz ki, insanoðlunun birlikteki bu açýk platformlu çalýþma þevki bireysel geliþme ve
+        kolektif geleceðimiz için elzemdir.</p>
+    <p>Misyonumuzun sürdürülebilirlik deðerleri ve prensiplerini daha fazla öðrenmek isteyen
+        <a href="https://www.mozilla.org/en-US/about/manifesto/" target="_">Mozilla Manifesto'sunu</a>
+        okumalýdýr.</p>
+    <br/>
+    <div style="text-align:center;"><button>Kullanýcýyý deðiþtir</button></div>
+    <script src="A3.js"></script>
+
+    <script>
+        function fonk3() {
+        } // func sonu....
+
+        document.getElementById ("göster").innerHTML =
+            "1) Baþlýk head kýsmýnda link baðlantýsýyla harici yazý fonlarý eklentisi (http çevrimiçi yada css \
+            disk dosyasýndan) yapabiliriz. Benzer þekilde body gövde içinde script etiketiyle harici src \
+            kaynak JS dosyasý okutabiliriz." +
+            "<br/>2) JS kodlamasýyla, resmin üzerine her týkladýðýmýzda ardýþýk if-else sorgusuyla, deðiþtirilecek \
+            birsonraki resmi src kaynaða setAttribute ile atayabiliriz.\
+            <br/>Bilindiði gibi localStorage tarayýcý görünmeyen belleði olup, buraya setItem ile isimli bir dizge \
+            saklayabiliriz. Ýlk anda isim bulamazsa sayfa açýlýr açýlmaz düðmeye basmadan kullanýcý adýný \
+            girmemiz istenir. Sonraki deðiþiklikler düðme týklanarak yapýlýr. Veri girilmeden çýkýlsýn istenirse \
+            ad=null durumunda 'return false', yok illaki ad girilme þartý olacaksa da ad=null durumunda \
+            kullanýcýAdýKur() iþletilir." +
+            "<br/>3) Tek h1 ve img varsa, bunu document.querySelector() ile (ilkini) aratabilir, çokluysa da \
+            herbir etiketli h1/img elemanýna id=ad1 ile farklý adlar verip ad1.onclick=function{} ile de týklanma \
+            olayýný yönetebiliriz." +
+            "<br/>4) HTML sayfasýndan baþka bir aðsayfasýna yönlendirme a/anchor çapa etiketli elemanla \
+            href ve target vasýflarýyla saðlanabilir. Örnekte 'Mozilla Manifestosu', týklandýðýnda ilgili https adresine \
+            yönlendirmektedir." +
+            "<br/>5) Baþlýk h1 gölgelendirmesinin dörtlü deðerleri sað-sol/+- kaydýr, aþaðý-yukarý/+- kaydýr, \
+            flulaþtýrma ve gölge rengidir." +
+            "<br/>6) body html sayfasýnda 84% oranýyla deðiþken tanýmlanmýþ olup 'margin:0 auto' ile \
+            ortalanmasý saðlanmýþtýr. h1 metnini ortalama ise 'text-align:center' ile yapýlmýþtýr."
+    </script>
+  </body>
+</html> 

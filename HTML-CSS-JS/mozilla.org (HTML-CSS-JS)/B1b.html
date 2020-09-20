@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B1b.html: Aðsayfasý tasarýmýnda özel yazý fonlarýnýn kullanýlmasý örneði.</title>
+<!--
+    <link rel="preload" href="B1/fonts/fonts/cicle_fina-webfont.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="B1/fonts/fonts/zantroke-webfont.woff2" as="font" type="font/woff2">
+-->
+    <link href="B1/fonts/B1b.css" rel="stylesheet" type="text/css">
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Özel Yazý Fonlarý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h1>Hipster ipsum is the best</h1>
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&amp;B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&amp;B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+
+    <h2>It is the quaintest</h2>
+    <p>Bespoke green juice aesthetic leggings DIY williamsburg selvage. Bespoke health goth tote bag, fingerstache venmo ennui thundercats butcher trust fund cardigan hella. Wolf vinyl you probably haven't heard of them taxidermy, ugh quinoa neutra meditation asymmetrical mixtape church-key kitsch man bun occupy. Knausgaard butcher raw denim ramps, offal seitan williamsburg venmo gastropub mlkshk cardigan chillwave chartreuse single-origin coffee twee. Ethical asymmetrical banjo typewriter fap. Polaroid waistcoat tousled selfies four dollar toast locavore thundercats. Truffaut post-ironic skateboard trust fund.</p>
+
+    <h2>No, really...</h2>
+    <p>Trust fund celiac farm-to-table PBR&amp;B. Brunch art party mumblecore, fingerstache cred echo park literally stumptown humblebrag chambray. Mlkshk vinyl distillery humblebrag crucifix. Mustache craft beer put a bird on it, irony deep v poutine ramps williamsburg heirloom brooklyn.</p>
+    <p>Taxidermy tofu YOLO, sustainable etsy flexitarian art party stumptown portland. Ethical williamsburg retro paleo. Put a bird on it leggings yuccie actually, skateboard jean shorts paleo lomo salvia plaid you probably haven't heard of them.</p>
+
+    <script>
+        function fonk2() {
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) Özel yazý fonlarý yüklenerek baþlýk ve paragraflarda kullanýlmýþtýr." +
+            "<br/>2) Stil link baðlantý preload, href, ref ve as yüklemeyle zantrokeregular ve ciclefina \
+            fon aileleri yüklenmiþtir." +
+            "<br/>3) Bu fon aileleri harici CSS stil dosyasýnda @font-face ile tanýmlanmýþ, sonra da \
+            h1 h2 baþlýklar için zantrokeregular, p paragraf için de ciclefina font-family kullanýma sunulmuþtur." +
+            "<br/>4) Alttaki dolgu latince ve ingilizce karmasý metinde bu 2 fon ailesi ayarlarý görülmektedir."
+    </script>
+</body>
+</html>

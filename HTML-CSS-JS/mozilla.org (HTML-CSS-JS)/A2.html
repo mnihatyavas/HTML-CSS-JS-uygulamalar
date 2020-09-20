@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>A2.html: HTML sayfasýný harici stil dosyasýyla vasýflandýrma örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: MidnightBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        ul {
+            /*display: flex;*/
+            /*list-style-type: none;*/
+            /*padding: 0;*/}
+     </style>
+    <link href="A2.css" rel="stylesheet" />
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Stilli HTML</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h1>Sayfa Baþlýðý</h1>
+    <p id="göster2" style="color:red;">Metin paragrafý.</p>
+    <img src="resim/arkadaþ.jpg" alt="Kedi ve civciv arkadaþlýðý" width="300" />
+    <br/>
+    <ul>
+        <li>Ýlk menü birimi</li>
+        <li>Ýkinci menü birimi</li>
+        <li>Üçüncü menü birimi</li>
+        <li>vb.</li>
+    </ul>
+    <hr/>
+    <h1>Mozilla muhteþem!</h1>
+    <img src="resim/firefox3.png" alt="Firefox logosu: Dünyayý çevreleyen kýzýl tilki.">
+    <ul>
+        <li>Teknisyenler</li>
+        <li>Düþünürler</li>
+        <li>Kurucular</li>
+    </ul>
+    <p>Beraberce Ýnterneti canlý ve eriþilebilir kýlmak için gece gündüz beraberce çalýþmaktalar;
+        böylece dünyadaki her isteyen aðsayfalarýnýn yaratýcýlarý ve katkýcýlarý hakkýnda bilgilendirilebilir.
+        Ýnanýyoruz ki, insanoðlunun birlikteki bu açýk platformlu çalýþma þevki bireysel geliþme ve
+        kolektif geleceðimiz için elzemdir.</p>
+    <p>Misyonumuzun sürdürülebilirlik deðerleri ve prensiplerini daha fazla öðrenmek isteyen
+        <a href="https://www.mozilla.org/en-US/about/manifesto/" target="_">Mozilla Manifesto'sunu</a>
+        okumalýdýr.</p>
+
+    <script>
+        function fonk3() {
+            setTimeout ( ()=>{göster2.textContent =  "Paragraf metnini 5S sonra deðiþtirdik!";}, 3000);
+        } // func sonu....
+
+        document.getElementById ("göster").innerHTML =
+            "1) Aðsayfasý tasarýmý için gereken araçlar: bir dizüstü/masaüstü bilgisayar; windows, macOS \
+            yada linux iþletim sistemi; notepad gibi bir metin editörü; chrome veya firefox gibi bir tarayýcý; \
+            paint gibi bir resim ve grafik editörü; localhost gibi bir yerel servis sunucu (python -m http.server, \
+            localhost:8000/dosya.html)." +
+            "<br/>2) Tim Berners Lee/TimBL 1980'de ilk notebook programýný yazdý; sonra http/HypertextTransferProtocol, \
+            www/WordWideWeb, html/HyperTextMurkupLanguage temellerini attý; 1994'te W3C/WordWideWebConsortium \
+            w3c.org kurdu; halen HTML, CSS, JS geliþtirme çalýþmalarýný sürdürmekte." +
+            "<br/>3) HTML, CSS ve JS bir evin duvarlarý, aksesuarlarý ve fonksiyonalitesi gibidir. head/baþlýk \
+            altýndaki style bölümünde çok basit ul sýralamasýz-listeleme CSS stil ayarý ve yine body gövde içindeki \
+            script JS taslak kýsmýnda çok basit bir dinamik gecikmeli p paragraf içerik deðiþikliði yaptýk. " + fonk3() +
+            "<br/>4) Harici CSS dosyasýndaki ayarlarý head/baþlýk içinde link/baðlantý href/hypertext-referance \
+            ve rel vasýflarýyla sayfaya dahil ederek; firefox logo resmini (kendini tamamen sayfa altrengine adapte \
+            eden), h1 (gölgeli) baþlýðý, p paragraf ayarlarýný-renklerini tanýmladýk. Aðsayfasý body gövde geniþliðini \
+            86% ile deðiþebilir tarayýcý enine duyarlý kýldýk. Ayrýca daha detaylý bilgi isteyenleri a/anchor/çapa içinde, \
+            yeni bir target='_' sayfada href Mozilla Manifesto internet sayfasýna yönlendirdik."
+    </script>
+  </body>
+</html> 
