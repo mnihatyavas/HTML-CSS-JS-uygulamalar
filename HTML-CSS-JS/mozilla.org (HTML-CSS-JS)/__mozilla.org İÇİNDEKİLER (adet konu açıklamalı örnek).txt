@@ -1,0 +1,164 @@
+https://developer.mozilla.org/en-US/docs/Web/Tutorials
+https://github.com/mdn
+
+ÝÇÝNDEKÝLER (adet konu anlatýmlý örnek)
+------------------------------------------------------------------------------------------------------------------
+A. Beginner Web Site Designer Novice
+    A1. Beginner HTML Site
+        A1a.html: Basit bir web aðsayfasýnýn HTML-CSS ve JS ile tasarýmý örneði.
+        A1a.css: Basit bir web aðsayfasýnýn CSS stil ayarlarý harici dosyasý alt-örneði.
+        A1a.js: Basit bir web aðsayfasýnýn JS taslak kodlarý harici dosyasý alt-örneði.
+        A1b.html: Aðsayfasýnýn resim ve mesajlý olay yönetimi örneði.
+        A1c.html: Tasarladýðýnýz HTML aðsayfanýzý Web'de nasýl yayýnlarsýnýz örneði.
+    A2. Beginner Styled HTML Site
+        A2.html: HTML sayfasýný harici stil dosyasýyla vasýflandýrma örneði.
+        A2.css: Harici stil dosyasý içerikleri alt-örneði.
+    A3. Beginner Scripted HTML Site
+        A3.html: HTML sayfasýný harici JS script taslak dosyasýyla vasýflandýrma örneði.
+        A3.css: Harici  css stil ayarlarý alt-örneði.
+        A3.js: Harici JS script taslak dosyasýyla olay kontrolu alt-örneði.
+    A4. Beginning Programming with HTML-CSS-JS Tutorials
+        A4.html: HTML-CSS-JS stilli aðsayfasý kodlamacýlýðýna baþlangýç dersleri örneði.
+B. HTML-CSS-JS Introduction
+    B1. HTML Examples
+        B1a.html: Aðsayfasý tasarýmýnda ilk seviye HTML örnekleri.
+        B1b.html: Aðsayfasý tasarýmýnda özel yazý fonlarýnýn kullanýlmasý örneði.
+        B1c.html: Aðsayfasý tasarýmýnda sayfaya resim konulmasý örneði.
+        B1d.html: Aðsayfasý tasarýmýnda sayfaya mp4 video ilavesi örneði.
+        B1e.html: Aðsayfasý tasarýmýnda JS canvas/tuval animasyonla zýplayan çokrenkli toplar örneði.
+    B2. CSS Examples
+        B2a1.html: CSS animation-timing-function vasfýnýn frames, steps ve ease-in deðerleri örneði.
+        B2a2.html: CSS transition-timing-function vasfýnýn frames, steps ve ease-in deðerleri örneði.
+        B2b1.html: CSS kutu hizalanmasýnda flex box auto margin (esnek kutu otomarj) etkisi örneði.
+        B2b2.html: CSS flex kutu hizalanmasýnda  justify-content (esnek kutu eþit aralýk) etkisi örneði.
+        B2b3.html: CSS grid kutu hizalanmasýnda  justify-content (ýzgara kolonlu kutu eþit aralýk) etkisi örneði.
+        B2b4.html: CSS grid kutu hizalanmasýnda  grid-gap (ýzgara hücreleri arasý boþluk) etkisi örneði.
+        B2c.html: Listleme ul-li harf/rakam/sembol sýralama dünya sayaç stilleri örneði.
+        B2d.css: Alttaki B2d00 ve B2e0 örneklerinde kullanýlan ortak CSS vasýflarý alt-örneði.
+        B2d.js: Alttaki B2d00 ve B2e0 örneklerinde kullanýlan ortak JS kodlamasý alt-örneði.
+        B2d01.html: Ekmekkýrýntýlý seyrüseferle içiçe altmenülere eriþim örneði.
+        B2d02.html: Izgara gösterimde tarayýcý geniþliðine duyarlý resimli kartlar sergileme örneði.
+        B2d03.html: Büyük kabdaki küçük kutucuðun dikey/yatay ortalanmasý örneði.
+        B2d04.html: Kabdaki herbir paragrafýn flex'le ayrý kolonlaþtýrýlmasý örneði.
+        B2d05.html: Kabdaki taþan paragrafýn flex-wrap'le alta satýrlaþtýrýlmasý örneði.
+        B2d06.html: Izgara grid serilimle taþan kolonunda kendi hücresinde sýðýþmasý örneði.
+        B2d07.html: Çoklu kolonlar ve ara sýnýrlarýný çizme örneði.
+        B2d08.html: CSS ve HTML ayarlarýnýn deðiþtirilebilir þablonlarýný yaratma örneði.
+        B2d09.html: Izgara hücrelerinin kab içinde çeþitli serilim yöntemleri örneði.
+        B2d10.html: Esnek serilim rozetli listeleme gruplarý örneði.
+        B2d11.html: Medya resim-içerik-dipnotlu çoklu ýzgara hücre serilimi örneði.
+        B2d12.html: Medya resim-içerik-dipnotlu çoklu ýzgara hücre serilimi sonrasý destek örneði.
+        B2d13.html: Yatay sayfa numaralarýyla birönce/sonraya yada istenilene seyrüsefer örneði.
+        B2d14.html: Üst yatay seyrüsefer çubuðundaki isimli menü seçeneklerine atlama örneði.
+        B2d15.html: Taþan grid sayfa gövdesinin, konumuna yapýþkan sonnotu alta kaydýrmamasý örneði.
+        B2d15.html: Taþan flex sayfa gövdesinin, yapýþkan sonnotu alta kaydýrmamasý örneði.
+        B2e1.html: Kab içinde kare birimi izleyen metin örneði.
+        B2e2.html: Metin içi birkaç ibarelerin satýr içindeki bütünlüðünü inline-block'la saðlamasý  örneði.
+        B2e3.html: Birkaç kutucuk ve metnin inline-flex serilimi örneði.
+        B2e4.html: Bir dizgenin ibarelerini flex'le aralýklý konumlama örneði.
+        B2e5.html: Blok esnek ve satýriçi esnek serilim örneði.
+        B2f1.html: Renkli sýnýrlanmýþ kutunun herbir sýnýr renginin deðiþtirilebilmesi örneði.
+        B2f2.html: Resmin renk tonlarýnýn 360 derece deðiþtirilebilmesi örneði.
+        B2f3.html: Fon ailesi, ebatý, stili ve rengini deðiþtirilebilme örneði.
+        B2f4.html: Resmin yatay ve  dikey düzlemle açýsal bozulmalarý örneði.
+        B2f5.html: Çeþitli filter süzgeçleme seçenekleriyle resmi görüntüleme örneði.
+        B2f6.html: Çeþitli font yazýbiçimi vasýflandýrma seçenekleriyle verili metni deðiþtirme örneði.
+        B2f7.html: Çeþitli transform resim dönüþtürme css vasýf seçenekleri örneði.
+        B2g1.html: Tarayýcýnýn iki css vasfý AND/VE þartla desteklemesinin testi örneði.
+        B2g2.html: Tarayýcýnýn tek css vasfý NOT/DEÐÝL þartla desteklemesinin testi örneði.
+        B2g3.html: Tarayýcýnýn iki css css vasfýndan enaz OR/VEYA birini desteklemesinin testi örneði.
+        B2g4.html: Farklý hacimli üç sola kayar kutu serilimi örneði.
+        B2g5.html: Farklý hacimli üç sola kayar kutularýn ýzgara kolon serilimi örneði.
+        B2g6.html: Üçlü yanyana ýzgara kutunun kolonlarýna tam yayýlýmý örneði.
+        B2g7.html: Üçlü yanyana ýzgara kutunun kab kolonlarýna destekli tam yayýlýmý örneði.
+        B2h01.html: Metin içi ibarelerin diðer satýrlardan ayrý blok gösterimi örneði.
+        B2h02.html: Kab içi kutularýn esnek gösterimli serilimi örneði.
+        B2h03.html: Paragraf içi ibarelerin satýriçi-blok gösterimi örneði.
+        B2h04.html: Paragraf içi ibarelerin satýriçi kýrýlabilir gösterimi örneði.
+        B2h05.html: Paragraflarýn birbirleriyle varsayýlý normal akýþ örneði.
+        B2h06.html: Paragraflar arasýndaki çifte marjýn alttakinin otomatikmen çökmesi örneði.
+        B2h07.html: Sýfýr marjlý paragrafýn üstüste binmesi örneði.
+        B2h08.html: Paragraf geniþliðini içindeki kaba orantýlama örneði.
+        B2h09.html: Kutu akýþýnýn kab kökü içinde kapsanmasý örneði.
+        B2h10.html: Kab ve kutu taþmasýnda otomatik kaydýraç tebaruzu örneði.
+        B2h11.html: Kab içi serilimsiz kayan kutu örneði.
+        B2h12.html: Paragraf içi birkaç kelimenin diðerlerinden farklýlaþtýrýlmasý örneði.
+        B2h13.html: Bir paragrafýn mutlak konumla tarayýcýya sabit yerleþtirilmesi örneði.
+        B2h14.html: Kab içi kayan kutu ile paragraflarýn yerleþimi örneði.
+        B2h15.html: Kab içi ul-li listesini yatay sýralama örneði.
+        B2h16.html: Kab içi paragraflardan birinin göreceli konumlandýrýlmasý örneði.
+        B2h17.html: Kab ve kab içi kutudaki otomatik taþma örneði.
+        B2h18.html: Kab içi kutudaki taþmanýn gizlenmesi örneði.
+        B2h19.html: Kab ve kab içi kutu taþmanýn yönetilmemesi örneði.
+        B2h20.html: Kab ve kab içi kutuda taþma olsun olmasýn dikey kaydýraç olmasý örneði.
+        B2h21.html: Kab ve kab içi kutuda taþma olsun olmasýn yatay ve dikey kaydýraç olmasý örneði.
+        B2h22.html: Kab ve kab içi kutuda yatay taþmanýn alta sarmayýp üçnoktalý gizlenmesi örneði.
+        B2h23.html: Serilimin dikey-saðdansola yada yatay-üsttenalta yerleþtirilmesi örneði.
+        B2h24.html: Paragraflara solda dikey baþlýk tahsisi örneði.
+        B2h25.html: Paragraflarýn saðdan sola yada soldan saða dikey serilimi örneði.
+        B2h26.html: Dikey paragraf satýriçinde yatay ibareler örneði.
+        B2h27.html: Kutu içinde dikey-saðsol serimlenen paragraflar ve resim örneði.
+        B2h28.html: Yatay ve  dikey serilimli kutularda satýriçi ebatý örneði.
+        B2i.css: Örneklerde style link'le ortak kullanýlan css vasýflarý alt-örneði.
+        B2i.js: Örneklerde script src'la ortak kullanýlan javascript kodlamalarý alt-örneði.
+        B2i1.html: IBMPlex ve TR GALLERIA yazý fonlarý uygulamalarý örneði.
+        B2i2.html: Playfair Display yazý fonu uygulamalarý örneði.
+        B2i3.html: Ýki farklý yazýailesi arasýndan birini etkinleþtirme örneði.
+        B2i4.html: Küçük büyük harflerle yazýlým örneði.
+        B2i5.html: Doðu asya kokoro yazý fonu harflerinin seçilmesi örneði.
+        B2i6.html: Playfair yazýfonunun estetik özllikleri örneði.
+        B2i7.html: Source-Serif yazýfonuyla eski ve yeni sayýsal görüntüler örneði.
+        B2i8.html: Source-Serif yazýfonuyla pay/payda, sýralýlar ve çizgili sýfýr örneði.
+        B2i9.html: Playfair yazýfonuyla üst ve alt rakanlarýn gösterimi örneði.
+        B2j1.html: Ýçiçe ýzgara serilim çoklu kolon-satýr hücreli altbirimleri tanýmlama örneði.
+        B2j2.html: Ýçiçe ýzgara serilim çoklu kolon-satýr hücreli altbirimleri tanýmlama örneði.
+        B2j3.html: Ýçiçe ýzgara serilim çoklu kolon-satýrlarda repeat'le satýr sayýsýný artýrma örneði.
+        B2j4.html: Ýçiçe ýzgara serilim çoklu kolon-satýrlarda ara boþluklar örneði.
+        B2j5.html: Izgara birimin satýr yüksekliðinin tanýmlý olmasý örneði.
+        B2j6.html: Izgara birimin satýr yüksekliðinin tanýmsýz olmasý örneði.
+        B2j7.html: Izgara birimin kolon adlarýnýn ismen tanýmlanmasý örneði.
+        B2j8.html: Izgara birim ve altbirimin satýr tanýmlarý örneði.
+        B2k1.html: Paragrafiçi bir grup dizgeyi dikey hizalama örneði.
+        B2k2.html: Paragrafiçi bir grup dizgeyi kýrýlabilir bloklama örneði.
+        B2k3.html: Yatay ve dikey yazýlým kipi örneði.
+        B2k4.html: Cümleiçi bir grup ibareye marj-tampon-sýnýr tanýmlama örneði.
+        B2k5.html: Bölüm içi metnin sola-ortaya-saða hizalanmasý örneði.
+        B2l.html: Çapa referanslý baðlantý sayfalarýna atlama örneði.
+        B2m.html: Normal bir paragraf akýþý ayarlarý örneði.
+        B2n01.html: Yurel resimli renk kademeli zemin örneði.
+        B2n02.html: Yurel resim renkleriyle zemin renginin çarpýlarak karýlmasý örneði.
+        B2n03.html: Zemine tekli ve çoklu yurel resim yerleþtirme örneði.
+        B2n04.html: Kutularýn sýnýr tip ebat ve renklerini belirleme örneði.
+        B2n05.html: Etiketli elemanlarýn zemin ve yazý rengi örneði.
+        B2n06.html: Sýnýrlý elemanlarýn köþelerini yuvarlama örneði.
+        B2n07.html: Dikdörtgensel ve dairesel alan zemin renklerini doðrusal ve ýþýnsal kademeleme örneði.
+        B2n08.html: Üstüste tabakalanan zemin renklerinin karýlmasý örneði.
+        B2n09.html: Üstüste çoklu resimli yurel zemini örneði.
+        B2n10.html: Zemin yurel tekli resme konum tanýmlama örneði.
+        B2n11.html: Zemin yurel resmini tekli yada çoklu serimleme örneði.
+        B2n12.html: Zemin yurel resminin en ve boy ebatlarýný tanýmlama örneði.
+        B2n13.html: Bloklu span kapsamý ve ul-li listeleme biçimi örneði.
+        B2n14.html: Bölüm çevresindeki sýnýr çeþitleri örneði.
+        B2n15.html: Kutu en-boy modellemesinin brüt-net çeþitlemesi örneði.
+        B2n16.html: Paragraflarý ve ul-li listeleri satýriçi-esnek serimleme örneði.
+        B2n17.html: Paragrafiçi span kapsamýn satýriçi blokla serimlenmesi örneði.
+        B2n18.html: Yatay seyrüsefer menü baðlantýlarý ul-li'yle tanýmlama örneði.
+        B2n19.html: Kab içindeki dört kenarýn kutu marj deðerleri örneði.
+        B2n20.html: Altalta gelen paragraf marjlarýnýn marj çökmesine maruz kalmasý örneði.
+        B2n21.html: Kutu içi padding tampon aralýklarý  örneði.
+        B2n22.html: Alýntý blockquote ayarlarýnýn tümden iptali örneði.
+        B2n23.html: Elemanýn ardýþýk deðiþen son ayarýnýn etkinliði örneði.
+        B2n24.html: Önemli !important ayarýn ardýþýk enson deðil hep geçerliliði örneði.
+
+    B3. JS Examples
+C. Learning web site design with HTML-CSS-JS Intermediate
+    C1. Learning Area Examples
+    C2. Interactive Examples
+D. Advanced HTML-CSS-JS Examples
+    D1. Advanced JS Fundamentals
+    D2. DOM Examples
+    D3. Fetch Examples
+    D4. indexedDB Examples
+    D5. Canvas Examples
+    D6. A Browser API Demo
+E. Extra
