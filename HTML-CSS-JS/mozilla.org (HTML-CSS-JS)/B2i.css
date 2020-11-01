@@ -1,0 +1,32 @@
+﻿* {box-sizing: border-box;}
+.sargı {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;}
+@media screen and (min-width: 52rem) {
+    .sargı {grid-template-columns: 1fr 1fr;} }
+textarea {
+    font-family: monospace;
+    display: block;
+    margin-bottom: 10px;
+    background-color: Linen;
+    border: none;
+    border-left: 6px solid #558ABB;
+    color: Black;
+    padding: 1rem 0;
+    width: 100%;}
+.düğme {
+    text-align: right;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 100%;}
+.kısım {
+    width: 100%;
+    border: 5px solid #FD4E53;
+    padding: 10px 14px 10px 10px;
+    margin-bottom: 10px;
+    background-color:DarkKhaki;}
+.kab * {
+    font-size: 4rem; /* 2em */
+    margin: 1.5rem 0;}

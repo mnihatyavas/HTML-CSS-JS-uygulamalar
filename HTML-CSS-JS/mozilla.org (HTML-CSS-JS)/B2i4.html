@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2i4.html: Küçük büyük harflerle yazýlým örneði.</title>
+    <link rel="stylesheet" href="B2i.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:10px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        @font-face{
+            font-family: 'Playfair Display';
+            src: url("B2i_fonlar/playfair-display/playfair-display-regular.woff");}
+        body {font: 1.2em "Playfair Display", "Times New Roman", serif;}
+    </style>
+    <style class="deðiþtirilebilir1"></style>
+    <style class="deðiþtirilebilir2"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Küçükbüyük Ýlkharf</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <div class="sargý">
+        <div class="demo1">
+            <section class="kýsým kýsým1">
+                <div class="kab kab1"></div>
+            </section>
+            <textarea class="oynanabilir-css1" style="height:150px;">
+/* Deðerler: normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps */
+.kab1 .küçük-büyük {font-variant-caps: small-caps;}
+.kab1 .tüm-küçük-büyük {font-variant-caps: all-small-caps;}
+.pasif .kab1 * {font-variant-caps: normal;}
+            </textarea>
+            <textarea class="oynanabilir-html1" style="height:100px;">
+<div class="kab kab1">
+    <p><span class="küçük-büyük">Küçük Büyük</span> ve <span class="tüm-küçük-büyük">Tüm Küçük Büyük</span></p>
+</div>
+            </textarea>
+            <input type="checkbox" id="demo1_kontrol" value="on" checked /> <label for="demo1_kontrol">Özellikler aktif</label>
+        </div>
+
+        <div class="demo2">
+            <section class="kýsým kýsým2">
+                <div class="kab kab2"></div>
+            </section>
+            <textarea class="oynanabilir-css2" style="height:150px;">
+/* 'smcp', 'c2sc' */
+.kab2 .küçük-büyük {font-feature-settings: 'smcp' 1;}
+.kab2 .tüm-küçük-büyük {font-feature-settings: 'c2sc' 1, 'smcp' 1;}
+.pasif .kab2 * {font-feature-settings: 'smcp' 0, 'c2sc' 0;}
+            </textarea>
+            <textarea class="oynanabilir-html2" style="height:100px;">
+<div class="kab kab2">
+    <p><span class="küçük-büyük">Küçük Büyük</span> ve <span class="tüm-küçük-büyük">Tüm Küçük Büyük</span></p>
+</div>
+            </textarea>
+            <input type="checkbox" id="demo2_kontrol" value="on" checked /> <label for="demo2_kontrol">Özellikler aktif</label>
+        </div>
+    </div>
+
+    <div class="düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden Baþlat">
+    </div>
+
+    <script src="B2i.js"></script>
+    <script>
+        function fonk2 () {
+        return "";} // func sonu...
+
+        göster.innerHTML =
+            "1) Sadece ilkharf yada tümharfler büyükküçük olarak sunulmaktadýr." +
+            "<br/>2) Dizgedeki sýnýflanmýþ ibareler font-variant-caps yada font-feature-settings CSS vasfýyla \
+            small-caps yani ilk harfi dahabüyük boy sonrakiler normal büyük yada all-small-caps yani tüm harfleri \
+            dahabüyük boy ebatlý yansýtýlmaktadýr." +
+            "<br/>3) Diðer harf ebatlandýrma deðerleri: normal, petite-caps, all-petite-caps, unicase, titling-caps \
+            olabilir." +
+            "<br/>4) Herbir penceredeki küçük-büyük ve tüm-küçük-büyük ibare grubunun teker teker tüm \
+            font-variant-caps deðerlerini yerleþtirerek aldýklarý biçemleri, ayrýca aktif/pasif farkýný, ve de bunlarýn \
+            font-feature-setting vasfýndaki smcp:0/1 ile c2sc:0/1 karþýlýklarýný test edin."
+    </script>
+</body>
+</html>
