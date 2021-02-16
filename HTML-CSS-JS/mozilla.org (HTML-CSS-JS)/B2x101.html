@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x101.html: Basit bir esnek serilim  örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Basit Bir Esnek Serilim</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 235px">
+.kutu {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    border: 5px dotted rgb(96, 139, 168);
+    background-color: DarkSlateGray;}
+.kutu>* {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 220px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç
+            <br>fazladan
+            <br>metne
+            <br>sahiptir
+        </div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Basit bir üç elemanlý esnek serilim sunulmaktadýr." +
+            "<br/>2) Buraya anamenüden ilgili a/anchor/çapa href adres yönlendirmesiyle ayrý bir tarayýcý sekmede \
+            sunum açýlarak gelinmektedir. Bu altprogramlarýn tümü (script B2d.js) ve (link B2d.css) temel JS kodlama \
+            ve CSS vasýflama harici dosyalarýný kullanmaktadýr. Ýstenildiði an sekme kapatýlýp, bilahere tekrar ayný \
+            altprograma geçiþ saðlanabilmektedir." +
+            "<br/>3) Temel gözat kýsým kutusu içinde mavi sýnýr ve yeþil zeminli kab, onun da içinde irinokta sýnýrlý ve \
+            metalik gri zeminde kutu, kutu alt elemanlarý olarak da üç adet sarý sýnýr ve 0.85 netlikteki gri zeminde \
+            div kutucuklar bulunmaktadýr." +
+            "<br/>4) Kutu ve içindeki div kutucuklarýn serilimi display:flex esnek olup 500px enindeki kutuyu üç \
+            kutucuk aralarý eþit boþluklu justify-content:space-between vasfýyla paylaþmaktadýr." +
+            "<br/>5) Tarayýcý eni kutu'nun 500px altýna düþerse kab overflow:auto gereði yatay kaydýraç belirmektedir." +
+            "<br/>6) Bu ilk anamenü-altprogram örneði olduðundan, öncelikle programlar arasý a-href geçiþi, script js \
+            kodlama ve link css vasýflar harici dosyayý çaðýrma hususu çalýþýlýp anlaþýlmalýdýr.\
+            <br/>Oynamak için CSS ve HTML pencerelerinde verili CSS vasýflarý ve HTML metinli elemanlarý tek tek \
+            deðiþtirilip sonuç etkileri gözlenmelidir.\
+            <br/>Bu ilk basit esnek serilim altprogramýn çalýþýlmasý kavranýrsa diðer altprogramlar da rahatça anlaþýlacaktýr. \
+            Böylece onlarca altprogramlý anamenü hususu da pratik kullaným iþlevselliði kazanmýþ olacaktýr."
+    </script>
+</body>
+</html>

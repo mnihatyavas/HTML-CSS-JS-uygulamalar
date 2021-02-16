@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x404.html: Esnek serilimde öncelik özellikli hatýrlatýcý notlar düzenleme örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Öncelikli Hatýrlatýcý Notlar</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 320px">
+.kutu {
+    display: flex;
+    /* flex: 200px; */
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+ .kart {
+    display: flex;
+    flex-direction: column; /* iptal */
+    border: 5px solid rgb(96, 139, 168);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .2);
+    color: Magenta;
+    margin: 5px;
+    padding: 10px;}
+.tarih {
+     order: -1; /* 0, 10 */
+     text-align: right;} /* left, center */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="kutu">
+        <div class="kart">
+            <h3>1.hatýrlatma andacý</h3>
+            <div class="tarih">18 Ocak 2021</div>
+            <p>Yaðmur yaðmazsa öðleden sonra sahil parkýnda 20km koþu; 10km biking, soðuk duþ, çamaþýr.</p>
+        </div>
+        <div class="kart">
+            <h3>2.hatýrlatma andacý</h3>
+            <p>Emekli maaþ günü; kredi kartý borçlarý, ev kirasý, faturalar internetten ödenecek.</p>
+            <div class="tarih">23 Ocak 2021</div>
+        </div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde öncelik özellikli andaç notlar tasarlama sunulmaktadýr." +
+            "<br/>2) Kutu esnek serilim olup içerik iki kart sola 5px marj aralýkla yaslý olacaktýr. Flex:200px de \
+            denilse gereksizdir, zira kutu enini uzun paragraflý içerikleri gereði eþit paylaþacaklardýr." +
+            "<br/>3) Kart da esnek serilim olup normalen h3, div ve p elemanlarýný içerikleri boyunda soldan saða \
+            yaslayacaktýr (flex-direction:column iptal edilirse). Ancak kolon yönelimli olduðundan normalen h3, \
+            div, p elemanlarý tek kolonda altalta sýralý olacaklardýr. Fakat tarih/order:-1 ile div tarih elemaný ilk \
+            öncelik kazandýrýldýðýndan (HTML penceredeki div/tarih farklý sýrada olsa da) daima kolonun baþýna \
+            kayacaktýr." +
+            "<br/>4) Ayrýca tarih için text-align:right vasfý onu saða, left sola ve center ortaya hizalayacaktýr." +
+            "<br/>5) Tarih önceliði order:-1 ile kolon baþýna, 0 ile html'deki konumuna, 10 ile de kolon sonuna \
+            kaydýrýlabilir." +
+            "<br/>6) Oynamak için yorum içi deðerleri tek tek atayýp sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x704.html: Esnek serilimli tek birimi kutu içinde yatay ve dikey ortalama örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Yatay ve Dikey Ortalama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 285px">
+.kutu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu div {
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 130px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <!-- <div>Ýki</div> -->
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli tek birimin yatay ve dikey ortalanmasý sunulmaktadýr." +
+            "<br/>2) Esnek serilimli kutuya dikey height:400px yükseklik de atayýp, bu geniþ alanda kutu-div (100X100) \
+            biriminin dikey ortalanmasý için align-items:center, yatay ortalanmasý için de justify-content:center vasýflarýný \
+            tanýmlýyoruz." +
+            "<br/>3) Kutu içine bir yerine iki yada daha fazla div birimi koyarsak (html yorumdaki gibi), esnek serilim gereði \
+            bu birimler ayný satýrda birbirlerine yanaþýk ortalanacaklardýr." +
+            "<br/>4) Oynamak için kutu içi birim satýrýný artýrýn, dikey (align-items) ve yatay (justify-content) vasýflarý iptal \
+            edin, sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

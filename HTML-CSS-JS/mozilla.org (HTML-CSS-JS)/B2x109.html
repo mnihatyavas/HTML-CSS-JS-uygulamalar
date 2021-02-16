@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x109.html: Esnek baþlangýçla birimleri farklý içerikli boylarla hizalama örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Esnek-baþlangýçla Hizalama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 250px">
+.kutu {
+    display:flex;
+    width: 550px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.hizalama-ilk {align-items: flex-start;}
+.hizalama-son {align-items: flex-end;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki
+            <br/>fazlalýk-1
+        </div>
+        <div>Üç
+            <br/>fazlalýk-1
+            <br/>fazlalýk-2
+            <br/>fazlalýk-3
+        </div>
+    </div>
+    <br/>
+    <div class="kutu hizalama-ilk">
+        <div>Bir</div>
+        <div>Ýki
+            <br/>fazlalýk-1
+        </div>
+        <div>Üç
+            <br/>fazlalýk-1
+            <br/>fazlalýk-2
+            <br/>fazlalýk-3
+        </div>
+    </div>
+    <br/>
+    <div class="kutu hizalama-son">
+        <div>Bir</div>
+        <div>Ýki
+            <br/>fazlalýk-1
+        </div>
+        <div>Üç
+            <br/>fazlalýk-1
+            <br/>fazlalýk-2
+            <br/>fazlalýk-3
+        </div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek baþlangýçla birimleri farklý içerik boylarla hizalama sunulmaktadýr." +
+            "<br/>2) Display:flex vasýflý kutu içeriði, eni tanýmsýz kutucuklarýn dizilimi sola yanaþýk, içerikleri \
+            eninde ve hepsinin boyu da azami boylu kutucukla ayný boya gelecek þekilde boþluklu konumlanýrlar \
+            (ilk örnekte görüldüðü gibi)." +
+            "<br/>3) Ancak ayrýca kutu için align-items:flex-start tanýmlanýrsa, boylar bu defa enbüyük kutucuk \
+            boyuyla ayný deðil, en gibi yine kendi içerik boylarýyla ve üste yanaþýk farklý boylarla dizileceklerdir \
+            (ikinci örnekte görüldüðü gibi)." +
+            "<br/>4) Hizalama esnek-baþlangýç deðil de esnek-son/flex-end tanýmlanýrsa bu kerre içerikle sýnýrlý \
+            en ve boya sahip sola yaslý kutucuklar, tavana deðil tabana yanaþýk dizileceklerdir." +
+            "<br/>5) Oynamak için birimlerin en ve boy içeriklerini farklýlaþtýrýn; align-items tanýmsýz, esnek-baþlangýç \
+            veya esnek-son tanýmlý deðiþiklik yapýp, kutucuk dizilimlerinin sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

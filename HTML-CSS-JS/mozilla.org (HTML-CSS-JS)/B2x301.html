@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x301.html: Esnek serilimde kutunun dikey hizalama ve yatay yaslamada ortalanmasý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Dikey ve Yatay Ortalama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 300px">
+.kutu {
+    display: flex;
+    align-items: center; /* flex-start, flex-end */
+    justify-content: center; /* flex-start, flex-end */
+    width: 500px;
+    height: 300px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 115px;">
+<div class="kab">
+    <div class="kutu">
+        <div></div> <!-- <div></div> -->
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde kutucuðu dikey hizalamada ve yatay yaslamada ortalanmasý sunulmaktadýr." +
+            "<br/>2) Kutu display:flex ile esnek soldan saða yaslý olup içerik birimleri dikey align-items:center ve \
+            yatay justify-content:center vasýflarýyla en-boy:500px-300px kutu içinde tam ortaya en-boy:100px-100px \
+            tek kutucuðu pozisyonlandýrmaktadýr." +
+            "<br/>3) Birbirine yatay yaslý olarak ortalancak kutucuk sayýsýný artýrmak için alt HTML penceresindeki \
+            yorum div bölümlerini istediðiniz kerre kullanabilirsiniz." +
+            "<br/>4) Kutu ebatlarýný kutu/width-height, kutucuk ebatlarýný kutu>*/width-height vasýflarýyla deðiþtirebilir, \
+            sadece dikey yada yatay ortalama için birdiðerini (align-items/justift-content) iptal edebilir, kutucuðu \
+            ortalamak yerine ilke/sona flex-start/flex-end yaslayabilir, yeni kutucuklar ekleyebilir/çukarabilirsiniz."
+    </script>
+</body>
+</html>

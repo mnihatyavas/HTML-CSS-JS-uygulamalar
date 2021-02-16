@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x110.html: Esnek baþlangýçla içeriði yayma örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Esnek-baþlangýçla Ýçerik Yayma</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 265px">
+.kutu {
+    display:flex;
+    width: 550px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.yayma-ilk {justify-content: flex-start; /* flex-direction: row; */}
+.yayma-son {justify-content: flex-end; /* flex-direction: row-reverse; */}
+.hizalama-son {align-items: flex-end;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+    <div class="kutu yayma-ilk">
+        <div>Bir</div>
+        <div>Ýki
+            <br/>fazlalýk-1
+        </div>
+        <div>Üç
+            <br/>fazlalýk-1
+            <br/>fazlalýk-2
+            <br/>fazlalýk-3
+        </div>
+    </div>
+    <br/>
+    <div class="kutu yayma-son">
+        <div>Bir</div>
+        <div>Ýki
+            <br/>fazlalýk-1
+        </div>
+        <div>Üç
+            <br/>fazlalýk-1
+            <br/>fazlalýk-2
+            <br/>fazlalýk-3
+        </div>
+    </div>
+    <br/>
+    <div class="kutu yayma-son hizalama-son">
+        <div>Bir</div>
+        <div>Ýki
+            <br/>fazlalýk-1
+        </div>
+        <div>Üç
+            <br/>fazlalýk-1
+            <br/>fazlalýk-2
+            <br/>fazlalýk-3
+        </div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek baþlangýç ve sonla içerik kutucuklarýn satýrbaþý yada sonuna yaslanmasý sunulmaktadýr." +
+            "<br/>2) Display:flex kutudaki kutucuklar varsayýlý olarak yada justify-content:flex-start özelliðinde \
+            yani satýrýýn soluna yaslý yayýlýrlar." +
+            "<br/>3) Kutucuklar aynen satýr sonuna/saðýna yaslansýn istersek justify-content:flex-end tanýmlamak \
+            yeterlidir." +
+            "<br/>4) Ayrýca satýr saðýna, ama tersten sýralansýn istersek flex-direction:row-reverse vasýflandýrmalýyýz. \
+            flex-direction:row, justify-content:flex-start varsayýlý eþdeðer vasýflardýr." +
+            "<br/>5) Üçüncü kutu örneði, saða yaymaya ayrýca sona hizalamayý da ilave ederek içerik boylu ve \
+            alta hizalý kutucuk dizilimi gerçekleþtirmektedir."
+            "<br/>6) Oynamak için hizalamayý sola, saða, saða tersten, hatta sola tersten, diklemesine üste \
+            yada alta yaslamayý deneyip, sonuç karma etkilerini gözleyin."
+    </script>
+</body>
+</html>

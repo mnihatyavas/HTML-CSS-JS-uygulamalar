@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x105.html: Esnek serilim taþmasýnda alt satýra sarma örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Esnek Taþmayý Alta Sar</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 250px">
+.kutu {
+    display:flex; /* flex-wrap: wrap; */
+    width: 550px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+   width: 250px;
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.alta-sar {flex-wrap: wrap;} /* no-wrap; */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 250px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+    <br/>
+    <div class="kutu alta-sar">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli kutularýn satýr taþmasýný altsatýra sarma sunulmaktadýr." +
+            "<br/>2) Esnek serilim div kutucuklarýnýn geniþliði width:250px verilince, kutu eni 550px'e sadece 2 \
+            kutucuk sýðacaðýndan dolayý, 3.ve sonrasý kutucuklar varsayýlý olarak sabit eni ihlal edip tek satýra \
+            sünerek sýðýþacaklardýr." +
+            "<br/>3) Ancak flex-wrap:wrap vasfý gereði, þayet kutu eni taþarsa, taþan biralt satýra saracak \
+            denildiðinden tek satýra sýðýþma yerine, ikinci örnekte taþan alta saracaktýr." +
+            "<br/>4) Oynamak için sýðýþan 3 kutucuklu ilk örneði alta sarmalý; alta sarmýþ olan ikinciyi ise \
+            tek satýra sýðýþmalý hale getirin (Bunun için yorum satýrlarýný kullanmanýz yeterli olacaktýr.)."
+    </script>
+</body>
+</html>

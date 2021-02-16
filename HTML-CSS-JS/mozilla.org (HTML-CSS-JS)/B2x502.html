@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x502.html: Esnek serilimde birimlerin sýfýr, otomatik ve atanmýþ geniþliði örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Esnek Serilimde Geniþlik</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 250px">
+.kutu {
+    display: flex;
+    width: 600px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    flex: 0; /* auto, 1 auto, 0 auto */
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.kutu :first-child {width:250px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 150px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki<br/>ilave</div>
+        <div>Üç</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde birimlerin sýfýr, otomatik ve atanmýþ geniþlikleri sunulmaktadýr." +
+            "<br/>2) Esnek serilimli kutu içi birimlerinin eni önce flex:0 ile ensiz (sadece içerik eninde) tanýmlanmýþ, \
+            sonra da ilk kutucuk eni width:250px ile uzatýlmýþtýr. Fakat ilk vasýflama ikinciyi geçersiz kýlmakta ve tüm \
+            kutucuklar sadece içerikleri uzunluklarýný sürdürmektedirler." +
+            "<br/>3) Flex:0 yerine flex:auto olarak deðiþtirirseniz, ilk kutucuðun bilahere atanacaðý 250px geniþliðin \
+            geçerlilik kazanacaðýný, diðer kutucuklarýnsa kalan uzunluðu eþit paylaþarak esneyeceklerini göreceksiniz." +
+            "<br/>4) 'Flex:1 auto' yada 'flex:10 auto' veya 'flex:1 1 auto' önceki flex:auto etkisiyle ayný olacaktýr." +
+            "<br/>5) Fakat 'flex:0 auto' ilk flex:0'ýn tüm sonraki en deðiþikliðini de geçersiz kýlmasý yerine, bu kez ilk \
+            kutucuða sonradan atanan 250px geniþliði geçerliyecek, diðer kutucuklar ise içerikleriyle süneceklerdir." +
+            "<br/>6) Önce yorum içi tüm deðerleri atayýp, sonra da aklýnýza gelebilecek her türlü çoklu kombinasyonu \
+            deneyerek her üç kutucuk enlerinin sergileyecekleri esnemeleri gözleyin."
+    </script>
+</body>
+</html>

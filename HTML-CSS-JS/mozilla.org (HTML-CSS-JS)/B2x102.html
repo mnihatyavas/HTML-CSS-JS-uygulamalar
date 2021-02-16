@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x102.html: Basit bir esnek anonim kutucuklu serilim  örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Esnek Anonim Kutucuklu Serilim</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 220px">
+.kutu {
+    display:flex;
+    width: 500px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta; /* margin: 0px; */
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 185px;">
+<div class="kab">
+    <div class="kutu">
+        <h2>Bir</h2>
+        <div>Ýki</div>
+        <div>Üç</div>
+        Bu bir alta sarmasýz metindir.
+        <p>Bu bir alta sarmasýz paragraftýr.</p>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Basit bir anonim çoklu kutucuklu esnek serilim sunulmaktadýr." +
+            "<br/>2) Display:flex vasfý, bu vasfýn geçerli olduðu kutu iç elemanlarýný tek satýrda soldan saða \
+            bitiþik sýralar. Bir eleman içeriði fazlaysa eleman boyu çoklu satýrlara uzayarak yükselecek, ancak \
+            bitiþik elemanlarýn ardýþýklýðý baki kalacaktýr." +
+            "<br/>3) Kutu>* CSS vasfý, kutu içindeki tüm HTML elemanlarýný kasteden * anonim sembolünü \
+            taþýmakta ve bu HTML elemanlara sýnýr, zemin/yazýrengi atfetmektedir. Nitekim h2, div ve p HTML \
+            elemanlarý bu atýflardan yararlanmaktadýr." +
+            "<br/>4) Ancak anonim * sembolü, kutu içi HTML elemansýz yalýn metni kapsamadýðýndan, kutu \
+            içinde olmasýna raðmen bu metin, sýnýr, zemin/yazýrengi atýflarýndan yararlanamamaktadýr." +
+            "<br/>5) Kutu içi div elemanýnýn varsayýlý marj ve ayarlarýndan dolayý içerdiði (Ýki, Üç) ibare kýsa \
+            olmasýna raðmen boylarý uzundur. Yorumdaki margin:0px girilirse div eleman boylarý da diðerleriyle \
+            ayný kýsalýða sünecektir." +
+            "<br/>6) Oynamak için yorum içi, yada tüm kutu ve kutu içi CSS vasýf:deðer özelliklerini tek tek \
+            deðiþtirip, sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

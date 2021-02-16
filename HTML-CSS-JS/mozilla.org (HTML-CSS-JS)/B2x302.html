@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x302.html: Esnek serilimde tüm birimlerin azami boya esnemesi örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Azami Boy Esnemesi</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 220px">
+.kutu {
+    display: flex;
+    align-items: stretch; /* Ýptal, flex-start, flex-end */
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 235px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki
+            <br/>Ýlave
+        </div>
+        <div>Üç
+            <br/>Ýlave
+            <br/>Ýlave
+        </div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde tüm kutucuk boylarýnýn (varsayýlý) azami boya esnemesi sunulmaktadýr." +
+            "<br/>2) Esnek serilimde kutucuk boylarý varsayýlý olarak kutucuklarýn en yükseðiyle aynýlaþmaktadýr. \
+            Bunu align-items:stretch'le de vurgulayabiliriz. Bu vasfýn iptalinin sonucu deðiþtirmediðini gözleyin."  +
+            "<br/>3) Kutucuklar içerdikleriyle boylansýn ve üste yaslansýn istenirse, bu vasýf deðeri stretch/esnet \
+            yerine flex-start/baþa-yasla yada flex-end/sona-yasla olarak deðiþtirilmelidir." +
+            "<br/>4) Oynamak için CSS yorum satýrýndaki deðerleri yerine koyup sonuç etkilerini izleyin"
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x402.html: Esnek serilimde birimlerin herbirine istenilen sýralama önceliklerini atama örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Sýralanma Öncelikleri</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 350px">
+.kutu {
+    display: flex;
+    /* flex-direction: row; row-reverse, column; column-reverse*/
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.kutu > * a:focus {
+    background-color: yellow;
+    color: Red;}
+.kutu :nth-child(1) {order: 2;} /* 0 */
+.kutu :nth-child(2) {order: 3;} /* 5 */
+.kutu :nth-child(3) {order: 1;} /* -100 */
+.kutu :nth-child(4) {order: 3;} /* 3000 */
+.kutu :nth-child(5) {order: 1;} /* -1 */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 180px;">
+<div class="kab">
+    <div class="kutu">
+        <div><a href="#">1</a></div>
+        <div><a href="#">2</a></div>
+        <div><a href="#">3</a></div>
+        <div><a href="#">4</a></div>
+        <div><a href="#">5</a></div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde birimlerin istenilen sýralama öncelikleri sunulmaktadýr." +
+            "<br/>2) Kutu:nth-child/order vasýflarý olmasaydý varsayýlý esnek serilimle birimler soldan saða 1-2-3-4-5 \
+            artan sýralanacaklardý; nitekim HTML penceresinde bu düzende yerleþtirilmiþlerdir." +
+            "<br/>3) Ancak sonradan herbir kutu birimlerine kutu:nth-child(x){order:y} þeklinde farklý sýralanma \
+            öncelik deðerleri verilmiþtir. Öncelik rakamý küçük olan (negatiften pozitife) daha öne konulur. Ayný \
+            öncelik rakamlýlar ardýþýk gelir. Buna göre normal 1-2-3-4-5 olarak yerleþtirilen kutucuklar, yeniden \
+            sýralandýrýlarak 3-5-1-2-4 þeklinde yerleþtirilmiþlerdir. Hertürlü sýralama yapýlabilir. Yorumdaki öncelik \
+            rakamlarý da ayný sonucu verecektir." +
+            "<br/>4) Oynamak için flex-direction:row, row-reverse, column, column-reverse; ayrýca kutu:nth-child \
+            order rakamlarýný keyfi negatif, sýfýr, pozitif rakamlarla deðiþtirip sonucu gözleyin."
+    </script>
+</body>
+</html>

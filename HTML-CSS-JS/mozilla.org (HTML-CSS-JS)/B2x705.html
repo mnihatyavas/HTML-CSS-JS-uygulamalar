@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x705.html: Esnek serilimli kartlarda gövde ve ayaklýk düzeni örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Kartta Gövde ve Ayaklýk</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 335px">
+.kartlar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    grid-gap: 10px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kart  {
+    display: flex;
+    flex-direction: column; /* row; */
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.kart .içerik {flex: 1 1 auto;} /* Ýptal */
+.kart footer {
+    background-color: rgba(30, 30, 30, 0.4);
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="kartlar">
+        <div class="kart">
+            <div class="içerik">
+                <p>Bu kartýn fazla içeriði yok.</p>
+            </div>
+            <footer>Kart ayaklýðý</footer>
+        </div>
+        <div class="kart">
+            <div class="içerik">
+                <p>Bu kart içerikleri oldukca fazladýr. Kartlara ýzgara hücre tanýmý yapýlmadýðýndan, diðer kartlarýn boylarý en yüksek olanla otomatikmen ayný olacaktýr.</p>
+            </div>
+            <footer>Kart ayaklýðý</footer>
+        </div>
+        <div class="kart">
+            <div class="içerik">
+                <p>Kart gövdesi</p>
+            </div>
+            <footer>Kart ayaklýðý</footer>
+        </div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli kartlarda gövde ve ayaklýk düzeni sunulmaktadýr." +
+            "<br/>2) Kartlar sýnýfý ýzgara serilim olup içerik birimleri herbiri yaklaþýk 150px geniþlikte, boylarý ise ilgili \
+            satýrdaki en uzun birim boyuyla ayný olacak þekilde; ayný satýra sýðmazlarsa (azami 550px) bir alt satýrda \
+            devam eden kart birimlerinden oluþmaktadýr." +
+            "<br/>3) Herbir kart birimi esnek serilimli ve içerik ile ayaklýk yanyana deðil flex-direction:column gereði \
+            altalta gelecektir." +
+            "<br/>4) HTML (body, article, section benzeri) footer etiketli elemaný olup, ayaklýk kýsa sonnotlar için \
+            kullanýlmaktadýr. Ayaklýk daha koyu zeminrenkli ve rgba netlik ayarlanmalýdýr." +
+            "<br/>5) Kart içerik 'flex: 1 1 auto' vasfýyla ayný satýrdaki azami gövde uzunluðu baz alýnarak satýrdaki \
+            kart ayaklýklarý ayný dip seviyelerde tutulmaktadýr." +
+            "<br/>6) Bir satýra yerleþtirilebilecek azami kart sayýlarý için kolon þablonundaki 150px deðiþtirilmelidir. \
+            Ayrýca html penceresinden içerik ve ayaklýk kapsamlý class=kart bölümlerini kopyala/yapýþtýrla üçten \
+            fazla ve deðiþik gövde uzunluklu kartlarýn düzenleri test edilmelidir." +
+            "<br/>7) Oynamak için template 150px deðiþtirilmeli, 'flex:1 1 auto' iptal edilmeli, kart sayýlarý html'den \
+            azaltýlýp çoðaltýlarak sonuç etkileri gözlenmelidir."
+    </script>
+</body>
+</html>

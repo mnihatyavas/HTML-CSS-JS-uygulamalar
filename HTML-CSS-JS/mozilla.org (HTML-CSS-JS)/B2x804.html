@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x804.html: Esnek serilimde heriki birimin de satýriçi-bloklu üst hizalamayla ebat uyumlulaþtýrýlmasý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Satýriçi-bloklu Üst-hizalamayla Esnekkutu Ebat Uyumu</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 265px">
+.kutu { /* align-items:flex-start; flex-end; center; */
+    display: flex;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    display: inline-block; /* iptal (varsayýlý) */
+    vertical-align: top; /* iptal */
+    width: 150px;
+    flex: 1; /* 0; auto; iptal */
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 25px;
+    background-color: rgba(96, 139, 168, .85);
+    color: DeepPink;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 165px;">
+<div class="kab">
+    <div class="kutu">
+        <div><u><b>Birim 1</b></u></div>
+        <div><u><b>Birim 2:</b></u> Bu birim içerikleri ilkinden fazla olup, birimlerin geniþliklerinin sabit olmasý nedeniyle, fazla içerikler birim boyunu uzatmakta ve ilk birim yüksekliði de otomatikmen ayný boya gelmektedir.</div>
+     </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli birimlerin satýriçi-bloklu üst-hizalamayla ebat uyumlulaþtýrýlmasý sunulmaktadýr." +
+            "<br/>2) Esnek kutu birimlerinin birbirleriyle ebaten uyumlukuklarý için birim enlerinin width:150px ayný \
+            tanýmlanmasý gerekmektedir. En tanýmlansa dahi flex:1 yada auto denilmesiyle birimler mevcut kutu enini \
+            eþit olarak paylaþacaklardýr." +
+            "<br/>3) Birimlerin boy uyumluluklarý ise birimlerden azami içeriklinin artan boyuyla eþitleneceklerdir. Nitekim \
+            burada 2.birimin boyuyla aynýlaþacaklardýr." +
+            "<br/>4) Birimler için display:inline-block ve vertical-align:top zaten esnek serilimin varsayýlan özellikleridir, \
+            iptal edilse de sonuç deðiþmez." +
+            "<br/>5) Birim yükseklik uyumunu bozmak için kutu içinde align-items:flex-start/flex-end/center, en uyumunu \
+            bozmak için de flex:0'ý yada iptali denemelisiniz." +
+            "<br/>6) Oynamak için halihazýrdaki ebat uyumlu birim ebatlarýna dair yorumlarda verilen vasýf deðerlerini \
+            deðiþtirerek sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

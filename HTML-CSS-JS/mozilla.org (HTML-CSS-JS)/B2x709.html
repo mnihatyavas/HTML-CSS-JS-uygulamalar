@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x709.html: Esnek serilimde verigiriþ ve gönder butonuna etiket ekleme örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Etiketli Verigiriþ ve Gönder Butonu</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 370px">
+.kutu {
+    display: flex;
+    border: 2px solid rgb(96, 139, 168);
+    padding:0;
+    margin:0;}
+.kutu > * {
+    border: none;
+    font-size: 0.9em;
+    line-height: 1.5em;}
+.kutu input[type="text"] {
+    flex: auto;
+    color: tomato;
+    background-color: rgba(36, 39, 68,.6);
+    border-right: 1px solid rgb(236, 239, 268);}
+.kutu input[type="submit"] {
+    background-color: rgba(36, 39, 68,1);
+    color: Orange;}
+.kutu label {
+    background-color:Navy;
+    color: Yellow;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 180px;">
+<div class="kab">
+    <form>
+        <div class="kutu">
+            <label for="metin">&ensp;Adsoyad Gir ve Gönder'i Týkla:&ensp;</label>
+            <input type="text" id="metin">
+            <input type="submit" value="Gönder">
+        </div>
+    </form>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli kutu içi verigiriþ ve gönder butonuna etiket ilavesi sunulmaktadýr." +
+            "<br/>2) Esnek serilimli kutu kab içinde, onun geniþliðinde, tampon ve marjlarý sýfýrdýr." +
+            "<br/>3) Kutu içi birimlerin yüksekliðini line-height satýr yüksekliði ve içerik yazý-ebadýný font-size belirler." +
+            "<br/>4) Kutu içi ilk birim label etiket olup for ile sonra gelecek metin verigiriþ id ile ayný referanslanarak \
+            form içinde bütünlük saðlanmaktadýr." +
+            "<br/>5) Kutu içi ikinci birim input-text metin verigiriþ kutucuðu olup, eni flex-auto gereði, Gönder düðmesi \
+            içeriðinden artakalan tüm kutu geniþliðince yayýlýr. Flex:auto iptal edilirse, her kutucuk içeriði kadar uzar." +
+            "<br/>6) Son birim input-submit gönder düðmesi olup, týklanýnca istenirse tanýmlanacak href adresine \
+            gönderilebilecektir. Burda týklama sadece verigiriþini yinelemektedir." +
+            "<br/>7) Oynamak için Verigiriþ ve Gönder input elemanlarý line-height, font-size, color, flex:auto, label \
+            etiket açýklamasý vasýf ve deðerleri deðiþtirilip sonuç etkileri gözlenebilir."
+    </script>
+</body>
+</html>

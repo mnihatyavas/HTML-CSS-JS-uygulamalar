@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x310.html: Esnek yönelimde ters satýr düzeniyle sona hizalama örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Ters Satýr ve Sona Yaslama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 235px">
+.kutu {
+    display: flex;
+    flex-direction: row-reverse; /* row */
+    justify-content: flex-end; /* flex-start, center */
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 165px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç<br/>ilave</div>
+        <div>Dört</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde birimleri ters-satýrla sondan baþa sýralayýp sona yaslama sunulmaktadýr." +
+            "<br/>2) Direction:rtl yönelim saðdan sola ile flex-direction:row-reverse esnek yönelim satýr tersine \
+            ayný etkiyi yapmakta ve satýr dizilimini terse çevirerek 1-2-3-4 sýralamayý 4-3-2-1 yapmakta, ayrýca \
+            da ters satýrýn sonu artýk baþ olacaðýndan justify-content:flex-end yatay hizalama satýr sonu \
+            vasýflamasýyla tersine çevrilen satýr sonu artýk sol olacaðýndan birimleri tersten ve sola hizalý yaslayacaktýr." +
+            "<br/>3) Ters olan satýrýn baþý artýk satýr saðý olacaðýndan yatay hizalama flex-start deðiþtirilirse \
+            tersten dizilim saða yaslanacak, center yapýlýrsa ortalanacaktýr." +
+            "<br/>4) Oynamak için yorum satýrlarýndaki varsayýlý row düz satýr yönelimini, yatay hizalamada ise \
+            flex-start ve center'ý deðiþtirerek sonuçlarý gözleyin."
+    </script>
+</body>
+</html>

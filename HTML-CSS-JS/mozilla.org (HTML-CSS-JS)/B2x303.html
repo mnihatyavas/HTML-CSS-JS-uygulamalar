@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x303.html: Esnek serilimde herbir kutucuðun dikey farklý boylanmasý ve hizalanmasý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Farklý Boylama ve Hizalama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 300px">
+.kutu {
+    display: flex;
+    align-items: flex-start;
+    height: 250px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.kutu > *:first-child {align-self: stretch;}
+.kutu .baþa {align-self: flex-start;} /* Ýptal */
+.kutu .ortaya {align-self: center;}
+.kutu .sona {align-self: flex-end;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div class="baþa">Ýki
+            <br/>Ýlave
+        </div>
+        <div class="ortaya">Üç
+            <br/>Ýlave
+            <br/>Ýlave
+        </div>
+        <div class="sona">Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde tüm kutucuk boylarýnýn ve dikey hizalamalarýnýn farklýlaþtýrýlmasý sunulmaktadýr." +
+            "<br/>2) Esnek serilimli kutu boyu height:250px ile tanýmlanmýþtýr. Ayrýca kutu birimleri flex-start üste \
+            hizalý saðlanmýþtýr. Yani aksi belirtilmezse kutu içi kutucuklar herbiri içerik boylarýnda ve üste hizalý \
+            olacaktýr. Nitekim son kutucuk Beþ hiç özelliklendirilmediði halde içerik boyunda ve üste hizalýdýr." +
+            "<br/>3) Ýlk kutucuk first-child{align-self:stretch} vasfýyla boyu, içinde bulunduðu kutu boyuna \
+            esnetilmiþ olup, kutu boyu 250px'dir." +
+            "<br/>4) Kutucuk Ýki align-self:flex-start vasfýyla içerik boyunda ve üste hizalanmýþ olup, kutu da \
+            bu vasýflý olduðundan, bu kutucuk vasfýný iptal de etseniz sonuç deðiþmeyecektir." +
+            "<br/>5) Kutucuk Üç align-self:center ile içerik boyunda ve kutu boyunca ortalanmaktadýr." +
+            "<br/>6) Kutucuk Dört align-self:flex-end ile içerik boyunda ve kutu altýna hizalanmýþtýr." +
+            "<br/>7) Oynamak için herbir kutu hizalanmasýný tek tek align-self ile yada topluca align-items \
+            ile kutu boyunca üste, ortaya, alta yada kutu boyuna esnetip sonuç etkiyi gözleyin."
+    </script>
+</body>
+</html>

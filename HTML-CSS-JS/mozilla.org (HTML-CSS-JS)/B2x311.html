@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x311.html: Esnek serilimde herhangi bir birimi otomatik sol marjlý yapma örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Otomatik Sol Marj</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 215px">
+.kutu {
+    display: flex;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.arala {margin-left: auto;} /* iptal */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 165px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki</div> <!-- class="arala" -->
+        <div class="arala">Üç<br/>ilave</div>
+        <div>Dört</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimde otomatik sol marjla sonraki birimleri saða öteleme sunulmaktadýr." +
+            "<br/>2) Margin-left:auto'yu iptal ederseniz, birimlerin tümünün normalen sola yaslý olacaðý görülecektir." +
+            "<br/>3) Birim Üç için sol marj otomatik kýlýndýðýnda bu birim sola yaslanma yerine tam aksine saða \
+            yaslanacak ve dolayýsýyla saðýndaki diðer birimleri de saða itecek, diðerleriyle arayý boþ býrakacaktýr." +
+            "<br/>4) Oynamak için önce otomatik sol marj ayarýný iptal edin, sonra da bu ayarý birim Üç yerine Ýki'ye, \
+            hatta herikisine de koyup diðer birimlerle nasýl aralaþtýklarýný gözleyin."
+    </script>
+</body>
+</html>

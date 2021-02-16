@@ -3,7 +3,7 @@ https://github.com/mdn
 
 ÝÇÝNDEKÝLER (adet konu anlatýmlý örnek)
 ------------------------------------------------------------------------------------------------------------------
-A. Beginner Web Site Designer Novice
+A. Beginner Web Site Designer Novice (11 örnek)
     A1. Beginner HTML Site
         A1a.html: Basit bir web aðsayfasýnýn HTML-CSS ve JS ile tasarýmý örneði.
         A1a.css: Basit bir web aðsayfasýnýn CSS stil ayarlarý harici dosyasý alt-örneði.
@@ -20,13 +20,13 @@ A. Beginner Web Site Designer Novice
     A4. Beginning Programming with HTML-CSS-JS Tutorials
         A4.html: HTML-CSS-JS stilli aðsayfasý kodlamacýlýðýna baþlangýç dersleri örneði.
 B. HTML-CSS-JS Introduction
-    B1. HTML Examples
+    B1. HTML Examples (5 örnek)
         B1a.html: Aðsayfasý tasarýmýnda ilk seviye HTML örnekleri.
         B1b.html: Aðsayfasý tasarýmýnda özel yazý fonlarýnýn kullanýlmasý örneði.
         B1c.html: Aðsayfasý tasarýmýnda sayfaya resim konulmasý örneði.
         B1d.html: Aðsayfasý tasarýmýnda sayfaya mp4 video ilavesi örneði.
         B1e.html: Aðsayfasý tasarýmýnda JS canvas/tuval animasyonla zýplayan çokrenkli toplar örneði.
-    B2. CSS Examples
+    B2. CSS Examples (294 örnek)
         B2a1.html: CSS animation-timing-function vasfýnýn frames, steps ve ease-in deðerleri örneði.
         B2a2.html: CSS transition-timing-function vasfýnýn frames, steps ve ease-in deðerleri örneði.
         B2b1.html: CSS kutu hizalanmasýnda flex box auto margin (esnek kutu otomarj) etkisi örneði.
@@ -149,6 +149,178 @@ B. HTML-CSS-JS Introduction
         B2n22.html: Alýntý blockquote ayarlarýnýn tümden iptali örneði.
         B2n23.html: Elemanýn ardýþýk deðiþen son ayarýnýn etkinliði örneði.
         B2n24.html: Önemli !important ayarýn ardýþýk enson deðil hep geçerliliði örneði.
+        B2n25.html: Üst eleman ayarlarýnýn deðiþtirilmezse kalýtsallýðý örneði.
+        B2n26.html: Üst eleman ayarlarýnýn deðiþtirilmezse kalýtsallýðýnýn basit örneði.
+        B2n27.html: Ebeveyn kalýtsallýðýndaki anahtar kelimeler örneði.
+        B2n28.html: Elemana sýnýf ve kimlik tanýmýyla vasýflar atanmasý örneði.
+        B2n29.html: Altalta seyrüsefer menü kutularý tasarlama örneði.
+        B2n30.html: Etiket vasfýný sýnýf ve kimlik eriþimiyle deðiþtirme örneði.
+        B2n31.html: Ýçiçe etiket elemanýna deðiþik eriþimli vasýflama örneði.
+        B2n32.html: Bir etiketadýna vasýf ve deðerler atama örneði.
+        B2n33.html: Baþlýk, paragraf, listeleme, baðlantý varsayýlý deðerler örneði.
+        B2n34.html: Baþlýk, paragraf, listeleme, baðlantý varsayýlý deðerleri deðiþtirme örneði.
+        B2n35.html: Baðlantýn ilk, ziyaretli ve üzerinde hassasiyetleri örneði.
+        B2n36.html: Basit bir web aðtasarým  örneði.
+        B2n37.html: Resmin bulanýk veya gri ölçekli filitrelenmesi örneði.
+        B2n38.html: Paragraf kutusunun düþük-gölgeli ve kutu-gölgeli vasýflarýný tanýmlama örneði.
+        B2n39.html: Form doldurup gönderme örneði.
+        B2n40.html: Çift kolon ve çift satýrlý resim-kutu serilimi örneði.
+        B2n41.html: Resimleri çerçevelerine çerçevenin-tamamý ve resmin-tamamý kiplerinde yerleþtirme örneði.
+        B2n42.html: Resmin metni kavisleþtirmesi örneði.
+        B2n43.html: Kutu içindeki resim ebatýnýn uyumsuzluðu örneði.
+        B2n44.html: Metni kutulama, özel renk ve vurgu efektleri tanýmlama örneði.
+        B2n45.html: AND/VE ile þartlý ekran görüntüsü örneði.
+        B2n46.html: OR/VEYA ile þartlý ekran görüntüsü örneði.
+        B2n47.html: NOT/DEÐÝL ile þartlý ekran görüntüsü örneði.
+        B2n48.html: Width tarayýcý geniþliði þartlý ekran görüntüsü örneði.
+        B2n49.html: Max-width tarayýcý geniþliði þartlý ekran görüntüsü örneði.
+        B2n50.html: Peyzaj /landscape þartlý ekran görüntüsü örneði.
+        B2n51.html: Üzerinde/hover þartlý ekran görüntüsü örneði.
+        B2n52.html: Tarayýcýya duyarlý internet sayfasý tasarýmý-1 örneði.
+        B2n53.html: Tarayýcýya duyarlý internet sayfasý tasarýmý-2 örneði.
+        B2n54.html: Tarayýcýya duyarlý internet sayfasý tasarýmý-3 örneði.
+        B2n55.html: Tarayýcýya duyarlý internet sayfasý tasarýmý-4 örneði.
+        B2n56.html: Kutu içerklerinin taþmasýnýnýn otomatikmen dikey kaydýraçlanmasý örneði.
+        B2n57.html: Kutu içerkleri taþmasýnýnýn vasýflanmamasý örneði.
+        B2n58.html: Kutu içeriklerinin yatay satýriçi taþmasý örneði.
+        B2n59.html: Tarayýcýya duyarsýz iki sabit kolonlu serilim örneði.
+        B2n60.html: Tarayýcýya duyarlý iki esnek/flex kolonlu serilim örneði.
+        B2n61.html: Tarayýcýya duyarlý iki kayan/float kolonlu serilim örneði.
+        B2n62.html: Tarayýcýya duyarlý iki ýzgara/grid kolonlu serilim örneði.
+        B2n63.html: Tarayýcýya duyarlý iki deðiþken enli kolon örneði.
+        B2n64.html: Tarayýcýya @media ile duyarlý iki kolon ve bir baþlýk örneði.
+        B2n65.html: Tarayýcýya @media ile duyarlý iki kolon ve görsel duyarlý bir baþlýk örneði.
+        B2n66.html: Ýlkini müteakip elemanda geçerli vasýflar örneði.
+        B2n67.html: Sýnýf adýndan önce ve sonra geçerli olacak vasýflar örneði.
+        B2n68.html: Yalýn/tekli/çoklu sýnýf adlarýyla elemanlarý vasýflandýrma örneði.
+        B2n69.html: Elemanlarý vasýflarken sýnýfadlarýnýn küçük/büyük harf duyarsýzlýðý örneði.
+        B2n70.html: Sýnýfadýnýn ilk/son/herhangibirkarakteri ile vasýflandýrma örneði.
+        B2n71.html: Ýpuçlu li-a-href aðsayfasý baðlantýlarý oluþturma örneði.
+        B2n72.html: HTML eleman yavrularýný vasýflama örneði.
+        B2n73.html: Tekli/çoklu Sýnýf ve kimlikadlý vasýflamalar örneði.
+        B2n74.html: Genel, evrensel ve link üzerinde seçici vasýflamalar örneði.
+        B2n75.html: Taþmaya tedbirsiz, uzayan ve kaydýraçlý kutu yüksekliði örneði.
+        B2n76.html: Resim çerçevesi en/boy ayarýnda azami-en örneði.
+        B2n77.html: Yüzde en-marj-tampon ve görsel en-boy-ebat örneði.
+        B2n78.html: En-boy tanýmsýz kutularýn içerkle ebatlanmasý örneði.
+        B2n79.html: Hesap, yüzde, em-rem-px ve görsel ölçekleme örneði.
+        B2n80.html: Tekli/çoklu net/þeffaf resim konumlandýrma örneði.
+        B2n81.html: Zemin/yazýrengi için hex, hsl, rgb ve renkadý deðerleri örneði.
+        B2n82.html: Bir baþlýðý yatay ve dikey yazýlým kipinde serimlenmesi örneði.
+        B2n83.html: Baþlýk ve açýklamalý bir kutuyu yatay ve dikey yazýlým kipinde serimlenmesi örneði.
+        B2n84.html: Sabit enli açýklamalý baþlýk kutularýnýn yatay ve dikey serilimleri örneði.
+        B2n85.html: Eni satýriçi-ebat'lý açýklamalý baþlýk kutularýnýn yatay ve dikey serilimleri örneði.
+        B2n86.html: Marj ve tamponlarýn fiziksel ve mantýksal vasýflandýrýlmasý örneði.
+        B2n87.html: Ana, alt, sol baþlýklar ve detay hücreli tablo oluþturma örneði.
+        B2o1.html: Fiziksel ve mantýksal vasýflamalara topluca bakýþ örneði.
+        B2o2.html: Fiziksel ve mantýksal vasýflamalarý iç kutularda karþýlaþtýrma örneði.
+        B2p.html: Html gövde, metin baþlýk ve paragraflarýn tarayýcý enine görsel hesaplý duyarlýðý örneði.
+        B2q11.html: Açýklama metninin zeminli resmi %50 dairesel sarmasý örneði.
+        B2q12.html: Açýklama metninin oluþturulan ovalý saðdan sýnýrboyu sarmalamsý örneði.
+        B2q13.html: Açýklama metninin zeminsiz resmi %50 dairesel sarmasý örneði.
+        B2q14.html: Þekli saran metne þekil-marjý etkisi örneði.
+        B2q15.html: Þekil-resim-eþiði oranýyla metni þekle içerleme örneði.
+        B2q16.html: Sanal dairesel içerikli boþ þekil üretme örneði.
+        B2q17.html: Resmi elips þeklinde kýrpma örneði.
+        B2q21.html: Metnin þekli içerik-kutu deðeriyle sarmalamasý örneði.
+        B2q22.html: Metnin þekli tampon-kutu deðeriyle sarmalamasý örneði.
+        B2q23.html: Metnin þekli sýnýr-kutu deðeriyle sarmalamasý örneði.
+        B2q24.html: Metnin þekli marj-kutu deðeriyle sarmalamasý örneði.
+        B2q25.html: Metnin sað ve soldaki þekli marj-kutu deðeriyle sarmalamasý örneði.
+        B2q31.html: Metnin sol resmi mesafeli dairesel sarmalamasý örneði.
+        B2q32.html: Metnin sol resmi çepeçevre ayarlanabilir sarmalamasý örneði.
+        B2q33.html: Metnin sol resmi çepeçevre ayarlanabilir ve marj-kutulu sarmalamasý örneði.
+        B2q34.html: Metnin üretilen içerikli sol þekli dairesel  sarmalamasý örneði.
+        B2q35.html: Metnin sol þekli elipsel  sarmalamasý örneði.
+        B2q36.html: Metnin sol þekli anahtar-kelimeli elipsel  sarmalamasý örneði.
+        B2q37.html: Metnin sol þekli çok-kerlý poligonsal sarmalamasý örneði.
+        B2q41.html: Metnin solundaki resmi yurel resim sýnýrlarýyla sarmalamasý örneði.
+        B2q42.html: Metnin solundaki zeminli resmi yurel resim sýnýrlarý eþiðiyle sarmalamasý örneði.
+        B2q43.html: Metnin solundaki zeminli resmi yurel iç-resim sýnýrlarý artý marj eþiðiyle sarmalamasý örneði.
+        B2q44.html: Metnin solundaki doðrusal renk kademeli þekli eþik deðerinde sarmalamasý örneði.
+        B2q45.html: Metnin solundaki ýþýnsal renk kademeli þekli eþik deðerinde sarmalamasý örneði.
+        B2q46.html: Metnin solundaki görünmeyen zeminli resmi yurel resim sýnýrlarý eþiðiyle sarmalamasý örneði.
+        B2qmenü.html: Þekil, resim ve kademeleme ana menüsü örneði.
+        B2r.html: SVG ile kutu, çizgi, çokluçizgi ve eðri izimleri örneði.
+        B2s1.html: Çoklu kolonu kolonsayýsý geniþliði ve herikisiyle tanýmlama örneði.
+        B2s2.html: Çoklu kolon içeriðini otomatik ve dengeli doldurma örneði.
+        B2s3.html: Çoklu kolon içerik taþmasýný düzenleyen vasýflamalar örneði.
+        B2s4.html: Çoklu kolon ara boþluk ve dikey cetvel vasýflarý örneði.
+        B2s5.html: Çoklu kolon öncesinde/içinde kýrýlma ve yetim býrakma örneði.
+        B2s6.html: Çoklu kolonda baþlýðý ortada tüm kolonlara yayma örneði.
+        B2t1.html: Object-fit ve object-position ile resimlerin çerçevelerine yerleþtirilmeleri örneði.
+        B2t2.html: Kaplama nesne-uyumlu parmak resim açýlýmlý galeri örneði.
+        B2t3.html: Fetch/getir ile kaplama nesne-uyumlu parmak resim açýlýmlý galeri örneði.
+        B2u1.html: Temel sayfa ve üst çerçeve içeriðinin yatay kaydýraçlanmasý örneði.
+        B2u2.html: Temel sayfa ve üst çerçeve içeriðinin dikey kaydýraçlanmasý örneði.
+        B2v.html: Dikey kaydýraç tip, marj ve hizalanmasý  örneði.
+        B2x101.html: Basit bir esnek serilim  örneði.
+        B2x102.html: Basit bir esnek anonim kutucuklu serilim  örneði.
+        B2x103.html: Esnek kutu ayný eleman boylarýnýn aynýlaþmasý örneði.
+        B2x104.html: Esnek yön vasfý için ters satýr deðeri örneði.
+        B2x105.html: Esnek serilim taþmasýnda alt satýra sarma örneði.
+        B2x106.html: Esnek serilim taþmasýnda alt satýra esnek akýþ örneði.
+        B2x107.html: Esnek serilimde otomatik esnek vasfý örneði.
+        B2x108.html: Esnek serilimde kýsakesek esnek deðerleri örneði.
+        B2x109.html: Esnek baþlangýçla birimleri farklý içerikli boylarla hizalama örneði.
+        B2x110.html: Esnek baþlangýçla içeriði yayma örneði.
+        B2x201.html: Esnek serilimde yazýlým kipinin yatay yada dikey konumlanmasý örneði.
+        B2x202.html: Esnek serilimde sola yada saða kayan kutu örneði.
+        B2x203.html: Esnek serilimde alta saran enaz ende kutucuklar örneði.
+        B2x204.html: Izgara serilimde üç kolonlu kutucuk hücreleri örneði.
+        B2x205.html: Esnek serilimde içerik gösterimin html ayarlarýný dýþlamasý örneði.
+        B2x301.html: Esnek serilimde kutunun dikey hizalama ve yatay yaslamada ortalanmasý örneði.
+        B2x302.html: Esnek serilimde tüm birimlerin azami boya esnemesi örneði.
+        B2x303.html: Esnek serilimde herbir kutucuðun dikey farklý boylanmasý ve hizalanmasý örneði.
+        B2x304.html: Esnek serilimde kolon yönünde herbir kutucuðun yatay farklý boylanmasý ve hizalanmasý örneði.
+        B2x305.html: Esnek serilimde taþmayý alta saran birimleri dikey aralýklarla hizalama örneði.
+        B2x306.html: Esnek serilimde birimleri kolon yönünde taþma sarmalý ve yatay aralýklý hizalama örneði.
+        B2x307.html: Esnek serilimde birimleri yatay satýrda eþit aralýklarla yayma örneði.
+        B2x308.html: Esnek serilimde birimleri kolon yönelimle dikey eþit aralýklarla yayma örneði.
+        B2x309.html: Saðdan sola ters yönelimde birimleri sona yaslama örneði.
+        B2x310.html: Esnek yönelimde ters satýr düzeniyle sona hizalama örneði.
+        B2x311.html: Esnek serilimde herhangi bir birimi otomatik sol marjlý yapma örneði.
+        B2x401.html: Esnek serilimde ters satýr esnek yönelim örneði.
+        B2x402.html: Esnek serilimde birimlerin herbirine istenilen sýralama önceliklerini atama örneði.
+        B2x403.html: Esnek serilimde tek birimin önceliðini ve esnemesini deðiþtirme örneði.
+        B2x404.html: Esnek serilimde öncelik özellikli hatýrlatýcý notlar düzenleme örneði.
+        B2x501.html: Serilimsiz birim geniþliðindeki min/max-content enaz/ençok-içerik deðerleri örneði.
+        B2x502.html: Esnek serilimde birimlerin sýfýr, otomatik ve atanmýþ geniþliði örneði.
+        B2x503.html: Esnek serilimde tüm birimlere mevcut uzunluðu eþit paylaþtýrma örneði.
+        B2x504.html: Esnek serilimde birimlere farklý oranlarda esneme büyüklüðü tanýmlama örneði.
+        B2x505.html: Esnek serilimde otomatik ve geniþliðin birimleri taþmaya sürüklemesi örneði.
+        B2x506.html: Esnek serilimde otomatik ve fazla içeriklerin diðer birim enlerini sündürmesi örneði.
+        B2x507.html: Esnek serilimde katlý esneme oranlarýnýn taþarak yada taþmadan sündürülmesi örneði.
+        B2x601.html: Esnek serilimde esnek-yön satýrken birimleri alta sarma örneði.
+        B2x602.html: Esnek serilimde esnek-yön kolonken birimleri saða sarma örneði.
+        B2x603.html: Esnek serilimde esnek-yön ters-satýrken birimleri alta sarma örneði.
+        B2x604.html: Izgara serilimde iki boyutlu hücresel dizilim örneði.
+        B2x605.html: Izgara hücreleri benzeri yüzdesel esnek serilim örneði.
+        B2x606.html: Esnek serilimli kutucuklarý marj boþluðuyla aralama örneði.
+        B2x607.html: Esnek serilimli kutucuklarýn görünürlüðünü çökertme örneði.
+        B2x608.html: Esnek serilimli kutucuklarýn altasarmalý görünürlük çökertme örneði.
+        B2x701.html: Esnek serilimli kutucuklarýn satýrda eþit aralýklarla yayýlmasý örneði.
+        B2x702.html: Esnek serilimli kutucuklarýn satýrda kalan boþluðu içeriklerine eþit paylaþmasý örneði.
+        B2x703.html: Esnek serilimli kutucuklarýn satýrda kalan boþluðu aralarýna farklý paylaþmasý örneði.
+        B2x704.html: Esnek serilimli tek birimi kutu içinde yatay ve dikey ortalama örneði.
+        B2x705.html: Esnek serilimli kartlarda gövde ve ayaklýk düzeni örneði.
+        B2x706.html: Esnek serilimde resim ve açýklamalý medya nesnesi örneði.
+        B2x707.html: Esnek serilimde ters-satýrlý açýklamalý resim medyasý örneði.
+        B2x708.html: Esnek serilimde verigiriþ ve gönder butonlu birimler örneði.
+        B2x709.html: Esnek serilimde verigiriþ ve gönder butonuna etiket ekleme örneði.
+        B2x801.html: Esnek serilimde heriki kutu biriminin de sola kaydýrma vasfýyla ebat uyumlulaþtýrýlmasý örneði.
+        B2x802.html: Esnek serilimde heriki birimin de satýriçi-blokla ebat uyumlulaþtýrýlmasý örneði.
+        B2x803.html: Esnek serilimde heriki birimin de tablo-hücreli ebat uyumlulaþtýrýlmasý örneði.
+        B2x804.html: Esnek serilimde heriki birimin de satýriçi-bloklu üst hizalamayla ebat uyumlulaþtýrýlmasý örneði.
+        B2xmenü.html: Esnekkutu/flexbox ana menüsü örneði.
+        B2y1.html: Yazýfonu derecesinin deðer giriþi ve sürgüyle deðiþirilmesi örneði.
+        B2y2.html: Yazýfonu aðýrlýðýnýn deðer giriþi ve sürgüyle deðiþirilmesi örneði.
+        B2y3.html: Yazýfonu esnemesinin deðer giriþi ve sürgüyle deðiþirilmesi örneði.
+        B2y4.html: Yazýstilinin normal yada italik deðer giriþi ve sürgüyle deðiþirilmesi örneði.
+        B2y5.html: Yazýstili eðiminin 0->12 derecede tedrici yatýrýlmasý örneði.
+        B2y6.html: Bir yazý ebatýnýn varsayýlý optik ebat auto, none ve 8-144 arasýnda esnemesi örneði.
+        B2y7.html: Bir makalenin baþlýk ve paragraflarýný tüm fon vasýf ve deðerleriyle oynama örneði.
+        B2z.html: Anonim html elemanlarýnýn tümünü * sembolle kullanma örneði.
 
     B3. JS Examples
 C. Learning web site design with HTML-CSS-JS Intermediate

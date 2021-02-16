@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x604.html: Izgara serilimde iki boyutlu hücresel dizilim örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Ýki Boyutlu Izgara Hücreleri</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 235px">
+.kutu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* 250px, 140px */
+    width: 600px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+        <div>Altý</div>
+        <div>Yedi</div>
+        <div>Sekiz</div>
+        <div>Dokuz</div>
+        <div>On</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Izgara serilimde satýrXsütun iki boyutlu hücresel dizilim sunulmaktadýr." +
+            "<br/>2) Izgara serilimde (display:grid) kutu içi birimlerin her satýrdaki kolonvari hücresel tanýmlarý \
+            (grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))), yani birimler artarken herbir kolon gözüne \
+            aþaðý-yukarý/minmax 160px eninde kutucuk gelecek, ve satýr yetmezse alt satýrken benzer 160px'lik gözlerin \
+            tahsisine devam edilecektir. Sonda kalan birim eni diðerlerinden farklý deðildir, zira herbir hücreye ortalama \
+            160px geniþlik tahsisi tüm birimler için aynýdýr; esnek serilimdeki gibi sonda tek satýra kalan birim tüm satýra \
+            yayýlamaz, çünkü ýzgarada satýr deðil hücre eni geçerlidir." +
+            "<br/>3) Flex:250px için her satýra ikiþer, 140px içinse dörder hücre-kutucuk sýðýþýr." +
+            "<br/>4) Oynamak için birimlerin flex deðerlerini keyfi atayýp satýra sýðýþacak hücre-kutucuk sayýlarýný ve \
+            ensonda kalabilecek tek kutucuðun yine diðerleri gibi tek hücreli enle yetinmesini gözleyin."
+    </script>
+</body>
+</html>

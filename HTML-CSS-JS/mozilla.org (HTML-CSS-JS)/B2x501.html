@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x501.html: Serilimsiz birim geniþliðindeki min/max-content enaz/ençok-içerik deðerleri örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Min/Max-content</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 165px">
+.kutu { /* display: flex; */
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px dotted Khaki;
+    background-color: #666;}
+.enaz-içerik {width: min-content;}
+.ençok-içerik {width: max-content;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 165px;">
+<div class="kab">
+    <div class="kutu">
+        <p class="enaz-içerik">Benim geniþlik deðerim min-content olarak atandý, bu yüzden otomatikmen enaz geniþlikle alta-sarma özelliðine sahibim.</p>
+        <p class="ençok-içerik">Benim geniþlik deðerim max-content olarak atandý, bu yüzden geniþliðim alta-sarma özelliksiz olup içeriðim tek satýrda taþabilmektedir.</p>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Serilimsiz birim geniþliklerinin min/max-content enaz/ençok-içerik deðerleri sunulmaktadýr." +
+            "<br/>2) Serilimsiz kutu içi p paragraf birimlerinden ilkinin geniþliði width:min-content, ikincisinin ise \
+            width:max-content deðerleriyle enaz geniþlikli içerik ve ençok geniþlikli içerik olarak farklý etkiyle \
+            vasýflandýrýlmýþtýr." +
+            "<br/>3) Enaz-içerikli geniþlikte tüm p paragraf içindeki en uzun kelime baz alýnarak diðer kýsýmlar \
+            boylamasýna alta sarýlmýþtýr. Þayet kab boyu sýnýrlý olsaydý alta taþma olmadan dikey kaydýraçlanacaktý." +
+            "<br/>4) Ençok-içerikli geniþlikteki p paragraf ise alta sarmadan tüm içeriði tek satýrda enlendirmiþ \
+            ve kab sýnýrýný taþarak yatay kaydýraçla uzamýþtýr." +
+            "<br/>5) Bu vasýflarý esnek serilimde de test etmek isterseniz yorumdaki display:flex'i aktifleþtirip \
+            altalta deðil yanyana, kab sýnýrlarýna uyumlu, ilki enaz ende, diðeri ise kalan geniþliðe esneyerek \
+            ayný boyla sýralanacaklardý." +
+            "<br/>6) Oynamak için yukardaki esnek deðiþikliðini yapýp sonuç etkisinin farkýný öncekiyle kýyaslayýn."
+    </script>
+</body>
+</html>

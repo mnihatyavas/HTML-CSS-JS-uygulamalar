@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x607.html: Esnek serilimli kutucuklarýn görünürlüðünü çökertme örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Görünürlük Çökertme</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 235px">
+.kutu {
+    display: flex;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    flex: 1 1 100px; /* 0 100px; 100px */
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.çökert {visibility: collapse;} /* iptal; display: none; */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div class="çökert">Ýki</div>
+        <div>Üç</div>
+        <div class="çökert">Dört
+            <br/>fazladan
+            <br/>içerik
+            <br/>artýþý
+        </div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli kutucuklarýn bazýlarýnýn görünürlüðünü çökertme sunulmaktadýr." +
+            "<br/>2) Görünürlük çökertme (visibility:collapse), görüntü vermeden birim yerini boþ býrakýrken, \
+            görüntü hiçliði (display:none) ise hem görüntüyü sergilemez hem de birim yerini yokmuþcasýna \
+            hiçler. Hiçlenenlerin diðer birimler üzerindeki boy yükseltme etkisini de geçersizler. Yorum \
+            satýrýndaki bu iki farký deneyin." +
+            "<br/>3) Toplam 4 kutucuk birimi olup, Ýki ve Dört çökertmelidir. Ayrýca Dört 3 alt satýrlý fazlalýk \
+            içeriðe sahip olduðundan, görünmese de yükseklik etkisi görünür görünmez diðer tüm birim \
+            yüksekliklerini aynýlaþtýrýr." +
+            "<br/>4) Oynamak için yorum içi görünürük çökertme ve görüntü hiçleme deðiþikliðini yapýp farký \
+            gözleyin; ayrýca görünürlük çökertmeyi iptal edip görünür durumu da test edin."
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x204.html: Izgara serilimde üç kolonlu kutucuk hücreleri örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Üçlü Izgara Hücresi</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 215px">
+.kutu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto)); /* 100px, 300px */
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 220px;">
+<div class="kab">
+    <div class="kutu">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+        <div>Altý</div>
+        <div>Yedi</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Izgara serilimde üç kolonlu kutucuk hücreleri sunulmaktadýr." +
+            "<br/>2) Kutu serilimi display:grid ýzgara ve yatay her satýra hücre dizilimi grid-template-columns: \
+            herbir satýr için tekrarlanan her hücre geniþliði yaklaþýk 200px dizilimlidir. Yani kutu satýrý yaklaþýk \
+            650px olup, herbir ýzgara hücresine 200px tahsis edilirse her satýr 3 eþit hücreye (tüm hücreler \
+            dolu olmasa da) bölünür. Esnek flex'den enbüyük farký, flex'in örneðin son Yedi kutucuk tek \
+            satýrda kalýrsa, tüm satýra yayýlacaðýdýr. Izgarada ise herbir hücreye (satýrý doldurmasalar da) \
+            eþit geniþlik tahsis edilir." +
+            "<br/>3) Þayet hücre eni 100px'e deðiþtirilirse, herbir satýr 6 hücreye; 300px'e deðiþtirilirse 2 \
+            hücreye bölünür." +
+            "<br/>4) Oynamak için yorum satýrý deðiþikliklerini yapýn, kutudaki kutucuk sayýlarýný azaltýp/\
+            çoðaltýn ve sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

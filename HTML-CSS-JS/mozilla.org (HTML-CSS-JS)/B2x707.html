@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x707.html: Esnek serilimde ters-satýrlý açýklamalý resim medyasý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Ters Satýrlý Medya Nesnesi</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 270px">
+.medya {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse; /* column; column-reverse; */
+    /* width: 400px; */
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.medya .resim {margin: 0 0 0 10px;} /* 0 0 0 50px; 20px; */
+.medya .açýklama  {
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 180px;">
+<div class="kab">
+    <div class="medya">
+        <div class="resim"><img src="resim/firefox3.png" alt="resim" height="50" ></div>
+        <div class="açýklama">Bu, medya nesnesinin açýklama bölümüdür. Esnek serilimli medya bölüm alt birimleri resim ve içerikten oluþmakta ve bu birimler dikey üste hizalý (align-items:flex-start) yerleþtirilmiþlerdir.</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli medyada resimli açýklamalar ters satýrlý yönelimde sunulmaktadýr." +
+            "<br/>2) Medya kutu birimleri soldan saða deðil flex-direction:row-reverse vasfý gereði saðdan sola \
+            dizilimli; yani önce açýklama, akabinde de resim konumlanmaktadýr. Kýrmýzý irinokta sýnýrlý medya kutusu \
+            esnek serilimli ve birimlerini dikey üste yaslý (align-items:flex-start) yerleþtirmektedir. Yani iki medya birimi \
+            (resim ve açýklama) esnek tek satýrda yanyana, herbiri kendi içerik boyunda ve üste yaslýdýr." +
+            "<br/>3) Resimle çevre aralýðý 'margin:0 0 0 10px' vasfýyla, yani sadece solunda 10px aralýk olup, üst, \
+            alt ve saðý sýfýr marjlýdýr." +
+            "<br/>4) Resim firefox3.png'nin orijinal ebatý 256X256 büyük olduðundan HTML penceresinde src resim \
+            kaynak tanýmýnda height='50' ile yükseklik ve dolayýsýyla da en 256 yerine 50px'e indirgenmiþtir." +
+            "<br/>5) Oynamak için medya kutu enini yorumdaki 400px'e düþürün, resim sol marj deðerini 50px'e artýrýn, \
+            ayrýca esnek-yönelimi yorumdaki kolon ve ters-kolon deðerleriyle deðiþtirerek sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

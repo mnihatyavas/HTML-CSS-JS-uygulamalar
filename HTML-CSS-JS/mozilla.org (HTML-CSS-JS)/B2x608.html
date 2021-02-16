@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2x608.html: Esnek serilimli kutucuklarýn altasarmalý görünürlük çökertme örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Altasarmalý Görünürlük Çökertme</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 265px">
+.kutu {
+    display: flex;
+    flex-wrap: wrap; /* iptal */
+    width: 550px;
+    border: 5px dotted rgb(196, 39, 68);
+    background-color: DarkSlateGray;}
+.kutu > * {
+    flex: 1 1 auto; /* auto; 0 auto; */
+    border: 5px solid rgb(239, 239, 68);
+    border-radius: 15px;
+    background-color: rgba(96, 139, 168, .85);
+    color: Magenta;
+    padding: 10px;}
+.çökert {visibility: collapse;} /* iptal; display: none; */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="kutu">
+                <div>Bir</div>
+                <div>Kutucuðu uzatmak için fazladan metin girilmiþtir</div>
+          <div class="çökert">Üç
+              <br>ektra
+              <br>boy
+              <br>yükseltmiþtir
+          </div>
+          <div>Dört</div>
+          <div>Beþ</div>
+          <div>Altý</div>
+          <div>Yedi</div>
+          <div>Sekiz</div>
+          <div>Dokuz</div>
+          <div>On</div>
+    </div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Esnek serilimli kutucuklarýn altasarmalý görünürlük çökertmesi sunulmaktadýr." +
+            "<br/>2) Esnek serilimli kutu ayrýca birim içerikleri uzunluðunca mevcut kutu enini taþýnca altasarma \
+            flex-wrap:wrap vasfýna sahiptir. Olmasaydý, tek satýra sýðýþacak, ayrýca saða taþarak yatay kaydýraç \
+            oluþturacaktý (altasarma vasfýný bozup test edin)." +
+            "<br/>3) Üç numaralý kutucuk çoklu satýrla boylandýrýlmýþ olup, görünürlük çökertilse de yeri boþ \
+            kalacak ve ayrýca da boy etkisi ilgili satýra denk düþen birimleri aynýlaþtýrmaya devam edecektir." +
+            "<br/>4) Oynamak için önce visibility:collapse vasfýný iptal edin, sonra da görüntü hiçleme (display:none) \
+            ile deðiþtirip, boþluðun ve boy etkisinin de hiçlenmesini gözleyin."
+    </script>
+</body>
+</html>
