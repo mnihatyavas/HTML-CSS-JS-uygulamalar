@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2q12.html: Açýklama metninin oluþturulan ovalý saðdan sýnýrboyu sarmalamsý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Açýklamanýn Ovalý Sarmasý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 150px">
+.oval {
+    background-color: Orange;
+    height: 190px;
+    width: 170px;
+    border-radius: 50%; /* iptal */
+    float: left; /* right; */
+    shape-outside: border-box;} /* circle(50%); */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+
+<div class="kab">
+    <div class="oval"></div>
+    <div>1782 yýlýnýn kasým ayýnda bir gece, hikayemiz böyle baþlýyor, küçük bir Fransýz kasabasý olan Annonay'daki bir evde, beyaz bacasýndan gri dumanlarýn gökyüzüne kývrýlarak yükseldiði bir evde, kaðýt-imalatý ticaretiyle uðraþan bilimsel araþtýrmalar meraklýsý iki kardeþ: Stephan ve Joseph Montgolfier'lerin nice tarihi bir icat olacak olan balonla gökyüzü uçuþunu tasarladýklarý, binlerce kasaba halký tarafýndan henüz bilinmemekteydi. Bu icat geleceðin modern uçaklarýnýn ilk prototipini oluþturacaktý.</div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Saðýndaki açýklamanýn yapýlan oval daireyi saðdan sýnýrboyu sarmasý sunulmaktadýr." +
+            "<br/>2) HTML penceresinde img-src yerine div-class-oval ile kendimiz 190px boy ve 170px en'de portakal \
+            renkli oval þekil yaratýp float:left sola yaslý, shape-outside:border-box ile þeklin saðýndaki metnin þekli \
+            sað sýnýr biçiminde sarmalamasýný saðlayabiliriz. Þayet border-radius'u bozarsanýz, oval yerine dikdörtgen \
+            oluþacak ve saðýndaki metin de dikdörtgeni dairesel deðil, otomatikmen dik saracaktýr. Ayrýca border-box \
+            yerine circle(50%) deðeri konursa, þeklin sað sýnýr tipine bakmaksýzýn her halukarda dairesel saracaktýr." +
+            "<br/>3) Oval'ýn height/with deðerleriyle oynayarak tam daire, dikey/yatay elips elde edebilir; ve her þekilde \
+            border-box þeklin sað biçimi metnin sarmalama eðimini yönlendirecektir." +
+            "<br/>4) Oval þekle padding/margin gereksizdir, ama oval'ýn yatay-dikey içerlenmesi istenirse margin artýrýlabilir. \
+            Metin için div yerine p/paragraf etiketi kullanýlýrsa varsayýlý p özelliklerini yansýtacaktýr. Uyum için oval ve metin \
+            için ayný div kullanmak daha uygundur." +
+            "<br/>5) Oynamak için yorum satýr deðerlerini kullanýn, oval yada dikdörtgen þekiller deneyin, border-box ile \
+            circle(50%) farkýný test edin, sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

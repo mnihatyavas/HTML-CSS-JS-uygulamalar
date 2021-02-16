@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2q23.html: Metnin þekli sýnýr-kutu deðeriyle sarmalamasý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Sýnýr-kutu'yla Sarmalama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 200px">
+.þekil {
+    background-color: rebeccapurple;
+    height: 180px; /* 280px */
+    width: 180px;
+    padding: 80px;
+    margin: 0px;
+    border: 10px solid black; /* 20px; 60px */
+    border-radius: 50%;
+    float: left;
+    shape-outside: border-box;}
+      </textarea>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="þekil"></div>
+    <div>1782 yýlýnýn kasým ayýnda bir gece, hikayemiz böyle baþlýyor, küçük bir Fransýz kasabasý olan Annonay'daki bir evde, beyaz bacasýndan gri dumanlarýn gökyüzüne kývrýlarak yükseldiði bir evde, kaðýt-imalatý ticaretiyle uðraþan bilimsel araþtýrmalar meraklýsý iki kardeþ: Stephan ve Joseph Montgolfier'lerin nice tarihi bir icat olacak olan balonla gökyüzü uçuþunu tasarladýklarý, binlerce kasaba halký tarafýndan henüz bilinmemekteydi. Bu icat geleceðin modern uçaklarýnýn ilk prototipini oluþturacaktýr.</div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Metnin, solundaki þekli sýnýr-kutu deðeriyle sarmalamasý sunulmaktadýr." +
+            "<br/>2) Þeklimiz 180X180 ebatlý karenin %50 yuvarlatýlmýþ, dýþý kalýn siyah sýnýrlý, içi eflatun, iç tampon ve \
+            dýþ marjlý, sola float yaslý vasýflandýrýlmýþtýr." +
+            "<br/>3) Þeklin saðýndaki metin shape-outside:border-box sýnýr-kutu ile sarmalanmýþtýr. Sýnýr-kutu, \
+            tanýmlý þeklimizin, border:10px sýnýr deðeri kutu ebadýný dýþa esnetmesiyle artan kutu ebadýný gözönüne alarak, \
+            þeklin dýþ sýnýr dýþý biçiminde metnin sarmalamasýný saðlamaktadýr." +
+            "<br/>4) Þeklin border dýþ sýnýr deðerini 10'dan 20px'e hatta 60px'e artýrýrsak, büyüyen þeklimiz, saðýndaki \
+            dýþ metnin daha da büyüyen dýþ sarmalamasýyla duyarlý eðimlenecektir." +
+            "<br/>5) Oynamak için border dýþ sýnýr yorum içi deðiþikliði, þeklin enXboy deðerlerini, border-radius daha \
+            düþük % daireleþtirmeyi deneyerek, sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

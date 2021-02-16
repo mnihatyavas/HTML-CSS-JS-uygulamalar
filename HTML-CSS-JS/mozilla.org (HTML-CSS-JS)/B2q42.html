@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2q42.html: Metnin solundaki zeminli resmi yurel resim sýnýrlarý eþiðiyle sarmalamasý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Yurel Resim Eþiðiyle Sarmalama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 95px">
+img {
+    float: left;
+    shape-outside: url(resim/yýldýz4.png); /* firefox.png */
+    shape-image-threshold: .2;} /* 0.1999, 0.99, 1.0 */
+      </textarea>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <img src="resim/yýldýz4.png" alt="yýldýz-4" height=""> <!- firefox.png -->
+    <div>1782 yýlýnýn kasým ayýnda bir gece, hikayemiz böyle baþlýyor, küçük bir Fransýz kasabasý olan Annonay'daki bir evde, beyaz bacasýndan gri dumanlarýn gökyüzüne kývrýlarak yükseldiði bir evde, kaðýt-imalatý ticaretiyle uðraþan bilimsel araþtýrmalar meraklýsý iki kardeþ: Stephan ve Joseph Montgolfier'lerin nice tarihi bir icat olacak olan balonla gökyüzü uçuþunu tasarladýklarý, binlerce kasaba halký tarafýndan henüz bilinmemekteydi. Bu icat geleceðin modern uçaklarýnýn ilk prototipini oluþturacaktýr.</div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Metnin, solundaki zeminli resmi yurel resim sýnýrlarý eþiðiyle sarmalamasý sunulmaktadýr." +
+            "<br/>2) CSS shape-outside:url() ('>python -m http.server' ile 'localhost:8000') sunucuda çalýþýr." +
+            "<br/>3) HTML img-src resmimiz düþük-eþik kare zemin üzerindeki 5'li yýldýzdýr. Bu düþük-zeminli resmin \
+            diðer zeminli resimlerden farký zemin eþik seviyesinin düþük olmasýdýr. Örneðin yorumdaki firefox.png zeminli \
+            resmi deðiþtirseniz, shape-image-threshhold resim-eþik seviyesini 0.99 da yapsanýz, metin zemin eþiðini geçip \
+            içteki tilki resim sýnýrlarýna ulaþamaz." +
+            "<br/>4) Halihazýrdaki yýldýz4.png resmin zemin eþiði 0.2 olup, bunun altýndayken, metin kare zemin eþiðin \
+            saðýnda kalýrken, deðer 0.2 ve üzerine yükseltildiðinde, saðdaki metin, yýldýz resminin kare zemin eþiðini geçerek \
+            yýldýzýn sað kollarýný sarmalamaktadýr." +
+            "<br/>5) Shape-outside:url() vasfýnýn çalýþabilmesi için, programýn ya çevrimiçi yada localhost:8000 dahili \
+            sunucu kipinde çalýþtýrýlmasý gerekmektedir. Yoksa img-src resmi yansýtýr, ancak shape-outside:url() iþlevsiz \
+            kalacaðýndan, metin resmi daima dikey sarmalar, yýldýz kollarýna eriþemez." +
+            "<br/>6) Oynamak için mevcut yýldýz resminin eþik seviyesini 0.2 altý=0.1999'a düþürün ki sarmalama zemin eþiðini \
+            geçemeyip saðda dikey kalsýn, sonra 1.00'e yükseltip metnin hem zemin hem de yýldýz eþiklerini geçip tamamen \
+            kabýn soluna yaslansýn; bilahare de zemin eþiði geçilemez firefox.png resmini hem html img-src'da hem de \
+            css shape-outside:url()'de deðiþtirip, ayrýca treshhold eþiðini 0.2 üstüne de taþýrsanýz metnin resmi daima saðdan \
+            dikey sarmaladýðýný, 1.00 ve üstündeyse tamamen sola yaslandýðýný gözleyin."
+    </script>
+</body>
+</html>

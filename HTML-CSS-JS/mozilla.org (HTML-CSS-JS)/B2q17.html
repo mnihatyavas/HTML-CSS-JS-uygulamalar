@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2q17.html: Resmi elips þeklinde kýrpma örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Resmi Ellipsel Kýrpma</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 115px">
+.kab {color:magenta;}
+img {
+    float: left;
+    shape-outside: ellipse(50% 60%); /* ellipse(40% 50%) */
+    clip-path: ellipse(50% 60%);} /* ellipse(40% 50%) */
+    </textarea>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <img src="resim/balon.png" alt="balon" height="">
+    <div>1782 yýlýnýn kasým ayýnda bir gece, hikayemiz böyle baþlýyor, küçük bir Fransýz kasabasý olan Annonay'daki bir evde, beyaz bacasýndan gri dumanlarýn gökyüzüne kývrýlarak yükseldiði bir evde, kaðýt-imalatý ticaretiyle uðraþan bilimsel araþtýrmalar meraklýsý iki kardeþ: Stephan ve Joseph Montgolfier'lerin nice tarihi bir icat olacak olan balonla gökyüzü uçuþunu tasarladýklarý, binlerce kasaba halký tarafýndan henüz bilinmemekteydi. Bu icat geleceðin modern uçaklarýnýn ilk prototipini oluþturacaktýr.</div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Resmi elips þeklinde kýrpma sunulmaktadýr." +
+            "<br/>2) Resmimiz normalde dikdörtgen ebatlý olup clip-path:ellipse(50% 60%) oranýyla elliptik çerçeveli \
+            kýrparak biçimlemekteyiz. Tam elips için ellipse(40% 50%) daha uygun olmakla beraber balon resmini de \
+            fazlaca kýrpmaktadýr." +
+            "<br/>3) Resmin sað metin sarmalanmasýný da ayný shape-outside:ellipse(50% 60%) ile vasýflayabiliriz." +
+            "<br/>4) Oynamak için shape-outside ve clip-path için yorum satýrýndaki daha dar elipsi, farklý elips oranlarýný, \
+            ayrýca circle(50%) daireyi deneyip, sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

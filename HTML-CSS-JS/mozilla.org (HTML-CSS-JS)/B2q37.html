@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2q37.html: Metnin sol þekli çok-kerlý poligonsal sarmalamasý örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Çokkenarlý Poligonsal Sarmalama</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 165px">
+.þekil {
+    float: left;
+    shape-outside: polygon(0px 0px, 20px 189px, -100.48% 94.71%, 150px 120px, 80.67% 37.17%);
+    margin: 10px;
+    width: 100px;
+    height: 200px;
+    background-color: rgba(0,0,0,0.2);}
+      </textarea>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="þekil"></div>
+    <div>1782 yýlýnýn kasým ayýnda bir gece, hikayemiz böyle baþlýyor, küçük bir Fransýz kasabasý olan Annonay'daki bir evde, beyaz bacasýndan gri dumanlarýn gökyüzüne kývrýlarak yükseldiði bir evde, kaðýt-imalatý ticaretiyle uðraþan bilimsel araþtýrmalar meraklýsý iki kardeþ: Stephan ve Joseph Montgolfier'lerin nice tarihi bir icat olacak olan balonla gökyüzü uçuþunu tasarladýklarý, binlerce kasaba halký tarafýndan henüz bilinmemekteydi. Bu icat geleceðin modern uçaklarýnýn ilk prototipini oluþturacaktýr.</div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Metnin, solundaki þekli çokkenarlý poligonsal sarmalamasý sunulmaktadýr." +
+            "<br/>2) Þeklimiz 100X200px ebatta dikdörtgen olup, rgba(0,0,0,0.2) gri þeffaflýkta, sola yaslý, 10px de \
+            çevresel mesafeleme marjlýdýr." +
+            "<br/>3) Sað metin sarmalamasý shape-outside:polygon() poligonsal çokkenarlý olup, poligon baþlangýcý \
+            yatayXdikey 0X0px, sonuysa 20X189px olup, ara (enyakýn ve enuzak) mesafelendirmeler için 3 ayrý % \
+            oranlarý tanýmlanmýþtýr. Büyüyen yüzde dýþa, küçülen (hatta eksi) deðerse içe çekmektedir." +
+            "<br/>4) Oynamak için bu 3 poligon yüzde ayar çiftlerine tek tek artan/azalan oranlar girip, hertürlü \
+            yakýnlaþtýrma/uzaklaþtýrma sarmalamasý deneyip, sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

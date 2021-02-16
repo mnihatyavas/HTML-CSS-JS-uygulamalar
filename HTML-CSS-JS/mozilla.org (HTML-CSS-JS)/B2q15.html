@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2q15.html: Þekil-resim-eþiði oranýyla metni þekle içerleme örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Þekil-resim-eþiði Oraný</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 150px">
+.þekil {
+    float: left; /* right */
+    width: 200px;
+    height: 200px;
+    background-image: linear-gradient(45deg, Magenta, transparent 90%,transparent);
+    shape-outside: linear-gradient(45deg, red, transparent 90%,transparent);
+    shape-image-threshold: 0.4;} /* 1.0; 0.2 */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+<div class="kab">
+    <div class="þekil"></div>
+    <div>1782 yýlýnýn kasým ayýnda bir gece, hikayemiz böyle baþlýyor, küçük bir Fransýz kasabasý olan Annonay'daki bir evde, beyaz bacasýndan gri dumanlarýn gökyüzüne kývrýlarak yükseldiði bir evde, kaðýt-imalatý ticaretiyle uðraþan bilimsel araþtýrmalar meraklýsý iki kardeþ: Stephan ve Joseph Montgolfier'lerin nice tarihi bir icat olacak olan balonla gökyüzü uçuþunu tasarladýklarý, binlerce kasaba halký tarafýndan henüz bilinmemekteydi. Bu icat geleceðin modern uçaklarýnýn ilk prototipini oluþturacaktýr.</div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Þekil-resim-eþiði'yle metnin þekle içerleme oraný sunulmaktadýr." +
+            "<br/>2) Þekil background-image zeminde doðrusal kademeli sol-alttan sað-üste 45 dereceyle gittikce \
+            þeffaflaþan magenta renkli kareden oluþmaktadýr." +
+            "<br/>3) Metni bu karenin saðýna shape-outside ile border-box yapsak dik sýnýrlý, circle(50%) yapsak dairesel \
+            olacaktýr. Burada linear-gradient vasfýyla aynen þekil yaparken kullandýðýmýz 45 derecelik köþegen eðimi \
+            metni sýnýrlarken de kullanmaktayýz." +
+            "<br/>4) Ayrýca shape-image-treshhold vasfý þekil-resim-eþiði oranýnýn metni sýnýrlamasýnda tam (1.0), enaz \
+            (0.0), yada yarýdan biraz az (0.4) olacaðýný ayarlar." +
+            "<br/>5) Oynamak için yorum satýrý deðerlerini, ayrýca zemin-resmi doðrusal kademeleme renk ve þeffaflýk \
+            oranýný deðiþtirerek sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

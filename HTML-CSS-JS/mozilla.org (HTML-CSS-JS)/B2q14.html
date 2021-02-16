@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B2q14.html: Þekli saran metne þekil-marjý etkisi örneði.</title>
+    <link rel="stylesheet" href="B2d.css" />
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        .kab {
+            border: 5px solid blue;
+            background-color: green;
+            padding: 10px;
+            margin: 10px;
+            overflow: auto;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Þekil-marjý Katkýsý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <section class="gözat"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 95px">
+img {
+    float: left; /* right; */
+    shape-outside: circle(50%); /* 30%; 90%; border-box */
+    shape-margin: 5px;} /* 15px; */
+    </textarea>
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 200px;">
+
+<div class="kab">
+    <img src="resim/balon3.png" alt="balon3" height="200"> <!-- balon2.png -->
+    <div>1782 yýlýnýn kasým ayýnda bir gece, hikayemiz böyle baþlýyor, küçük bir Fransýz kasabasý olan Annonay'daki bir evde, beyaz bacasýndan gri dumanlarýn gökyüzüne kývrýlarak yükseldiði bir evde, kaðýt-imalatý ticaretiyle uðraþan bilimsel araþtýrmalar meraklýsý iki kardeþ: Stephan ve Joseph Montgolfier'lerin nice tarihi bir icat olacak olan balonla gökyüzü uçuþunu tasarladýklarý, binlerce kasaba halký tarafýndan henüz bilinmemekteydi. Bu icat geleceðin modern uçaklarýnýn ilk prototipini oluþturacaktý.</div>
+</div>
+      </textarea>
+
+    <div class="deðiþtirilebilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yenidenbaþlat">
+    </div>
+
+    <script src="B2d.js"></script>
+    <script>
+        göster.innerHTML =
+            "1) Metnin þekli sarmalamasýnda þekil-marjý katkýsý sunulmaktadýr." +
+            "<br/>2) Kutu içine html elemaný img resmi float:left sola yanaþýk konulmakta, ayrýca resmin dýþ þekli \
+            shape-outside:circle(50%) ile %50 dairesel çerçevelenmekte; böylece resmin saðýndaki açýklama metni \
+            resmi dairesel saðdan sarmalamaktadýr. Circle(30%) saðdan sarmalamayý daraltmakta, 90% ise tam \
+            dikey sað sýnýr saðlamaktadýr." +
+            "<br/>3) Shape-margin:5px þekil marjý katkýsý, þeklin metin orta ekseninden mesafeyi deðiþtirmemekte, \
+            circle(50%) yada border-box sarmalamayý belirli oranda dikeltmekte (%50 yerine %60 gibi) ve alt-üst sarma \
+            mesafelerini açmaktadýr." +
+            "<br/>4) Oynamak için float:right yapabilir, shape-outside:circle(30%) yada 90% deðiþtirebilir, farklý \
+            resimler koymayý deneyebilir, hatta resmin height='200' ebatýný küçültüp büyütebilir, ayrýca shape-margin \
+            deðeriyle oynayabilir, sonuç etkilerini gözleyebilirsiniz."
+    </script>
+</body>
+</html>
