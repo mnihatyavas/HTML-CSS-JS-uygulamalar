@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3d3.html: JS dizi-harita kodlamasýnýn Kodaynasý penceresinde çalýþtýrýlmasý örneði.</title>
+    <style>
+        body {background-color:LightGreen; color: Blue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+    <link  href="B3d/B3d1x4.css" rel="stylesheet"></link> <!-- CodeMirror standart CSS alt-programlarý -->
+    <link href="B3d/B3d1x5.css" rel="stylesheet"></link>
+    <link href="B3d/B3d1x6.css" rel="stylesheet"></link>
+    <link href="B3d1x1.css" rel="stylesheet"></link> <!-- Örneðimizin CSS ayarlarý -->
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>JS Kodaynasý: Dizi-Harita</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <div id="editör">
+      <input id="yenidenBaþlat" type="button" value="Yeniden Baþlat" />
+    </div>
+
+    <div id="düðmeler">
+      <input id="çalýþtýr" type="button" value="Koþtur" />
+    </div>
+  
+    <div id="çýktý"><p></p></div><br/><br/>
+
+    <script src="B3d/B3d1x7.js"></script> <!-- CodeMirror standart JS alt-programlarý -->
+    <script src="B3d/B3d1x8.js"></script>
+    <script src="B3d/B3d1x9.js"></script>
+    <script src="B3d/B3d1x10.js"></script>
+    <script src="B3d/B3d1x11.js"></script>
+    <script src="B3d3x2.js"></script> <!-- JS kodlama örneði -->
+    <script src="B3d1x3.js"></script> <!-- JS kodlama örneðini kodaynasýnda çalýþtýrma -->
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS dizi-harita kodlamasýnýn kodaynasý penceresinde çalýþtýrýlmasý sunulmaktadýr." +
+            "<br/>2) JS map() hazýr arþiv fonksiyonu önüne baðlanan sayý dizisi elemanlarýný tek tek fonksiyonla \
+            belirtilen matematiksel iþlemden geçirerek sonuç dizisini yeni bir deðiþkene atar." +
+            "<br/>3) Örnekte, tüm dizi sayýlarý tek tek 2 ile çarpýlmýþtýr. Ayrýca yorum satýrýndaki iþlem her sayýyý \
+            Math.sqrt(2)=1.414 ve Math.PI=3.14 ile çarpýp, sonucu toFixed(4) ile 4 haneli ondalýk hassasiyete \
+            sýnýrlar. Bu sonuçlar konsola yansýtýlmaktadýr." +
+            "<br/>4) Math.sqrt(), Math.PI ve toFixed() gibi diðer sayýsal hazýr fonksiyonlarý bu haritalama örneðinde \
+            deneyebilir, sonuç doðruluklarýný test edebilirsiniz."
+    </script>
+  </body>
+</html>

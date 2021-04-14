@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3d6.html: CodeMirror editörüyle JavaScript, TypeScript ve JSON kodlamalarý iþleme örneði.</title>
+    <style>
+        body {background-color:LightGreen; color: Blue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+    <link rel="stylesheet" href="B3d/B3d1x4.css"> <!-- codemirror.css -->
+    <script src="B3d/B3d6x12.js"></script> <!-- codemirror.js -->
+    <script src="B3d/B3d6x13.js"></script> <!-- javascript.js -->
+    <style type="text/css">.CodeMirror {border: 2px solid black; background-color: Linen; height:400px;}</style>
+
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>JS Kodaynasý/CodeMirror</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <div>
+        <a href="http://codemirror.net" target="_"><h1>CodeMirror</h1>
+        <img src="resim/logo2.png"></a>
+    </div>
+
+    <article>
+        <h2 id="baþlýk"></h2>
+
+        <button onclick="window.location.reload();">Kodlamayý Kapa</button>
+        <button class="js">Göster JavaScript</button>
+        <button class="ts">Göster TypeScript</button>
+        <button class="json">Göster JSON-ID</button><br/>
+
+        <span style="background-color:Magenta; color:Yellow; width:150px;"><a href="B3d6x1.html" target="_">Koþtur JavaScript</a></span>
+        <span style="background-color:Magenta; color:Yellow; width:150px;"><a href="B3d6x2.html" target="_">Koþtur TypeScript</a></span>
+
+        <div id="k1" style="display:none;">
+            <textarea id="kod1">
+                function DizgeAkýþý (dizge) {
+                    this.konum = 0;
+                    this.dizge = dizge;
+                    return dizge + " tamamlandý...";
+                } // func sonu...
+
+                DizgeAkýþý.prototype = {
+                    done: function() {return this.konum >= this.dizge.length;},
+                    peek: function() {return this.dizge.charAt (this.konum);},
+                    next: function() {if (this.konum < this.dizge.length) return this.dizge.charAt (this.konum++);},
+                    eat: function (match) {
+                        var ch = this.dizge.charAt (this.konum);
+                        if (typeof match == "string") var ok = ch == match;
+                        else var ok = ch == match.test ? match.test (ch) : match (ch);
+                        if (ok) {this.konum++; return ch;}
+                    }, // eat sonu...
+                    eatWhile: function (match) {
+                        var start = this.konum;
+                        while (this.eat (match));
+                        if (this.konum > start) return this.dizge.slice (start, this.konum);
+                    }, // eatWhile sonu...
+                    backUp: function (n) {this.konum -= n;},
+                    column: function() {return this.konum;},
+                    eatSpace: function() {
+                        var start = this.konum;
+                        while (/\s/.test (this.dizge.charAt (this.konum))) this.konum++;
+                        return this.konum - start;
+                    }, // eatSpace sonu...
+                    match: function (pattern, consume, caseInsensitive) {
+                        if (typeof pattern == "string") {
+                            function cased (str) {return caseInsensitive ? str.toLowerCase() : str;}
+                            if (cased (this.dizge).indexOf (cased (pattern), this.konum) == this.konum) {
+                                if (consume !== false) this.konum += str.length;
+                                return true;
+                            }
+                        }else {
+                            var match = this.dizge.slice (this.konum).match (pattern);
+                            if (match == consume !== false) this.konum += match [0].length;
+                            return match;
+                        } // else sonu...
+                    } // match sonu...
+                }; // DizgeAkýþý sonu...
+                console.log (DizgeAkýþý ("done") );
+            </textarea>
+        </div>
+
+        <div id="k2" style="display:none;">
+            <textarea id="kod2">
+                class Selamlaþma {
+                    constructor (mesaj) {this.selam = mesaj;}
+                    selamla() {return "Merhaba, " + this.selam;}
+                } // class sonu...
+
+                var selamcý = new Selamlaþma ("dünya!..");
+                var düðme = document.createElement ("button");
+                düðme.innerText = "Selamla";
+                düðme.onclick = function() {alert (selamcý.selamla() ) }
+                console.log (düðme.innerText);
+                document.body.appendChild (düðme);
+            </textarea>
+        </div>
+
+        <div id="k3" style="display:none;">
+            <textarea id="kod3">
+                {
+                    "@context": {
+                        "name": "http://schema.org/name",
+                        "description": "http://schema.org/description",
+                        "image": {
+                            "@id": "http://schema.org/image",
+                            "@type": "@id"
+                        },
+                        "geo": "http://schema.org/geo",
+                        "latitude": {
+                            "@id": "http://schema.org/latitude",
+                            "@type": "xsd:float"
+                        },
+                        "longitude": {
+                            "@id": "http://schema.org/longitude",
+                            "@type": "xsd:float"
+                        },
+                        "xsd": "http://www.w3.org/2001/XMLSchema#"
+                    },
+                    "name": "The Empire State Building",
+                    "description": "The Empire State Building is a 102-story landmark in New York City.",
+                    "image": "http://www.civil.usherbrooke.ca/cours/gci215a/empire-state-building.jpg",
+                    "geo": {
+                        "latitude": "40.75",
+                        "longitude": "73.98"
+                    }
+                }
+            </textarea>
+        </div>
+    </article>
+
+    <script>
+        let jsDüðmesi = document.querySelector (".js");
+        let tsDüðmesi = document.querySelector (".ts");
+        let jsonDüðmesi = document.querySelector (".json");
+
+        jsDüðmesi.addEventListener ("click", () => {
+            k1.style.display=""; k2.style.display="none"; k3.style.display="none";
+            document.getElementById ("baþlýk").innerHTML ="JavaScript Kipi";
+            CodeMirror.fromTextArea(document.getElementById ("kod1"), {
+                lineNumbers: true,
+                matchBrackets: true,
+                continueComments: "Enter",
+                extraKeys: {"Ctrl-Q": "toggleComment"}
+            }); // CodeMirror sonu...
+            let taslak = document.createElement ("script");
+            let kodlama = document.getElementById ("kod1");
+            taslak.appendChild (kodlama); console.log (taslak);
+            document.body.appendChild (taslak);
+        }); // jsDüðmesi sonu...
+
+        tsDüðmesi.addEventListener ("click", () => {
+            k1.style.display="none"; k2.style.display=""; k3.style.display="none";
+            document.getElementById ("baþlýk").innerHTML ="TypeScript Kipi";
+            CodeMirror.fromTextArea(document.getElementById ("kod2"), {
+                lineNumbers: true,
+                matchBrackets: true,
+                continueComments: "Enter",
+                extraKeys: {"Ctrl-Q": "toggleComment"}
+            }); // CodeMirror sonu...
+            let taslak = document.createElement ("script");
+            let kodlama = document.getElementById ("kod2");
+            taslak.appendChild (kodlama); console.log (taslak);
+            document.body.appendChild (taslak);
+        }); // jsDüðmesi sonu...
+
+        jsonDüðmesi.addEventListener ("click", () => {
+            k1.style.display="none"; k2.style.display="none"; k3.style.display="";
+            document.getElementById ("baþlýk").innerHTML ="JSON-ID Kipi";
+            CodeMirror.fromTextArea(document.getElementById ("kod3"), {
+                lineNumbers: true,
+                matchBrackets: true,
+                continueComments: "Enter",
+                extraKeys: {"Ctrl-Q": "toggleComment"}
+            }); // CodeMirror sonu...
+            let taslak = document.createElement ("script");
+            let kodlama = document.getElementById ("kod3");
+            taslak.appendChild (kodlama); console.log (taslak);
+            document.body.appendChild (taslak);
+        }); // jsDüðmesi sonu...
+
+        document.getElementById ("göster").innerHTML =
+            "1) JS CodeMirror/Kodaynasý penceresinde JavaScript, TypeScript ve JSON kodlamalarýnýn iþlenmesi sunulmaktadýr." +
+            "<br/>2) Kodaynasý altprogramlarý ayrý bir B3d klasöründe ve hamkodlamalý bulunmaktadýr. Bu örnek, kodaynasý \
+            penceresinde kodlamalarý sunulan JS, TS ve JSON script kodlamalarýný içermekte, ayrýca JS ve TS kodlamasý \
+            koþturulmak istendiðinde 2 harici .html uzantýlý altprograma a-href ile gönderme yapýlmaktadýr." +
+            "<br/>3) CodeMirror orijinal programý ve internet sitesine eriþmek için çevrimiçi ilgili logoya týklamanýz yeterlidir. \
+            Daha detaylý ve derinlikli manüel açýklamalarý ve örneklemeleri incelenebilir." +
+            "<br/>4) Sayfada 3 buton'un herbiri kodaynasý penceresine sýrayla JavaScript, TypeScript ve JSON-ID kodlamasýný \
+            getirmektedir. Pencere tamamen kapatýlmak istenirse ilk Kapa butonu týklanmalýdýr." +
+            "<br/>5) Ayrýca a-href týklamalarýyla, ayrý bir tarayýcý sekmesinde JavaScript veya TypeScript kodlamasý koþturulabilir. \
+            Bu program kalýbýyla her türlü JS ve TS kodlamalarýnýzý kodaynasý penceresinde görüntüleyebilir, hatta iþleyebilir ve \
+            sonuç kodlamayý da a-href vasýtasýyla koþturup sonuç etkilerini gözleyebilirsiniz." +
+            "<br/>6) Oynamak için, ana CodeMirror çevrimiçi sitesini inceleyin; mevcut JS, TS, JSON kodlamalarýný kodaynasýnda \
+            inceleyip, ayrýca a-href çaðýrmasýyla koþturup sonuçlarýný görün; sonra da kendi JS kodlama örneðinizi bu örnek \
+            kalýpda yerlerine koyup, kodaynasý penceresinde gözleyin ve baðýmsýz a-href-html programý olarak koþturun."
+    </script>
+  </body>
+</html>

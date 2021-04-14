@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3d6x2.html: Kodaynasýnda TypeScript kodlamasýný koþturma örneði.</title>
+    <style>
+        body {background-color:LightGreen; color: Blue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>JS Kodaynasý: TypeScript</h3>
+    <hr/>
+
+    <script>
+        class Selamlaþma {
+            constructor (mesaj) {this.selam = mesaj;}
+            selamla() {return "Merhaba, " + this.selam;}
+        } // class sonu...
+
+        var selamcý = new Selamlaþma ("dünya!..");
+        var düðme = document.createElement ("button");
+        düðme.innerText = "Selamla";
+        düðme.onclick = function() {alert (selamcý.selamla() ) }
+        document.body.appendChild (düðme);
+    </script>
+</body>
+</html>

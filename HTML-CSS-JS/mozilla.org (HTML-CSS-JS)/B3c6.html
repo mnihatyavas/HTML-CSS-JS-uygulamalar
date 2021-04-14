@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3c6.html: JS modüllerle canvas/tuval'de buton tıklamalı dinamik kare, üçgen ve daire çizimi örneği.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        canvas {
+            border: 5px solid Brown;
+            background-color: DarkSlateGray;}
+        div ul {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+    <script type="module" src="B3c6x1.js"></script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Modüllü Tuval Çizimi-6</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <button class="tuval">Tuvali&Raporu Yarat</button>
+    <button class="kare">Kare</button>
+    <button class="üçgen">Üçgen</button>
+    <button class="daire">Daire</button><br/><br/>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS modüllü canvas/tuval'de  buton tıklamalı dinamik kare, üçgen ve daire çizimleri sunulmaktadır." +
+            "<br/>2) Modüller '>python -m http.server' ve 'localhost:8000' dahili sunucuda çalışmaktadır." +
+            "<br/>3) Bu örnek de 'new Sınıf' yaratmalı örnek benzeridir, ancak tuval&rapor, kare, üçgen ve daire düğme \
+            tıklama kontrollü yaratılmakta/çizilmekte olup, önceden gerçekleştirilen işlem tekrar tıklanırsa, aynı işlemi \
+            lüzumsuzca tekrarlamamakta, bunu da konsolda beyan etmektedir." +
+            "<br/>4) Sayfada html button etiketli 4 tıklama düğmesi tanımlanmış, bunların sınıfadları ilk modülde değişkenlere \
+            atanıp, bu değişkenlerle addEventListener click/tıklama kontrollü dinamik işlemlere bağlanmıştır." +
+            "<br/>5) Bu işlemlerde öncelikle ilgili JS modülü import'la ithal edilip, sonra dinamik 'new Module.Sınıf()' şeklinde \
+            argümanlı Sınıf kurucusu yaratılıp, akabinde de gerekli fonksiyon çağrıları yapılmıştır." +
+            "<br/>6) Ayrıca tüm dinamik JS modüllerinin gereksiz tekrar icraları yaratıldı/çizildi false/true kontrolleriyle \
+            işlem tekrarında konsol ikazıyla, işleme devam edilmeyip geri dönülmüştür." +
+            "<br/>7) Böylece ilk boş HTML sayfasında düğme kontrollü tuval ve rapor yaratılıp, kare, üçgen ve daire \
+            şekilleri tek tek çizilip, alta da şekillerin alan ve çevre değerleri yayınlanmıştır. Tuval&raporu yaratmadan \
+            tıklanan şekil düğmeleri konsol hatası verecek, ancak tuval&rapor yaratılınca tekrar normal çalışacaktır." +
+            "<br/>8) Oynamak için tıklanan düğme yazı ve renklerini değiştirin, çizilen tuval ve şekil parametrelerini \
+            (renk, konum, ebat) değiştirin, tuval yaratılmadan önce şekil çizme konsol hata mesajını daha kontrollü \
+            console.log formatıyla yayınlayın, sonuç etkilerini gözlemleyin."
+    </script>
+  </body>
+</html>

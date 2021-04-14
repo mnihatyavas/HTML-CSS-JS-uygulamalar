@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3a.html: Girilen tamsayý adet ardýþýk fibonaki serisini gösteren JS örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+      div, p {margin-bottom: 20px;}
+      label {color: Magenta; font-size:22px;}
+      p#sonuç {color: yellow; background-color: black;}
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Fibonaki JS Kodlamasý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <form>
+        <div>
+            <label for="sayý">Fibonaki serisi basamak sayýsýný girin:</label>
+            <input type="number" id="sayý">
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+    <p id="sonuç"></p>
+
+    <script>
+        let formum = document.querySelector ("form");
+        let girilen = document.querySelector ('input[type="number"]');
+        let sonucum = document.querySelector ("p#sonuç");
+        let iþgören = new Worker ("B3ax.js");
+
+        iþgören.onmessage = function (oly) {
+            sonucum.textContent = oly.data;
+            console.log ("Sonuç: " + oly.data + "\n");
+        }; // iþg..sonu...
+        iþgören.onerror = function (hata) {
+            console.log ("Ýþgören hatasý: " + hata.message + "\n");
+            throw error;
+        }; // iþg..sonu...
+
+        formum.onsubmit = function (o) {
+            o.preventDefault();
+            iþgören.postMessage (girilen.value);
+            girilen.value = "";
+        } // formum sonu...
+
+        göster.innerHTML =
+            "1) Girilen tamsayý adet ardýþýk fibonaki serisini gösteren JS kodlamasý sunulmaktadýr." +
+            "<br/>2) Fibonaki hesaplarý 'new Worker' nesnesiyle yaratýlan disk üzerindeki B2ax.js harici JS kodlamasýný \
+            iþleterek çalýþmaktadýr. Fetch benzeri Worker '>pythom -m http.server' ve 'localhost:8000' dahili sunucu \
+            kipinde çalýþmaktadýr."  +
+            "<br/>3) Gönder butonu týklandýðýnda formum.onsubmit olayý yakalayýp iþgören Worker self.onmessage \
+            fonksiyonuna sayý tipli girilen input verisini postalamakta; burada ise karakterden sayýya çevrilen verigiriþi \
+            alttaki fibonaki fonksiyonuna gönderilmektedir." +
+            "<br/>4) Fonksiyon içinde (0, negatif, küsürat, karakten hariç) girilen adet fibonaki ardýþýk toplam serisi \
+            sonuç dizgesine depolanýp, nihayetinde return'le iþgören.onmessage tarafýndan yakalanýp hem HTML \
+            hem de console.log çýktýlarýnda yansýtýlmaktadýr. Fibonaki hatalarý ise iþgören.onerror'a duyarlanarak \
+            fýrlatýlan hata mesajýný yansýtmaktadýr." +
+            "<br/>5) Oynamak için (doðru/yanlýþ) hertürlü veri giriþini deneyip fibonaki seri sonuçlarýný html ve cosole.log \
+            çýktýlarýndan takip edebilirsiniz."
+    </script>
+</body>
+</html>

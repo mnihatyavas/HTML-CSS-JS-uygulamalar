@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3c5.html: JS modüllerle canvas/tuval'de sınıflar toplamından sabit kare, üçgen ve daire çizimi örneği.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        canvas {
+            border: 5px solid Brown;
+            background-color: DarkKhaki;}
+        div ul {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+    <script type="module" src="B3c5x1.js"></script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Modüllü Tuval Çizimi-5</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS modüllü canvas/tuval'de sınıflar toplamından sabit kare, üçgen ve daire çizimleri sunulmaktadır." +
+            "<br/>2) Modüller '>python -m http.server' ve 'localhost:8000' dahili sunucuda çalışmaktadır." +
+            "<br/>3) Bu örnek daha önceki 'Modüllü Tuval Çizimi-3: new Sınıf' ile aynıdır, ancak burada ilk script \
+            modül tipli src-esas.js sonrası tek tek sınıflı alt-modüllerin doğrudan çağrılması yerine tüm alt-modüllerin \
+            topluca (export {Sınıf} from './altModül.js') listesi yapıldığı bir ara aşama eklenmiştir." +
+            "<br/>4) Yine esas.js ilk modülde 'new Sınıf(argümanlar)' ve her sınıfın içerdiği fonksiyonlar 'let değişken'e \
+            atanıp çağrılarak, sırayla Tuval, Kare, Üçgen, Daire sınıfları, sınıfların kurucu this.değişken tanımları ve \
+            alt-fonksiyonları (tuvaliYarat(), raporuYarat(), şekliÇiz(), derecedenRadyana(), alanıÇevreyiRaporla()) tek \
+            tek çağrılarak, ana html penceresinde görülen tuval içi kırmızı kare, mavi üçgen, yeşil daire'yi çizip, tuval \
+            altına da bu şekillerin birer satırla alan ve çevre değerlerini yansıtmaktadırlar." +
+            "<br/>5) Sınıf nesnelerinde dikkat edilecek husus, tüm argümanların sadece Sınıf'a gönderilmesi ve Sınıf içi \
+            fonksiyonlarda kullanılacak değerlerin Sınıf kurucusu constructor(argümanlar){this.değişkenler}'e atanıp \
+            fonksiyonların argümansız çalıştırılmasıdır. Şayet Sınıf değil, modül fonksiyonlarını doğrudan esas.js modülden \
+            çağırsaydık, argümanları fonksiyonlarda tanımlayacaktık." +
+            "<br/>6) Oynamak için şekil renk, ilk x,y konum, uzunluk/yarıçap değerlerini değiştirip, hatta şekil sırasını \
+            farklılaştırıp, sonuç etkilerini gözleyin."
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3b.html: Promise vaat'le Image resim yükleme örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        img {border: 5px solid brown; width:400px;}
+        p a {color:magenta;}
+    </style>
+    <script>
+        function fonk1() {göster.innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Promise'le Resim Yükleme</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <h1 style="color: DarkRed; text-decoration: underline;">Promise Vaat Örneði</h1>
+    <p style="color: Orange;">Samuray resmi <br/><a href="https://www.flickr.com/photos/digital_stability/">Shawn Taylor</a>, tarafýndan, <br/><a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> <br/>lisansýyla yayýnlanmýþtýr.</p>
+    <!-- Ýlk resim HTML img-src'la, ikincisiyse JS Promise() taleple yüklenecektir.-->
+    <img src="resim/samuray.jpg" alt="" />
+
+    <script>
+        function resimYükle (yurel) {
+            // Yeni bir Promise() kurucuyu çözüm ve red argümanlarýyla yaratalým...
+            return new Promise (function (çözüm, red) {
+                // Standart resim yükleme talebi yapalým...
+                let talep = new XMLHttpRequest();
+                talep.open ("GET", yurel);
+                talep.responseType = "blob";
+
+                // Yüklemenin baþarýsýný irdeleyelim...
+                talep.onload = function() {
+                    // Yükleme baþarýlýysa çözümü, deðilse reddi döndürelim...
+                    if (talep.status === 200) {çözüm (talep.response);
+                    }else {red (Error ("Resim yükleme hatasý; hata kodu:" + talep.statusText )); }
+                }; // talep sonu...
+
+                talep.onerror = function() {
+                    // Yükleme deðil, að hatasý oluþabilir...
+                    red (Error ("Çevrimiçi að hatasý oluþtu."));
+                }; // talep sonu...
+
+                talep.send();
+            }); // vaat sonu...
+        } // func sonu...
+
+        // HTML gövde elemanýna yaratacaðýmýz dinamik resim nesnesini ekleyelim...
+        let gövde = document.querySelector ("body");
+        let resmim = new Image();
+        // Çift geriçaðýrmalý, yurel adresli resimYükle fonksiyonunu çaðýrýp, arkasýna then() metodlu vaat baðlayalým...
+        resimYükle ("resim/samuray.jpg").then (function (yanýt) {
+            // Öncelik çözüm yanýtýdýr...
+            let resimYureli = window.URL.createObjectURL (yanýt);
+            resmim.src = resimYureli;
+            gövde.appendChild (resmim);
+            // Þayet hata reddi oluþursa ikinci geriçaðýrma hata mesajýný konsola yansýtacaktýr...
+            }, function (Error) {console.log (Error);
+        }); // resimYükle sonu...
+
+        göster.innerHTML =
+            "1) Image resim nesnesini Promise vaat'le html sayfasýna yükleme sunulmaktadýr." +
+            "<br/>2) Promise vaat ('>python -m http.server' ile 'localhost:8000') yerel sunucuda çalýþýr." +
+            "<br/>3) Ýlk resmi doðrudan bildiðimiz html img-src elemanýyla gövde içinde yükleyelim. Style CSS bölümüne \
+            resmin width geniþliði ve border çerçevesini ayarlýyoruz. Ayrýca h1, p ve p-a yerel renklerini vasýflýyoruz." +
+            "<br/>4) JS kodlamayla gövdede dinamik 'new Image()' nesnesini yaratýp, resimYükle(yurel) fonksiyonunu \
+            çaðýrýp, 'new Promis()' vaat nesnesi yaratarak, yurel adresli resim yüklemeyi çözüm argümanýyla, yükleme \
+            hatasý oluþursa da red argümanýyla çift geriçaðýrýþ yapýyoruz." +
+            "<br/>5) Olumlu çözüm resim yükleme yanýtýný gövdeye ekliyor, olasý red hata mesajýný da konsola yansýtýyoruz." +
+            "<br/>6) Oynamak için resmin CSS style ve açýklama yazý ayarlarýný, Promise() vaat nesnesi deðiþken isimleri \
+            yada hata mesaj içeriklerini kendinizce deðiþtirip, sonuç etkilerini gözleyin."
+    </script>
+</body>
+</html>

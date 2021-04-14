@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3c4.html: JS modüllerle canvas/tuval'de modül nesnesinden sabit kare, üçgen ve daire çizimi örneği.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        canvas {
+            border: 5px solid Brown;
+            background-color: DarkKhaki;}
+        div ul {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+    <script type="module" src="B3c4x1.js"></script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Modüllü Tuval Çizimi-4</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS modüllü canvas/tuval'de sınıflar toplamından sabit kare, üçgen ve daire çizimleri sunulmaktadır." +
+            "<br/>2) Modüller '>python -m http.server' ve 'localhost:8000' dahili sunucuda çalışmaktadır." +
+            "<br/>3) Import ile çağrılas modüllere 'as Tuval/Kare/Üçgen/Daire' adları tanımlanmıştır." +
+            "<br/>4) Modüllerdeki fonksiyonlar artık bu isim başlarında 'Tuval.tuvaliYarat' yada 'Daire.şekliÇiz' şeklinde \
+            çağrılmaktadır." +
+            "<br/>5) JS modüllerindeki fonksiyon tanımları aynıdır." +
+            "<br/>6) Oynamak için şekil renk, ilk x,y konum, uzunluk/yarıçap değerlerini değiştirip, hatta şekil sırasını \
+            farklılaştırıp, sonuç etkilerini gözleyin."
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3d6x2.html: Kodaynasýnda JavaScript kodlamasýný koþturma örneði.</title>
+    <style>
+        body {background-color:LightGreen; color: Blue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>JS Kodaynasý: JavaScript</h3>
+    <hr/>
+
+    <script>
+        function DizgeAkýþý (dizge) {
+            this.konum = 0;
+            this.dizge = dizge;
+            return dizge + " Tamamlandý...";
+        } // func sonu...
+
+        DizgeAkýþý.prototype = {
+            done: function() {return this.konum >= this.dizge.length;},
+            peek: function() {return this.dizge.charAt (this.konum);},
+            next: function() {if (this.konum < this.dizge.length) return this.dizge.charAt (this.konum++);},
+            eat: function (match) {
+                var ch = this.dizge.charAt (this.konum);
+                if (typeof match == "string") var ok = ch == match;
+                else var ok = ch == match.test ? match.test (ch) : match (ch);
+                if (ok) {this.konum++; return ch;}
+            }, // eat sonu...
+            eatWhile: function (match) {
+                var start = this.konum;
+                while (this.eat (match));
+                if (this.konum > start) return this.dizge.slice (start, this.konum);
+            }, // eatWhile sonu...
+            backUp: function (n) {this.konum -= n;},
+            column: function() {return this.konum;},
+            eatSpace: function() {
+                var start = this.konum;
+                while (/\s/.test (this.dizge.charAt (this.konum))) this.konum++;
+                return this.konum - start;
+            }, // eatSpace sonu...
+            match: function (pattern, consume, caseInsensitive) {
+                if (typeof pattern == "string") {
+                    function cased (str) {return caseInsensitive ? str.toLowerCase() : str;}
+                    if (cased (this.dizge).indexOf (cased (pattern), this.konum) == this.konum) {
+                        if (consume !== false) this.konum += str.length;
+                        return true;
+                    }
+                }else {
+                    var match = this.dizge.slice (this.konum).match (pattern);
+                    if (match == consume !== false) this.konum += match [0].length;
+                    return match;
+                } // else sonu...
+            } // match sonu...
+        }; // DizgeAkýþý sonu...
+
+        var düðme = document.createElement ("button");
+        düðme.innerText = "Týkla";
+        document.body.appendChild (düðme);
+        düðme.onclick = function() {alert (DizgeAkýþý ("done") ); }
+    </script>
+</body>
+</html>

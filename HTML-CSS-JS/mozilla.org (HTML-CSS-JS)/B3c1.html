@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3c1.html: JS modüllerle canvas/tuval'de sabit ve gelişigüzel kare çizimi örneği.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        canvas {
+            border: 5px solid black;
+            background-color: DarkKhaki;}
+        div ul {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+    <script type="module" src="B3c1x1.js"></script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Modüllü Tuval Çizimi-1</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS modüllü canvas/tuval'de sabit ve gelişigüzel kare çizimi sunulmaktadır." +
+            "<br/>2) Modüller '>python -m http.server' ve 'localhost:8000' dahili sunucuda çalışmaktadır." +
+            "<br/>3) Style bölümünde canvas tuvalimizin sınır ve zeminrengi vasıflarıyla, tuval altına raporlanacak \
+            ul-li listelerinin renk tanımı yapılmıştır. Script bölümündeyse ana html programı, 'module' tipli esas src JS\
+            kodlamasını çağıramasıyla başlamaktadır." +
+            "<br/>4) İlk JS modülü import'la iki JS kodlu altprogramdaki fonksiyonları çağırmaktadır. Bu altprogramlarda \
+            kullanılan fonksiyon ve değişken adları listelenmekte; ayrıca bu listeler herbir altprogramın export listesinde \
+            de vurgulanmaktadır. Default fonksiyonun import-export'u ayrı satırla tanımlanmalıdır." +
+            "<br/>5) tuvaliYarat fonksiyonu body elemanına eklenen dinamik div elemanına canvas elemanını eklemekte, \
+            raporListesiniYarat fonksiyonu da dinamik ul elemanını önceki canvas elemanına eklemektedir." +
+            "<br/>6) şekliÇiz fonksiyonu sabit renk ve uzunluktaki kareyi fillStyle ve fillRect ile yaratmaktadır. gelişigüzelKare \
+            fonksiyonuysa rgb rengin 50-255, kenar uzunluğun 10-200 ve tuval x-y konumlarının 0-460 ile 0-300 arası \
+            tesadüfi değerlerini Math.random() hazır fonksiyonuyla üretip, önceki gibi fillStyle ve fillRect ile gelişigüzel \
+            renk konum ebatlı ikinci mobil kareyi yaratmaktadır. Son şeklinAlanınıÇevresiniRaporla fonksiyonuysa girilen \
+            kare parametrelerinin alan ve çevre uzunluklarını hesaplayıp, bu textContent içieriği canvas-ul-li ekli elemanlarıyla \
+            tuvalimizin altına her yeni üretimde bilgileri güncelleyerek listelemektedir." +
+            "<br/>7) Önemli iki husus: ilki modül import'u ad.js kodlamasını ./ad.js öncülüyle çağırmak; ikincisiyse ad.js \
+            kodlamalarını UTF-8 formatıyla diske saklamak, ayrıca arasıra UTF-8 tiplemesi bozulursa yenilemektir." +
+            "<br/>8) Oynamak için eniyi yöntem tüm program değişken ve kodlama tarzını, kendi üslubunuzca yeniden \
+            şekillendirip, değiştirip, çıkarma veya eklentiler yapıp, sonuç etkilerini gözlemektir."
+    </script>
+  </body>
+</html>

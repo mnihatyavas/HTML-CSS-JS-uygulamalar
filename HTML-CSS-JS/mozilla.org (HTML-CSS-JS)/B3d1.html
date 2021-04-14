@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3d1.html: JS dizi-bul kodlamasýnýn Kodaynasý penceresinde çalýþtýrýlmasý örneði.</title>
+    <style>
+        body {background-color:LightGreen; color: Blue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+    </style>
+    <link  href="B3d/B3d1x4.css" rel="stylesheet"></link> <!-- CodeMirror standart CSS alt-programlarý -->
+    <link href="B3d/B3d1x5.css" rel="stylesheet"></link>
+    <link href="B3d/B3d1x6.css" rel="stylesheet"></link>
+    <link href="B3d1x1.css" rel="stylesheet"></link> <!-- Örneðimizin CSS ayarlarý -->
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>JS Kodaynasý: Dizi-Bul</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <div id="editör">
+      <input id="yenidenBaþlat" type="button" value="Yeniden Baþlat" />
+    </div>
+
+    <div id="düðmeler">
+      <input id="çalýþtýr" type="button" value="Koþtur" />
+    </div>
+  
+    <div id="çýktý"><p></p></div><br/><br/>
+
+    <script src="B3d/B3d1x7.js"></script> <!-- CodeMirror standart JS alt-programlarý -->
+    <script src="B3d/B3d1x8.js"></script>
+    <script src="B3d/B3d1x9.js"></script>
+    <script src="B3d/B3d1x10.js"></script>
+    <script src="B3d/B3d1x11.js"></script>
+    <script src="B3d1x2.js"></script> <!-- JS kodlama örneði -->
+    <script src="B3d1x3.js"></script> <!-- JS kodlama örneðini kodaynasýnda çalýþtýrma -->
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS dizi-bul kodlamasýnýn kodaynasý penceresinde çalýþtýrýlmasý sunulmaktadýr." +
+            "<br/>2) Ana program esas olarak 3 alt (1 CSS, 2 JS) program ve 8 standart CodeMirror (3 CSS ve 5 JS) \
+            programdan oluþmaktadýr. Biz standart CodeMirror programlarý içeriklerine deðinmeden sadece ana program \
+            ve deðiþtirilebilir alt programlarla ilgileneceðiz." +
+            "<br/>3) Ana program standart 3 CSS'i link-href ile 5 JS'i ise script-src ile programýna dahil etmektedir." +
+            "<br/>4) Ýlk CSS altprogramý body gövde ayarlarýný, zeminrengini; kodaynasý editör'ü ve çýktý biçimlemeyi; \
+            CodeMirror sýnýr, gölge, zeminrengini; çýktý sonucunun 0-->1 netlik canlandýrmasýný yapmakta ve bunlarý \
+            HTML penceresinde sunmaktadýr." +
+            "<br/>5) Ýkinci JS altprogram dizi-bul örnek kodlamasýný içerip, JS penceresinde görülecek kod parcasýný \
+            bilahare CodeMirror'a aktarmak üzere ilgili deðiþkenine atamakta; ayrýca ilk açýlýþta kodlamanýn seçilen ilk \
+            satýr ve karakterini belirtmektedir." +
+            "<br/>6) Üçüncü JS altprogramý editörü CodeMirror'a baðlamakta, Koþtur ve YenidenBaþlat düðmelerine \
+            gerekli fonksiyonlarý çalýþtýrmakta ve sonucu konsol yerine HTML sayfasýnda JS penceresi altýndaki sonuç \
+            satýrýnda netleþtirmeli yansýtmaktadýr." +
+            "<br/>7) Oynamak için 1 CSS ve 2 JS kodlamalarýndaki deðiþken adlarýný, açýklamalarýný, sayýDizisi deðerlerini, \
+            deðiþtirerek, ayrýca her Koþtur öncesi JS penceresinden 'return a > 10' yerine basit yada &&-VE ||-VEYA ile \
+            karmaþýk þartlý kriterler girip, sonuç etkilerini gözleyin."
+    </script>
+  </body>
+</html>

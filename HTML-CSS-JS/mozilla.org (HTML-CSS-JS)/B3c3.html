@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>B3c3.html: JS modüllerle canvas/tuval'de sınıflı sabit kare, üçgen ve daire çizimi örneği.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        canvas {
+            border: 5px solid DarkRed;
+            background-color: DarkKhaki;}
+        div ul {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+    <script type="module" src="B3c3x1.js"></script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Modüllü Tuval Çizimi-3</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS modüllü canvas/tuval'de sınıflı sabit kare, üçgen ve daire çizimleri sunulmaktadır." +
+            "<br/>2) Modüller '>python -m http.server' ve 'localhost:8000' dahili sunucuda çalışmaktadır." +
+            "<br/>3) Sınıf 'new Sınıf(parametreler)' ile yaratılır, constructer kurucuları vardır, sınıf içinde geçerli this.ad \
+            biçimli değişkenleri içerir; bu değişken atamaları aynı yada farklı addaki parametrelerle sağlanır. Sınıfın \
+            içerdiği fonksiyonlar sınıfDeğişkeni.sınıfFonksiyonu(parametreler) biçiminde çağrılırlar." +
+            "<br/>4) Ana html programımız script içinde module tipli src esas.js modülü çağırır. esas.js modülünde \
+            öncelikle çağrılacak tüm sınıflar ve onların .js altmodülleri import{}from 'altModül.js' şeklinde çağrılır ve \
+            sınıf fonksiyonları new Sınıf ile atadığımız değerdeki argümanlarla işletilirler. Bu argümanları (tuval,rapor,\
+            uzunluk,x,y,renk) istediğimiz gibi değiştirebiliriz." +
+            "<br/>5) Böylece ilk altmodül/Sınıf=Tuval'de gövde-div-canvas eklemeli tuvalimizi ve canvas-ul eklemeli rapor \
+            temelini fonksiyonlarla yaratır; ikinci altmodül/Sınıf=Kare'de kareŞekli, alan ve çevre raporları fonksiyonlarını \
+            işletir; üçüncü altmodül/Sınıf=Üçgen'de üçgen şekli, alan ve çevre raporu fonksiyonlarını; son altmodül/Sınıf=\
+            Daire'de ise dairenin şekli, alan ve çevre raporları fonksiyonlarını çalıştırıp, sonuç çizim ve raporları HTML \
+            sayfamızda görüntüleriz." +
+            "<br/>6) Oynamak için Sınıf, fonksiyonları, parametreleri, kurucu this değişkenlerine farklı adlar verin, şekillerin \
+            renk, uzunluk/yarıçap, x,y başlangıç konumlarını değiştirin, şekillerin İngilizce renkleri yanısıra son sınıf argümanı \
+            olarak Türkçe renklerini de girerek raporlamada Türkçe renk adlarını kullanmayı, hatta alan ve çevre raporunu \
+            tek fonksiyonda birleştirerek, sonuç etkilerini gözleyin."
+    </script>
+  </body>
+</html>
