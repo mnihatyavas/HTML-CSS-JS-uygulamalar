@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x4.html: Verigiriş tiplerinden telefonun, gerekli, ülke ve kalıp şartlı alt-örneği.</title>
+    <style>
+        body {background-color:#345;}
+        form {background-color: Khaki; margin: 2em auto; max-width: 400px; padding:10px;}
+        div {margin-bottom: 10px; text-align:center;}
+        input[type="number"] {width: 100px;}
+        input + span {padding-right: 30px;
+}
+        input:invalid+span:after {
+            position: absolute;
+            content: '✖';
+            padding-left: 5px;
+            font-size:25px;
+            color: Red;}
+        input:valid+span:after {
+            position: absolute;
+            content: '✓';
+            padding-left: 5px;
+            font-size:25px;
+            font-weight: bold;
+            color: Green;}
+        input, select {background-color: Aqua; width: 80px;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="ülke">Ülkeyi seçin:</label>
+            <select id="ülke" name="ülke">
+                <option>BK</option>
+                <option>ABD</option>
+                <option>Almanya</option>
+                <option selected>Türkiye</option>
+            </select>
+        </div>
+        <div>
+            <p>Telefon numarasını girin: </p>
+            <span class="alanBölümü">
+                <input id="alanNo" name="alanNo" type="tel" required placeholder="Alan kodu" pattern="[0-9]{3}">
+                <span></span>
+            </span>
+            <span class="numara1Bölümü">
+                <input id="numara1" name="numara1" type="tel" required placeholder="İlk 3 numara" pattern="[0-9]{3}">
+                <span></span>
+            </span>
+            <span class="numara2Bölümü">
+                <input id="numara2" name="numara2" type="tel" required placeholder="İkinci 4 numara" pattern="[0-9]{4}">
+                <span class="validity"></span>
+            </span>
+        </div>
+        <hr/>
+        <div>
+            <button>Gönder</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* C1a14x4.css: Kredi kartlý ödeme formu biçimleme style-css vasýflarý alt-örneði. */
+
+h1, h2 {margin: 0;}
+h1 {color: DarkRed;}
+h2 {color: Brown;}
+p {margin:2px;}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;}
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 2px solid Magenta;
+    border-radius: 1em;
+    background-color: DarkKhaki;}
+fieldset {
+    width: 250px;
+    box-sizing: border-box;
+    margin-left: 125px;
+    border: 2px solid Magenta;
+    background-color: Khaki;}
+label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    position: relative;}
+label em {
+    position: absolute;
+    right: 5px;
+    top: 20px;}
+input {
+    font: 1em sans-serif;
+    width: 250px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    background-color: aqua;}
+input[type=radio] {width: auto;}
+input:focus {border-color: #000;}
+select {background-color: LightGreen;}
+button {
+    margin: 20px 0 0 125px;
+    background-color: Black;
+    color: Yellow;}

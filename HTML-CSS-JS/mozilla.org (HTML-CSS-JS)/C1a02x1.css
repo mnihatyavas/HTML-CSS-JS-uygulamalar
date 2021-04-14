@@ -1,0 +1,9 @@
+﻿/* C1a02x1.css: Basit h1, japonca h1, ul-li liste girişi ve meta özellikler-1 alt-örneği. */
+
+html {background-color: LightGreen;}
+body {border: 5px solid Navy;}
+ul {
+    background: red;
+    padding: 10px;
+    border: 2px solid black;}
+li {margin-left: 20px;}

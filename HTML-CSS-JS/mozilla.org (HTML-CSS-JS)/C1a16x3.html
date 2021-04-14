@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a16x3.html: Form göndermenin temel GET ve POST yöntemi alt-örneði.</title>
+    <style>
+        form {
+            background-color: DarkKhaki;
+            padding:10px;
+            max-width: 300px;
+            margin: 2em auto;}
+        input, button {background-color: Linen;}
+    </style>
+</head>
+<body style="background-color:#135;">
+    <h1 style="text-align:center; color:Pink;">Buton form-metod özelliði</h1>
+
+    <form action="C1a16x4a.php" target="_b" method="get">
+        <label for="ad">Adýnýz:</label>
+        <input type="text" id="ad" value="M.Nihat"><br><br>
+        <label for="soyad">Soyadýnýz:</label>
+        <input type="text" id="soyad" value="Yavaþ"><br><br>
+        <button type="submit">GET'le gönder</button>
+        <button type="submit" formmethod="post">Formmethod POST'la gönder</button>
+    </form>
+</body>
+</html>

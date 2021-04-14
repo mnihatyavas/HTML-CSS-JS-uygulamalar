@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>Karma verigiriþ tipleri kontrolü örneði</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {background-color: #456;}
+        form {
+            font: 1em sans-serif;
+            max-width: 350px;
+            margin: 2em auto;
+            background-color: DarkKhaki;
+            padding:10px;}
+        input[type="text"], input[type="email"], input[type="number"], textarea, fieldset {
+            width : 100%;
+            border: 1px solid #333;
+            background-color: aqua;}
+        input:invalid {box-shadow: 0 0 5px 1px red;}
+        input:focus:invalid {box-shadow: none;}
+        button  {background-color: DarkRed; color: yellow; font-size:15px;}
+        abbr {color: Red; font-size:20px;}
+    </style>
+</head>
+<body>
+    <form>
+        <p>
+            <fieldset>
+                <legend>Araba ehliyetin var mý?<abbr title="Doldurulmasý zorunludur">(*)</abbr></legend>
+                <input type="radio" required name="ehliyet" id="radyo1" value="E"><label for="radyo1">Evet</label>
+                <input type="radio" required name="ehliyet" id="radyo2" value="H"><label for="radyo2">Hayýr</label>
+            </fieldset>
+        </p>
+        <p>
+            <label for="n1">Kaç yaþýndasýn?</label>
+            <input type="number" min="1" max="120" step="1" id="yaþ" pattern="\d+" value="18"> <!-- Kalýp belirtilmese de sayý tipte sadece rakam girilebilir -->
+        </p>
+        <p>
+            <label for="meyve">Hangi meyveyi istersin?<abbr title="Doldurulmasý zorunludur">(*)</abbr></label>
+            <input type="text" id="meyve" list="liste" required pattern="[Mm]uz|[Kk]iraz|[Þþ]eftali|[Çç]ilek|[Üü]züm|[Pp]ortakal">
+            <datalist id="liste">
+                <option>Muz</option>
+                <option>Kiraz</option>
+                <option>Þeftali</option>
+                <option>Çilek</option>
+                <option>Üzüm</option>
+                <option>Portakal</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="eposta">Eposta adresini gir:</label>
+            <input type="email" id="eposta">
+        </p>
+        <p>
+            <label for="mesaj">Azami 5 satýr veya 140 karakterli kýsa mesaj yaz:</label>
+            <textarea id="mesaj" maxlength="140" rows="5"></textarea>
+        </p>
+        <p style="text-align:center;">
+            <button>Gönder</button>
+        </p>
+    </form>
+</body>
+</html>

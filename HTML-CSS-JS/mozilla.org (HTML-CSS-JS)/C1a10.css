@@ -1,0 +1,39 @@
+﻿/* C1a10.html: HTML-etiket ve CSS-vasıf'ları değiştirilebilir temel metin biçimleme css-style vasıfları alt-örneği. */
+
+/* Temel vasıflar */
+* {box-sizing: border-box;}
+body {
+    background-color: SlateGray;
+    color: #333;
+    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;}
+h1 {
+    font-size: 2rem;
+    margin: 0;}
+h2 {
+    font-size: 1.6rem;
+    margin: 0;}
+p {margin: 0.5em 0;}
+
+/* Editör stilleri */
+.değiştirilebilir { /* Değiştirilebilir CSS ve HTML textarea pencereleri */
+    font-family: monospace;
+    display: block;
+    margin-bottom: 10px;
+    background-color: Linen;
+    border: 2px solid black;
+    border-left: 6px solid Orange;
+    color: #4D4E53;
+    width: 90%;
+    max-width: 700px;
+    padding: 10px 10px 0px;
+    font-size: 90%;}
+.kısım { /* Görsel HTML sonuç etkili pencere */
+    width: 90%;
+    max-width: 700px;
+    border: 5px solid Brown;
+    background-color: LightGreen;
+    border-radius: 10px;
+    padding: 10px 14px 10px 10px;
+    margin-bottom: 10px;}

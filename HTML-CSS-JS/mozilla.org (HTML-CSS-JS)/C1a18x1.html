@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x1.html: Verigiriş tiplerinden metnin, gerekli ve kalıp şartlı alt-örneği.</title>
+    <style>
+        body {background-color:#345;}
+        form {background-color: Khaki; margin: 2em auto; max-width:380px; padding:10px;}
+        div {margin-bottom: 10px; text-align:center;}
+        input[type="number"] {width: 100px;}
+        input:invalid+span:after {
+            position: absolute;
+            content: '✖';
+            padding-left: 5px;
+            font-size:25px;
+            color: Red;}
+        input:valid+span:after {
+            position: absolute;
+            content: '✓';
+            padding-left: 5px;
+            font-size:25px;
+            font-weight: bold;
+            color: Green;}
+        input {background-color: Aqua;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="kullanıcıAdı">Kullanıcı adınızı girin: </label>
+            <input type="text" id="kullanıcıAdı" required
+                    placeholder="küçükharf, 4-8 karakter"
+                    pattern="[a-z]{4,8}"> <!-- kalıp regExp kullanmaktadır -->
+            <span></span>
+        </div>
+        <div>
+            <button>Gönder</button>
+        </div>
+    </form>
+</body>
+</html>

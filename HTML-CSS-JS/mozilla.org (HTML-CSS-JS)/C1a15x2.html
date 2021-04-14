@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>JS hata mesajlý eposta verigiriþ örneði</title>
+    <style>
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        input {background-color:Navy; color:orange;}
+        input:invalid {border: 2px dashed red;}
+        input:valid {border: 2px solid Green;}
+    </style>
+</head>
+<body style="background-color:#789;">
+    <form style="width:450px; margin:2em auto; background-color:DarkKhaki; padding:10px;">
+        <label for="eposta">Geçerli bir eposta adresinizi girin:</label>
+        <input type="email" id="eposta" placeholder="eposta">
+        <button style="margin-left: 223px; margin-top:10px;">Gönder</button>
+    </form>
+
+    <script>
+        const epostam = document.getElementById ("eposta");
+        epostam.addEventListener ("input", function (olay) {
+            if (epostam.validity.typeMismatch) {epostam.setCustomValidity ("Geçerli bir eposta adres giriþi bekliyorum!");
+            }else {eposta.setCustomValidity ("");}
+        }); // epostam sonu..
+    </script>
+</body>
+</html>

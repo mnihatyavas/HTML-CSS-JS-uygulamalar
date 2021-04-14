@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>Gerekli ve kalýp verigiriþ kontrolleri</title>
+    <style>
+        body {background-color: #abc}
+        input:invalid {border: 2px dashed red; background-color: Green; color: Red;}
+        input:valid {border: 2px solid Magenta; background-color: LightGreen;} /* Geçerli magenta rengi için odaklamadan çýkýn */
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <form>
+        <label for="meyve">Muz mu, nar mý, üzüm mi istersiniz?</label>
+        <input id="meyve" required pattern="[Mm]uz|[Nn]ar|[Üü]züm">
+        <button>Gönder</button>
+    </form>
+</body>
+</html>

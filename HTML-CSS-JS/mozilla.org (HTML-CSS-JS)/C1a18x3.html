@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x3.html: Verigiriş tiplerinden yurelin, gerekli ve kalıp şartlı alt-örneği.</title>
+    <style>
+        body {background-color:#345;}
+        form {background-color: Khaki; margin: 2em auto; max-width:450px; padding:10px;}
+        div {margin-bottom: 10px; text-align:center;}
+        input[type="number"] {width: 100px;}
+        input:invalid+span:after {
+            position: absolute;
+            content: '✖';
+            padding-left: 5px;
+            font-size:25px;
+            color: Red;}
+        input:valid+span:after {
+            position: absolute;
+            content: '✓';
+            padding-left: 5px;
+            font-size:25px;
+            font-weight: bold;
+            color: Green;}
+        input {background-color: Aqua;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="yurel">Problemli ağsayfası adresini girin:</label>
+            <input id="yurel" name="yurel" type="url" required>
+            <span></span>
+        </div>
+        <div>
+        <label for="yorum">Yurelle ilgili problem nedir?</label>
+        <input id="yorum" name="yorum" type="text" required>
+        <span></span>
+        </div>
+        <hr/>
+        <div>
+            <button>Gönder</button>
+        </div>
+    </form>
+</body>
+</html>

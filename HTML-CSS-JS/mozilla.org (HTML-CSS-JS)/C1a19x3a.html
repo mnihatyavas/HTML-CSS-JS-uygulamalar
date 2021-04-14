@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a19x3a.html: Boþ bir kartpostalýn arkasýný stilsiz doldurup gönderme alt-örneði.</title>
+    <style>
+        body {background-color: DarkGreen;}
+        form {
+            width  : 740px;
+            height : 498px;
+            margin : 2em auto;
+            padding: 1em;
+            background: #ccc url(resim/kartpostal.jpg);}
+        div {margin-top: 5px;}
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Kime: Mozilla</h1>
+
+        <div>
+            <label for="isim">Kimden:</label>
+            <input type="text" id="isim" name="isim">
+        </div>
+
+        <div>
+            <label for="eposta">Eposta:</label>
+            <input type="email" id="eposta" name="eposta">
+        </div>
+
+        <div >
+            <label for="mesaj">Mesaj:</label>
+            <textarea id="mesaj" name="mesaj"></textarea>
+        </div>
+
+        <div>
+            <button>Mesajlý kartpostalý gönder</button>
+        </div>
+    </form>
+</body>
+</html>

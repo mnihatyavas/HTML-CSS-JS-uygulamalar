@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a19x4b.html: Çerçeve baþlýklý özelleþtirilen radyobutonu alt-örneði.</title>
+    <style>
+        body {background-color: #457;}
+        form {margin: 2em auto; background-color: DarkKhaki; padding: 10px; max-width: 250px;}
+        input[type="radio"] {appearance: none;} /* Varsayýlý radyobutonu iptal */
+        input[type="radio"] { /* Özel radyobutonu tanýmý */
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            vertical-align: -2px;
+            outline: none;
+            background-color: Aqua;}
+        input[type="radio"]::before { /* Özel týklanma iç bilyesi */
+            display: block;
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: Red;
+            transform: translate(3px, 3px) scale(0);
+            transform-origin: center;
+            transition: all 0.3s ease-in;}
+        input[type="radio"]:checked::before {
+            transform: translate(3px, 3px) scale(1);
+            transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);}
+        input[type="radio"]:disabled { /* Seçilemeyen radyobutonu */
+            border-color: Red;
+            background: #bbb;}
+        button {background-color: Black; color: White;}
+        button:hover {color: Tomato;}
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>En sevdiðin meyveyi seç</legend>
+            <p>
+                <label>
+                    <input type="radio" name="meyve" value="kiraz">Dalbastý kirazý
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="radio" name="meyve" value="muz" checked>Muz <!-- Ýlk seçili -->
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="radio" name="meyve" value="üzüm">Üzüm
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="radio" name="meyve" value="kýzýlcýk" disabled>Kýzýlcýk <!-- Seçilemez -->
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="radio" name="meyve" value="hurma">Taze hurma
+                </label>
+            </p>
+        </fieldset>
+        <p style="text-align: center;">
+            <button>Gönder</button>
+        </p>
+    </form>
+</body>
+</html>

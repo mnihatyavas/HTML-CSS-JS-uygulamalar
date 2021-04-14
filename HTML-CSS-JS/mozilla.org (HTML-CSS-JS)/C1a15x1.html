@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a15x1: Enküçük-enbüyük sayý ve azami karakter sayýsý kontrolü alt-örneði.</title>
+    <style>
+        label {display:inline-block; width: 130px; text-align: right;}
+        input, textarea {background-color: aqua;}
+    </style>
+</head>
+<body style="background-color:#678;">
+    <form style="margin:2em auto; background-color: Khaki; padding:10px; width: 300px;">
+        <p>
+            <label for="yaþ">Kaç yaþýndasýn?</label>
+            <input type="number" id="yaþ" pattern="\d+" min="1" max="120" value="0">
+        </p>
+        <p>
+            <label for="mesaj">Kýsa mesaj býrak:</label>
+            <textarea id="mesaj" rows="5" maxlength="24" placeholder="Mesaj yaz"></textarea>
+        </p>
+        <p>
+            <button style="background-color:Navy; color: yellow; margin-left: 135px;">Gönder</button>
+        </p>
+    </form>
+</body>
+</html>

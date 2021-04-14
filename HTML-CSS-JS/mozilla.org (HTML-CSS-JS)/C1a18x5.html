@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x5.html: Verigiriþ tiplerinden çentikkutusunun, aç-kapa düðmeli alt-örneði.</title>
+    <style>
+        html {background-color:#123;}
+        body {background-color: Khaki; margin:2em auto; padding:10px; max-width: 200px;}
+        li {
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;}
+        label {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            position: relative;}
+        label span {
+            position: absolute;
+            font-size:30px;
+            font-weight: bold;}
+        input[type="checkbox"] {
+            appearance: none;
+            width: 44px;
+            height: 24px;
+            border-radius: 12px;
+            border: 2px solid black;
+            background-color: #aae;
+            transition: all 0.5s;}
+        input[type="checkbox"]::before {
+            width: 16px;
+            height: 16px;
+            border-radius: 9px;
+            background-color: black;
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: 12%;
+            transition: all 0.5s;}
+        input[type="checkbox"]:checked {
+            background-color: #ffaa00;
+            transition: all 0.5s;}
+        input[type="checkbox"]:checked::before {
+            left: 37%;
+            transition: all 0.5s;}
+        input[type="checkbox"] ~ label .aç, input[type="checkbox"]:checked ~ label .kapa {opacity: 0;}
+        input[type="checkbox"] ~ label .kapa, input[type="checkbox"]:checked ~ label .aç {opacity: 1;}
+        input:focus {outline: 0.1px dotted Gray;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <input type="checkbox" id="lamba">
+            <label for="lamba">
+                <span class="aç" style="color: Red;">Kapa</span>
+                <span class="kapa" style="color: Green;">Aç</span>
+            </label>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a17x5b.html: Özelleştirilen takvimde doğumgünü parti zamanının seçilmesi alt-örneği.</title>
+    <style>
+        body {background-color:#468;}
+        form {background-color: Khaki; padding:10px; width:300px; margin:2em auto;}
+        div, p {
+            margin-bottom: 10px;
+            position: relative;
+            text-align: center;}
+        select {background-color:Aqua;}
+        option, input {background-color:LightGreen;}
+    </style>
+</head>
+<body>
+    <form>
+        <p class="geçmişEtiket">Doğumgünü parti zamanını seçin:</p>
+        <div class="geçmişTarihZamanSeçici">
+            <div>
+                <span>
+                    <label for="gün">Gün:</label>
+                    <select id="gün"></select>
+                </span>
+                <span>
+                    <label for="ay">Ay:</label>
+                    <select id="ay">
+                        <option selected>Ocak</option>
+                        <option>Şubat</option>
+                        <option>Mart</option>
+                        <option>Nisan</option>
+                        <option>Mayıs</option>
+                        <option>Haziran</option>
+                        <option>Temmuz</option>
+                        <option>Ağustos</option>
+                        <option>Eylül</option>
+                        <option>Ekim</option>
+                        <option>Kasım</option>
+                        <option>Aralık</option>
+                    </select>
+                </span>
+                <span>
+                    <label for="yıl">Yıl:</label>
+                    <select id="yıl"></select>
+                </span>
+            </div>
+
+            <div>
+                <span>
+                    <label for="saat">Saat:</label>
+                    <select id="saat"></select>
+                </span>
+                <span>
+                    <label for="dakika">Dakika:</label>
+                    <select id="dakika"></select>
+                </span>
+            </div>
+            <hr/>
+
+            <div>
+                <input type="submit" value="Onaya gönder">
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var geçmişSeçici = document.querySelector (".geçmişTarihZamanSeçici");
+        var geçmişEtiket = document.querySelector (".geçmişEtiket");
+        var seçilenYıl = document.querySelector ("#yıl");
+        var seçilenAy = document.querySelector ("#ay");
+        var seçilenGün = document.querySelector ("#gün");
+        var seçilenSaat = document.querySelector ("#saat");
+        var seçilenDakika = document.querySelector ("#dakika");
+
+        //geçmişSeçici.style.display = "block";
+        //geçmişEtiket.style.display = "block";
+        günleriYarat (seçilenAy.value);
+        yıllarıYarat();
+        saatlarıYarat();
+        dakikalarıYarat();
+
+        function günleriYarat (ayAdı) {
+            while (seçilenGün.firstChild) {seçilenGün.removeChild (seçilenGün.firstChild);}
+            var ayGünü;
+            if (ayAdı === "Ocak" | ayAdı === "Mart" | ayAdı === "Mayıs" | ayAdı === "Temmuz" | ayAdı === "Ağustos" | ayAdı === "Ekim" | ayAdı === "Aralık") {ayGünü = 31;
+            }else if (ayAdı === "Nisan" | ayAdı === "Haziran" | ayAdı === "Eylül" | ayAdı === "Kasım") {ayGünü = 30;
+            }else {
+                var yıl = seçilenYıl.value;
+                var artıkMı = new Date (yıl, 1, 29).getMonth() == 1;
+                artıkMı ? ayGünü = 29 : ayGünü = 28;
+            } // if-else sonu...
+            for (i = 1; i <= ayGünü; i++) {
+                var tercih = document.createElement ("option");
+                tercih.textContent = i;
+                seçilenGün.appendChild (tercih);
+            } // for sonu...
+            if (öncekiGün) { // Son seçilen 31, birsonraki 28 ise, azami 3 gün geri çekerek şubat sonunu seçili tutmalıdır.
+                seçilenGün.value = öncekiGün;
+                if (seçilenGün.value === "") {seçilenGün.value = öncekiGün - 1;}
+                if (seçilenGün.value === "") {seçilenGün.value = öncekiGün - 2;}
+                if (seçilenGün.value === "") {seçilenGün.value = öncekiGün - 3;}
+            } // if sonu...
+        } // func sonu...
+
+        function yıllarıYarat() {
+            var tarih = new Date();
+            var yıl = tarih.getFullYear();
+            for (var i = 0; i <= 100; i++) { // Bu yıldan azmi 100 yıl geriye kapsasın...
+                var tercih = document.createElement ("option");
+                tercih.textContent = yıl - i;
+                seçilenYıl.appendChild (tercih);
+            } // for sonu...
+        } // func sonu...
+
+        function saatlarıYarat() {
+            for (var i = 0; i <= 23; i++) {
+                var tercih = document.createElement ("option");
+                tercih.textContent = (i < 10) ? ("0" + i) : i;
+                seçilenSaat.appendChild (tercih);
+            } // for sonu...
+        } // func sonu...
+
+        function dakikalarıYarat() {
+            for (var i = 0; i <= 59; i++) {
+                var tercih = document.createElement ("option");
+                tercih.textContent = (i < 10) ? ("0" + i) : i;
+                seçilenDakika.appendChild (tercih);
+            } // for sonu...
+        } // func sonu...
+
+        seçilenYıl.onchange = function() {günleriYarat (seçilenAy.value);}
+        seçilenAy.onchange = function() {günleriYarat (seçilenAy.value);}
+        var öncekiGün;
+        seçilenGün.onchange = function() {öncekiGün = seçilenGün.value;}
+    </script>
+</body>
+</html>

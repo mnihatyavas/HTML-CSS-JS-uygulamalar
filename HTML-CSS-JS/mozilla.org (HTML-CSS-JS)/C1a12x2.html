@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a12x2.html: Tüm resimler ve sayfaiçi a-href-yurel baðlantýsýna seyrüsefer alt-örneði.</title>
+    <link rel="stylesheet" href="iþli/C1a10.css" />
+    <style>
+        input {background-color:#d44; color:Yellow; margin: 10px;}
+    </style>
+    <style class="deðiþtir"></style>
+</head>
+<body>
+    <input type="button" value="Yenile" onClick="window.location.reload();">
+    <section class="kýsým" style="height: 250px; overflow: auto;"></section>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-css" style="height: 140px;">
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: DeepPink;}
+li {
+    color: gray;
+    margin: 0.5em 0;}
+div {height: 2000px;}
+    </textarea>
+
+    <textarea class="deðiþtirilebilir deðiþtirilebilir-html" style="height: 170px;">
+<h1 id="baþ">Tüm baðlantýlarýn listesi</h1>
+<ul>
+    <li><a href="resim/balina1.jpg" target="_blank">Mavi balina resmine baðlan</a></li>
+    <li><a  href="resim/balina2.jpg" target="blank">Boynuzlu balina resmine baðlan</a></li>
+    <li><a href="resim/galeri/pic15.jpg" target="b">Deniz kaplumbaðasý resmine baðlan</a></li>
+    <li><a href="#dip">Sayfa sonundaki paragrafa baðlan</a></li>
+</ul>
+<div></div>
+<p id="dip">Sayfa sonundaki paragraf!</p>
+<p><a href="#baþ">Sayfanýn en baþýna git!</a></p>
+    </textarea>
+</body>
+    <script src="iþli/C1a10.js"></script>
+</html>

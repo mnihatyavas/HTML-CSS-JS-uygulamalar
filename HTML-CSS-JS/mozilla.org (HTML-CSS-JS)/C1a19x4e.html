@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a19x4e.html: (Çevrimiçi) stilli çoklu dosya bindirme alt-örneði.</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        html {background-color: #975;}
+        body {
+            font-family: "Josefin Sans", sans-serif; /* Çevrimiçi deðilse varsayýlý fon-ailesi (times new roman) kullanýlýr */
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: Khaki;
+            padding: 10px;}
+        form > div {margin-bottom: 20px;}
+        button, label, input {
+            display: block;
+            font-family: inherit;
+            font-size: 120%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;}
+        input[type="file"] {
+            height: 0;
+            padding: 0;
+            opacity: 0;}
+        label[for="dosya"] {
+            box-shadow: 1px 1px 3px #ccc;
+            background-image: linear-gradient(to bottom, #eee, #ccc);
+            border: 1px solid rgb(169, 169, 169);
+            border-radius: 5px;
+            text-align: center;
+            line-height: 1.5;}
+        label[for="dosya"]:hover {
+            background: linear-gradient(to bottom, #fff, #ddd);
+            color: blue;}
+        label[for="dosya"]:active {box-shadow: inset 1px 1px 3px #aaa;}
+        button {
+            width: 60%;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, purple, aqua);
+            color:orange;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="dosya">Bindirmek için dosya(-lar) seçin</label>
+            <input id="dosya" name="dosya" type="file" multiple>
+            <ul id="dosya-listesi"></ul>
+        </div>
+        <div><button>Gönder</button></div>
+    </form>
+
+    <script>
+        let dosyaGiriþleri = document.querySelector ("#dosya");
+        let dosyaListesi = document.querySelector ("#dosya-listesi");
+
+      dosyaGiriþleri.addEventListener ("change", dosyaListesiniGüncelle);
+
+      function dosyaListesiniGüncelle() {
+           while (dosyaListesi.firstChild) {dosyaListesi.removeChild (dosyaListesi.firstChild);}
+           let aktüelDosyalar = dosyaGiriþleri.files;
+            if (! (aktüelDosyalar.length === 0) )  {
+                //console.log ("test");
+                for (let i = 0; i < aktüelDosyalar.length; i++) {
+                    let listeBirimi = document.createElement ("li");
+                    listeBirimi.textContent = "Dosya adý: " + aktüelDosyalar [i].name + "; dosya ebatý: " + dosyaEbatý (aktüelDosyalar [i].size) + ".";
+                    dosyaListesi.appendChild (listeBirimi);
+                } // for sonu...
+            } // if sonu...
+        } // func sonu...
+
+        function dosyaEbatý (rakam) {
+            if (rakam < 1024) {return rakam + "bytes";
+            }else if (rakam >= 1024 && rakam < 1048576) {return (rakam / 1024).toFixed (1) + "KB";
+            }else if (rakam >= 1048576) {return (rakam / 1048576).toFixed (1) + "MB";}
+        } // func sonu...
+    </script>
+</body>
+</html>

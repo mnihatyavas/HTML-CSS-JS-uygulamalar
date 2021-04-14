@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a17x3.html: Yıl içinde işe başama haftasının seçilmesini ayarlama alt-örneği.</title>
+    <style>
+        body {background-color:#468;}
+        form {background-color: Khaki; padding:10px; width:250px; margin:2em auto;}
+        div {
+            margin-bottom: 10px;
+            position: relative;
+            text-align: center;}
+        input {background-color: Aqua;}
+        input[type="number"] {width: 100px;}
+        input:invalid+span:after {
+            position: absolute;
+            content: '✖';
+            padding-left: 5px;
+            color:red;
+            font-size:20px;}
+        input:valid+span:after {
+            position: absolute;
+            content: '✓';
+            padding-left: 5px;
+            color: Green;
+            font-size:25px;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="hafta">Hangi hafta işe başlamak istersin?</label>
+            <input id="hafta" type="week" min="2021-W01" max="2021-W52" required>
+            <span></span>
+        </div>
+        <div>
+            <input type="submit" value="Onaya gönder">
+        </div>
+    </form>
+</body>
+</html>

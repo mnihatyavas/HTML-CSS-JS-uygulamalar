@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a19x2c.html: Diskimizden yurele (accept/seçici, çoklu) stilli resim dosyasý bindirme alt-örneði.</title>
+    <style>
+        html {font-family: sans-serif; background-color: #135;}
+        form {
+            width: 500px;
+            background-color: #ccc;
+            margin: 2em auto;
+            padding: 20px;
+            border: 2px solid yellow;}
+        form ol {padding-left: 0;}
+        form li {
+            background: #777;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            list-style-type: none;
+            border: 1px solid Linen;}
+        form img {
+            height: 64px;
+            order: 1;}
+        form p {
+            line-height: 32px;
+            padding-left: 10px;
+            background-color: LightGreen;}
+        form label, form button {
+            background-color: #7F9CCB;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 2px ridge black;
+            font-size: 0.8rem;
+            height: auto;}
+        form label:hover, form button:hover {
+            background-color: #2D5BA3;
+            color: yellow;}
+        form label:active, form button:active {
+            background-color: #0D3F8F;
+            color: red;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="resim">Yurele bindirilecek (çoklu) resim (PNG, JPG) dosyalarýný seçin: </label>
+            <input type="file" id="resim" name="resim" accept=".jpg, .jpeg, .png" multiple>
+        </div>
+        <div class="önizleme">
+            <p>Henüz hiç bindirilecek dosya seçilmedi</p>
+        </div>
+        <hr/>
+        <div>
+            <button>Gönder</button>
+        </div>
+    </form>
+
+    <script>
+        let seçilenDosya = document.querySelector ("input");
+        let önizleme = document.querySelector (".önizleme");
+        seçilenDosya.style.opacity = 0;
+        seçilenDosya.addEventListener ("change", resimGörseliniGüncelle);
+
+        function resimGörseliniGüncelle() {
+            while (önizleme.firstChild) {önizleme.removeChild (önizleme.firstChild);}
+            let aktüelDosyalar = seçilenDosya.files;
+            if (aktüelDosyalar.length === 0) {
+                let açýklama = document.createElement ("p");
+                açýklama.textContent = "Henüz hiç bindirilecek dosya seçilmedi";
+                önizleme.appendChild (açýklama);
+            }else {
+                let liste = document.createElement ("ol");
+                önizleme.appendChild (liste);
+                for (let dosya of aktüelDosyalar) {
+                    let listeElemaný = document.createElement ("li");
+                    let açýklama = document.createElement ("p");
+                    if (geçerliDosyaTipi (dosya) ) {
+                        açýklama.textContent = `Dosya adý: ${dosya.name}, dosya ebadý: ${dosyaEbadý (dosya.size)}.`;
+                        let resim = document.createElement ("img");
+                        resim.src = URL.createObjectURL (dosya);
+                        listeElemaný.appendChild (açýklama);
+                        listeElemaný.appendChild (resim); // Öne de alýnsa, resmin yüklenmesi geciktiðinden, açýklamadan sonra gelmekte...
+                    }else {
+                        açýklama.textContent = `Dosy adý: ${dosya.name}: Geçerli dosya tipi deðil. Seçimini yenile.`;
+                        listeElemaný.appendChild (açýklama);
+                    } // else sonu...
+                    liste.appendChild (listeElemaný);
+                } // for sonu...
+            } // dýþ-else sonu...
+        } // func sonu...
+
+        let dosyaTipleri = [
+            "image/apng",
+            "image/bmp",
+            "image/gif",
+            "image/jpeg",
+            "image/pjpeg",
+            "image/png",
+            "image/svg+xml",
+            "image/tiff",
+            "image/webp",
+            "image/x-icon"
+        ]; // let sonu...
+        function geçerliDosyaTipi (dsy) {return dosyaTipleri.includes (dsy.type);}
+        function dosyaEbadý (sayý) {
+            if (sayý < 1024) {return sayý + "bytes";
+            }else if (sayý > 1024 && sayý < 1048576) {return (sayý / 1024).toFixed (1) + "KB";
+            }else if (sayý > 1048576) {return (sayý / 1048576).toFixed (1) + "MB";}
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x2.html: Verigiriş tiplerinden sayının, gerekli ve min küsüratlı şartlı alt-örneği.</title>
+    <style>
+        body {background-color:#345;}
+        form {background-color: Khaki; margin: 2em auto; max-width:450px; padding:10px;}
+        div {margin-bottom: 10px; text-align:center;}
+        input[type="number"] {width: 100px;}
+        input:invalid+span:after {
+            position: absolute;
+            content: '✖';
+            padding-left: 5px;
+            font-size:25px;
+            color: Red;}
+        input:valid+span:after {
+            position: absolute;
+            content: '✓';
+            padding-left: 5px;
+            font-size:25px;
+            font-weight: bold;
+            color: Green;}
+        input {background-color: Aqua;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <form>
+        <div class="metreGirişi">
+            <label for="metre">Boyunu gir —metre:</label>
+            <input id="metre" type="number" step="0.01" min="0" placeholder="örn. 1.68" required>
+            <span></span>
+        </div>
+
+        <!-- İlk anda görünmeyen kısım -->
+        <div class="fitGirişi" style="display: none;">
+            <span>Boyunu gir —</span>
+            <label for="fit">fit:</label>
+            <input id="fit" type="number" min="0" step="1">
+            <span></span>
+            <label for="inç" style="padding-left:30px;">inç:</label>
+            <input id="inç" type="number" min="0" max="11" step="1">
+            <span></span>
+        </div>
+        <!-- Görünmeyenin sonu -->
+
+        <div>
+            <input type="button" class="metre" value="Boyunu fit ve inç olarak gir">
+        </div>
+        <hr/>
+        <div>
+            <input type="submit" value="Formu gönder"  style="background-color: Tomato;">
+        </div>
+    </form>
+
+    <script>
+        var metreGirişi = document.querySelector (".metreGirişi");
+        var fitGirişi = document.querySelector (".fitGirişi");
+        var metre = document.querySelector ("#metre");
+        var fit = document.querySelector ("#fit");
+        var inç = document.querySelector ("#inç");
+        var metreFitButonu = document.querySelector ('input[type="button"]');
+
+        metreFitButonu.addEventListener ("click", function() {
+            if (metreFitButonu.getAttribute ("class") === "metre") {
+                metreFitButonu.setAttribute ("class", "fit");
+                metreFitButonu.value = "Boyunu metre olarak gir";
+                metreGirişi.style.display = "none";
+                fitGirişi.style.display = "block";
+                fit.setAttribute ("required", "");
+                inç.setAttribute ("required", "");
+                metre.removeAttribute ("required");
+                metre.value = "";
+            }else {
+                metreFitButonu.setAttribute ("class", "metre");
+                metreFitButonu.value = "Boyunu fit ve inç olarak gir";
+                metreGirişi.style.display = "block";
+                fitGirişi.style.display = "none";
+                fit.removeAttribute ("required");
+                inç.removeAttribute ("required");
+                metre.setAttribute ("required", "");
+                fit.value = "";
+                inç.value = "";
+            } // else sonu...
+        }); // met..sonu...
+    </script>
+</body>
+</html>

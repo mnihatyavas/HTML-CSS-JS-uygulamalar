@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>Eposta adresinin ön@arka ve enaz 8 karakter kontrolü</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #345;}
+        body {
+            background-color: LightGreen;
+            font: 1em sans-serif;
+            width: 250px;
+            padding: 10px;
+            margin : 2em auto;}
+        p * {display: block;}
+        input[type=email] {
+            appearance: none;
+            width: 100%;
+            border: 1px solid #333;
+            margin: 0;
+            font-family: inherit;
+            font-size: 90%;}
+        input:invalid { /* Geçersiz veri rengi */
+            border-color: #900;
+            background-color: #FAA;}
+        input:focus:invalid {outline: none;}
+        .hata { /* Hata mesajlarý vasýflamasý */
+            width: 100%;
+            padding: 0;
+            margin-top:1px;
+            font-size: 80%;
+            color: white;
+            background-color: #900;
+            border-radius: 0 0 5px 5px;}
+        .hata.aktif {padding: 0.3em;} /* Çoklu satýrda araboþluk kaynaþýr */
+        button {margin-left:35%; background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <form novalidate>
+        <p>
+            <label for="eposta">
+                <span>Lütfen geçerli bir eposta adresinizi girin:</span>
+                <input type="email" id="eposta" required minlength="8">
+                <span class="hata"></span>
+            </label>
+        </p>
+        <button>Gönder</button>
+    </form>
+
+    <script>
+        const formum  = document.getElementsByTagName ("form") [0];
+        const epostam = document.getElementById ("eposta");
+        const epostaHatasý = document.querySelector ("#eposta + span.hata");
+
+        epostam.addEventListener ("input", function (olay) { // Her eposta karakteri giriþinin geçerliliði test edilir...
+            if (epostam.validity.valid) { // Hatasýzsa hatamesajý yansýmaz...
+                epostaHatasý.innerHTML = "";
+                epostaHatasý.className = "hata";
+            }else {hatayýGöster();} // Deðilse yansýr...
+        }); // epostam sonu...
+
+        formum.addEventListener ("submit", function (o) { // Gönder'e basýldýðýnda tekrar geçerlilik kontrolu...
+            if (! epostam.validity.valid) { // Geçersizse...
+                hatayýGöster(); // ..hatayý gösterir
+                o.preventDefault(); // Submit/gönder olayýný iptal eder...
+            } // if sonu...
+        }); // formum sonu...
+
+        function hatayýGöster() {
+            if (epostam.validity.valueMissing) { // Deðer giriþi yapýlmamýþsa...
+                epostaHatasý.textContent = "Bir eposta adresinizi girmelisiniz.";
+            }else if (epostam.validity.typeMismatch) { // Girilen adres email-input tipli (@) deðilse...
+                epostaHatasý.textContent = "Girdiðiniz veri eposta tiplemesiyle uyuþmalýdýr.";
+            }else if (epostam.validity.tooShort) { // Toplam adres uzunluðu belirtilen minlength'ten kýsaysa...
+                epostaHatasý.textContent = `Eposta enaz ${eposta.minLength} karakter olmalýdýr; henüz ${eposta.value.length} girdiniz.`;
+            } // if-else sonu...
+            epostaHatasý.className = "hata aktif";
+            epostam.focus(); // Hatamesajý sonrasý tekrar verigiriþine odaklansýn...
+        } // func sonu...
+
+        //window.addEventListener ("load", hatayýGöster); // Ýlk açýþta adres boþ hatasý...
+    </script>
+</body>
+</html>

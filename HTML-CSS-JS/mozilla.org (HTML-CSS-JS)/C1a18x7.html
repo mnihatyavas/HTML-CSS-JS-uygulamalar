@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x7.html: Verigiriþ tiplerinden çentiklikutunun tüm seçim kontrollu alt-örneði.</title>
+    <style>
+        body {background-color:#135;}
+        form {background-color: Khaki; margin:2em auto; padding:25px; max-width: 250px;}
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Listenin tümünü seç</legend>
+            <div>
+                <input type="checkbox" id="tamSeçim">
+                <label for="tamSeçim">Tamseçim kontrol tablosu</label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="kitap" value="kitap">
+                        <label for="kitap">Kitap</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="defter" value="defter">
+                        <label for="defter">Defter</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="kalem" value="kalem">
+                        <label for="kalem">Kalem</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="silgi value="silgi">
+                        <label for="silgi">Silgi</label>
+                    </li>
+                </ul>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        var hepsi = document.querySelector ('input[id="tamSeçim"]');
+        var listeElemanlarý = document.querySelectorAll ("ul input");
+
+        hepsi.addEventListener ("click", function (o) {o.preventDefault();}); // Týklamaya duyarsýz...
+        for (var i = 0; i < listeElemanlarý.length; i++) {listeElemanlarý [i].addEventListener ("click", çentikleriGüncelle);} // Týklamaya duyarlý...
+
+        function çentikleriGüncelle() {
+            var çentikliSayacý = 0;
+            for (var i = 0; i < listeElemanlarý.length; i++) {if (listeElemanlarý [i].checked) {çentikliSayacý++;} }
+            if (çentikliSayacý === 0) { // Hiç çentiksiz...
+                hepsi.checked = false; // Boþ...
+                hepsi.indeterminate = false;
+            }else if (çentikliSayacý === listeElemanlarý.length) { // Tam çentikli...
+                hepsi.checked = true; // Çentikli...
+                hepsi.indeterminate = false;
+            }else {  // Eksik çentikli...
+                hepsi.checked = false;
+                hepsi.indeterminate = true; // Tireli...
+            } // else sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

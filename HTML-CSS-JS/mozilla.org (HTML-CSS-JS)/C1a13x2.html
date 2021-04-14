@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a13x2.html: Stilli HTML formu alt-örneði.</title>
+    <style>
+        body {background-color:LightGreen; color: Blue; font-size:20px; margin:1em;}
+        input, textarea {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        label {color: Brown;}
+
+        form {
+            margin: 0 auto; /* üst-alt sol-sað: formu otomatikmen yatay ortalar  */
+            width: 400px;
+            padding: 1em;
+            border: 5px solid #ccc;
+            border-radius: 2em;
+            background-color: Khaki;}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0; }
+        form li + li {margin-top: 1em;}
+        label {
+            display: inline-block;
+            width: 90px; /* Tüm etiket geniþlikleri ayný */
+            text-align: right;} /* Verigiriþ baþlýklarý saða yanaþýk */
+        input, textarea {
+            font: 1em sans-serif;
+            width: 300px; /* Verigiriþ kutularý ayný ende */
+            box-sizing: border-box; /* Tampon ve marjlar en dahilinde */
+            border: 2px solid #999; }
+        input:focus, textarea:focus {border-color: #000;} /* Odaklanýldýðýnda sýnýrrengi parlar */
+        textarea {
+            /*vertical-align: top;*/
+            height: 5em;} /* Varsayýlý metinalaný boyu artsýn */
+        .düðme {
+            padding-left: 97px; /* Label aralýðýnýn saðýna gelsin */
+            /*margin-left: 0.5em;*/}
+    </style>
+</head>
+<body>
+    <form action="/formun-gönderileceði-sayfa" method="post">
+        <ul>
+            <li>
+                <label for="ad">Kullanýcý:</label>
+                <input type="text" id="ad" name="kullanýcýAdý" />
+            </li>
+            <li>
+                <label for="eposta">Eposta:</label>
+                <input type="email" id="eposta" name="kullanýcýEpostasý" />
+            </li>
+            <li>
+                <label for="mesaj">Mesaj:</label>
+                <textarea id="mesaj" name="kullanýcýMesajý"></textarea>
+            </li>
+            <li class="düðme">
+                <button type="submit">Mesajý gönder</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

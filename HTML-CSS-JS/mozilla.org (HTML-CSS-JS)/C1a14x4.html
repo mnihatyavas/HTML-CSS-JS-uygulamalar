@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a14x4.html: Kredi kartlý ödeme formu biçimleme alt-örneði.</title>
+    <link href="C1a14x4.css" rel="stylesheet">
+</head>
+<body style="background-color: DarkSlateGray;">
+    <form action="#" method="post">
+        <h1>Kredikartlý ödeme formu</h1>
+        <p>Doldurulmasý zorunlu alanlar <strong><abbr title="doldurulmasý zorunlu">*</abbr></strong> ile gösterilmiþtir.</p>
+        <hr/>
+
+        <section>
+            <h2>Ýletiþim bilgileri</h2>
+            <fieldset>
+                <legend>Meslek</legend>
+                <ul>
+                    <li>
+                        <input type="radio" id="meslek1" name="meslek" value="A" class="radyom">Ýmparator
+                    </li>
+                    <li>
+                        <input type="radio" id="meslek2" name="meslek" value="B" checked class="radyom">Kral
+                    </li>
+                    <li>
+                        <input type="radio" id="meslek2" name="meslek" value="C" class="radyom">Kraliçe
+                    </li>
+                </ul>
+            </fieldset>
+            <p>
+                <label for="adsoyad">Ad ve soyad:
+                    <strong><abbr title="doldurulmasý zorunlu">*</abbr></strong>
+                </label>
+                <input type="text" id="adsoyad">
+            </p>
+            <p>
+                <label for="eposta">Eposta:
+                    <strong><abbr title="doldurulmasý zorunlu">*</abbr></strong>
+                </label>
+                <input type="email" id="eposta">
+            </p>
+            <p>
+                <label for="þifre">Þifre:
+                    <strong><abbr title="doldurulmasý zorunlu">*</abbr></strong>
+                </label>
+                <input type="password" id="þifre">
+            </p>
+        </section>
+        <hr/>
+
+        <section>
+            <h2>Kredikartý bilgileri</h2>
+            <p>
+                <label for="kart">Kart tipi:</label>
+                <select id="kart">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+            </p>
+            <p>
+                <label for="no">Kart no:
+                    <strong><abbr title="doldurulmasý zorunlu">*</abbr></strong>
+                </label>
+                <input type="tel" id="no">
+            </p>
+            <p>
+                <label for="tarih">Sonlanma tarihi:
+                    <strong><abbr title="doldurulmasý zorunlu">*</abbr></strong>
+                    <em>[gg/aa/yyyy]</em>
+                </label>
+                <input type="date" id="tarih">
+            </p>
+            <p><br/>
+                <label for="cvv">CVV no:
+                    <strong><abbr title="doldurulmasý zorunlu">*</abbr></strong>
+                </label>
+                <input type="number" id="cvv">
+            </p>
+        </section>
+        <hr/>
+
+        <section>
+            <p><button type="submit">Ödemeyi onayla</button></p>
+        </section>
+    </form>
+</body>
+</html>

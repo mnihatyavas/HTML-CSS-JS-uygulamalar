@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a19x4a.html: Çerçeve başlıklı özelleştirilen çentikkutusu alt-örneği.</title>
+    <style>
+        body {background-color: #457;}
+        form {margin: 2em auto; background-color: Khaki; padding: 10px; max-width: 250px;}
+        input[type="checkbox"] {appearance: none;} /* Varsayılı çentikkutusu iptal */
+        input[type="checkbox"] { /* Özel çentikkutusu */
+        position: relative;
+            width: 1.2em;
+            height: 1.2em;
+            border: 1px solid gray;
+            vertical-align: -2px;
+            background-color: aqua;}
+        input[type="checkbox"]::before { /* Özel çentik tanımı --görünmez */
+            content: "✔";
+            position: absolute;
+            font-size: 1.2em;
+            right: 0;
+            top: -0.3em;
+            visibility: hidden;}
+        input[type="checkbox"]:checked::before {visibility: visible;} /* Çentik, tıklanınca görünür */
+        input[type="checkbox"]:disabled { /* Seçilemeyen çentikkutusu */
+            border-color: Red;
+            background: #ddd;}
+        button {background-color: Black; color: White;}
+        button:hover {color: Tomato;}
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Meyve tercihleriniz</legend>
+            <p>
+                <label>
+                    <input type="checkbox" name="meyve-1" value="kiraz">Dalbastı kirazını severim
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="meyve-2" value="ayva" disabled>Ayvayı sevmem
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="meyve-3" value="üzüm" checked>Üzümü severim
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="meyve-4" value="greyfurt" disabled>Greyfurtu sevmem
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="meyve-5" value="Portakal">Portakalı severim
+                </label>
+            </p>
+        </fieldset>
+        <p style="text-align: center;">
+            <button>Gönder</button>
+        </p>
+    </form>
+</body>
+</html>

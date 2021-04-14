@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x8.html: Verigiriþ tiplerinden kapsamýn, min-max-step sürgülü alt-örneði.</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #357;
+            font-size: 14px;}
+        form {
+            width: 90%;
+            max-width: 500px;
+            margin: 2em auto;
+            padding: 10px;
+            background-color: Khaki;}
+        div {text-align: center;}
+        label, input {width: 80%;}
+        button {
+            width: 50%;
+            margin: 0 auto;
+            background-color: Tomato;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="fiyat">Sürgüyle bir ev fiyatý seçin [50000, 500000]:</label><br/>
+            <input type="range" name="fiyat" id="fiyat" min="50000" max="500000" step="100" value="250000">
+            <span class="fiyat-çýktýsý" for="fiyat"></span>
+        </div>
+        <hr/>
+        <div>
+            <button>Gönder</button>
+        </div>
+    </form>
+
+    <script>
+        let fiat = document.querySelector ("#fiyat");
+        let çýktý = document.querySelector (".fiyat-çýktýsý");
+        çýktý.textContent = fiat.value
+        fiat.addEventListener ("input", function() {çýktý.textContent = fiat.value});
+    </script>
+</body>
+</html>

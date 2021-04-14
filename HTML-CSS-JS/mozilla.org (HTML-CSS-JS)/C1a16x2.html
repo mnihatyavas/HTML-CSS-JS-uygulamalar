@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a16x2.html: Form göndermenin temel GET yöntemi alt-örneði.</title>
+    <style>
+        body {background-color: #357;}
+        form {
+            width: 440px;
+            background-color: DarkKhaki;
+            padding: 10px;
+            margin: 2em auto;}
+        div {margin-bottom: 10px;}
+        label {
+            display: inline-block;
+            width: 210px;
+            text-align: right;}
+        input {
+            width: 45%;
+            background-color: Aqua;}
+        button {background-color: DarkRed; color: yellow; font-size:15px; margin-left: 48.5%;}
+    </style>
+</head>
+<body>
+    <form action="http://foo.com" target="_b" method="get">
+        <div>
+            <label for="selam">Hangi selamý göndereceksin?</label>
+            <input id="selam" value="Merhaba, ">
+        </div>
+        <div>
+            <label for="kime">Kime selam gönderiyorsun?</label>
+            <input id="kime" value="Aneneciðim!..">
+        </div>
+        <div>
+            <button>Selamýmý gönder</button>
+        </div>
+    </form>
+</body>
+</html>

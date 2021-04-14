@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>Enaz tek karakterli verigiriþ geçerlileme kontrolü</title>
+    <style>
+        html {background-color: DodgerBlue;}
+        input:invalid {border: 2px dashed red;}
+        input:invalid:required {background-image: linear-gradient(to right, pink, green);}
+        input:valid {border: 2px solid Magenta; background-color: LightGreen;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <form>
+        <label for="metinGiriþi">Tercih ettiðin bir meyve adý girin:</label>
+        <input id="metinGiriþi" required>
+        <button>Gönder</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a19x4c.html: Araþtýrma tipli verigiriþindeki varsayýlý görüntü ayarýnýn iptali alt-örneði.</title>
+    <style>
+        html {background-color: #531;}
+        body {
+            margin: 20px auto;
+            max-width: 600px;
+            justify-content: space-around;
+            background-color: Linen;
+            padding: 10px;}
+        body, form > div {display: flex;}
+        form > div {align-items: center;}
+        input[type="search"] {
+            height: 32px;
+            padding: 0 10px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background-color: ;} /* Renk "appearance:none"ý bozuyor */
+      .görünüþ input[type="search"] {appearance: none;}
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <div>
+                <label for="araþtýr1">Araþtýr-1:&ensp;</label>
+                <input id="araþtýr1" name="araþtýr1" type="search">
+            </div>
+        </form>
+    </div>
+
+    <div class="görünüþ">
+        <form>
+            <div>
+                <label for="araþtýr2">Araþtýr-2:&ensp;</label>
+                <input id="araþtýr2" name="araþtýr2" type="search">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

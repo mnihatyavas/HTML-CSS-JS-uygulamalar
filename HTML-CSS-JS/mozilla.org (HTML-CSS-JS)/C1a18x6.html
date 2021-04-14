@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a18x6.html: Verigiriþ tiplerinden select-option çoklu seçimli alt-örneði.</title>
+    <style>
+        html {background-color:#123;}
+        body {background-color: Khaki; margin:2em auto; padding:25px; max-width: 200px;}
+        select {
+            font-family: cursive;
+            background-color: aqua;}
+        optgroup {color: red;}
+        option {color: magenta;}
+    </style>
+</head>
+<body>
+    <select id="evcil-seç" multiple size="10"> <!-- 10 satýrdan çoksa sað kaydýraçlý -->
+        <option value="none" selected>-- Tek yada çok seçebilirsiniz --</option> <!-- Varsayýlý seçili -->
+        <optgroup label="4-ayaklý evciller">
+            <option value="it">Köpek</option>
+            <option value="pisi">Kedi</option>
+            <option value="sincap" disabled>Sincap</option> <!-- Disabled: seçemezsiniz -->
+        </optgroup>
+        <optgroup label="Kanatlý evciller">
+            <option value="papaðan">Papapan</option>
+            <option value="bülbül">Bülbül</option>
+            <option value="çalýkuþu">Çalýkuþu</option>
+        </optgroup>
+        <optgroup label="Akvaryum evcilleri">
+            <option value="alabalýk">Alabalýk</option>
+            <option value="midye" disabled>Midye</option>
+            <option value="istakoz">Ýstakoz</option>
+        </optgroup>
+    </select>
+</body>
+</html>

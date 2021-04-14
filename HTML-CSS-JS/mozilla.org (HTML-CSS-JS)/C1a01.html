@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a01.html: Ortaderece HTML-CSS-JS basit ve hatalý bir html sayfasý tasarýmý örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        ul {color: Orange;}
+        h1 {color: Tomato;}
+        h4 {color: Magenta;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Basit HTML Sayfasý</h3>
+    <p id="göster">Paragraf</p>
+    <hr/>
+
+    <p>Bu benim en basit ilk HTML sayfasýndaki p-etiketli paragraf satýrýmdýr.</p>
+    <hr/>
+
+    <h1>HTML hatalarýný ayýklama örneði</h1>
+    <h4>HTML hatalarýnýn sebepleri nelerdir?</h4>
+    <p>Hatasýz örnek:</p>
+    <ul>
+        <li>Kapatýlmayan &lt;e&gt; elemanlar: Eðer bir eleman <strong>düzgün kapatýlmamýþsa</strong>, etkisi niyetlenmediðiniz alanlara yayýlabilir</li>
+        <li>Yanlýþ içiçeleþtirilmiþ elemanlar: Elemanlarý düzgünce içiçeleþtirme, kodlamanýn doðru davranýþlarý için diðer bir önemli husustur. <strong>strong: güçlü <em> strong&emphasised: güçlü&vurgulu</em></strong>. Peki bu nedir?</li>
+        <li>Kapatýlmamýþ 'vasýflar': HTML problemlerinin diðerbir önemli kaynaðýdýr. Örnek vererek görelim: <a href="https://www.mozilla.org/" target="_">Mozilla anasayfasýna baðlantý</a></li>
+    </ul>
+    <hr/>
+
+    <h1>HTML hatalarýný ayýklama örneði</h1>
+    <h4>HTML hatalarýnýn sebepleri nelerdir?</h4>
+    <p>Hatalý örnek:</p>
+    <ul>
+        <li>Kapatýlmayan &lt;e&gt; elemanlar: Eðer bir eleman <strong>düzgün kapatýlmamýþsa, etkisi niyetlenmediðiniz alanlara yayýlabilir</li>
+        <li>Yanlýþ içiçeleþtirilmiþ elemanlar: Elemanlarý düzgünce içiçeleþtirme, kodlamanýn doðru davranýþlarý için diðer bir önemli husustur. <strong>strong: güçlü <em> strong&emphasised: güçlü&vurgulu</em> Peki bu nedir?</strong></li>
+        <li>Kapatýlmamýþ 'vasýflar': HTML problemlerinin diðerbir önemli kaynaðýdýr. Örnek vererek görelim: <a href="https://www.mozilla.org/" target="_>Mozilla anasayfasýna baðlantý</a></li>
+    </ul>
+    <p>Doðru kapatýlmamýþ güçlü etiketini ve týrnak özelliðini burada kapatalým (ki alttaki açýklamalarýmýz doðru yansýsýn): </strong>"</p>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) En basit ve hatalý bir HTML sayfa tasarýmý sunulmaktadýr." +
+            "<br/>2) Standart bir HTML sayfasý için öncelikle (aç..kapa) ana etiketler (html-head-body), sonra ikincil \
+            etiketler (!DOCTYPE-meta-title-style-script), icap ederse de öteki etiketler (article-main-header-footer-\
+            h.-p-div-span-ul/li-hr... vb) uygun konumlarýna yerleþtirilmelidir." +
+            "<br/>3) Tüm sayfada etkin olacak genel CSS vasýflarý üst head-style etiket altýnda, lokal CSS vasýflarýysa \
+            ilgili etiket içinde (örn. &lt;p style='color:red'&gt;) tanýmlanmalýdýr." +
+            "<br/>4) HTML etiket hatalarý 3 þýk altýnda örneklenerek, önce doðrusu, sonra da yanlýþý, programcýnýn \
+            dikkatine sunulmuþtur." +
+            "<br/>5) Oynamak için sayfada kullanýlan style-css vasýflarýný, h1-h4-p-ul-li etiket renklerini deðiþtirip, \
+            sonuç etkilerini gözleyin."
+    </script>
+  </body>
+</html>

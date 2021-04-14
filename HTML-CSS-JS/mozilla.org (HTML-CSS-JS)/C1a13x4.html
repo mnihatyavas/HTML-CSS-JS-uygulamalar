@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a13x4.html: Verigiriþ tipleri deðiþtirilebili input alt-örneði.</title>
+    <style>
+        body {background-color:LightGreen; color: Blue; font-size:20px; margin:1em;}
+        input, textarea {background-color:#aaa; color:DarkRed;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        * {box-sizing: border-box;}
+        textarea {
+            height: 80px;
+            background-color: Linen;
+            border: 2px solid black;
+            border-left: 6px solid Orange;
+            color: #4D4E53;
+            width: 90%;
+            max-width: 700px;
+            padding: 10px;}
+        .yenileme-düðmesi {
+            text-align: right;
+            width: 90%;
+            max-width: 700px;}
+        section {
+            width: 90%;
+            max-width: 700px;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: DarkKhaki;}
+        section input {
+            display: block;
+            margin: 5px;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea id="kodlama">
+<input id="verigiriþ1" type="text">
+<input id="verigiriþ2" type="number">
+    </textarea>
+
+    <div class="yenileme-düðmesi">
+        <input id="yenile" type="button" value="Yenile">
+    </div>
+</body>
+    <script>
+        let kýsým = document.querySelector ("section");
+        let metinalaný = document.getElementById ("kodlama");
+        let yenilensin = document.getElementById ("yenile");
+        let ilkKodlama = metinalaný.value
+
+        function kodgiriþiniEtkinleþtir() {
+            while (kýsým.firstChild) {kýsým.removeChild (kýsým.firstChild);}
+            kýsým.innerHTML = metinalaný.value;
+        } // func sonu...
+
+        yenilensin.addEventListener ("click", function() {
+            metinalaný.value = ilkKodlama;
+            kodgiriþiniEtkinleþtir();
+        }); // yen..sonu...
+        metinalaný.addEventListener ("input", kodgiriþiniEtkinleþtir);
+        window.addEventListener ("load", kodgiriþiniEtkinleþtir);
+    </script>
+</html>
