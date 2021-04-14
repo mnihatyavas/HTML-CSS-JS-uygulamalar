@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a21x7.html: Input-file/image/hidden, progress ve meter örneði.</title>
+    <style>
+        body {background-color:#468;}
+        form {margin:2em auto; background-color:#db9; padding:10px; max-width: 400px; text-align: center;}
+        select, input, button {background-color: Aqua;}
+        button:hover {color:Red;}
+    </style>
+</head>
+<body>
+    <form>
+        <p>
+            <label for="dosya">Yurele bindirilecek disk resim dosya-larýný seçin:</label>
+            <input type="file" name="dosya" id="dosya" accept="image/*" multiple>
+        </p>
+        <p>
+            <input type="image" name="harita-konumu" alt="" src="resim/harita.png">
+        </p>
+        <div>
+            <input type="hidden" id="gizli" name="gizli" value="128-670-54-10">
+        </div>
+        <p>
+            <progress min="0" max="100" value="75">75</progress>
+        </p>
+        <p>
+            <meter min="0" max="100" value="25" low="20" high="80" optimum="50">25</meter>
+        </p>
+        <hr/>
+        <p>
+            <button type="submit">Gönder beni!</button>
+        </p>
+    </form>
+</body>
+</html>

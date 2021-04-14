@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a19x4g.html: Yüzeysel stillemeli çoklu verigiriş tipleri alt-örneği.</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        html {background-color: DarkSlateGray;}
+        body {
+            font-family: "Josefin Sans", sans-serif; /* Çevrimiçi değilse varsayılı fon */
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #abc;}
+        form > div {margin-bottom: 20px;}
+        button, label, input, select, progress, meter {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+            background-color: Linen;}
+        select {appearance: none;}
+        .seç-sarıcı {position: relative;}
+        .seç-sarıcı::after {
+            content: "▼";
+            font-size: 1rem;
+            top: 6px;
+            right: 10px;
+            position: absolute;}
+        input[type="text"], input[type="datetime-local"], input[type="color"], select {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;}
+        label {margin-bottom: 5px;}
+        button {
+            width: 60%;
+            margin: 0 auto;
+            background-color: Gray;
+            color: yellow;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="seç">Seçme kutusu:</label>
+            <div class="seç-sarıcı">
+                <select id="seç" name="seç">
+                    <option>Muz</option>
+                    <option selected>Kiraz</option>
+                    <option>Üzüm</option>
+                    <option>Portakal</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label for="meyve">Favori meyveler verilistesi:</label>
+            <input type="text" name="meyve" id="meyve" list="önerilerim">
+            <datalist id="önerilerim">
+                <option>Taze Hurma</option>
+                <option>Tatlı Nar</option>
+                <option>Kara Böğürtlen</option>
+                <option>Horum Dutu</option>
+                <option>Mandalina</option>
+                <option>Üzüm</option>
+                <option>Şeftali</option>
+                <option>Armut</option>
+            </datalist>
+        </div>
+
+        <div>
+            <label for="tarih-zaman">Yerel tarihzaman:</label>
+            <input id="tarih-zaman" name="tarih-zaman" type="datetime-local">
+        </div>
+
+        <div>
+            <label for="kapsam">Kapsam:</label>
+            <input id="kapsam" name="kapsam" type="range">
+        </div>
+
+        <div>
+            <label for="renk">Renk:</label>
+            <input id="renk" name="renk" type="color">
+        </div>
+
+        <div>
+            <label for="dosya">(Çoklu) dosya seçin:</label>
+            <input id="dosya" name="dosya" type="file" multiple>
+            <ul id="dosya-listesi"></ul>
+        </div>
+
+        <div>
+            <label for="ilerlet">İlerlet:</label>
+            <progress min="0" max="100" value="75" id="ilerlet">(75 / 100)</progress>
+        </div>
+
+        <div>
+            <label for="metre">Metre:</label>
+            <meter  id="metre" min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+        </div>
+
+        <div><button>Gönder</button></div>
+    </form>
+
+    <script>
+        let seçilenDosya = document.querySelector ("#dosya");
+        let dosyaListesi = document.querySelector ("#dosya-listesi");
+
+        seçilenDosya.addEventListener ("change", dosyaListesiniGüncelle);
+
+        function dosyaListesiniGüncelle() {
+            while (dosyaListesi.firstChild) {dosyaListesi.removeChild (dosyaListesi.firstChild);}
+            let aktüelDosyalar = seçilenDosya.files;
+            if (! (aktüelDosyalar.length === 0) )  {
+                for (let i = 0; i < aktüelDosyalar.length; i++) {
+                    let listeElemanı = document.createElement ("li");
+                    listeElemanı.textContent = "Dosy adı: " + aktüelDosyalar [i].name + "; dosya ebadı: " + dosyaEbadı (aktüelDosyalar [i].size) + ".";
+                    dosyaListesi.appendChild (listeElemanı);
+                } // for sonu...
+            } // if sonu...
+        } // func sonu...
+
+        function dosyaEbadı (sayı) {
+            if (sayı < 1024) {return sayı + "bytes";
+            }else if (sayı >= 1024 && sayı < 1048576) {return (sayı / 1024).toFixed (1) + "KB";
+            }else if (sayı >= 1048576) {return (sayı / 1048576).toFixed (1) + "MB";}
+        } // func sonu...
+    </script>
+</body>
+</html>

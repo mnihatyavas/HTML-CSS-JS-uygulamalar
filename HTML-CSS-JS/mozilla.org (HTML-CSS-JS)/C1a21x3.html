@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a21x3.html: Rakam, kapsam, tarih-zaman ve renk verigiriþleri alt-örneði.</title>
+</head>
+<style>
+        body {background-color:#da8;}
+        form {margin:2em auto; background-color:#7ae; padding:10px; max-width: 400px;}
+        input {background-color: aqua;}
+        button {background-color: Black; color:White;}
+        button:hover {color:red;}
+</style>
+<body>
+    <form>
+        <p>
+            <label for="yaþ">Kaç yaþýndasýn?</label>
+            <input type="number" name="yaþ" id="yaþ" min="1" max="120" step="1">
+        </p>
+        <p>
+            <label for="bezelyeler">Kaç tane bezelye yiyebilirsin?</label>
+            <input type="range" name="bezelyeler" id="bezelyeler" min="0" max="500" step="10">
+            <span class="bezelye-sayacý"></span>
+        </p>
+        <p>
+            <label for="tarih">Bu yaz ne zaman müsaitsin?</label>
+            <input type="date" name="tarih" min="2021-06-01" max="2021-08-31" id="tarih">
+        </p>
+        <p>
+            <label for="randevu">Ne zaman buluþalým?</label>
+            <input type="datetime-local" name="randevu" id="randevu">
+        </p>
+        <p>
+            <label for="ay">Yýlýn hangi ayý favorindir?</label>
+            <input type="month" name="ay" id="ay">
+        </p>
+        <p>
+            <label for="zaman">Buzdolabýnýn wifi zamanlamasýný kur:</label>
+            <input type="time" name="zaman" id="zaman">
+        </p>
+        <p>
+            <label for="renk">Favori rengin hangisidir?</label>
+            <input type="color" name="renk" id="renk">
+        </p>
+        <hr/>
+        <p style="text-align: center;">
+            <button type="submit">Beni gönderin!</button>
+        </p>
+    </form>
+
+    <script>
+        let bezelyeler = document.querySelector ("#bezelyeler");
+        let bsayaç = document.querySelector (".bezelye-sayacý");
+        bsayaç.textContent = bezelyeler.value;
+        bezelyeler.oninput = function() {bsayaç.textContent = bezelyeler.value;}
+    </script>
+</body>
+</html>

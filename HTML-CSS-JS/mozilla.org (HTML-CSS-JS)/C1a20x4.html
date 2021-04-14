@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a20x4.html: Sadece okunabilir olup onaya sunulan form alt-örneği.</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        html {background-color: #357;}
+        body {
+            font-family: "Josefin Sans", sans-serif;
+            margin: 20px auto;
+            max-width: 460px;
+            padding: 10px;
+            background-color: #ace;}
+        fieldset {
+            padding: 10px 30px 0;
+            margin-bottom: 20px;}
+        legend {
+            color: white;
+            background-color: black;
+            padding: 5px 10px;}
+        fieldset > div {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;}
+        button, label, input[type="text"], textarea {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            padding: 5px;
+            height: 30px;
+            background-color: Aqua;}
+        input[type="text"], textarea {width: 50%}
+        textarea {
+            height: 110px;
+            resize: none;}
+        label {
+            border: 1px solid LightGray;
+            width: 40%;
+            height: 45px;}
+        input:hover, input:focus, textarea:hover, textarea:focus {background-color: #eee;}
+        button {
+            width: 60%;
+            margin: 20px auto;}
+        button:hover {
+            background-color: Purple;
+            color: Yellow;}
+/*        input:read-only, textarea:read-only {
+            border: 0;
+            box-shadow: none;
+            background-color: Linen;}
+        textarea:read-write {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 10px;
+            background-color: Aqua;}
+*/
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend contenteditable="true">Nakliye detayları kontrolu</legend>
+            <div>
+                <label for="isim">Ad soyad:</label>
+                <input id="isim" name="isim" type="text" value="Bay.Haydar Yumuşak" readonly>
+            </div>
+            <div>
+                <label for="adres">Adres:</label>
+                <textarea id="adres" name="adres" readonly>
+23.Esnek Cd,
+Yapışkan Sk,
+Parlak Seki Apt. 10B/7,
+Topkapı - Bursa
+                </textarea>
+            </div>
+            <div>
+                <label for="posta-kodu">PO/Posta kodu: </label>
+                <input id="posta-kodu" name="posta-kodu" type="text" value="16708" readonly>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Son talimatlar</legend>
+            <div>
+                <label for="sms-onay">Onay SMS'le gönderilsin mi?</label>
+                <input id="sms-onay" name="sms-onay" type="checkbox">
+            </div>
+            <div>
+                <label for="talimatlar">Varsa özel talimatlarınızı girin:</label>
+                <textarea id="talimatlar" name="talimatlar"></textarea>
+            </div>
+        </fieldset>
+
+        <div><button type="button">Değişiklik deyatları</button></div>
+        <div><button type="submit">Gönder</button></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a20x1a.html: Radyo butonlarýndan ilk açýlýþtaki varsayýlýnýn seçilimi alt-örneði.</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Josefin Sans", sans-serif;
+            background-color: #db9;}
+        form {margin: 2em auto; padding: 10px; max-width: 300px; background-color: #9bd;}
+        input[type="radio"] {
+            appearance: none; /* Varsayýlý ayarlar iptal */
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* Küçük daire */
+            border: 2px solid gray;
+            background-color: yellow;
+            vertical-align: -2px;
+            outline: none;}
+        input[type="radio"]::before {
+            display: block;
+            content: " ";
+            width: 10px;
+            height: 10px;
+            border-radius: 6px;
+            background-color: red; /* Küçük daire içi bilye */
+            font-size: 1.2em;
+            transform: translate(3px, 3px) scale(0);
+            transform-origin: center;
+            transition: all 0.3s ease-in;}
+        input[type="radio"]:checked::before {
+            transform: translate(3px, 3px) scale(1);
+            transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);}
+        input ~ span {position: relative;}
+        input:default ~ span::after {
+            font-size: 0.7rem;
+            position: absolute;
+            content: "Varsayýlý";
+            color: white;
+            background-color: black;
+            padding: 5px 10px;
+            right: -65px;
+            top: -3px;}
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Favori meyve seçimi</legend>
+            <p>
+                <input type="radio" name="meyve" value="kiraz" id="kiraz">
+                <label for="kiraz">Kiraz</label>
+                <span></span>
+            </p>
+            <p>
+                <input type="radio" name="meyve" value="viþne" id="viþne">
+                <label for="viþne">Viþne</label>
+                <span></span>
+            </p>
+            <p>
+                <input type="radio" name="meyve" value="muz" id="muz" checked>
+                <label for="muz">Muz</label>
+                <span></span>
+            </p>
+            <p>
+                <input type="radio" name="meyve" value="üzüm" id="üzüm">
+                <label for="üzüm">Üzüm</label>
+                <span></span>
+            </p>
+        </fieldset>
+        <hr/>
+        <div style="text-align: center;"><input type="submit" value="Gönder" style="background-color: green; color: yellow;"></div>
+    </form>
+</body>
+</html>

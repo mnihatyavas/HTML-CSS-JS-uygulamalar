@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a21x6.html: Select-option ve input-datalist-option ile sarkan seçenekler listesi örneði.</title>
+    <style>
+        body {background-color:#468;}
+        form {margin:2em auto; background-color:#eca; padding:10px; max-width: 500px; text-align: center;}
+        select, input, button {background-color: Aqua;}
+        button:hover {color:Red;}
+    </style>
+</head>
+<body>
+    <form>
+        <p>
+            <label for="basit">Basit bir sarkan seçme kutusu:</label>
+            <select id="basit" name="basit">
+                <option>Muz</option>
+                <option>Kiraz</option>
+                <option selected>Üzüm</option>
+                <option>Kaysý</option>
+            </select>
+        </p>
+        <p>
+            <label for="grup">Gruplamalý bir sarkan seçme kutusu:</label>
+            <select id="grup" name="grup">
+                <option selected>--Birini seç--</option>
+                <optgroup label="meyveler">
+                    <option>Muz</option>
+                    <option>Kiraz</option>
+                    <option>Üzüm</option>
+                    <option>Kaysý</option>
+                </optgroup>
+                <optgroup label="sebzeler">
+                    <option>Havuç</option>
+                    <option>Kavun</option>
+                    <option>Karpuz</option>
+                    <option>Hýyar</option>
+                </optgroup>
+            </select>
+        </p>
+        <p>
+            <label for="çoklu">Çoklu tercihli bir açýk kaydýraçlý seçme kutusu:</label>
+            <select id="çoklu" name="çoklu" multiple>
+                <option selected>Muz</option>
+                <option>Kiraz</option>
+                <option selected>Üzüm</option>
+                <option>Kaysý</option>
+                <option>Dut</option>
+                <option>Alýnç</option>
+                <option>Portakal</option>
+            </select>
+        </p>
+        <p>
+            <label for="meyvem">Tek tercihli bir sarkan verigiriþ listesi:</label>
+            <input type="text" name="meyvem" id="meyvem" list="meyveListem">
+            <datalist id="meyveListem">
+                <option>Elma</option>
+                <option>Muz</option>
+                <option>Dut</option>
+                <option>Alýnç</option>
+                <option>Portakal</option>
+                <option>Nar</option>
+                <option>Þeftali</option>
+                <option>Armut</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="meyvem2">Tek tercihli bir sarkan verigiriþ listesi:</label>
+            <input type="text" name="meyvem2" id="meyvem2" list="meyveListem2">
+            <datalist id="meyveListem2">
+                <select>
+                    <option>--Birini seç--</option>
+                    <option>Elma</option>
+                    <option>Muz</option>
+                    <option>Dut</option>
+                    <option>Alýnç</option>
+                    <option>Portakal</option>
+                    <option>Nar</option>
+                    <option>Þeftali</option>
+                    <option>Armut</option>
+                </select>
+            </datalist>
+        </p>
+
+        <hr/>
+        <p style="text-align:center;">
+            <button type="submit">Gönder beni!</button>
+        </p>
+    </form>
+</body>
+</html>

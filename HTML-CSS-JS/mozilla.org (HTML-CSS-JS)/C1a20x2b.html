@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a20x2b.html: Verigiriþ alanlarý doldurulmasýnýn önuyarýlý kýsmi zorunlu ve tercihi olmasý alt-örneði.</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        html {background-color: #135;}
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 20px auto;
+            max-width: 500px;
+            padding: 10px;
+            background-color: #fc9;}
+        fieldset {padding: 10px 30px 0;}
+        fieldset > div {
+            margin-bottom: 20px;
+            display: flex;
+            flex-flow: row wrap;}
+        legend {
+            color: white;
+            background-color: black;
+            padding: 5px 10px;}
+        button, label, input {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;}
+        input {
+            box-shadow: inset 1px 1px 3px #aaa;
+            border-radius: 5px;
+            background-color: Aqua;}
+        input:hover, input:focus {background-color: DodgerBlue;}
+        input + span {position: relative;}
+        input:required + span::after {
+            font-size: 0.7rem;
+            position: absolute;
+            content: "zorunlu";
+            color: red;
+            background-color: black;
+            padding: 5px 10px;
+            top: -26px;
+            left: -70px;}
+        input:optional + span::after {
+            font-size: 0.7rem;
+            position: absolute;
+            content: "tercihi";
+            color: LightGreen;
+            background-color: black;
+            padding: 5px 10px;
+            top: -26px;
+            left: -70px;}
+        input:optional {border: 1px solid silver;}
+        button {
+            width: 40%;
+            margin: 10px auto;
+            background-color:Green;
+            color: Yellow;}
+        button:hover {
+            background-color:DarkGreen;
+            color: Tomato;}
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Kimlik bildirme formu</legend>
+            <div>
+                <label for="ad">Adýnýz:</label>
+                <input id="ad" name="ad" type="text" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="soyad">Soyadýnýz:</label>
+                <input id="soyad" name="soyad" type="text" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="eposta">Eposta adresiniz (cevap istiyorsanýz dahil edin):</label>
+                <input id="eposta" name="eposta" type="email" optional>
+                <span></span>
+            </div>
+            <hr/>
+            <button>Gönder</button>
+        </fieldset>
+    </form>
+</body>
+</html>

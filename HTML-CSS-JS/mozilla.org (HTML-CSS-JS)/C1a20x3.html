@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a20x3.html: Form doldurulmasının disabled yada etkin kılınması alt-örneği.</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        html {background-color: #579;}
+        body {
+            font-family: "Josefin Sans", sans-serif;
+            margin: 20px auto;
+            max-width: 460px;
+            background-color: #dcb;
+            padding: 10px;}
+        fieldset {
+            padding: 10px 30px 0;
+            margin-bottom: 20px;}
+        legend {
+            color: white;
+            background-color: black;
+            padding: 5px 10px;}
+        fieldset > div {
+            margin-bottom: 20px;
+            display: flex;}
+        button, label, input[type="text"] {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;}
+        input {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;
+            background-color: Aqua;}
+        input:hover, input:focus {background-color: Linen;}
+        input[type="text"]:disabled {
+            background: #eee;
+            border: 1px solid #ccc;}
+        .etkinsiz-etiket {color: #aaa;}
+        button {
+            width: 60%;
+            margin: 0 auto;
+            background-color: Green;
+            color: yellow;}
+        button:hover {
+            background-color: DarkGreen;
+            color: Red;}
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset id="nakliye">
+            <legend>Nakliye adresi</legend>
+            <div>
+                <label for="isim1">İsim:</label>
+                <input id="isim1" name="isim1" type="text" required>
+            </div>
+            <div>
+                <label for="adres1">Adres:</label>
+                <input id="adres1" name="adres1" type="text" required>
+            </div>
+            <div>
+                <label for="pkod1">Posta kodu:</label>
+                <input id="pkod1" name="pkod1" type="text" required>
+            </div>
+        </fieldset>
+
+        <fieldset id="fatura">
+            <legend>Fatura adresi</legend>
+            <div>
+                <label for="fatura-çentikkutusu">Nakliye adresiyle aynı:</label>
+                <input type="checkbox" id="fatura-çentikkutusu" checked>
+            </div>
+            <div>
+                <label for="isim2" class="fatura-etiketi etkinsiz-etiket">İsim:</label>
+                <input id="isim2" name="isim2" type="text" disabled required>
+            </div>
+            <div>
+                <label for="adres2" class="fatura-etiketi etkinsiz-etiket">Adres:</label>
+                <input id="adres2" name="adres2" type="text" disabled required>
+            </div>
+            <div>
+                <label for="pkod2" class="fatura-etiketi etkinsiz-etiket">Posta kodu:</label>
+                <input id="pkod2" name="pkod2" type="text" disabled required>
+            </div>
+        </fieldset>
+        <div><button>Gönder</button></div>
+    </form>
+
+    <script>
+        // Sayfanın yüklenmesi tamamlanıncaya dek bekle...
+        document.addEventListener ("DOMContentLoaded", function () {
+            // fatura-çentikkutusu değişikliğine duyarlayalım...
+            document.getElementById ("fatura-çentikkutusu").addEventListener ("change", faturaAdresGirişiniAçKapa);
+        }, false); // doc sonu...
+
+        function faturaAdresGirişiniAçKapa() {
+            // Tüm faturalama veri girişlerini bulalım...
+            let faturaVerigirişleri = document.querySelectorAll ('#fatura input[type="text"]');
+            // Tüm faturalama veri giriş başlıklarını bulalım...
+            let faturaBaşlıkları = document.querySelectorAll (".fatura-etiketi");
+
+            // Faturalama verigiriş alanları ve başlıklarının etkinsiz/etkin'liğini tersleyelim...
+            for (let i = 0; i < faturaVerigirişleri.length; i++) {
+                faturaVerigirişleri [i].disabled = ! faturaVerigirişleri [i].disabled;
+                if (faturaBaşlıkları [i].getAttribute ("class") === "fatura-etiketi etkinsiz-etiket") {faturaBaşlıkları [i].setAttribute ("class", "fatura-etiketi"); // Etkin...
+                }else {faturaBaşlıkları [i].setAttribute ("class", "fatura-etiketi etkinsiz-etiket");} // Etkinsiz...
+            } // for sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>
