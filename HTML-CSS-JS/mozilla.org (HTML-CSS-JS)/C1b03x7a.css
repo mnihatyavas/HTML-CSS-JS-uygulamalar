@@ -1,0 +1,26 @@
+/* C1b03x7a.css: Genel tablo css vasýflama örneði. */
+
+html {background: #245;}
+body {
+    background: DarkGreen;
+    padding: 20px;
+    width: 840px;
+    margin: 2em auto;}
+caption {
+    padding: 10px;
+    margin-bottom:5px;
+    font-size:1.5em;
+    border: 5px solid rgb(255,120,70);
+    color: Magenta;
+    background-color:#666;}
+table {
+    border-collapse: collapse;
+    border: 3px solid rgb(255,120,70);
+    letter-spacing: 1px;
+    font-size: 85%;
+    background-color: Khaki;
+    color: Navy;}
+th, td {
+    text-align: center;
+    border: 2px solid rgb(49,190,255);
+    padding: 10px 20px;}

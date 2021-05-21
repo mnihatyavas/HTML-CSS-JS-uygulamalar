@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b03x2a.html: Sýnýrý resimlerle dekore etme örneði.</title>
+    <style>
+        /* Genel css stilleri */
+        html {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            background-color: #134;}
+        body {
+            margin: 2em auto;
+            padding: 20px;
+            max-width: 50%;
+            min-width: 400px;
+            background-color: LightGreen;}
+
+        /* Detay css stilleri */
+        .sýnýr1, .sýnýr2 {
+            width: 300px;
+            padding: 20px;
+            margin: 10px auto;
+            line-height: 3;
+            background-color: #f66;
+            text-align: center;
+            /* sýnýrla iliþkili özellikler */
+            border: 20px solid black;
+            background-clip: padding-box;
+            border-image-slice: 40;
+            border-image-repeat: round;}
+        .sýnýr1 {
+            border-image-source: url(resim/sýnýr1.png);
+            border-image-outset: 0px;}
+        .sýnýr2 {
+            border-image-source: url(resim/sýnýr2.png);
+            border-image-outset: 1px;}
+    </style>
+</head>
+<body>
+    <div class="sýnýr1">
+        <p>Ýlk sýnýr resmi</p>
+    </div>
+    <br/>
+    <div class="sýnýr2">
+        <p>Ýkinci sýnýr resmi</p>
+    </div>
+</body>
+</html>

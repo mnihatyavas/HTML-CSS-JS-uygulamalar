@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b03x4b.html: Zemin, eflatun ve yeþil tabaka ile resim karma ve karýþtýrma örneði.</title>
+    <style>
+        html {font-family: sans-serif;}
+        div {
+            width: 280px;
+            height: 130px;
+            padding: 10px;
+            margin: 10px;}
+        article {
+            width: 330px;
+            height: 180px;
+            margin: 10px;
+            position: relative;}
+        body > div, article div:first-child {
+            background: url(resim/renkli-kalp.png) no-repeat center 20px;
+            background-color: green;}
+        body > div, article {display: inline-block;}
+        article div:first-child {
+            position: absolute;
+            top: 10px;
+            left: 0;}
+        article div:last-child {
+            background-color: purple;
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            z-index: -1;}
+        .çarp {background-blend-mode: multiply;}
+        .multiply-mix {mix-blend-mode: multiply;}
+        .perdele {background-blend-mode: screen;}
+        .perdele-karýþýk {mix-blend-mode: screen;}
+        .üsteyay {background-blend-mode: overlay;}
+        .üsteyay-karýþýk {mix-blend-mode: overlay;}
+        .karart {background-blend-mode: darken;}
+        .karart-karýþýk {mix-blend-mode: darken;}
+        .aydýnlat {background-blend-mode: lighten;}
+        .lighten-mix {mix-blend-mode: lighten;}
+        .renk-kaçýr {background-blend-mode: color-dodge;}
+        .renk-kaçýr-karýþýk {mix-blend-mode: color-dodge;}
+        .renk-yak {background-blend-mode: color-burn;}
+        .renk-yak-karýþýk {mix-blend-mode: color-burn;}
+        .sert-ýþýk {background-blend-mode: hard-light;}
+        .sert-ýþýk-karýþýk {mix-blend-mode: hard-light;}
+        .yumuþak-ýþýk {background-blend-mode: soft-light;}
+        .yumuþak-ýþýk-karýþýk {mix-blend-mode: soft-light;}
+        .fark {background-blend-mode: difference;}
+        .fark-karýþýk {mix-blend-mode: difference;}
+        .renkton {background-blend-mode: hue;}
+        .renkton-karýþýk {mix-blend-mode: hue;}
+    </style>
+</head>
+<body>
+    <h2>Beyaz zemin üstü yeþil tabaka üstü resim karma kipleri</h2>
+    <div>
+        Karmasýz kip
+    </div>
+    <div class="çarp">
+        Çarp
+    </div>
+    <div class="perdele">
+        Perdele
+    </div>
+    <div class="üsteyay">
+        Üsteyay
+    </div>
+    <div class="karart">
+        Karart
+    </div>
+    <div class="aydýnlat">
+        Aydýnlat
+    </div>
+    <div class="renk-kaçýr">
+        Renk-kaçýr
+    </div>
+    <div class="renk-yak">
+        Renk-yak
+    </div>
+    <div class="sert-ýþýk">
+        Sert-ýþýk
+    </div>
+    <div class="yumuþak-ýþýk">
+        Yumuþak-ýþýk
+    </div>
+    <div class="fark">
+        Fark
+    </div>
+    <div class="renkton">
+        Renkton
+    </div>
+    <hr/>
+
+    <h2>Beyaz zemin üstü eflatun tabaka üstü yeþil tabaka üstü resim karma kipleri</h2>
+    <article>
+        Karýþtýrmasýz kip
+        <div></div>
+        <div></div>
+    </article>
+    <article>
+        Çarp-karýþýk
+        <div class="multiply-mix"></div>
+        <div></div>
+    </article>
+    <article>
+        Perdele-karýþýk
+        <div class="perdele-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Üsteyay-karýþýk
+        <div class="üsteyay-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Karart-karýþýk
+        <div class="karart-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Aydýnlat-karýþýk
+        <div class="aydýnlat-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Renk-kaçýr-karýþýk
+        <div class="renk-kaçýr-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Renk-yak-karýþýk
+        <div class="renk-yak-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Sert-ýþýk-karýþýk
+        <div class="sert-ýþýk-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Yumuþak-ýþýk-karýþýk
+        <div class="yumuþak-ýþýk-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Fark-karýþýk
+        <div class="Fark-karýþýk"></div>
+        <div></div>
+    </article>
+    <article>
+        Renkton-karýþýk
+        <div class="renkton-karýþýk"></div>
+        <div></div>
+    </article>
+</body>
+</html>

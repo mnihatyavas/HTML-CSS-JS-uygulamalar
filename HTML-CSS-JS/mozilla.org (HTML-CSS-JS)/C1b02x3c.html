@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b02x3c.html: Özelleþtirilen http'li a-href baðlantý sonlarýna ikon konulmasý örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            margin: 2em auto;
+            padding: 20px;
+            max-width: 30%;
+            background-color: #dca;
+            font-family: sans-serif;}
+        p {line-height: 1.4;}
+        a {
+            outline: none;
+            text-decoration: none;
+            padding: 2px 1px 0;
+            background-color: pink;}
+        a:link {color: blue;}
+        a:visited {color: green;}
+        a:focus, a:hover {border-bottom: 2px solid black; background-color: LightGreen;}
+        a:active {color: red;}
+        a[href*="http"] {
+            background: url("resim/baðlantý.png") no-repeat 100% 0 pink;
+            background-size: 16px 16px;
+            padding-right: 19px;}
+    </style>
+</head>
+<body>
+    <p>Hava durumu konusunda daha fazla bilgi almak istiyorsanýz, bizi týklayýn: <a href="weather.html" target=" ">hava durumu sayfasý</a>, veya buraya gözatýn <a href="https://en.wikipedia.org/wiki/Weather" target=" ">Wikipedia üzerinden hava durumu</a>, yada þurayý kontrol edin <a href="http://www.extremescience.com/weather.htm" target=" ">Aþýrý Bilimler'de hava durumu</a>.</p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* C1b03x6b.css: Tuhaf þirket kapakcýðýna resim, gölgeleme ve tabakalama css efektleri örneði. */
+
+* {box-sizing: border-box;}
+html {
+    font-family: sans-serif;
+    background: #135;}
+body {
+    background: gray;
+    padding: 20px;
+    max-width: 80%;
+    min-width: 850px;
+    margin: 2em auto;}
+article {
+    width: 210mm; /* 1mm=3.857px */
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+    border: 1px solid;}
+address {
+    position: absolute;
+    bottom: 15mm;
+    right: 20mm;
+    padding: 0 30px;}
+h1 {
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 2px 2px 2px red;}
+address, h1 {
+    background-color: Aqua;
+    border: 1px solid;}
+
+/* Zemin resmi ve sýnýr gölgeleme ilave vasýflar */
+article {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6)),
+            url(resim/üst-çerçeve.png) no-repeat left top,
+            url(resim/alt-çerçeve.png) no-repeat left bottom;
+    background-color: LightGreen;
+    border-top: 1mm solid red;
+    border-bottom: 1mm solid red;}
+h1 {background-image: url(resim/logo.png);}  /*border-radius: 64px;*/
+address, h1 {box-shadow: 5px 5px 5px black;}

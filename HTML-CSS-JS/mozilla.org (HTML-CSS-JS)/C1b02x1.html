@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b02x1.html: Temel h1-p metin stilleme örneği.</title>
+    <style>
+        html {
+            font-size: 10px;
+            background-color: #357;}
+        body {
+            margin: 2em auto;
+            padding: 20px;
+            max-width: 70%;
+            background-color: LightGreen;}
+        h1 {
+            font-size: 6rem;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 2px red, 4px 4px 4px blue; /* Sağ alta kırmızı üstü mavi gölgeleme */
+            text-align: center;
+            letter-spacing: 2px;
+            color: DarkGreen;}
+        h1 + p {font-weight: bold;} /* Başlıktan sonraki ilk p-paragraf */
+        p::first-line { /* Tüm p-paragrafların ilki */
+            letter-spacing: 3px;
+            word-spacing: 4px;}
+        p { /* Tüm p-paragraflar */
+            font-size: 1.5rem;
+            color: Brown;
+            font-family: Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            letter-spacing: 1px;}
+    </style>
+</head>
+<body>
+    <h1>Tekir kedi Rıfkı</h1>
+    <p>"Hımm! Aradan şişman fare yakalama bir saatı geçmiş olsa da hatırlıyorum bu benzer sahneyi..."</p>
+    <p>Diye kendi kendine mırıldandı kedi Rıfkı, hala boğazındaki son av kırıntılarını temizlerken. Mağaramsı çöp fıçısının küçük deliğinden dışardaki avlanma sahasını sinsice dikizlerken o kadar çok şişman fareye rastlıyordu ki!... Azılı bir fare avcısı olarak — kedi Rıfkı'nın anlatılacak yığınla  av serüvenleri var. Ama bu sinsice fıçı deliğinden dikiz olayı nadir raslanan bir avlanma vakasıdır.</p>
+</body>
+</html>

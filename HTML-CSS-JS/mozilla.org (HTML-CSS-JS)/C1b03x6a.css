@@ -1,0 +1,39 @@
+/* C1b03x6a.css: Tuhaf bir þirket tanýtým kapakcýðý genel css vasýflama örneði. */
+
+* {box-sizing: border-box;}
+html {
+    font-family: sans-serif;
+    background: #135;}
+body {
+    background: #db9;
+    padding: 20px;
+    max-width: 80%;
+    min-width: 850px;
+    margin: 2em auto;}
+article {
+    width: 210mm; /* 1mm=3.857px */
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+    background-color: LightGreen;
+    border: 1px solid;}
+address {
+    position: absolute;
+    bottom: 15mm;
+    right: 20mm;
+    padding: 0 30px;}
+h1 {
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 2px 2px 2px black;}
+address, h1 {
+    background-color: Aqua;
+    border: 1px solid;}

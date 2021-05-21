@@ -1,0 +1,34 @@
+/* C1b03x1b.css: Paragrafýn gölgeleme ve tabakalamayla css detay vasýflama örneði. */
+
+/* Genel css stiller */
+html {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    background-color: #357;}
+body {
+    margin: 2em auto;
+    padding: 20px;
+    width: 200px;
+    background-color: LightGreen;}
+
+/* Detay css stilleri */
+p {
+    /* ebatlama ve konumlama */
+    width: 90%;
+    margin: auto;
+    line-height: 3;
+     /* metin */
+    font-size: 1rem;
+    text-align: center;
+    color: #ff0000;
+    text-shadow: 1px 1px 1px black; /* metin gölgeleme efekti */
+    /* sýnýr */
+    border-radius: 10px;
+    border: 1px solid #990000;
+    /* zemin */
+    background-color: tomato;
+    background-image: linear-gradient(to top left, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 30%, rgba(0,0,0,0));
+    /* kutucuk gölgeleme efekti */
+    box-shadow: inset 2px 2px 3px rgba(255,255,255,0.6),
+            inset -2px -2px 3px rgba(0,0,0,0.6),
+            2px 2px 5px black;}

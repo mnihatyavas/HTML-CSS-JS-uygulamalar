@@ -1,0 +1,31 @@
+/* C1b02x5a.css: Kolej aðsitesi tasarýný genel css vasýflama örneði. */
+
+/* Genel kurulum */
+* {box-sizing: border-box;}
+html {
+    background-color: #135;
+    /* font-size: 10px; */
+    margin: 0;
+    font-family: sans-serif;}
+body {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1400px;
+    min-width: 800px;
+    background-color: #eca;}
+
+/* Serilim */
+section {
+    float: left;
+    width: 50%;}
+aside {
+    float: left;
+    width: 30%;}
+nav {
+    float: left;
+    width: 20%;}
+footer {clear: both;}
+header, section, aside, nav, footer {padding: 20px;}
+header, footer {
+    border-top: 10px solid #a66;
+    border-bottom: 10px solid #a66;}

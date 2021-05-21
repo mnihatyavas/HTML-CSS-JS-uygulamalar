@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b03x5b.html: Tampon ve sýnýrý kutu en-boyuna ekleme veya dahil etme örneði.</title>
+    <link href="C1b03x5b.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="ilaveli"></div>
+    <div class="dahil"></div>
+
+    <script>
+        var ilkKutu = document.querySelector (".ilaveli");
+        var ikinciKutu = document.querySelector (".dahil");
+
+        function kutuAçýklamasý (kutu) {
+            var en = kutu.offsetWidth;
+            var boy = kutu.offsetHeight;
+            kutu.textContent = "Geniþlik: " + en + "px, Yükseklik: " + boy + "px.";
+            if (kutu == ilkKutu) kutu.textContent += " (Tampon ve sýnýr [60px], en ve boya ilaveli)";
+            else kutu.textContent += " (Tampon ve sýnýr, en ve boya dahil [box-sizing:border-box])";
+        } // func sonu...
+
+        kutuAçýklamasý (ilkKutu);
+        kutuAçýklamasý (ikinciKutu);
+    </script>
+</body>
+</html>

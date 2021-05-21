@@ -1,0 +1,14 @@
+/* Cab03x1a.css: Stilsiz paragrafa genel css vasýflama örneði. */
+
+/* Genel css stiller */
+html {
+    font-family: sans-serif;
+    font-size: 1.1rem; /* Varsayýlý 16px=1rem=0.5em */
+    background-color: #357;}
+body {
+    margin: 2em auto;
+    padding: 20px;
+    width: 200px;
+    background-color: LightGreen;}
+
+/* Detay css stilleri */

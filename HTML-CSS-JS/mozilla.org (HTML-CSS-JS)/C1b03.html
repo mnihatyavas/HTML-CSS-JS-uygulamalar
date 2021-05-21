@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b03.html: Kutularda sýnýr, zemin, gölgeleme, süzgeçleme gibi efektler örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Kutu Stilleme</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1b03x1a.html" target="_">1a) Stilsiz bir paragrafýn görünümü örneði</a></h4>
+    <h4><a href="C1b03x1b.html" target="_">1b) Paragrafýn kutu þeklinde stillenmiþ görünümü örneði</a></h4>
+    <h4><a href="C1b03x2a.html" target="_">2a) Sýnýrý resimlerle dekore etme örneði</a></h4>
+    <h4><a href="C1b03x2b.html" target="_">2b) Kesintisiz, tireli, noktalý ve atçizgili sýnýrlar örneði</a></h4>
+    <h4><a href="C1b03x2c.html" target="_">2c) Kýsmi ve tam yuvarlatýlmýþ sýnýr köþeleri örneði</a></h4>
+    <h4><a href="C1b03x3a.html" target="_">3a) Zemini tek resim ve doðrusal renk tabakalanmayla döþeme örneði</a></h4>
+    <h4><a href="C1b03x3b.html" target="_">3b) Renkli zemini, tek resmin çoklu tekrarýyla döþeme örneði</a></h4>
+    <h4><a href="C1b03x3c.html" target="_">3c) Zemin-tutunma vasfýnýn kayar, sabit ve yerel deðerleri örneði</a></h4>
+    <h4><a href="C1b03x4a.html" target="_">4a) Resim üstü metin ve metin altý resim örneði</a></h4>
+    <h4><a href="C1b03x4b.html" target="_">4b) Zemin, eflatun ve yeþil tabaka ile resim karma ve karýþtýrma örneði</a></h4>
+    <h4><a href="C1b03x4c.html" target="_">4c) Resmi çeþitli efektlerle süzgeçleme örneði</a></h4>
+    <h4><a href="C1b03x4d.html" target="_">4d) Basit bulanýk, çoklu 6 katmanlý ve içe çukur gölgeleme örneði</a></h4>
+    <h4><a href="C1b03x5a.html" target="_">5a) Form ve elemanlarýný tablo ve satýrý, hücresi, baþlýðý olarak gösterme örneði</a></h4>
+    <h4><a href="C1b03x5b.html" target="_">5b) Tampon ve sýnýrý kutu en-boyuna ekleme veya dahil etme örneði</a></h4>
+    <h4><a href="C1b03x5c.html" target="_">5c) Resmin gövde metni enine duyarsýz ve ortalanmamýþlýðý örneði</a></h4>
+    <h4><a href="C1b03x5d.html" target="_">5d) Resmin gövde metni enine duyarlý ve ortalanmýþlýðý örneði</a></h4>
+    <h4><a href="C1b03x5e.html" target="_">5e) Kýsým içi 3 kutuya yenilerinin ilavesi ve yeniden baþlatma örneði</a></h4>
+    <h4><a href="C1b03x6a.html" target="_">6a) Zemin resimsiz þirket tanýtým kitapcýðý önsayfasý örneði</a></h4>
+    <h4><a href="C1b03x6b.html" target="_">6b) Zemin resimli ve doðrusal tabakalamalý þirket tanýtým kitapcýðý önsayfasý örneði</a></h4>
+    <h4><a href="C1b03x7a.html" target="_">7a) Tablo ve elemanlarýnýn basit css vasýflarýyla düzenleniþi örneði</a></h4>
+    <h4><a href="C1b03x7b.html" target="_">7b) Tablo ve elemanlarýnýn zemin resmi, gölgeleme ve doðrusal tabakalanmayla düzenleniþi örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) Kutularý zeminresmi, süzgeçleme, gölgeleme ve doðrusal tabaklamayla stilleme sunulmaktadýr. Toplam 7 grup kapsamýnda \
+            21 altprogramdan müteþekküldür." +
+            "<br/>2) Ýlk altprogram-1a sadece html-body gövde içinde kýsa ve yalýn bir p-paragraf sunumudur. Harici css stil dosyasý \
+            sadece genel html ve body genel vasýflarýný þekillendirmektedir." +
+            "<br/>3) Ýkinci altprogram-1b önceki p-paragrafý kutulandýrýp, içerik özelliklerini doðrusal tabakalandýrma, gölgeleme, sýnýr \
+            yuvarlama, zeminrengi, yazýrengi vb detaylarla görsel sunuma hazýrlamaktadýr." +
+            "<br/>4) Üçüncü altprogram-2a iki altalta div kutu en boy zeminrengi tanýmlayýp, ayrýca border-image-url sýnýr-resmi \
+            detaylarýyla iki ayný kutu sýnýr çevresine iki farklý sýnýr resmi çerçevelemektedir." +
+            "<br/>5) Dördüncü altprogram-2b yedi adet div dikdörtgen kutu oluþturup, herbirinin sýnýrý için farklý sýnýf adlarýna atfedilen \
+            sýnýr-stili border-style:solid/dashed/dotted çizgili/tireli/noktalý, ayrýca border-bottom'la alt-sýnýra tek/çoklu sýnýf vasýflý \
+            sýnýr çizgileri tanýmlamaktadýr." +
+            "<br/>6) Beþinci altprogram-2c iki ayrý div dikdörtgen kutu kenarlarýný border-radius sýnýr-yarýçapý vasfýyla kýsmi yuvarlý \
+            20px ve tam yuvarlý %50 deðerlerle dikdörtgenden (en ve boy ayný olunca) tam daireye dönüþtürebilmektedir." +
+            "<br/>7) Altýncý altprogram-3a p-paragrafý uzunlamasýna ve kalýn iç padding tamponla kutulaþtýrýp, zemine background-url \
+            tek-resmi/no-repeat, saða %99 yaslý, boyla ortalanmýþ/center, ayrýca doðrusal-tabakalandýrmayla/linear-gradient \
+            üstten alta sarý, kýrmýzýmtrak ve turuncu 3 dalgalý renk katmanlý biçimlemiþtir." +
+            "<br/>8) Yedinci altprogram-3b p-paragraf içinde döþemede kullanýlacak tek karo-fayans resmini img-src ile göstermekte \
+            ve hemen alta div uzun-geniþ kýrmýzý zeminrenkli kutuya background-image-url ile varsayýlý çoklu/repeat döþemektedir." +
+            "<br/>9) Sekizinci altprogram-3c zeminresmi background-image-url tek karo fayansýn çoklu döþenmiþ ve döþeme zemin \
+            üstüne kýsa açýklama p-paragraflarýnýn 3 adet article/makale penceresinin overflow:auto taþma pre-height:1000px boyunca \
+            kaydýraç farklýlýklarýný sunmaktadýr. Kaydýraçlar içteki yarý-þeffaf p-paragrafý herhalukarda kaydýrmakta, ancak resimli \
+            zemin döþeme sadece background-attachment zemin-tutunma vasfý local/yerel ise kaymakta, diðerlerinde (fixed/sabit \
+            ve scroll/kayar) iç pencere kaydýraçlarýnda kaymamaktadýr. 2000px yükseklikli dýþ kaydýraçta ise sadece fized/sabit \
+            ayný yerde sabit kaldýðýndan kayar gözükmekte, diðerlerindeyse iç p-paragrafla bütün olarak hareket etmektedir. \
+            Ýç p-paragraflar kaydýraç etkilerini yeterli detayda açýklamaktadýr." +
+            "<br/>10) Dokuzuncu altprogram-4a 2 adet h2 baþlýk elemanýný 250X250px kutulaþtýrmakta, ilkinin zeminine tek bir \
+            kalp resmi, üstüne metinsel iri puntolu/100px 3 harf yazýp, ikinci h2 için text-fill-color:transparent metnin iç dolgu rengini \
+            þeffaf yapýnca altýndaki resim görünmekte, üst plandaysa background-clip:text sadece metin öncülenmektedir." +
+            "<br/>11) Onuncu altprogram-4b 12 farklý background-blend-mode/zemin-karma-kipi beyaz zemin üstü yeþil tabaka \
+            üstü kalp resmi karma renk çeþitlemesini, diðer 12 faklý mix-blend-mode/karýþýk-karma-kip ise beyaz zemin üstü \
+            eflatun tabaka üstü yeþil tabaka üstü kalp resmi bileþimlerinin çeþitli renksel sonuçlarýný sunmaktadýr. Bu tabaka \
+            renklerini veya z-index önceliklerini deðiþtirirseniz görsel sonuçlarýnýn da deðiþtiði görülecektir." +
+            "<br/>12) Onbirinci altprogram-4c 9 adet figure/þekil kutusu içine img-src ile renkli kalp resmi ve figcaption \
+            þekil-baþlýðý çift gölgeleme efektli açýklama baþlýklarý yazýlmýþ, transition:1S zaman geçiþli animasyonla herbir figür \
+            üzerindeyken etkin kýlýnan hover-filter:blur-bulanýklaþtýr/brightness-parlaklaþtýr/drop-shadow-gölgelendir/\
+            grayscale-griölçekle/sepia-grileþtir/invert-tersrenkle/saturate-doygunlaþtýr/opacity-þeffaflaþtýr/hue-rotate-\
+            renkton-döndür biçimlerde dereceli süzgeçleme efektlerini canlandýrmýþtýr. 9 ayrý img-src yerine sadece figure \
+            içine tek bir background:url-resim/no-repeat de denenebilir." +
+            "<br/>13) Onikinci altprogram-4d ilk article-p kutu içine doðrusal tabakalamayla üstten alta kýrmýzý zemin \
+            üzerinde beyazdan siyaha dalgalanmýþ, dýþýna ise siyahýmsý gölge serpmiþtir. Ýkinci article-p kutu içini öncekiyle \
+            ayný kýrmýzý zemini alta doðru koyu doðrusal tabakalamýþ, dýþa ise 6 katmanlý farklý renkte gölge altkutular \
+            sýralamýþtýr. Üçüncü kutuyu button düðmeye dýþtan içe koyudan açýða doðrusal tabakalama yapmýþ sonrasýnda \
+            hafif dýþa, aðýrlýklý içe siyahýmsý gölgeleme yapmýþtýr. Ayrýca düðmeye üzerindeyken ve aktif kipinde tekrar \
+            inset/içe koyudan açýða çukurumsu gölgeleme yapmýþtýr." +
+            "<br/>14) Onüçüncü altprogram-5a form içinde 3 div bölümün herbirinde label ve input elemanlarýný table \
+            tabloya dönüþtürmüþ, form/display:table, div/display:table-row, label-input/display:table-cell ve form-p/display:\
+            table-caption (tablo altýna) görüntüsel tablo eleman karþýlýklarýna çevirmiþtir." +
+            "<br/>15) Ondördüncü altprogram-5b box-sizing:border-box/kutu-ebatlama:sýnýr-kutu css vasfýnýn iþlevselliðini \
+            göstermektedir. Normalen kutu width-height/en-boy'a tanýmlý padding/tampon ve border/sýnýr deðerleri eklenerek \
+            gerçek kutu en ve boyu artýrýlýr. Fakat kutu için box-sizing:border-box atfedersek bu artý tampon ve sýnýr deðerleri \
+            tanýmlý en-boy'u artýrmaz, aksine en-boy ayný kalýrken bu ilave iki deðer içe yedirilir. Örnekte ayrýca script JS \
+            kodlamasýyla her iki kutunun da en ve boy gerçek görsel deðerleri (offsetWidth/Height) aktüel tespit edilip \
+            kutu içlerine kutu.textContent ile yazdýrýlmýþtýr." +
+            "<br/>16) Onbeþinci altprogram-5c h1-p-img-p elemanlarýný içeren gövde sayfasý max-width:80% azami-en \
+            için kullanýlan ekran geniþliðinin %80'i, tarayýcýnýn daraltýlmasýnda min-width:480px asgari-en'i 480px'e sýnýrlamýþ, \
+            buna mukabil img resmin ölçeklerine deðinmediðinden, orijinal en olan 615px sabit kalmakta ve tarayýcý icabýnda \
+            480px'e daralýrken resim uygunsuzca 615px'le metinden taþmaktadýr. Ayrýca img elemaný ortalanmadýðýndan \
+            varsayýlý sola yaslý kalarak geniþleyen tarayýcý metninin saðýnda orantýsýz boþluk býrakmaktadýr." +
+            "<br/>17) Onaltýncý altprogram-5d birüstteki eksikleri gidermiþ, img resmi aktüel tarayýcý eniyle sýnýrlamýþ \
+            (max-widt:100%), yani tarayýcý 615px altýna daraldýðýnda metin geniþliðine uygun daralmýþ, orijinal resim \
+            eni 615px üstünde daha geniþlemeden kalýp kendini geniþleyen sayfada ortalamýþtýr." +
+            "<br/>18) Onyedinci altprogram-5e gövde/body sayfada section/kýsým ve 2 yarat/baþlat düðmesi/button \
+            mevcuttur. Section içinde öncelikli 3 div kutu ve kutularda da gölge efektli kýsa bir p-cümle bulunmaktadýr. \
+            Yarat düðmesi týklanýnca script JS kodlamasýna duyarlý (onclick) olarak yeni bir div kutu yaratmakta ve içine \
+            ayný p-cümleyi koymaktadýr (kutu.textContent). Yeniden baþlat düðmesi týklanýnca da, öncelikle hiç kutu \
+            kalmayýncaya dek (while(kýsým.firstChild)) hepsini silmekte (kýsým.removeChild), sonra da 3 yeni div kutu \
+            yaratmaktadýr. Yarat düðmesiyle enaz kutu geniþliði p-cümlenin enuzun kelimesine daralan kutu adedi \
+            aktüel kýsým geniþliðini taþarsa otomatikmen yatay kaydýraç belirmektedir." +
+            "<br/>19) Onsekizinci altprogram-6a gövde/body sayfasýnda article/makale içindeki h1 ve address-p elemanlarýndan \
+            oluþmaktadýr. Ölçeklemekte kullanýlan 1mm=3.857px karþýlýðýdýr. Göreceli/relative konumlu/position  article/makale \
+            sayfasýnýn sol-üst ve sað-alt köþelerine mutlak/absolute konumlu h1 baþlýk ve address þirket adresi yazýlmýþtýr. \
+            P-paragraf içi alt-alta satýrlama &lt;br&gt; break/satýr-kýrma elemanýyla yapýlmaktadýr. Ayrýca h1 baþlýða gölgeleme \
+            efekti de konulmuþtur." +
+            "<br/>20) Ondokuzuncu altprogram-6b birüssteki sayfa tasarýma ilaveten üst ve alt article çerçevelerle h1 baþlýða \
+            background-url zemin tek/no-repeat resim döþemiþ, doðrusal tabakalamayla üstten-alta ve alttan-üste koyudan-açýða \
+            renk dalgalanmasý yapmýþ, ayrýca h1-baþlýk yazý kýrmýzý gölgesine h1 ve address kutu çerçevelerine de siyah gölgeleme eklemiþtir." +
+            "<br/>21) Yirminci altprogram-7a body/gövde sayfasý, içerdiði tablo bozulmasýn diye sabit geniþliktedir (width:840px). \
+            Sayfa elemanlarý table ve içerdiði caption/baþlýk, thead/baþ, tbody/gövde, tfoot/ayak,bunlarýn da içerdiði tr/satýr, \
+            th/baþlýk, ve td/detay elemanlarýdýr. Alt ayaklýktaki toplamlarda colspan='2' elemaný kolon geniþliðini ikiye artýrmak \
+            için kullanýlmaktadýr. Scope/kapsam=col/kolon-row/satýr etkisiz açýklamalardýr. Tablonun varsayýlý sýnýrlarý iptal edilip \
+            (border-collapse:collapse), kendi özel caption, table ve th-td renkli sýnýrlarý tanýmlanmýþtýr." +
+            "<br/>22) Yirmibirinci altprogram-7b birüst tablo tasarýmý iþlenmiþ, üstsatýr/thead ve altsatýr/tfoot leopar desenle, \
+            ve dalgalý doðrusal tabakalanmayla; tbody tablo gövdesi kirli karoyla döþenip tekli satýrlar pembe, çiftliler çokaçýk \
+            pembeyle renklendirilmiþ; herbir kolona aktüel tarayýcý geniþliðiyle deðiþebilen tablo geniþliðinin %30-20-15-35 \
+            yüzdeleri tanýmlanmýtýr. Tablo baþlýðý caption üste yazýldýðý halde, alt thistle/kirli beyaz zeminde konuþlandýrýlmýþtýr \
+            (caption-side:bottom). Tablo geniþliði tarayýcýya duyarlýdýr. Çevrimiçiyseniz, özel google yazýfonu ailesi kullanýlacaktýr."
+    </script>
+</body>
+</html>

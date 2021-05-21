@@ -1,0 +1,14 @@
+/* C1b03x5c.css: Resmin metne ve tarayýcýya duyarsýzlýðý genel css vasýflarý örneði. */
+
+html {
+    font-family: sans-serif;
+    background: #134;}
+body {
+    background: #b98;
+    padding: 10px;
+    max-width: 80%;
+    min-width: 450px;
+    margin: 0 auto;}
+h1 {color: navy;}
+em {color: red;}
+

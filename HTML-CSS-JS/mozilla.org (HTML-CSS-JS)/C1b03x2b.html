@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b03x2b.html: Kesintisiz, tireli, noktalý ve atçizgili sýnýrlar örneði.</title>
+    <style>
+      * {box-sizing: border-box;}
+        /* Genel css stilleri */
+        html {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            background-color: #123;}
+        body {
+            margin: 2em auto;
+            padding: 20px;
+            max-width: 95%;
+            min-width: 300px;
+            background-color: #db9;}
+
+        /* Detay css stilleri */
+        h1 {color:brown; text-align:center; text-decoration:underline;}
+        div {
+              width: 220px;
+            padding: 20px;
+            margin: 10px;
+            line-height: 2;
+            background-color: yellow;
+            text-align: center;
+            display: inline-block;}
+        .sýnýr1 {border-style: solid;} /* varsayýlý renk:siyah, kalýnlýk:2px */
+        .sýnýr2 {border-style: dashed;}
+        .sýnýr3 {border-style: dotted;}
+        .sýnýr4, .sýnýr5 {border-bottom: 6px solid red;}
+    </style>
+</head>
+<body>
+    <h1>Hayat geliþim kitabý</h1>
+
+    <div class="sýnýr1">
+        <p>Aþama 1: Doðum</p>
+    </div>
+    <div class="sýnýr1">
+        <p>Aþama 2: Okul</p>
+    </div>
+    <div class="sýnýr2 sýnýr5">
+        <p>Aþama 3: Üniversite</p>
+    </div>
+    <div class="sýnýr2">
+        <p>Aþama 4: Spor ve Eðlence</p>
+    </div>
+    <div class="sýnýr3 sýnýr4">
+        <p>Aþama 5: Evlilik</p>
+    </div>
+    <div class="sýnýr3">
+        <p>Aþama 6: Çocuklar</p>
+    </div>
+    <div class="sýnýr3">
+        <p>Aþama 7: Emeklilik!</p>
+    </div>
+</body>
+</html>

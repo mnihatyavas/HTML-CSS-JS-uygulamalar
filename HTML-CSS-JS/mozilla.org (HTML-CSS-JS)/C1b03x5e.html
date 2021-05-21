@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b03x5e.html: Kýsým içi 3 kutuya yenilerinin ilavesi ve yeniden baþlatma örneði.</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            background: #125;}
+        body {
+            background: #db9;
+            padding: 20px;
+            max-width: 80%;
+            min-width: 450px;
+            margin: 2em auto;}
+        section {
+            width: 85%;
+            height: 300px;
+            margin: 20px auto;
+            background-color: purple;
+            display: flex;
+            overflow: auto;}
+        div {
+            color: aqua;
+            background-color: orange;
+            flex: 1;
+            margin-right: 10px;
+            text-shadow: 2px 2px 2px black;}
+        div:last-child {margin-right: 0;}
+        section, div {
+            border: 5px solid rgba(0,0,0,0.85);
+            padding: 10px;}
+        button {
+            background-color: DarkRed;
+            color: yellow;
+            font-size:17px;}
+    </style>
+</head>
+<body>
+    <section>
+        <div>Bu bir kutudur</div>
+        <div>Bu bir kutudur</div>
+        <div>Bu bir kutudur</div>
+    </section>
+    <button class="kutu-yarat">Ýlave bir kutu yarat</button>
+    <button class="yeniden-baþlat">Yeniden baþlat</button>
+
+    <script>
+        let kýsým = document.querySelector ("section");
+        let yaratDüðmesi = document.querySelector (".kutu-yarat");
+        let ybaþlatDüðmesi = document.querySelector (".yeniden-baþlat");
+
+        function kutuYarat() {
+            let kutu = document.createElement ("div");
+            kutu.textContent = "Bu bir kutudur";
+            kýsým.appendChild (kutu);
+        } // func sonu...
+        yaratDüðmesi.onclick = kutuYarat;
+
+        ybaþlatDüðmesi.onclick = function() {
+            while (kýsým.firstChild) {kýsým.removeChild (kýsým.firstChild);} // Tüm mevcut kutularý sil...
+            kutuYarat(); kutuYarat(); kutuYarat(); // Yeniden 3 kutu yarat...
+        } // yb..sonu...
+    </script>
+</body>
+</html>

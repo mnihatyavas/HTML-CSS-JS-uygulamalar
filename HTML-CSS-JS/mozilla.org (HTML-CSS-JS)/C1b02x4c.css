@@ -1,0 +1,31 @@
+/* C1b02x4c.css: Çevrimiçi 2 google yazýfonu kullanma css vasýflarý örneði. */
+
+/* Genel kurulum */
+html {
+    background-color: #135;
+    font-size: 10px;
+    margin: 0;
+    font-family: sans-serif;}
+body {
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: #eca;}
+
+/* Detay tipleme */
+h1 {
+    font-size: 4rem;
+    color: brown;}
+h2 {
+    font-size: 3rem;
+    color: magenta}
+h1,h2 {font-family: "Lobster", cursive;}
+
+p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: green;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.6rem;
+  font-family: "Raleway", cursive;} /*  sans-serif */

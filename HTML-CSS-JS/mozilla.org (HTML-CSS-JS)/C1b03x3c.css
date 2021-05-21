@@ -1,0 +1,30 @@
+/* C1b03x3c.css: Zemin tutunmanýn üç farklý css yöntemi örneði. */
+
+html, body {
+    margin: 0;
+    padding: 0;}
+html {
+    background-color: Orange;
+    font-family: sans-serif;}
+body {
+    height: 2000px;
+    padding: 1em;}
+h1 {margin-top: 0;}
+p {
+    padding: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);}
+code {color: aqua;}
+section {display: flex;}
+article {
+    flex: 1;
+    height: 400px;
+    background-image: url(resim/karo2.png);
+    padding: 1%;
+    overflow: auto;
+    border:1px solid black;}
+article pre {height: 1000px;}
+.sabit, .kayar {margin-right: 1%;}
+.sabit {background-attachment: fixed;}
+.kayar {background-attachment: scroll;}
+.yerel {background-attachment: local;}

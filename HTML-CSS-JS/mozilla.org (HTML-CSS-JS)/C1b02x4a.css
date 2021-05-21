@@ -1,0 +1,27 @@
+/* C1b02x4a.css: Harici yazýfonlarý kullanma genel css vasýflama örneði. */
+
+/* Genel kurulum */
+html {
+    background-color: #135;
+    font-size: 10px;
+    margin: 0;
+    font-family: segoe script;} /* verdana */
+body {
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: #eca;}
+
+/* Detay tipleme */
+h1 {
+    font-size: 3.2rem;
+    color: brown;}
+h2 {
+    font-size: 2.4rem;
+    color: magenta}
+p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: green;
+    word-spacing: 0.6rem;}

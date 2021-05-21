@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b02.html: Listeleme, baðlantý, özel fonlar ve aðsayfasý tasarým metin stilleme örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Listeleme, Baðlantý, Yazýfonu, Tasarým</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1b02x1.html" target="_">1) Temel h1-p metin stilleme örneði</a></h4>
+    <h4><a href="C1b02x2a.html" target="_">2a) Varsayýlý deðerleriyle düzensiz, düzenli ve tasvir listeleme örneði</a></h4>
+    <h4><a href="C1b02x2b.html" target="_">2b) Özelleþtirilen deðerleriyle düzensiz, düzenli ve tasvir listeleme örneði</a></h4>
+    <h4><a href="C1b02x3a.html" target="_">3a) Varsayýlý deðerli a-href-target baðlantý örneði</a></h4>
+    <h4><a href="C1b02x3b.html" target="_">3b) Özelleþtirilen a:link/hover/visited/focus/active baðlantý vasýflarý örneði</a></h4>
+    <h4><a href="C1b02x3c.html" target="_">3c) Özelleþtirilen http'li a-href baðlantý sonlarýna ikon konulmasý örneði</a></h4>
+    <h4><a href="C1b02x3d.html" target="_">3d) Yatay seyrüsefer menü seçenekli a-href baðlantý düðmeleri örneði</a></h4>
+    <h4><a href="C1b02x4a.html" target="_">4a) Çeþitli harici yazýfonlarý uygulanacak ham metin sayfasý örneði</a></h4>
+    <h4><a href="C1b02x4b.html" target="_">4b) Baþlýk ve paragraflara harici 'kalýn-zantroke' ve 'ince-cicle' yazýfonu uygulanmasý örneði</a></h4>
+    <h4><a href="C1b02x4c.html" target="_">4c) Baþlýk ve paragraflara çevrimiçi google 'Lobster ve 'Railway' yazýfonu uygulanmasý örneði</a></h4>
+    <h4><a href="C1b02x5a.html" target="_">5a) Bir kolej sitesi tasarýmý ham sayfasý örneði</a></h4>
+    <h4><a href="C1b02x5b.html" target="_">5b) Bir kolej sitesi tasarýmý iþlenmiþ sayfasý örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) Stilleme, listeleme, baðlantýlar, özel yazýfonlarý ve aðsayfasý tasarýmý sunulmaktadýr. Toplam 5 grup kapsamýnda \
+            12 altprogramdan müteþekküldür." +
+            "<br/>2) Ýlk altprogram-1 basit bir metin stilleme olup, gölgeli h1 baþlýk, koyu ilk p-paragraf ve genel p-paragraf \
+            stilleme ayarlarý sunulmaktadýr." +
+            "<br/>3) Ýkinci altprogram-2a ul-li düzensiz listeleme, ol-li düzenli listeleme ve dl-dt-dd tasvir listeme tekniklerini \
+            bir yemek menüsünün malzeme listesi, yemek hazýrlanýþ tarifi ve malzemelerin tanýtýmý aþamalarýnda uygulamaktadýr. \
+            Ancak bu 3 listelemenin hiç deðiþtirilmeden sadece varsayýlý ayarlarý geçerli kýlýnmýþtýr." +
+            "<br/>4) Üçüncü altprogram-2b ise birönceki varsayýlý listeleme ayarlarýný geçersizleyip, kendi özelleþtirdiði ayarlarý \
+           uygulamaktadýr (Örn. ul-li için baþtaki irinoktalar yerine yýldýz ikonu, ol-li için baþtaki sýralama arap rakamlarý yerine \
+            latin küçük roma rakamlarý, dl-dt için de liste baþlýklarý koyu nakþedilmiþtir)." +
+            "<br/>5) Dördüncü altprogram-3a bir tek sade varsayýlý a-href-target baðlantý aðsayfasý adresi sunmaktadýr." +
+            "<br/>6) Beþinci altprogram-3b varsayýlý a-href baðlantý ayarlarý yerine a, a:link/baðlantý, a:visited/týklandý, \
+            a:hover/üzerlendi, a:focus/odaklanýldý, a:active/basýlý-aktif baðlantý aþamalarýnýn herbiri için özel yazýrengi, \
+            zeminrengi, altçizgirengi gibi efektler uygulamaktadýr." +
+            "<br/>7) Altýncý altprogram-3c önceki mevcut a safhalarýna ilaveten a[href*='http'] þartlý, a-href'le dosyadan ziyade \
+            aðsayfasý adresi/http içeren 3 baðlantýdan ikisinin arkasýna özel seyrüsefer ikonu koymuþtur." +
+            "<br/>8) Yedinci altprogram-3d li-display-inline/teksatýr ve a-width-%19 ile 5 seyrüsefer menü seçeneklerini yatay \
+            serimleyip, herbir seçeneði sýnýrlý zeminrengi bloðuyla diðerinden yalýtýp, farklý a safhalarý için de görsel menü \
+            efektleri uygulamýþtýr." +
+            "<br/>9) Sekizinci altprogram-4a basit bir h1-h2-p metin sayfasýný genel css stilleme ve font-family:'segoe script' \
+            mevcut elyazýsý yazýfonu-ailesiyle stillemiþtir." +
+            "<br/>10) Dokuzuncu altprogram-4b birönceki metnin font-family:'verdana' yazý stilini baþlýklar için 'kalýn-zantroke', \
+            paragraflar için de 'ince-cicle' font-family mevcut arþivinde olmadýðýndan src:url ile disk dosyasýndan almýþ, @font-face \
+            ile tanýmlamýþ ve kullanmýþtýr." +
+            "<br/>11) Onuncu altprogram-4c, ne mevcut arþivinden, ne de harici disk dosyasýndan yazýfonu-ailesi seçmiþ, \
+            onun yerine bu kez de internet sayfasýndan çevrimiçi link-href='https://fonts.googleapis.com/css?family=Lobster|Raleway' \
+            yazýfonlarýný okuyup baþlýklar için Lobster, paragraflar içinse Raleway'i kullanmýþtýr. Þayet çevrimiçi deðilseniz, bunlar \
+            yerine sadece cursive elyazýsý kullanýlacaktýr." +
+            "<br/>12) Onbirinci altprogram-5a bir kamu koleji öðrenci cezbetme aðsayfasý tasarýmýdýr. 3 ana bölümden (header/baþlýk, \
+            main/esas ve footer/ayaklýk kýsýmlarýndan oluþmuþ; baþlýk ve ayaklýk iki kalýn alt-üst sýnýrla gövdeden yalýtýlmýþtýr. \
+            Esas/main kýsým float:left ile 3 yanyana %50 section/kýsým, %30 aside/kenar ve %20 nav seyrü'den müteþekküldür. \
+            Bu kýsýmlar tanýtým, ul-li ve ol-li listeleme, aside-ul-li-a-href baðlantýlar, nav-ul-li-a-href seyrüsefer menü seçeneklerini \
+            içermektedir. Henüz yeterince iþlenmemiþtir." +
+            "<br/>13) Onikinci ve son altprogram-5b önceki okul sayfasý tasarýmýný biraz daha iþleyerek profesyonelleþtirmiþ, \
+            a[href='http'] baðlantýlara ikon eklemiþ, özellikle nav-seyrü baðlantýlarýný inline-block geniþ altalta menü seçenekleri \
+            þeklinde dikkat çekmiþ, herbir baðlantýya da a:link/visited/focus/hover/active farklý renk efektleri nakþetmiþtir. \
+            @font-face ile harici disk dosyasýndan src-url'le okuduðu yazýfonu-ailesinden baþlýklar için 'aðýr josefin', paragraflar \
+            içinse 'hafif lovato' tiplerini kullanmýþtýr."
+    </script>
+</body>
+</html>

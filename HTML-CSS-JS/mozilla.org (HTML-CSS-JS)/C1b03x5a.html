@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b03x5a.html: Form ve elemanlarýný tablo ve satýrý, hücresi, baþlýðý olarak gösterme örneði.</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            background-color: #246;}
+        body {
+            max-width: 50%;
+            min-width: 450px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: DarkKhaki;}
+        form {
+            display: table;
+            background-color: Khaki;
+            margin: 0 auto;
+            padding: 5px;
+            border: 1px solid brown;}
+        form div {display: table-row;}
+        form label, form input {
+            display: table-cell;
+            margin-bottom: 5px;}
+        form label {
+            width: 100px;
+            padding-right: 2%;
+            text-align: right;}
+        form input {
+            width: 330px;
+            background-color: aqua;}
+        form p {
+            display: table-caption;
+            caption-side: bottom;
+            width: 450px;
+            color: #eee;
+            font-style: italic;}
+    </style>
+</head>
+<body>
+    <form>
+        <p>Lütfen, öncelikle adýný, soyadýný ve yaþýný öðrenelim.</p>
+        <div>
+            <label for="ad">Adýnýz:</label>
+            <input type="text" id="ad" name="ad">
+        </div>
+        <div>
+            <label for="soyad">Soyadýnýz:</label>
+            <input type="text" id="soyad" name="soyad">
+        </div>
+        <div>
+            <label for="yaþ">Yaþýnýz:</label>
+            <input type="text" id="yaþ" name="yaþ">
+        </div>
+    </form>
+</body>
+</html>

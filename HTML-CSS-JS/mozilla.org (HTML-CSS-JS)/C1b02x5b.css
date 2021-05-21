@@ -1,0 +1,121 @@
+/* C1b02x5b.css: Kolej aðsayfasý tasarýmý detay vasýflama örneði. */
+
+/* Genel kurulum */
+* {box-sizing: border-box;}
+html {
+    background-color: #135;
+    margin: 0;
+    font-family: sans-serif;}
+body {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1400px;
+    min-width: 800px;
+    background-color: #eca;}
+
+/* Serilim */
+section {
+    float: left;
+    width: 50%;}
+aside {
+    float: left;
+    width: 30%;}
+nav {
+    float: left;
+    width: 20%;}
+footer {clear: both;}
+header, section, aside, nav, footer {padding: 20px;}
+header, footer {
+    border-top: 10px solid #a66;
+    border-bottom: 10px solid #a66;}
+
+/* Harici yazý fonlarýnýn orijinal siteleri:
+https://www.fontspring.com/fonts/philatype/lovato
+https://www.fontsquirrel.com/fonts/josefin-slab
+*/
+@font-face {
+    font-family: "hafif lovato";
+    src: url("iþli/C1b_fonlar/Lovato-Light-webfont.eot");
+    src: url("iþli/C1b_fonlar/Lovato-Light-webfont.eot?#iefix") format("embedded-opentype"),
+            url("iþli/C1b_fonlar/Lovato-Light-webfont.woff2") format("woff2"),
+            url("iþli/C1b_fonlar/Lovato-Light-webfont.woff") format("woff"),
+            url("iþli/C1b_fonlar/Lovato-Light-webfont.ttf") format("truetype"),
+            url("iþli/C1b_fonlar/Lovato-Light-webfont.svg#lovatolight") format("svg");
+    font-weight: normal;
+    font-style: normal;}
+@font-face {
+    font-family: "aðýr josefin";
+    src: url("iþli/C1b_fonlar/josefinslab-bold-webfont.eot");
+    src: url("iþli/C1b_fonlar/josefinslab-bold-webfont.eot?#iefix") format("embedded-opentype"),
+            url("iþli/C1b_fonlar/josefinslab-bold-webfont.woff2") format("woff2"),
+            url("iþli/C1b_fonlar/josefinslab-bold-webfont.woff") format("woff"),
+            url("iþli/C1b_fonlar/josefinslab-bold-webfont.ttf") format("truetype"),
+            url("iþli/C1b_fonlar/josefinslab-bold-webfont.svg#josefin_slabbold") format("svg");
+    font-weight: normal;
+    font-style: normal;}
+
+/* detay tipleme */
+html {
+    font-family: "hafif lovato", serif;
+    font-size: 10px;} /* Yazýlarý olmasa da tüm sayfa esnemesini büzer */
+h1, h2 {
+    font-family: "aðýr josefin", sans-serif;
+    letter-spacing: 2px;}
+h1 {
+    font-size: 5rem;
+    text-align: center;
+    color: Navy;}
+h2 {
+    font-size: 3.2rem;
+    color: Blue;}
+section h2 + p {text-indent: 20px;}
+p, li {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    word-spacing: 3px;}
+
+/* Baðlantý stilleme */
+a {outline: none;}
+a[href*="http"] {
+    padding-right: 19px;
+    background: url("resim/baglanti.png") no-repeat 100% 0;
+    background-size: 16px 16px;}
+a:link, a:visited {color: magenta;}
+a:focus, a:hover {
+    text-decoration: none;
+    background-color: #bbb;}
+a:active {
+    color: transparent;
+    text-shadow: 0px 0px 1px #f00,
+            0px 0px 2px #f00,
+            0px 0px 3px black,
+            0px 0px 4px black;}
+
+/* Listeleme stilleri */
+ul, ol {margin: 1.6rem 0;}
+ul {list-style-type: square;}
+ol {list-style-type: lower-latin;}
+
+/* Seyrüsefer menüsü */
+nav ul {
+    padding-left: 0;
+    margin-top: 0.8rem;}
+nav li {
+    list-style-type: none;
+    margin-bottom: 2rem;}
+nav li a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    line-height: 3;
+    text-align: center;
+    font-size: 2.5rem;
+    border: 1px solid #a66;
+    background-color: #fdd;}
+nav li a:focus, nav li a:hover {
+    color: white;
+    background-color: #a66;}
+nav li a:active {
+    color: yellow;
+    background: black;}
