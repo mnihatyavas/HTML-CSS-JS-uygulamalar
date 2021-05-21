@@ -1,0 +1,97 @@
+/* C1b01x6.css: Css vasýflamada çeþitli ölçekleme ve deðer birimleri kullanýmý örneði. */
+
+/* Genel stiller */
+body {background-color: LightGreen; font-size: 15px;}
+hr {
+    width: 80%;
+    margin: 50px auto;}
+
+/* Pixel ebat/uzunluk */
+#pixel-uzunluk p {
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: cyan;}
+#pixel-uzunluk p:nth-child(1) {
+    width: 150px;
+    font-size: 18px;}
+#pixel-uzunluk p:nth-child(2) {
+    width: 250px;
+    font-size: 24px;}
+#pixel-uzunluk p:nth-child(3) {
+    width: 350px;
+    font-size: 30px;}
+
+/* Birimsiz uzunluk */
+#birimsiz-uzunluk p {line-height: 1.5;}
+#birimsiz-uzunluk p .em {line-height: 1.5em;} /* birimsiz=em */
+
+/* CSS animasyon */
+#animasyon p {
+    color: red;
+    background-color: Blue;
+    width: 160px;
+    font-size: 40px;
+    padding: 50px;
+border-radius: 50%;
+    transform-origin: center;}
+#animasyon p:hover {
+    animation-name: dön;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: 5;}
+@keyframes dön {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);} }
+
+/* Yüzde uzunluk/ebat */
+#yüzde div {
+    margin: 10px;
+    padding: 20px;
+    font-size: 200%;
+    color: white;
+    height: 150px;
+    border: 2px solid black;}
+#yüzde div:nth-child(1) {
+    background-color: red;
+    width: 1250px;}
+#yüzde div:nth-child(2) {
+    background-color: blue;
+    width: 75%;}
+
+/* RGB renk deðeri */
+#rgb-renk p {padding: 10px;}
+#rgb-renk p:nth-child(1) {background-color: rgb(255,0,0);}
+#rgb-renk p:nth-child(2) {background-color: rgb(0,100,255);}
+#rgb-renk p:nth-child(3) {background-color: rgb(224,120,255);}
+
+/* Yüzdeli içinde pikselli uzunluk */
+#yüzdeli-pikselli-uzunluk .dýþ-bölüm {
+    width: 100%;
+    height: 200px;
+    background-color: red;}
+#yüzdeli-pikselli-uzunluk .iç-bölüm {
+    width: 550px;
+    height: 100%;
+    background-color: blue;}
+
+/* Üstüste göreceli konumlanan renkli kutular */
+#üstüste-konulanma div {position: relative;} /* Ýptal edersen altalta konumlanýrlar */
+#üstüste-konulanma .ilk-kutu {
+    background-color: red;
+    width: 400px;
+    height: 200px;
+    top: 0;
+    left: 100px;}
+#üstüste-konulanma .ikinci-kutu {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    top: -50px; /* Üst kutu altýndan 50px yukarý çeker */
+    left: 125px;}
+#üstüste-konulanma .üçüncü-kutu {
+    background-color: pink;
+    width: 200px;
+    height: 300px;
+    top: -375px; /* Ýkinci kutu altýndan 375px yukarý çeker, ancak gerçek konumunu boþlukla tamponlar */
+    left: 250px;}

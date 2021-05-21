@@ -1,0 +1,36 @@
+/* C1b01x2b.css: Hatalarýndan arýndýrýlmýþ aðsayfasý tasarýmý css örneði. */
+
+/* Genel stillemeler */
+html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 10px;
+    background-color: #123;}
+body {
+    width: 80em;
+    background-color: #da7;
+    margin: 2em auto;
+    padding:20px;}
+
+/* Tipografi */
+h1 {font-size: 4em;}
+h2 {font-size: 3.2em;}
+p, li {font-size: 1.7em;}
+
+/*+++ daha hssas bölüm stilleri +++*/
+/* baþlýk ve ayaklýk */
+header, footer {
+    background-color: teal;
+    height: 10em;
+    padding: 2em;}
+h1, footer p {margin: 0;}
+h1 {
+    text-align: center;
+    padding: 0.5em 0;}
+
+/* esas içerik */
+main {padding: 2em;}
+main p, main li {line-height: 2;}
+img {
+    float: right;
+    margin: 1.2em 2em;
+    width: 100px;}

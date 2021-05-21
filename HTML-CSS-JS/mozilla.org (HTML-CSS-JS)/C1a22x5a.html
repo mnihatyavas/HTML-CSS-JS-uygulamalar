@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x5c.html: Gerekli isim ve tercihi çoklu satýr yorum giriþli ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 80px;">
+ul {list-style: none;}
+form input, textarea {background-color: Aqua;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form>
+    <p style="text-align: center;">
+        <button type="submit">Gönder beni!</button>
+    </p>
+    <hr/>
+    <ul>
+        <li>
+            <label for="isim">Ad ve soyad:</label>
+            <input type="text" name="isim" id="isim" required>
+        </li>
+        <li>
+            <label for="yorum">Yorumunuz:&ensp;</label>
+            <textarea id="yorum" name="yorum" cols="70" rows="10" maxlength="1000" optional
+                    placeholder="Azami 1000 krk yorumunuzu buraya girin"></textarea>
+        </li>
+    </ul>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

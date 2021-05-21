@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x2a.html: Ýleri input-search stilleme ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+  </head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 220px;">
+input[type="search"] {
+    width: 200px;
+    border: 3px solid LightGreen;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: Aqua;
+    background-image: url("resim/araþtýr.png");
+    background-position: 95%;
+    background-repeat: no-repeat;
+    padding: 10px;
+    transition: width 0.5s ease-in-out;}
+input[type="search"]:focus {width: 100%;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+</textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 140px;">
+<form>
+    <label for="ara">Araþtýrýlacak ibareyi girin:</label>
+    <input type="search" name="ara" id="ara">
+    <hr/>
+    <p style="text-align:center;">
+        <button type="submit">Gönder beni</button>
+    </p>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

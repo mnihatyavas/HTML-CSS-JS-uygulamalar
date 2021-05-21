@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a23x5.html: Çoklu kolon ve satırlarla ingilizce şahıs zamirleri tablolama örneği.</title>
+    <link href="C1a23.css" rel="stylesheet" type="text/css">
+    <style>
+        html {background-color: #135;}
+        body {background-color: #fda; max-width:70%; margin: 2em auto; padding:20px;}
+        h1 {color: Green; text-decoration: underline; text-align: center;}
+        table {width: 100%}
+        caption {color: Blue;}
+    </style>
+</head>
+<body>
+    <h1>Şahıs zamirleri tablosu</h1>
+
+    <table>
+        <caption>Şahıs Zamirleri</caption>
+        <tr>
+            <th colspan="3">İngilizce Dilbilgisi</th>
+            <th {scope="col"}>Özne</th>
+            <th {scope="col"}>Nesne</th>
+            <th {scope="col"}>İyelik-1</th>
+            <th {scope="col"}>İyelik-2</th>
+        </tr>
+        <tr>
+            <th rowspan="5" {scope="rowgroup"}>Tekil</th>
+            <th colspan="2" {scope="row"}>1.nci Şahıs</th>
+            <td>I: ben</td>
+            <td>me: beni/bana</td>
+            <td>my: benim</td>
+            <td>mine: benimki</td>
+        </tr>
+        <tr>
+            <th colspan="2" {scope="row"}>2.nci Şahıs</th>
+            <td>you: sen</td>
+            <td>you: seni/sana</td>
+            <td>your: senin</td>
+            <td>yours: seninki</td>
+        </tr>
+        <tr>
+            <th rowspan="3" {scope="rowgroup"}>3.ncü Şahıs</th>
+            <th {class="symbol" scope="row"}>♂: Eril</th>
+            <td>he: o</td>
+            <td>him: onu/ona</td>
+            <td>his: onun</td>
+            <td>his: onunki</td>
+        </tr>
+        <tr>
+            <th {class="symbol" scope="row"}>♀: Dişil</th>
+            <td>she: o</td>
+            <td>her: onu/ona</td>
+            <td>her: onun</td>
+            <td>hers: onunki</td>
+        </tr>
+        <tr>
+            <th {class="symbol" scope="row"}>o: Nötr</th>
+            <td>it: o</td>
+            <td>it: onu/ona</td>
+            <td>its: onun</td>
+            <td>its: onunki</td>
+        </tr>
+        <tr>
+            <th rowspan="3" {scope="rowgroup"}>Çoğul</th>
+            <th colspan="2" {scope="row"}>1.nci Şahıs</th>
+            <td>we: biz</td>
+            <td>us: bizi/bize</td>
+            <td>our: bizim</td>
+            <td>ours: bizimki</td>
+        </tr>
+        <tr>
+            <th colspan="2" {scope="row"}>2.nci Şahıs</th>
+            <td>you: siz</td>
+            <td>you: sizi/size</td>
+            <td>your: sizin</td>
+            <td>yours: sizinki</td>
+        </tr>
+        <tr>
+            <th colspan="2" {scope="row"}>3.ncü Şahıs</th>
+            <td>they: onlar</td>
+            <td>them: onları/onlara</td>
+            <td>their: onların</td>
+            <td>theirs: onlarınki</td>
+        </tr>
+    </table>
+</body>
+</html>

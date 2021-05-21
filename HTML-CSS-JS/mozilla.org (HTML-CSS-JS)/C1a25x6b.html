@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta name="viewport" content="width=device-width">
+    <title>C1a25x6b.html: Tarayýcýya duyarlý picture-source-media/img-src ile otomotik resim deðiþikliði örneði.</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            background-color: DarkSlateGray;}
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: Aqua;}
+        header {
+            background: url(resim/medya/baþlýk.jpg) no-repeat center;
+            height: 200px;
+            border: solid 5px brown;}
+        section {padding: 20px;}
+        p {line-height: 1.5;} /* 1.5=1.5em */
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            border: solid 5px brown;}
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <section>
+            <h1>Benim duyarlý aðsitem</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget venenatis ligula. Ut lacinia at dolor vitae pulvinar. Aliquam pretium dignissim eros. Integer faucibus, dui non aliquet bibendum, lectus orci lobortis odio, ornare porttitor est tellus eget velit. Nulla eros elit, malesuada id neque vel, viverra vehicula neque. Nullam auctor turpis non leo iaculis finibus. Quisque blandit arcu venenatis libero tempor, ac pulvinar ligula dapibus.</p>
+            <picture>
+                <source media="(max-width: 799px)" srcset="resim/medya/elva1.jpg 480w">
+                <source media="(min-width: 800px)" srcset="resim/medya/elva2.jpg 800w">
+                <img src="resim/medya/elva2.jpg" alt="Chris ve kucaðýndaki kýzý Elva">
+            </picture>
+            <hr/>
+            <p>Suspendisse potenti. Ut in luctus eros. Mauris pulvinar vehicula aliquet. Etiam imperdiet eleifend luctus. Duis ut justo nec eros ornare consectetur. Vestibulum convallis condimentum varius. Maecenas rutrum porta varius. Phasellus volutpat sem id sagittis luctus. Morbi vitae quam vitae nisi iaculis dignissim.</p>
+            <picture>
+                <source media="(max-width: 479px)" srcset="resim/medya/elva-peri1.jpg">
+                <source media="(max-width: 639px)" srcset="resim/medya/elva-peri2.jpg">
+                <source media="(max-width: 799px)" srcset="resim/medya/elva-peri3.jpg">
+                <source media="(max-width: 999px)" srcset="resim/medya/elva-peri4.jpg">
+                <source media="(min-width: 1000px)" srcset="resim/medya/elva-peri.jpg">
+                <img src="resim/medya/elva-peri.jpg" alt="Chris ve kucaðýndaki kýzý Elva">
+            </picture>
+            <p>Baþlýk resminin orijinali <a href="https://www.flickr.com/photos/miwok/17086751527/">Miwok</a>'a aittir.</p>
+        </section>
+    </main>
+</body>
+</html>

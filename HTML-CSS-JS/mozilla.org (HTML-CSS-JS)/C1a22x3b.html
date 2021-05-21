@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x3b.html: Radyodüðmesi ve çentikkutusu seçimlerinin adresçubuðundan kontrolu ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 70px;">
+ul {margin:0;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form>
+    <fieldset>
+        <legend>Favori yarýþ atýn hangisi?</legend>
+        <ul>
+            <li>
+                <label for="pembe">Pembe Tazý</label>
+                <input type="radio" name="at" id="pembe" value="pembe" />
+            </li>
+            <li>
+                <label for="gökkuþaðý">Gökkuþaðý Fiþeði</label>
+                <input type="radio" name="at" id="gökkuþaðý" value="gökkuþaðý" checked/>
+            </li>
+            <li>
+                <label for="tanyeri">Tanyeri Kývýlcýmý</label>
+                <input type="radio" name="at" id="tanyeri" value="tanyeri" />
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>Hamburgere istediðiniz katkýlar?</legend>
+        <ul>
+            <li>
+                <label for="soðan">Soðan</label>
+                <input type="checkbox" name="soðan" id="soðan" value="soðan" checked/>
+            </li>
+            <li>
+                <label for="mayonez">Mayonez</label>
+                <input type="checkbox" name="mayonez" id="mayonez" value="mayonez" checked/>
+            </li>
+            <li>
+                <label for="ketçap">Ketçap</label>
+                <input type="checkbox" name="ketçap" id="ketçap" value="ketçap" checked/>
+            </li>
+        </ul>
+    </fieldset>
+    <hr/>
+    <p style="text-align: center;">
+        <button type="submit">Gönder beni!</button>
+    </p>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

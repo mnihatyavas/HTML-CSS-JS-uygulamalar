@@ -1,0 +1,51 @@
+/* C1b01x4.css:  Basamaklý bölümlemede özel eriþim ve ebeveyn css vasýflama örneði. */
+
+/* Genel stiller */
+html {background-color: LightGreen;}
+hr {
+    width: 80%;
+    margin: 50px auto;
+    border: solid 1px brown;}
+
+/* #önemliBölüm ayarlarý */
+#önemliBölüm p {
+    color: white;
+    background-color: blue;
+    padding: 5px;}
+#önemliBölüm .pSýnýf {
+    background-color: gray;
+    border: none !important;} /* sýnýr-yok geçerliliði */
+#önemliBölüm #pKimlik {
+    background-color: red;
+    border: 10px solid black;} /* sýnýr-yok geçerliliði */
+
+/* #ilkSeyrüBölüm ayarlarý */
+#ilkSeyrüBölüm #bölümAltý a {background-color: red;}
+#ilkSeyrüBölüm #bölümAltý #bölümAltaltý a {background-color: blue;} /* zemin kýrmýzý deðil mavi */
+#ilkSeyrüBölüm #bölümAltý div ul li a {color: yellow;}
+#ilkSeyrüBölüm #bölümAltý div ul .seyrü a {color: white;} /* renk sarý deðil beyaz */
+#ilkSeyrüBölüm div div li:nth-child(2) a:hover {border: 10px solid black;}
+#ilkSeyrüBölüm div li:nth-child(2) a:hover {border: 10px dashed black;}
+#ilkSeyrüBölüm div div .seyrü:nth-child(2) a:hover {border: 10px double black;} /* sýnýr çift siyah */
+#ilkSeyrüBölüm a {
+    display: inline-block;
+    line-height: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 10px;}
+#ilkSeyrüBölüm ul {padding: 0;}
+#ilkSeyrüBölüm li {list-style-type: none;} /* ul-li nokta yok */
+
+/* #ikinciSeyrüBölüm ayarlarý */
+#ikinciSeyrüBölüm #bölümAltý div ul .seyrü a {
+    background-color: blue;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;}
+#ikinciSeyrüBölüm div div li a {color: yellow;}
+#ikinciSeyrüBölüm #bölümAltý #bölümAltaltý a {
+    background-color: initial; /* html zeminrengi mirasý */
+    color: red;}
+#ikinciSeyrüBölüm .kab .seyrü:nth-child(1) a:hover {border: 1px dashed orange;}

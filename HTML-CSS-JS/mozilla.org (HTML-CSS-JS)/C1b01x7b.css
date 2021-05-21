@@ -1,0 +1,52 @@
+/* C1b01x7b.css: Resimli kartvizit tasarýmý detay css vasýflamalarý örneði. */
+
+/* Genel ayarlar */
+html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 12px;
+    background-color: #345;}
+body {
+    margin: 2em auto;
+    background-color: #ccc;
+    padding: 20px;
+    width: 40em;
+    min-width:30%;
+    /* text-align: center; */}
+
+/* Detay kartvizit ayarlarý */
+.kartvizit {
+    width: 35em;
+    height: 22em;
+    margin: 5em auto;
+    background-color: red;
+    border: 0.2em solid black;
+    border-radius: 1.5em;}
+.kartvizit h2, .kartvizit p {margin: 0;}
+
+/* Baþlýk ve ayaklýk ayarlarý*/
+.kartvizit header, .kartvizit footer {
+    height: 3em;
+    padding: 1em;}
+.kartvizit header {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.2), rgba(0,0,0,0));
+    border-radius: 1.5em 1.5em 0 0;} /* Alttaki renk kýrýntýsýný telafi eder */
+.kartvizit footer {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.2));
+    border-radius: 0 0 1.5em 1.5em;}
+.kartvizit header h2 {
+    font-size: 2em;
+    line-height: 1.5;}
+.kartvizit footer p {
+    font-size: 1.5em;
+    line-height: 2;}
+
+/* Makale detay ayarlarý */
+.kartvizit article {
+    height: 12em;
+    background-color: rgba(0,0,0,0.25);}
+.kartvizit article img {
+    max-height: 100%;
+    float: right;}
+.kartvizit article p {
+    padding: 1em;
+    color: rgba(255,255,255,0.8);}

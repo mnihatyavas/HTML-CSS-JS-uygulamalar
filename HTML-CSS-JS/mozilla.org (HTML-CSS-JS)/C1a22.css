@@ -1,0 +1,48 @@
+/* C1a22.css: Deðiþtirilebilir style-css vasýflarý alt-örneði. */
+
+* {box-sizing: border-box;}
+body {
+    background-color: #247;
+    color: #333;
+    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;}
+h1 {
+    font-size: 2rem;
+    margin: 0;}
+h2 {
+    font-size: 1.6rem;
+    margin: 0;}
+p {margin: 0.5em 0;}
+
+/* Deðiþtirilebilir metinalanlarý vasýflarý */
+.oynanabilir {
+    font-family: monospace;
+    display: block;
+    margin-bottom: 10px;
+    background-color: Linen;
+    border: none;
+    border-left: 6px solid #558ABB;
+    color: #4D4E53;
+    width: 90%;
+    max-width: 700px;
+    padding: 10px 10px 0px;
+    font-size: 90%;}
+.oynanabilir-düðme {
+    text-align: right;
+    width: 90%;
+    max-width: 700px;
+    padding: 5px 0;}
+.oynanabilir-düðme input {
+    background-color: Black;
+    color: Yellow;
+    font-size: 110%;}
+.oynanabilir-düðme input:hover {color: Red;}
+.görsel {
+    width: 90%;
+    max-width: 700px;
+    background-color: #da7;
+    border: 5px solid Orange;
+    border-radius: 10px;
+    padding: 10px 14px 10px 10px;
+    margin-bottom: 10px;}

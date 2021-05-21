@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a25.html: Çoklu-medyanýn resim-ses-video gösterileri örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Resim, Video ve Ses</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1a25x1.html" target="_">1) Img-src ile çerçeveli 3 dinazor resmi örneði</a></h4>
+    <h4><a href="C1a25x2.html" target="_">2) Mozilla logosu, ikonlu a-href baðlantýlar, panda ve egzotik hayvanlar referansý örneði</a></h4>
+    <h4><a href="C1a25x3.html" target="_">3) Img-src etiketli taramalý png resme karþý çizimli svg resmi kýyaslamasý örneði</a></h4>
+    <h4><a href="C1a25x4a.html" target="_">4a) Object-data resme karþý img-src resim kýyaslamasý örneði</a></h4>
+    <h4><a href="C1a25x4b.html" target="_">4b) Object-data-pdf hatalýysa a-href-pdf indirme örneði</a></h4>
+    <h4><a href="C1a25x5a.html" target="_">5a) Embed-src gömmeli AdobeFlashPlayer ile SWF animasyonu örneði</a></h4>
+    <h4><a href="C1a25x5b.html" target="_">5b) JS kodlamalý AdobeFlashPlayer ile SWF animasyonu örneði</a></h4>
+    <h4><a href="C1a25x6a.html" target="_">6a) Tarayýcý ebatýna duyarsýz zemin-url ve img-src resimleri örneði</a></h4>
+    <h4><a href="C1a25x6b.html" target="_">6b) Tarayýcýya duyarlý picture-source-media/img-src ile otomatik resim deðiþikliði örneði</a></h4>
+    <h4><a href="C1a25x6c.html" target="_">6c) Tarayýcýya duyarlý img-srcset-sizes-src ile otomatik resim seçimi örneði</a></h4>
+    <h4><a href="C1a25x7a.html" target="_">7a) Video-src ile basit kontrollu webm/mp4 vidyo oynatma örneði</a></h4>
+    <h4><a href="C1a25x7b.html" target="_">7b) Video-source-src ile ekstra kontrollu webm/mp4 vidyo oynatma örneði</a></h4>
+    <h4><a href="C1a25x7c.html" target="_">7c) Audio-source-src ile kontrollu mp3/ogg müzik çalar örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) HTML sayfasýnda çeþitli tekniklerle sergilenen çoklu-medyanýn resim-ses-video görselleri sunulmaktadýr. \
+            Toplam 7 grup kapsamýnda 13 altprogramdan müteþekküldür." +
+            "<br/>2) Ýlk altprogram-1 img-src etiketle 3 dinazor resmini sergilemektedir. Ýlki orijinal küçük ebatlý, ikincisi \
+            orijinal büyük ebatlý, üçüncüsüyse ikinci resmin width-height vasýflarýyla ilkinin ebatlarýna küçültülmüþüdür. \
+            Resimlerin üzerinde biraz beklenirse title ipucu açýklamalarý tebarruz etmektedir." +
+            "<br/>3) Ýkinci altprogram-2 resimli ve baðlantýlý mozilla sayfasýdýr. Üstte header/baþlýk, altta main/ana \
+            bölümlüdür. Baþlýk mozilla yazýsý ve küçük ikonuyla açýlýþ yapar. Main ana bölüm 3 parçalýdýr. Ýlk article \
+            makalede iframe/çerçeveli çevrimiçi youtube video gösterisi, sonra mozilla tanýtým yazýsý ve hayvanlar \
+            alemi resim galeri sitesi baðlantýsý mevcuttur. Ýkinci dahafazla-bilgi sýnýflý bölmede 4 mozilla resmiyle \
+            a-href çevrimiçi site sayfa baðlantýlarý bulunur; ikon üzerindeyken baðlantý sayfa adresleri belirir. Son \
+            parçada kýzýl-panda resminin tarayýcý ebadýna (600px) duyarlý 2 picture-source-img resmi konulmuþtur; \
+            dar ekranda dar panoramalý resim gelmektedir." +
+            "<br/>4) Üçüncü altprogram-3 ayný gibi yanyana 2 yýldýz resmi sunmakta, fakat bunlardan ilki gerçek taramalý \
+            PNG resmiyken ikincisi SVG grafik çizim tekniðiyle iþlenmiþtir. Çizim komutlarý görülmek istenirse editörle \
+            yýldýz5.svg açýlýp, çizim kodlamalarý okunabilir." +
+            "<br/>5) Dördüncü altprogram-4a, þimdiye dek kullanageldiðimiz img-src resim yayýnlama ile birlikte HTML5 \
+            özelliklerinden object-data ile resim yayýnlamaktadýr. Img-alt yerine object etiketleri arasýna p-paragraf \
+            hatalý neþriyatsýzlýkta alternatif açýklama sunmaktadýr." +
+            "<br/>6) Beþinci altprogram-4b object-data HTML5 özelliðinin resim yanýsýra PDF kitap (video ve audio) \
+            dosyalarýnýn da okunabilmesinde kullanýlabilmektedir. Img-src PDF'yi açamamaktadýr." +
+            "<br/>7) Altýncý altprogram-5a HTML5 özelliklerinden embed-src ile SWF animasyonlarýný AdobeFlashPlayer \
+            ile Maxthon tarayýcýda canlandýrmaktadýr (GoogleChrome tarayýcý ise AFP'yi desteklememektedir)." +
+            "<br/>8) Yedinci altprogram-5b, ayný SWF animasyon dosyasýný script AC_FL_RunContent() JS kodlamasýyla \
+            canlandýrmakta, embed-src'un ayný sunumunu (Maxthon tarayýcýda) yapabilmektedir." +
+            "<br/>9) Sekizinci altprogram-6a header/baþlýk ve main/ana html-body bölmeli olup, header'da url altzemin \
+            tekrarsýz-ortalanmýþ resmiyle, main'de 2 altalta img-src resmi max-width:100% vasýflamayla, resimlerin orijinal \
+            800px geniþliðinde görüntülenmekte, tarayýcý daralmasýnda bu ebatýn altýna sünmektedir." +
+            "<br/>10) Dokuzuncu altprogram-6b HTML5 picture çoklu source-srcset ve tekli img-src resmini kapsamakta, \
+            tarayýcý ebatýna duyarlý olarak aktüel ebata uygun resmi listedesinden otomatikmen seçmektedir." +
+            "<br/>11) Onuncu altprogram-6c img-srcset/çoklu-src/tekli listeden tarayýcý aktüel ebadýna uygun yoðunluk \
+            (1x-->1.85x) ve geniþlikteki (320w-->2592w) resmi otomatikmen seçmektedir." +
+            "<br/>12) Onbirinci altprogram-7a video-src-controls ile WEBM video'sunu oynatmakta, hata durumunda a-href-MP4 \
+            video oynatma alternatifini sunmaktadýr." +
+            "<br/>13) Onikinci altprogram-7b ayný video-src-controls'a ekstra loop, muted, preload ve poster kapak resmi ayarlarýný \
+            eklemekte, hata durumunda ikinci source-src veya üçüncü a-href video'larý oynatabilme alternatifleri sunmaktadýr." +
+            "<br/>14) Onüçüncü altprogram-7c audio-control-loop-source-src ile her türlü müzik dosyalarýný çalabilmektedir."
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x5c.html: Verigiriþe ilintili datalisteden tercih belirleme ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 90px;">
+ul {list-style: none;}
+input {background-color: Aqua;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form>
+    <ul>
+        <li>
+            <label for="tercih">Tek bir tercih seç yada yaz lütfen:</label>
+            <input type="text" name="tercih" id="tercih" list="atýþtýrmalýk-tercihi" required>
+            <datalist id="atýþtýrmalýk-tercihi">
+                <option>Rus salatasý</option>
+                <option>Hamburger</option>
+                <option>Pizza</option>
+                <option>Tantuni</option>
+                <option>Karýþýk dondurma</option>
+                <option>Kazandibi</option>
+                <option>Kaymaklý bisküvi</option>
+                <option>Vanilyalý gofret</option>
+            </datalist>
+        </li>
+    </ul>
+    <hr/>
+    <p style="text-align: center;">
+        <button type="submit">Tercihini gönder!</button>
+    </p>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+      <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

@@ -1,0 +1,16 @@
+/* C1b0x3.css: Baþlýk, esas ve ayaklýk genel css vasýflarý örneði. */
+
+/* Genel stiller */
+body {
+    margin: 0;
+    background-color: LightGreen;}
+body > * {
+    padding: 10px;
+    font-size: 20px;
+    border: 20px solid rgba(0,0,0,0.5);}
+
+/* Özel kutular */
+header, footer {
+    background-color: blue;
+    color: white;}
+main {background-color: yellow;}

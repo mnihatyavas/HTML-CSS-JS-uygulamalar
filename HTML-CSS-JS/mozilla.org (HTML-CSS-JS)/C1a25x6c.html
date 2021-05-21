@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta name="viewport" content="width=device-width">
+    <title>C1a25x6c.html: Tarayýcýya duyarlý img-srcset-sizes-src ile otomatik resim seçimi örneði.</title>
+    <style>
+        html {background-color: #135;}
+        body {background-color: #da7; max-width: 80%; margin: 2em auto; padding:20px; text-align: center;}
+        h1 {color: Green; text-decoration: underline; text-align: center;}
+        img {width: 45%; border: 5px solid black;}
+    </style>
+</head>
+<body>
+        <h1>Img-srcset-src ile duyarlý resimler</h1>
+
+        <img srcset="resim/medya/elva-peri1.jpg,
+                    resim/medya/elva-peri2.jpg 1.2x,
+                    resim/medya/elva-peri3.jpg 1.4x,
+                    resim/medya/elva-peri4.jpg 1.6x,
+                    resim/medya/elva-peri.jpg 1.85x"
+                src="resim/medya/elva-peri.jpg" alt="Peri giysili Elva">
+
+        <img srcset="resim/medya/elva-peri1.jpg 320w,
+                    resim/medya/elva-peri2.jpg 480w,
+                    resim/medya/elva-peri3.jpg 640w,
+                    resim/medya/elva-peri4.jpgg 800w,
+                    resim/medya/elva-peri.jpgg 2592w"
+                sizes="(max-width: 600px) 320px, 480px, 640px, 800px"
+                src="resim/medya/elva-peri1.jpg" alt="Peri giysili Elva"> 
+</body>
+</html>

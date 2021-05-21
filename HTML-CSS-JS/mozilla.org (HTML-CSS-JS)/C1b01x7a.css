@@ -1,0 +1,20 @@
+/* C1b01x7a.css: Resimli kartvizit tasarýmý genel css vasýflarý örneði. */
+
+/* Genel stiller */
+html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 10px;
+    background-color: #345;}
+body {
+    margin: 2em auto;
+    background-color: #ccc;
+    padding: 20px;
+    width:30%;
+    text-align: center;}
+
+/* Detay kartvizit ayarlarý yapýlmalý */
+.kartvizit
+header
+article
+article img
+footer

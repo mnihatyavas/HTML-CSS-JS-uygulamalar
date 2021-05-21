@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a26.html: Çoklu-medyanýn resim-ses-video-iframe gösterileri ödev örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Resim, Ses, Video ve Iframe</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1a26x1a.html" target="_">1a) Img-src ile geniþlik ve sýnýrý tanýmlý resim ödev örneði</a></h4>
+    <h4><a href="C1a26x1b.html" target="_">1b) Img-src ile geniþlik, sýnýr ve title-ipucu açýklamasý tanýmlý resim ödev örneði</a></h4>
+    <h4><a href="C1a26x1c.html" target="_">1c) Img-src ile geniþlik, sýnýr ve figcaption-baþlýk tanýmlý resim ödev örneði</a></h4>
+    <h4><a href="C1a26x2a.html" target="_">2a) Audio-src ile temel mp3 müzikçalar ödev örneði</a></h4>
+    <h4><a href="C1a26x2b.html" target="_">2b) Video-source-src ile mp4/webm vidyo oynatýcý ödev örneði</a></h4>
+    <h4><a href="C1a26x2c.html" target="_">2c) Object-data ile pdf kitapokuyucu ödev örneði</a></h4>
+    <h4><a href="C1a26x2d.html" target="_">2d) Iframe-src ile çevrimiçi youtube vidyo seyretme ödev örneði</a></h4>
+
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) HTML sayfasýnda çeþitli tekniklerle sergilenen çoklu-medyanýn resim-ses-video-iframe görselleri deðiþtirilebilir \
+            ödev þeklinde sunulmaktadýr. Toplam 2 grup kapsamýnda 7 altprogramdan müteþekküldür." +
+            "<br/>2) Tüm altprogramlarda deðiþtirilebilir textarea metinalaný css ve js ortak kodlamalarý link-href ve script-src \
+            ile programlara dahil edilmiþtir. Hertürlü CSS ve HTML deðiþikliði anýnda görsel section'de güncel sergilenmektedir." +
+            "<br/>3) Ýlk altprogram-1a img-src ile JPG resmini görsel bölümünde çerçeveli, ortalanmýþ ve geniþlik tanýmlý sunmaktadýr. \
+            Orantýsýzlýk olmamasý bakýmýndan yükseklik belirtilmemiþ olup, geniþliðe uygun yüksekliði kendisi otomatikmen ayarlamaktadýr." +
+            "<br/>4) Ýkinci altprogram-1b benzer img-src resim sergilemekte, alt-ernative (resmi gösterememe hatasýnda alternatif \
+            olarak sunulan açýklama) vasfýna ilaveten, resim üzerindeyken beliren kýsa ipucu title içermektedir." +
+            "<br/>5) Üçüncü altprogram-1c figure-img-src ile resim sergileme ve resmin altýna figcaption ile alt þekil baþlýðý \
+            yazdýrma iþlemlerini yapmaktadýr." +
+            "<br/>6) Dördüncü altprogram-2a audio-src ile MP3 müzik dosyasýný çalmakta, tarayýcýnýn desteklememesi durumunda \
+            a-href-mp3 baðlantý alternatifini sunmaktadýr." +
+            "<br/>7) Beþinci altprogram-2b video-source-src-controls ile MP4/WEBM video dosyalarýný kontrollu oynatmayý, \
+            desteklenmediðindeyse a-href-mp4 baðlantý alternatifini sunmaktadýr." +
+            "<br/>8) Altýncý altprogram-2c object-data ile PDF döküman okuma/indirme gerçekleþtirmekte, desteklenmediðinde \
+            a-href-pdf alternatifini sunmaktadýr." +
+            "<br/>9) Yedinci ve son altprogram-2d iframe-src ile sayfanýzda çevrimiçi çerçeve içine gömmeli youtube oynatmakta, \
+            desteklenmeðindeyse a-href-youtube sayfa baðlantýsýna yönlendirmektedir."
+    </script>
+  </body>
+</html>

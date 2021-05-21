@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta name="viewport" content="width=device-width">
+    <title>C1a25x2.html: Mozilla logosu, ikonlu a-href baðlantýlar, panda ve egzotik hayvanlar referansý örneði.</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <style>
+        /* Baþlýk ve gövde kurulumu */
+        html {
+            font-family: "Open Sans", sans-serif; /* çevrimdýþýysa varsayýlý */
+            background-image: url(resim/medya/kalýp.png);} /* yada "background-color:black" */
+        body {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: Linen;
+            position: relative;}
+
+        /* Baþlýk stilleri */
+        header {
+            height: 150px;
+            box-shadow: inset 0 3px 2px rgba(0,0,0,0.5), inset 0 -3px 2px rgba(0,0,0,0.5);}
+        header img {
+            position: absolute;
+            right: 32.5px;
+            top: 32.5px;}
+        h1 {
+            color: Brown;
+            font-size: 50px;
+            line-height: 140px;
+            margin: 0 0 0 32.5px;}
+
+        /* Main esas bölüm ve video stili */
+        main {background: #ccc;}
+        article {padding: 20px;}
+        h2 {
+            margin-top: 0;
+            color: #147;}
+        p {line-height: 30px;}
+        iframe {
+            float: left;
+            margin: 0 20px 20px 0;
+            max-width: 100%;}
+
+        /* dahafazla-bilgi baðlantýlarý */
+        .dahafazla-bilgi {
+            clear: left;
+            padding: 40px 0;
+            background-color: #c13832;
+            box-shadow: inset 0 3px 2px rgba(0,0,0,0.5), inset 0 -3px 2px rgba(0,0,0,0.5);}
+        .dahafazla-bilgi a {
+            width: 25%;
+            display: block;
+            float: left;}
+        .dahafazla-bilgi img {max-width: 100%;}
+        .temizlik {clear: both;}
+
+        /* Kýzýl panda resmi */
+        .panda img {
+            display: block;
+            max-width: 100%;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mozilla</h1>
+        <img src="resim/firefox6.png" width="120" alt="Firefox logo'su">
+    </header>
+
+    <main>
+        <article>
+            <iframe width="400" height="275" src="https://www.youtube.com/embed/ojcNcvb1olg" frameborder="1" allowfullscreen></iframe>
+            <h2>Ücretsiz að sörfü</h2>
+            <p>Mozilla; teknolojistler, düþünürler ve kurucularýn birlikte çalýþarak, internetin güncel ve eriþilebilir idamesini saðlayan küresel bir cemiyettir; böylece dünya çapýnda insanlar aðýn yaratýcýlarý ve katýlýmcýlarýndan haberdar olabilmektedir. Ýnanýyoruz ki, açýk bir platformda beþeriyatýn böylesi bir katýlýmcý hareketi, ortak geleceðimiz ve bireysel geliþmemiz için gerekliliktir.</p>
+            <p>Mozillanýn yaptýðý güzel þeyler hakkýnda daha fazla malumat için biralttaki moz-ikonlarýný týkayýn. Doða hayvanlarý galerisi için enalttaki Mathias Appel'in <a href="https://www.flickr.com/photos/mathiasappel/21675551065/">Kýzýl panda resmi</a> baþlýklý koleksiyonunu ziyaret etme fýrsatýný kaçýrmamanýzi tavsiye ediyorum.</p>
+        </article>
+
+        <div class="dahafazla-bilgi">
+            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                <img srcset="resim/firefox6.png 120w, resim/firefox6.png 400w"
+                        sizes="(max-width: 500px) 120px, 400px"
+                        src="resim/firefox6.png"
+                        alt="Ýndirilebilir Firefox ikonlarý"
+                        title="https://www.mozilla.org/en-US/firefox/new/">
+            </a>
+            <a href="https://www.mozilla.org/">
+                <img srcset="resim/mozdino.png 120w, resim/mozdino.png 400w"
+                        sizes="(max-width: 500px) 120px, 400px"
+                        src="resim/mozdino.png"
+                        alt="Mozilla'dan detaylý haberler"
+                        title="https://www.mozilla.org/">
+            </a>
+            <a href="https://addons.mozilla.org/">
+                <img srcset="resim/firefox7.jpg 120w, resim/firefox7.jpg 400w"
+                        sizes="(max-width: 500px) 120px, 400px"
+                        src="resim/firefox7.jpg"
+                        alt="Firefox'unuzu aksesuarlarla özelleþtirin"
+                        title="https://addons.mozilla.org/">
+             </a>
+            <a href="https://developer.mozilla.org/en-US/">
+                <img src="resim/mdn.svg"
+                        alt="MDN ile að geliþiminini öðrenin"
+                        title="https://developer.mozilla.org/en-US/">
+            </a>
+            <div class="temizlik"></div>
+        </div>
+
+        <div class="panda">
+            <picture>
+                <source media="(max-width: 600px)" srcset="resim/medya/panda2.jpg">
+                <img src="resim/medya/panda.jpg" alt="kýrmýzý panda" title="Kýzýl panda">
+            </picture>
+        </div>
+    </main>
+</body>
+</html>

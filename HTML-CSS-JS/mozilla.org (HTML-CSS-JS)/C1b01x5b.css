@@ -1,0 +1,101 @@
+/* C1b01xb5.css: Çeþitli seçicili eriþim css vasýflama örneði. */
+
+/* Genel stiller */
+html {background-color: #135;}
+body {background-color: LightGreen; margin: 2em auto; width: 80%; padding: 20px;}
+hr {
+    width: 80%;
+    margin: 50px auto;}
+
+/* HTML eleman seçiciler */
+#eleman-seçiciler h1 {
+    color: red;
+    text-shadow: 1px 1px 1px black;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.1));
+    padding: 3px;
+    text-align: center;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), inset -2px -2px 5px rgba(255,255,255,0.5);}
+
+/* Class sýnýf seçiciler */
+#sýnýf-seçiciler .temel-kutu {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    padding: 3px 3px 3px 7px;}
+#sýnýf-seçiciler .ikaz {
+    background-color: #ff9999;
+    border-left: 6px solid #993333;}
+#sýnýf-seçiciler .önemli {font-weight: bold;}
+#sýnýf-seçiciler .editör-notu {
+    background-color: #9999ff;
+    border-left: 6px solid #333399;}
+
+/* Id kimlik seçiciler */
+#kimlik-seçiciler p {
+    text-transform: uppercase;
+    padding: 5px;}
+#kimlik-seçiciler #birinci {background-color: goldenrod;}
+#kimlik-seçiciler #ikinci {background-color: silver;}
+#kimlik-seçiciler #üçüncü {background-color: #CD7F32;}
+
+/* Atanan vasýf seçiciler */
+#vasýf-seçiciler li[lang="en-GB"] {background: url("resim/en-GB.png") 5px center no-repeat;}
+#vasýf-seçiciler li[language="de"] {background: url("resim/de.png") 5px center no-repeat;}
+#vasýf-seçiciler li[dil="es"] {background: url("resim/es.png") 5px center no-repeat;}
+#vasýf-seçiciler li[performans*="artan"] {background-color: rgba(0,255,0,0.7);}
+#vasýf-seçiciler li[performans*="ayný"] {background-color: rgba(0,0,255,0.5);}
+#vasýf-seçiciler li[performans*="azalan"] {background-color: rgba(255,0,0,0.7);}
+#vasýf-seçiciler li[performans*="yüksek"] {font-weight: bold;}
+#vasýf-seçiciler li[performans*="orta"] {
+    font-style: italic;
+    color: #666;}
+#vasýf-seçiciler ol {padding: 0;}
+#vasýf-seçiciler li {
+    padding: 3px 3px 3px 34px;
+    margin-bottom: 5px;
+    list-style-position: inside;}
+
+/* Sanal :sýnýf seçiciler */
+#sanal-sýnýf-seçiciler ul {padding: 0;}
+#sanal-sýnýf-seçiciler li {
+    padding: 3px;
+    margin-bottom: 5px;
+    list-style-type: none;}
+#sanal-sýnýf-seçiciler a {
+    text-decoration: none;
+    color: black;}
+#sanal-sýnýf-seçiciler a:hover {
+    text-decoration: underline;
+    color: red;}
+#sanal-sýnýf-seçiciler li:nth-of-type(2n) {background-color: pink;}
+#sanal-sýnýf-seçiciler li:nth-of-type(2n+1) {background-color: aqua;}
+
+/* Sanal ::eleman-seçiciler */
+#sanal-eleman-seçiciler p::first-line {text-transform: uppercase;}
+#sanal-eleman-seçiciler p::first-letter {
+    font-size: 3em;
+    border: 1px solid black;
+    background: red;
+    display: block;
+    float: left;
+    padding: 2px;
+    margin-right: 4px;}
+
+/* Birleþik eleman seçiciler */
+#birleþik-eleman-seçiciler ul {
+    padding: 0;
+    list-style-type: none;}
+#birleþik-eleman-seçiciler ul a {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    background-color: red;
+    padding: 5px;
+    margin-bottom: 10px;}
+#birleþik-eleman-seçiciler ul a:hover {
+    color: red;
+    background-color: black;}
+h1 + p {
+    font-weight: bold;
+    color: blue;}
+h1 + p + h2 {
+    font-style: italic;
+    color: green;}

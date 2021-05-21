@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a24.html: Ýleri tablolama, baþlýk-gövde-ayaklýk, toplamlar, içiçe tablolar örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Ýleri Tablolama</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1a24x1.html" target="_">1) Bir tablo hücresi içine 3 hücrelik baþka bir tablo yerleþtirme örneði</a></h4>
+    <h4><a href="C1a24x2.html" target="_">2) Bir tabloyu baþlýk, gövde ve ayaklýk olarak bölümleme örneði</a></h4>
+    <h4><a href="C1a24x3.html" target="_">3) Maðazanýn ülke þehirlerindeki günlük satýþ raporu örneði</a></h4>
+    <h4><a href="C1a24x4.html" target="_">4) Güneþ sistemi gezegenlerinin fiziki verileri örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) Tablolamanýn ileri çoklu/içiçe satýr/sütunlarý, baþ-gövde-ayak gruplama, baþlýk/kapsam bilgilendirmeleri sunulmaktadýr. \
+            Toplam 4 altprogramdan müteþekküldür." +
+            "<br/>2) Ýlk altprogram-1 içiçe tablolamadýr. Herhangibir td hücre içinde table-tr-td etiketleriyle istenilen \
+            satýr ve hücre adetlik içiçe tablolama(lar) yaratýlabilir." +
+            "<br/>3) Ýkinci altprogram-2 birer satýr ve sütun kapsamlý, ancak thead/baþlýk-tbody/gövde-tfoot/ayaklýk üçlü \
+            gruplamayla iþlenmiþtir. Baþ-gövde-ayak hangi sýrayla yerleþtirilirse yerleþtirilsin, baþ daima ilk, ayak son ve \
+            gövde ortaya, otomatikmen kaymaktadýr." +
+            "<br/>4) Üçüncü altprogram-3 2 ülkede toplam 5 þehirdeki maðazalarýn 3 farklý giysi (pantolon, gömlek, ceket) ve \
+            2 farklý taký (bilezik, küpe) günlük satýþ adetlerini, bunlarýn ülkeler için ayrý ayrý, sonuçta da genel toplamlarýný \
+            sunmaktadýr. Çoklu satýr/rowspan ve sütun/colspan kullanýlmýþ, ayrýca her detay hücreiçi satýþ adedinin hangi \
+            baþlýklarý içerdiði (belçika antwerp giysi gömlek) headers/baþlýklar, baþlýklarýn kapsamlarýný (satýr, sütun, \
+            satýrgrubu, sütungrubu) scope/kapsam etiketli (sadece bilgilendirme maksatlý) sunulmuþtur." +
+            "<br/>5) Dördüncü ve son altprogram-4 tabloyu, caption/baþlýk, colgroup/kolongruplama, thead/baþ, \
+            tbody/gövde bölümlerine gruplamýþ, gövdede 9 gezegeni, karasal-görsel-cüce þeklinde 3 katagoride, \
+            herbir gezggenin kütle-çap-yerçekimi-yoðunluk-günuzunluðu-güneþeuzaklýk-ortalamasýcaklýk-aysayýsý-notlar \
+            satýrbaþlýðý altýnda fiziki bilgilerini sunmaktadýr. Ayrýca scope/kapsam bilgilendirmesi (satýr-sütun-satýrgrubu) \
+            kullanmýþtýr. Colgroup'da gezegen adlarýný bariz çerçevelemiþtir. Tablo içinde caption/baþlýk ve td son notlar \
+            detay hücrede a-href aðsitesi referanslamalarý yapmaktadýr."
+    </script>
+  </body>
+</html>

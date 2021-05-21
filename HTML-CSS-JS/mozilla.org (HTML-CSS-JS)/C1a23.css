@@ -1,0 +1,16 @@
+/* C1a23.css: Tablo baþlýk, satýr ve detay biçimleve css vasýflarý örneði. */
+
+html {font-family: sans-serif;}
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200,200,200);
+    letter-spacing: 1px;
+    font-size: 0.8rem;}
+th {background-color: rgb(235,235,235);}
+td {text-align: center;}
+td, th {
+    border: 2px solid Magenta;
+    padding: 10px 20px;}
+tr:nth-child(odd) td {background-color: Aqua;}
+tr:nth-child(even) td {background-color: Linen;}
+caption {padding: 10px;}

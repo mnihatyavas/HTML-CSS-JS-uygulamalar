@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x2c.html: Verigiriþ alanlarýnýn zorunlu/tercihi ve geçersiz/geçerli belirtilmesi ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 200px;">
+button, input {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;}
+fieldset {
+    background-color: DarkKhaki;
+    padding: 10px 30px 0;
+    width: 450px;
+    margin:0 auto;}
+legend {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;}
+fieldset > div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;}
+button, label, input {
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding: 5px;
+    height: 30px;}
+input {
+    box-shadow: inset 1px 1px 3px #ccc;
+    border-radius: 5px;}
+input:hover, input:focus {background-color: Aqua;}
+button {
+    width: 60%;
+    margin: 0 auto;}
+input + span {position: relative;}
+input:required + span::after {
+    font-size: 0.7rem;
+    position: absolute;
+    content: "zorunlu";
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    top: -26px;
+    left: -60px;}
+input + span::before {
+    position: absolute;
+    right: -25px;
+    top: -5px;}
+input:invalid {border: 2px solid red;}
+input:invalid + span::before {
+    content: "X";
+    font-size: 30px;
+    font-weight: bold;
+    color: red;}
+input:valid + span::before {
+    content: "+";
+    font-size: 30px;
+    font-weight: bold;
+    color: green;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form>
+    <fieldset>
+        <legend>Müraacat formu</legend>
+        <p>Doldurulmasý zorunlu alanlar "zorunlu" ibarelidir.</p>
+        <div>
+            <label for="ad">Adýnýz:</label>
+            <input id="ad" name="ad" type="text" required>
+            <span></span>
+        </div>
+        <div>
+            <label for="soyad">Soyadýnýz:</label>
+            <input id="soyad" name="soyad" type="text" required>
+            <span></span>
+        </div>
+        <div>
+            <label for="eposta">Eposta adresiniz:</label>
+            <input id="eposta" name="eposta" type="email" optional>
+            <span></span>
+        </div>
+    </fieldset>
+    <hr/>
+    <p>
+        <button type="submit">Gönder beni</button>
+    </p>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <button id="yenidenbaþlat" type="button">Yeniden baþlat</button>
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

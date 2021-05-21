@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b01x5a.html: Çeþitli etki bileþimli html etiket vasýflarý örneði.</title>
+    <style>
+        html {background-color: #357;}
+        body {background-color: LightGreen; margin: 2em auto; width: 80%; padding: 20px;}
+        section p {color: blue;} /* section içindeki tüm p'ler */
+        section > p {background-color: yellow;} /* section'ýn ilk etki alanýndaki p'ler */
+        h2 + p {text-transform: uppercase;} /* Hemen h2 sonrasý p */
+        h2 ~ p {border: 1px dashed black;} /* h2'nin ilk etki alanýndaki p'ler */
+        section div div p {background-color: gray;} /* section sonrasý 2.div içindeki p'ler */
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Baþlýk 1</h2>
+        <p>Paragraf 1</p>
+        <p>Paragraf 2</p>
+        <div>
+            <h2>Baþlýk 2</h2>
+            <p>Paragraf 3</p>
+            <p>Paragraf 4</p>
+            <div>
+                <p>Paragraf 5</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a26x2b.html: Video-source-src ile mp4/webm vidyo oynatýcý ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 55px;">
+section > * {text-align: center;}
+video {border: 5px solid brown; width: 60%;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 140px;">
+<h1>Video-source-src ile kontrollu mp4/webm vidyo oynatýcýsý</h1>
+<div><video controls muted>
+    <source src="resim/medya/tavþan.mp4" type="video/mp4">
+    <source src="resim/medya/tavþan.webm" type="video/webm">
+    <track kind="subtitles" src="resim/medya/altbaþlýklar.vtt" srclang="en">
+    <p>Þayet tarayýcýnýz HTML5 video'yu tanýmýyorsa <a href="resim/medya/tavþan.mp4">a-href video</a> baðlantýsýný deneyin.</p>
+</video></div>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

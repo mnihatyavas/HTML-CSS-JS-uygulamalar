@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x1.html: Basit input tipleri ve select-option ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style>
+    </style>
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 80px;">
+h2 {color: Green; text-decoration:underline;}
+input, select {background-color: Aqua;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form>
+    <h2>HTML deðiþikliklerini girin</h2>
+    <ul>
+        <li>
+            <label for="eposta">Eposta:</label>
+            <input type="email" id="eposta" name="eposta">
+        </li>
+        <li>
+            <label for="aðadresi">Aðsitesi:</label>
+            <input type="url" id="aðadresi" name="aðadresi">
+        </li>
+        <li>
+            <label for="telefon">Telefon numarasý:</label>
+            <input type="tel" id="telefon" name="telefon">
+        </li>
+        <li>
+            <label for="yiyecek">Favori yiyecek:</label>
+            <select name="yiyecek" id="yiyecek">
+                <option>Muz</option>
+                <option>Kavun</option>
+                <option>Pizza</option>
+                <option selected>Sütlaç</option>
+                <option>Kola</option>
+          </select>
+        </li>
+    </ul>
+    <hr/>
+    <p style="text-align:center;">
+        <button type="submit">Gönder beni</button>
+    </p>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+
+</body>
+    <script src="C1a22.js"></script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x6.html: Ýki  alangruplu baþlýkla gerekli ve tercihi bilgiler gönderme ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 110px;">
+ul {list-style: none;}
+li {display: flex;}
+form label {width: 35%; text-align: right;}
+form input {background-color: Aqua; width: 60%; margin-bottom: 5px; height: 25px;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form>
+    <fieldset>
+        <legend>Þahsi bilgiler</legend>
+        <ul>
+            <li>
+                <label for="isim">Ad ve soyadýnýz:&ensp;</label>
+                <input type="text" id="isim" name="isim" required>
+            </li>
+            <li>
+                <label for="yaþ">Yaþýnýz:&ensp;</label>
+                <input type="number" id="yaþ" name="yaþ" min="18" max="65" required>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>Yorumsal bilgiler</legend>
+        <ul>
+            <li>
+                <label for="yorum">Kýsa yorumunuz:&ensp;</label>
+                <input type="text" id="yorum" name="yorum" optional>
+            </li>
+            <li>
+                <label for="eposta">Epostanýz:&ensp;<br/>(sadece cevap istiyorsanýz)&ensp;</label>
+                <input type="email" id="eposta" name="eposta" optional>
+            </li>
+        </ul>
+    </fieldset>
+    <hr/>
+    <p style="text-align: center;">
+        <button type="submit">Tercihini gönder!</button>
+    </p>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+      <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1a22x7b.html: Zorunlu, enaz-ençok kýstaslý ve regexp kalýplý verigiriþleri ödev örneði.</title>
+    <link rel="stylesheet" href="C1a22.css" />
+    <style class="deðiþtirilebilir"></style>
+</head>
+<body>
+    <section class="görsel"></section>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 140px;">
+h2 {color: Purple; text-decoration:underline; text-align: center;}
+ul {list-style: none;}
+li {display: flex;}
+form label {width: 25%; text-align: right;}
+form input {background-color: Aqua; width: 85%; margin-bottom: 5px; height: 25px;}
+form textarea {background-color: Aqua;}
+button {background-color: Blue; color: White; font-size: 120%}
+button:hover {background-color: DodgerBlue; color: Red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form>
+    <p style="text-align: center;">
+        <button type="submit">Tercihini gönder!</button>
+    </p>
+    <hr/>
+    <h2>Geçerli bilgilerinizi girin</h2>
+    <ul>
+        <li>
+            <label for="kullanýcý">Kullanýcý adý:&ensp;</label>
+            <input type="text" required name="kullanýcý" id="kullanýcý" minlength="5" maxlength="20" placeholder="zorunlu [5,20] a.az09 karakter"
+                    pattern="[a-z]{1}.[a-z0-9]{3,}" />
+        </li>
+        <li>
+            <label for="eposta">Eposta adresi:&ensp;</label>
+            <input type="email"  required name="eposta" id="eposta" minlength="13" placeholder="zorunlu xA9@gmail.com enaz 13 krk formatlý"
+                    pattern="[A-z0-9]+@gmail.com" />
+        </li>
+        <li>
+            <label for="telefon">Telefon numarasý:&ensp;</label>
+            <input type="tel" required name="telefon" id="telefon" placeholder="zorunlu 10 rakam yada [000-000-000-00-00] formatlý"
+                    pattern="[0-9]{10}|[0-9]{3}[-. ][0-9]{3}[-. ][0-9]{3}[-. ][0-9]{2}[-. ][0-9]{2}" />
+        </li>
+        <li>
+            <label for="yorum">Yorum:&ensp;</label>
+            <textarea required name="yorum" id="yorum" cols="70" rows="10" minlength="20" maxlength="1000" placeholder="zorunlu [20,1000] karakter"></textarea>
+        </li>
+    </ul>
+</form>
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+      <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1a22.js"></script>
+</html>

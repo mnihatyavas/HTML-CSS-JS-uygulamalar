@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b01.html: Harici CSS dosya vasýflarýyla aðsayfasýný biçimleme örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Harici CSS Dosyalý Biçimleme</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1b01x1.html" target="_">1) Harici CSS dosya vasýflarýyla ilk h1 ve p biçimleme örneði</a></h4>
+    <h4><a href="C1b01x2a.html" target="_">2a) CSS kodlama hatalý kusurlu aðsayfasý tasarýmý örneði</a></h4>
+    <h4><a href="C1b01x2b.html" target="_">2b) CSS kodlama hatalarýndan arýndýrýlmýþ kusursuz aðsayfasý tasarýmý örneði</a></h4>
+    <h4><a href="C1b01x3.html" target="_">3) Kutu modeliyle aðsayfasý gövdesinin baþlýk-esas-ayaklýk olarak üçe bölümlenmesi örneði</a></h4>
+    <h4><a href="C1b01x4.html" target="_">4) Basamaklý bölümlemede kimlik ve sýnýf seçicileriyle özel eriþim ve ebeveyn mirasý örneði</a></h4>
+    <h4><a href="C1b01x5a.html" target="_">5a) Çeþitli etki bileþimli html etiket vasýflarý örneði</a></h4>
+    <h4><a href="C1b01x5b.html" target="_">5b) Eleman, kimlik, sýnýf, vasýf, sanal ve birleþik seçicili css vasýflama örneði</a></h4>
+    <h4><a href="C1b01x6.html" target="_">6) Piksel, yüzde, animasyon, renk ve konumlanma deðer ve birimleri örneði</a></h4>
+    <h4><a href="C1b01x7a.html" target="_">7a) Bir aðsitesi tasarýmcýsýnýn fotoðraflý kartvizit ham örneði</a></h4>
+    <h4><a href="C1b01x7b.html" target="_">7b) Bir aðsitesi tasarýmcýsýnýn fotoðraflý kartvizit iþlenmiþ örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) Harici CSS dosya vasýflarýyla aðsayfasýnýn biçimlenmesi sunulmaktadýr. Toplam 7 grup kapsamýnda 10 altprogramdan müteþekküldür." +
+            "<br/>2) Ýlk altprogram-1 sadece body gövde içinde iki kýsa h1 ve p eleman açýklamasýný içermekte; ayrýca harici CSS \
+            dosyasýna link-href baðlantý kurmaktadýr. Bu harici stil/stylesheet dosyasý çokgenel html, body, h2 ve p ayarlarý kurmaktadýr." +
+            "<br/>3) Ýkinci altprogram-2a ile üçüncü altprogram-2b ayný html ve css kodlama dosyalarýndan oluþmakla beraber, ilkinde sadece \
+            dikkatsizlikten kaynaklanan 3 css kodlama hatasý mevcuttur. Sayfada baþlýk/header, esas/main ve ayaklýk/footer bölümleri \
+            bulunmakta, baþlýk ve ayaklýk ayný zeminrenk ayarlý, esas bölmedeyse saðda küçük ebatlý firefox logosu, ortada liste, üst ve \
+            altta da birer paragraflýk açýklama düþünülmüþ olmakla beraber, ilkinin görünümü anormal bozuktur. CSS kodlama incelendiðinde \
+            (p li) yerine (pli), (h1, footer p {margin:0px}) yerine(margin:-100px), ve (img {float:right;) yerine sonu virgülsüz (right) ihmalkarlýðý \
+            farkedilecektir. Ancak bu masum ihmalkarlýklarýn html sayfa tasarýmýný nasýl olaðanüstü bozduðu ortadadýr." +
+            "<br/>4) Dördüncü altprogram-3 gayet sadedir. Html body gövdede 3 bölüm: header/baþlýk, main/esas, footer/ayaklýk vardýr. \
+            CSS dosyasýnda baþlýk ve ayaklýk zeminrengi mavi, esasýn sa sarýdýr. Ayrýca herüç bölümün sýnýrý kalýn siyah rgba renk ve  \
+            0.5 þeffaflýkla vasýflanmýþ olduklarýndan, sýnýr renkleri siyah deðil alt zemin rengi üzerine þeffaf siyah tülle karartma gibidir." +
+            "<br/>5) Beþinci altprogram-4 üç div bölümlüdür. Ýlk div bölümde altalta 2 p-paragraf bulunup, ilkinin zeminrengi gri, \
+            ikincininse kýrmýzýdýr. Önceden (border:none !important) önemli geçerlilikte olduðundan 2.paragraf aktüel sýnýr vasfý \
+            geçersizlenmektedir. Son 2 div bölümü seyrüsefer/navigation menü seçenekli ve týklanýnca baþka aðsayfalarýný a-href \
+            sörf seyri tasarýmlýdýr. Ýlk ul-li listeli seyrü menüsünde (text-decoration:none) gereði listeleme iri-noktalý deðil altalta hacimli \
+            menü seçenekleridir. Ayrýca ilk seyrünün 2.nci menüsüyle, ikinci seyrünün ilk menüsü üzerindeyken border/sýnýr \
+            özellikleri deðiþimi nakþedilmiþtir. Seyrü a-href menülerinde fare oku parmak olmakta, týklanýnca da þayet a-href \
+            iþlevsiz (#) deðil de verili url aðsitesi adresiyse, çevrimiçi oraya (ayný yada target='_blank' ile farklý tarayýcý sekmesinde) \
+            sörf seyri yapýlacaktýr." +
+            "<br/>6) Altýncý altprogram-5a farklý etkili birleþik html eleman seçicilikli CSS vasýflamalar yapmaktadýr. Bu birleþik elemanlý \
+            seçiciler ara boþluklu (section p), &gt; iþaretli (section &gt; p), artýlý (h2 + p), yaylalý (h2 ~ p), çok elemanlý (section div div p) \
+            olarak uygulanmýþ ve sarý/gri zeminrengi, tireli sýnýr, ilkparagraf büyükharf gibi detay özellikler kazandýrýlmýþtýr." +
+            "<br/>7) Yedinci altprogram-5b seçicilere tahsislidir. Vasýflandýrýlacak öðeye seçicilerle eriþilir. Seçiciler html elemanlarý, \
+            .class sýnýfý, #id kimliði, lang/dil=vasýflý, :sanal sýnýflý, ::sanal elemanlý, çoklu bileþimli olabilirler. Altprogramda 7 div-hr \
+            bölümlemeyle bu farklý seçiciler herbirinde uygulanmaktadýr." +
+            "<br/>8) Sekizinci altprogram-6 CSS elemanlarýný özelliklemede kullanýlan ölçek ve deðerlerle ilgili 7 div-hr bölüm \
+            içermektedir. Ýlk div bölümde 3 p-paragraf width/en ve font-size/yazý-ebatý px pixel/piksel noktalamayla ölçeklenmiþtir. \
+            Ýkinci div çoklu satýrlý p-paragrafýn satýr aralýðýný vasýfsýz height:1.5 ile (1.5=1.5em) oranýyla ölçeklemiþtir. Üçüncü div \
+            karma deðerler gerektiren animasyon/canlandýrma/hareketlendirmeyle ilgilidir; (animation-name:dön) ve (@keyframe dön) \
+            içinde [0%transform:rotate(0deg) ile 100%transform:rotate(360deg)] tamtur dönmeyi (animation-iteration-count: 5) \
+            5 tur yinelemektedir. Dördüncü div-hr bölümde iki dikdörtgenden ilk kýrmýzý eni sabit 1250px, ikinci mavinin eniyse \
+            tarayýcýya duyarlý %75 orantýlanmýþtýr. Beþinci div rgb/RedGreenBlue/KýrmýzýYeþilMavi 0-255 renk ayarýyla ilgili olup, \
+            ilk p-paragraf zemini kýrmýzý rgb(255,0,0), ikincisi mavi rgb(0,0,255), üçüncüyse leylak rgb(224,120,255) renklendirilmiþtir. \
+            Altýncý div bölümü yüzdeli pikselli içiçe önce duyarlý (width:100%, height:200px, kýrmýzý) dýþ tamuzunlukta kutu içine \
+            (width:200px, height:100%, mavi) sabit uzunluklu kutu konulmuþtur. Son div bölümde 3 farklý renk (kýrmýzý, mavi, pembe) \
+            kutu normalen altalta gelecekleri halde ayný sýnýf adýyla (position:relative) vasýflandýrýlýnca top konumlanmalarý birönceki \
+            kutuya göreceli - deðerle kendini yukarý çekmekte ve kutular istenilen üstüste konumlandýrýlabilmektedir." +
+            "<br/>9) Dokuzuncu altprogram-7a ham kartvizit, onuncu altprogram-7b ise iþlenmiþ kartvizit tasarýmýyla ilgilidir. \
+            Tasarým için body-section gövde-kýsým içinde header/baþlýk, article/makale ve footer/ayaklýk bölümleri kullanýlmýþ, \
+            ilk altprogramda sadece genel html-body ölçekleri ayarlanýp, article-img resim konulmuþtur. Son bölümde, baþlýk, \
+            ayaklýk linear-gradient doðrusal tabakalanmayla üstten-alta ve alttan-üste kýrýmýzý rgba þeffaflaþma etkili, baþlýk-h2 \
+            ve ayaklýk-p yazýlarý ebatlanmýþ, makale-img resim %100 bölümiçi yükseklik ve saða yaslý yerleþtirilip küçük ebat \
+            kimlik bilgileri iþlenmiþtir. h2 ve p (margin: 0) ayarlanmasa, varsayýlý çevre marjlarý kartviziti gereksiz þiþirecekti."
+    </script>
+</body>
+</html>
