@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x3f.html: P-dökümanın z-göreceli-mutlak konumlanma ve yayılması örneği.</title>
+    <style>
+        html {background-color: #124;}
+        body {
+            background-color: #eba;
+            max-width: 65%;
+            min-width: 500px;
+            padding: 20px;
+            position: relative;
+            margin: 2em auto;}
+        body * {margin: 0 auto;}
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;}
+        span {
+            background-color: red;
+            border: 1px solid black;}
+        .z-göreceli-mutlak-konumlanma {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: yellow;}
+        p:nth-of-type(1) {
+            position: absolute;
+            background-color: lime;
+            top: 10px;
+            right: 30px;
+            z-index: 1;}
+    </style>
+</head>
+<body>
+    <h1>P-dökümanın z-göreceli-mutlak konumlanma ve yayılması</h1>
+
+    <p><span>Z-index:1 ile ilk p olarak z-göreceli-mutlak enüst konumlanmadayım.</span> Ben varsayılı vasıflı bir p-paragraf elemanıyım. Diğer p eleman blokları benden sonraki satırlarda altalta sıralanacaklardır.</p>
+    <p class="z-göreceli-mutlak-konumlanma"><span>Z-göreceli-mutlak konumlanmada html değil body sınırlarına tabiyim.</span> Varsayılı olarak genişliğimiz, içinde bulunduğumuz ebeveyne %100 yayılacak, yüksekliğimiz ise yavru metnimizin uzunluğuya artacaktır. Toplam en ve boyumuz = içerik-en/boy + tamponlar + sınır-en/boy değerlerine bağlıdır.</p>
+    <p>Marjlarımızla birbirlerimizden aralanmaktayız. Bitişik eleman marjlandırmasında, marj çökmesi sebebiyle tek elemanın marjı kaale alınır, herikisinin toplamı değil.</p>
+    <p><span>Bunun gibi</span> ve <span>şunun gibi</span> satıriçi elemanları <span>uzun içerikli satır taşmasında kalanı biralt satıra kayacak</span>, metin kelimeleri ara boşluklarla bütün olarak bir satırda kalacak, blok yada şöyle bir uzun resimse: <img src="resim/uzun.jpg" height="65" width="450"> üst satıra sığmayınca bütün olarak alt satıra kayacaktır.</p>
+</body>
+</html>

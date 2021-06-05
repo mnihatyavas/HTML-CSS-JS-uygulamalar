@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x7n.html: Form'lu verigiriþlerinin 4 satýr ve 5 kolonlu ýzgara serilime dönüþtürülmesi örneði.</title>
+    <style>
+        html {background-color: #243;}
+        body {
+            background: #fda;
+            max-width: 40%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 3px solid magenta;
+            font-family: sans-serif;}
+        form {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 1%;
+            margin: 0 auto;}
+        form label {
+            grid-column: auto / span 1; /* Satýr baþýnda ve tek kolon */
+            text-align: right;}
+        form input {grid-column: auto / span 4;} /* Satýra ilaveten ve 4 kolon */
+        form p {
+            grid-column: auto / span 5;
+            grid-row: 4; /* 4.son satýrda ve tüm 5 kolon */
+            color: #999;
+            font-style: italic;}
+    </style>
+</head>
+<body>
+    <form>
+        <p>Öncelikle, lütfen isim ve yaþ bilgilerinizin giriþini tamamlayýn.</p>
+
+        <label for="ad">Adýnýz:</label>
+        <input type="text" id="ad">
+
+        <label for="soyad">Soyadýnýz:</label>
+        <input type="text" id="soyad">
+
+        <label for="yaþ">Yaþýnýz:</label>
+        <input type="text" id="yaþ">
+    </form>
+</body>
+</html>

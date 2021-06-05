@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>Tabbed info box</title>
+    <style>
+         /* Genel ayarlar */
+        html {
+            font-family: sans-serif;
+            background-color: #127;}
+        body {
+            background-color: #a86;
+            max-width: 60%;
+            min-width: 500px;
+            padding-bottom: 50px;
+            margin: 0 auto;}
+        body * {box-sizing: border-box;}
+
+         /* bilgilendirme-kutusu kurulumu */
+        .bilgilendirme-kutusu {
+            width: 456px;
+            height: 400px;
+            margin: 0 auto;}
+
+        /* bilgilendirme-kutusu sekme stilleri */
+        .bilgilendirme-kutusu ul {
+            border: 3px solid #b60000;
+            overflow: hidden;
+            height: 50px;
+            margin: 0;
+            padding: 0;}
+        .bilgilendirme-kutusu ul li {
+            float: left;
+            list-style-type: none;
+            width: 150px;}
+        .bilgilendirme-kutusu ul li a {
+            display: inline-block;
+            text-decoration: none;
+            width: 100%;
+            line-height: 50px;
+            background-color: white;
+            color: blue;
+            text-align: center;
+            font-weight: bold;}
+        .bilgilendirme-kutusu ul li a:focus, .bilgilendirme-kutusu ul li a:hover,  .bilgilendirme-kutusu ul li a.aktif {
+            background-color: #b60000;
+            color: yellow;}
+
+        /* bilgilendirme-kutusu sekme-panelleri stilleri */
+        .bilgilendirme-kutusu .sekme-panelleri {
+            clear: both; /* float:left etkisi yok edilir */
+            position: relative;
+            height: 352px;}
+        .bilgilendirme-kutusu article {
+            background-color: #b60000;
+            color: white;
+            position: absolute;
+            padding: 10px 20px;
+            height: 352px;
+            top: 0;
+            left: 0;}
+        .bilgilendirme-kutusu .aktif-panel {z-index: 10;} /* Üst katman */
+        em, h2 {color: lime;}
+    </style>
+</head>
+<body>
+    <section class="bilgilendirme-kutusu">
+        <ul>
+            <li><a href="#">Sekme 1</a></li>
+            <li><a href="#" class="aktif">Sekme 2</a></li>
+            <li><a href="#">Sekme 3</a></li>
+        </ul>
+
+        <div class="sekme-panelleri">
+            <article>
+                <h2>Birinci sekme</h2>
+                <p><em>Anlamsýz dolgu metni.</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. Vestibulum et orci scelerisque, vulputate tellus quis, lobortis dui. Vivamus varius libero at ipsum mattis efficitur ut nec nisl. Nullam eget tincidunt metus. Donec ultrices, urna maximus consequat aliquet, dui neque eleifend lorem, a auctor libero turpis at sem. Aliquam ut porttitor urna. Nulla facilisi.</p>
+            </article>
+            <article class="aktif-panel">
+                <h2>Ýkinci sekme</h2>
+                <p><em>Anlamsýz dolgu metni.</em> This tab hasn't got any Lorem Ipsum in it. But the content isn't very exciting all the same.</p>
+            </article>
+            <article>
+                <h2>Üçüncü sekme</h2>
+                <p><em>Anlamsýz dolgu metni.</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. And now an ordered list: how exciting!</p>
+                <ol>
+                    <li>dui neque eleifend lorem, a auctor libero turpis at sem.</li>
+                    <li>Aliquam ut porttitor urna.</li>
+                    <li><em>Anlamsýz dolgu listesi.</em> Nulla facilisi</li>
+                </ol>
+            </article>
+        </div>
+    </section>
+
+    <script>
+        // Týklanan sekme ve sekme panelini aktif kýlar...
+        let sekmeler = document.querySelectorAll (".bilgilendirme-kutusu ul li a");
+        let sekmePanelleri = document.querySelectorAll (".bilgilendirme-kutusu article");
+
+        for (i = 0; i < sekmeler.length; i++) {
+            let sekme = sekmeler [i];
+            aktifSekmeyiKur (sekme, i);
+        } // for sonu...
+
+       function aktifSekmeyiKur (sekme, sekmeNo) {
+            sekme.onclick = function() {
+                for (i = 0; i < sekmeler.length; i++) {
+                    sekmeler[i].className = "";
+                    sekmePanelleri [i].className = "";
+                } // for sonu...
+                sekme.className = "aktif";
+                sekmePanelleri [sekmeNo].className = "aktif-panel";
+            } // sek..sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

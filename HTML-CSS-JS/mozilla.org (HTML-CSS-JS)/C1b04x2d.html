@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x2d.html: Çentikkutusu tıklamasıyla kayarak görünen/kaybolan yardım penceresi örneği.</title>
+    <style>
+        html {background-color: #125;}
+
+        /* Yardım penceresinin çentikkutu tıklanmasıyla görünür/görünmez kılınması */
+        label[for="aç-kapa"] { /* Çentikkutusu etkinliğini (for->id) temsilen soruişareti */
+            font-size: 5rem;
+            position: absolute;
+            top: 4px;
+            right: 5px;
+            z-index: 1;
+            cursor: pointer;
+            color: DeepPink;}
+        input[type="checkbox"] { /* Üste taşıp görünmeyen çentikkutusu */
+            position: absolute;
+            top: -100px;}
+        aside {
+            background-color: #a60000;
+            color: white;
+            width: 340px;
+            height: 100%;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            right: -370px;
+            transition: 1s all;}
+        input[type=checkbox]:checked + aside {right: 0px;} /* Çentiklersen (sola kayarak) görünür, çentiksizlersen (sağa kayarak) kaybolur */
+        h1 {
+            text-align: center;
+            font-size: 100px;
+            color: yellow;}
+    </style>
+</head>
+<body>
+    <h1>===>></h1>
+
+    <label for="aç-kapa">❔</label>
+    <input type="checkbox" id="aç-kapa">
+  
+    <aside>
+        <h2>Yardım Penceresi</h2>
+        <p>Uygulamalarınız hakkında birkaç önemli bilgilendirme:</p>
+        <ol>
+            <li>Gerçekten de güzel bir kayan-pencereli yardım kutusudur.</li>
+            <li>Bu bilgilendirme kutusu yumuşak kayışını sabit konumlama ve CSS geçiş vasıflarıyla gerçekleştirmektedir.</li>
+            <li>Kullandığı güzel teknik detaylarına <a href="https://css-tricks.com/the-checkbox-hack/" target="b">çentikkutulu bilgilendirme</a> sayfasından erişebilirsiniz.</li>
+            <li>JS kodlaması kullanmanıza gerek kalmadan çentikkutusunun tıklanmasıyla yardım pencereniz "açılacak" ve "kapanacaktır". (Pencereniz enaz IE9'da, yumuşak kayış efektiyse enaz IE10'da çalışmaktadır.)</li>
+        </ol>
+    </aside>
+</body>
+</html>

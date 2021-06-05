@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04.html: Kutularýn konumlanmasý ve kayan, esnek, ýzgara, çoklu kolon serilimleri örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="reload() ile Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Kutu Konumlama ve Serilimleri</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1b04x1.html" target="_">1) Mutlak konumlu ve sola/saða kayan vasýflý kutular örneði</a></h4>
+    <h4><a href="C1b04x2a.html" target="_">2a) Açýlýr/kapanýr bilgilendirme sekmelerinin ham örneði</a></h4>
+    <h4><a href="C1b04x2b.html" target="_">2b) Açýlýr/kapanýr bilgilendirme sekmelerinin iþlenmiþ örneði</a></h4>
+    <h4><a href="C1b04x2c.html" target="_">2c) Kayan bilgilendirme yardým penceresinin ham örneði</a></h4>
+    <h4><a href="C1b04x2d.html" target="_">2d) Çentikkutusu týklamasýyla kayarak görünen/kaybolan yardým penceresi örneði</a></h4>
+    <h4><a href="C1b04x3a.html" target="_">3a) Varsayýlý vasýflarla p-döküman konumlanmasý ve yayýlmasý örneði</a></h4>
+    <h4><a href="C1b04x3b.html" target="_">3b) P-dökümanýn statik konumlanma ve yayýlmasý örneði</a></h4>
+    <h4><a href="C1b04x3c.html" target="_">3c) P-dökümanýn göreceli konumlanma ve yayýlmasý örneði</a></h4>
+    <h4><a href="C1b04x3d.html" target="_">3d) P-dökümanýn mutlak konumlanma ve yayýlmasý örneði</a></h4>
+    <h4><a href="C1b04x3e.html" target="_">3e) P-dökümanýn göreceli-mutlak konumlanma ve yayýlmasý örneði</a></h4>
+    <h4><a href="C1b04x3f.html" target="_">3f) P-dökümanýn z-göreceli-mutlak konumlanma ve yayýlmasý örneði</a></h4>
+    <h4><a href="C1b04x3g.html" target="_">3g) H-baþlýðýn sabit konumlanma ve yayýlmasý örneði</a></h4>
+    <h4><a href="C1b04x3h.html" target="_">3h) Yapýþkan konumlu çubuk baþlýklarýn tepede asýlý kalmasý örneði</a></h4>
+    <h4><a href="C1b04x4a.html" target="_">4a) Balonlar bloðunun iþlenmemiþ ham örneði</a></h4>
+    <h4><a href="C1b04x4b.html" target="_">4b) Balonlar bloðunun iþlenmiþ ýzgaralý örneði</a></h4>
+    <h4><a href="C1b04x5a.html" target="_">5a) Ýki kolonlu, sola-saða kayan, tarayýcýya duyarlý sayfa örneði</a></h4>
+    <h4><a href="C1b04x5b.html" target="_">5b) Ýki kolonlu, sola-saða kayan, sabit geniþlikli sayfa örneði</a></h4>
+    <h4><a href="C1b04x5c.html" target="_">5c) Üç kolonlu, sola-sola-saða kayan, tarayýcýya duyarlý sayfa örneði</a></h4>
+    <h4><a href="C1b04x5d.html" target="_">5d) Üç kolonlu, sola-saða-saða kayan, hatalý dizilimli sayfa örneði</a></h4>
+    <h4><a href="C1b04x5e.html" target="_">5e) Kaymanýn sonraki html elemanlarýný da istem dýþý kaydýrarak bozmasý örneði</a></h4>
+    <h4><a href="C1b04x5f.html" target="_">5f) Kayma bozulmalarýnýn giderilmesi örneði</a></h4>
+    <h4><a href="C1b04x5g.html" target="_">5g) Sonradan artýrýlan kolon tampon ve sýnýrlarýn geniþleme bozulmasý örneði</a></h4>
+    <h4><a href="C1b04x5h.html" target="_">5h) Geniþleme kolon bozulmasýnýn kutu ebatýna dahil edilmesiyle düzeltilmesi örneði</a></h4>
+    <h4><a href="C1b04x5i.html" target="_">5i) Kolon enaz yüksekliklerinin ayný sabit hizalý olmasý örneði</a></h4>
+    <h4><a href="C1b04x5j.html" target="_">5j) Tampon ve sýnýrla artan kolon geniþlik yüzdelerinin yeniden ayarlanmasý örneði</a></h4>
+    <h4><a href="C1b04x5k.html" target="_">5k) Metin içinde kayan bir resim örneði</a></h4>
+    <h4><a href="C1b04x5l.html" target="_">5l) Metin içinde sola kayan boþ bir resim çerçevesi örneði</a></h4>
+    <h4><a href="C1b04x5m.html" target="_">5m) Çerçevesin heryönlü marjýnýn ilk paragrafý sol-üste taþýrmasý örneði</a></h4>
+    <h4><a href="C1b04x5n.html" target="_">5n) Ýlk paragraftan sonrakilerin sola kaymadan etkisizleþtirilmesi örneði</a></h4>
+    <h4><a href="C1b04x5o.html" target="_">5o) Resim ve paragrafýn beraberce sarmalanmasý ve sonrasýnda kayma etkisizleþtirme örneði</a></h4>
+    <h4><a href="C1b04x5p.html" target="_">5p) Kayma iptalinin otomatik taþma vasfýyla gerçekleþtirilmesi örneði</a></h4>
+    <h4><a href="C1b04x5r.html" target="_">5r) Kayma iptalinin kayma-kökünü sarýcýyla sýnýrlayarak gerçekleþtirilmesi örneði</a></h4>
+    <h4><a href="C1b04x6a.html" target="_">6a) Kutu içi düðme elemanlarýnýn varsayýlý yatay yanyana yayýlýmý örneði</a></h4>
+    <h4><a href="C1b04x6b.html" target="_">6b) Kutu içi düðme elemanlarýnýn yatay-dikey eþit aralýklý esnek yayýlýmý örneði</a></h4>
+    <h4><a href="C1b04x6c.html" target="_">6c) Esnek yayýlý düðme sýralarýnýn deðiþtirilmesi örneði</a></h4>
+    <h4><a href="C1b04x6d.html" target="_">6d) Kutu içi altalta varsayýlý vasýflý makaleler örneði</a></h4>
+    <h4><a href="C1b04x6e.html" target="_">6e) Makalelerin esnek serilimle yanyana ve enuzunuyla ayný boyda sýralanmalarý örneði</a></h4>
+    <h4><a href="C1b04x6f.html" target="_">6f) Esnek serilimli makale enlerinin farklýlaþtýrýlmasý örneði</a></h4>
+    <h4><a href="C1b04x6g.html" target="_">6g) Artan sayýlý makalelerin satýr-yönlü otomatik kaydýraçlý taþmasý örneði</a></h4>
+    <h4><a href="C1b04x6h.html" target="_">6h) Ters satýrvari ve taþan makalelerin kaydýraçlanma yerine altsatýrlara sarmasý örneði</a></h4>
+    <h4><a href="C1b04x6i.html" target="_">6i) Esnek üç makaleden sonuncunun yatay düðmelerle karma esnek kutu oluþturmasý örneði</a></h4>
+    <h4><a href="C1b04x7a.html" target="_">7a) Izgara serilimde kullanýlacak kab ve kutularýn hazýrlýðý örneði</a></h4>
+    <h4><a href="C1b04x7b.html" target="_">7b) Üç sabit px uzunluktaki kolonlu ýzgara serilimi örneði</a></h4>
+    <h4><a href="C1b04x7c.html" target="_">7c) Üç farklý fr uzunluktaki kolonlu ýzgara serilimi örneði</a></h4>
+    <h4><a href="C1b04x7d.html" target="_">7d) Üç farklý fr uzunluktaki aralýklý kolonlu ýzgara serilimi örneði</a></h4>
+    <h4><a href="C1b04x7e.html" target="_">7e) Üç ayný repeat(3, 1fr) uzunluktaki aralýklý kolonlu ýzgara serilimi örneði</a></h4>
+    <h4><a href="C1b04x7f.html" target="_">7f) Üç ayný repeat(3, 1fr) en ve 100px boydaki aralýklý kolonlu ýzgara serilimi örneði</a></h4>
+    <h4><a href="C1b04x7g.html" target="_">7g) Biri uzun, üç ayný repeat(3, 1fr) en ve 100px boydaki aralýklý kolonlu ýzgara serilimi örneði</a></h4>
+    <h4><a href="C1b04x7h.html" target="_">7h) Biri uzun, ayný repeat(auto-fill, minmax(200px, 1fr)) en ve 100px boydaki aralýklý kolonlu ýzgara serilimi örneði</a></h4>
+    <h4><a href="C1b04x7i.html" target="_">7i) Ýki kolonlu (1fr 3fr) ýzgara serilimle baþlýk, makale, kenarlýk, ayaklýk sayfa tasarýmý örneði</a></h4>
+    <h4><a href="C1b04x7j.html" target="_">7j) Izgara serilim sayfa tasarýmýnda herbir satýr ve kolonun tanýmlanmasý örneði</a></h4>
+    <h4><a href="C1b04x7k.html" target="_">7k) Izgara alanlarýnýn (1fr 3fr)'li üç satýr ve iki sütunlarýnýn ismen tanýmlanmasý örneði</a></h4>
+    <h4><a href="C1b04x7l.html" target="_">7l) Oniki kolonlu ýzgaraya üç kutunun farklý kolon kapsamlý hatalý serilimi örneði</a></h4>
+    <h4><a href="C1b04x7m.html" target="_">7m) Oniki kolonlu ýzgaraya üç kutunun farklý kolon kapsamlý hatasýz serilimi örneði</a></h4>
+    <h4><a href="C1b04x7n.html" target="_">7n) Form'lu verigiriþlerinin 4 satýr ve 5 kolonlu ýzgara serilime dönüþtürülmesi örneði</a></h4>
+    <h4><a href="C1b04x8a.html" target="_">8a) Oniki kolonlu ýzgarada farklý sayýda kolonlara yayýlý kutular ve boylarý örneði</a></h4>
+    <h4><a href="C1b04x8b.html" target="_">8b) Ýki satýrda sola kayan farklý %-enli kutularýn (ýzgaravari) serilimi örneði</a></h4>
+    <h4><a href="C1b04x8c.html" target="_">8c) Kolon yayýlým yüzde enlerinin calc-ulate ile otomatik hesaplatýlmasý örneði</a></h4>
+    <h4><a href="C1b04x8d.html" target="_">8d) Tek kolonu boþ geçirten yeterli % sol-marjýn hesaplanmasý örneði</a></h4>
+    <h4><a href="C1b04x8e.html" target="_">8e) Ýki satýrda sola kayan farklý px-enli kutularýn sabit serilimi örneði</a></h4>
+    <h4><a href="C1b04x8f.html" target="_">8f) Ýki satýrda sola kayan farklý %-enli kutularýn (ýzgaravari) normalleþtirilmiþ iskelet serilimi örneði</a></h4>
+    <h4><a href="C1b04x8g.html" target="_">8g) Esnek serilimde kolon % enlerinin calc-ulate ile hesaplatýlmasý örneði</a></h4>
+    <h4><a href="C1b04x9a.html" target="_">9a) Kolon sayýsý yada geniþliði verili çoklukolon ham metni örneði</a></h4>
+    <h4><a href="C1b04x9b.html" target="_">9b) Mevcut h1 ve p içeriklerin kolon sayýsý 3'e uyarlanmasý örneði</a></h4>
+    <h4><a href="C1b04x9c.html" target="_">9c) Verili sabit kolongeniþliðiyle kolonsayýsýnýn tarayýcýya duyarlýlýðý örneði</a></h4>
+    <h4><a href="C1b04x9d.html" target="_">9d) Üç kolonsayýsýný kolonaralýðý ve cetveliyle biçimlene örneði</a></h4>
+    <h4><a href="C1b04x9e.html" target="_">9e) Eþit kolon boylarý uyumu için kartlarýn bütünlüðünü kýrmama örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) Kutularýn konumlanmasý ve kayan, esnek, ýzgara, çoklu kolon serilimleri sunulmaktadýr. Toplam 9 grup kapsamýnda \
+            67 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-1 kutu bölümlerinin html sayfasý ve body gövde içinde konumlanmasýyla ilgilidir. Konum/position \
+            tanýmlanmadan sadece boy deðeriyle (DIV#4) kutu gövde içinde varsayýlý uzunluða tampon aralýðýyla yayýlýr. En ve boy \
+            tanýmlý kutuya ayrýca float:left/right kay:sol/sað vasfýyla kutu gövdenin soluna (DIV#2) ve saðýna (DIV#3) kayar. Mutlak/\
+            absolute konumlama ise body gövdeye deðil html sayfasýna tabidir. Top/tepe ve right/sað ile kutu html mutlak üst-saðýna \
+            (DIV#1), top ve left/sol ile de html mutlak üst-soluna (DIV#5) konumlandýrýlýr." +
+            "<br/>3) Altprogram-2a body-section gövde-kýsým içinde önce bir ul-li-a-href üçlü baðlantýlar sýralamasý, sonra da \
+            div içi üçlü artickle/makale ve herbir makalede de h2-baþlýkla p-paragraf açýklamasý sunmaktadýr. Düzenleme henüz hamdýr." +
+            "<br/>4) Altprogram-2b önceki ham örnekteki ul-li sekme baðlantýlarýný article/makale sekme panelleriyle iliþkilendirip \
+            varsayýlý 2.sekme ve paneli aktif kýlýnmýþ, sonrasýndaysa týklanan ul-li-a-href sekmesi ve paneli script js kodlamasý \
+            sekme.onclick týklamasýyla seçilen yeni sekme ve panelini aktif kýlmaktadýr." +
+            "<br/>5) Altprogram-2c önceki sekmelerin panellerle iliþkilendirilmesi benzeri, þimdi de label-input-checkbox çentikkutusunun \
+            týklanarak çentiklenmesi, alttaki aside-h2-p-ol-li açýklama metninin görünür kýlýnmasýyla iliþkilendirilecektir. Ham sayfa görülmektedir." +
+            "<br/>6) Altprogram-2d label-input ikilisinden label etiketini büyükboy sað-üste yakýn soruiþareti'yle simgelemiþ, input-checkbox \
+            varsayýlý kare simgeli çentikkutusunu ise üst görüntü-dýþýna taþýrmýþtýr. For-id'le baðlantýlý label soruiþareti týklandýðýnda \
+            checked:aside{right:0} ile çentikliyken bilgilendirme kutusunu saðdan görünür kýlmýþ, çentiksizlendiðindeyse tekrar right:-370px'le \
+            sað-içe görüntü dýþýna atmýþtýr." +
+            "<br/>7) Altprogram-3a bir h1 baþlýk ve 4 adet p-paragraf kutusundan oluþmuþ, son paragrafta 3 adet iç span ve 1 adet img-src \
+            resmi en-boy'la sýnýrlamýþtýr. Ham örnektir, henüz konumlama tanýmlanmamýþtýr." +
+            "<br/>8) Altprogram-3b position:static vasýfla statik konumlandýrýlmýþtýr, top ve left gibi bulunduklarý ortamýn üst ve soluna \
+            uzak mesafelendirilme özellikleri geçerli deðildir." +
+            "<br/>9) Altprogram-3c position:relatif vasýfla göreceli konumlandýrýlmýþtýr, top-left üst-sol mesafelendirilme aktüel konumundan \
+            kutuyu belirtilen deðerlerle alt-sað'a ötelemektedir." +
+            "<br/>10) Altprogram-3d position:absolute mutlak konumlama, kutuyu mevcut gövde içinden üst ebeveyn html'ye çýkarmýþ \
+            ve top-left'le html sayfasýnýn sol-üst köþesinden 30px alt-saða ötelenmesine, ayrýca uzunluðunun da body dýþý html'ye \
+            uzamasýna neden olmuþtur." +
+            "<br/>11) Altprogram-3e body/gövde'ye position:relative göreceliliði atfetmek, artýk içerdiði yavru elemanlarýn position:absolute \
+            mutlak vasýfalarýyla html'ye taþmalarýný engellemekte, konumlanmalarýný gövde'ye göreceli kýlmaktadýr." +
+            "<br/>12) Altprogram-3f iki adet göreceli gövde içi mutlak konumlu p-paragraf kutusuna sahiptir. Birönceki mutlak konumlu \
+            2.kutuya ilaveten ilk p kutusu p:nth-of-type(1) mutlak konumlanmýþ ve de z-index:1'le önceki varsayýlý 0 endeksli elemanlardan \
+            ön plana fýrlamýþtýr." +
+            "<br/>13) Altprogram-3g p elemanlara konumlama atfetmemiþ, sadece h1 baþlýðýný position:fixed sabit konumlamayla gövde \
+            dýþý html sayfasýnýn sol-üstüne sabitlemiþtir. Gövde altýna verilen ekstra yükseklikle kaydýraç denenirse, baþlýðýn sabit konumunu \
+            deðiþtirmediði görülecektir. Gövdenin göreceli konumlanmasý gövde içi mutlak yavrularý gövdeye sýnýrlamakta, ancak sabit \
+            yavruyu sýnýrlamamaktadýr." +
+            "<br/>14) Altprogram-3h dl-dt-dd tasvirlistesi-sekmesi-detayý a-z baþlýklý sözlük benzetmesidir. DT tasvir sekmeleri position:sticky \
+            yapýþkan konumlanmayla top/left:0 konumla, önce aktüel yerlerinde konumlanmakta, ancak kaydýraçla sayfa üstüne \
+            sürüklendiklerinde tepede üstüste sekme baþlýklarý yapýþýk kalmakta, ta ki tüm dt-dd elemanlarý kalmayýnca, yapýþanlar da \
+            yukarýya taþýnýp kaybolmaktadýr. Kaydýraç aþaðýya inerken de tersine gerisin geriye eski aktüel yerlerine taþýnmaktadýrlar." +
+            "<br/>15) Altprogram-4a div ana bölümü içinde nav seyrüsefer ve main esas bölümlerine ayrýlmýþ, esas bölüm de kendi \
+            içinde tek resim ve p metinli article makale ile 6 ul-li resim listeli aside kenarlýk alt bölümlerine ayrýlmýþtýr. Serilim tanýmlanmadýðýndan \
+            varsayýlý serilim, tüm bu kutularýn altalta sýralanmasýdýr." +
+            "<br/>16) Altprogram-4b html sayfasý ayný kalýp, css vasýflarý serilimleri tanýmlamýþtýr. Nav seyrü menüsü flex esnek yatay ve \
+            kaydýraçlandýðýnda sticky yapýþkan konumlandýrýldýðýndan tepede asýlý kalmaktadýr. Main esas serilimi ýzgara (1fr 2fr) solda \
+            1 ölçek articke makale'ye, saðdaysa 2 ölçek aside kenarlýða tahsis edilmiþtir. Kenarlýk resimleri ýzgara serilimle çift kolonlu \
+            (1fr 1fr), makale resmi ise float:left sola yaslý ve kalan fazlalýða makale metni dolgular." +
+            "<br/>17) Altprogram-5a body gövde içinde bir h1 baþlýk, 2 adet div bölme ve herbirinde birer h2 ve p-paragraf metni \
+            bulunmaktadýr. Kolonlaþtýrma ilk div bölümü (div:nth-of-type(1)) float:left ile sola yaslama, ikincisiniyse saða yaslama ve \
+            herbir kolon geniþliðini gövdenin %48'i þeklinde duyarlý kýlarak yapýlmýþtýr." +
+            "<br/>18) Altprogram-5b ayný html body çift div bölmeli kolonlara bu defa % deðil sabit (900 - (2*430=860) = 40px) px \
+            geniþliði tahsis edilmiþ, kalan fazlalýksa kolon aralarýna paylaþýlacaktýr." +
+            "<br/>19) Altprogram-5c bu defa 2 yerine 3 div bölüme (h2-p elemanlý), herbirine farklý en (%36, %30, %26) ve ilk 2'ye \
+            sola kay (float:left), son kolonaysa saða kay (float:right) vasfý atanmýþtýr." +
+            "<br/>20) Altprogram-5d 3 kolonlu sýralanmanýn küçük bir ihmalkarlýkla bozulmasýný (float:left/right/right) göstermektedir. \
+            Sola kay'dan sonraki her saða kay daima enson sola kay'ý referans alarak sýralanýr. Dolayýsýyla 3.kolon ilkinin hemen saðýna \
+            kayarken, ilk saða kayan 2.kolonu da sona iterek sýralamayý bozar." +
+            "<br/>21) Altprogram-5e 3 kolonlu div'den sonra konulan footer ayaklýk, hala float:left geçerliliðiyle, ilk kolonun uzunlulu \
+            nedeniyle 2.ve 3.kolonlarý kapsamýþtýr. Aslýnda istenen, ayaklýðýn, kolon kayma kuralý dýþýnda, enaltta tüm geniþliðe \
+            uzamasý düþünülmüþ, fakat uygulama hatasý yapýlmýþtýr." +
+            "<br/>22) Altprogram-5f float'tan sonra gelen html elemanlarýnýn sola/saða yaslanmadan muaf kýlýnmasýný þekletmektedir. \
+            Bu maksatla float sonrasý gelen hr ve footer elemanlarýna clear:both/herikisinin-iptali ile kayma etkisi iptal edilince &lt;hr/&gt; \
+            çizgisi kolonlarýn tümünün altýnda tam enli çizgi, ve &lt;footer&gt; onun da altýna ve yine tam uzunluða yaygýndýr." +
+            "<br/>23) Altprogram-5g div ve footer kutu zemin renkleri farklýlaþtýrýlýp, sýnýr'la metnin temas etmemesi için %1 tampon \
+            eklenince %100 en aþýlmýþ (%36 + %30 + %26 + %4 + (3*%2=)%6 + (4*3=)12px > %100) ve kolonlar bozulmuþtur. Ya \
+            kolon % enleri kýsaltýlmalý, yada sonradan eklenen tampon ve sýnýrlar en kapsamý içinde kalmalýdýr." +
+            "<br/>24) Altprogram-5h nitekim ilk css vasfý olarak *{box-sizing: border-box;} vasfýyla, tüm elemanlarýn en artýran sýnýr/border \
+            ve tampon/padding ekstralarý kutularýn width/en kapsamý içine yedirilmiþ, böylece kolon bozulma sorunu giderilmiþtir." +
+            "<br/>25) Altprogram-5i tam ekran geniþlðindeyken en uzun kolon yüksekliði enaz yükseklik kolon{min-height:600px} \
+            olarak herüç div kolonu için de tanýmlanýnca, kolon renkli kutularý ayný sabit boylu görselleþirler. Ancak tarayýcý çok \
+            daralýp, yükseklikler 600px'i aþýnca, kolonlar arasý kutu yükseklik farklarý tekrar gündeme gelecektir." +
+            "<br/>26) Altprogram-5j bu kerre kutu tampon ve sýnýr artýþlarýnýn kolon düzenini bozma sorununun giderilmesi olarak \
+            geniþleyen kolon enlerinin tekrar daraltýlarak hatanýn telafi edilmesidir. Kolon enlerinin %36-30-26 yerine %34-28-24 \
+            þeklinde %2'þer kýsaltýlmasý (toplamda %6) yeterlidir." +
+            "<br/>27) Altprogram-5k h1-img-p-p elemanlý gövdede resim için float:right saða kayan serilim uygulanmýþtýr. Tarayýcý \
+            geniþliði fazlaysa, resmin solunu p-metni sarmakta, deðilse, p-metni tamamen resimden sonra gelmektedir. Baþka \
+            kayan serilim olmadýðýndan kalýcý ikili kolon serilimi yoktur." +
+            "<br/>28) Altprogram-5l önceki önek gibidir, gerçek resim yerine içiboþ (sabit ebatlý) resim çerçevesi yaratýlmýþ, float:left \
+            ile sola yaslanmýþtýr. Tarayýcý çok daralýrsa, saðdaki sarýlý p-metni tamamen alta düþebilecektir." +
+            "<br/>29) Altprogram-5m önceki örnekte resim kutusuna sadece margin-left sol-marj verilmiþken, burada çepeçevre \
+            margin dýþ marj aralýðý býrakýlmýþtýr. Ýlk p-paragraf zemin rengi alttaki p'ler gibi olsaydý, belki hata fark edilmeyecekti, \
+            ancak burada, ilk p-metni olmasa da paragraf zemin alaný resim kutusunun üstüne taþkýnlýk bozulmasý yapmaktadýr." +
+            "<br/>30) Altprogram-5n kutu marjýný yine sadece sola atfederek, ilk paragraf zemin rengi taþmasý önlenmiþ, ayrýca \
+            kutu'dan hemen sonraki ilk elemana clear:left vasfýyla, sonraki iki p-paragraf tamamen kutu altýna yayýlmýþtýr." +
+            "<br/>31) Altprogram-5o (float:left vasýflý) resim kutusu ve ilk paragraf beraberce bir div bölmesine konulup, bölmeye de \
+            tampon/padding iç aralýk ve farklý zeminrengi tanýmlanmýþ; sonradan araya clear:both yerine ayný sarýcý div için sarýcý::after \
+            içerikli blok yapýsý fakat clear:left etkisizleþtirilerek, sarýcý div sonrasý elemanlarýn bu bloktan yalýtýmý saðlanmýþtýr." +
+            "<br/>32) Altprogram-5p float:left'i sarýcý bölüm dýþýnda etkinsizleþtirmenin 3.yöntemi, sarýcýya overflow:auto vasfý atayarak \
+            bu bölme dýþý elemanlarýn otomatikmen float'dan etkilenmeden, kutudan taþmalarý/yalýtýmý saðlanmaktadýr." +
+            "<br/>33) Altprogram-5r float/kayma etkisizleþtirmenin 4.yöntemiyse float etkinliðini sarýcýyla sýnýrlayan display:flow-root \
+            kayma-köklü serilimi sadece sarýcý bölümünde uygulamaktýr." +
+            "<br/>34) Altprogram-6a bir div bölümü içinde 5 adet button düðme içerir ve herbir düðme geniþliðini %15 tanýmlayarak \
+            aktüel div eni herneyse onun %15*5=%75 varsayýlý ardýþýk (enaz varsayýlý aralýklý) sýralanýp, kalan fazlalýk sað boþluktur." +
+            "<br/>35) Altprogram-6b önceki 5 adet herbiri %15 endeki düðmeleri kapsayan div bölümü esnek serilim (display:flex), \
+            ortalanmýþ (align-items:center) ve düðmeler arasý eþit boþluk (justify-content:space-around) vasýflandýrmýþtýr." +
+            "<br/>36) Altprogram-6c ayný elemanlarýn ardýþýk sýralanmalarýný deðiþtirmiþtir. Ýlk ve son elemanlar için button:first/last-child, \
+            2 ve 4.elemanlar için button:nth-of-type(2/4), sýralama içinse order:-4/-2/4/5 deðerlerini kullanarak önceki sýralamayý \
+            tersine çevirmiþtir (artan/azalan deðil, düzensiz ardýþýklýk konumlanmalarý deðiþir)." +
+            "<br/>37) Altprogram-6d gövde içi header-h1 baþlýk ve section içi 3 adet article-h2-p elemanlarýndan oluþur. Makalelere \
+            en ve serilim tanýmlanmayýnca, varsayýlý olarak altalta ve aktüel gövde geniþliði kadar yayýlýrlar." +
+            "<br/>38) Altprogram-6e önceki css vasfýna sadece section{display:flex} makaleleri kapsayan kýsýma esnek serilim \
+            atfedilmiþtir. Makale en ve boy tanýmlanmayýnca, 3 makale 3 adet eþit geniþlikli ve enyüksek kolonla hepsi ayný hizalý \
+            3 kolona düzenlenmiþtir." +
+            "<br/>39) Altprogram-6f en belirtilmeyince eþit ende olan makalelerin herbirine önce article{flex:1 200px} eþit en \
+            atfetmiþ, sonra article:nth-of-type(3){flex:4 200px} ile 3.makaleye 200px'den fazla en atamýþtýr." +
+            "<br/>40) Altprogram-6g önceki 3 makaleyi 12 adete çoðaltmýþ, tüm makaleleri tek satýra sýralamýþ (flex-direction:row), \
+            eþit enli makaleler yatay taþýnca yatay kaydýraçlamýþtýr (overflow:auto)." +
+            "<br/>41) Altprogram-6h herbir makale enini enaz 200px tanýmlamýþ (article{flex:200px}), makalelerin satýrdaki \
+            sýralanmasýný ters-satýr (flex-direction:row-reverse), aktüel tarayýcý geniþliðiyle makaleler ayný satýrdan taþarsa \
+            alta sarmasýný (flex-wrap:wrap) saðlamýþtýr. Buna göre yatay enaz 3, ençok 5 kolon olmakta, sonda kalan-lar ise \
+            tüm eni eþit geniþlikte paylaþmaktadýr. Kolon sýralamasýnýn hepten sondan-baþa deðil, ilgili satýr bazýnda ters \
+            sýralý olduklarýna dikkat edilmelidir." +
+            "<br/>42) Altprogram-6i yine 3 makale kolonu esnek serilimlemiþ, sonra son kolona daha fazla en atfetmiþ \
+            (flex:6 200px), müteakiben 3.makale içindeki ilk div bölüm içi düðmeleri esnek eþit enli serilimlemiþtir \
+            (article:nth-of-type(3) div:first-child{flex:1 100px}). Tarayýcý daralmasýnda, taþan düðmeler alta sarmaktadýr \
+            (flex-flow:row wrap)." +
+            "<br/>43) Altprogram-7a ýzgara/grid serilime hazýrlýk olarak kab içi 7 adet div kutu tanýmlamýþ, bu kutular da \
+            aktüel ende varsayýlý altalta sýralanmýþtýr." +
+            "<br/>44) Altprogram-7b kab içi div kutular için display:grid ýzgara serilim ve (grid-template-columns:200px 200px 200px) \
+            üç adet, herbiri sabit geniþlikte kolon tanýmlanmýþtýr." +
+            "<br/>45) Altprogram-7c herbir satýrdaki üç ýzgara gözlerinin enlerini sabit deðil (2fr 1fr 1fr) olarak aktüel \
+            ene uygun esneyen, ilki 2/4, sonikisi 1/4 en paylaþým oranýnda vasýflandýrýlmýþlardýr." +
+            "<br/>46) Altprogram-7d üçlü esnek ýzgara gözlerinin aralarýnda grid-gap:20px yatay-dikey açýklýk býrakýlmýþtýr." +
+            "<br/>47) Altprogram-7e eðer üç aralýklý esnek ýzgara gözleri eþit ende olsun istersek (grid-template-grids:1fr 1fr 1fr) \
+            yerine kýsaca repeat(3,1fr) yazabiliriz." +
+            "<br/>48) Altprogram-7f mevcut 3 aralýklý tekrarlý eþit enli kutularýn boylarýný sabit belirlemek istersek ya kab \
+            için grid-auto-row:100px yada kutular için height:100px tanýmlamalýyýz." +
+            "<br/>49) Altprogram-7g þayet herhangibir kutu içerik fazlalýðý 100px'i geçerse grid-auto-row:100px vasfý \
+            taþmaya neden olur, önlemek içinse grid-auto-rows:minmax:(100px,auto) þeklinde fazlalýða esnek kýlýnmalýdýr. \
+            Daha uzun satýrdaki diðer kutular da uzun olacaktýr." +
+            "<br/>50) Altprogram-7h öncekinden farklý olarak, ýzgara kab enlemesine kutu sayýsý aktüel geniþliðe baðlý \
+            olarak deðiþsin ve herbirinin eni de enaz 200px esnek olsun istersek grid-template-columns:repeat\
+            (autofill,minmax(200px,1fr)) vasfýna deðiþtirmeliyiz." +
+            "<br/>51) Altprogram-7i ýzgara serilim boþ kutular yerine gerçek bir html sayfasýna uygulanmaktadýr. \
+            Gövde içi kab içerik kutularý dört adettir: header/baþlýk, article/makale, aside/kenarlýk, footer/ayaklýk. \
+            Izgara kutular arasýnda 20px boþluk ve kolon sayýsý 2 ve esnek enleri (grid-template-columns:1fr 3fr) \
+            vasýfla tarayýcý enine duyarlýdýr." +
+            "<br/>52) Altprogram-7j önceki anlamsýz sayfa düzenini tek tek satýr no ve kolon no'larýyla tanýmlamaktadýr. \
+            Baþlýk ve ayaklýk 1.nci ve 3.ncü satýrlara tam yayýlmakta [1,3), kenarlýk/aside article/makaleden sonraya \
+            yerleþtirilse de satýr no:2 ve kolon no:1 (1fr dar), makaleyse ayný satýr fakat kolon no:2 olarak 3fr \
+            (geniþ) tanýmlanmýþtýr. Yani kab içi elemanlarý istediðimiz satýr ve kolona koyabiliriz." +
+            "<br/>53) Altprogram-7k görüntü öncekiyle ayný olsa da kutu yerleþimleri satýr-no, kolon-no deðil \
+            ismen grid-template-areas/ýzgara alanlarý olarak satýr ve 2 kolon sýrasýyla baþlýk-baþlýk, kenarlýk-makale, \
+            ayaklýk-ayaklýk olarak adlandýrýlmýþ, sonra da bu adlar grid-area vasfýyla html elemanlarýna iliþkilendirilmiþtir. \
+            Sonradan yaptýðým deðiþiklikte görüldüðü üzere html elemanlarý farklý adsýz direkmen de kullanýlabilir." +
+            "<br/>54) Altprogram-7l header, aside, article, footer dörtlü bölmeyi önceki 3 satýr ve 2 kolon'lu (1fr 3f) \
+            ýzgara serilim yerine, bu defa 12 kolonlu minmax(0, 1fr) serilime uyarlamýþ, ama görünüþ þimdilik bozuktur." +
+            "<br/>55) Altprogram-7m þayet 12 kolonun daðýlýmý baþlýk{satýr:1, kolon:[1,13)}, kenarlýk{satýr:2, kolon:[1,4)}, \
+            makale{satýr:2, kolon[4,13)}, ayaklýk{satýr:3, kolon[1,13)} olarak tanzim edilince, görüntü düzelecektir." +
+            "<br/>56) Altprogram-7n þimdi de bir p-eleman ve üç label-input eleman çiftini içeren form, 4 satýr ve 5 \
+            kolonlu ýzgara serilime dönüþtürülmüþtür. Ýlk p-paragraf{satýr:4, kolon:(auto / span 5)} vasfýyla ýzgaranýn \
+            son satýrýna alýnýp, yayýlmasý da 5 kolona kapsatýlmýþtýr. Form label etiket{kolon:(auto / span 1)} bulunduðu \
+            satýrýn baþtan tek kolona, form input verigiriþi{kolon:(auto / span 4)} bulunduðu satýrýn etiketten sonraki \
+            kalan 4 kolona kapsatýlmýþ ve bu label-input ikilisi ilk 3 satýrý otomatikmen almýþlardýr." +
+            "<br/>57) Altprogram-8a sadece grafiksel iki satýrlý ve 12 kolonlu float:left sola kayan serilimli, ilk satýrda \
+            12 kolon, ikinci satýrdaysa farklý ende 4 kolon yapýsý sunmaktadýr. Tek kolon için en:6.25%, sol-marj:2.083% \
+             olarak tahsis edilip 12 kolon alaný (6.25+2.083)*12=%100 hesaplanmaktadýr." +
+            "<br/>58) Altprogram-8b birönceki örnekte herbir yayýlým için doðrudan verilen en/width %'sini bu defa \
+            calc(6.25%*no + 2.083*(no-1)} otomatik hesabýyla (örn.yayýlým6 için calc(6.25%*6+2.083%*5)=47.915% ) \
+            en deðerini program çalýþma esnasýnda tarayýcýya duyarlý yapmakta ve uygulamaktadýr." +
+            "<br/>59) Altprogram-8c önceki float:left serilim yerine, ayný 2 satýr 12 kolonlu grafiði ýzgara serilimle \
+            grid-template-columns:repeat(12,1fr) vasfýyla gerçekleþtirmektedir. Tek kolondan fazla yayýlýmlarý ise \
+            yayýlým6{grid-column:auto / span 6} vasfýyla 6 kolonluk, ve herbir kolonun 1fr eni de tarayýcýya duyarlý \
+            kendiliðinden hesaplanmaktadýr. Herhangibir satýr eleman boyu içerik uzunluðu sadece o satýrdaki tüm \
+            diðer elemanlarý etkilemektedir." +
+            "<br/>60) Altprogram-8d tekrar float:left serilimde 2.satýrdaki 14.eleman yayýlýmý 6 kolon deðil de 5 kolon \
+            olur ve 13-14 elemanlar arasý 1-eleman ve 2-boþluk ötelenirse 14.elemana kolon-öteleme{6.25%+2*2.083%} \
+            calc hesabýyla sol-marj aralýk býrakmayý gerektirmektedir." +
+            "<br/>61) Altprogram-8e float:left 2 satýrlý 12 kolonlu serilim bu kerre % tarayýcý ene duyarlý deðil 600px sabit \
+            en düþünülerek kolon geniþlikleri hesaplanmaktadýr ((40px+10px)*12=600px)." +
+            "<br/>62) Altprogram-8f iki satýr 12 kolonluk serilime iskelet ve normalleþtirme css harici dosya vasýflarýyla \
+            genelleþtirilen hesaplama ve ayarlar uygulanmýþtýr." +
+            "<br/>63) Altprogram-8g daha önceki float:left ve display:grid serilimleri, bu kerre her satýr içi azami 12 \
+            elemanlý ve herbirinin eni 6.25%+2.083% olan (flex:1 1 auto) esnek serilime uyarlamaktadýr. Burada da \
+            artan kolon yayýlým hesaplarý otomatikmen calc(6.25%*no+2.083%*(n0-1)) formülüyle tarayýcýya duyarlýdýr." +
+            "<br/>64) Altprogram-9a önceki tüm kolon oluþturma yöntemleri (float, grid, flex), bu defa h1-p-p sayfa \
+            elemanlarýna column-count/kolon-sayýsý ve column-width/kolon-eni vasfýyla uygulanacaktýr. Kolonsuz ilk \
+            ham sayfa görülmektedir." +
+            "<br/>65) Altprogram-9b nitekim kab içi h1-p-p elemanlara column-count:3 vasfýyla uygulanan sayfayý \
+            3 eþit ende kolona dönüþtürme ayarýyla herbir kolona yaklaþýk eþit boyda metin paylaþtýrýlacak þekilde \
+            neticelenmiþtir." +
+            "<br/>66) Altprogram-9c column-width:200px sabit kolon geniþliðiyle, tarayýcý tam açýkken sayfaya 5 kolon, \
+            enaz endeyse (600px - tamponlar) 2 kolon sýðmaktadýr. Boylar eþit paylaþtýrýlmaktadýr." +
+            "<br/>67) Altprogram-9d ama illa ki (tarayýcý eni ne olursa olsun) 3 kolon, aralarý 20px ve kolon ara sýnýr \
+            cetvelli (column-rule:4px dotted renk) olmasý da istenebilir." +
+            "<br/>68) Altprogram-9e yedi bölümlük h2-p kart'lar oluþturmakta ve column-width:250px'le tarayýcýya \
+            duyarlý sayýda kolon türetmektedir. Kart içinde break-inside:avoid vasýflý kart-içi metnini kýrmaktan kaçýn \
+            talimatý olmasaydý, bu sayfa da öncekiler gibi her kolona eþit metin paylaþýmlý yayýlacaktý. Bu vasýf \
+            kart bütünlüðünü muhafaza ettiðinden eþit kolon paylaþýmý yerine kart bütünlüðü öncüllenmekte ve \
+            bazen son kolon (eþit metin boylu yerine) tek kutu kalabilmektedir."
+    </script>
+</body>
+</html>

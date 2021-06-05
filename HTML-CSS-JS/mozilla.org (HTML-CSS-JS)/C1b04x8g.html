@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x8g.html: Esnek serilimde kolon % enlerinin calc-ulate ile hesaplatýlmasý örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #243;}
+        body {
+            background: #aaf;
+            max-width: 80%;
+            min-width: 600px;
+            padding: 20px;
+            margin: 2em auto;}
+        .sarýcý {padding-right: 2.08333333%;}
+        .satýr {display: flex;}
+        .kolon {
+            flex: 1 1 auto;
+            margin-left: 2.08333333%;
+            width: 6.25%; /* (en + sol-marj) * 12 =  %100 */
+            background: rgb(255,150,150);}
+        .kolon.yayýlým2 { width: calc((6.25%*2) + 2.08333333%); }
+        .kolon.yayýlým3 { width: calc((6.25%*3) + (2.08333333%*2)); }
+        .kolon.yayýlým4 { width: calc((6.25%*4) + (2.08333333%*3)); }
+        .kolon.yayýlým5 { width: calc((6.25%*5) + (2.08333333%*4)); }
+        .kolon.yayýlým6 { width: calc((6.25%*6) + (2.08333333%*5)); }
+        .kolon.yayýlým7 { width: calc((6.25%*7) + (2.08333333%*6)); }
+        .kolon.yayýlým8 { width: calc((6.25%*8) + (2.08333333%*7)); }
+        .kolon.yayýlým9 { width: calc((6.25%*9) + (2.08333333%*8)); }
+        .kolon.yayýlým10 { width: calc((6.25%*10) + (2.08333333%*9)); }
+        .kolon.yayýlým11 { width: calc((6.25%*11) + (2.08333333%*10)); }
+        .kolon.yayýlým12 { width: calc((6.25%*12) + (2.08333333%*11)); }
+    </style>
+</head>
+<body>
+    <div class="sarýcý">
+        <div class="satýr">
+            <div class="kolon">1</div>
+            <div class="kolon">2</div>
+            <div class="kolon">3</div>
+            <div class="kolon">4</div>
+            <div class="kolon">5</div>
+            <div class="kolon">6</div>
+            <div class="kolon">7</div>
+            <div class="kolon">8</div>
+            <div class="kolon">9</div>
+            <div class="kolon">10</div>
+            <div class="kolon">11</div>
+            <div class="kolon">12</div>
+        </div>
+        <div class="satýr">
+            <div class="kolon>13</div>
+            <div class="kolon yayýlým6">14</div>
+            <div class="kolon yayýlým3">15</div>
+            <div class="kolon yayýlým2">16</div>
+        </div>
+    </div>
+</body>
+</html>

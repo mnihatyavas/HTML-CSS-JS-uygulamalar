@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x8c.html: Oniki kolonlu ýzgarada farklý sayýda kolonlara yayýlý kutular ve boylarý örneði.</title>
+    <style>
+        html {background-color: #243;}
+        body {
+            background: #aaf;
+            max-width: 80%;
+            min-width: 600px;
+            padding: 20px;
+            margin: 2em auto;}
+        .sarýcý {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr); /* Her satýrda 12 kolon */
+            grid-gap: 20px;}
+        .kolon {background: rgb(255,150,150);}
+        .yayýlým2 { grid-column: auto / span 2;} /* 2 kolon yayýlýmlý */
+        .yayýlým3 { grid-column: auto / span 3;} /* 3 kolon yayýlýmlý */
+/*      .yayýlým4 { grid-column: auto / span 4;}
+        .yayýlým5 { grid-column: auto / span 5;} */
+        .yayýlým6 { grid-column: auto / span 6;} /* 6 kolon yayýlýmlý */
+/*      .yayýlým7 { grid-column: auto / span 7;}
+        .yayýlým8 { grid-column: auto / span 8;}
+        .yayýlým9 { grid-column: auto / span 9;}
+        .yayýlým10 { grid-column: auto / span 10;}
+        .yayýlým11 { grid-column: auto / span 11;}
+        .yayýlým12 { grid-column: auto / span 12;} */
+        .farklý {background-color: aqua;}
+    </style>
+</head>
+<body>
+    <div class="sarýcý">
+        <div class="kolon">1</div>
+        <div class="kolon">2</div>
+        <div class="kolon">3</div>
+        <div class="kolon">4</div>
+        <div class="kolon">5</div>
+        <div class="kolon">6</div>
+        <div class="kolon">7</div>
+        <div class="kolon">8</div>
+        <div class="kolon">9</div>
+        <div class="kolon">10</div>
+        <div class="kolon">11</div>
+        <div class="kolon">12</div>
+        <div class="kolon">13 biraz <br>içerik</div>
+        <div class="kolon yayýlým6">14 bunun<br>içeriði<br>daha<br>fazladýr</div>
+        <div class="kolon yayýlým3">15 daha<br>az<br>içerik</div>
+        <div class="kolon yayýlým2 farklý">16</div>
+    </div>
+</body>
+</html>

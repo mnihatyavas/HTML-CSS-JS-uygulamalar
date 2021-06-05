@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x3b.html: P-dökümanın statik konumlanma ve yayılması örneği.</title>
+    <style>
+        html {background-color: #124;}
+        body {
+            background-color: #eba;
+            max-width: 65%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;}
+        body * {margin: 0 auto;}
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;}
+        span {
+            background-color: red;
+            border: 1px solid black;}
+        .statik-konumlanma {
+            position: static;
+            top: 300px; /* Etkisiz */
+            left: -30px; /* Etkisiz */
+            background: yellow;}
+    </style>
+</head>
+<body>
+    <h1>P-dökümanın statik konumlanma ve yayılması</h1>
+
+    <p>Ben varsayılı vasıflı bir p-paragraf elemanıyım. Diğer p eleman blokları benden sonraki satırlarda altalta sıralanacaklardır.</p>
+    <p class="statik-konumlanma"><span>Statik konumlanmada top ve left vasıfları geçersizdir.</span> Varsayılı olarak genişliğimiz, içinde bulunduğumuz ebeveyne %100 yayılacak, yüksekliğimiz ise yavru metnimizin uzunluğuya artacaktır. Toplam en ve boyumuz = içerik-en/boy + tamponlar + sınır-en/boy değerlerine bağlıdır.</p>
+    <p>Marjlarımızla birbirlerimizden aralanmaktayız. Bitişik eleman marjlandırmasında, marj çökmesi sebebiyle tek elemanın marjı kaale alınır, herikisinin toplamı değil.</p>
+    <p><span>Bunun gibi</span> ve <span>şunun gibi</span> satıriçi elemanları <span>uzun içerikli satır taşmasında kalanı biralt satıra kayacak</span>, metin kelimeleri ara boşluklarla bütün olarak bir satırda kalacak, blok yada şöyle bir uzun resimse: <img src="resim/uzun.jpg" height="65" width="450"> üst satıra sığmayınca bütün olarak alt satıra kayacaktır.</p>
+</body>
+</html>

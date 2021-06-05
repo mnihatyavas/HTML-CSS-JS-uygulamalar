@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x6i.html: Esnek üç makaleden sonuncunun yatay düğmelerle karma esnek kutu oluşturması örneği.</title>
+    <style>
+        html {background-color: #243;}
+        body {
+            background: #db9;
+            max-width: 90%;
+            min-width: 800px;
+            margin: 0 auto;
+            border: 5px solid purple;
+            font-family: sans-serif}
+        header {
+            background: purple;
+            height: 100px;}
+        h1 {
+            text-align: center;
+            color: pink;
+            line-height: 100px;
+            margin: 0;}
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;}
+        em, h2 {color: brown;}
+        section {display: flex;}
+        article {flex: 1 200px;}
+        article:nth-of-type(3) {
+            flex: 6 200px;
+            display: flex;
+            flex-flow: column;}
+        article:nth-of-type(3) div:first-child {
+            flex: 1 100px;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-around;
+            background-color: DodgerBlue;
+            border: 1px solid red;}
+        button {
+            flex: 1 auto;
+            margin: 5px;
+            font-size: 18px;
+            line-height: 1.5;
+            background-color: brown;
+            color: white;}
+        button:hover {color: yellow;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Üçüncü Makalenin Yatay Esnek Düğmelerle Karması</h1>
+    </header>
+
+    <section>
+        <article>
+            <h2>İlk makale</h2>
+            <p><em>Anlamsız dolgu metnidir.</em> Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        </article>
+        <article>
+            <h2>İkinci makale</h2>
+            <p><em>Anlamsız dolgu metnidir.</em> Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        </article>
+        <article>
+            <div>
+                <button>Tebessüm et</button>
+                <button>Gülümse</button>
+                <button>Göz kırp</button>
+                <button>Omuz silk</button>
+                <button>Yüz kızart</button>
+            </div>
+            <h2>Üçüncü makale</h2>
+            <div>
+                <p><em>Anlamsız dolgu metnidir.</em> Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+                <p><em>Anlamsız dolgu metnidir.</em> Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x8e.html: Ýki satýrda sola kayan farklý px-enli kutularýn sabit serilimi örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #243;}
+        body {
+            background: #aaf;
+            width: 650px;
+            padding: 20px;
+            margin: 2em auto;}
+        .sarýcý {padding-right: 10px;}
+        .satýr {clear: left;}
+        .kolon {
+            float: left;
+            margin-left: 10px;
+            width: 40px;
+            background: rgb(255,150,150);}
+
+        /* 2 kolonlu en (80px) + tek-marj (10px) = */
+        .kolon.yayýlým2 {width: 90px;}
+        /* 3 kolonlu en (120px) + iki-marj (20px) = */
+        .kolon.yayýlým3 { width: 140px;}
+        /* Ve böylece hesaplanýr... */
+        .kolon.yayýlým4 {width: calc(40px * 4 + 10px * 3);}
+        .kolon.yayýlým5 {width: calc(40px * 5 + 10px * 4);}
+        .kolon.yayýlým6 {width: calc(40px * 6 + 10px * 5);}
+        .kolon.yayýlým7 {width: calc(40px * 7 + 10px * 6);}
+        .kolon.yayýlým8 {width: calc(40px * 8 + 10px * 7);}
+        .kolon.yayýlým9 {width: calc(40px * 9 + 10px * 8);}
+        .kolon.yayýlým10 {width: calc(40px * 10 + 10px * 9);}
+        .kolon.yayýlým11 {width: calc(40px * 11 + 10px * 10);}
+        .kolon.yayýlým12 {width: calc(40px * 12 + 10px * 11);}
+    </style>
+</head>
+<body>
+    <div class="sarýcý">
+        <div class="satýr">
+            <div class="kolon">1</div>
+            <div class="kolon">2</div>
+            <div class="kolon">3</div>
+            <div class="kolon">4</div>
+            <div class="kolon">5</div>
+            <div class="kolon">6</div>
+            <div class="kolon">7</div>
+            <div class="kolon">8</div>
+            <div class="kolon">9</div>
+            <div class="kolon">10</div>
+            <div class="kolon">11</div>
+            <div class="kolon">12</div>
+        </div>
+        <div class="satýr">
+            <div class="kolon yayýlým1">13</div>
+            <div class="kolon yayýlým6">14</div>
+            <div class="kolon yayýlým3">15</div>
+            <div class="kolon yayýlým2">16</div>
+        </div>
+    </div>
+</body>
+</html>

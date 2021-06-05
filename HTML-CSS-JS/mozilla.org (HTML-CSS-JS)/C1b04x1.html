@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1b04x1.html: Mutlak konumlu ve sola/saða kayan vasýflý kutular örneði.</title>
+    <style type="text/css">
+        html {background-color: #a86;}
+        body {
+            background: DarkSlateGray;
+            padding: 50px;
+            max-width: 80%;
+            min-width: 500px;
+            height: 250px;
+            margin: 5em auto;
+            text-align: center;}
+        div {font: 12px Arial;}
+        span {font-weight: bold;}
+        #mutlak-konum1 { /* Div #1 */
+            position: absolute;
+            width: 150px;
+            height: 200px;
+            top: 10px;
+            right: 140px;
+            border: 1px dashed #990000;
+            background-color: #ffdddd;}
+        #varsayýlý { /* Div #4 */
+            height: 100px;
+            border: 1px dashed #999966;
+            background-color: #ffffcc;
+            margin: 0px 10px;}
+        #kay1 { /* Div #2 */
+            margin: 0px 10px 0px 20px;
+            float: left;
+            width: 150px;
+            height: 200px;
+            border: 1px dashed #009900;
+            background-color: #ccffcc;
+            box-sizing: border-box;
+            padding-top: 140px;}
+        #kay2 { /* Div #3 */
+            margin: 0px 20px 0px 10px;
+            float: right;
+            width: 150px;
+            height: 200px;
+            border: 1px dashed #009900;
+            background-color: #ccffcc;
+            box-sizing: border-box;
+            padding-top: 140px;}
+        #mutlak-konum2 { /* Div #5 */
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            top: 130px;
+            left: 100px;
+            border: 1px dashed #990000;
+            background-color: #ffdddd;}
+    </style>
+</head>
+<body>
+    <br/><br/>Body gövde
+    <div id="mutlak-konum1">
+        <br /><span>DIV #1</span>
+        <br />position: absolute;
+    </div>
+
+    <div id="kay1">
+        <br /><span>DIV #2</span>
+        <br />float: left;
+    </div>
+
+    <div id="kay2">
+        <br /><span>DIV #3</span>
+        <br />float: right;
+    </div>
+
+    <br />
+    <div id="varsayýlý">
+        <br /><span>DIV #4</span>
+        <br />varsayýlý kutu
+    </div>
+
+    <div id="mutlak-konum2">
+        <br /><span>DIV #5</span>
+        <br />position: absolute;
+    </div>
+</body>
+</html>
