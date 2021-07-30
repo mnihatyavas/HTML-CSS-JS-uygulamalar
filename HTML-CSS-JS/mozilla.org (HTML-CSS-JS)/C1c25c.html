@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c25c.html: Günlük alýþveriþi yapan çocuðun günlük harçlýðýnýn artmasý örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 60%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        input {width:20px; height:20px;}
+    </style>
+</head>
+<body>
+    <label for="alýþveriþ-kontrolu">Alýþveriþi çocuk mu yaptý? </label>
+    <input type="checkbox" id="alýþveriþ-kontrolu">
+
+    <p></p>
+
+    <script>
+        const çentikKutusu = document.querySelector ("input");
+        const paragraf = document.querySelector ("p");
+        let alýþveriþYaptý = false;
+        günlükHarçlýk();
+
+        çentikKutusu.addEventListener ("change", function() {
+            çentikKutusu.disabled = true;
+            alýþveriþYaptý = true;
+            günlükHarçlýk();
+        }); // çen..sonu...
+
+        function günlükHarçlýk() {
+            if (alýþveriþYaptý === true) {var günlükHarçlýk = 10;
+            }else {var günlükHarçlýk = 5;}
+            paragraf.textContent = "Çocuðun günlük harçlýðý: " + günlükHarçlýk + "TL'dir.";
+        } // func sonu...
+    </script>
+</body>
+</html>

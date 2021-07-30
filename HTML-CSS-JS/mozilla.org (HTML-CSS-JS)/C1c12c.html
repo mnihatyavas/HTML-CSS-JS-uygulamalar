@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c12c.html: Tesadüfi sayý tahmini programýndaki js kodlama hatalarýný ayýklama örneði.</title>
+    <style>
+        html {background-color: #247;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 600px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 2px solid tomato;}
+        input, button {
+            background-color:Navy;
+            color:orange;
+            font-size:17px;}
+        .sonuç {
+            font-size: 18px;
+            padding: 3px;}
+    </style>
+</head>
+<body>
+    <h1>Sayý tahmin oyunu</h1>
+    <p>Her keresinde tesadüfi [1,100] arasý sayý seçiyoruz. Seçileni 10 defa veya altý tahminde bulabilecek misiniz, görelim. Tahmininizin yüksek yada düþük olduðunu söyleyeceðiz.</p>
+
+    <div>
+        <label for="tahminAlaný">Bir tahmin girin: </label>
+        <input type="text" id="tahminAlaný" class="tahminEt">
+        <input type="submit" value="Tahmininizi kontrole gönderin" class="tahmininiGönder">
+    </div>
+
+    <div class="sonuçParagraflarý">
+        <p class="tahminler"></p>
+        <p class="düþükYadaYüksek"></p>
+        <p class="sonuç"></p>
+    </div>
+
+    <script>
+        let tahminler = document.querySelector (".tahminler");
+        let düþükYüksek = document.querySelector ("düþükYadaYüksek"); // ("düþükYadaYüksek") <==> (".düþükYadaYüksek"): sýnýf .'sý eksik
+        let sonuç = document.querySelector (".sonuç");
+        let gönder = document.querySelector (".tahmininiGönder");
+        let tahminin = document.querySelector (".tahminEt");
+        let tahminSayýsý;
+        let seçilenTesadüfiSayý;
+        let baþlatDüðmesi;
+
+        oyunuBitir();
+        gönder.addeventListener ("click", tahmininKontrolu); // addeventListener <==> addEventListener: event'in ilkharfi büyük olmalý
+
+        function tahmininKontrolu() {
+            let oyuncuTahmini = Number (tahminin.value);
+            if (tahminSayýsý === 1) {tahminler.textContent = "Önceki tahminlerin: ";}
+            tahminler.textContent += oyuncuTahmini + " ";
+            if (oyuncuTahmini === seçilenTesadüfiSayý) {
+                sonuç.textContent = "TEBRÝKLER, " + tahminSayýsý + ".kerede BÝLDÝNÝZ!";
+                sonuç.style.backgroundColor = "green"; sonuç.style.color = "yellow";
+                düþükYüksek.textContent = "";
+                oyunuBitir();
+            }else if (tahminSayýsý === 10) {
+                    sonuç.textContent = "!!!10 KEREDE BÝLEMEDÝN. OYUN BÝTTÝ!!!";
+                    düþükYüksek.textContent = "";
+                    oyunuBitir();
+                }else {
+                    sonuç.textContent = "YANLIÞ!";
+                    sonuç.style.backgroundColor = "red"; sonuç.style.color = "yellow";
+                    if (oyuncuTahmini < seçilenTesadüfiSayý) {düþükYüksek.textContent = tahminSayýsý + ".tahminin DÜÞÜK!";
+                    }else if (oyuncuTahmini > seçilenTesadüfiSayý) {düþükYüksek.textContent = tahminSayýsý + ".tahminin YÜKSEK!";}
+            } // if-ese sonu...
+            tahminSayýsý++;
+            tahminin.value = "";
+            tahminin.focus();
+        } // func sonu...
+        function oyunuBitir() {
+            tahminin.disabled = true;
+            gönder.disabled = true;
+            baþlatDüðmesi = document:createElement ("button"); // : <==> . nokta yerine : kullanýlmýþ
+            baþlatDüðmesi.textContent = "Yeni bir oyun baþlat";
+            document.body.appendChild (baþlatDüðmesi);
+            baþlatDüðmesi.addEventListener ("click", oyunBaþlat);
+        } // func sonu...
+        function oyunBaþlat() {
+            tahminSayýsý = 1;
+            baþlatDüðmesi.parentNode.removeChild (baþlatDüðmesi);
+            tahminin.disabled = false;
+            gönder.disabled = false;
+            tahminin.value = "";
+            tahminin.focus();
+            tahminler.textContent="";
+            sonuç.style.backgroundColor = sonuç.style.color = "#a97";
+            seçilenTesadüfiSayý = Math.floor (Math.random()) + 1; // (Math.random()) <==> (Math.random() * 100): *100 unutulmuþ
+        } // func sonu...
+    </script>
+</body>
+</html>

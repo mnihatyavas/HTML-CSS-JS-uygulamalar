@@ -1,0 +1,14 @@
+/* C1c33a1.css: Çarpýþarak renk deðiþtiren hareketli toplarýn baþlýk ve tuval css vasfý alt-örneði. */
+
+h1 {
+     font-size: 2rem;
+     letter-spacing: -1px;
+     position: absolute;
+     margin: 0;
+     top: -4px;
+     right: 40px;
+     color: transparent;
+     text-shadow: 0 0 4px yellow;}
+canvas {
+    height: 100%;
+    width: 100%;}

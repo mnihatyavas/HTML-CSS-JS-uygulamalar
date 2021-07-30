@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15a3.html: Const deðiþkenin deðiþtirilemezliði, aritmetik iþleme tabi deðiþkenin sayý tipli olmasý örneði.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" deðiþtirilebilir deðiþtirilebilir-js" style="height: 250px;">
+const ismim = "Z.Nihat Candan";
+// ismim = "M.Nihat Yavaþ"; // const deðiþken deðeri sonradan deðiþtirilemez
+// let yaþým = "64";
+let yaþým = 64; // Aritmetik hesaplamaya tabi deðiþken sayý tipli olmalýdýr
+let ikametim = "Toroslar - Mersin";
+ikametim = "Kartal - Ýstanbul"; // let'li deðiþken deðeri sonradan deðiþtirilebilir
+section.innerHTML = "";
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+let paragraf3 = document.createElement ("p");
+paragraf1.textContent = ismim;
+paragraf2.textContent = `Hesaplanan yaþým: ${yaþým - (1978 - 1957)}`;
+paragraf3.textContent = ikametim;
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+section.appendChild (paragraf3);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script class="deðiþtir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c24d1.html: Týklanan video oynatýr, týklanan çerçeve kaybeder (hatalý) örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 70%;
+            min-width: 500px;
+            height:500px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        button {background-color:Navy; color:orange;}
+        div {
+            position: absolute;
+            top: 45%;
+            transform: translate(-50%,-50%);
+            width: 480px;
+            height: 380px;
+            border-radius: 10px;
+            background-color: aqua;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.9));}
+        .gösterme {left: -50%;}
+        .göster {left: 50%;}
+        div video {
+            display: block;
+            width: 400px;
+            margin: 40px auto;}
+    </style>
+</head>
+<body>
+    <button>Video'yu göster</button>
+    <p style="font-size:13px; color:white;">Video'nun ortasýna týklarsanýz oynar, çerçeveye týklarsanýz kaybolur.</p>
+
+    <div class="gösterme">
+        <video>
+            <source src="resim/medya/tavþan.mp4" type="video/mp4">
+            <source src="resim/medya/tavþan.webm" type="video/webm">
+            <p>Tarayýcýnýz HTML5 video'yu desteklemiyorsa <a href="resim/medya/tavþan.mp4">video baðlantýsýna týklamayý</a> deneyin.</p>
+        </video>
+    </div>
+
+    <script>
+        const düðme = document.querySelector ("button");
+        const videoBölümü = document.querySelector ("div");
+        const video = document.querySelector ("video");
+
+        düðme.onclick = function() {videoBölümü.setAttribute ("class", "göster");}
+        videoBölümü.onclick = function() {videoBölümü.setAttribute ("class", "gösterme");};
+        video.onclick = function() {video.play();};
+    </script>
+</body>
+</html>

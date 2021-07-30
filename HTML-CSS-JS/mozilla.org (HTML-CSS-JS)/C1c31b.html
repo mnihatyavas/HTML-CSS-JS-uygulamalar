@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c31b.html: Anahtar-deðer çift kuruculu argümanlý fonksiyonla yeni nesnel deðiþkenler türetme örneði.</title>
+    <style>
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <p>Bu örnek, komutlarýnýzýn tarayýcýdaki F12 HataAyýklayýcý/Debugger konsolundan girmenizi gerektirmektedir (Daha fazla bilgi için bakýnýz: <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="b">What are browser developer tools</a>: Tarayýcý geliþtirme araçlarý nelerdir).</p>
+
+</body>
+    <script>
+        function Þahýs (ad, soyad, yaþ, cinsiyet, hobiler) {
+            this.isim = {"adý": ad, "soyadý": soyad};
+            this.yaþ = yaþ;
+            this.cinsiyet = cinsiyet;
+            this.hobiler = hobiler;
+            this.biyografi = function() {alert (this.isim.adý + " " + this.isim.soyadý + " " + this.yaþ + " yaþýndadýr. Hobileri: " + this.hobiler [0] + ", " + this.hobiler [1] + " ve " + this.hobiler [2] +"'dür."); };
+            this.selam = function() {alert ("Merhaba, adým \"" + this.isim.adý + "\"dýr.");};
+        }; // func sonu...
+
+        let þahýs1 = new Þahýs ("Nihat", "Yavaþ", 64, "erkek", ["müzik", "bisiklet", "yürüyüþ"]);
+        console.log (þahýs1);
+        console.log (þahýs1.biyografi() );
+        console.log (þahýs1.selam() );
+        console.log (þahýs1.isim.adý + " " + þahýs1.isim ["soyadý"] );
+        console.log (þahýs1.hobiler [2] );
+
+        let þahýs2 = new Þahýs ("Nihal Yavaþ", "Candan", 66, "kadýn", ["müzik", "yemek", "yürüyüþ"]);
+        console.log (þahýs2.selam() );
+        let þahýs3 = new Þahýs ("Sevim", "Yavaþ", 57, "kadýn", ["müzik", "turizm", "yürüyüþ"]);
+        console.log (þahýs3.selam() );
+    </script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c31a.html: Anahtar-deðer ve fonksiyon içerikli nesnel sabit deðiþken örneði.</title>
+    <style>
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <p>Bu örnek, komutlarýnýzýn tarayýcýdaki F12 HataAyýklayýcý/Debugger konsolundan girmenizi gerektirmektedir (Daha fazla bilgi için bakýnýz: <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="b">What are browser developer tools</a>: Tarayýcý geliþtirme araçlarý nelerdir).</p>
+
+</body>
+    <script>
+        const þahýs1 = {
+            ad: ["Nihat", "Yavaþ"],
+            isim () {console.log ("Tam ad: " + this.ad [0] + " " + this.ad [1] + ".");},
+            yaþ: 64,
+            cinsiyet: "erkek",
+            hobiler: ["bisiklet", "yürüyüþ"],
+            biyografi () {alert (`${this.ad [0]} ${this.ad [1]} ${this.yaþ} yaþýndadýr. Hobileri: ${this.hobiler [0]} ve ${this.hobiler [1]}.` ); },
+            selam() {alert (`Merhaba! Adým ${this.ad [0]}.`); },
+        }; // þahýs1 sonu...
+
+         const veriAdý1 = "boy";
+         const veriDeðeri1 = "1.70m";
+         þahýs1 [veriAdý1] = veriDeðeri1;
+
+        console.log (þahýs1);
+        console.log (þahýs1.ad [0] + " " + þahýs1.ad [1]);
+        console.log (þahýs1 ["ad"] );
+        console.log (þahýs1 ["ad"] [0] + " " + þahýs1 ["ad"] [1]);
+        console.log (þahýs1 ["boy"] + "=" + þahýs1.boy );
+        console.log ("Kýsa yaþam-öyküsü: " + þahýs1.biyografi );
+        console.log ("Kýsa yaþam-öyküsü: " + þahýs1.biyografi() );
+        console.log ("Tanýþalým: " + þahýs1.selam() );
+        console.log (þahýs1.isim() );
+    </script>
+</html>

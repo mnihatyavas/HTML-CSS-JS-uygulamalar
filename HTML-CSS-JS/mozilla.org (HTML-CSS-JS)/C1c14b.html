@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c14b.html: Hasta doktor diyaloðunda þartlý teþhis ve zeminrengi deðiþimi örneði.</title>
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #247;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 350px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            font-family: monospace;}
+        p {
+            font-size: 1.5rem;
+            text-align: center;}
+        div {
+            display: block;
+            width: 300px;
+            margin: 0 auto;}
+        input {
+            background-color:navy;
+            color:orange;
+            width: 70%;}
+        button {
+            background-color: DarkRed;
+            color: yellow;
+            width: 27%;}
+    </style>
+</head>
+<body>
+    <p>Bugün nasýlsýn bakalým [Mutlu/Üzgün/Kýzgýn/Hasta]?</p>
+    <div><input type="text"> <button>Týkla</button></div>
+    <p class="teþhis"></p>
+</body>
+    <script>
+        const cevap = document.querySelector ("input");
+        const düðme = document.querySelector ("button");
+        const teþhisSunumu = document.querySelector (".teþhis");
+        const arkaRenk = document.querySelector ("html");
+
+        cevap.focus();
+        düðme.onclick = function() {
+            var yanýt = cevap.value.toLowerCase();
+            if (yanýt === "mutlu") {
+                teþhisSunumu.textContent = "Bugün kendini iyi hissetmene sevindim!";
+                arkaRenk.style.backgroundColor = "green";
+            }else if (yanýt === "üzgün") {
+                teþhisSunumu.textContent = "Zavallým benim, sana uyku hapý yazayým, istirahat et.";
+                arkaRenk.style.backgroundColor = "DodgerBlue";
+            }else if (yanýt === "kýzgýn") {
+                teþhisSunumu.textContent = "Vay, sakinleþ, sana sinir ve kas rahatlatýcý hap yazýyorum, pamuk gibi olursun.";
+                arkaRenk.style.backgroundColor = "red";
+            }else if (yanýt === "hasta") {
+                teþhisSunumu.textContent = "Birkaç gün hastanede yat, seni iyileþtiririz.";
+                arkaRenk.style.backgroundColor = "yellow";
+            }else {
+                teþhisSunumu.textContent = "Bu duruma nasýl teþhis koyacaðýmý bilemiyorum...";
+                arkaRenk.style.backgroundColor = "black";
+            } // if-else sonu...
+       } // func sonu...
+    </script>
+</html>

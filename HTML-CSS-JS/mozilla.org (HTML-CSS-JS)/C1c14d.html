@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c14d.html: Metinalaný js kodlamasýyla etkileþimli canvas tuval'de þekik çizimi örneði.</title>
+    <style>
+        html {background-color: #135;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+        button {background-color:Navy; color:orange;}
+        h2 {font-size: 16px;}
+        .metinalaný-etiketi {
+            margin: 0;
+            text-align: left;
+            font-size: 0.7rem;
+            width: 90%;}
+        textarea {
+            background-color: Linen;
+            border: 1px solid black;
+            border-left: 6px solid #558ABB;
+            color: #4D4E53;
+            max-width: 700px;
+            padding: 10px 10px 0px;}
+        .baþlat-düðmesi {
+            text-align: right;
+            width: 90%;
+            max-width: 700px;
+            padding: 5px 10px 5px 26px;}
+        canvas {
+            background-color: LightGreen;
+            border: 1px solid #4D4E53;}
+    </style>
+</head>
+<body>
+    <h2>Etkileþimli çizim</h2>
+    <canvas id="tuval" width="400" height="250"></canvas>
+    <p></p>
+
+    <h2>Deðiþtirilebilir JS kodlamasý</h2>
+    <p class="metinalaný-etiketi">Kodlama alaný odaðýndan ESC ile yada dýþarýyý týklayarak çýk (Tab sekme aralýðý yapar).</p>
+    <textarea id="kod" style="height: 100px; width: 90%">
+// Herçeþit tuval çizimi deneyebilirsiniz
+x = 50;
+y = 50;
+tuvalÝçeriði.fillStyle = "DarkGreen";
+tuvalÝçeriði.fillRect (10, 10, x, y);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="baþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script>
+        const tuvalim = document.getElementById ("tuval");
+        const paragraf = document.querySelector ("p");
+        const tuvalÝçeriði = tuvalim.getContext ("2d");
+        const kodlamaMetinalaný = document.getElementById ("kod");
+        const yenibaþlat = document.getElementById ("baþlat");
+        let ilkKodlama = kodlamaMetinalaný.value;
+
+        window.addEventListener ("load", tuvaliÇiz);
+        kodlamaMetinalaný.addEventListener ("input", tuvaliÇiz);
+        yenibaþlat.addEventListener ("click", function() {kodlamaMetinalaný.value = ilkKodlama; tuvaliÇiz();});
+
+        function tuvaliÇiz() {
+            tuvalÝçeriði.clearRect (0, 0, tuvalim.width, tuvalim.height);
+            eval (kodlamaMetinalaný.value);
+            paragraf.textContent = "Aktüel kare " + x + "px-en ve " + y + "px-boy'ludur.";
+        } // func sonu...
+
+        kodlamaMetinalaný.onkeydown = function (olay) {
+            if (olay.keyCode === 9) {// Tab basýlýrsa
+                olay.preventDefault();
+                imleçteGir ("\t"); // Sekme aralýðý býrak
+            } // if sonu...
+            if (olay.keyCode === 27) {kodlamaMetinalaný.blur();} // Esc basýlýrsa
+        }; // kod..sonu...
+
+        function imleçteGir (metin) {
+            const kaydýraçKonumu = kodlamaMetinalaný.scrollTop;
+            const imleçKonumu = kodlamaMetinalaný.selectionStart;
+            const ön = (kodlamaMetinalaný.value).substring (0, imleçKonumu);
+            const arka = (kodlamaMetinalaný.value).substring (kodlamaMetinalaný.selectionEnd, kodlamaMetinalaný.value.length);
+            kodlamaMetinalaný.value = ön + metin + arka;
+            imleçKonumu = imleçKonumu + metin.length;
+            kodlamaMetinalaný.selectionStart = imleçKonumu;
+            kodlamaMetinalaný.selectionEnd = imleçKonumu;
+            kodlamaMetinalaný.focus();
+            kodlamaMetinalaný.scrollTop = kaydýraçKonumu;
+        } // func sonu...
+    </script>
+</html>

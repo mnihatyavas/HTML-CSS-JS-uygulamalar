@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c30.html: OOJS/ObjectOrientedJS/Nesneye yönelik JS kodlama örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Nesneye Yönelik JS</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1c31a.html" target="_">1a) Anahtar-deðer ve fonksiyon içerikli nesnel sabit deðiþken örneði</a></h4>
+    <h4><a href="C1c31b.html" target="_">1b) Anahtar-deðer çift kuruculu argümanlý fonksiyonla yeni nesnel deðiþkenler türetme örneði</a></h4>
+    <h4><a href="C1c31c.html" target="_">1c) Kompleks iç fonksiyonlu kurucu þablon fonksiyonlarla nesnel deðiþkenler türetme örneði</a></h4>
+    <h4><a href="C1c32a.html" target="_">2a) Argümanlý kurucu fonksiyonlarla iç kodlamalý yada verigiriþili yeni nesnel deðiþkenler türetme örneði</a></h4>
+    <h4><a href="C1c32b1.html" target="_">2b1) Prototip fonksiyonlarýn eklendiði argümanlý kurucu fonksiyonla iç/dýþ kodlamalý nesnel deðiþkenler türetme örneði</a></h4>
+    <h4><a href="C1c32b2.html" target="_">2b2) Kurucu fonksiyonu miraslayan yavru kurucu fonksiyonun nesnel deðiþkenler türetmesi örneði</a></h4>
+    <h4><a href="C1c32b3.html" target="_">2b3) Þahýs kurucu fonksiyonu miraslayan Öðretmen ve Öðrenci kurucu yavru fonksiyonlarýn nesnel tiplemeler türetmesi örneði</a></h4>
+    <h4><a href="C1c32c1.html" target="_">2c1) Þahýs kurucu sýnýfý miraslayan Öðretmen kuruculu yavru sýnýfýn yeni nesnel tiplemeler türetmeleri örneði</a></h4>
+    <h4><a href="C1c32c2.html" target="_">2c2) Þahýs'ý miraslayan Öðretmen sýnýfýn alýcý/koyucu fonksiyonlarla kurucu deðiþken deðerlerini yansýtmasý/deðiþtirmesi örneði</a></h4>
+    <h4><a href="C1c33a1.html" target="_">3a1) Kurucu fonksiyonla türetilen hareketli toplarýn çarpýþarak renk deðiþtirmeleri örneði</a></h4>
+    <h4><a href="C1c33a2.html" target="_">3a2) Kurucu sýnýfla türetilen hareketli toplarýn çarpýþarak renk deðiþtirmeleri örneði</a></h4>
+    <h4><a href="C1c33b.html" target="_">3b) Þekil kurucu fonksiyonu miraslayan Top ve Karadelik yavrularýn türetilen nesnel toplarý çarpýþtýrýp imhasý örneði</a></h4>
+    <h4><a href="C1c33c.html" target="_">3c) Þekil kurucu sýnýfý miraslayan Top ve Karadelik yavru sýnýflarýn türetilen nesnel toplarý çarpýþtýrýp imhasý örneði</a></h4>
+    <h4><a href="C1c34a.html" target="_">4a) JS nesnesi anahtar:deðer'lerinin çevrimiçi özel fonla sergilenmesi örneði</a></h4>
+    <h4><a href="C1c34b.html" target="_">4b) JSON dosyasýnýn XMLHttpRequest-GET json talebiyle (lokal) çevrimiçi okunup sergilenmesi örneði</a></h4>
+    <h4><a href="C1c34c.html" target="_">4c) JSON dosyasýnýn XMLHttpRequest-GET text talebiyle (lokal) çevrimiçi okunup sergilenmesi örneði</a></h4>
+    <h4><a href="C1c35a1.html" target="_">5a1) Anahtar-deðer içerikli nesnel deðiþkenin konsol ve html sayfasýndan yansýtýlmasý örneði</a></h4>
+    <h4><a href="C1c35a2.html" target="_">5a2) Müzik grubu ve çoklu albümlerinin konsol ve tarayýcýda yansýtýlmasý örneði</a></h4>
+    <h4><a href="C1c35a3.html" target="_">5a3) Kedi sýnýf kurucu deðiþkenleri ve prototip fonksiyonundan iki suretleme/tipleme türetme örneði</a></h4>
+    <h4><a href="C1c35b1.html" target="_">5b1) Kurucu ve prototip fonksiyonlarla farklý eþkenarlarýn uzunluklarýnýn hesaplanmasý örneði</a></h4>
+    <h4><a href="C1c35b2.html" target="_">5b2) Sýnýf içi kurucu ve altmetodla farklý eþkenarlarýn uzunluklarýnýn hesaplanmasý örneði</a></h4>
+    <h4><a href="C1c35b3.html" target="_">5b3) Eþkenar'ý miraslayan Kare sýnýfý ve kurucu/altmetodlarýnýn çevre ve alan hesaplarý örneði</a></h4>
+    <h4><a href="C1c35c.html" target="_">5c) JSON dosyasýnýn fetch-metin çevrimiçi okunup içerdiði kayýtlarýn iþlenerek sergilenmesi örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) OOJS nesneye yönelik JS kodlamayla karþýlýklý etkileþimli deðiþiklikler sunulmaktadýr. Toplam 5 grup kapsamýnda \
+            23 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-1a nesne tipli sabit deðiþken içerikleri anahtar:deðer çiftleri ve fonksiyon(){..} tanýmlarýndan \
+            oluþmaktadýr. Sonradan 'nesne[anahtar]=deðer' yada 'nesne.fonk=function(){}' atamasýyla yeni içerikler katýlabilir. \
+            Nesne içi anahtarlar 'this.anahtar' þeklinde tanýmlanmalýdýr. F12 konsol çýktýlarý için console.log(..) hazýr fonksiyonu \
+            kullanýlmýþtýr." +
+            "<br/>3) Altprogram-1b sabit içerikli nesnel deðiþkenler yerine kurucu þablon fonksiyon parametreleriyle this.anahtar=\
+            parametre/fonksiyon/deðer tanýmlarý yapýlýp, bu þablondan, farklý argümanlar giriþiyle çoklu nesnel kayýtlar türetmek \
+            mümkündür. Bu türetilen nesnel deðiþken ve fonksiyon çýktýlarý F12 konsola yada alert/tarayýcýya yansýtýlabilmektedir." +
+            "<br/>4) Altprogram-1c kurucu þablon fonksiyon içi this.anahtar=deðer/dizi/nesne/fonksiyon kurucu deðiþken sunumlarý \
+            þartlý (erkek/bayan) argüman girdileriyle farklý alert/tarayýcý yada F12 konsol çýktýlarý sergileyebilecek kapsamlý JS kodlamalarý \
+            içerebilmektedir. Çoklu dizisel/nesnel deðerler daha pratik for-i endeksli döngülerle iþlenebilmektedir." +
+            "<br/>5) Altprogram-2a kurucu fonksiyon içi deðiþken ve (biyografi, selam) altfonksiyonlara ayrýca harici bir prototip \
+            altfonksiyon daha (veda) ilave edilmiþ; açýlýþ paragrafýnda görülen js kodlamasý kopyalanýp düðme týklanýnca da \
+            p-paragraftaki eval-kodlama geçerlilik kazanmýþtýr." +
+            "<br/>6) Altprogram-2b1 birönceki örnek daha modüler yapýlmýþtýr. Kurucu fonksiyon sadece argüman giriþlerini \
+            barýndýran this.kurucu deðiþkenleri kapsamakta; diðer altfonksiyonlar (biyografi, selam ve veda) ise harici prototip \
+            tanýmlarla eklenmektedir. Alttaki kodlamayý, yada kendi istediðiniz baþka kodlamalarý verialanýna girip düðmeyi \
+            týklarsanýz jskodlamaya geçerlilik kazandýrýrsýnýz. Olasý kodlama hatalarýný takip edebilmek için F12 Hataayýklama \
+            konsol penceresi açýk olmalýdýr." +
+            "<br/>7) Altprogram-2b2 tanýmlý Þahýs kurucu fonksiyon ve protiplerini Þahýs.call(argümanlar) ile miraslayan Öðretmen \
+            kurucu fonksiyonu, hem bir fazla argüman giriþi yapmýþ, hem de mirasladýðý selam fonksiyonunu kendince deðiþtirmiþtir. \
+            Sonradan verialanýna Þahýs yada Öðretmen tipleme jskodlamasý da girilebilir." +
+            "<br/>8) Altprogram-2b3 Þahýs kurucu fonksiyon ve prototiplerini hem Öðretmen hem de Öðrenci kurucu fonksiyonlar \
+            miraslamýþ ve mevcut selam altfonksiyonunu kendilerine uyarlamýþlardýr. Verigiriþ alanýndan yeni kiþi, öðretmen, öðrenci \
+            tipleme jskodlamalarý girilebilir." +
+            "<br/>9) Altprogram-2c1 aynen kurucu fonksiyonlardaki gibi kurucu sýnýflarla da (class Þahýs) constructor/kurucu metodlu \
+            this.kurucu deðiþkenler ve diðer (selam, veda) metodlarý tanýmlanýp, bunu da (class Öðretmen extends Þahýs) ve \
+            super(argümanlar..) tanýmlarýyla miraslayan yavru sýnýflar tanýmlanýp, konsoldan tipleme çýktýlarý sergilenmiþtir." +
+            "<br/>10) Altprogram-2c2 Þahýs sýnýfýný extends/kapsar'lar miraslayan Öðretmen sýnýf tiplemelerine girilen çeþitli \
+            argümanlar haricinde, this._kurucu deðiþkenleri alýcý/koyucu (get/set) metodlarla tek tek de okunmak yada deðiþtirilmek \
+            üzere eriþilebilir kýlýnabilir. Nitekim bir new Öðretmen tipleme this_derece yýllýk tecrübesi örnekte deðiþtirilmiþtir." +
+            "<br/>11) Altprogram-3a1 anaprogram iskeletinde harici .css link ve .js src dosyalarýyla, önce sayfaya canvas/tuval \
+            elemaný koymakta, sonra animasyonDöngüsü fonksiyonunu kendi içinde çaðýrarak sonsuz döngü yaratmakta, \
+            tuval siyah zemini boyayýp, 100'lük for-i döngüyle de new Top(..) kurucu fonksiyonuyla yaratýlan toplam 100 adet topu \
+            çiz(), güncelle(), çarpýþanTespiti() fonksiyonlarýyla aktüel tuval ebatý en ve boyuna uyarlý rasgele konum, renk ve yarýçap'ta \
+            ve sabit (6px) hýz'da hareketlendirmekte, çarpýþan heriki topu ayný yeni rasgele renkte boyamaktadýr. Top sayýsý ve hýzýný \
+            kodlamayla deðiþtirebilirsiniz." +
+            "<br/>12) Altprogram-3a2 önceki hareketli top örneðindeki kurucu ve altfonksiyonlarý yerine daha metodik 'class Top' \
+            sýnýfýyla constructor() kurucu ve çiz(), güncelle(), çarpýþanTespiti() metodlarýyla tek sýnýf bloðunda toparlayýp, sonra da \
+            öncekindeki gibi 6px hýzda 100 adet rasgele (konum, renk, yarýçap'ta) toplar yaratýp, animasyonDöngüsü() fonksiyonunu \
+            requestAnimationFrame(animasyonDöngüsü) kendi içinden çaðýrmalý sonsuz hareketlendirme canlandýrmasýna kodlamýþtýr." +
+            "<br/>13) Altprogram-3b önceki fonksiyonlar olan kurucu Top(..), çiz(), güncelle(), çarpýþmaTespiti() fonksiyonlarýna yeni \
+            kurucu Karadelik(), sýnýrlarýnKontrolu(), çarpýþmaTespiti() fonksiyonlarý eklenerek, manüel tuþ týklanmasýyla (b, d, k, g) \
+            dört yana ilerleyebilen içi boþ, kalýn beyaz halkalý iri karadelik eklenmiþ, Top(..) ve Karadelik(..), Þekil(..) kurucu fonksiyonu \
+            miraslamýþ, bunlarýn hepsi animasyonDöngüsü()'yle sonsuz canlandýrýlmýþtýr. Ayrýca ekranýn saðüst köþesinde h1, tuval üst \
+            çerçevesinin sað ve solunda p ile h4, elemanlý kalan top sayacý ve manüel karadelik hareketleri tarifi kondurulmuþtur. \
+            Yýldýz toplarýn tümü kendiliðinden karadelik tarafýndan imha edilmemiþse, kalanlarýný manüel hareketlerle yörünge rotasýna \
+            denkleþtirip silebilirsiniz." +
+            "<br/>14) Altprogram-3c önceki kurucu fonksiyonlu karadelik örneðini class sýnýfla modüler kodlamaya sistemleþtirmektedir. \
+            Anaprogram iskeletinde .css link ve .js src dahiledilmiþ, p, h4, h1, canvas elemanlarý konulmuþtur. JS kodlamasýnda Þekil ebeveyn \
+            constructor/kurucu sýnýfýný, Top ve Karadelik yavru sýnýflar extend ve super(argümanlar)'le miraslamýþtýr. Top metodlarý: çiz(), \
+            güncelle(), çarpýþmaKontrolu(); Karadelik metodlarý: çiz(), sýnýrlarýnKontrolu(), manüelHareketler() ve çarpýþmaTespiti()'dir. \
+            new Top tiplemesiyle 100 rasgele top yaratýlmýþ, new Karadelik tiplemesiyle de sadece 1 adet karadelik halkasý yaratýlýp \
+            manüelKareketler()'e iliþkilendirilmiþtir. animasyonDöngüsü, toplarý ve karadelik imha halkasýný sonsuz canlandýrmaktadýr." +
+            "<br/>15) Altprogram-4a süperKahramanlar jsNesnesi anahtar:deðer çifleriyle, js kodlamasýyla yaratýlan h1 baþlýk, p-paragraf \
+            (ikamet ve kuruluþ yýlý), 3 üyenin h2-adý, p1-gizliKimliði, p2-yaþý, p3-süperGüçleri, detayda üçer ol-li-güçler, html sayfasýna \
+            header/baþlýk, section/kýsým içinde 3 üye için float:left serilimli article/makale elemanlarýna %33'er denkleþtirilmiþlerdir. Tüm h1, h2, \
+            p ve ol-li içerikleri çevrimiçi özel 'Faster One' yazýfonu ailesiyle hýz imalý sunulmaktadýr (internet açýk olmalý, yoksa cursive elyazýsýdýr)." +
+            "<br/>16) Altprogram-4b birönceki jsNesnesi bu örnekte .json harici disk dosyasý olarak verilmiþ ve {new XMLHttpRequest().open\
+            ('GET','C1c34.json')} ifadesiyle lokal sunucuda (>>>python -m http.server ve localhost:8000) doðrudan json tipli okunmuþ ve \
+            'const süperKahramanlar' nesnel js sabit deðiþkenine atanmýþtýr. Sonrasý, aynen önceki örnekteki gibi anahtar:deðer verilerini \
+            header (h1 ve p)-section-article (h2, p1, p2, p3 ve ol-li) html elemanlarýna atamak ve sadece h1-h2 baþlýklarýný çevrimiçi 'Faster One' \
+            özel yazýfonu ailesiyle süslemek olacaktýr." +
+            "<br/>17) Altprogram-4c önceki örnekte doðrudan json tipte okunan .json veridosyasý, burada text/metin tip'li okunmuþ ve \
+            {const süperKahramanlar=JSON.parse(metin)} ifadesiyle normal js nesnel sabit deðiþkenine çevrilmiþtir. Sonrasý önceki iki örnekteki \
+            gibi tasarlanan html sayfasýna özel çevrimiçi 'Faster One' h1-h2 yazýfonlu serilim olmaktadýr." +
+            "<br/>18) Altprogram-5a1 textarea metinalaný verigiriþine metin tipli js kodlama konulmuþ; nesnel kedi deðiþkeni içeriðinde \
+            anahtar:deðer/fonksiyon çiftleri ve bunlarýn F12-konsol ile section-kýsým'da sunulmasý kodlanmýþtýr. Bu metin kodlama harici \
+            .js dosyadaki kodlamayla script içerisinde try-catch hata yakalama kontrollu 'try {eval (taslak.textContent)' ile script-js etkinliði \
+            kazandýrýlmýþtýr. Yapýlacak her türlü js kodlama deðiþikliði anýnda görülmekte, YenidenBaþlat düðmesiyle de tekrar orijinal \
+            kodlamaya dönülmektedir." +
+            "<br/>19) Altprogram-5a2 müzik grubu nesnel deðiþkeni 6 adet anahtar:deðer ve sonuncu anahtar:[dizi] içermekte, [dizi] de \
+            içerik eleman olarak 4 adet nesnel {anahtar:deðer, anahtar:deðer} içermektedir. Bu bilgiler 2 ayrý gruplamayla hem section'da \
+            hem de konsolda yansýtýlmakta, konsol'da ayrýca albümler ve yayým yýllarý for-i döngüsüyle de sunulmaktadýr. // yorumlarla \
+            yapýlacak deðiþiklikler verilmiþ, istenen baþkaca her türlü deðiþiklikler de yapýlabilir. Olasý hatalar F12-HataAyýklayýcý'da veya \
+            try-catch ile section'da ikaz edilecektir." +
+            "<br/>20) Altprogram-5a3 'class Kedi {..}' sýnýf þablonunda argümanlý kurucu constructor(..){..} ve argümansýz selam(){..} \
+            metodlarý bulunmakta, kurucu this.deðiken=argüman'lardan oluþup, bu this.deðiþkenler sýnýfýn tüm metodlarýnca \
+            eriþilip kullanýlabilmektedir. Bu þablona ayrýca bir de harici Kedi.prototype.veda=function(){..} metodu da eklenmiþ ve \
+            farklý argümanlarla 2 (kedi1,kedi2=new Kedi(..)) tipleme çoðaltýlmýþtýr. Kodlamayla bu selam ve veda metodlarý hem \
+            F12-HataAyýklama konsolunda hem de html-section'da yansýtýlmýþtýr. // yorumla yapabileceðiniz bir tipleme verilmiþ \
+            olup, baþkaca da istediðinizi deneyebilirsiniz." +
+            "<br/>21) Altprogram-5b1 'function Eþkenar(..){this.deðiþken=argüman,..}' kurucu fonksiyona harici \
+            Eþkenar.prototype.çevreUzunluðu=funtion(){return..} altfonksiyonu da eklenmiþ, farklý argümanlarla kare, üçgen, \
+            // yorum satýrlarda beþgen ve sekizgen yeniTipleme=new Eþkenar(..) çoðaltma yapýlmakta, bunlarýn çýktý sunumlarýysa \
+            konsol ve section'dan yapýlmaktadýr." +
+            "<br/>22) Altprogram-5b2 birönceki örnekteki kurucu fonksiyon ve altfonksiyonu aynen 'sýnýf Eþkenar(..){}'a uyarlanmýþ, \
+            içeriðine constructor(..){..} ve çevreUzunluðu(){..} metodlarý konulmuþ, 'yeniSuretleme=new Eþkenar(argümanlar,..)'la \
+            nesnel tiplemeler çoðaltýlmýþtýr." +
+            "<br/>23) Altprogram-5b3 'sýnýf Eþkenar' aynen önceki örnektekidir. 'sýnýf Kare extends Eþkenar{constructor(..){..} alan(){..} }' \
+            kodlamasýyla Kare, Eþkenarý miraslamakta, ayrýca alaný(){return ..} metodunu da içermektedir. Eþkenar'ýn kurucu \
+            deðiþkenleri super(argümanlar,..)'la Kare'ye aktarýlmaktadýr. Yeni tiplemelerle üçgen, beþgen ve sekizgen'in çevreUzunluðu, \
+            kare'ninse hem çevreUzunluðu hem de alaný hesaplanýp konsol/section çýktýlarýnda sunulmaktadýr." +
+            "<br/>24) Altprogram-5c bu defa nesnel deðiþken kediler olup, 3 anne kedinin adý, soyu, rengi, yavrularý (adý, cinsiyeti) \
+            verileri program içinde deðil harici .json dosyasýnda bulunmakta ve {fetch('C1c35c.json').then(a=>a.text()).then(b=>\
+            kedileriGöster(b))} ifadesiyle dosyadan text()/metin tiple (doðrudan json() deðil) okunmakta ve kediler=JSON.parse (metin) \
+            ifadesiyle kediler nesnesine metin'den JSON kodlamasýna çevrilmektedir. For-i döngüde annelerin adlarý, for-j döngüdeyse \
+            diþi ve erkek yavrularýn sayýlarý tespit edilmekte, bu bilgiler de konsoldan ve section'dan çýktýya sunulmaktadýr. Fetch/getir \
+            harici dosya okunmasý için (>>>python -m http.server ve localhost:8000) yerel sunucunun aktifleþtirilmesi gerekmektedir."
+    </script>
+</body> 
+</html>

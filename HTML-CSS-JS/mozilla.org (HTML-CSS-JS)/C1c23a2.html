@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c23a2.html: Mesaj kutusunun sohbet, ikaz, diðer tiplemeli yaratýlmasý örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #642;
+            max-width: 50%;
+            min-width: 300px;
+            height: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        button {background-color: DarkRed; color: yellow; font-size:15px; cursor: pointer;}
+        .mesajKutusu {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 275px;
+            background-color: black;
+            border-radius: 10px;}
+        .mesajKutusu p {
+            line-height: 1.5;
+            padding: 10px 20px;
+            color: green;
+            padding-left: 82px;
+            background-position: 25px center;
+            background-repeat: no-repeat;}
+        .mesajKutusu button {
+            background: none;
+            border: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: yellow;}
+    </style>
+</head>
+<body>
+    <button>Bir mesaj kutusu yarat</button>
+
+    <script>
+        const yaratDüðmesi = document.querySelector ("button");
+        yaratDüðmesi.onclick = function() {mesajKutusuYarat ("Nihat: Herkese selamlar, bugünkü sohbet konumuz ne olsun?", "sohbet");};
+
+        function mesajKutusuYarat (mesajMetni, mesajTipi) {
+            const gövde = document.querySelector ("body");
+            const bölüm = document.createElement ("div");
+            bölüm.setAttribute ("class", "mesajKutusu");
+            gövde.appendChild (bölüm);
+
+            const paragraf = document.createElement ("p");
+            paragraf.textContent = mesajMetni;
+            bölüm.appendChild (paragraf);
+
+            const kapaDüðmesi = document.createElement ("button");
+            kapaDüðmesi.textContent = "X";
+            bölüm.appendChild (kapaDüðmesi);
+            kapaDüðmesi.onclick = function() {bölüm.parentNode.removeChild (bölüm);}
+
+            if (mesajTipi === "ikaz") {
+                paragraf.style.backgroundImage = "url(resim/ikaz.png)";
+                bölüm.style.backgroundColor = "red";
+            }else if (mesajTipi === "sohbet") {
+                paragraf.style.backgroundImage = "url(resim/sohbet.png)";
+                bölüm.style.backgroundColor = "DodgerBlue";
+            }else {paragraf.style.paddingLeft = "20px";}
+      } // func sonu...
+    </script>
+  </body>
+</html>

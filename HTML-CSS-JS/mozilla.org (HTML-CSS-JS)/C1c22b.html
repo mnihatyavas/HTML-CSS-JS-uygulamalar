@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c22b.html: Son dizi elemanýný farklý ekleyip paragrafta gösterme örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 70%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        const kediler = ["Kadim Kaplan", "Patiþ", "Temiz", "Renkli Anne", "Hýrçýn", "Pamuk", "Maskeli", "Tekir"];
+        let bilgilendirme = "Bahçedeki kedi adlarý: ";
+        const paragraf = document.querySelector ("p");
+        for (let i = 0; i < kediler.length; i++) {
+            if (i === kediler.length - 1) {bilgilendirme += "ve " + kediler [i] + ".";
+            }else {bilgilendirme += kediler [i] + ", ";}
+        } // for sonu...
+        paragraf.textContent = bilgilendirme;
+    </script>
+</body>
+</html>

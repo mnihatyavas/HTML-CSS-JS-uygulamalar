@@ -1,0 +1,31 @@
+/* C1c21.css: Týrnak ebatlý resimlerden týklananý büyütme, karartma/aydýnlatma css vasýflarý alt-örneði. */
+
+.büyük-resim {
+    position: relative;
+    display: block;
+    width: 600px;
+    height: 400px;
+    border:3px solid black;}
+.perde {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 400px;
+    background-color: rgba(0,0,0,0);} /* siyah perde, tam þeffaf */
+button {
+    background-color: rgba(0,0,0,0.8);
+    color:yellow;
+    text-shadow: 3px 3px 3px white;
+    border: 2px solid #999;
+    position: absolute;
+    cursor: pointer;
+    font-size: 17px;
+    top: 2px;
+    left: 2px;}
+.týrnak-ebat img {
+    display: block;
+    width: 90px;
+    height: 60px;
+    float: left;
+    cursor: pointer;}

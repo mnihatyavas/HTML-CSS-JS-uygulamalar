@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c25a.html: Seçilen select-option tipiyle farklı if-else yorumlu paragraflar üretme örneği.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 60%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        select {background-color:Navy; color:orange;}
+    </style>
+</head>
+<body>
+    <label for="hava">Günün havasını seçin: </label>
+    <select id="hava">
+        <option value="">--Birini seçin--</option>
+        <option value="güneşli">Güneşli</option>
+        <option value="yağmurlu">Yağmurlu</option>
+        <option value="karlı">Kar yağışlı</option>
+        <option value="bulutlu">Çok bulutlu</option>
+    </select>
+
+    <p></p>
+
+    <script>
+        const seçilen = document.querySelector ("select");
+        const paragraf = document.querySelector ("p");
+
+        seçilen.onchange = tavsiyeliRapor;
+        function tavsiyeliRapor() {
+            const tip = seçilen.value;
+            if (tip === "güneşli") paragraf.textContent = "Bugün hava güneşli ve sıcak. Şortlarınızı giyin! Sahile veya parka gidin ve dondurma yemeyi unutmayın.";
+            else if (tip === "yağmurlu") paragraf.textContent = "Dışarda rüzgar ve sağnak var; şemsiye, yağmurluk ve çizme önerilir, yine de fazla uzun kalmayın.";
+            else if (tip === "karlı") paragraf.textContent = "Lapa lapa kar yağıyor — ayrıca dondurucu da! Eniyisi bir fincan sıcak çikolatalı kahve için yada gidip dışarda bir kardan adam yapın.";
+            else if (tip === "bulutlu") paragraf.textContent = "Yağmur yok, ama tabiri caizse \"sağı solu hiç belli olmaz\", heran yağabilir, çıkacaksanız yanınızda şemsiye bulunsun.";
+            else paragraf.textContent = "";
+        } // func sonu...
+    </script>
+</body>
+</html>

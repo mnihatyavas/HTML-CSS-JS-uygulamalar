@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c26b1.html: For-döngüsüyle dizi elemanlarýnýn altalta listelenmesi örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+    <link rel="stylesheet" href="C1c26.css" />
+</head>
+<body>
+    <section></section>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 155px;">
+let dizi = ["domates", "nohut", "soðan", "pirinç", "fasülye", "bezelye"]; // biber
+let liste = document.createElement ("ul"); // ol
+for (let i = 0; i < dizi.length; i++) {
+    let listeElemaný = document.createElement ("li");
+    listeElemaný.textContent = dizi [i];
+    liste.appendChild (listeElemaný);
+} // for sonu...
+section.innerHTML = "";
+section.appendChild (liste);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script src="C1c26.js"></script>
+</html>

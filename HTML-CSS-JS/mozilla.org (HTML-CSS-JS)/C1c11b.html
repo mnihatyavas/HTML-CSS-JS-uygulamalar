@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c11b.html: Týklanýnca tarayýcý iletili oyuncu adýný deðiþtiren paragraf örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #db9;
+            max-width: 40%;
+            min-width: 150px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align:center;}
+        p {
+            font-family: "helvetica neue", helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            border: 2px solid rgba(0,0,200,0.6);
+            background: rgba(0,0,200,0.2);
+            color: rgba(200,0,0,0.8);
+            box-shadow: 2px 2px 4px rgba(0,0,200,0.8);
+            border-radius: 10px;
+            padding: 3px 10px;
+            display: inline-block;
+            cursor: pointer;}
+    </style>
+</head>
+<body>
+    <p>Oyuncu: Nihat</p>
+
+    <script>
+        const paragraf = document.querySelector ("p");
+        paragraf.addEventListener ("click", adýDeðiþtir);
+
+        function adýDeðiþtir() {
+            let ad = prompt ("Yeni bir oyuncu adý girin");
+            paragraf.textContent = "Oyuncu adý: " + ad;
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c25d1.html: Select-option'la zemin ve yazýrenginin üçlü operatörle deðiþtirilmesi örneði.</title>
+    <style>
+        html {background-color: black; color: white;}
+        body {
+            background-color: #a86;
+            max-width: 60%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        select {background-color:Navy; color:orange;}
+    </style>
+</head>
+<body>
+    <label for="tema">Zeminrengi temasýný seç:</label>
+    <select id="tema">
+        <option value="siyah">Siyah</option>
+        <option value="beyaz">Beyaz</option>
+    </select>
+    <h1>Bu benim aðsayfamdýr</h1>
+
+    <script>
+        const seçilen = document.querySelector ("select");
+        const html = document.querySelector ("html");
+
+        seçilen.onchange = function() {seçilen.value === "siyah" ? güncelle ("black", "white") : güncelle ("white", "black");}
+        function güncelle (zeminRengi, yazýRengi) {
+            html.style.backgroundColor = zeminRengi;
+            html.style.color = yazýRengi;
+        } // func sonu...
+    </script>
+</body>
+</html>

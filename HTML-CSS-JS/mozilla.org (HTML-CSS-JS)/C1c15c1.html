@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15c1.html: Bir diziye baþtan eleman ekleme, silme ve endeksle eleman deðiþtirme örneði.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" deðiþtirilebilir deðiþtirilebilir-js" style="height: 180px;">
+let dizim = ["kedi", "köpek", "kuþ"];
+// Endeksle eleman içeriði deðiþtirme
+dizim [0] = "at";
+dizim [2] = "eþek";
+// shift:baþtan siler, unshift:baþa ekler
+dizim.unshift ("timsah"); dizim.unshift ("timsah");
+dizim.shift ("timsah");
+section.innerHTML = "";
+let paragraf1 = document.createElement ("p");
+paragraf1.textContent = `Dizi: [${dizim}]=${dizim.length}`;
+section.appendChild (paragraf1);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script class="deðiþtir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

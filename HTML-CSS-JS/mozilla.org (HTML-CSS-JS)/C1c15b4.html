@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15b4.html: Pisagor hesabý için matematik fonksiyonlardan sqrt(), pow(), toFixed(2) örneði.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" deðiþtirilebilir deðiþtirilebilir-js" style="height: 195px;">
+let teori = "Pisagor teoremi";
+let a = 5;
+let b = 8;
+let tümcem = `${teori}'ni kullanarak, bir dik üçgende iki kýsa kenar uzunluklarý: ${a} ve ${b} ise hipotenüs = ${Math.sqrt((a**2) + (b**2))} = ${(Math.sqrt((a**2) + (b**2))).toFixed (2)} hesaplanýr.`;
+// Math.sqrt (Math.pow (a, 2) + Math.pow (b, 2)) veya Math.sqrt ((a * a) + (b * b)) formülleri de kullanýlabilir.
+section.innerHTML = "";
+let paragraf = document.createElement ("p");
+paragraf.textContent = tümcem;
+section.appendChild (paragraf);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script class="deðiþtir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

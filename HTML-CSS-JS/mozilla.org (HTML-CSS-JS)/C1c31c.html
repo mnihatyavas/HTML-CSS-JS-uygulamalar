@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c31c.html: Kompleks iç fonksiyonlu kurucu þablon fonksiyonlarla nesnel deðiþkenler türetme örneði.</title>
+    <style>
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <p>Bu örnek, komutlarýnýzýn tarayýcýdaki F12 HataAyýklayýcý/Debugger konsolundan girmenizi gerektirmektedir (Daha fazla bilgi için bakýnýz: <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="b">What are browser developer tools</a>: Tarayýcý geliþtirme araçlarý nelerdir).</p>
+
+</body>
+    <script>
+        function Þahýs (adý, soyadý, yaþý, cinsiyeti, hobileri) {
+            this.isim = {
+                "ad": adý,
+                "soyad" : soyadý};
+            this.yaþ = yaþý;
+            this.cinsiyet = cinsiyeti;
+            this.hobiler = hobileri;
+            this.biyografi = function() {
+                var dizge = this.isim ["ad"] + " " + this.isim.soyad + " " + this.yaþ + " yaþýndadýr. ";
+                var zamir;
+                if (this.cinsiyet === "eril" || this.cinsiyet === "Eril" || this.cinsiyet === "e" || this.cinsiyet === "E") {zamir = "Sayýn bayýn hobileri: ";
+                }else if (this.cinsiyet === "diþil" || this.cinsiyet === "Diþil" || this.cinsiyet === "d" || this.cinsiyet === "D") {zamir = "Saygýdeðer bayanýn hobileri: ";
+                }else {zamir = "O'nun hobileri: ";}
+                dizge += zamir;
+                if (this.hobiler.length === 1) {dizge += this.hobiler [0] + "'dýr.";
+                }else if (this.hobiler.length === 2) {dizge += this.hobiler [0] + " ve " + this.hobiler [1] + "'dýr.";
+                }else {
+                    for (var i = 0; i < this.hobiler.length; i++) {
+                        if (i === this.hobiler.length - 1) {dizge += "ve " + this.hobiler [i] + "'dýr.";
+                        }else {dizge += this.hobiler [i] + ", ";}
+                    } // for sonu...
+                } // else sonu...
+                alert (dizge); };
+            this.selam = function() {alert ("Merhaba, adým \"" + this.isim.ad + "\"dýr.");};
+        }; // func sonu...
+
+        let kiþi1 = new Þahýs ("Sami", "Simit", 32, "nötr", ["kikboks"]);
+        console.log (kiþi1.biyografi(), kiþi1.selam() );
+        let kiþi2 = new Þahýs ("Nihat", "Yavaþ", 64, "e", ["müzik", "yüzme", "kikboks"]);
+        console.log (kiþi2.biyografi(), kiþi2.selam() );
+        let kiþi3 = new Þahýs ("Sevim", "Yavaþ", 57, "Diþil", ["turizm", "yoga"]);
+        console.log (kiþi3.biyografi(), kiþi3.selam() );
+    </script>
+</html>

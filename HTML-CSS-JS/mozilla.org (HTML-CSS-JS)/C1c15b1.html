@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15b1.html: Dizge deðiþkenlerde Esc karakterler ve dizgeleri ekleme örneði.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" deðiþtirilebilir deðiþtirilebilir-js" style="height: 140px;">
+ // \' Esc karakter kontroluna dikkat, yoksa try-catch hata yakalar
+let alýntýBaþý = 'Her gününü biçtiðin HASAT\'la deðil, ';
+let alýntýSonu = 'ektiðin TOHUM\'la yargýla.'
+let tamAlýntý = alýntýBaþý + alýntýSonu;
+section.innerHTML = "";
+let paragraf = document.createElement ("p");
+paragraf.textContent = tamAlýntý;
+section.appendChild (paragraf);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script class="deðiþtir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

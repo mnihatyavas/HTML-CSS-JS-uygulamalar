@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c24c3.html: Butona her tıklamada harici tıklanma fonksiyonuyla farklı gövde zemin rengi örneği.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 50%;
+            min-width: 300px;
+            height: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        button, input {
+            background-color:Navy;
+            color:orange;
+            margin: 10px};
+    </style>
+</head>
+<body>
+    <button>Renk değiştir</button>
+    <input type="button" id="düğme" value="Renk değiştir" />
+
+    <script>
+        document.querySelector ("button").onclick = function() {document.body.style.backgroundColor = "rgb(" + ras(255) + "," + ras(255) + "," + ras(255) + ")";}
+        düğme.onclick = function() {document.body.style.backgroundColor = "rgb(" + ras(255) + "," + ras(255) + "," + ras(255) + ")";}
+        function ras (n) {return Math.floor (Math.random() * n);}
+    </script>
+</body>
+</html>

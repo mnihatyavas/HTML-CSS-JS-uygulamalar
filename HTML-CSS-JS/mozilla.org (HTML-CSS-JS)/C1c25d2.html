@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c25d2.html: Select-option'la zemin ve yazýrenginin çoklu switch-case operatörle deðiþtirilmesi örneði.</title>
+    <style>
+        html {background-color: black; color: white}
+        body {
+            background-color: #a86;
+            max-width: 60%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        select {background-color:Navy; color:orange;}
+    </style>
+</head>
+<body>
+    <label for="tema">Zeminrengi temasýný seç: </label>
+    <select id="tema">
+        <option value="beyaz">Beyaz</option>
+        <option value="siyah">Siyah</option>
+        <option value="mor">Mor</option>
+        <option value="sarý">Sarý</option>
+        <option value="açýkyeþil">Açýkyeþil</option>
+        <option value="macenta">Macenta</option>
+    </select>
+
+    <h1>Bu benim aðsayfamdýr</h1>
+
+    <script>
+        const seçilen = document.querySelector ("select");
+        const html = document.querySelector ("html");
+
+        seçilen.onchange = function() {
+            const tercih = seçilen.value;
+            switch (tercih) {
+                case "beyaz": güncelle ("white", "black"); break;
+                case "siyah": güncelle ("black", "white"); break;
+                case "mor": güncelle ("purple", "orange"); break;
+                case "sarý": güncelle ("yellow", "tomato"); break;
+                case "açýkyeþil": güncelle ("lime", "LightGray"); break;
+                case "macenta": güncelle ("macenta", "DeepPink");
+            } // swi..sonu...
+        } // seç..sonu...
+        function güncelle (zrenk, yrenk) {
+            html.style.backgroundColor = zrenk;
+            html.style.color = yrenk;
+        } // func sonu...
+    </script>
+</body>
+</html>

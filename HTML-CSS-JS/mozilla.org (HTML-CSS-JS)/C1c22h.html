@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c22h.html: Girilen üstlimite kadar karekökleri tamsayý olanlarýn yanyana listesi örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #d86;
+            max-width: 70%;
+            min-width: 360px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        input {background-color:Navy; color:orange;}
+        button {background-color: DarkRed; color: yellow;}
+    </style>
+</head>
+<body>
+    <label for="sayý">Üst tamsayý: </label>
+    <input id="sayý" type="text">
+    <button>Kareler üret</button>
+
+    <p>Çýktý: </p>
+
+    <script>
+        const paragraf = document.querySelector ("p");
+        const girilen = document.querySelector ("input");
+        const düðme = document.querySelector ("button");
+
+        düðme.addEventListener ("click", function() {
+            paragraf.textContent = "Çýktý: ";
+            let üstSýnýr = girilen.value;
+            girilen.value = "";
+            girilen.focus();
+            for (let i = 1; i <= üstSýnýr; i++) {
+                let karekök = Math.sqrt (i);
+                if (Math.floor (karekök) !== karekök) {continue;}
+                paragraf.textContent += i + " ";
+            } // for sonu...
+        }); // düð..sonu...
+    </script>
+</body>
+</html>

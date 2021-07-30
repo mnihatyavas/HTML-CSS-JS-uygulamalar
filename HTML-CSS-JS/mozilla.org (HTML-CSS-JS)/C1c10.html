@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c10.html: JS kodlamaya giriþle karþýlýklý etkileþim örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Js Kodlamaya Giriþ</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1c11a1.html" target="_">1a1) Týklanan düðmenin sayfaya altalta dinamik paragraf ekleme ham örneði</a></h4>
+    <h4><a href="C1c11a2.html" target="_">1a2) Týklanan düðmenin sayfaya altalta dahili script js kodlamalý paragraflar ekleme örneði</a></h4>
+    <h4><a href="C1c11a3.html" target="_">1a3) Týklanan düðmenin sayfaya altalta harici script js kodlamalý paragraflar ekleme örneði</a></h4>
+    <h4><a href="C1c11b.html" target="_">1b) Týklanýnca tarayýcý iletili oyuncu adýný deðiþtiren paragraf örneði</a></h4>
+    <h4><a href="C1c12a.html" target="_">2a) Tesadüfi seçilen [1,100] sayýyý 10 kerede tahminleme ham örneði</a></h4>
+    <h4><a href="C1c12b.html" target="_">2b) Tesadüfi seçilen [1,100] sayýyý 10 kerede tahminleme js kodlu örneði</a></h4>
+    <h4><a href="C1c12c.html" target="_">2c) Tesadüfi sayý tahmini programýndaki js kodlama hatalarýný ayýklama örneði</a></h4>
+    <h4><a href="C1c13.html" target="_">3) Üç ülke birimi, herbiri 3'er elemanlý 3 dizi ibarelerle rasgele hikaye türetme örneði</a></h4>
+    <h4><a href="C1c14a1.html" target="_">4a1) Düðme týklamalý sabit konumlu p-paragraf güncelleme örneði</a></h4>
+    <h4><a href="C1c14a2.html" target="_">4a2) Düðme týklamalý sabit konumlu dinamik yaratýlan p-paragraf güncelleme örneði</a></h4>
+    <h4><a href="C1c14a3.html" target="_">4a3) Düðme týklamalý dinamik yaratýlan ve ardýþýk eklenen p-paragraf örneði</a></h4>
+    <h4><a href="C1c14b.html" target="_">4b) Hasta doktor diyaloðunda þartlý teþhis ve zeminrengi deðiþimi örneði</a></h4>
+    <h4><a href="C1c14c.html" target="_">4c) For döngülü kdv'siz ve kdv'li fatura kalemlerini listeleme örneði</a></h4>
+    <h4><a href="C1c14d.html" target="_">4d) Metinalaný js kodlamasýyla etkileþimli canvas tuval'de þekik çizimi örneði</a></h4>
+    <h4><a href="C1c15a1.html" target="_">5a1) Metinalaný js kodlamasýyla section'da deðiþken deðerleri yansýtma örneði</a></h4>
+    <h4><a href="C1c15a2.html" target="_">5a2) Metinalaný js kodlamasýyla ilkdeðerli deðiþken deðerlerinin sonradan deðiþtirilmesi örneði</a></h4>
+    <h4><a href="C1c15a3.html" target="_">5a3) Const deðiþkenin deðiþtirilemezliði, aritmetik iþleme tabi deðiþkenin sayý tipli olmasý örneði</a></h4>
+    <h4><a href="C1c15b1.html" target="_">5b1) Dizge deðiþkenlerde Esc karakterler ve dizgeleri ekleme örneði</a></h4>
+    <h4><a href="C1c15b2.html" target="_">5b2) Dizge fonksiyonu indexOf() ve slice() ile özellik length'in kullanýmý örneði</a></h4>
+    <h4><a href="C1c15b3.html" target="_">5b3) Dizge fonksiyonlarý slice(), replace(), toLowerCase() ve toUpperCase() örneði</a></h4>
+    <h4><a href="C1c15b4.html" target="_">5b4) Pisagor hesabý için matematik fonksiyonlardan sqrt(), pow(), toFixed(2) örneði</a></h4>
+    <h4><a href="C1c15c1.html" target="_">5c1) Bir diziye baþtan eleman ekleme, silme ve endeksle eleman deðiþtirme örneði</a></h4>
+    <h4><a href="C1c15c2.html" target="_">5c2) Dizge kelimelerini split('ayraç') ile dizi elemanlarýna çevirme örneði</a></h4>
+    <h4><a href="C1c15c3.html" target="_">5c3) Dizge ve dizi fonksiyonlarýndan pop(), push(), join() ve forEach() örneði</a></h4>
+    <h4><a href="C1c15d1.html" target="_">5d1) Toplama, çýkarma, çarpma, kalan ve alternatifli ?: örneði</a></h4>
+    <h4><a href="C1c15d2.html" target="_">5d2) Parantezli karmaþýk aritmetik iþlem sonucunun sayýsallýk kontrolu örneði</a></h4>
+    <h4><a href="C1c15d3.html" target="_">5d3) Mantýksal karþýlaþtýrmalarda True/False örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) JS kodlamaya giriþle karþýlýklý etkileþimli deðiþiklikler sunulmaktadýr. Toplam 5 grup kapsamýnda \
+            27 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-1a1 sadece body gövdede tek bir button düðme elemaný içermekte ve kullanýcýya týklamasýný \
+            ve muhtemel etkileþim sonucunu beklemesini söylemektedir; etkileþim sonraki örneklerdedir." +
+            "<br/>3) Altprogram-1a2 'Týkla beni' düðmesi týklandýðýnda, buton içi onclick='paragrafYarat()' duyarlýðý gereði, script \
+            içi paragrafYarat() fonksiyonu çalýþtýrýlýp, dinamik altalta paragraflar yazýlacaktýr. Button içi onclick'le deðil de \
+            düðmeler[i].addEventListener('click', paragrafYarat) duyarlýðýyla da paragraflar yazýlabilir; bunun için kodlama \
+            önlerindeki // yorum karakterlerini kaldýrmak yeterlidir." +
+            "<br/>4) Altprogram-1a3 önceki dahili script JS kodlamalarýný burada harici bir .js uzantýlý dosyaya UTF-8 formatlý \
+            saklayýp, geciktirmeli &lt;script src='C1c11a3x1.js' defer&gt;&lt;/script&gt; html içine okutup týklamaya duyarlý kýldýk. \
+            Burada da program // yorum satýrlarý iptal edilerek de çalýþtýrýlabilir." +
+            "<br/>5) Altprogram-1b týklamaya addEventListener/olayDinleyiciEkle ile duyarlý p-paragraf JS kodlamayla, \
+            tarayýcý prompt ileti kutulu, girilen yeni ad'la öncekini güncellemektedir." +
+            "<br/>6) Altprogram-2a her keresinde bilgisayar [1,100] arasý tesadüfi sayý tutmakta ve oyuncu azami 10 kerede \
+            bu seçileni tahmin etmeye çalýþmaktadýr. 10 kerede bulamazsa, baþarýsýz sayýlýp oyun yeniden baþlatýlacaktýr. \
+            Altta, yaptýðýnýz tahmin, bunun seçilenden düþük yada yüksek olduðu ipucu, seçilen bulunursa ilaný paragraflarý \
+            belirecek, sonra oyun yeniden baþlatýlacaktýr. Oyunun JS kodlamasý müteakibendir." +
+            "<br/>7) Altprogram-2b bilgisayarýn [1,100] arasý seçtiði rasgele sayýnýn oyuncu tarafýndan tahmin edilmesi için \
+            buton týklanarak oyun baþlatýlýr. Önceki tahminleriniz yanyana sýralanarak, son tahmininiz düþükse DÜÞÜK, \
+            yüksekse YÜKSEK, eþitse sonucu kýrmýzý YANLIÞ yerine yeþil BÝLDÝNÝZ tebriði sunar ve tekrar yeni bir oyun \
+            baþlatmanýzý bekler." +
+            "<br/>8) Altprogram-2c tesadüfi sayýnýn tahminlenmesi JS kodlamalarýndaki bazý gözardý hatalarýnýn F12-Debug \
+            penceresi console/konsol kýrmýzý X uyarýlarýyla hangi html satýrýnda netür hata açýklamasý (Ýng) yardýmýyla \
+            ayýklanmasý ve programýn birönceki aþamadaki gibi çalýþmasýný gerektirmektedir. Hatalar // yorum satýrýnda da \
+            belirtilmiþtir. Ancak F12-Debug konsol hata uyarýlarýnýn takibiyle hata ayýklama genel prensiptir." +
+            "<br/>9) Altprogram-3 tr-us-uk 3 ülke ölçü birimleri (kilo-santigrat, pound-fahrenhayt, stone-santigrat), ayrýca \
+            hikayede her rasgele türetmede deðiþebilen herbiri 3 elemanlý 3 dizi elemanlarý (lakaplar, mekanlar, tepkiler) \
+            hikayecinin ad girip girmemesiyle þahit deðiþimi sonuçlarýnda, sizin her týklamanýz birdiðerinden farklý hikaye \
+            türetmektedir. Hikayeye siz de isterseniz yeni dizi elemanlarý, ölçü birimleri, anlatým tümceleri katabilirsiniz." +
+            "<br/>10) Altprogram-4a1 button düðme týklanýnca, (addEventListener ile) duyarlý güncelle fonksiyonu þartlý \
+            olarak ya 'Motor çalýþtýrýldý.' yada 'Motor durduruldu.' sabit konumlu p-paragraf açýklamasýný deðiþtirmekte, \
+            ayrýca da düðme uyarýsýný terslemektedir." +
+            "<br/>11) Altprogram-4a2 ayný düðme-paragraf güncellemesini, mevcut p-paragraf elemanýyla deðil, dinamik \
+            yaratýlan (document.createElement('p')) sabit konumlu paragraf açýklamasýyla güncellemektedir." +
+            "<br/>12) Altprogram-4a3 dinamik p-paragraf ekle fonksiyonu içinde tanýmlanýnca, tek sabit güncelleme \
+            deðil, her týklamada yeni bir p-paragrafýn alt-alta eklenmesi sözkonusudur." +
+            "<br/>13) Altprogram-4b doktorun hastayý sorgusuna input cevap ve button týklamalý þartlý if-else deðerleme \
+            sonucunda farklý teþhisler ve arkaplan renk deðiþimleri sunulmaktadýr." +
+            "<br/>14) Altprogram-4c toplam beþ kalemli kdv'siz ve %12 kdv'li fatura listesini for döngülü sunmaktadýr." +
+            "<br/>15) Altprogram-4d canvas tuval içine metinalaný etkileþimli js kodlamasýyla (ilkX,ilkY, enX,boyY) \
+            ölçekleri girerek istenilen konumbaþlangýçlý ve en-boy ebatlý ve de renkli dikdörtgen çizilebilir, deðiþtirilebilir, \
+            tekrar baþtan baþlanabilir. Metinalaný JS kodlamalarý script içinde eval'le etkinleþtirilmektedir. Çizilen kare \
+            ebatlarý anýnda tuval altýnda ilan edilmektedir. Esc ve Tab tuþlarý da metinalanýyla etkileþimlidir." +
+            "<br/>16) Altprogram-5a1 harici css ve js dosyalarýyla, metinalanýna js kodlamasýyla girilen deðiþken \
+            deðerleri üst section kýsým'da script eval ile etkinleþtirmekte yada try-cath hata mesajý yansýtmaktadýr. \
+            Kodlama yenibaþlat düðmesiyle orijinaline dönmektedir." +
+            "<br/>17) Altprogram-5a2 ilkdeðerli let/var deðiþken deðerleri sonradan deðiþtirilebilir. Yaþ sayýsal \
+            olduðu halde 'dizge' tipli girilmiþtir; üzerinde aritmetik hesap yapýlmayacaksa bir mahsuru yoktur." +
+            "<br/>18) Altprogram-5a3 const tipli ilkdeðerli deðiþkenler let/var gibi sonradan deðiþtirilemez. Ayrýca \
+            yaþ üzerinde hesap iþlemi yapýldýðýndan dizge deðil sayý tipli olmasý daha uygundur." +
+            "<br/>19) Altprogram-5b1 dizgeyi kapsayan ' ' iþareti, dizge içinde de kullanýlacaksa önüne Esc\\ \
+            karakteri konulmazsa try-catch hata fýrlatacaktýr. Ýki dizgeyi ardýþýk ekleme aritmetk + ile yapýlabilir." +
+            "<br/>20) Altprogram-5b2 dizge fonksiyonu dizge.indexOf(altdizge) ile altdizge'nin dizge'deki ilk \
+            konumu yada namevcutsa -1, dizge.slice(ilkkonum, sonkonum) ile aradaki dilim, ayrýca dizge.length \
+            uzunluk özelliðiyle dizge'deki karakter sayýsý tespit iþlemleri sergilenmiþtir." +
+            "<br/>21) Altprogram-5b3 büyük-küçükharf karýþýklýðýný gidermek için dizge.toLowerCase() tümden \
+            küçükharfe çevrilir; dizge.slice(0,1) ile ilkharf alýnýp dizge.replace(ilkharf,ilkharf.toUpperCase()) ile \
+            ilkharfi büyük olur. Tekrar dizge.replace(altdizge1,altdizge2) ile ne sevilmiyorsa ona deðiþtirilip sonuna \
+            da nokta eklenerek, orijinal ve nihai dizgeler yansýtýlýr." +
+            "<br/>22) Altprogram-5b4 pisagor teorisi c=(a^2+b^2)^0.5 için js matematik fonksiyonlarý Math.sqrt(), \
+            Math.pow(), ondalýkSayý.toFixed(2) kullanýlarak verili a ve b için c hesaplanýp çýktýya yansýtýlmýþtýr.\
+            <br/>NOT: Ýçinde ${deðiþkenAdý} deðiþken adlarý kullanýlacak dizge sýnýrlayýcýlarý için tektýrnak ('), \
+            çifttýrnak (\") deðil yatýktýrnak (`=AltGr-,) kullanýlmalýdýr." +
+            "<br/>23) Altprogram-5c1 üç elemanlý bir dizi yaratýr. Ýlk ve sonuncu elemanlarý deðiþtirir. Baþa \
+            önce 2 eleman ekler sonra birini siler. Sonuç yansýtýlýr." +
+            "<br/>24) Altprogram-5c2 aralarýnda + bulunan bir dizge içeriklerini split('+') fonksiyonuyla dizi'ye \
+            çevirir, dizi.length ile eleman sayýsýný tespit eder ve dizi[dizi.length-1] ile de son elemanýný bulur." +
+            "<br/>25) Altprogram-5c3 dizge.split('+')'le dizgeden diziye ayrýþtýrýlýr, dizi.pop()'la sondaki dizi elemaný \
+            silinir, dizi.push('eleman')'la sona yeni eleman eklenir, forEach(eleman,endeks)'le herbir dizi eleman \
+            içeriði eleman(endeks) olarak güncellenir, dizi.join(';')'le dizi elemanlarý ; ayraçla tekrar dizgeye birleþtirilir." +
+            "<br/>26) Altprogram-5d1 ilk iki sayý toplanýr, son iki sayý çýkarýlýr, elde edilenler çarpýlýr, modulo %2 \
+            kalan kontroluyla sonucun tek/çift kontrolu yapýlýp ?: alternatif cevaplarý yansýtýlýr." +
+            "<br/>27) Altprogram-5d2 parantezli karma (toplama, çarpma, bölme) iþlemlerle elde edilen iki sonuç, \
+            iþlem1*=iþlem2 ile kendiyle hedefi çarpýp kaynaðý günceller. sayý.toFixed(2) ile iki ondalýk hassasiyete \
+            indirger ve Number(sayý) ile de sonucun muhtemel isNaN sayýsal olmama kontrolunu saðlayýp, iþlem \
+            sonucu ve sayýsallýk kontrolunu yansýtýlýr." +
+            "<br/>28) Altprogram-5d3 js kodlamasýnda mantýksal kýyaslamalar true/false doðru/yanlýþ türetir. Kilo, \
+            boy ve þifre kontrolleri yapýlarak sonuçlarý ?: alternatif true/false ifadeleriyle teyit edilmiþlerdir."
+    </script>
+</body> 
+</html>

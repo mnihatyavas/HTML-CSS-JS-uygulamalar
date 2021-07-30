@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c22e.html: Dizi elemanýndada isme baðlý HES kodunun araþtýrýmasý örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 70%;
+            min-width: 450px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        input {background-color:Navy; color:orange;}
+        button {background-color: DarkRed; color: yellow;}
+    </style>
+</head>
+<body>
+    <label for="ara">HES kodu istenenin adýný girin:</label>
+    <input id="ara" type="text">
+    <button>Araþtýr</button>
+
+    <p></p>
+
+    <script>
+        const hesKodlar = ["Nihat:H2E8-2369-12", "Serap:H2A5-1298-43", "Bahri:H6R5-1438-09", "Meryem:H5T3-9845-65", "Elif:H6E3-9834-89", "Cemal:H7A2-1243-42", "Arif:H8U6-8796-34", "Hale:H6T4-5623-15"];
+        const paragraf = document.querySelector ("p");
+        const girilen = document.querySelector ("input");
+        const düðme = document.querySelector ("button");
+
+        düðme.addEventListener ("click", function() {
+            const ad = girilen.value.toLowerCase();
+            girilen.value = "";
+            girilen.focus();
+            for (let i = 0; i < hesKodlar.length; i++) {
+                let ikile = hesKodlar [i].split (":");
+                if (ikile [0].toLowerCase() === ad) {
+                    paragraf.textContent = ikile [0] + "'nin HES kodu: " + ikile [1] + ".";
+                    break;
+                }else {paragraf.textContent = "Aranan isim listede yok.";}
+            } // for sonu...
+        }); // düð..sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* C1c33b.css: Þekil, Top ve Karadelik hareketli toplarýn tuval, baþlýk, sayaç ve hareket açýklama css vasfý alt- örneði. */
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    position: absolute;
+    margin: 0;
+    top: -4px;
+    right: 40px;
+    color: transparent;
+    text-shadow: 0 0 4px yellow;}
+h4, p {
+    position: absolute;
+    margin: 0;
+    top: 35px;
+    color: aqua;}
+h4 {left: 60px;}
+p {right: 60px;}
+canvas {
+    height: 100%;
+    width: 100%;}

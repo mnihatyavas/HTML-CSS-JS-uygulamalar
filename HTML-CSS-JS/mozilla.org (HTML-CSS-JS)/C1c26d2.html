@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c26d2.html: Klavyeden girilen karakterlere duyarlý tuval dairesinin hareketi örneði.</title>
+    <link rel="stylesheet" href="C1c26.css" />
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 550px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+        canvas {border: 1px solid black;}
+    </style>
+  </head>
+  <body>
+    <section>d:doðu/sað, b:batý/sol, k:kuzey/yukarý, g:güney/aþaðý harfleri basýlý tutarak 4 yönlü hareket edebilirsiniz. Daha hýzýlý hareket için ilerle deðiþkeni artýrýlmalýdýr.</section>
+    <canvas width="480" height="320" tabindex="0"></canvas>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 200px;">
+let tuval = document.querySelector ("canvas");
+let içerik = tuval.getContext ("2d");
+let x = 50;
+let y = 50;
+let ilerle = 2; // 5, 10, 20
+const yarýçap = 30;
+daireÇiz (x, y, r=yarýçap);
+function daireÇiz (x, y, r) {
+    içerik.fillStyle = "LightGreen";
+    içerik.fillRect (0,0, tuval.width, tuval.height); // Zemin rengi
+    içerik.beginPath();
+    içerik.fillStyle = "red";
+    içerik.arc (x,y, r, 0,2*Math.PI); // (0,2*pi)=360 derece kýrmýzý tam arc/daire çizer
+    içerik.fill(); // Daire içini kýrmýzýya boya
+} // func sonu...
+window.addEventListener ("keypress", (olay) => {
+    switch (olay.key) {
+        case "b": x -= ilerle; break; // Hýzlý hareket için 5, 10, 20 girin
+        case "d": x += ilerle; break;
+        case "k": y -= ilerle; break;
+        case "g": y += ilerle; break;
+    } // swi..sonu...
+    daireÇiz (x, y, r=yarýçap);
+}); // win..sonu...
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script src="C1c26.js"></script>
+</html>

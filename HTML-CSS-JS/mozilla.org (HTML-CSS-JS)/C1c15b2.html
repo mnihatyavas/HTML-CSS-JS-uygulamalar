@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15b2.html: Dizge fonksiyonu indexOf() ve slice() ile özellik length'in kullanýmý örneði.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" deðiþtirilebilir deðiþtirilebilir-js" style="height: 250px;">
+let alýntý = "Ben yeþil yumurta ve hamburger sevmem. Ben onlarý hiç sevmem, ben Hamburg'lu YumurtaKafa'yým.";
+let altDizge = "yeþil yumurta ve hamburger";
+let alýntýUzunluðu = alýntý.length;
+let endeks = alýntý.indexOf (altDizge);
+let özetAlýntý = alýntý.slice (0, endeks + altDizge.length + 8);
+section.innerHTML = "";
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+let paragraf3 = document.createElement ("p");
+paragraf1.textContent = "Tam alýntý: [" + alýntý + "]";
+paragraf2.textContent = "Tam alýntý uzunluðu: [" + alýntýUzunluðu + "] karakter.";
+paragraf3.textContent = "Özet alýntý: [" + özetAlýntý + "]";
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+section.appendChild (paragraf3);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script class="deðiþtir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

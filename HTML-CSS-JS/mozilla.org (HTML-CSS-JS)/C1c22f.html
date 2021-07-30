@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c22f.html: Dizi elemanlarýný katagorilendirip iki ayrý listeyle noktalama örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #c86;
+            max-width: 70%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <p class="kabul">Baþvurularý kabul edilenler: </p>
+    <p class="red">Baþvurularý reddedilenler: </p>
+
+    <script>
+        const baþvuranlar = ["Cemre", "Aylin", "Selin", "Tercan", "Ferdi", "Lale", "Sami", "Kayahan", "Barýþ", "Ayhan", "Bülent"];
+        const kabul = document.querySelector (".kabul");
+        const red = document.querySelector (".red");
+        let i = 0;
+
+        do {
+            if (baþvuranlar [i] === "Ferdi" || baþvuranlar [i] === "Lale" || baþvuranlar [i] === "Bülent") {red.textContent += baþvuranlar [i] + ", ";
+            }else {kabul.textContent += baþvuranlar [i] + ", ";}
+            i++;
+        }while (i < baþvuranlar.length);
+        red.textContent = red.textContent.slice (0, red.textContent.length-2) + ".";
+        kabul.textContent = kabul.textContent.slice (0, kabul.textContent.length-2) + ".";
+    </script>
+</body>
+</html>

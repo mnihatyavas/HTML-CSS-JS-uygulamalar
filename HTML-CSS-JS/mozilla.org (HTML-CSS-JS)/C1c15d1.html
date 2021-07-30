@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15d1.html: Toplama, çıkarma, çarpma, kalan ve alternatifli ?: örneği.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" değiştirilebilir değiştirilebilir-js" style="height: 280px;">
+let sayı1 = 4;
+let sayı2 = 8;
+let sayı3 = 12;
+let sayı4 = 8;
+let ilkİkiToplamı = sayı1 + sayı2;
+let sonİkiFarkı = sayı3 - sayı4;
+let sonuç = ilkİkiToplamı * sonİkiFarkı; // Hata testi için sona (+1) ekle
+let tekÇiftSayı = sonuç % 2;
+section.innerHTML = "";
+let paragraf1 = document.createElement ("p");
+let sonuçKontrolu = sonuç === 48 ? "Evet, aferin!" : `Hayır, hatalı sonuç: ${sonuç}`;
+paragraf1.textContent = `Sonuç 48 mi? ${sonuçKontrolu}`;
+let paragraf2 = document.createElement ("p");
+let tekÇiftKontrolu = tekÇiftSayı === 0 ? "Sonuç bir çift sayıdır!" : "Sonuç bir tek sayıdır. Hımm!"
+paragraf2.textContent = tekÇiftKontrolu;
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+    </textarea>
+
+    <div class="başlat-düğmesi">
+        <button id="yenibaşlat">Yeniden başlat</button>
+    </div>
+</body>
+    <script class="değiştir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

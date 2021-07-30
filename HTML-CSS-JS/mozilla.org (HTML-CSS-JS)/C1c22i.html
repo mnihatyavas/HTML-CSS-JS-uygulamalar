@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c22i.html: Güncelle týklamayla tuvale tesadüfi renk-ebat deðerli daireler çizme örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 90%;
+            min-width: 300px;
+            margin: 2em auto;
+            text-align: center;}
+        button {
+            background-color: DarkRed;
+            color: yellow;
+            font-size:15px;
+            position: absolute;
+            top: 5px;
+            left: 5px;}
+        canvas {
+            display: block;
+            width: 100%;}
+    </style>
+</head>
+<body>
+    <button>Güncelle</button>
+    <canvas></canvas>
+
+    <script>
+        const düðme = document.querySelector ("button");
+        const tuval = document.querySelector ("canvas");
+        const içerik = tuval.getContext ("2d");
+        let EN = document.documentElement.clientWidth;
+        let BOY = document.documentElement.clientHeight;
+        tuval.width = EN;
+        tuval.height = BOY;
+        yenidenÇiz();
+        düðme.addEventListener ("click", yenidenÇiz);
+        function yenidenÇiz() {
+            içerik.clearRect (0,0, EN,BOY);
+            for (let i = 0; i < 200; i++) {
+                içerik.beginPath();
+                içerik.fillStyle = "rgba("+Math.random()*255+","+Math.random()*255+","+Math.random()*255+","+Math.random()+")";
+                içerik.arc (rasgele (EN), rasgele (BOY), rasgele (50), 0, 2 * Math.PI); // arc(x,y, yarýçap, 0, 2*pi)
+                içerik.fill();
+            } // for sonu...
+        } // func sonu...
+        function rasgele (n) {return Math.floor (Math.random() *n);}
+    </script>
+</body>
+</html>

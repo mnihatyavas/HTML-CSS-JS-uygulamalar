@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15c2.html: Dizge kelimelerini split('ayraç') ile dizi elemanlarýna çevirme örneði.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" deðiþtirilebilir deðiþtirilebilir-js" style="height: 270px;">
+let dizgem = "Nihat+Nihal+Sühey-la+Yücel+Hilal+Adil+Fatih+Belkýs";
+let dizim = dizgem.split ("+");
+let elemanSayýsý = dizim.length;
+let sonEleman = dizim [elemanSayýsý - 1];
+section.innerHTML = "";
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+let paragraf3 = document.createElement ("p");
+let paragraf4 = document.createElement ("p");
+paragraf1.textContent = "Dizge: \"" + dizgem + "\"";
+paragraf2.textContent = "Dizi: [" + dizim + "]";
+paragraf3.textContent = "Dizi eleman sayýsý: " + elemanSayýsý;
+paragraf4.textContent = `Dizinin son elemaný: ${sonEleman}`;
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+section.appendChild (paragraf3);
+section.appendChild (paragraf4);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script class="deðiþtir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

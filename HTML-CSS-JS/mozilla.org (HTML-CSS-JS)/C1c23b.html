@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c23b.html: Dinamik gövde paragrafýna fonksiyon çýktýlarý döndürme örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #4a2;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <script>
+        let x = 1;
+        function a() {let y = 3; return y;}
+        function b() {let z = 5; return z;}
+        function çýktý (deðer) {
+            const paragraf = document.createElement ("p");
+            document.body.appendChild (paragraf);
+            paragraf.textContent = "Deðer: " + deðer;
+        } // func sonu...
+
+        çýktý (x); // deðiþken deðeri
+        çýktý (a() ); // a fonksiyon deðeri
+        çýktý (b() ); // b fonksiyon deðeri
+        çýktý (1+ x + a() + b() ); // sabit + deðiþken + fonkA + fonkB deðeri
+    </script>
+</body>
+</html>

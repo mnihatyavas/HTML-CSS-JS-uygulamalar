@@ -1,0 +1,32 @@
+/* C1c15x1.css: Deðiþtirilebilir js kodlamalarýnýn css vasýflarý alt-örneði. */
+
+section {
+    width: 90%;
+    max-width: 600px;
+    border: 3px solid purple;
+    background-color: green;
+    padding: 10px 14px 10px 10px;
+    margin-bottom: 10px;}
+.deðiþtirilebilir {
+    font-family: monospace;
+    display: block;
+    margin-bottom: 10px;
+    background-color: Linen;
+    border: 1px solid black;
+    border-left: 6px solid #558ABB;
+    color: #4D4E53;
+    width: 90%;
+    max-width: 600px;
+    padding: 10px 10px 0px;
+    font-size: 90%;}
+.baþlat-düðmesi {
+    text-align: right;
+    width: 90%;
+    max-width: 600px;}
+button {
+    background-color:Navy;
+    color:orange;
+    font-size: 110%;}
+p {
+    color: yellow;
+    margin: 0.1em 0;}

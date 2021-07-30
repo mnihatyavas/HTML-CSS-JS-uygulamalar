@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c32b2.html: Kurucu fonksiyonu miraslayan yavru kurucu fonksiyonun nesnel deðiþkenler türetmesi örneði.</title>
+    <style>
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input {background-color:Navy; color:orange; width:250px;}
+        button {background-color: DarkRed; color: yellow;}
+    </style>
+</head>
+<body>
+    <div>
+        <label for="jskodu">JS kodu girin:</label>
+        <input type="text" id="jskodu" placeholder="yorum kodlamayý kopyala ve gir">
+        <button>JS kodunu gönder</button>
+    </div>
+    <p>let öðretmen3 = new Öðretmen ("Selma", "Dilber", 27, "diþil", ["müzik", "dans"], "Müzik"); console.log (öðretmen3.biyografi(), öðretmen3.selam(), öðretmen3.veda() );</p>
+
+</body>
+    <script>
+        const veriGiriþi = document.querySelector ("input");
+        const düðme = document.querySelector ("button");
+        const paragraf = document.querySelector ("p");
+
+        düðme.onclick = function() {
+            const jsKodlama = veriGiriþi.value;
+            paragraf.textContent = eval (jsKodlama);
+        } // düðme sonu...
+
+        function Þahýs (adý, soyadý, yaþý, cinsiyeti, hobileri) {
+            this.isim = {
+                "ad": adý,
+                "soyad" : soyadý};
+            this.yaþ = yaþý;
+            this.cinsiyet = cinsiyeti;
+            this.hobiler = hobileri;
+        }; // func sonu...
+        Þahýs.prototype.biyografi = function() {
+            var dizge = this.isim ["ad"] + " " + this.isim.soyad + " " + this.yaþ + " yaþýndadýr. ";
+            var zamir;
+            if (this.cinsiyet === "eril" || this.cinsiyet === "Eril" || this.cinsiyet === "e" || this.cinsiyet === "E") {zamir = "Sayýn bayýn hobileri: ";
+            }else if (this.cinsiyet === "diþil" || this.cinsiyet === "Diþil" || this.cinsiyet === "d" || this.cinsiyet === "D") {zamir = "Saygýdeðer bayanýn hobileri: ";
+            }else {zamir = "O'nun hobileri: ";}
+            dizge += zamir;
+            if (this.hobiler.length === 1) {dizge += this.hobiler [0] + "'dýr.";
+            }else if (this.hobiler.length === 2) {dizge += this.hobiler [0] + " ve " + this.hobiler [1] + "'dýr.";
+            }else {
+                for (var i = 0; i < this.hobiler.length; i++) {
+                    if (i === this.hobiler.length - 1) {dizge += "ve " + this.hobiler [i] + "'dýr.";
+                    }else {dizge += this.hobiler [i] + ", ";}
+                } // for sonu...
+            } // else sonu...
+            alert (dizge);
+        }; // Öðr..sonu...
+        Þahýs.prototype.selam = function() {alert ("Merhaba, adým \"" + this.isim.ad + "\"dýr.");};
+        Þahýs.prototype.veda = function() {console.log (this.isim.ad + " þimdi bizlerden ayrýlýyor. Hoþçakal!"); }
+
+        let kiþi1 = new Þahýs ("Sami", "Simit", 32, "nötr", ["kikboks"]);
+        console.log (kiþi1.biyografi(), kiþi1.selam(), kiþi1.veda() );
+
+        function Öðretmen (adý, soyadý, yaþý, cinsiyeti, hobileri, konusu) {
+            Þahýs.call (this, adý, soyadý, yaþý, cinsiyeti, hobileri); // Argümanlarýn miraslanmasý...
+            this.konu = konusu;
+        }; // func sonu...
+      Öðretmen.prototype = Object.create (Þahýs.prototype); // Prototip fonksiyonlarýn miraslanmasý...
+/*   // Tercihli taným...
+      Object.defineProperty (Öðretmen.prototype, "constructor", { 
+            value: Öðretmen, 
+            enumerable: false, // böylece "for in" döngüsü geçersizdir
+            writable: true // deðiþtirilebilir
+        }); // Obj..sonu...
+*/
+        Öðretmen.prototype.selam = function() {
+            let önek;
+            if (this.cinsiyet === "eril" || this.cinsiyet === "Eril" || this.cinsiyet === "e" || this.cinsiyet === "E") {önek = "Bay";
+            }else if (this.cinsiyet === "diþil" || this.cinsiyet === "Diþil" || this.cinsiyet === "d" || this.gender === "D") {önek = "Bayan";
+            }else {önek = "Sayýn";}
+            alert ("Merhaba, adým \"" + önek + " " + this.isim.soyad + "\", ve " + this.konu + " öðretiyorum.");
+        }; // selam sonu...
+
+        let öðretmen1 = new Öðretmen ("Nihat", "Yavaþ", 64, "e", ["müzik", "yüzme", "kikboks"], "Matematik");
+        console.log (öðretmen1.biyografi(), öðretmen1.selam(), öðretmen1.veda() );
+        let öðretmen2 = new Öðretmen ("Sevim", "Yavaþ", 57, "Diþil", ["turizm", "yoga"], "AutoCad");
+        console.log (öðretmen2.biyografi(), öðretmen2.selam(), öðretmen2.veda() );
+    </script>
+</html>

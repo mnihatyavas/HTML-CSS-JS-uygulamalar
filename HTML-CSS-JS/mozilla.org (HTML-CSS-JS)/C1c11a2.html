@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c11a2.html: Týklanan düðmenin sayfaya altalta dahili script js kodlamalý paragraflar ekleme örneði.</title>
+    <style>
+        html {background-color: #a97;}
+        body {
+            background-color: #247;
+            max-width: 30%;
+            min-width: 250px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align:center;}
+        button {
+            background-color: DarkRed;
+            color: yellow;
+            font-size:20px;}
+        p {color: orange;}
+    </style>
+    <script>
+            //document.addEventListener ("DOMContentLoaded", function() {
+                function paragrafYarat() {
+                    let paragraf = document.createElement ("p");
+                    paragraf.textContent = "Vayy, dahili JS ile týkladýn beni!..";
+                    document.body.appendChild (paragraf);
+                } // func sonu...
+                //const düðmeler = document.querySelectorAll ("button");
+                //for (let i = 0; i < düðmeler.length ; i++) {düðmeler[i].addEventListener ("click", paragrafYarat);}
+            //});
+    </script>
+</head>
+<body>
+    <button onclick="paragrafYarat()">Týkla beni</button>
+</body>
+</html>

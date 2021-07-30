@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c26b3.html: Do-while ve for döngüleriyle kendi ve bir dýþýnda böleni olmayan asal sayýlarýn tespiti örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+    <link rel="stylesheet" href="C1c26.css" />
+</head>
+<body>
+    <section></section>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 195px;">
+let i = 500; // 2021
+let paragraf = document.createElement ("p");
+paragraf.textContent = `Asal sayýlar listesi [${i}]: `;
+do {if (asalMý (i) ) {paragraf.textContent += `${i} `;}
+       i--;
+}while (i > 1);
+function asalMý (n) {
+    for (let i = 2; i < n; i++) {if (n % i === 0) {return false;} }
+    return true;
+} // func sonu...
+section.innerHTML = "";
+section.appendChild (paragraf);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script src="C1c26.js"></script>
+</html>

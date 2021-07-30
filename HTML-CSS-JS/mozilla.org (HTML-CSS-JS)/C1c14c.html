@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c14c.html: For döngülü kdv'siz ve kdv'li fatura kalemlerini listeleme örneði.</title>
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 350px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 250px;
+            border: 5px solid tomato;
+            font-family: monospace;}
+        div {
+            width: 45%;
+            float: left;
+            background-color: LightGray;
+            border: 2px solid purple;
+            margin: 5px;
+            padding: 5px;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>Kdv vergisi öncesi çýplak fatura kalemleri (TL):</p>
+        <ul class="önce"></ul>
+    </div>
+    <div>
+        <p>%12 kdv eklendikten sonra fatura kalemleri (TL):</p>
+        <ul class="sonra"></ul>
+    </div>
+</body>
+    <script>
+        const kalemler = [191.45, 890.56, 67.99, 12.34, 235.64];
+        const kdvsizListe = document.querySelector (".önce");
+        const kdvliListe = document.querySelector (".sonra");
+        for (let i = 0; i < kalemler.length; i++) {
+            const listeElemaný = document.createElement ("li");
+            listeElemaný.textContent = kalemler [i];
+            kdvsizListe.appendChild (listeElemaný);
+        } // for sonu...
+        for (let i = 0; i < kalemler.length; i++) {
+            const listeElemaný = document.createElement ("li");
+            listeElemaný.textContent = (kalemler [i] * 1.12).toFixed (2);
+            kdvliListe.appendChild (listeElemaný);
+        } // for sonu..
+    </script>
+</html>

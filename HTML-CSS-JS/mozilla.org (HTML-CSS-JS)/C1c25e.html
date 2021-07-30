@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c25e.html: Select-option'la seçilen aylýk takvimin yaratýlmasý örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #153;}
+        body {
+            background-color: #a86;
+            max-width: 90%;
+            min-width: 400px;
+            height: 800px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        select {background-color:Navy; color:orange;}
+        ul {padding-left: 0;}
+        li {
+            display: block;
+            float: left;
+            width: 25%;
+            border: 2px solid white;
+            padding: 5px;
+            height: 80px;
+            background-color: #4A2DB6;
+            color: tomato;}
+    </style>
+</head>
+<body>
+    <label for="ay">Ay seçin:</label>
+    <select id="ay">
+        <option value="Ocak">Ocak</option>
+        <option value="Þubat">Þubat</option>
+        <option value="Mart">Mart</option>
+        <option value="Nisan">Nisan</option>
+        <option value="Mayýs">Mayýs</option>
+        <option value="Haziran">Haziran</option>
+        <option value="Temmuz">Temmuz</option>
+        <option value="Aðustos">Aðustos</option>
+        <option value="Eylül">Eylül</option>
+        <option value="Ekim">Ekim</option>
+        <option value="Kasým">Kasým</option>
+        <option value="aralýk">Aralýk</option>
+    </select>
+
+    <h1></h1>
+
+    <ul></ul>
+
+    <script>
+        const seçilen = document.querySelector ("select");
+        const liste = document.querySelector ("ul");
+        const h1 = document.querySelector ("h1");
+        aylýkTakvimYarat  ("Ocak", 31);
+
+        seçilen.onchange = function() {
+            const tercih = seçilen.value;
+            let günler = 31;
+            if (tercih === "Þubat") {günler = 28;
+            }else if (tercih === "Nisan" || tercih === "Haziran" || tercih === "Eylül" || tercih === "Kasým") {günler = 30;}
+            aylýkTakvimYarat (tercih, günler);
+        } // seç..sonu...
+
+        function aylýkTakvimYarat (tercih, günler) {
+            liste.innerHTML = "";
+            h1.textContent = tercih;
+            for (let i = 1; i <= günler; i++) {
+                const listeElemaný = document.createElement ("li");
+                listeElemaný.textContent = i;
+                liste.appendChild (listeElemaný);
+            } // for sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c23d.html: Girilen sayýnýn karesini, küpünü ve faktöryelini hesaplama örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 50%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        input {
+            background-color:Navy;
+            color:orange;
+            width: 150px;
+            font-size: 2em;
+            margin: 10px 1px 0;}
+    </style>
+</head>
+<body>
+    <input class="girilenSayý" type="text" placeholder="sayý[Ent]">
+    <p></p>
+
+    <script>
+        const veri = document.querySelector (".girilenSayý");
+        const paragraf = document.querySelector ("p");
+
+        veri.onchange = function() {
+           const sayý = veri.value;
+            if (isNaN (sayý)) {paragraf.textContent = "Sayý girmen gerekir!";
+            }else {paragraf.textContent = sayý + "'nin karesi: " + kare (sayý) + ", " +
+                    sayý + "'nin küpü: " + küp (sayý) + ", " +
+                    sayý + "'nin faktöryeli: " + faktöryel (sayý) + ".";
+            } // else sonu...
+        } // veri sonu...
+        function kare (sayý) {return sayý * sayý;}
+        function küp (sayý) {return sayý * sayý * sayý;}
+        function faktöryel (sayý) {
+            let x = sayý;
+            while (x > 1) {sayý *= x - 1; x--;}
+            return sayý;
+        } // func sonu...
+    </script>
+</body>
+</html>

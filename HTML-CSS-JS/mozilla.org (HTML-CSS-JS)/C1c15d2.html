@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c15d2.html: Parantezli karmaþýk aritmetik iþlem sonucunun sayýsallýk kontrolu örneði.</title>
+    <link rel="stylesheet" href="C1c15x1.css" />
+    <style>
+      * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class=" deðiþtirilebilir deðiþtirilebilir-js" style="height: 225px;">
+let iþlem1 = (7 + 13) / (9 + 7);
+let iþlem2 = 100 / (2 * 6);
+iþlem1 *= iþlem2;
+let sonuç = iþlem1.toFixed (2);
+let sayýsalSonuç = Number (sonuç); // Hata kontrolu için Number("sonuç") deðiþtir.
+let sayýsallýkKontrolu = isNaN (sayýsalSonuç) === false ? "Aritmetik iþlemlerin sonuç tipi sayýdýr. Aferin!" : "Hoops! Eldeki sonucun tipi sayý deðildir.";
+section.innerHTML = "";
+let paragraf1 = document.createElement ("p");
+paragraf1.textContent = `Elde ettiðin sonuç: ${sayýsalSonuç}`;
+let paragraf2 = document.createElement ("p");
+paragraf2.textContent = sayýsallýkKontrolu;
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script class="deðiþtir"></script>
+    <script src="C1c15x2.js"></script>
+</html>

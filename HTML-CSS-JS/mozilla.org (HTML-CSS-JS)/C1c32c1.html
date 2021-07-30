@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c32c1.html: Þahýs kurucu sýnýfý miraslayan Öðretmen kuruculu yavru sýnýfýn yeni nesnel tiplemeler türetmeleri örneði.</title>
+    <style>
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <p>Konsol çýktýlarýný takip etmek için F12-Console'yi açmalýsýnýz.</p>
+</body>
+    <script>
+        // Þahýs sýnýfý
+        class Þahýs {
+            constructor (adý, soyadý, yaþý, cinsiyeti, hobileri) {
+                this.isim = {adý,soyadý};
+                this.yaþ = yaþý;
+                this.cinsiyet = cinsiyeti;
+                this.hobiler = hobileri;
+            } // con..sonu...
+            selam() {console.log (`Selam! Benim adým ${this.isim.adý}'dýr.`); };
+            veda () {console.log (`${this.isim.adý} þimdi buradan ayrýlýyor. Hoþçakal, görüþelim!`); };
+        } // class sonu...
+        // Þahýs sýnýfýnýn tiplemeleri:
+        let atilla = new Þahýs ("Atilla", "Göktürk", 35, "eril", ["müzik", "internet", "kickbox"]);
+        atilla.selam (); atilla.veda();
+        let hilal = new Þahýs ("Hilal", "Göktürk", 32, "diþil", ["folklör", "manken", "internet", "gezinti"]);
+        hilal.selam (); hilal.veda();
+
+        // Öðretmen sýnýfý Þahýs'a uzunarak miraslansýn
+        class Öðretmen extends Þahýs {
+            constructor (adý, soyadý, yaþý, cinsiyeti, hobileri, konusu, yýlTecrübesi) {
+                super (adý, soyadý, yaþý, cinsiyeti, hobileri);
+                this.konu = konusu;
+                this.derece = yýlTecrübesi;
+            } // con..sonu...
+        } // class sonu...
+        // Öðretmen sýnýfýnýn tiplemeleri:
+        let özbay = new Öðretmen ("Sema", "Özbay", 38, "D", ["müzik", "koþu", "pilates"], "Biyoloji", 15);
+        özbay.selam();
+        özbay.veda();
+        console.log ("Yaþ: " + özbay.yaþ);
+        console.log (özbay.isim.adý + " " + özbay.derece + " yýldýr " + özbay.konu + " öðretiyor.");
+    </script>
+</html>

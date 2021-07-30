@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c26d1.html: Düðmeyi týklama olayýna duyarlý kýlarak lambayý açýp kapama örneði.</title>
+    <link rel="stylesheet" href="C1c26.css" />
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 100%;
+            border: 5px solid tomato;
+            font-family: sans-serif;}
+        #lamba {cursor: pointer;}
+        button.açýk {background-color:red; color:yellow;}
+        button.kapalý {background-color:black; color:white;}
+    </style>
+</head>
+<body>
+    <section>Lambayý týklayarak aç/kapa</section>
+    <button id="lamba" class="kapalý">Lamba kapalýdýr</button>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 155px;">
+lamba.addEventListener ("click", () => {
+    if (lamba.className === "açýk") {
+        lamba.textContent = "Lamba kapalýdýr";
+        lamba.className = "kapalý";
+    }else {
+        lamba.textContent = "Lamba açýktýr";
+        lamba.className = "açýk";
+    } // else sonu...
+}); // düð..sonu...
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <button id="yenibaþlat">Yeniden baþlat</button>
+    </div>
+</body>
+    <script src="C1c26.js"></script>
+</html>

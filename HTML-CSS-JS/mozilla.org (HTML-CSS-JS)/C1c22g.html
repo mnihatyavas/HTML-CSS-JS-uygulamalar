@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c22g.html: While-döngüsünde gerisayýmda 3 farklý kriterle listeleme örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 70%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <script>
+        let i = 10;
+        while (i >= 0) {
+            const paragraf = document.createElement ("p");
+            if (i === 10) {paragraf.textContent = "Gerisayým " + i;
+            }else if (i === 0) {paragraf.textContent = "Roket fýrlatýldý!";
+            }else {paragraf.textContent = i;}
+            document.body.appendChild (paragraf);
+            i--;
+        } // while sonu...
+    </script>
+</body>
+</html>

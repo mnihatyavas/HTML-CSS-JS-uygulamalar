@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c24a.html: Form tesliminde eksik verigiriþinin varsayýlan önlenerek ikaz edilmesi örneði.</title>
+    <style>
+        html {background-color: #123;}
+        body {
+            background-color: #a86;
+            max-width: 50%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;}
+        input {background-color:Navy; color:orange;}
+        div {margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="ad">Adýnýz: </label>
+            <input id="ad" type="text">
+        </div>
+        <div>
+            <label for="soyad">Soyadýnýz: </label>
+            <input id="soyad" type="text">
+        </div>
+        <div>
+            <input type="submit" value="Yolla" />
+        </div>
+    </form>
+
+    <p></p>
+
+    <script>
+        const form = document.querySelector ("form");
+        const ad = document.getElementById ("ad");
+        const soyad = document.getElementById ("soyad");
+        const paragraf = document.querySelector ("p");
+
+        form.onsubmit = function (o) {
+            if (ad.value === "" || soyad.value === "") {
+                o.preventDefault();
+                paragraf.textContent = "Ad ve soyad'larý girmeniz gerekiyor!";
+            } // if sonu...
+        } // form sonu...
+    </script>
+</body>
+</html>

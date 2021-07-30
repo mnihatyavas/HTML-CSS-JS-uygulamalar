@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c14a2.html: Düðme týklamalý sabit konumlu dinamik yaratýlan p-paragraf güncelleme örneði.</title>
+    <style>
+        html {background-color: #247;}
+        body {
+            background-color: #a97;
+            max-width: 35%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow;}
+    </style>
+</head>
+<body>
+    <button>Motoru çalýþtýr</button>
+</body>
+    <script>
+        const düðme = document.querySelector ("button");
+        const paragraf = document.createElement ("p");
+
+        düðme.addEventListener ("click", güncelle);
+        function güncelle () {
+            if (düðme.textContent === "Motoru çalýþtýr") {
+                paragraf.textContent = "Motor çalýþtýrýldý.";
+                düðme.textContent = "Motoru durdur";
+            }else {
+                paragraf.textContent = "Motor durduruldu.";
+                düðme.textContent = "Motoru çalýþtýr";
+            } // if-else sonu...
+            document.body.appendChild (paragraf);
+        } // func sonu...
+    </script>
+</html>
