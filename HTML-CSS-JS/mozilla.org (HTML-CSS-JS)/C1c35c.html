@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c35c.html: JSON dosyasının fetch-metin çevrimiçi okunup içerdiği kayıtların işlenerek sergilenmesi örneği.</title>
+    <link rel="stylesheet" href="C1c35.css" />
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #345;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 655px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="değiştirilebilir-js" style="height: 430px;">
+// (>>> python -m http.server) ve (localhost:8000) çevrimiçi çalıştırma gerekli
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+let anneKediler = "Anne kedilerin adları: ";
+let yavrular;
+fetch ("C1c35c.json")
+    .then (yanıt => yanıt.text() )
+    .then (metin => kedileriGöster (metin) );
+function kedileriGöster (jsonMetni) {
+    let toplam = 0;
+    let erkek = 0;
+    let kediler = JSON.parse (jsonMetni);
+    for (let i = 0; i < kediler.length; i++) {
+        if (i < (kediler.length - 1) ) {anneKediler += `${kediler [i].adı}, `;
+        }else {anneKediler += `ve ${kediler [i].adı}'dir.`;}
+        for (let j = 0; j < kediler [i].yavruları.length; j++) {
+            toplam++;
+            if (kediler [i].yavruları [j].cinsiyeti === "e") {erkek++;}
+        } // for-j sonu...
+    } // for-i sonu...
+    yavrular  = `Toplam ${toplam} yavrunun ${erkek}'i erkek ve ${toplam - erkek}'i dişidir.`;
+    console.log (anneKediler + "\n" + yavrular);
+    paragraf1.textContent = anneKediler;
+    paragraf2.textContent = yavrular;
+} // func sonu...
+section.innerHTML = "";
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+    </textarea>
+
+    <div class="başlat-düğmesi">
+        <input id="yenibaşlat" type="button" value="Yeniden başlat" />
+    </div>
+</body>
+    <script src="C1c35.js"></script>
+</html>

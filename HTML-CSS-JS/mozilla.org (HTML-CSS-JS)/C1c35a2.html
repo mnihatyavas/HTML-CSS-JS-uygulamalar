@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c35a2.html: Müzik grubu ve çoklu albümlerinin konsol ve tarayýcýda yansýtýlmasý örneði.</title>
+    <link rel="stylesheet" href="C1c35.css" />
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #345;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 655px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 250px;">
+let grup = {
+    adý: "Kara Pazar", // "Ak Salý"
+    milliyeti : "Türk",
+    tipi : "metalik",
+    üyeSayýsý : 4,
+    kuruluþu : 1998, // 1978
+    daðýlýþý : 2021,
+    albümleri : [
+        {isim: "Zifiri Pazar", // "Apak Salý"
+         yayým: 2000},
+        {isim : "Paranoyak",
+         yayým : 2010},
+        {isim:"Realite Üstadý",
+         yayým:2015},
+        {isim: "Uçan Yogist", // "Sýçan Fare"
+         yayým: 2020}
+    ] // alb..sonu...
+} // let sonu...
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+paragraf1.textContent = `${grup.üyeSayýsý} üyeli ilk ${grup.milliyeti} ${grup.tipi} müzik grubu ${grup.adý} ${grup.daðýlýþý - grup.kuruluþu} yýl yaþadý.`;
+paragraf2.textContent = `Çýkardýklarý albümlerin tarih ve adlarý: ${grup.albümleri [0].yayým}-${grup.albümleri [0].isim}, ${grup.albümleri [1].yayým}-${grup.albümleri [1].isim}, ${grup.albümleri [2].yayým}-${grup.albümleri [2].isim} ve ${grup.albümleri [3].yayým}-${grup.albümleri [3].isim}.`;
+console.log (paragraf1); console.log (paragraf2.textContent);
+for (let i=0; i < grup.albümleri.length; i++) {console.log (grup.albümleri [i].isim + ": " + grup.albümleri [i].yayým);}
+section.innerHTML = "";
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <input id="yenibaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1c35.js"></script>
+</html>

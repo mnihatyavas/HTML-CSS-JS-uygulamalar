@@ -549,6 +549,7 @@ C. Learning web site design with HTML-CSS-JS Intermediate
         C1a26x2b.html: Video-source-src ile mp4/webm vidyo oynatýcý ödev örneði.
         C1a26x2c.html: Object-data ile pdf kitapokuyucu ödev örneði.
         C1a26x2d.html: Iframe-src ile çevrimiçi youtuve vidyo seyretme ödev örneði.
+
         C1b. CSS
             C1b1. Introduction to CSS
         C1b01.html: Harici CSS dosya vasýflarýyla aðsayfasýný biçimleme örneði.
@@ -624,9 +625,192 @@ C. Learning web site design with HTML-CSS-JS Intermediate
         C1b03x7b.html: Tablo ve elemanlarýnýn zemin resmi, gölgeleme ve doðrusal tabakalanmayla düzenleniþi örneði.
         C1b03x7b.css: Tablo css vasýflamada yazýfonu, resim, gölgeleme ve tabakalama efektleri örneði.
             C1b4. Css layout
-
+        C1b04.html: Kutularýn konumlanmasý ve kayan, esnek, ýzgara, çoklu kolon serilimleri örneði.
+        C1b04x1.html: Mutlak konumlu ve sola/saða kayan vasýflý kutular örneði.
+        C1b04x2a.html: Açýlýr/kapanýr bilgilendirme sekmelerinin ham örneði.
+        C1b04x2b.htm: Açýlýr/kapanýr bilgilendirme sekmelerinin iþlenmiþ örneði.
+        C1b04x2c.html: Kayan bilgilendirme yardým penceresinin ham örneði.
+        C1b04x2d.html: Çentikkutusu týklamasýyla kayarak görünen/kaybolan yardým penceresi örneði.
+        C1b04x3a.html: Varsayýlý vasýflarla p-döküman konumlanmasý ve yayýlmasý örneði.
+        C1b04x3b.html: P-dökümanýn statik konumlanma ve yayýlmasý örneði.
+        C1b04x3c.html: P-dökümanýn göreceli konumlanma ve yayýlmasý örneði.
+        C1b04x3d.html: P-dökümanýn mutlak konumlanma ve yayýlmasý örneði.
+        C1b04x3e.html: P-dökümanýn göreceli-mutlak konumlanma ve yayýlmasý örneði.
+        C1b04x3f.html: P-dökümanýn z-göreceli-mutlak konumlanma ve yayýlmasý örneði.
+        C1b04x3g.html: H1-baþlýðýn sabit konumlanma ve yayýlmasý örneði.
+        C1b04x3h.html: Yapýþkan konumlu çubuk baþlýklarýn tepede asýlý kalmasý örneði.
+        C1b04x5i.html: Kolon enaz yüksekliklerinin ayný sabit hizalý olmasý örneði.
+        C1b04x5j.html: Tampon ve sýnýrla artan kolon geniþlik yüzdelerinin yeniden ayarlanmasý örneði.
+        C1b04x5k.html: Metin içinde kayan bir resim örneði.
+        C1b04x5l.html: Metin içinde sola kayan boþ bir resim çerçevesi örneði.
+        C1b04x5m.html: Çerçevesin heryönlü marjýnýn ilk paragrafý sol-üste taþýrmasý örneði.
+        C1b04x5n.html: Ýlk paragraftan sonrakilerin sola kaymadan etkisizleþtirilmesi örneði.
+        C1b04x5o.html: Resim ve paragrafýn beraberce sarmalanmasý ve sonrasýnda kayma etkisizleþtirme örneði.
+        C1b04x5p.html: Kayma iptalinin otomatik taþma vasfýyla gerçekleþtirilmesi örneði.
+        C1b04x5r.html: Kayma iptalinin kayma-kökünü sarýcýyla sýnýrlayarak gerçekleþtirilmesi örneði.
+        C1b04x6a.html: Kutu içi düðme elemanlarýnýn varsayýlý yatay yanyana yayýlýmý örneði.
+        C1b04x6b.html: Kutu içi düðme elemanlarýnýn yatay-dikey eþit aralýklý esnek yayýlýmý örneði.
+        C1b04x6c.html: Esnek yayýlý düðme sýralarýnýn deðiþtirilmesi örneði.
+        C1b04x6d.html: Kutu içi altalta varsayýlý vasýflý makaleler örneði.
+        C1b04x6e.html: Makalelerin esnek serilimle yanyana ve enuzunuyla ayný boyda sýralanmalarý örneði.
+        C1b04x6f.html: Esnek serilimli makale enlerinin farklýlaþtýrýlmasý örneði.
+        C1b04x6g.html: Artan sayýlý makalelerin satýr-yönlü otomatik kaydýraçlý taþmasý örneði.
+        C1b04x6h.html: Ters satýrvari ve taþan makalelerin kaydýraçlanma yerine altsatýrlara sarmasý örneði.
+        C1b04x6i.html: Esnek üç makaleden sonuncunun yatay düðmelerle karma esnek kutu oluþturmasý örneði.
+        C1b04x7a.html: Izgara serilimde kullanýlacak kab ve kutularýn hazýrlýðý örneði.
+        C1b04x7b.html: Üç sabit px uzunluktaki kolonlu ýzgara serilimi örneði.
+        C1b04x7c.html: Üç farklý fr uzunluktaki kolonlu ýzgara serilimi örneði.
+        C1b04x7d.html: Üç farklý fr uzunluktaki aralýklý kolonlu ýzgara serilimi örneði.
+        C1b04x7e.html: Üç ayný repeat(3, 1fr) uzunluktaki aralýklý kolonlu ýzgara serilimi örneði.
+        C1b04x7f.html: Üç ayný repeat(3, 1fr) en ve 100px boydaki aralýklý kolonlu ýzgara serilimi örneði.
+        C1b04x7g.html: Biri uzun, üç ayný repeat(3, 1fr) en ve 100px boydaki aralýklý kolonlu ýzgara serilimi örneði.
+        C1b04x7h.html: Biri uzun, ayný repeat(auto-fill, minmax(200px, 1fr)) en ve 100px boydaki aralýklý kolonlu ýzgara serilimi örneði.
+        C1b04x7i.html: Ýki kolonlu (1fr 3fr) ýzgara serilimle baþlýk, makale, kenarlýk, ayaklýk sayfa tasarýmý örneði.
+        C1b04x7j.html: Izgara serilim sayfa tasarýmýnda herbir satýr ve kolonun tanýmlanmasý örneði.
+        C1b04x7k.html: Izgara alanlarýnýn (1fr 3fr)'li üç satýr ve iki sütunlarýnýn ismen tanýmlanmasý örneði.
+        C1b04x7l.html:  Oniki kolonlu ýzgaraya üç kutunun farklý kolon kapsamlý hatalý serilimi örneði.
+        C1b04x7m.html:  Oniki kolonlu ýzgaraya üç kutunun farklý kolon kapsamlý hatasýz serilimi örneði.
+        C1b04x7n.html: Form'lu verigiriþlerinin 4 satýr ve 5 kolonlu ýzgara serilime dönüþtürülmesi örneði.
+        C1b04x8a.html: Ýki satýrda sola kayan farklý %-enli kutularýn (ýzgaravari) serilimi örneði.
+        C1b04x8b.html:Kolon yayýlým yüzde enlerinin calc-ulate ile otomatik hesaplatýlmasý örneði.
+        C1b04x8c.html: Oniki kolonlu ýzgarada farklý sayýda kolonlara yayýlý kutular ve boylarý örneði.
+        C1b04x8d.html: Tek kolonu boþ geçirten yeterli % sol-marjýn hesaplanmasý örneði.
+        C1b04x8e.html: Ýki satýrda sola kayan farklý px-enli kutularýn sabit serilimi örneði.
+        C1b04x8f.html: Ýki satýrda sola kayan farklý %-enli kutularýn (ýzgaravari) normalleþtirilmiþ iskelet serilimi örneði.
+        C1b04x8f1.css: Normalleþtirme css vasýflamalarý alt-örneði.
+        C1b04x8f2.css: Normalleþtirme css vasýflamalarý-2 alt-örneði.
+        C1b04x8g.html: Esnek serilimde kolon % enlerinin calc-ulate ile hesaplatýlmasý örneði.
+        C1b04x9a.html: Kolon sayýsý yada geniþliði verili çoklukolon ham metni örneði.
+        C1b04x9b.html: Mevcut h1 ve p içeriklerin kolon sayýsý 3'e uyarlanmasý örneði.
+        C1b04x9c.html: Verili sabit kolon geniþliðiyle kolonsayýsýnýn tarayýcýya duyarlýlýðý örneði.
+        C1b04x9d.html: Üç kolonsayýsýný kolonaralýðý ve cetveliyle biçimlene örneði.
+        C1b04x9e.html: Eþit kolon boylarý uyumu için kartlarýn bütünlüðünü kýrmama örneði.
 
         C1c. JS
+            C1c1. Introduction to JS
+        C1c10.html: JS kodlamaya giriþle karþýlýklý etkileþim örneði.
+        C1c11a1.html: Týklanan düðmenin sayfaya altalta dinamik paragraf ekleme ham örneði.
+        C1c11a2.html: Týklanan düðmenin sayfaya altalta dahili script js kodlamalý paragraflar ekleme örneði.
+        C1c11a3.html: Týklanan düðmenin sayfaya altalta harici script js kodlamalý paragraflar ekleme örneði.
+        C1c11a3x1.js: Paragraf yaratmanýn harici js dosyasý fonksiyonuyla gerçekleþtirilmesi alt-örneði.
+        C1c11b.html: Týklanýnca tarayýcý iletili oyuncu adýný deðiþtiren paragraf örneði.
+        C1c12a.html: Tesadüfi seçilen [1,100] sayýyý 10 kerede tahminleme ham örneði.
+        C1c12b.html: Tesadüfi seçilen [1,100] sayýyý 10 kerede tahminleme js kodlu örneði.
+        C1c12c.html: Tesadüfi sayý tahmini programýndaki js kodlama hatalarýný ayýklama örneði.
+        C1c13.html: Üç ülke birimi, herbiri 3'er elemanlý 3 dizi ibarelerle rasgele hikaye türetme örneði.
+        C1c13x1.js: Hikaye aðýrlýk, sýcaklýk, lakap, mekan, zamir ibarelerinin rasgele seçilmesi alt-örneði.
+        C1c14a1.html: Düðme týklamalý sabit konumlu p-paragraf güncelleme örneði.
+        C1c14a2.html: Düðme týklamalý sabit konumlu dinamik yaratýlan p-paragraf güncelleme örneði.
+        C1c14a3.html: Düðme týklamalý dinamik yaratýlan ve ardýþýk eklenen p-paragraf örneði.
+        C1c14b.html: Hasta doktor diyaloðunda þartlý teþhis ve zeminrengi deðiþimi örneði.
+        C1c14c.html: For döngülü kdv'siz ve kdv'li fatura kalemlerini listeleme örneði.
+        C1c14d.html: Metinalaný js kodlamasýyla etkileþimli canvas tuval'de þekil çizimi örneði.
+        C1c15a1.html: Metinalaný js kodlamasýyla section'da deðiþken deðerleri yansýtma örneði.
+        C1c15a2.html: Metinalaný js kodlamasýyla ilkdeðerli deðiþken deðerlerinin sonradan deðiþtirilmesi örneði.
+        C1c15a3.html: Const deðiþkenin deðiþtirilemezliði, aritmetik iþleme tabi deðiþkenin sayý tipli olmasý örneði.
+        C1c15b1.html: Dizge deðiþkenlerde Esc karakterler ve dizgeleri ekleme örneði.
+        C1c15b2.html: Dizge fonksiyonu indexOf() ve slice() ile özellik length'in kullanýmý örneði.
+        C1c15b3.html: Dizge fonksiyonlarý slice(), replace(), toLowerCase() ve toUpperCase() örneði.
+        C1c15b4.html: Pisagor hesabý için matematik fonksiyonlardan sqrt(), pow(), toFixed(2) örneði.
+        C1c15c1.html: Bir diziye baþtan eleman ekleme, silme ve endeksle eleman deðiþtirme örneði.
+        C1c15c2.html: Dizge kelimelerini split('ayraç') ile dizi elemanlarýna çevirme örneði.
+        C1c15c3.html: Dizge ve dizi fonksiyonlarýndan pop(), push(), join() ve forEach() örneði.
+        C1c15d1.html: Toplama, çýkarma, çarpma, kalan ve alternatifli ?: örneði.
+        C1c15d2.html: Parantezli karmaþýk aritmetik iþlem sonucunun sayýsallýk kontrolu örneði.
+        C1c15d3.html: Mantýksal karþýlaþtýrmalarda Doðru/Yanlýþ örneði.
+        C1c15x1.css: Deðiþtirilebilir js kodlamalarýnýn css vasýflarý alt-örneði.
+        C1c15x2.js: Deðiþtirilebilir js kodlamalarýnýn geçerliletme ve yeniletme alt-örneði.
+            C1c2. Building blocks
+        C1c20.html: JS kodlamada çýtanýn yükseltilmesi örneði.
+        C1c21.html: Alttaki týrnak ebatlý resimlerden týklananý büyütme, karartma/aydýnlatma örneði.
+        C1c21.css: Týrnak ebatlý resimlerden týklananý büyütme, karartma/aydýnlatma css vasýflarý alt-örneði.
+        C1c21.j2: Týrnak ebatlý resimlerden týklananý büyütme, karartma/aydýnlatma js kodlamasý alt-örneði.
+        C1c22a.html: Dizi elemanlarýný for-döngüsüyle bilgilendirme dizgesine ekleyip paragrafta gösterme örneði.
+        C1c22b.html: Son dizi elemanýný farklý ekleyip paragrafta gösterme örneði.
+        C1c22c.html: Son dizi elemanýnýn farklý eklendiði while-döngüsü örneði.
+        C1c22d.html: Son dizi elemanýnýn farklý eklendiði do-while döngüsü örneði.
+        C1c22e.html: Dizi elemanýndada isme baðlý HES kodunun araþtýrýmasý örneði.
+        C1c22f.html: Dizi elemanlarýný katagorilendirip iki ayrý listeyle noktalama örneði.
+        C1c22g.html: While-döngüsünde gerisayýmda 3 farklý kriterle listeleme örneði.
+        C1c22h.html: Girilen üstlimite kadar karekökleri tamsayý olanlarýn yanyana listesi örneði.
+        C1c22i.html: Güncelle týklamayla tuvale tesadüfi renk-ebat deðerli daireler çizme örneði.
+        C1c23a1.html: Týklanýnca gövdede div içi paragraf ve kapa-düðmeli mesaj kutusu yaratma örneði.
+        C1c23a2.html: Mesaj kutusunun sohbet, ikaz, diðer tiplemeli yaratýlmasý örneði.
+        C1c23b.html: Dinamik gövde paragrafýna fonksiyon çýktýlarý döndürme örneði.
+        C1c23c.html: Html body içinde çaðrýlan fonksiyonlarýn harici .js dosyalarýnda bulunmasý örneði.
+        C1c23cx1.js: Html body içinde çaðrýlan ilk harici .js dosyasý alt-örneði.
+        C1c23cx2.js: Html body içinde çaðrýlan ikinci harici .js dosyasý alt-örneði.
+        C1c23d.html: Girilen sayýnýn karesini, küpünü ve faktöryelini hesaplama örneði.
+        C1c24a.html: Form tesliminde eksik verigiriþinin varsayýlan önlenerek ikaz edilmesi örneði.
+        C1c24b.html: Gövde içi 16 bölümden herbirini týklayýnca rasgele renk örneði.
+        C1c24c1.html: Butona her týklamada olay dinleyiciyle farklý gövde zemin rengi örneði.
+        C1c24c2.html: Butona her týklamada dahili týklanma fonksiyonuyla farklý gövde zemin rengi örneði.
+        C1c24c3.html: Butona her týklamada harici týklanma fonksiyonuyla farklý gövde zemin rengi örneði.
+        C1c24c4.html: Butona her týklamada gövdeye yayýlan düðme zemin renginin rasgele deðiþmesi örneði.
+        C1c24d1.html: Týklanan video oynatýr, týklanan çerçeve kaybeder (hatalý) örneði.
+        C1c24d2.html: Týklanan video oynatýr, týklanan çerçeve kaybeder (hatasýz) örneði.
+        C1c25a.html: Seçilen select-option tipiyle farklý if-else yorumlu paragraflar üretme örneði.
+        C1c25b.html: Seçilen select-option tipiyle farklý switch-case yorumlu paragraflar üretme örneði.
+        C1c25c.html: Günlük alýþveriþi yapan çocuðun günlük harçlýðýnýn artmasý örneði.
+        C1c25d1.html: Select-option'la zemin ve yazýrenginin üçlü operatörle deðiþtirilmesi örneði.
+        C1c25d2.html: Select-option'la zemin ve yazýrenginin çoklu switch-case operatörle deðiþtirilmesi örneði.
+        C1c25e.html: Select-option'la seçilen aylýk takvimin yaratýlmasý örneði.
+        C1c26.css: Metinalanýna girilen js kodlamalarýn iþletilme pencerelerinin css vasýflama alt-örneði.
+        C1c26.js: Metinalanýna girilen js kodlamalarýn iþletilme kodlamasý alt-örneði.
+        C1c26a1.html: Þartlý if-else ile mevsimine uygun cevap verme örneði.
+        C1c26a2.html: Karmaþýk ve çoklu if-else þartlý sýnav notu ve aktiflenen yorum yanýtý örneði.
+        C1c26a3.html: Aktif kýlýnan if-else içeriðinin switch-case ile deðiþtirilmesi örneði.
+        C1c26a4.html: Aktif bilgisayar ve doðru þifrenin üçlü (?a:b) kontrolüyle oturum açýlmasý örneði.
+        C1c26b1.html: For-döngüsüyle dizi elemanlarýnýn altalta listelenmesi örneði.
+        C1c26b2.html: Do-while döngüsüyle fihristte aranan ad'ýn telefon numarasýnýn bulunmasý örneði.
+        C1c26b3.html: Do-while ve for döngüleriyle kendi ve bir dýþýnda böleni olmayan asal sayýlarýn tespiti örneði.
+        C1c26c1.html: Ýsim listesinden her keresinde rasgele seçim yapan fonksiyon örneði.
+        C1c26c2.html: Tuvalde (x,y) konumda (en,boy) ebatta mavi kare çizme örneði.
+        C1c26c3.html: Rasgele seçilen isim listesi fonksiyonlarýnýn geliþtirilmesi örneði.
+        C1c26d1.html: Düðmeyi týklama olayýna duyarlý kýlarak lambayý açýp kapama örneði.
+        C1c26d2.html: Klavyeden girilen karakterlere duyarlý tuval dairesinin hareketi örneði.
+        C1c26d3.html: Çoklu buton renklerini kýsým zemin rengi için kullanma örneði.
+            C1c3. Oojs-ObjectOrientedJavaScript
+        C1c30.html: OOJS/ObjectOrientedJS/Nesneye yönelik JS kodlama örneði.
+        C1c31a.html: Anahtar-deðer ve fonksiyon içerikli nesnel sabit deðiþken örneði.
+        C1c31b.html: Anahtar-deðer çift kuruculu argümanlý fonksiyonla yeni nesnel deðiþkenler türetme örneði.
+        C1c31c.html: Kompleks iç fonksiyonlu kurucu þablon fonksiyonlarla nesnel deðiþkenler türetme örneði.
+        C1c32a.html: Argümanlý kurucu fonksiyonlarla iç kodlamalý yada verigiriþili yeni nesnel deðiþkenler türetme örneði.
+        C1c32b1.html: Prototip fonksiyonlarýn eklendiði argümanlý kurucu fonksiyonla iç/dýþ kodlamalý nesnel deðiþkenler türetme örneði.
+        C1c32b2.html: Kurucu fonksiyonu miraslayan yavru kurucu fonksiyonun nesnel deðiþkenler türetmesi örneði.
+        C1c32b3.html: Þahýs kurucu fonksiyonu miraslayan Öðretmen ve Öðrenci kurucu yavru fonksiyonlarýn nesnel tiplemeler türetmesi örneði.
+        C1c32c1.html: Þahýs kurucu sýnýfý miraslayan Öðretmen kuruculu yavru sýnýfýn yeni nesnel tiplemeler türetmeleri örneði.
+        C1c32c2.html: Þahýs'ý miraslayan Öðretmen sýnýfýn alýcý/koyucu fonksiyonlarla kurucu deðiþken deðerlerini yansýtmasý/deðiþtirmesi örneði.
+        C1c33a1.html: Kurucu fonksiyonla türetilen hareketli toplarýn çarpýþarak renk deðiþtirmeleri örneði.
+        C1c33a1.css: Çarpýþarak renk deðiþtiren hareketli toplarýn baþlýk ve tuval css vasfý alt-örneði.
+        C1c33a1.js: Çarpýþarak renk deðiþtiren hareketli toplarýn js kodlamasý alt-örneði.
+        C1c33a2.html: Kurucu sýnýfla türetilen hareketli toplarýn çarpýþarak renk deðiþtirmeleri örneði.
+        C1c33a2.js: Kurucu sýnýfla türetilen hareketli toplarýn js kodlamasý alt-örneði.
+        C1c33b.html: Þekil kurucu fonksiyonu miraslayan Top ve Karadelik yavrularýn türetilen nesnel toplarý çarpýþtýrýp imhasý örneði.
+        C1c33b.css: Þekil, Top ve Karadelikhareketli toplarýn tuval, baþlýk, sayaç ve hareket açýklama css vasfý alt- örneði.
+        C1c33b.js: Þekil, Top ve Karadelik imhalý hareketli toplarýn js kodlamasý alt- örneði.
+        C1c33c.html: Þekil kurucu sýnýfý miraslayan Top ve Karadelik yavru sýnýflarýn türetilen nesnel toplarý çarpýþtýrýp imhasý örneði.
+        C1c33c.css: Þekil, Top ve Karadelik sýnýflý imhalý hareketli toplarýn css vasfý alt-örneði.
+        C1c33c.js: Þekil, Top ve Karadelik sýnýflý imhalý hareketli toplarýn js kodlamasý alt-örneði.
+        C1c34.css: JS nesnesi verilerinin özel çevrimiçi "Faster One" yazýfonlu css vasýflanmasý alt-örneði.
+        C1c34.json: Özel yazýfonlu JSON harici dosya verili JS nesnesi verilerinin sunulmasý alt örneði.
+        C1c34a.html: JS nesnesi anahtar:deðer'lerinin çevrimiçi özel fonla sergilenmesi örneði.
+        C1c34b.html: JSON dosyasýnýn XMLHttpRequest-GET nesnel talebiyle (lokal) çevrimiçi okunup sergilenmesi örneði.
+        C1c34c.html: JSON dosyasýnýn XMLHttpRequest-GET text talebiyle (lokal) çevrimiçi okunup sergilenmesi örneði.
+        C1c35.css: Deðiþtirilebilir js kodlama pencerelerinin css vasýflanmasý alt-örneði.
+        C1c35.js: Deðiþtirilebilir metinalaný verilerinin js kodlamasý alt-örneði.
+        C1c35a1.html: Anahtar-deðer içerikli nesnel deðiþkenin konsol ve html sayfasýndan yansýtýlmasý örneði.
+        C1c35a2.html: Müzik grubu ve çoklu albümlerinin konsol ve tarayýcýda yansýtýlmasý örneði.
+        C1c35a3.html: Kedi sýnýf kurucu deðiþkenleri ve prototip fonksiyonundan iki suretleme/tipleme türetme örneði.
+        C1c35b1.html: Kurucu ve prototip fonksiyonlarla farklý eþkenarlarýn uzunluklarýnýn hesaplanmasý örneði.
+        C1c35b2.html: Sýnýf içi kurucu ve altmetodla farklý eþkenarlarýn uzunluklarýnýn hesaplanmasý örneði.
+        C1c35b3.html: Eþkenar'ý miraslayan Kare sýnýfý ve kurucu/altmetodlarýnýn çevre ve alan hesaplarý örneði.
+        C1c35c.html: JSON dosyasýnýn fetch-metin çevrimiçi okunup içerdiði kayýtlarýn iþlenerek sergilenmesi örneði.
+        C1c35c.json: Yerel sunuculu fetch-metin tipli okunan harici JSON disk dosyasý alt-örneði.
+
+            C1c4. Apis-ApplicationProgrammmingInterfaces
+            C1c5. Asynchronous
+
         C1d. Accessibilility
         C1e. Tools testing
 

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c34b.html: JSON dosyasının XMLHttpRequest-GET nesnel talebiyle (lokal) çevrimiçi okunup sergilenmesi örneği.</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="C1c34.css">
+    <style>
+        html {background-color: #231;}
+        body {
+            background-color: #a97;
+            max-width: 90%;
+            min-width: 700px;
+            height: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <!-- Tüm dosyaların UTF-8 saklanması JSON ve "Fast One" yazıfonu için gerekli -->
+    <header></header>
+    <section></section>
+
+    <script>
+        const başlık = document.querySelector ("header");
+        const kısım = document.querySelector ("section");
+
+        // "C1c34.json" veridosyasının (new XMLHttpRequest() ) ile okunması (python -m http.server ve localhost:8000) gerektirir.
+        let talepDosyası = "C1c34.json";
+        let talep = new XMLHttpRequest(); // new XMLHttpRequest().open ("GET", "C1c34.json");
+        talep.open ("GET", talepDosyası);
+        talep.responseType = "json"; // Doğrudan JSON tipli okuma...
+        talep.send();
+
+        talep.onload = function() {
+            const süperKahramanlar = talep.response;
+            console.log (süperKahramanlar);
+            başlığıKur (süperKahramanlar); // Doğrudan JSON nesnesini kullanma...
+            süperleriGöster (süperKahramanlar);
+        } // func sonu...
+
+        function başlığıKur (jsonNesnesi) {
+            const h1Başlık = document.createElement ("h1");
+            h1Başlık.textContent = jsonNesnesi ["ekipAdı"];
+            başlık.appendChild (h1Başlık);
+
+            const paragraf = document.createElement ("p");
+            paragraf.textContent = "İkamet: " + jsonNesnesi ["ikamet"] + " // Kuruluş: " + jsonNesnesi.kuruluş;
+            başlık.appendChild (paragraf);
+        } // func sonu...
+
+        function süperleriGöster (jsonNesnesi) {
+            const kahramanlar = jsonNesnesi ["üyeler"];
+
+            for (let i = 0; i < kahramanlar.length; i++) {
+                const makale = document.createElement ("article");
+                const h2Başlık = document.createElement ("h2");
+                const paragraf1 = document.createElement ("p");
+                const paragraf2 = document.createElement ("p");
+                const paragraf3 = document.createElement ("p");
+                const ulListe = document.createElement ("ul");
+
+                h2Başlık.textContent = kahramanlar [i].ad;
+                paragraf1.textContent = "Gizli kimliği: " + kahramanlar [i].gizliKimlik;
+                paragraf2.textContent = "Yaşı: " + kahramanlar [i].yaş;
+                paragraf3.textContent = "Süper güçleri:";
+                const süperGüçler = kahramanlar [i].güçler;
+                for (let j = 0; j < süperGüçler.length; j++) {
+                    const liEleman = document.createElement ("li");
+                    liEleman.textContent = süperGüçler [j];
+                    ulListe.appendChild (liEleman);
+                } // for sonu...
+                makale.appendChild (h2Başlık);
+                makale.appendChild (paragraf1);
+                makale.appendChild (paragraf2);
+                makale.appendChild (paragraf3);
+                makale.appendChild (ulListe);
+
+                kısım.appendChild (makale);
+            } // for sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c35b3.html: Eþkenar'ý miraslayan Kare sýnýfý ve kurucu/altmetodlarýnýn çevre ve alan hesaplarý örneði.</title>
+    <link rel="stylesheet" href="C1c35.css" />
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #345;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 655px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 410px;">
+class Eþkenar {
+    constructor (adý, kenarSayýsý, kenarUzunluðu) {
+        this.ad = adý;
+        this.kaçKenar = kenarSayýsý;
+        this.tekKenarUzunluk = kenarUzunluðu;
+    } // con..sonu...
+    çevreUzunluðu () {return `Bu ${this.ad}'nin çevre uzunluðu: ${this.kaçKenar * this.tekKenarUzunluk} sm'dir.` }
+} // class sonu...
+class Kare extends Eþkenar {
+    constructor (kUz) {super ("kare", 4, kUz); }
+    alaný() {return (`Bu ${this.ad}'nin alaný: ${this.tekKenarUzunluk**2} santimetrekare'dir.`); }
+} // class sonu...
+let üçgen=new Eþkenar("üçgen",3,8);//("beþgen",5,7),("sekizgen",8,4.75)
+let kare = new Kare (9); // (12.65)
+console.log (üçgen.çevreUzunluðu() );
+console.log (kare.çevreUzunluðu() + "\n" + kare.alaný() );
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+let paragraf3 = document.createElement ("p");
+paragraf1.textContent = üçgen.çevreUzunluðu();
+paragraf2.textContent = kare.çevreUzunluðu();
+paragraf3.textContent = kare.alaný();
+section.innerHTML = "";
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+section.appendChild (paragraf3);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <input id="yenibaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1c35.js"></script>
+</html>

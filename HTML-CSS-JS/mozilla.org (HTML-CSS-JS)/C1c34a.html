@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c34a.html: JS nesnesi anahtar:değer'lerinin çevrimiçi özel fonla sergilenmesi örneği.</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="C1c34.css">
+    <style>
+        html {background-color: #231;}
+        body {
+            background-color: #a97;
+            max-width: 90%;
+            min-width: 700px;
+            height: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        p, li {font-family: "Faster One";}
+    </style>
+</head>
+<body>
+    <header></header>
+    <section></section>
+
+    <script>
+        const süperKahramanlar = {
+            "ekipAdı" : "Süper Cesur Ekip",
+            "ikamet" : "Metro Şehri",
+            "kuruluş" : 2016,
+            "gizliÜs" : "Süperkule",
+            "faalMı" : true,
+            "üyeler" : [
+                {   "ad" : "Molekül Adam",
+                    "yaş" : 29,
+                    "gizliKimlik" : "Dan Jukes",
+                    "güçler" : [
+                        "Radyasyona direnç",
+                        "Moleküler ufalma",
+                        "Radyasyon patlaması" ] },
+                {   "ad" : "Madam Tepedelen",
+                    "yaş" : 39,
+                    "gizliKimlik" : "Jane Wilson",
+                    "güçler" : [
+                        "Milyon tonluk yumruklar",
+                        "Darbelere direnç",
+                        "Süperinsan refleksleri"] },
+                {   "ad" : "Ebedi Alev",
+                    "yaş" : 1000000,
+                    "gizliKimlik" : "Bilinmiyor",
+                    "güçler" : [
+                        "Ölümsüz",
+                        "Isıya bağışık",
+                        "Cehennem ateşi",
+                        "Işınlanma",
+                        "Boyutlararası seyahat"] }
+            ] // üyeler sonu...
+        } // const sonu...
+        const başlık = document.querySelector ("header");
+        const kısım = document.querySelector ("section");
+
+        function başlığıKur (jsNesnesi) {
+            const h1Başlık = document.createElement ("h1");
+            h1Başlık.textContent = jsNesnesi ["ekipAdı"];
+            başlık.appendChild (h1Başlık);
+            const paragraf = document.createElement ("p");
+            paragraf.textContent = "İkamet: " + jsNesnesi ["ikamet"] + " // Kuruluş: " + jsNesnesi.kuruluş;
+            başlık.appendChild (paragraf);
+        } // func sonu...
+        function süperleriGöster (jsNesnesi) {
+            const kahramanlar = jsNesnesi ["üyeler"];
+            for (let i = 0; i < kahramanlar.length; i++) {
+                const makale = document.createElement ("article");
+                const h2Başlık = document.createElement ("h2");
+                const paragraf1 = document.createElement ("p");
+                const paragraf2 = document.createElement ("p");
+                const paragraf3 = document.createElement ("p");
+                const ulListe = document.createElement ("ul");
+                h2Başlık.textContent = kahramanlar [i].ad;
+                paragraf1.textContent = "Gizli kimliği: " + kahramanlar [i].gizliKimlik;
+                paragraf2.textContent = "Yaşı: " + kahramanlar [i].yaş;
+                paragraf3.textContent = "Süper güçleri:";
+                const süperGüçler = kahramanlar [i].güçler;
+                for (let j = 0; j < süperGüçler.length; j++) {
+                    const liEleman = document.createElement ("li");
+                    liEleman.textContent = süperGüçler [j];
+                    ulListe.appendChild (liEleman);
+                } // for sonu...
+                makale.appendChild (h2Başlık);
+                makale.appendChild (paragraf1);
+                makale.appendChild (paragraf2);
+                makale.appendChild (paragraf3);
+                makale.appendChild (ulListe);
+                kısım.appendChild (makale);
+            } // for sonu...
+        } // func sonu...
+
+        console.log (süperKahramanlar);
+        başlığıKur (süperKahramanlar);
+        süperleriGöster (süperKahramanlar);
+    </script>
+</body>
+</html>

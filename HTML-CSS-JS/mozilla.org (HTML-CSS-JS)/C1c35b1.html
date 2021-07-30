@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c35b1.html: Kurucu ve prototip fonksiyonlarla farklý eþkenarlarýn uzunluklarýnýn hesaplanmasý örneði.</title>
+    <link rel="stylesheet" href="C1c35.css" />
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #345;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 655px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 270px;">
+function Eþkenar (adý, kenarSayýsý, kenarUzunluðu) {
+    this.ad = adý;
+    this.kaçKenar = kenarSayýsý;
+    this.tekKenarUzunluk = kenarUzunluðu;
+} // func sonu...
+Eþkenar.prototype.çevreUzunluðu = function() {return (`Bu ${this.ad}'nin çevre uzunluðu ${this.kaçKenar * this.tekKenarUzunluk} sm'dir.`);}
+let kare = new Eþkenar ("kare", 4, 5);
+let üçgen = new Eþkenar ("üçgen", 3, 8); // ("beþgen", 5, 7), ("sekizgen", 8, 4)
+console.log (kare.çevreUzunluðu() );
+console.log (üçgen.çevreUzunluðu() );
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+paragraf1.textContent = kare.çevreUzunluðu();
+paragraf2.textContent = üçgen.çevreUzunluðu();
+section.innerHTML = "";
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <input id="yenibaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1c35.js"></script>
+</html>

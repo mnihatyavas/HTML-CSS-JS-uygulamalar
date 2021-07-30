@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c35a3.html: Kedi sýnýf kurucu deðiþkenleri ve prototip fonksiyonundan iki suretleme/tipleme türetme örneði.</title>
+    <link rel="stylesheet" href="C1c35.css" />
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #345;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 655px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="deðiþtirilebilir-js" style="height: 250px;">
+class Kedi {
+    constructor (adý, soyu, rengi, cinsiyeti) {
+        this.ad = adý;
+        this.soy = soyu;
+        this.renk = rengi;
+        this.cinsiyet = cinsiyeti;
+    } // con..sonu...
+    selam() { return `\"Miyavv, hoþgeldiniz!\" dedi ${this.soy}'li ${this.cinsiyet} ${this.ad}, hepimize.`};
+} // sýnýf sonu...
+Kedi.prototype.veda = function() {return `\"Miyooovvv, güle güle!\" dedi ${this.soy}'li ${this.cinsiyet} ${this.ad}, bize.`};
+let kedi1 = new Kedi ("Manoli", "Mersin", "beyaz", "Bayan");
+let kedi2 = new Kedi ("Pamuk", "Ýzmir", "sarý", "Bay"); // ("Kadim Kaplan", "Toros", "tekir", "Bay")
+console.log (kedi1.selam() + "\n"+  kedi1.veda() );
+console.log (kedi2.selam() + "\n" + kedi2.veda() );
+let paragraf1 = document.createElement ("p");
+let paragraf2 = document.createElement ("p");
+paragraf1.textContent = kedi1.selam();
+paragraf2.textContent = kedi2.veda();
+section.innerHTML = "";
+section.appendChild (paragraf1);
+section.appendChild (paragraf2);
+    </textarea>
+
+    <div class="baþlat-düðmesi">
+        <input id="yenibaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script src="C1c35.js"></script>
+</html>

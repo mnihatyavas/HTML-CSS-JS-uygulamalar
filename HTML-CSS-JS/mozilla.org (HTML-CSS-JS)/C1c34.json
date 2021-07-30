@@ -1,0 +1,34 @@
+﻿{  "ekipAdı" : "Süper Cesur Ekip",
+    "ikamet" : "Metro Şehri",
+    "kuruluş" : 2016,
+    "gizliÜs" : "Süperkule",
+    "faalMı" : true,
+    "üyeler" : [
+        {   "ad" : "Molekül Adam",
+            "yaş" : 29,
+            "gizliKimlik" : "Dan Jukes",
+            "güçler" : [
+                "Radyasyona direnç",
+                "Moleküler ufalma",
+                "Radyasyon patlaması" ]
+        },
+        {   "ad" : "Madam Tepedelen",
+            "yaş" : 39,
+            "gizliKimlik" : "Jane Wilson",
+            "güçler" : [
+                "Milyon tonluk yumruklar",
+                "Darbelere direnç",
+                "Süperinsan refleksleri"]
+        },
+        {   "ad" : "Ebedi Alev",
+            "yaş" : 1000000,
+            "gizliKimlik" : "Bilinmiyor",
+            "güçler" : [
+                "Ölümsüz",
+                "Isıya bağışık",
+                "Cehennem ateşi",
+                "Işınlanma",
+                "Boyutlararası seyahat"]
+        }
+    ]
+}

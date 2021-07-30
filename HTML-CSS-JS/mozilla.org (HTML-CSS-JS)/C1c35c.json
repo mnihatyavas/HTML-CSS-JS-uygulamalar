@@ -1,0 +1,36 @@
+﻿[
+    {   "adı" : "Manoli",
+        "soyu" : "Van",
+        "rengi" : "beyaz",
+        "yavruları" : [
+            {   "adı" : "Şeker",
+                "cinsiyeti" : "d"},
+            {   "adı" : "Cambaz",
+                "cinsiyeti" : "e"},
+            {   "adı" : "Aniş",
+                "cinsiyeti" : "d"}
+        ]
+    },
+    {   "adı" : "Renkli",
+        "soyu" : "Mersin",
+        "rengi" : "alelli",
+        "yavruları" : [
+            {   "adı" : "Temiz",
+                "cinsiyeti" : "d"},
+            {   "adı" : "Patiş",
+                "cinsiyeti" : "d"},
+            {   "adı" : "Kaplan",
+                "cinsiyeti" : "e"}
+        ]
+    },
+    {   "adı" : "Maskeli",
+        "soyu" : "İzmir",
+        "rengi" : "siyah benekli",
+        "yavruları" : [
+            {   "adı" : "Şirin",
+                "cinsiyeti" : "d"},
+            {   "adı" : "Hırçın",
+                "cinsiyeti" : "e"}
+        ]
+    }
+]

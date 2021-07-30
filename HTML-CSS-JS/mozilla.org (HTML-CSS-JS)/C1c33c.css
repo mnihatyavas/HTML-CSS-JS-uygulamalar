@@ -1,0 +1,29 @@
+/* C1c33c.css: Þekil, Top ve Karadelik sýnýflý imhalý hareketli toplarýn css vasfý alt-örneði. */
+
+html {background-color: #246;}
+body {
+    background-color: #a97;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;}
+h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    position: absolute;
+    margin: 0;
+    top: -4px;
+    right: 40px;
+    color: transparent;
+    text-shadow: 0 0 4px yellow;}
+h4, p {
+    position: absolute;
+    margin: 0;
+    top: 35px;
+    color: aqua;}
+h4 {left: 60px;}
+p {right: 60px;}
+canvas {
+    height: 100%;
+    width: 100%;}
