@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3b2.html: Arya vasýflý select-option veya input verisinin beyan edilmesi örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        form {
+            background-color: Lime;
+            width: 70%;
+            border-radius: 20px;
+            margin:0 auto;
+            padding: 20px;}
+        div {margin-bottom: 10px;}
+        input, select {background-color: DarkRed; color: yellow;}
+    </style>
+</head>
+<body>
+    <h1 rolü="ikaz">Görev Seçimi yada Giriþi</h1>
+    <form>
+        <div arya-etiketi="Seçilen görev opsiyonu beyan edilir">
+            <label for="görev">Görev çeþidi:</label>
+            <select id="görev" name="görev">
+                <option value="">-- görev seç --</option>
+                <option value="kasap">Kasap</option>
+                <option value="pastacý">Tatlýcý</option>
+                <option value="mumcu">Mum imalatçýsý</option>
+                <option value="diðer">Diðer (gir)</option>
+            </select>
+        </div>
+        <div arya-etiketi="Girilen görev verisi beyan edilir">
+            <label for="diðer-görev">Diðer görev:</label>
+            <input type="text" name="diðer-görev" id="diðer-görev">
+        </div>
+    </form>
+
+    <script>
+        const seç = document.querySelector ("select");
+        const diðer = document.querySelector ("input");
+
+        diðer.parentElement.style.display = "none"; // Diðer seçilmemiþse görülmesin...
+        document.onkeydown = function (o) {if (o.keyCode === 13) {o.preventDefault(); alert ("Girilen görev: " + diðer.value);} }
+        seç.onchange = function() {
+            if (seç.value === "diðer") {diðer.parentElement.style.display = "block"; // Diðer seçilirse verigiriþ görülsün...
+            }else {
+                diðer.parentElement.style.display = "none";
+                alert ("Seçilen görev: " + seç.value);
+            } // else sonu...
+        } // seç sonu...
+    </script>
+</body>
+</html>

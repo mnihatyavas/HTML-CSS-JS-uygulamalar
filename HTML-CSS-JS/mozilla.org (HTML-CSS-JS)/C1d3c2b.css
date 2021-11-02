@@ -1,0 +1,46 @@
+/* C1d3c2b.css: Audio ve video dosyalarýný çalýþtýrma css vasýflarý alt-örneði. */
+
+html {
+    background-color: #152;
+    font-family: sans-serif;}
+body {
+    background-color: #a97;
+    max-width: 80%;
+    min-width: 600px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;
+    text-align: center;}
+* {box-sizing: border-box;}
+.oynatýcý {
+    width: 500px;
+    margin: 10px auto;
+    border: 2px solid #ccc;}
+video, audio, .controls {
+    width: 100%;
+    border-bottom: 4px solid #ccc;}
+.controls {height: 36px; background-color: navy;} /* "controls" vasýflar sýnýf gibi .vasýf önnoktalýdýr */
+button {
+    display: block;
+    float: left;
+    border: 0;
+    margin-right: 2px;
+    height: 100%;
+    width: 70px;
+    background-color: #aaa;
+    color: pink;
+    cursor: pointer;}
+button:hover, button:focus {
+    background-color: #666;
+    color: yellow;}
+button:active {
+    background-color: #111;
+    color: red;}
+.controls div, .controls span{
+    font-size: 12px;
+    display: inline-block;
+    line-height: 36px;
+    width: 100px;
+    float: right;}
+span {background-color: black; color: tomato; border-bottom: 1px solid #ccc;}
+video {margin-bottom: -5px;}

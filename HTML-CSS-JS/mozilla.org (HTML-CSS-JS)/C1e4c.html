@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1e4c.html: H1 ve p elemanlarýnýn first/last-child, nth-child(n/odd/even) seçici vasýflandýrýlmasý örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h1 {
+            color: yellow;
+            font-size: 2em;
+            padding: 5px;}
+        h1:nth-child(odd) {background-color: SlateGray;}
+        h1:nth-child(even) {background-color: DarkSlateGray;}
+        p {
+            color: white;
+            font-size: 1em;
+            padding: 5px;}
+        p:first-child {background-color: DarkRed;}
+        p:last-child {background-color: navy;}
+        p:nth-child(2) {background-color: DarkGreen;}
+        h1:hover, p:hover {
+            cursor: pointer;
+            background-color: black;
+            font-style: italic;
+            color: tomato;}
+    </style>
+</head>
+<body>
+    <div arya-etiketi="Baþlýklar bölümü">
+        <h1 arya-mesajý="h1:nth-child(odd)">Seçici baþlýk örneði-1</h1>
+        <h1 arya-mesajý="h1:nth-child(even)">Seçici baþlýk örneði-2</h1>
+        <h1 arya-mesajý="h1:nth-child(odd)">Seçici baþlýk örneði-3</h1>
+        <h1 arya-mesajý="h1:nth-child(even)">Seçici baþlýk örneði-4</h1>
+    </div>
+    <hr/>
+    <div arya-etiketi="Paragraflar bölümü">
+        <p arya-mesajý="p:first-child">Seçici paragraf örneði-1</p>
+        <p arya-mesajý="p:nth-child(2)">Seçici paragraf örneði-2</p>
+        <p arya-mesajý="p">Seçici paragraf örneði-3</p>
+        <p arya-mesajý="p:last-child">Seçici paragraf örneði-4</p>
+    </div>
+
+    <script>
+        const baþlýklar = document.querySelectorAll ("h1");
+        const paragraflar = document.querySelectorAll ("p");
+        for (let i = 0; i < baþlýklar.length; i++) {
+            baþlýklar [i].onclick = (o)=>{alert (`Ben týklanan [${o.target.getAttribute ("arya-mesajý")}] vasýflý baþlýðým.`);}
+            paragraflar [i].onclick = (o)=>{alert (`Ben týklanan [${o.target.getAttribute ("arya-mesajý")}] vasýflý paragrafým.`);}
+        } // for sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d1f.html: Baðlantý sayfalarý, mesajlý butonlar ve verigiriþ/seçiþ form raporlamasý örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        input {margin-bottom: 10px;}
+        button {margin-right: 10px;}
+        a:hover, input:hover, button:hover, select:hover {font-weight: bold;}
+        a:focus, input:focus, button:focus, select:focus {font-size: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Baðlantý sayfalarý</h1>
+    <p>Bu <a href="https://www.mozilla.org" target="_b">Mozilla</a>'ya ilk baðlantýdýr.</p>
+    <p>Bu da <a href="https://developer.mozilla.org" target="_b">Mozilla Geliþtirme Aðý</a>'na ikinci baðlantýdýr.</p>
+    <hr/>
+
+    <h2>Mesajlý düðmeler</h2>
+    <p>
+        <button mesaj="Bu týkladýðýnýz ilk düðmenin mesajýdýr">Týkla beni!</button>
+        <button mesaj="Bu týkladýðýnýz ikinci düðmenin mesajýdýr">Beni de týkla!</button>
+        <button mesaj="Bu týkladýðýnýz üçüncü düðmenin mesajýdýr">Ve beni de!</button>
+    </p>
+    <hr/>
+
+    <h2>Veri girme ve seçme formu</h2>
+    <form>
+        <div>
+            <label for="ism">Ýsminizi girin:</label>
+            <input type="text" id="isim" name="ism" required>
+        </div>
+        <div>
+            <label for="yþ">Yaþýnýzý girin:</label>
+            <input type="text" id="yaþ" name="yþ" required>
+        </div>
+        <div>
+            <label for="drm">Haleti ruhiyenizi seçin:</label>
+            <select id="durum" name="drm">
+                <option>Mutlu</option>
+                <option>Kederli</option>
+                <option>Kýzgýn</option>
+                <option>Kaygýlý</option>
+            </select>
+        </div>
+        <p style="text-align: center;"><input type="submit" id="gönder" value="Formu gönder!"></p>
+    </form>
+
+    <script>
+        const düðmeler = document.querySelectorAll ("button");
+        for (let i = 0; i < düðmeler.length; i++) {yönet (düðmeler [i]); }
+        function yönet (düðme) {
+            düðme.addEventListener ("click", function (o) {
+                let mesajým = o.target.getAttribute ("mesaj");
+                alert (mesajým); console.log (mesajým); isim.focus();
+            }) // düðme sonu...
+        } // func sonu...
+
+        const form = document.querySelector ("form");
+        form.addEventListener ("submit", (o)=>{// form-submit yada gönder-click'le duyarlayabiliriz...
+            o.preventDefault(); // Adres satýrýndan gönderimi engeller...
+            // Raporlamayý id.value yada form.name.value ile düzenleyebiliriz...
+            alert (`${yaþ.value} yaþýndaki ${isim.value} bugün ${durum.value}'dur.`); isim.focus();
+            console.log (`${form.yþ.value} yaþýndaki ${form.ism.value} bugün ${form.drm.value}'dur.`);
+        }); // form sonu...
+    </script>
+</body>
+</html>

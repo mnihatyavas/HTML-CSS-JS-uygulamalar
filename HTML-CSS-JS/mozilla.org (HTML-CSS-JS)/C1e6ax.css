@@ -1,0 +1,7 @@
+/* C1e6ax.css: JS þartýyla link-stylesheet-css-href dosyasýný flex görüntü vasýflý yükleme alt-örneði. */
+
+main {display: flex;}
+main div {
+    padding-right: 4%;
+    flex: 1;}
+main div:last-child {padding-right: 0;}

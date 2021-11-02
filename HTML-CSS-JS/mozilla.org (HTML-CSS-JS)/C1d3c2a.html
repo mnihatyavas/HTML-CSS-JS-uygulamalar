@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3c2a.html: Arya etiketli varsayýlý HTML5 ayarlarýyla audio ve video dosyalarýný çalýþtýrma örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Varsayýlý Müzik ve Video Ayarlarý</h1>
+
+    <audio controls arya-etiketi="Müzik dosyasýnýn varsayýlý HTML5 ayarlarýyla çalýnmasý">
+        <source src="resim/medya/müzik.mp3" type="audio/mp3">
+        <source src="resim/medya/müzik.ogg" type="audio/ogg">
+        <p>Tarayýcýnýz HTML5 müziði desteklemezse  <a href="resim/medya/müzik.mp3">"Müzik baðlantýsý"</a> týklanarak da çalýnýr.</p>
+    </audio>
+    <br}>
+    <video controls arya-etiketi="Video dosyasýnýn varsayýlý HTML5 ayarlarýyla oynatýlmasý">
+        <source src="resim/medya/tavþan.mp4" type="video/mp4">
+        <source src="resim/medya/tavþan.webm" type="video/webm">
+        <p>Tarayýcýnýz HTML5 video'yu desteklemezse  <a href="resim/medya/tavþan.mp4">"Video baðlantýsý"</a> týklanarak da oynatýlýr.</p>
+    </video>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3b3.html: Arya vasýflý, HTML5 varsayýlý çoklu input tipli form gönderme örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        form {
+            background-color: Lime;
+            width: 70%;
+            border-radius: 20px;
+            margin:0 auto;
+            padding: 20px;}
+        div {margin-bottom: 10px;}
+        input, select {background-color: DarkRed;color: yellow;}
+        input[type="submit"] {margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <h1 rolü="iddialý">HTML5 Form Örneði</h1>
+
+    <form arya-etiketi="Tüm farklý HTML5 input tiplerinin tek formla gönderilmesi">
+        <div arya-etiketi="input-datalist-option seçenekleri">
+            <label for="tarayýcým">Listeden bir tarayýcý seçin:</label>
+            <input list="tarayýcýlar" name="tarayýcým" id="tarayýcý">
+            <datalist id="tarayýcýlar">
+                <option value="Chrome">
+                <option value="Maxthon">
+                <option value="Firefox">
+                <option value="Internet Explorer">
+                <option value="Opera">
+                <option value="Safari">
+                <option value="Microsoft Edge">
+            </datalist>
+        </div>
+        <div arya-etiketi="input-number numaratörün artýrýlmasý/azaltýlmasý">
+            <label for="sayý">Bir sayý girin:</label>
+            <input type="number" name="sayý" id="numaratör">
+        </div>
+        <div arya-etiketi="input-tel ile dizgesel telefon giriþi">
+            <label for="tel">Bir telefon numarasý girin:</label>
+            <input type="tel" name="tel" id="telefon">
+        </div>
+        <div arya-etiketi="input-email ile @'li eposta giriþi">
+            <label for="e-posta">Bir eposta adresi girin:</label>
+            <input type="email" name="e-posta" id="eposta">
+        </div>
+        <div arya-etiketi="input-time ile saat:dakika alta/üste kayýrarak seçilmesi">
+            <label for="zaman">Bir saat:dakika girin:</label>
+            <input type="time" name="zaman" id="saat">
+        </div>
+        <div arya-etiketi="input-date ile aylarý yukarý/aþaðý kaydýrarak seçme">
+            <label for="tarih">Bir tarih girin:</label>
+            <input type="date" name="tarih" id="tarihim">
+        </div>
+        <div arya-etiketi="o.preventDefault()'la adresçubuklu gönderi engeli ve reload()'la yeni boþ form sunumu">
+            <input type="submit" name="gönder" id="gönder">
+        </div>
+    </form>
+
+    <script arya-etiketi="JS kodlamayla input-submit form gönderisinin özelleþtirilmesi">
+        document.querySelector ("form").onsubmit=(o)=>{o.preventDefault(); window.location.reload();}
+    </script>
+</body>
+</html>

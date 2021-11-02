@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3a3.html: Özel arya ve rolü vasýflamalý seçileni aktif-görülen üç sekmeli bilgi-kutusu örneði.</title>
+    <style>
+        /* Genel kurulum */
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        * {box-sizing: border-box;}
+
+        /* bilgi-kutusu kurulumu */
+        .bilgi-kutusu {
+            width: 450px;
+            height: 400px;
+            margin: 0 auto;}
+
+        /* bilgi-kutusu sekmelerinin stillendirilmesi */
+        ul[rolü="sekmelistesi"] {
+            padding-left: 0;
+            margin-top: 0;}
+        li[rolü="sekme"] {
+            float: left;
+            list-style-type: none;
+            width: 150px;
+            display: inline-block;
+            line-height: 3;
+            background-color: red;
+            color: yellow;
+            text-align: center;}
+        li[rolü="sekme"]:focus, li[rolü="sekme"]:hover {
+            background-color: #a65050;
+            color: lime;}
+        li[rolü="sekme"].aktif {
+            background-color: #a60000;
+            color: aqua;}
+
+        /* bilgi-kutusu panellerinin stillendirilmesi */
+        .bilgi-kutusu .paneller {
+            clear: both;
+            position: relative;
+            height: 352px;}
+        .bilgi-kutusu article {
+            background-color: #a60000;
+            color: LightGray;
+            position: absolute;
+            padding: 10px;
+            height: 352px;
+            top: 0;
+            left: 0;}
+        .bilgi-kutusu .aktif-panel {z-index: 1;}
+    </style>
+</head>
+<body>
+    <section class="bilgi-kutusu">
+        <ul rolü="sekmelistesi">
+            <li class="aktif" rolü="sekme" arya-seçiliMi="true" arya-ebatý="3" arya-kümedekikonumu="1" tabindex="0">1.Sekme</li>
+            <li rolü="sekme" arya-seçiliMi="false" arya-ebatý="3" arya-kümedekikonumu="2" tabindex="0">2.Sekme</li>
+            <li rolü="sekme" arya-seçiliMi="false" arya-ebatý="3" arya-kümedekikonumu="3" tabindex="0">3.Sekme</li>
+        </ul>
+
+        <div class="paneller">
+            <article class="aktif-panel" rolü="sekmepaneli" arya-gizliMi="false">
+                <h2>Ýlk sekme</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. Vestibulum et orci scelerisque, vulputate tellus quis, lobortis dui. Vivamus varius libero at ipsum mattis efficitur ut nec nisl. Nullam eget tincidunt metus. Donec ultrices, urna maximus consequat aliquet, dui neque eleifend lorem, a auctor libero turpis at sem. Aliquam ut porttitor urna. Nulla facilisi.</p>
+            </article>
+            <article rolü="sekmepaneli" arya-gizliMi="true">
+                <h2>Ýkinci sekme</h2>
+                <p>Bu sekmenin içinde latince Lorem Ipsum vb yok. Ama gene de içerik pek heyacanlý sayýlmaz.</p>
+            </article>
+            <article rolü="sekmepaneli" arya-gizliMi="true">
+                <h2>Üçüncü sekme</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. Ve þimdi bir sýralý liste göreceksiniz: Oldukca heyecanlandýrýcý!</p>
+                <ol>
+                    <li>Dui neque eleifend lorem, a auctor libero turpis at sem.</li>
+                    <li>Aliquam ut porttitor urna.</li>
+                    <li>Nulla facilisi</li>
+                </ol>
+            </article>
+        </div>
+    </section>
+
+    <script>
+        let sekmeler = document.querySelectorAll (".bilgi-kutusu li");
+        let paneller = document.querySelectorAll (".bilgi-kutusu article");
+
+        for (let i = 0; i < sekmeler.length; i++) {
+            let sekme = sekmeler [i];
+            sekmeleriKur (sekme);
+        } // for sonu...
+        function sekmeleriKur (sekme) {
+            sekme.addEventListener ("click", sekmeyiKur);
+            sekme.addEventListener ("keypress", sekmeyiKur);
+        } // func sonu...
+        function sekmeyiKur (o) {
+            if (o.type === "keypress" && o.keyCode !== 13) {return;} // Sekme odaklý ve Enter'la aktifleme deðilse dön...
+            let sekmeKonumu = Number (this.getAttribute ("arya-kümedekikonumu")) - 1;
+            for (let i = 0; i < sekmeler.length; i++) {
+                if (sekmeler [i].getAttribute ("class")) {sekmeler [i].removeAttribute ("class");} // Önceki (class="aktif") iptal...
+                sekmeler [i].setAttribute ("arya-seçiliMi", "false");
+            } // for sonu...
+            this.setAttribute ("class", "aktif"); // Yeni seçilen sekme "aktif"
+            this.setAttribute ("arya-seçiliMi", "true");
+            for (let i = 0; i < paneller.length; i++) {
+                if (paneller [i].getAttribute ("class")) {paneller [i].removeAttribute ("class");}
+                paneller [i].setAttribute ("arya-gizliMi", "true");
+            } // for sonu...
+            paneller [sekmeKonumu].setAttribute ("class", "aktif-panel"); // Önceki (class="aktif-panel") iptal...
+            paneller [sekmeKonumu].setAttribute ("arya-gizliMi", "false");
+        } // func sonu...
+    </script>
+</body>
+</html>

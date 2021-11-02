@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4b3.html: A-href-target baðlantý çapalarýnýn namakbul ve makbul kurulumlarý örneði.</title>
+    <link rel="stylesheet" href="C1d4a.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section arya-etiketi="Baðlantýlarýn namakbul ve makbul kurulumlarý"></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 165px;">
+        <p>Faliyetlerimiz hakkýnda daha fazla bilgi için, baðýþ kabul eden sayfamýzý (<a href="/baðýþlar">týklayýn</a>), eðitim sayfamýzý (<a href="/eðitim">týklayýn</a>), sponsorluk paketimizi (<a href="/kaynaklar/kefillik.pdf">týklayýn</a>), ve eleman baþvuru deðerleme formunu (<a href="/kaynaklar/deðerleme.docx">týklayýn</a>) inceleyebilirsiniz.</p>
+        <hr/>
+        <p>Faliyetlerimiz hakkýnda daha fazla bilgi için,  <a href="/baðýþlar" target="_b">baðýþ kabul eden sayfamýzý</a>, <a href="/eðitim" target="_b">eðitim sayfamýzý</a>, <a href="/kaynaklar/kefillik.pdf" target="_b">sponsorluk paketimizi (PDF, 8MB)</a>, ve <a href="/kaynaklar/deðerleme.docx" target="_b">eleman baþvuru deðerleme formunu (Word dökümaný)</a> inceleyebilirsiniz.</p>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 80px;">
+section {background-color: DarkSlateGray; color: magenta;}
+section p:nth-child(1) {color: Lime;}
+section p:nth-child(1) a {color: orange;}
+section p:nth-child(3) a {color: pink;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 95px;">
+const çapalar = document.querySelectorAll ("a");
+for (let i=4; i < çapalar.length; i++) {
+    çapalar [i].onmouseout=()=>{çapalar [i].style.color= "pink";}
+    çapalar [i].onmouseover=()=>{çapalar [i].style.color= "red";}
+} // for sonu...
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C1d4a.js"></script>
+</html>

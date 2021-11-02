@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3b4a.html: Arya etiketli kutuyu basýlý fareyle konum beyanlý taþýma örneði.</title>
+    <style>
+        html {
+            background-color: #135;
+            overflow: hidden;}
+        body {margin:0;}
+        div {
+            background-color: #1FE200;
+            background-image: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.7));
+            width: 200px;
+            height: 150px;
+            border: 1px solid tomato;
+            position: absolute;}
+    </style>
+</head>
+<body>
+    <div arya-etiketi="Basýlý fareyle kutunun taþýnmasý">F12 konsol beyanýný aç</div>
+
+    <script>
+        //document.body.width = window.innerWidth;
+        //document.body.height = window.innerHeight;
+
+        let fareX, fareY;
+        document.onmousemove = function (o) {// Hareketli fare imlecinin (x,y) konumlarý...
+            fareX = o.clientX;
+            fareY = o.clientY;
+        } // doc..sonu...
+
+        const kutu = document.querySelector ("div");
+        let ilkFareX = null;
+        let ilkFareY = null;
+        var ilkKutuX, ilkKutuY, rAF;
+        kutu.onmousedown = function() {// Kutu üzerinde fareyi basýlý tutarak taþý...
+            ilkKutuX = kutu.offsetLeft;
+            ilkKutuY = kutu.offsetTop;
+            kutuyuTaþý();
+        } // kutu sonu...
+        document.onmouseup = taþýmayýDurdur; // Fareyi serbestleyerek, kutuyu taþýmayý durdur...
+
+        function kutuyuTaþý() {
+            if (ilkFareX === null) {// Ýlk baþlama hareketiyse...
+                ilkFareX = fareX;
+                ilkFareY = fareY;
+            }else {
+                let fareTaþýmasýX = fareX - ilkFareX;
+                let fareTaþýmasýY = fareY - ilkFareY;
+                let aktüelX = ilkKutuX + fareTaþýmasýX;
+                let aktüelY = ilkKutuY + fareTaþýmasýY;
+                console.log ("(" + aktüelX + ", " + aktüelY + ")");
+                kutu.style.left = aktüelX + "px";
+                kutu.style.top = aktüelY + "px";
+            } // else sonu...
+            rAF = requestAnimationFrame (kutuyuTaþý); // rAF: animasyon çerçeve talebi...
+        } // func sonu...
+
+        function taþýmayýDurdur() {
+            cancelAnimationFrame (rAF);
+            console.log ("Basýlý fareyle kutu taþýma durduruldu");
+            ilkFareX = null;
+            ilkFareY = null;
+        } // func sonu...
+    </script>
+</body>
+</html>

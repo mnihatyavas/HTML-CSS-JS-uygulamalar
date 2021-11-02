@@ -1,0 +1,16 @@
+/* C1e3.css: Hazýr forEach fonksiyonunun oklu ve normal kullaným vasýflarý alt-örneði. */
+
+html {background-color: #152; font-family: sans-serif;}
+body {
+    background-color: #a97;
+    max-width: 80%;
+    min-width: 600px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;
+    text-align: center;}
+div {display: flex;}
+div > p {
+   flex: 1;
+   text-align: center;}
+p {font-size: 13px; margin: 20px 0;}

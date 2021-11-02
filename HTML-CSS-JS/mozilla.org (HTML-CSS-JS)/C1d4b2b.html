@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4b2b.html: Form-fieldset-legend-ul-li/label-input zorunlu alanlý ve js kod denetimli iyi html formu örneði.</title>
+    <link rel="stylesheet" href="C1d4a.css" />
+    <style>
+        section {background-color: DarkSlateGray; color: magenta;}
+    </style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section arya-etiketi="Ýyi müþteri iletiþim formu gönderim tasarýmý"></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<form arya-etiketi="Zorunlu verigiriþ alanlý form">
+    <fieldset>
+        <legend>Müþteri Ýletiþim Formu</legend>
+        <ul>
+            <li>
+                <label for="isim">Ýsminiz</label>
+                <input type="text" name="ismi" id="isim" required>
+            </li>
+            <li>
+                <label for="yaþ">Yaþýnýz</label>
+                <input type="number" name="yaþý" id="yaþ" required>
+            </li>
+            <li>
+                <label for="eposta">Epostanýz</label>
+                <input type="email" name="epostasý" id="eposta" required>
+            </li>
+            <hr/>
+            <li>
+                <input type="submit">
+            </li>
+        </ul>
+    </fieldset>
+</form>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 170px;">
+form {width: 400px; margin: 0 auto;}
+ul {padding:0;}
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;}
+input {background-color: blue; color: yellow; width: 250px;}
+input[type="submit"] {margin: 1em auto; margin-bottom:-1em; font-size: 20px; padding: 5px;}
+input[type="submit"]:hover {color: red;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 55px;">
+document.querySelector ("form").onsubmit = (o)=>{o.preventDefault(); alert (isim.value + "'ýn formu gönderildi."); location.reload();}
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C1d4a.js"></script>
+</html>

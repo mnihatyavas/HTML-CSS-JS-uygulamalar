@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d2a1.html: Zorunlu verigiriþ alanlý varsayýlý form doldurma ve gönderme örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        form {
+            background: #eee;
+            border-radius: 20px;
+            box-shadow: 3px 5px 5px black;
+            padding: 20px;
+            width: 350px;
+            margin: 0 auto;}
+        div, label {margin-bottom: 20px;}
+        label {
+            width: 130px;
+            float: left;
+            text-align: right;
+            padding: 4px;}
+        input {
+            width: 200px;
+            float: right;}
+        label, input {
+            font-size: 1em;
+            line-height: 1.5;}
+        div {clear: both;}
+        input {background-color:Navy; color:orange;}
+    </style>
+</head>
+<body>
+    <h1>Form Varsayýlý Geçerlileme</h1>
+    <form>
+        <div>
+            <label for="ism">Ýsminizi girin:</label>
+            <input type="text" name="ism" id="isim" required>
+        </div>
+        <div>
+            <label for="yþ">Yaþýnýzý girin:</label>
+            <input type="text" name="yþ" id="yaþ" required>
+        </div>
+        <div>
+            <input type="submit" value="Formu gönder"/>
+        </div>
+    </form>
+
+    <script>
+        let form = document.querySelector ("form");
+        form.addEventListener ("submit", (o)=>{
+            o.preventDefault();
+            console.log (isim.value + " - " + form.yþ.value);
+            isim.value = ""; yaþ.value = "";
+        }); // form sonu...
+    </script>
+</body>
+</html>

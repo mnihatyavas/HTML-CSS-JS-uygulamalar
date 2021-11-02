@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d2a2.html: Özelleþtirilen formgiriþi ve gönderim öncesi geçerlileme örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            text-align: center;
+            border: 5px solid tomato;}
+        form {
+            background: Lime;
+            border-radius: 20px;
+            box-shadow: 3px 5px 5px black;
+            padding: 20px;
+            width: 350px;
+            margin: 0 auto;}
+        div, label {margin-bottom: 20px;}
+        label {
+            width: 130px;
+            float: left;
+            text-align: right;
+            padding: 4px;}
+        input {
+            background-color:Navy;
+            color:orange;
+            width: 200px;
+            float: right;}
+        label, input {
+            font-size: 1em;
+            line-height: 1.5;}
+        div {clear: both;}
+        .hata {
+            background-color: yellow;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px red;
+            padding: 10px;
+            width: 400px;
+            position: absolute;
+            bottom:0;}
+    </style>
+</head>
+<body>
+    <h1>Form Özel Geçerlileme</h1>
+
+    <div class="hata" rolü="ikaz" arya-ilgisi="tüm">
+        <ul></ul>
+    </div>
+
+    <form>
+        <div>
+            <label for="ismi">Ýsminizi girin:</label>
+            <input type="text" name="ismi" id="isim">
+        </div>
+        <div>
+            <label for="yaþý">Yaþýnýzý girin:</label>
+            <input type="number" name="yaþý" id="yaþ">
+        </div>
+        <div>
+            <input type="submit" value="Formu gönder">
+        </div>
+    </form>
+
+    <script src="C1d2a2.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d2b.html: Týrnak resmi üzerinde, týklayarak, odaklanarak büyütme yada dýþýndayken gizleme örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 90%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            height:710px;}
+        .týrnakResim {
+            width: 100px;
+            border: 2px solid;}
+        .büyükResim {
+            width: 75%;
+            position: absolute;
+            border: 5px solid;}
+        p {
+            color:yellow;
+            background-color:black;
+            padding:5px;}
+    </style>
+</head>
+<body>
+    <h1>Resmi Büyütme/Silme</h1>
+    <p>Maskot resmin üzerindeyseniz büyük resim görünür, uzaklaþýnca kaybolur; maskot üzerindeyken týklarsanýz büyük resim kalýcýdýr, dýþarda týklarsanýz kaybolur; klavye sekmesiyle odaklanýrsanýz büyük resim görünür, odak uzaklaþýrsa kaybolur.</p>
+
+    <img class="týrnakResim" src="resim/korsan.jpg" tabindex="0" alt="Tipik bir korsan legosu: Bir elde pala diðerinde tabanca, üçköþe þapka, tahta bacak, uzun saç ve sakal.">
+
+    <script>
+        const resimcik = document.querySelector (".týrnakResim");
+        resimcik.onmouseover = göster;
+        resimcik.onmouseout = gizle;
+
+        resimcik.onfocus = göster;
+        resimcik.onblur = gizle;
+
+        function göster() {
+            const resim = document.createElement ("img");
+            resim.setAttribute ("class", "büyükResim");
+            resim.setAttribute ("src", resimcik.getAttribute ("src"));
+            let en = resimcik.x + resimcik.width + 10;
+            resim.style.left = en + "px";
+            let boy = resimcik.y;
+            resim.style.top = boy + "px";
+            document.body.appendChild (resim);
+        } // func sonu...
+
+        function gizle() {
+            const resim = document.querySelector (".büyükResim");
+            document.body.removeChild (resim);
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c54c1.html: Hýzlý Promise.all vaat ile 3 asenkron bekletmeli yalýn fetch ve çaðýran göster-catch örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 880px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h3 {margin:0;}
+        img {border: 2px solid navy; margin: 2px;}
+        p {font-size: 22px; color: DarkGreen;}
+    </style>
+</head>
+<body>
+    <!-- Fetch'li vaat (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç (Asenkron bekletmeli fetch)</h3>
+
+    <script>
+        getirilenleriGöster().catch ((o)=>console.error (o) );
+
+        async function getirilenleriGöster() {
+            let kahve = getirVeÝþle ("resim/kahve.jpg", "blob");
+            let çay = getirVeÝþle ("resim/çay.jpg", "blob");
+            let yorum = getirVeÝþle ("C1c53d.txt", "text");
+
+            let deðerler = await Promise.all ([kahve, çay, yorum]); // Hýzlý asenkron bekletme...
+            console.log (deðerler);
+
+            let yurelNesnesi1 = URL.createObjectURL (deðerler [0]);
+            let yurelNesnesi2 = URL.createObjectURL (deðerler [1]);
+            let yorumMetni = deðerler [2];
+
+            let resim1 = document.createElement ("img");
+            let resim2 = document.createElement ("img");
+            resim1.src = yurelNesnesi1; resim1.title = "Bir fincan kahvenin 40 yýl hatýrý olurmuþ."; resim1.alt = "Resim: kahve.jpg";
+            resim2.src = yurelNesnesi2; resim2.title = "Bir fincan çay, içeni 40 gr zayýflatýrmýþ."; resim2.alt = "Resim: çay.jpg";
+            document.body.appendChild (resim1);
+            document.body.appendChild (resim2);
+
+            let paragraf = document.createElement ("p");
+            paragraf.textContent = yorumMetni; paragraf.title = "Metindeki Türkçe harfler gösterilmediðinden ascii-utf8 kullanýlmýþtýr."
+            document.body.appendChild(paragraf);
+        } // afunc sonu...
+
+        async function getirVeÝþle (yurel, tip) {
+            let yanýt = await fetch (yurel);
+            if (! yanýt.ok) {throw new Error (`Fetch hatasý! Statü no: ${yanýt.status}`);
+            }else {if (tip === "blob") {return await yanýt.blob();
+            }else if (tip === "text") {return await yanýt.text();}
+                return undefined;}
+        } // afunc sonu...
+    </script>
+</body>
+</html>

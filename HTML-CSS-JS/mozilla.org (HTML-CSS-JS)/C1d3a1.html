@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3a1.html: Arya özel vasýflamalý düðme rollü bölüm mesajlarýnýn týklanarak beyaný örneði.</title>
+    <style>
+        html {
+            background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 420px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        div {
+            background-color: rgb(210, 210, 210);
+            font-size: 15px;
+            font-family: sans-serif;
+            border: 5px outset rgb(180, 180, 180);
+            line-height: 20px;
+            padding: 0 6px;
+            width: 100px;
+            text-align: center;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+            display: inline-block;}
+        div:hover, div:focus {font-weight: bold; background-color: yellow;}
+    </style>
+</head>
+<body>
+    <h2>ARYA Bölüm Düðmeleri</h2>
+
+    <div bölüm-mesajý="Bu, ilk aryalý bölüm düðme mesajýdýr" tabindex="0" rolü="düðme">Týkla beni!</div>
+    <div bölüm-mesajý="Bu, ikinci aryalý bölüm düðme mesajýdýr" tabindex="0" rolü="düðme">Beni de týkla!</div>
+    <div bölüm-mesajý="Bu, üçüncü aryalý bölüm düðme mesajýdýr" tabindex="0" rolü="düðme">Ve beni de!</div>
+
+    <script>
+        const bölümDüðmeleri = document.querySelectorAll ("div");
+        for (let i = 0; i < bölümDüðmeleri.length; i++) {düðmeleriYönet (bölümDüðmeleri [i]);}
+        function düðmeleriYönet (düðme) {düðme.onclick = function (o) {alert (o.target.getAttribute ("bölüm-mesajý") ); } }
+        document.onkeydown = function (o) {if (o.keyCode === 13) {document.activeElement.onclick (o);} }; // Düðmeye sekmeli Enter
+    </script>
+</body>
+<!-- Tüm arya yardým açýklamalý vasýflar:
+Superclass Role: section
+Subclass Roles: alert, dialog
+Aria Properties: aria-atomic,  aria-busy (state), aria-controls, aria-current (state), aria-describedby,
+aria-details, aria-disabled (state), aria-dropeffect, aria-errormessage, aria-expanded (state),
+aria-flowto, aria-grabbed (state), aria-haspopup, aria-hidden (state), aria-invalid (state), aria-keyshortcuts,
+aria-label, aria-labelledby, aria-live, aria-owns, aria-relevant, aria-roledescription
+Name From: author
+Implicit Value for Role: Default for aria-live is assertive. Default for aria-atomic is true.
+-->
+</html>

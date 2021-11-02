@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d2.html: Eriþilebilinir varsayýlý ve özel form resim ve tablo css vasýflamalarý örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Eriþilinebilir CSS</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1d2a1.html" target="_">a1) Zorunlu verigiriþ alanlý varsayýlý form doldurma ve gönderme örneði</a></h4>
+    <h4><a href="C1d2a2.html" target="_">a2) Özelleþtirilen formgiriþi ve gönderim öncesi geçerlileme örneði</a></h4>
+    <h4><a href="C1d2b.html" target="_">b) Týrnak resmi üzerinde, týklayarak, odaklanarak büyütme yada dýþýndayken gizleme örneði</a></h4>
+    <h4><a href="C1d2c.html" target="_">c) Varsayýlý tabloya özel CSS kapsam='kolon/satýr' vasýflarý atfetme  örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>1) Her tür css varsayýlý yada özel eriþilebilinir form-resim-tablo vasýflamalarý sunulmaktadýr. \
+            Toplam 3 grup kapsamýnda 4 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-a1 form-input-required varsayýlý doldurulmasý gerekli form içi input verigiriþ \
+            alanlarýný belirtir. Doldurulmadan form button/input-submit'le gönderilemez. Form içi input-name \
+            isim alanlarý normalen form-submit gönderiminde adres satýrýndan sunucuya veri akýþý saðlar. \
+            Bu kanalla veri akýþý istenmezse form.addEventListener('submit',()=>{o.preventDefaullt()..} ile \
+            iptal edilmelidir. Girilen deðerlere eriþim doðrudan id.value ile yada form.name.value ile yapýlabilir" +
+            "<br/>3) Altprogram-a2 önceki varsayýlý input-required verigiriþ zorunlu alanlarýn boþ geçilemeyeceði \
+            ikazý bu örnekte kendi özel ikaz ul-li-a-href-baðlantýlý hatakutumuzla saðlanmaktadýr. Öncelikle \
+            form.onsubmit=(o)=>{o.preventDefault()..} ile adresçubuðu input-name bilgi aktarýmý iptal edilir. \
+            Girilen label ve input veriler formBirimleri nesnel diziye eklenir. Þayet herhangibir nesnel verigiriþi \
+            boþsa tarayýcý altý sol görünmezdeki (hataKutusu.style.left='-100%') sarý hata kutuya ul-li listeli \
+            a-href baðlantýlar olarak listelenip altta görünür kýlýnýr (hataKutusu.style.left='25%'). Ayrýca bu \
+            verigiriþsiz baðlantý týklandýðýnda form içindeki verigiriþ alanýna odaklanýlýr. Boþ verigiriþ alaný \
+            kalmayýnca form.submit gönderim saðlanýr ve durum tarayýcý alert ikazýyla duyurulup, akabinde \
+            yeni verigiriþ yapýlabilmesi için form boþ olarak yeniden yüklenir (window.location.reload())." +
+            "<br/>4) Altprogram-b týrnakResim/resimcik eni 100px, büyükResim/resim eni ise aktüel tarayýcý \
+            eni'nin %75'i olacak. Fare resimcik üzerindeyse (onmousever), týklanmýþsa (onfocus) yada \
+            ilk sekme tuþuyla (tabindex='0') büyükResim, küçük en+10px ve boy=y=top mutlak konumdan \
+            dinamik img-src vasýflarla gösterilir (document.body.appendChild(resim)). Fare resimcik'ten \
+            uzaklaþmýþsa (onmouseout), veya odaksýzlanýnca (onblur) yada sekme tuþu esgeçerse \
+            (tabindex!='0') resim gövdeden silinir (document.body.removeChild(resim))." +
+            "<br/>5) Altprogram-c varsayýlý table-th-tr-td elemanlarýna özel vasýflamayla kapsam='kolon' \
+            ilk tr satýrdaki 3 th baþlýk (isim, yaþ, cinsiyet) #aaa gri renkle;  ve kapsam='satýr' özel vasfýyla da \
+            girilen 5 kayýt tr satýrýnýn ilk th isim baþlýklarý DarkKhaki koyu haki renklendirilmiþtir. CSS \
+            vasýflarýyla da tr:nth-child(even) çift no'lu 0-2-4 satýrlar açýk sarý/Linen, tr:nth-child(odd) tekli \
+            satýrlarsa (1-3-5) haki renkle zeminboyanmýþtýr. Tablo varsayýlý sýnýrlarýný belirginlik açýsýndan \
+            iptal etmedim (border-collapse:collapse-NOT): Ýstedðiniz araya/baþa/sona yeni kayýtlar girebilir, \
+            deðiþtirebilir, silebilirsiniz."
+    </script>
+</body> 
+</html>

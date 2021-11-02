@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1e2.html: Çentikkutusuna ilişkin etiket tıklanarak görünen/kaybolan bilgikutusu örneği.</title>
+    <style>
+        html {background-color: #68a; font-family: sans-serif;}
+
+        /* Bilgi kutusunun görünebilirliğini kontrol eden çentikkutu ilişkili etiket */
+        label[for="göster-gizle"] {
+            font-size: 5rem;
+            position: absolute;
+            top: 4px;
+            right: 5px;
+            z-index: 1;
+            cursor: pointer;
+            font-weight: bold;
+            color: yellow;}
+        input[type="checkbox"] { /* Asla görünmeyen çentikkutusu */
+            position: absolute;
+            top: -100px;}
+
+        /* Bilgikutusunu stilleme */
+        aside {
+            background-color: #a60000;
+            background: linear-gradient(to top left, #ff0000, #5f0000);
+            color: ivory;
+            font-size: 1.15em;
+            text-shadow: 5px 5px 5px black;
+            width: 340px;
+            height: 90%;
+            padding: 10px 1%;
+            position: fixed;
+            top: 0;
+            right: -370px; /* Öncelikle gizli */
+            transition: 1s;}
+
+        /* Çentiklenince görünecek olan kenarlık/aside */
+        input[type=checkbox]:checked + aside {right: 0px;}
+    </style>
+</head>
+<body>
+    <!-- İlişki geçerliliği için label-for ile input-id aynı olmalıdır. -->
+    <label for="göster-gizle">❔</label>
+    <input type="checkbox" id="göster-gizle">
+    <aside>
+        <h2>Enformasyon</h2>
+        <p>Bu uygulama konusunda birkaç mühim hatırlatma:</p>
+        <ol>
+            <li>Hakikaten çok zekice tasarlanmış kayarak-görünen bilgi kutusudur.</li>
+            <li>Bilgi kutusu, görüntüden yumuşak kayış için sabit konumlanmayla css geçişin bileşiminden oluşturulmuştur.</li>
+            <li>Ayrıca zeki bir teknik olan <a href="https://css-tricks.com/the-checkbox-hack/" target="_b">çentikkutu hilesi</a> kullanılmıştır.</li>
+            <li>Böylece herhangibir JS kodlaması gerekmeksizin (IE9 ve üzerinde çalışan) hoş bir "tıkla görünsün / tıkla kaybolsun" yumuşak kaydırmalı geçiş efekti yaratılmıştır.</li>
+        </ol>
+    </aside>
+</body>
+</html>

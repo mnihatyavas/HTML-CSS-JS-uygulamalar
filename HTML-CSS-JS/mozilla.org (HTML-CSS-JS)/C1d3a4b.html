@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3a4b.html: Arya-rolü vasýflý, boþ alan ikaz baðlantý odaklý, müzisyen ve enstrümanlý form geçerlileme örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #975;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        form {
+            margin:0 auto;
+            background: DarkSlateGray;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px black;
+            padding: 20px;
+            width: 350px;}
+        label {
+            width: 120px;
+            float: left;
+            text-align: right;
+            padding: 4px;
+            margin-bottom: 20px;}
+        input {
+            width: 200px;
+            float: right;
+            background-color: DodgerBlue;}
+        label, input {
+            font-size: 1em;
+            line-height: 1.5;
+            color: yellow;}
+        div {clear: both;}
+        input[type="checkbox"] {height: 24px;}
+        .hatalar, .gizli-ikaz {
+            background-color: yellow;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px red;
+            padding: 5px;
+            width: 300px;
+            position: absolute;
+            left: 360px;
+            bottom: 0;}
+        .gizli-ikaz {left: -100%;}
+        p, span {color:red; font-weight:bold; font-size: 18px;}
+        ul {margin: 0;}
+    </style>
+</head>
+<body>
+    <h1>Form Geçerlileme</h1>
+    <div class="hatalar" rolü="ikaz" arya-iliþkisi="tüm">
+        <ul></ul>
+    </div>
+    <p>(*) iþaretli alanlara verigiþleri zorunludur.</p>
+
+    <form>
+        <div>
+            <label for="ismi">Ýsminizi girin<span>*</span>:</label>
+            <input type="text" name="ismi" id="isim" arya-zorunluMu="true">
+        </div>
+        <div>
+            <label for="yaþý">Yaþýnýzý girin<span>*</span>:</label>
+            <input type="number" name="yaþý" id="yaþ" min="1" max="150" placeholder="[1,150] girin" arya-zorunluMu="true">
+        </div>
+        <div>
+            <label for="müzisyeni">Müzisyen mi?:</label>
+            <input type="checkbox" name="müzisyeni" id="müzisyen">
+        </div>
+        <div>
+            <label for="aletleri">Enstrümanlar<span>*</span>:</label>
+            <input type="text" name="aletleri" id="aletler" arya-zorunluMu="true" arya-etkisiz="true">
+        </div>
+        <div>
+            <input type="submit"> <!-- value="Gönder" gibidir -->
+        </div>
+        <div></div>
+    </form>
+    <p class="gizli-ikaz" arya-canlý="iddialý"></p>
+
+    <script src="C1d3a4b.js"></script>
+</body>
+</html>

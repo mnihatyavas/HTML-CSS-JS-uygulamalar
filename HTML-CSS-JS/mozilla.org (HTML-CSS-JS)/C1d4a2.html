@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4a2.html: Arya-etiketi ve rolü vasýf þerhli form gönderme deðiþtirilebilir html-css-js örneði.</title>
+    <link rel="stylesheet" href="C1d4a.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section arya-etiketi="Basit form gönderme html-css-js kodlamasý"></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 110px;">
+<form rolü="araþtýrma">
+    <input type="search" name="ara" id="araþtýr" required placeholder="Aranacak sorguyu gir" arya-etiketi="Araþtýrýlacak ibareyi girin">
+    <br/>
+    <input type="submit">
+</form>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 40px;">
+input {background-color:Navy; color:orange;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 60px;">
+document.querySelector ("form").onsubmit = (o)=>{o.preventDefault(); alert (`[${araþtýr.value}] sorgulu form gönderildi.`); araþtýr.value="";}
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C1d4a.js"></script>
+</html>

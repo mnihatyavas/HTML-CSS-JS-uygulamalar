@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4d.html: Hayvan listesinden týklananýn ekstra açýklamasýný js kodlamasýyla sergileme örneði.</title>
+    <link rel="stylesheet" href="C1d4a.css" />
+    <style>
+        section {background-color: DarkSlateGray; color: magenta; width: 90%; margin-bottom: 10px;}
+    </style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section arya-etiketi="Týklandýðýnda arya-vasýflý ekstra açýklamayý gösteren hayvan listesi"></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<div class="hayvan-listesi">
+    <h1>Hayvan Özetleri</h1>
+    <p>Alttaki hayvan listesinden týkladýðýnýzýn, müteakiben baþlýklý tasviri sergilenecektir.</p>
+    <ul>
+        <li tabindex="0" tasvir-verisi="Avrasya, Kuzey ve Doðu Afrikada bulunan büyük kývrýmlý boynuzlu yabani bir dað keçisi.">Ibex</li>
+        <li tabindex="0" tasvir-verisi="Orta-büyüklükte, manda benzeri, ancak yunus kuyruklu bir deniz memelisi.">Dugong</li>
+        <li tabindex="0" tasvir-verisi="50 ila 75 sm boyunda, küçük bir kangru benzeri nadir bir keseli.">Quokka</li>
+        <li tabindex="0" tasvir-verisi="5-10kg aðýrlýk, 2.5-3m kanat geniþlikli, hemen tümüyle denizüstünde uçarak yaþayan efsanevi bir kuþ.">Albatros</li>
+    </ul>
+</div>
+<hr/>
+<div class="hayvan-tasviri">
+    <h2></h2>
+    <p></p>
+</div>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 70px;">
+li {text-decoration: underline; color: yellow; cursor: pointer;}
+li:hover {color: red;}
+.hayvan-tasviri {color: deeppink;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 200px;">
+const listeElemanlarý = document.querySelectorAll ("li");
+const tasvirBölümü = document.querySelector (".hayvan-tasviri");
+const h2Tasviri = document.querySelector (".hayvan-tasviri h2");
+const pTasviri = document.querySelector (".hayvan-tasviri p");
+listeElemanlarý.forEach (function (birim) {
+    birim.addEventListener ("mouseout", ()=>{tasvirBölümü.style.display = "none";} );
+    birim.addEventListener ("mouseup", tasviriGöster);
+    birim.addEventListener ("keyup", function (o) {
+        if (o.key === "Enter") {tasviriGöster (o); // Sekme-Enter gösterir...
+        }else {tasvirBölümü.style.display = "none";} // Sekme-baþkaTuþ gizler...
+    }); // bir..sonu...
+}) // liste sonu...
+function tasviriGöster (o) {
+    h2Tasviri.textContent = o.target.textContent;
+    pTasviri.textContent = o.target.getAttribute ("tasvir-verisi");
+    tasvirBölümü.style.display = "block";
+} // func sonu...
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C1d4a.js"></script>
+</html>

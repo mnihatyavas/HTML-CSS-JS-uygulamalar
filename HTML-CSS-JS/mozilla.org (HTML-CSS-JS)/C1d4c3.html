@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4c3.html: Renk kontrastlarý, tarayýcý duyarlý ebatlar ve fare-bas-çek/sekme-Enter yönetimi örneði.</title>
+    <link rel="stylesheet" href="C1d4a.css" />
+    <style>
+        section {background-color: DarkSlateGray; color: magenta; width: 90%; margin-bottom: 10px;}
+    </style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section arya-etiketi="Renk kontrasý, tarayýcýya duyarlý ebatlar ve fare/sekme duyarlýðý"></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 165px;">
+<main arya-etiketi="Fareyle baþlýklarýn baskýlanmasý duyarlýðý">
+    <h1 tabindex="0" arya-etiketi="Sekme-Enter duyarlýðý">Bu bir kuzey kutup ayýsýdýr</h1>
+    <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl.</p>
+    <h1 tabindex="0" arya-etiketi="Sekme-Enter duyarlýðý">Þu bir güney kutup penguenidir</h2>
+    <p>Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</p>
+    <h1 tabindex="0" arya-etiketi="Sekme-Enter duyarlýðý">O bir kuzuy kutup morsudur</h2>
+    <p>Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors.</p>
+</main>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 80px;">
+main {padding: 20px; border: 2px solid pink; background-color: red;}
+h1 {color: #999; font-size: calc(1.2vw + 0.8rem);}
+h1:hover {color: #555; cursor: pointer;}
+p {display: none; color: yellow; font-size: calc(0.8vw + 0.5rem);}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 180px;">
+const h1 = document.querySelectorAll ("h1");
+const p = document.querySelectorAll ("p");
+for (let i = 0; i < h1.length; i++) {
+    // Fare baskýlama/býrakma yönetimi...
+    h1 [i].onmousedown=()=>{p [i].style.display = "block"; console.log (p [i].textContent);}
+    h1 [i].onmouseup=()=>{p [i].style.display = "none";}
+    // (Shift-)Sekme Enter'lama yönetimi...
+    h1 [i].addEventListener ("keydown", function (o) {if (o.key === "Enter") {p [i].style.display = "block";} });
+    h1 [i].addEventListener ("keyup", function (o) {p [i].style.display = "none"; } );
+} // for sonu...
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C1d4a.js"></script>
+</html>

@@ -1,0 +1,8 @@
+/* C1e6ay.css: JS þartýyla link-stylesheet-css-href dosyasýný float görüntü vasýflý yükleme alt-örneði. */
+
+main div {
+    width: 22%;
+    float: left;
+    padding-right: 4%;}
+main div:last-child {padding-right: 0;}
+footer {clear: left;}

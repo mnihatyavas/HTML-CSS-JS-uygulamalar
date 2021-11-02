@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c54b3.html: Asenkron bekletmeli try-catch'li getir'le resim getirme örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 450px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h3 {margin:0;}
+    </style>
+</head>
+<body>
+    <!-- Fetch (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç (Asenkron fonksiyon ve bekletmeli fetch)</h3>
+
+    <script>
+        getir();
+
+        async function getir() {
+            try {
+                let yanýt = await fetch ("resim/kahve.jpg");
+                if (! yanýt.ok) {throw new Error (`Fetch hatasý! Statüsü: ${yanýt.status}`);
+                }else {
+                    let damla = await yanýt.blob();
+                    let yurelNesnesi = URL.createObjectURL (damla);
+                    let resim = document.createElement ("img");
+                    resim.src = yurelNesnesi;
+                    resim.title = "Bir fincan kahvenin 40yýl hatýrý olurmuþ";
+                    resim.alt = "Resim: kahve.jpg";
+                    document.body.appendChild (resim);
+                } // else sonu...
+            }catch (o) {console.error (o);}
+        } // afunc sonu...
+    </script>
+</body>
+</html>

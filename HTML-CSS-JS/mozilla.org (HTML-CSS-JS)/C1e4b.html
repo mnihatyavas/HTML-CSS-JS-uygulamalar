@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1e4b.html: Zorunlu verigiriþ alanlý randevu formu gönderme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        input {background-color:aqua; color:DarkGreen;}
+        button {background-color: DarkRed; color: yellow; font-size:15px; padding: 10px;}
+        label {
+            float: left;
+            width: 33%;
+            text-align: right;}
+        input {
+            float: right;
+            width: 65%;}
+        label, input {margin-bottom: 20px;}
+        div {clear: both;}
+    </style>
+</head>
+<body>
+    <h1>Randevu Formu</h1>
+    <hr/>
+    <form id="form">
+        <div>
+            <label for="tarih">Bir tarih girin:</label>
+            <input type="date" id="tarih" required>
+        </div>
+        <div>
+            <label for="zaman">Bir zaman girin:</label>
+            <input type="time" id="zaman" required>
+        </div>
+        <br/><br/><hr/><br/>
+        <div>
+            <button type="submit">Gönder</button>
+        </div>
+    </form>
+
+    <script>
+        form.onsubmit = (o)=>{
+            o.preventDefault();
+            alert (`[${tarih.value}] tarih ve [${zaman.value}] zamanlý randevu formu gönderildi.`);
+            window.location.reload();
+        }; // form sonu...
+    </script>
+</body>
+</html>

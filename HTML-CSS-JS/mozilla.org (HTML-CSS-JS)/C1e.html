@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1e.html: Html-css-js ile marjinal seçicilikte araç testi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Araç Testi</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1e1a.html" target="_">1a) Kötü ve iyi anlambilimsel baþlýk-altbaþlýk-paragraf tasarlama örneði</a></h4>
+    <h4><a href="C1e1b.html" target="_">1b) Sahte div buton'la týklayarak ve sekme-Enter'la arya türkçe vasýflý mesaj yansýtma örneði</a></h4>
+    <h4><a href="C1e1c.html" target="_">1c) Baðlantýlar, arya mesajlý butonlar ve zorunlu alanlý form gönderme örneði</a></h4>
+    <h4><a href="C1e2.html" target="_">2) Çentikkutusuna iliþkin etiket týklanarak görünen/kaybolan bilgikutusu örneði</a></h4>
+    <h4><a href="C1e3.html" target="_">3) Hazýr forEach fonksiyonunun oklu ve normal kullanýmý örneði</a></h4>
+    <h4><a href="C1e4a.html" target="_">4a) Css vasýflamayla düðmenin normal, üzerinde, aktif duyarlýlýk efektleri örneði</a></h4>
+    <h4><a href="C1e4b.html" target="_">4b) Zorunlu verigiriþ alanlý randevu formu gönderme örneði</a></h4>
+    <h4><a href="C1e4c.html" target="_">4c) H1 ve p elemanlarýnýn first/last-child, nth-child(n/odd/even) seçici vasýflandýrýlmasý örneði</a></h4>
+    <h4><a href="C1e5a.html" target="_">5a) Döngü içinde yaratýlan paragraflarýn kötü/iyi týklanma yönetimi örneði</a></h4>
+    <h4><a href="C1e5b.html" target="_">5b) xhrTalebi.send()/.load() ile json dosya verilerinden header/section tasarýmý örneði</a></h4>
+    <h4><a href="C1e5c1.html" target="_">5c1) Fetch'le getirilecek resim dosyasýnýn img-src ile yüklenmesi örneði</a></h4>
+    <h4><a href="C1e5c2.html" target="_">5c2) Resim dosyasýnýn img-src yerine fetch-then(tip)-then(nesne) ile getirilmesi örneði</a></h4>
+    <h4><a href="C1e5c3.html" target="_">5c3) Tarayýcý Promise-fetch desteklemiyorsa script'le yükleme alternatifi örneði</a></h4>
+    <h4><a href="C1e6a.html" target="_">6a) JS þartýyla link-stylesheet-css-href dosyasýný block/flex/float görüntü vasýflý yükleme örneði</a></h4>
+    <h4><a href="C1e6b.html" target="_">6b) JS seçimiyle mevcut dahili stillemelerden blok, esnek yada kayan vasfý geçerlileme örneði</a></h4>
+    <h4><a href="C1e6c.html" target="_">6c) CSS @supports-not manüel seçimiyle blok, esnek yada kayan vasfý geçerlileme örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>1) Html-css-js seçici ve incelikli taktiklerle html elemanlarýnýn marjinal testi sunulmaktadýr. \
+            Toplam 6 grup kapsamýnda 16 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-1a semantik/anlambilim bakýmýndan eski html'deki font-size yerine h1, br \
+            yerine p elemanlarýnýn kullanýlmasý tekrar vurgulanmaktadýr." +
+            "<br/>3) Altprogram-1b sahte buton/düðme div/bölüm yerine gerçek button yada input-type-button \
+            kullanýlmasý vurgulanmaktadýr. alert{sahte-düðme.getAttribute('düðme-mesajý')} ile de hangi düðmeye \
+            týklandýðý kontrolu sunulmaktadýr." +
+            "<br/>4) Altprogram-1c üç ayrý kýsým/section ilkinde iyi renk kontrast ve hover/üzerinde, focus/odaklý \
+            link/baðlantý a-href-target örneði sunulmuþtur. Ýkinci kýsýmda önceki sahte div-düðme yerine gerçek \
+            button-düðme ve týklanma alert mesajý duyarlýlýðý sergilenmiþtir. Son kýsýmsa 3 input verialaný (type: \
+            text, number, select-option) required varsayýlý doldurma zorunluluðunda, kontrollu form submit-gönderme \
+            ve yeni boþ form sunma (window.location.reload()) gösterilmiþtir." +
+            "<br/>5) Altprogram-2 js kodlamasý kullanmadan görünen-gizlenen kayan aside/kenarlýk panelle \
+            for-id'le iliþkili label-input(type=checkbox)'un görünmeyen çentikkutusuna iliþik görünen label-soruiþareti \
+            týklandýðýnda CSS kontrollu input[type=checkbox]:checked+aside{right:0px;} aside bilgi kutusu \
+            transition:1S geçiþsüresinde saðdan görüntüye girmekte, soru iþareti tekrar týklanýp-unchecked \
+            çentiksizlenince tekrar 1S sürede right:-370px gereði sayfa saðýna kayarak kaybolmaktadýr." +
+            "<br/>6) Altprogram-3 dizi.forEach(function(eleman,endeks,dizi){..}) ve oklu dizi.forEach((a,b,c)=>{..}) \
+            birlikte ayný iþlemi tekrar uygulamýþlardýr." +
+            "<br/>7) Altprogram-4a button düðme týklanmasý JS kodlamalý alert ++sayaç'la týklanma sayýsýný \
+            duyururken, CSS vasýflamayla da normal, üzerinde ve aktif düðme (inset+/inset-) dýþa/içe (metin/düðme) \
+            gölgelenme efektleri sunmaktadýr." +
+            "<br/>8) Altprogram-4b verigiriþ alanlarý required zorunlu olan input-type-date/time ile beliren bilgisayarýn \
+            aktüel tarih (gg.aa.yyyy) ve zaman (ss:dd) þablonundan seçilerek yada manüel girilerek gönder týklanýnca \
+            form.onsubmit=()=>{..} gereði adreskutulu sunucuya varsayýlý gönderi engellenip, alert kutulu form gönderi \
+            duyurusu sonrasý yeni boþ form (location.reload()) yüklenmektedir." +
+            "<br/>9) Altprogram-4c CSS vasýflý h1 ve p eleman seçiciliði topluca (eleman:nth-child(odd), eleman:nth-child(even), \
+            eleman:nth-child(no), eleman:first-child, eleman:last-child) normal/üzerinde efektiyle, ayrýca týklanýnca da JS \
+            kodlamasýyla eleman.onclick=(o)=>{alert(o.target.getAttribute('arya-mesajý'))} kendisinin hangi css-child \
+            seçicilik vasýflý olduðunu beyan etmektedir." +
+            "<br/>10) Altprogram-5a bir (for, while) döngü içinde onevent kullanmak iyi programlama tekniðine \
+            aykýrý olduðundan, bu tür olay yönetimi bir dýþ fonksiyona yönlendirilmelidir. Nitekim ikinci for döngüsü \
+            olay yönetimli alert p iyi paragraf ve no'sunun beyanýný döngü dýþýna yönlendirmiþtir." +
+            "<br/>11) Altprogram-5b js kodlamayla new XMLHttpRequest().xhrTalebi.open('GET','C1e5b.json') \
+            süper güçlüler verileri açýlýp, tip tanýmlanýp (json) içerik yanýt nesnesi alýnmakta ve header/baþlýk'la \
+            section/kýsým içerisine serimlenmektedir. Baþlýkta ekipAdý, ikamet ve kuruluþ bilgileri sunulmaktadýr. \
+            Kýsým'daysa üye sayýlý for döngüsüyle her üyenin adý, gizliKimliði, yaþý, güçler altbaþlýðýyla güçler sayýlý \
+            listeyi kapsamakta, bu bilgiler için gerekli html elemanlarý (article/makale, h2/baþlýk, p/paragraflar, \
+            ul/düzensizListe ve li/liste) yaratýlýp, denk düþen bilgiler atanmakta, üye bilgileri önce article/makaleye, \
+            sonra da baðlý olacaðý section/kýsým'a eklenmektedir.<br/>NOT: JSON dosya hatalarý düzenlenirken çalýþýlan \
+            tarayýcýdaki eski veriler sýk sýk temizlenmelidir; yoksa tarayýcý yapýlan dosya deðiþikliðini güncellemeden eskisini \
+            kullanmaya devam ettiðinden, düzeltilen güncellemeleri kaale almayacaktýr." +
+            "<br/>12) Altprogram-5c1 bilahere fetch'le yüklenecek olan çiçek resmi bu örnekte img-src'la yüklenmekte, \
+            ayrýca alt ve title vasýf deðerleri de atanmaktadýr." +
+            "<br/>13) Altprogram-5c2 çiçek dosyasý fetch(yurel-adresi).then(dosya-tipi).then(resimNesnesi-yanýtý) aþamalarýyla \
+            yüklenmekte, img sýnýfAdýyla src-alt-title vasýf deðerleri atanmaktadýr." +
+            "<br/>14) Altprogram-5c3 tarayýcýnýz Promise ve fetch'i destekliyorsa doðrudan fetchÝleYükle'yi, desteklemiyorsa \
+            scriptÝleYükle vasýtasýyla hata argümanlý fetchÝleYükle'yi çaðýrmaktadýr. JS kodlamanýn ilk iki if satýrý yorumlaþtýrýlýrsa \
+            konsola hata beyanlý fetch'i çalýþtýracak, çiçek resmini yükleyecektir. Her iki yöntemi de test edebilirsiniz." +
+            "<br/>15) Altprogram-6a aðsayfasý header/baþlýk ve footer/ayaklýk örneklerde aynýdýr, fakat main/esas \
+            serilimi block/flex/float üçlüsünden biri yapýlabilir. Bu örnekte JS kodlamalý prompt iletisiyle kullanýcý tercihini \
+            1:Blok, 2:Esnek, 3:Kayan seçebilir ve blok'ta mevcut css verileri yeterlidir; flex ve float'da ise uygun ilave .css \
+            dosya adresleri link-href'e atanmakta ve aðsayfamýz bu ilave css vasýflarýyla esas bölüm 4 kolonluya serimlenmektedir. \
+            Ayrýca tercih sonuçlarý F12-konsol'da duyurulmaktadýr." +
+            "<br/>16) Altprogram-6b tüm css main blok/esnek/kayan vasýflarý dahili style içeriðinde mevcut kýlýnmýþ, ancak \
+            js kodlamalý prompt tercihiyle main için geçerli kýlýnacak sýnýfAdý (blok, esnek-kutu yada kayan-kutu ) doðrultusunda \
+            main p-paragraflarý normal yada 4 kolonlu serimlenebilmekte, sonuç da F12-konsolda bildirilmektedir." +
+            "<br/>17) Altprogram-6c hiç js kodlamalý prompt tercihi kullanýlmamakta, fakat dahili style-css kodlamalarýnda \
+            desteklenme '@supports' ve '@supports not' ile manüel olarak blok için (esas p siyah renk) supports-flexx/supports-not-flex, \
+            esnek için (esas p yeþil renk) supports-flex/supports-not-flex, kayan içinse (esas p mavi renk) supports-flexx/supports-not-flexx \
+            deðiþtirmek her üç serilimi de test etmek için yeterlidir." +
+            "<br/>18) Daha derinlemesine (seleniun google sürücü testleri) araç testleri için 'http://mdn.github.io/learning-area/tools-testing/\
+            cross-browser-testing/accessibility/native-keyboard-accessibility.html' Mozilla tool-testing/araç-testi sitesini ziyaret edip \
+            talimatlar doðrultusunda node.js ve adýgeçen sürücüleri indirip sonuç almaya çalýþabilirsiniz (Ben þimdilik JavaScript \
+            sýnýrlamalarýyla yetineceðim)."
+    </script>
+</body> 
+</html>

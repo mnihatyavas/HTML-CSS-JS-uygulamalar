@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d2c.html: Varsayýlý tabloya özel CSS kapsam='kolon/satýr' vasýflarý atfetme  örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align:center;}
+      table {
+            margin:0 auto;
+            width: 400px;
+            /* border-collapse: collapse;  Varsayýlý sýnýr iptali */
+            border: 1px solid black; /* Özel sýnýr */
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;}
+        th, td {padding: 10px; text-align: left;}
+        th[kapsam="kolon"] {background: #aaa;}
+        th[kapsam="satýr"] {background: DarkKhaki;}
+        tr:nth-child(even) {background: linen;}
+        tr:nth-child(odd) {background: Khaki;}
+    </style>
+</head>
+<body>
+    <h1>CSS Özel Vasýflý Tablo</h1>
+
+    <table>
+        <tr>
+            <th kapsam="kolon">Ad ve soyad</th> <!-- kapsam="kolon" özel vasfý -->
+            <th kapsam="kolon">Yaþ</th>
+            <th kapsam="kolon">Cinsiyet</th>
+        </tr>
+        <tr>
+            <th kapsam="satýr">Gazanfer Çelik</th> <!-- kapsam="satýr" özel vasfý -->
+            <td>23</td>
+            <td>Erkek</td>
+        </tr>
+        <tr>
+            <th kapsam="satýr">Elvan Gökay</th>
+            <td>18</td>
+            <td>Diþi</td>
+        </tr>
+        <tr>
+            <th kapsam="satýr">Feride Sümbül</th>
+            <td>25</td>
+            <td>Diþi</td>
+        </tr>
+        <tr>
+            <th kapsam="satýr">Belkýs Akdeniz</th>
+            <td>35</td>
+            <td>Diþi</td>
+        </tr>
+        <tr>
+            <th kapsam="satýr">Erdal Kaya</th>
+            <td>55</td>
+            <td>Erkek</td>
+        </tr>
+    </table>
+</body>
+</html>

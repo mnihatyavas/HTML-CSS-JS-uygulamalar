@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>C1e5c3.html: Tarayýcý Promise-fetch desteklemiyorsa script'le yükleme alternatifi örneði.</title>
+    <link rel="stylesheet" href="C1e5c.css">
+</head>
+<body>
+    <!-- Fetch (>python -m http.server) ve (localhost:8000) gerektirmekte.-->
+    <h1>Fetch'le resim dosyasý getirme-3</h1>
+    <img src="" alt="Bir çiçek" title="Bir deste menekþe">
+
+    <script>
+        // Her 2 yöntemi de test edelim...
+        // if (tarayýcýTümÖzellikleriDestekliyorMu()) {fetchÝleYükle(); }else {scriptÝleYükle ("resim/çiçekler.jpg", fetchÝleYükle); }
+        scriptÝleYükle ("resim/çiçekler.jpg", fetchÝleYükle);
+
+        function fetchÝleYükle (hata) {
+            if (typeof hata === "undefined") console.log ("Hatasýz yükleme."); else console.log ("HATA: " + hata);
+            const resim = document.querySelector ("img");
+            fetch ("resim/çiçekler.jpg")
+                .then (function (yanýt) {yanýt.blob()
+                .then (function (damla) {
+                    let yurelNesnesi = URL.createObjectURL (damla);
+                    resim.src = yurelNesnesi;
+                    resim.alt = "Bir demet çiçek";
+                    resim.title = "Bir demet mor-eflatun-beyaz menekþe yapraklý çiçeði";
+                }); // then-damla sonu...
+            }); // then-yanýt sonu...
+        } // fetch sonu...
+
+        // Tarayýcýnýz Promise ve fetch'i tanýyor mu?..
+        function tarayýcýTümÖzellikleriDestekliyorMu() {return window.Promise && window.fetch;}
+
+        function scriptÝleYükle (kaynak, getir) {
+            const js = document.createElement ("script");
+            js.src = kaynak;
+            js.alt = "Bir demet menekþe kokan çiçek";
+            js.title = "Mor-eflatun-beyaz çiçek ve yapraklý bir demet menekþe";
+
+            js.onload = function() {getir();};
+            js.onerror = function() {getir (new Error ("Script'le yükleme hatasý: " + kaynak)); };
+            document.head.appendChild (js);
+        } // func sonu...
+    </script>
+</body>
+</html>

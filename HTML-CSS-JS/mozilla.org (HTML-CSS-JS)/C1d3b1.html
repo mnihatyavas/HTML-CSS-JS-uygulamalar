@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3b1.html: Arya-eriþimli düðme týklamaya duyarlý JS kodlamanýn ikaz beyaný örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        button {
+            max-width: 350px;
+            width: 70%;
+            margin: 0 auto;
+            display: block;
+            font-size: 150%;
+            line-height: 1.5;
+            background-color: DarkRed;
+            color: yellow;}
+    </style>
+</head>
+<body>
+    <h1 rolü="ikaz">Basit Týklama Hareketi</h1>
+    <button arya-etiketi="Týklamaya duyarlý JS kodlamayla tarayýcý ikaz beyaný">Týkla beni!</button>
+
+    <script>
+        const düðme = document.querySelector ("button");
+        let sayaç = 0;
+        düðme.onclick = ()=>{alert ("Off, " + ++sayaç + ".kez acýttýn!");}
+    </script>
+</body>
+</html>

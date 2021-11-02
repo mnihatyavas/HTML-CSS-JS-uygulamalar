@@ -1,0 +1,54 @@
+/* C1d4a.css: Deðiþtirilebilir html-css-js ödevleri ortak css vasýflarý alt-örneði. */
+
+/* Genel stiller */
+html {
+    background-color: #152;
+    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;}
+body {
+    background-color: #a97;
+    max-width: 90%;
+    min-width: 700px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;}
+* {box-sizing: border-box;}
+h1 {
+    font-size: 2rem;
+    margin: 0;}
+h2 {
+    font-size: 1.6rem;
+    margin: 0;}
+p {margin: 0.5em 0;}
+
+/* Editör stilleri */
+section {
+    width: 90%;
+    max-width: 700px;
+    border: 5px solid brown;
+    border-radius: 10px;
+    padding: 10px 14px 10px 10px;
+    margin-bottom: 10px;}
+.oynanabilir {
+    font-family: monospace;
+    display: block;
+    margin-bottom: 10px;
+    background-color: Linen;
+    border: none;
+    border-left: 6px solid #558ABB;
+    color: #4D4E53;
+    width: 90%;
+    max-width: 700px;
+    padding: 10px 10px 0px;
+    font-size: 90%;}
+.oynanabilir-düðme {
+    text-align: right;
+    width: 90%;
+    max-width: 700px;
+    padding: 5px 0px;
+    font-size: 100%;}
+.oynanabilir-düðme input {
+    background-color: Black;
+    color: Yellow;
+    padding: 5px;
+    font-size: 110%;}
+.oynanabilir-düðme input:hover {color: Red;}

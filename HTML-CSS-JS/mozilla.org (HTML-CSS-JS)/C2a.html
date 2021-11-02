@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2a.html: Oynanabilir pencerelerden karþýlýklý etkileþimli deðiþtirilebilir html elemanlarý giriþi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Karþýlýklý-etkileþimli HTML</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C2a01.html" target="_">1) Cümlede silinen yada araya girilenlerin renk veya iþaretlerle ayýrtedilmesi örneði</a></h4>
+    <h4><a href="C2a02.html" target="_">2) CSS stilleme geçerliliðinde lokal, dahili ve harici dosya öncelikleri örneði</a></h4>
+    <h4><a href="C2a03.html" target="_">3) Details ve summary elemanlarýyla açýlýr/kapanýr özet-detay sunumu örneði</a></h4>
+    <h4><a href="C2a04.html" target="_">4) Metinsel alýntý, listeleme, resim, çizgi, baþlýk-esas-ayaklýk ve paragraf örneði</a></h4>
+    <h4><a href="C2a05.html" target="_">5) Verigiriþ tipleri; düðme, çentikkutusu, radyo, kapsam, araþtýr, renk, tarih-zaman, eposta, telefon, yurel, dosya, resim, metin, gönder, sayý, yenile örneði</a></h4>
+    <h4><a href="C2a06.html" target="_">6) Form ve benzerleri; select-option, select-optgroup-option, input-list-datalist, input-checkbox/radio, fieldset-legend, meter, progress, textarea örneði</a></h4>
+    <h4><a href="C2a07.html" target="_">7) Tablo, kapþon, baþ, gövde, ayak, satýr, baþlýk, detay, kolon ve satýr grup ve kapsamý örneði</a></h4>
+    <h4><a href="C2a08.html" target="_">8) Ýçerik gruplamada; adres, makale, kenarlýk, h-baþlýklar, ayaklýk, seyrü ve kýsým örneði</a></h4>
+    <h4><a href="C2a09.html" target="_">9) P-paragraf içi metni anlamlandýran ve stilleyen html-elemanlarý örneði</a></h4>
+    <h4><a href="C2a10.html" target="_">10) Html eleman içi global vasýflamalar örneði</a></h4>
+    <h4><a href="C2a11.html" target="_">11) Resim, müzik ve video'lu çoklumedya örneði</a></h4>
+    <h4><a href="C2a12.html" target="_">12) Gömülü video, çerçeveli harita, kaynak video, kaynak resim ve nesne pdf örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>1) Oynanabilir HTML penceresi giriþiyle karþýlýklý etkileþimli ve canlý deðiþtir-gör örnekleri sunulmaktadýr. \
+            Toplam 12 grup kapsamýnda 12 altprogramdan müteþekküldür. Örneklerin kemali itibarýyla icabýnda CSS ve JS\
+            pencereleri de kullanýlabilmektedir." +
+            "<br/>2) Altprogram-1 taslak metin hazýrlarken, yanlýþ görülen ibarelerin üstü genellikle çizilir ve/veya kýrmýzý \
+            keçe kalemle zemin iþaretlenir, yerine girilen ibareler ise açýk yeþil keçeyle üzerinden geçilir. Yanlýþ bütün \
+            cümleyse hem kýrmýzý keçeyle çizilir hem de önüne eksi (-) iþareti; yerine konulan cümyeyse açýkyeþil/sarý \
+            keçe ve önüne artý (+) iþareti konur. Dikkat edilirse HTML elemaný yerine özel (Türkçe) sil/sok elemanlarý da\
+            CSS vasýflamasýyla kullanýlabilmektedir." +
+            "<br/>3) Altprogram-2 CSS kodlarýnýn harici dosyalý, dahili style ve lokal style öncelikleri iþlenmektedir. En \
+            yüksek öncelik lokal style='...' tanýmýnda, sonra dahili &lt;style&gt;...&lt;/style&gt; tanýmlarda, en sonunda \
+            harici link-href-rel dosyadaki css vasýflarýndadýr." +
+            "<br/>4) Altprogram-3 çok sýk karþýlaþýlan altta (týklanýnca) açýlýr/kapanýr açýklamalý üst-cümle yapýsý iþlenmektedir.\
+            details/detaylar-summary/özet içiçeliðiyle ve bunlara renk, çerçeve vb css stillemeleriyle herdaim görünen \
+            içteki summary cümlesi ve týklanýnca görünüp/kaybolan dýþtaki details cümleli html elemanlarý uygulanmýþtýr." +
+            "<br/>5) Altprogram-4 alýntý/blockquote, metin listeleme/dl-dt-dd, varsayýlý düzensiz/düzenli listeleme/ul-li/ol-li ve \
+            özel daire/ul-li ve kare/ul-li-li listeleme iþaretleri, çerçeveli ve alt (small-caps) açýklamalý leopar resmi, figure-figcaption \
+            vasýflý fil resmi, varsayýlý hr-çizgi yerine ortasý özel-iþaretli duble çizgi, header-main-footer elemanlý baþlýk-esas-\
+            ayaklýk sayfa tasarýmý, özelleþtirilen çerçeveli p-paragraf ve pre-view html elemanlarý uygulanmýþtýr." +
+            "<br/>6) Altprogram-5 çeþitli input/verigiriþ tipleri, icabýnda css ve js katkýlarýyla iþlenmiþtir. Özel gölgeli, üzerinde, \
+            odaklý css efektli ve týklanma sayýsýný js kodlamayla ikaz eden input-button tip; çoklu çentikleme seçenekli input-\
+            checkbox tip; yegane seçimli input-radio tip; müzikçalar ses, bas, tiz derecesini sürgülü ayarlayan input-range tip; \
+            mevcut sayfada araþtýrýlacak ibareyi girip saðýndaki buton týklandýðýnda araþtýrýlaný bildiren input-search tip; saç ve \
+            göz renginin canlý-renk olarak seçilebildiði input-color tip; zamanla ilgili tarih: input-date, tarih ve zaman: input-\
+            datetime-local, ay: input-month, hafta:input-week, saat-dakika: input-time tipler (istenen kýsýtlamalarla); eposta: input-email, \
+            telefon: input-tel, yurel adresi: input-url tipler; seçilen resim-dosyasý: input-file ve resim: input-image mevcudiyetinde \
+            týklayarak (sadece ../resim/ klasöründeki) resimleri JS kodlamasýyla vesikalýk ebata küçültüp sergileyen program; \
+            kullanýcý adý: input-text tipi ve siteye giriþ ikonu: input:image tipler; form içi input-text tipli verileri gönderen input-submit \
+            tip ve JS kodlamayla gönderilenin beyaný; rakamgiriþi: input-number ve oyun yineleme: input-reset tiplerle 1-100 \
+            arasý geliþigüzel sayýyý kaç kerede tahminleme JS kodlamalý oyun uygulanmýþtýr." +
+            "<br/>7) Altprogram-6 form ve benzerleri iþlenmiþtir. Select-option'la evcil hayvanlardan biri seçilir. Select-optgroup-option'la \
+            tercih gruplarýndaki dino-oyuncaklardan biri seçilir. Input-list/datalist-id ile verilistesindeki dondurmalardan biri seçilir yada \
+            farklý bir tercih girilebilir. Label-input-checkbox ile çoklu çentikkutusu iþaretlenebilir. Fieldset-legend çerçeveli kutusundaki \
+            input-radio-label dairelerinden sadece biri iþaretlenebilir. Form, table/tablo öykünmesiyle tanýmlanmýþ olup, herbir div/bölüm \
+            ayrý satýr/tr ve label-input detay/td hücreleri farzedilmiþtir. Ýsim ve eposta girilmeden form gönderimi/submit yapýlamaz; \
+            doðru gönderi alert ile beyan edilir. Html elemanlarýndan sürgülü ölçeklerden meter ve progress de uygulanmýþtýr. Son \
+            olarak textarea çoklu metin giriþ alanýnda istenilen metin giriþleri bu editör penceresinde düzenlenebilir, pencere ebatlarý \
+            sað-alt düðme basýlý sürüklenerek deðiþtirilebilir." +
+            "<br/>8) Altprogram-7 table/tablo'lama teknikleri sunulmaktadýr. Ýlk '.tablo' thead/baþ, tbody/gövde ve tfoot/ayak \
+            üçlüsünden oluþmuþtur. Baþ ve ayak colspan='3' ile 3'er kolon geniþlikteki tek satýrdýr. Gövde'nin 2 satýrý/tr'nýn herbirinde \
+            3'er detay/td hücresi vardýr.<br/>Ýkinci '.baþlýk' sýnýflý tablo da baþ-gövde-ayak üçlüsünden oluþmuþtur. Baþ'ta kolon kapsamlý \
+            (span='col') 2 baþlýk/th, gövdedeki satýrýn herbirinde satýr kapsamlý (span='row') bir baþlýk/th ve bir detay/td bulunur. \
+            Ayak ise gövde kalemlerinin toplamýný baþlýk/th ve detay/td hücrede sunar.<br/>Üçüncü '.kapþon' sýnýflý tablo üstte \
+            kaydedilip, css'le tablo altýna konuþlanan (caption-side:bottom) bir baþlýk içerir. Sonrasýnda sadece 4 satýr/tr vardýr. \
+            Ýlk satýrda boþ detay/td, kolon kapsamlý 2 baþlýk/th Heman ve Ýskeletor içindir. Alttaki 3 satýrýn herbirinde satýr kapsamlý \
+            baþlýk/th ve 2 detay/td rol, silah, karanlýk sýrlarý dökümler.<br/>Dördüncü '.batman-flaþ' sýnýflý tabloda kolon grubu/colgroup \
+            boþ kolon, 2'þer kolonlu batman ve flaþ grubu tanýmlayýp tabloda 2 satýr/tr yaratmýþtýr. Ýlk satýr/tr'da boþ td ve 4 baþlýk/th, \
+            batman, flaþ ve yardýmcýlarý içindir. Ýkinci satýr/tr satýr kapsamlý Hünerler baþlýðý/th ve 4 hüner detayýný/td iþler.<br/>Son \
+            '.öðrenci' sýnýflý tabloda 4 satýr/tr olup, üste kayýtlý caption/kapþon baþlýðý tablo altýna konuþlandýrýlmýþtýr. Ýlk satýr/tr'da \
+            kolon kapsamlý 5 adet baþlýklar/th (Öðr.Ýsmi, Ara sýnav, Final, Ort. ve Durum), sonraki 3 satýr/tr ise 3 ayrý öðrencinin \
+            ismini/th-satýrkapsam, matematik notlarýný, ortalamasýný, geçer-kalýr durumunu/td iþler.<br/>Böylece table/tablo yaratmada \
+            kullanýlan tüm temel teknikler basitçe uygulanmýþtýr." +
+            "<br/>9) Altprogram-8 html penceresinde sürekli kullandýðýmýz section/kýsým banzeri içerik gruplama elemanlarý çeþitlidir. Adres/\
+            address gruplamasýnda a-href sörflü eposta ve telefon numarasý, baþlarýnda hatýrlatýcý ikonlarla gruplanmýþtýr.<br/>Dýþ \
+            article/makale'ye hava tahmin baþlýðý, iç article/makalelere ise 3 günlük hava tahmini (saðlarýnda yaðmur ikonlu) gruplanmýþtýr.\
+            <br/>P-paragraflarla semenderler açýklanýrken, arada aside/kenarlýk gruplamasýyla özel bir þerh saða yanaþýk kutucukta \
+            küçük puntolarla ve gölge efektle hatýrlatýlmýþtýr.<br/>Baþlýk/header gruplamasýyla baþlýk ve arka plan zeminde köpek resmi \
+            yureli serimlenmiþ; sonrasýnda main/esas gruplama ilgili köpeðin tasvirini yapmýþtýr.<br/>Kalkulus dersinin ana ve tali baþlýklarý \
+            hgroup gruplamasý dahilinde h1-h4 baþlýklarýyla açýklanmýþtýr.<br/>Kýnkanat böcek detaylandýrýlmasý h1-h6 sýralamalý \
+            içiçe dallandýrmayla algoritmik açýmlanmýþtýr.<br/>Makale/article üst gruplama içinde ol-li listeleme grubu ve footer/ayaklýk \
+            alt gruplamalarý yapýlmýþtýr.<br/>Seyrüsefer nav-igation gruplama içinde 3 adet ol-li listeleme varsayýlý sayýsal sýralama \
+            iptal edilerek ayný satýrda yan-yana ve aralarýnda &gt; sembolle alt-menü kastedilerek 3.alt detay açýklamasý verilmiþtir.\
+            <br/>Malum section/kýsým gruplamasýnýn öncedenki sýnýr çizgili iki kutusuyla balýk yakalamanýn iki aþamasý açýklanmýþtýr." +
+            "<br/>10) Altprogram-9 metin içi belirli terim/ibareler farklý efektlenebilir. Stilsiz ul-li altalta sýralamasýyla týklanýnca sörf yapýlabilen \
+            blog yureli, eposta adresi ve telefon no a-href'le düzenlenebilir.<br/>Metin içindeki kýsaltmalar abbr-eviation elemanýyla \
+            sarmalanýp, css vasýflayýp, üzerindeyken uzun açýlýmýný da abbr içi title ile gösterebiliriz.<br/>B-old koyu sarmalayýcýyla \
+            aradaki ibareler koyu vasýflanacaktýr.<br/>Bdi, bdo, span elemanlarý sarmallý ibareleri istediðimizce vasýflayabilir, dir-ection \
+            ile bazý özel alfabe yazýlým yönünü deðiþtirebiliriz.<br/>Özellikle þiirsel cümleyi farklý p elemanlarý yerine tek p içinde b-reak \
+            ile bir alt satýrbaþýna aktarabiliriz.<br/>Varsayýlý yatýk ibareleri i, em, cite, dfn eleman sarmalýyla yapabilir, bunlara baþka \
+            özel vasýflar da katkýlayabiliriz.<br/>Genelde JS gibi kodlamalar style-monospace, sample, kbd ve code elemanlarýyla \
+            farklý gösterilebilmektedir.<br/>Ýbare üzerindeyken arkasýna ona dair ipuçlarý metne girsin (title gibi metindýþý deðil) \
+            istersek data:hover::after vasýflarýyla istenen bilgiler ibare ardýna content-attr-ibute/içerik-vasýf'la eklenebilir.\
+            <br/>Klavye kbd elemaný varsayýlý stye-monospace yazý-ailesi iken özel gölgeleme efektleriyle tuþ benzeri kabarýk \
+            gösterilebilir.<br/>Bazý ibarelere anlýk dikkat çekmek için mark/iþaret sarmalý kullanýldýðýnda üstü sarý keçe boyalý \
+            görsellik kazanýr.<br/> Genelde konuþulaný yada düþünüleni doðrudan naklederken kullanýlan týrnak-aç/kapa \
+            karakterleri için, bu terimler q-quote/alýntý elemanýyla sarmalanmalýdýr.<br/>Üstüste yazýlmak istenen ibareler yada \
+            çincedeki üstüste sembol kelimeler için ruby-rtc-rt/üst-rb/alt-rp/parantez eleman sarmallarý kullanýlmaktadýr.\
+            <br/>Ýptal etmek istenilen ibareler style-text-decoration-strikeout ile yada kolayca s-trike elemanýyla sarmallanýr.\
+            <br/>Daha küçük puntolu ibareler small/küçük sarmalýyla yada style-font-size-0.8em'le stillenebilir.<br/>Koyu yazýlým sadece \
+            b-old sarmalýyla deðil style-font-weight-bold/600-800 vasýflamasýyla de istediðimiz derecede koyulaþtýrýlabilir.<br>Genelde \
+            matematiksel deðiþkenler var-iable/deðiþken, üss/sup-er, alt/sub-ordinate eleman sarmallarýyla yapýlmaktadýr.\
+            <br/>Tarih ibareleri time sarmalýyla ve hatta varsa farklý açýlýmlarý time içi title vasfýyla yapýlabilir.<br/>Altçizgi syle-text-\
+            decoration-underline ile stillendirilebildiði gibi kolayca u-nderline sarmalý da kullanýlabilir. (Text-decoration: #f00 wavy underline) \
+            vasýflamasý kýrmýzý dalgalý altçizgi efekti çizer.<br/>Overflow:hidden-resize:both ile div/bölüm'ü textarea benzeri editöre \
+            dönüþtürüp görünür -tireli hecelemeler için görünür & amp;shy; tekniðini yada görünmez &lt;wbr&gt;/wordbreak sarmalýný kullanabiliriz." +
+            "<br/>11) Altprogram-10 türkçeleþtirilebilen accesskey/eriþimanahtarý vasfý kullanýlarak, JS kodlamalý onclick/onkeydown/onkeyup \
+            duyarlýðýyla butona fare týklamasýný, butona odaklýyken 's' tuþu, odaksýzken de 's' tuþu bize duyarlýlýðýný bildirmektedir.\
+            <br/>Piyes repliklerini denetleyen editör ilk giriþ cümlesinin silinip yenisinin yazýlmasýný kýrmýzý keçe ve önüne 'Editör' \
+            koyarak ikaz etmekte, sözsüz eylemlerse koyu yatýk yazýlmaktadýr. Sýnýf/class eriþimli css vasýflama bunlarý yapar.\
+            <br>Textarea benzeri her eleman contenteditable='true' içerik deðiþtirilebilir vasfýyla rahatlýkla düzenlenebilmektedir.\
+            Odaklanýp içerik deðiþtirirken imleç rengi kýrmýzý renklendirilmiþtir (caret-color:red).<br/>Ayný deðiþtirilebilirlik içerik \
+            heceleme maksatlý da yapýlabilir.<br/>Veri-no/data-id vasfýyla ajan tasvirleri üzerindeyseniz görünmeyen (opacity:0) \
+            ajan gizli numarasý görünür (opacity:1) kýlýnmaktadýr.<br/>Cümle arapcaysa dir-ection='rtl'/righttoleft/ saðdan sola yada \
+            'auto' cümleyi ensaðdan baþlatýr ve sað-baþtaki noktayý da sola taþýr. Ancak latince cümlede 'auto' ensoldan baþlatýp \
+            noktayý da ensaða koyar.<br/>Html sayfasýnda görünmesini istemeðimiz paragrafý '.görme' sýnýfadýyla tespit edip, týklarsak, \
+             JS kodlamasýyla hidden/gizli vasfý mevcutsa silerek görünür kýlabilir yada görünmekteyse yeniden hidden vasfý atayýp \
+            gizleyebiliriz.<br/>Sýradan varsayýlý bir p-paragrafý id='#kimlik' eriþimli background-linear-gradient, border, border-radius, \
+            box-shadow ve content:url(img) vasýflarýyla çok havalý yapabiliriz.<br/>Türkçe, ingilizce ve fransýzca cümlelerin baþýna \
+            lang/dil/lisan vasýflarýnýn css tespitiyle cümle baþlarýna ülke bayraklarýný koyabiliriz.<br/>Style vasfýyla her html elemaný \
+            lokal enüst geçerlilikle hertürlü stillemeye tabi tutulabilir.<br/>Ýleri/geri sekme tuþu normalde sayfadaki tüm (tarayýcý adres \
+            satýrý  dahil) verigiriþ elemanlarýna sýrayla odaklanýr. Ancak verigiriþli olmayan örn.p yada div gibi elemanlara tabindex='0' \
+            vasfýný tanýmlarsak, sekme artýk bunlara da (contenteditable gibi güncelleme yapamasak da) odaklanmaya baþlar.\
+            <br/>Baþharflere kýsaltýlmýþ kelimeler abbr-eviation/kýsaltma içinde title='açýklama' ipucuyla, üzerindeyseniz kýsaltmalarýn \
+            uzun açýlýmýný sergileyebilir." +
+            "<br/>12) Altprogram-11 map-area-shape-coord-inats-href ile bilahere yüklenen img-usermap-src resmin üzerindeki \
+            dikdörtgen, daire ve 4'lü çokgen'in koordinatlarý tanýmlanarak, bu resimdeki hangi koordinat alaný týklanýrsa onun href \
+            yurel sayfasýna sörf yapýlmaktadýr. Map ve img iliþkisi name='harita' ve usemap='#harita' ile kurulmaktadýr.<br/>Figure/\
+            þekil sarmalýna figcaption/þekilbaþlýðý ve audio-controls-src.mp3 müzik dosyasý çaðrýlýrsa görünen varsayýlý müzikçalarýn \
+            kontrol düðmeleriyle þarkýyý dinleyebilirsiniz.<br/>Div bölüm içine ortalanmýþ img-src.jpg resmi yüklenebilir.<br/>Ýlkiyle hemen \
+            hemen ayný map-name-area-shape-coords-href ve altýndaki img-src-usemap ilintili resmin 3 ayrý JS-CSS-HTML tanýmlý \
+            alanlarýna týklayarak map'teki href yureline sörf yapýlabilir.<br/>Video-controls-src.mp4 varsayýlý ayarlarla video ve harici \
+            altyazý göstermektedir. Ancak sizin özel Türkçe altyazýlarýnýzýn da gösterilmesini isterseniz, track-src-vtt elemanýný \
+            video sarmalý içine dahil etmelisiniz. Ayrýca http.server-localhost:8000'le çalýþtýrýlmalýdýr.<br/>Video-controls-source-src\
+            .webm/.mp4 video ikilisi yanyana oynatýlabilir." +
+            "<br/>13) Altprogram-12 video oynatmanýn en partik HTML5 tekniði embed-src.mp4 ile varsayýlý ayarlý pratik yöntemidir.\
+            <br/>Hertürlü href-yurel sitesi ayrý sekmelerde açýlabilirken, mevcut sekmenizdeki tanýmlý en-boy iframe/inlineFrame \
+            çerçevesinde de (cors politikasý izin verirse) çevrimiçi açýlmaktadýr. Burada lokasyonu verili Londra-Greenwich haritasý \
+            görülecektir.<br/>Pdf kitap dosyasýný ayrý sayfada href'le açabildiðiniz gibi iframe benzeri object-data.pdf ile tanýmlý \
+            en ve boyda kendi sayfanýzda da açýp okuyabilirsiniz.<br/>Picture-source-srcset.jpg ile media þartlý (tarayýcý &gt; 600px) \
+            gösterebilir; þart saðlanmazsa (tarayýcý &lt; 600px) ikinci img-src.jpg resmini yükleyebilirsiniz.<br/>Üstteki embed-src benzerini \
+            video-source-src.mp4/webm için de yapabilirsiniz. Ýlk anda ilk video muted/sessiz kipte olup, hoperlör týklanarak ses açýlabilir."
+    </script>
+</body> 
+</html>

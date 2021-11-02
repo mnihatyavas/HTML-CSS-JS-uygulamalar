@@ -1,0 +1,14 @@
+/* C1e5c.html: Fetch'le getirilecek resim dosyasýnýn img-src ile yüklenme css vasýflarý alt-örneði. */
+
+/* Genel stiller */
+html {background-color: #152; font-family: sans-serif;}
+body {
+    background-color: #a97;
+    max-width: 80%;
+    min-width: 700px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;
+    text-align: center;}
+h1 {color: brown; text-decoration: underline;}
+img {border: 3px solid red;}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d1.html: Eriþilebilinir html semantik, baðlantý, form, resim, tablo, tuþlama örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Eriþilinebilir html</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1d1a1.html" target="_">a1) Font yazýfonu baþlýklý ve br-eak kýr metinli kötü html anlamsal örneði</a></h4>
+    <h4><a href="C1d1a2.html" target="_">a2) H1 anabaþlýk, h2 altbaþlýk ve p paragraf elemanlý iyi html anlambilimsel örneði</a></h4>
+    <h4><a href="C1d1b1.html" target="_">b1) Baðlantý a-href-target yönlendirmeli kötü örneði</a></h4>
+    <h4><a href="C1d1b2.html" target="_">b2) Baðlantý a-href-target yönlendirmeli iyi örneði</a></h4>
+    <h4><a href="C1d1c1.html" target="_">c1) Form içi paragraf-input iliþkisiz kötü örneði</a></h4>
+    <h4><a href="C1d1c2.html" target="_">c2) Form içi label-input-name iliþkili iyi örneði</a></h4>
+    <h4><a href="C1d1d1.html" target="_">d1) P-paragrafla img-resim iliþkisiz kötü resim örneði</a></h4>
+    <h4><a href="C1d1d2.html" target="_">d2) Ýmg-resimle alt-ernative, title baþlýk, p-paragraf-aria iliþkili iyi resim örneði</a></h4>
+    <h4><a href="C1d1e1.html" target="_">e1) Varsayýlý table-th-tr-td ile kötü tablo örneði</a></h4>
+    <h4><a href="C1d1e2.html" target="_">e2) Özelleþtirilen table-tr-td ile baþlýk-seyrü-esas/kenarlýk-ayaklýk'lý iyi tablo örneði</a></h4>
+    <h4><a href="C1d1f.html" target="_">f) Baðlantý sayfalarý, mesajlý butonlar ve verigiriþ/seçiþ form raporlamasý örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>1) Her tür html semantik, baðlantý, form, resim, tablo ve tuþlama elemanlarýna eriþilebilinirlik \
+            yöntemleri sunulmaktadýr. Toplam 6 grup kapsamýnda 11 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-a1 ve a2 html sayfasýndaki baþlýklar font deðil h1-h2-h3/head elemanlarýyla, \
+            metinlerse  br-eak kýr ile deðil p-paragraf elemanýyla sarýlmalýdýr. Baþlýklar arasýna hr/HardRow \
+            satýr ayracý kullanýlabilir." +
+            "<br/>3) Altprogram-b1 ve b2 diðer internet sayfalarýna baðlantý a/anchor/çapa-href/highlightedreference/\
+            ýþýldatýlanreferans-target/hedef kullanýlýrken, ýþýldatma sadece 'týklayýn' ibaresiyle sýnýrlandýrýlmamalý, \
+            baðlanýlan sayfayý açýklayýcý yeterli uzunlukta olmalýdýr. Ayrýca yeni sayfayý mevcudu kapatýp üzerine \
+            deðil, mevcut dururken yeni sayfa takipeden boþ bir tarayýcý sekmesinde olabilmesi için target='_b' \
+            kullanýlmasý ihmal edilmemelidir." +
+            "<br/>4) Altprogram-c1 ve c2 verigiriþ formu form sarmalýyla hazýrlanýrken, herbir input verigiriþ kutusu \
+            önündeki açýklama ilintisiz p-paragrafla deðil, for-name ilintili label etiketle saðlanmalý; herbir label-input \
+            çifti div bölmesiyle diðerlerinden soyutlanmalý, verigiriþ kutularý altalta aralýksýz deðil, uygun aralýklarla \
+            ayrýþtýrýlmalý; ayrýca son örnekte (f) görüleceði üzere form gönderileri tek-tek input-click'leriyle deðil \
+            toplu form-submit yönetimiyle saðlanmalýdýr." +
+            "<br/>5) Altprogram-d1 ve d2 img resim elemanlarý sunum açýklanmasý ilintisiz p-paragrafla yapýlmamalý; \
+            resim açýklamasý için kullanýlacak p img ile aria-id'le ilintilendirilmelidir. Resim img elemanlarýnda en sýk \
+            kullanýlan vasýflar alt-ernativ/alternatifad, title/ipucubaþlýk, width-height resmin en ve boyu olmaktadýr. \
+            En-boy belirtilmezse, resmin orijinal ebatlarý geçerlilik kazanýr; sadece biri kullanýlýrsa diðeri otmatikmen \
+            orantýsal ayarlanýr; istenirse de resim istenilen deformasyonla en-boy kalýbýna uydurulabilir." +
+            "<br/>6) Altprogram-e1 table/tablo tr/tablerow/tablosatýrý'ndan oluþur. Varsayýlý basit bir tabloyu \
+            isim-yaþ-cinsiyet üst-yatay baþlýk altýna alt-alta sýralý kayýt yapacaksak table sonrasý ilk tr sarmalýna \
+            th/tablehead ile baþlýklar yazýlýr, sonraki tr sarmallarýyla bu 3 baþlýða denk düþecek td/tabledetail \
+            hücrelerine elemanlarýn isim-yaþ-cinsiyteleri girilir. Satýr sýnýrlamasý yoktur. Aralara sonradan yeni \
+            satýrlar sokulabilir, sona eklenebilir, mevcuttan silinebilir. Tablo kolon geniþliði girilen baþlýk yada \
+            verigiriþinden hangisi enuzunuysa ona uygun esner. Bu varsayýlý ayarlara ayrýca table, tr, th, td \
+            zeminrengi ve yazýrengi deðiþikliði yapýlabilir. Minimum varsayýlý tablo ayarlarý bu kadardýr." +
+            "<br/>7) Altprogram-e2 profesyonel html sayfa tasarýmý tablo serilimiyle gerçekleþtirilmiþtir. \
+            Table tablo eni body gövde eniyle ayný 1200px'dir. Tablo td gözler arasýndaki sýnýrlar iptal edilmiþtir \
+            (border-collapse:collapse). Tablomuz, herbiri id'le tanýmlý 4 tr satýrdan oluþmuþtur (baþlýk, nav/seyrü, \
+            esas, ayaklýk), ayrýca 2 de aralýk satýrýmýz vardýr. Baþlýk h1-h2-h3 yazýfonailesi çevrimiçiyse 'Sonsie One' \
+            deðilse cursive, diðer yazýlar çevrimiçiyse 'Open Sans Condensed' deðilse sans-serif tiplidir. \
+            Ana h1 baþlýk gölgelendirilmiþtir. Nav/seyrüsefer menü satýrý herbir kolon geniþliði tek tek tanýmlý \
+            6 kolondan müteþekküldür. Menü seçenekleri a-href'le üzeindeyken varsayýlý parmakiþaretli ve \
+            altçizgisiz (text-decoration:none), son 2 kolon sorgu input-search ve button içindir. Esas satýrda \
+            2 td hücresi olup, ilk içerik 4 kolon geniþlikte (colspan='4') ve içinde h2-p, h3-p, h3-p bulunur. \
+            Diðer td kenarlýk gözde (colspan='2' üsthizadan (valign='top') h2-ul-li ile 6 altalta a-href baðlantý \
+            bulunmaktadýr. Son tr satýrsa footer/ayaklýk (colspan='6') tek td hücredeki kopyalama hakký \
+            açýklamasýný barýndýrýr. Baðlantýlar henüz tanýmsýzdýr (href='#'). Basit ancak profesyonelce \
+            düzenlenmiþ iyi tablo örneðidir. Vasýf detaylarý iliþik stil dosyasýndadýr." +
+            "<br/>8) Altprogram-f üç alt bölmelidir. Ýlkinde 2 a-href-target Mozilla site adresleri; ikincisinde \
+            3 mesaj vasýflý button düðmeleri; üçüncüsündeyse form içi label-input'lu isim ve yaþ (gerekli) \
+            giriþleri ile haleti-ruhiye select-option seçenekleridir. Button týklandýðýnda ilgili mesaj vasýflý \
+            açýklama, form giriþleri tamamlanýp gönderilildiðindeyse id.value yada form.name.value \
+            içerikleri alert ile tarayýcý kutusundan ve console.log ile F12-konsoldan duyurular sunulmaktadýr. \
+            A-href baðlantýlar, düðmeler, verigiriþi ve seçimler üzerindeyken koyu renkle, odaklanýnca da \
+            büyük puntolu dikkat çekmekte, sonrasýnda odaklanma isim veriþine kaymakta, yada gövdede \
+            geliþigüzel týklanýnca odaklanama etkileri sönmektedir."
+    </script>
+</body> 
+</html>

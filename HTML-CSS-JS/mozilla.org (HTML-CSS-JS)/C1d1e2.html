@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d1e2.html: Özelleştirilen table-tr-td ile başlık-seyrü-esas/kenarlık-ayaklık'lı iyi tablo örneği.</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="C1d1e2.css">
+    <!-- Tarayıcı eski InternetExplorer ise HTML5 semantiği için alttaki çevrimiçi JS kodlaması gereklidir: -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body bgcolor="#5a5a5a">
+    <table width="1200"> <!-- Her satır 6 kolon farzedilmiştir.-->
+        <!-- Ana başlık satırı: -->
+        <tr id="başlık">
+            <td colspan="6">
+                <h1 align="center">İyi Tablo Başlığı</h1>
+            </td>
+        </tr>
+
+        <!-- Nav/Seyrü menü satırı:  -->
+        <tr id="nav" bgcolor="Khaki"> <!-- 6 kolonun herbirinin genişliği (toplamı=1200px) tanımlanıyor. -->
+            <td width="200">
+                <a href="#" align="center">Anasayfa</a>
+            </td>
+            <td width="200">
+                <a href="#" align="center">Kadromuz</a>
+            </td>
+            <td width="200">
+                <a href="#" align="center">Projeler</a>
+            </td>
+           <td width="200">
+                <a href="#" align="center">İletişim</a>
+            </td>
+            <td width="300">
+                <form width="300">
+                    <input type="search" name="sorgu" placeholder="Soruyu gir" width="300">
+                </form>
+            </td>
+            <td width="100">
+                <button width="100">Sorgula!</button>
+            </td>
+        </tr>
+
+        <!-- Aralık satırı: -->
+        <tr id="aralık" height="10">
+            <td></td>
+        </tr>
+
+        <!-- Main/esas içerik ve kenarlık satırı: -->
+        <tr id="esas"> <!-- İçerik 4, kenarlık 2 kolondur. -->
+            <td id="içerik" colspan="4" bgcolor="lime">
+                <h2 align="center">Makale başlığı</h2>
+                <p><em>Anlamsız dolgu metnidir.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+                <hr/>
+                <h3>İlk altbaşlık</h3>
+                <p><em>Anlamsız dolgu metnidir.</em> Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>
+                <p><em>Anlamsız dolgu metnidir.</em> Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>
+                <HR/>
+                <h3>İkinci altbaşlık</h3>
+                <p><em>Anlamsız dolgu metnidir.</em> Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+                <p><em>Anlamsız dolgu metnidir.</em> Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
+
+            </td>
+            <td id="kenarlık" colspan="2" bgcolor="#ff80ff" valign="top">
+                <h2>Bağlantılar</h2>
+                <ul>
+                    <li><a href="#">Oh! Gerçekten de sahil kenarında olmayı seviyorum</a></li>
+                    <li><a href="#">Oh! Gerçekten de deniz kıyısında olmayı seviyorum</a></li>
+                    <li><a href="#">Gerçi Kuzey İngilterede</a></li>
+                    <li><a href="#">Yağmur asla dinmese de</a></li>
+                    <li><a href="#">Oh! Herneyse...</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <!-- Tekrar aralık satırı: -->
+        <tr id="aralık" height="10">
+            <td></td>
+        </tr>
+
+        <!-- Ayaklık satırı: -->
+        <tr id="footer" bgcolor="DarkKhaki">
+        <td colspan="6">
+          <p><em>©Koyalamahakkı 2050 hiç kimsenindir. Tüm hakları mahfuzdur.</em></p>
+        </td>
+      </tr>
+    </table>
+</body>
+</html>

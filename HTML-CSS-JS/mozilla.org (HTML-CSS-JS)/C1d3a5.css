@@ -1,0 +1,89 @@
+/* C1d3a5.css: Baþlýk-seyrü-ara, esas-makale-kenarlýk ve ayaklýk css vasýflarý alt-örneði. */
+
+/* Genel kurulum */
+html {
+    background-color: #152;
+    font-family: sans-serif;
+    font-size: 10px;}
+body {
+    background-color: #975;
+    max-width: 90%;
+    min-width: 700px;
+    padding: 10px;
+    margin: 2em auto;
+    border: 5px solid tomato;}
+
+/* Tiplemeler */
+h1, h2, h3 {
+    font-family: "Sonsie One", cursive; /* Çevrimiçiyse "Sonsie One", deðilse "cursive" */
+    color: #2a2a2a;}
+p, input, li {
+    font-family: "Open Sans Condensed", sans-serif; /* Çevrimiçiyse ilki, deðilse ikincisi */
+    color: #2a2a2a;}
+h1 {
+    font-size: 6rem;
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 5px DodgerBlue;}
+h2 {
+    font-size: 3rem;
+    text-align: center;}
+h3 {font-size: 2.2rem;}
+p, li {
+    font-size: 1.6rem;
+    line-height: 1.5;}
+
+/* Baþlýk/header bölümü serilimi */
+header {margin-bottom: 5px;}
+nav, article, aside, footer {
+    background-color: LightGreen;
+    padding: 1%;}
+nav { /* ul=flex:2, form=flex:1 */
+    height: 50px;
+    display: flex;}
+nav ul { /* Toplam 4'ün herbir li=flex:1 */
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;}
+nav li {
+    display: inline;
+    text-align: center;
+    flex: 1;}
+nav a {
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;}
+nav form { /* search=flex:2, submit=flex:1 */
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 100%;
+    padding: 0 2em;}
+input {
+    font-size: 1.6rem;
+    height: 32px;}
+input[type="search"] {
+    flex: 3;
+    background-color: aqua;} 
+input[type="submit"] {
+    flex: 1;
+    margin-left: 1rem;
+    background-color: #333;
+    border: 0;
+    color: yellow;} 
+input[type="submit"]:hover {color: red;}
+
+/* Esas/main serilim */
+main {display: flex;} /* article=flex:4, aside=flex:1 */
+article {flex: 4;}
+aside {
+    flex: 1;
+    margin-left: 5px;
+    background-color: magenta;}
+aside li {padding-bottom: 10px;}
+
+/* Ayaklýk/footer serilim */
+footer {margin-top: 5px;}

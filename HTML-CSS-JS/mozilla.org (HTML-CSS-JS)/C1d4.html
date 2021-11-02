@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4.html: Eriþilebilinir türkçe arya vasýflý, deðiþtirilebilir html-css-js ödevleri örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Aryalý HTML-CSS-JS Ödevleri</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1d4a1.html" target="_">a1) Ul-li listemeyi öykünen div-div'e arya-rolü vasýflý þerh örneði</a></h4>
+    <h4><a href="C1d4a2.html" target="_">a2) Arya-etiketi ve rolü vasýf þerhli form gönderme deðiþtirilebilir html-css-js örneði</a></h4>
+    <h4><a href="C1d4b1a.html" target="_">b1a) Font, br, div-class='düðme' html elemanlý kötü anlamsal ve eriþimsel site örneði</a></h4>
+    <h4><a href="C1d4b1b.html" target="_">b1b) H1-h2, p, ul-li ve button html elemanlý  iyi anlamsal ve eriþimsel site örneði</a></h4>
+    <h4><a href="C1d4b2a.html" target="_">b2a) Sadece form-ul-li-input elemanlý kötü html formu örneði</a></h4>
+    <h4><a href="C1d4b2b.html" target="_">b2b) Form-fieldset-legend-ul-li/label-input zorunlu alanlý ve js kod denetimli iyi html formu örneði</a></h4>
+    <h4><a href="C1d4b3.html" target="_">b3) A-href-target baðlantý çapalarýnýn namakbul ve makbul kurulumlarý örneði</a></h4>
+    <h4><a href="C1d4b4.html" target="_">b4) Img-src-alt-title ve background-url ile gölgeli resim ve ikon sunumu örneði</a></h4>
+    <h4><a href="C1d4c1.html" target="_">c1) Baðlantýlarýn netliði, üzerinde veya odaklanýldýðýnda kendini farkettiren örneði</a></h4>
+    <h4><a href="C1d4c2.html" target="_">c2) Zemin/yazý-rengi kontrastlarý ve h1-h2-p ebatlarý (px, pt, em, calc(rem+vw)) örneði</a></h4>
+    <h4><a href="C1d4c3.html" target="_">c3) Renk kontrastlarý, tarayýcý duyarlý ebatlar ve fare-bas-çek/sekme-Enter yönetimi örneði</a></h4>
+    <h4><a href="C1d4d.html" target="_">d) Hayvan listesinden týklananýn ekstra açýklamasýný js kodlamasýyla sergileme örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>1) Türkçe arya eriþilinebilir vasýflý tüm html-css-js kodlamalarý deðiþtirilebilir ödevler sunulmaktadýr. \
+            Toplam 4 grup kapsamýnda 12 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-a1 oynanabilir-html, oynanabilir-css ve oynanabilir-js pencereleriyle her türlü html-css-js \
+            deðiþikliðini örneklerimizde sergileyebileceðimiz gösterilmektedir. Daha önceki ödevlerde sadece html, css \
+            yada js deðiþikliði yapýlmaktayken burada her üç deðiþiklik de mümkün kýlýnmýþtýr. Varsayýlý ul-li listeleme \
+            özel iç-içe div-div bölüm kontroluyla yapýlmakta; listebaþý nokta irilik, renk, (padding-left, left, margin-left ile) \
+            içerlemenin ayarlanabileceði gösterilmektedir." +
+            "<br/>3) Altprogram-a2 form içi input-search-required ve input-submit  verigiriþleri test edilmekte; ilk sorgu \
+            tipli verigiriþi zorunlu kýlýnmakta, form gönderme adres satýrý üzerinden sunucuya varsayýlý name alanadlarýyla \
+            deðil (o.preventDefault()) özelleþtirilen yöntemle yapýlmakta; baþarýlý gönderilen form tarayýcý alert-ikaz \
+            kutusuyla duyurulmakta; yeni verigiriþi için form sorgu alaný boþaltýlmaktadýr." +
+            "<br/>4) Altprogram-b1a ürün destek sayfasý tasarlanmakta, ancak acemice h1-h2 yerine font-size='7/5', \
+            p yerine br, ol-li listeleme yerine düz 1-2-3 giriþleri, yardýmcý baðlantýlara yöneltme button yada a-href yerine \
+            zorlama div-css vasýflamalarýyla yapýlmýþtýr." +
+            "<br/>5) Altprogram-b1b yukardaki olumsuzluklar giderilerek daha profesyonel ürün destek site taarýmý \
+            gerçekleþtirilmiþ, görsel ve iþlevsel kalitesizlikler düzeltilmiþtir." +
+            "<br/>6) Altprogram-b2a isim-yaþ-eposta içerikli müþteri iletiþim formu tasarlanmaya çalýþýlmýþ, ancak \
+            label-input çift uyumu, zorunlu verigiriþ alan kontrolu, form gönderme submit düðmesi, form çerçeve \
+            ve baþlýklarý ihmal edilmiþtir." +
+            "<br/>7) Altprogram-b2b yukardaki olumsuzluklar giderilerek çerçeveli ve baþlýklý form-fieldset-legend, \
+            uyumlu-zorunlu label-input-required verigiriþleri, özelleþtirilen form-input-submit onsubmit kontrollu ve \
+            tarayýcý alert beyanlý form gönderme uygulanmýþ, sonrasýnda yeni boþ bir form window.location.reload() \
+            ile hazýr kýlýnmýþtýr." +
+            "<br/>8) Altprogram-b3 a-href çapa-referans'lý baðlantýlar sadece (týklayýn) ibaresiyle yapýlmak yerine \
+            açýklamalý kelimelerle yapýlmalý; ayrýca baðlantýlar üzerindeyken (:hover) ve/veya odaklanýldýðýnda (:focus) \
+            farkedilebilir etkilerle görülebilmelidir. Sadece ilgili baðlantý üstü :hover kontrolu js kodlamayla yapýlmýþtýr." +
+            "<br/>9) Altprogram-b4 normal bir aðsayfa header/baþlýk-main/esas-footer/ayaklýk üçlüsünden oluþur. \
+            Baþlýða küçük img-src ikonlu açýklama, esas'a gölgeleme :hover kontrollu iki img-src resim (çaydanlýk \
+            ve top), ayaklýða ise background-url css vasýflý tek ortalanmýþ ve gölgeli :hover kontrollu ikon tekrarý \
+            yerleþtirilmiþtir. Ýstenirse bu bölümler article metinlerle, nav seyrü menü seçenekleri ve search araþtýr \
+            kutulu düðmeyle ve yardýmcý baðlantýlar için aside kenerlýkla da süslenebilir." +
+            "<br/>10) Altprogram-c1 a-href baðlantýlarýn hover/üzerinde ve focus/odaklanýldýðýnda kendilerini \
+            farkettirmeleri makbuldür. Ayný 2 ul-li-a-href baðlantýlar listesinin ilkinde bu farkýndalýklar namevcut, \
+            ikincisindeyse mevcut kýlýnmýþ ve aradaki etki farklýlýðý kýyaslanmýþtýr." +
+            "<br/>11) Altprogram-c2 Zemin/yazý-rengi kontrastlarýnýn önemi ve h1-h2-p elemanlarýnýn ebatlandýrýlmasý \
+            sergilenmektedir. Yazý ebatlandýrýlmasýnda kullanýlan pt, px, em, rem, vw ve ebeveyn ebatý-rem ile \
+            aktüel tarayýcý ebatýna duyarlý vw/viewport  için calc-hesaplanmasý iþlenmiþtir. Özellikle son article \
+            penceresini tarayýcý ebatýyla oynayarak farklýlaþmasý izlenebilir." +
+            "<br/>12) Altprogram-c3 kutup ayýsý, penguen ve mors/ayýbalýðý açýklamalarý gizli tutulmuþ; eleman.onolay\
+            =function(){..}, yada eleman.addEventListener('olay',function(){..}) yöntemleriyle, herhangibir hayvan \
+            üzerindeyken farenin basýlý tutulduðu veya sekme-Enter basýldýðý sürece alttaki açýklama görünecek, \
+            baskýdan vazgeçildiðindeyse tekrar görünmez olacaktýr. Ayrýca yazý ebatlarý tarayýcý ebatýna duyarlýdýr." +
+            "<br/>13) Altprogram-d önceki örnekte h2 baþlýk altlarýnda gizlenen p paragraf açýklamalarýn fare ve \
+            sekme-Enter'la görüntülenmesi bu örnekte biraz farklý olarak tekrar iþlenmektedir. Ul-li hayvanlar listesi \
+            listeElemanlarý.forEach(function(birim){..}) döngüsünde fareyle týklanan hayvanýn ismi ve arya tasvir-verisi \
+            alýnarak, listelerin altýnda uzayan bölümde h2 ve p elemanlarýnda sergilenmektedir. Fare liste elemanýndan \
+            uzaklaþýncaya yada sekme-Enter'da Enter'dan farklý tuþa basýldýðýnda alttaki açýklama kaybolmaktadýr."
+    </script>
+</body> 
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1e6c.html: CSS @supports-not manüel seçimiyle blok, esnek yada kayan vasfý geçerlileme örneði.</title>
+    <style>
+        /* Genel stillemeler */
+        html {background-color: #246; font-family: sans-serif;}
+        body {
+            width: 90%;
+            min-width: 800px;
+            margin:2em auto;
+            background-color: #a86;
+            border: 5px solid tomato;}
+        header, footer {
+            background-color: lime;
+            height: 80px;
+            text-align: center;}
+        footer {height: 30px;}
+        main, header, footer {padding: 1.5%;}
+        h1 {margin: 0; font-size: 3em; color: navy; text-decoration: underline;}
+        p {font-size: 1em; line-height: 1.3;}
+        em {color: aqua;}
+
+        /* Desteklenecek block/flex/float stillemeleri */
+        @supports (display: flex) { /* flexx hilesiyle block yap */
+            main {display: flexx;}
+            main div {
+                color: DarkGreen;
+                padding-right: 4%;
+                flex: 1;}
+                main div:last-child {padding-right: 0;} }
+        @supports not (display: flexx) { /* flexx hilesiyle float yap */
+            main div {
+                color: blue;
+                width: 22%;
+                float: left;
+                padding-right: 4%;}
+            main div:last-child {padding-right: 0;}
+            footer {clear: left;} }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aðsitesi Baþlýðý</h1>
+    </header>
+    <main>
+        <div><p><em>Sadece anlamsýz dolgu metnidir.</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare erat diam, ut blandit enim tincidunt ut. Phasellus varius aliquam orci at ultricies. Cras lobortis, risus nec finibus volutpat, nibh urna feugiat eros, quis suscipit turpis mi facilisis nulla. Nunc lacinia auctor magna, vel tempus tortor semper sit amet. Nunc ac varius risus. In a purus ac tortor venenatis tincidunt commodo in est. Etiam est ante, laoreet vel orci sed, finibus ornare turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+        <div><p><em>Sadece anlamsýz dolgu metnidir.</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare erat diam, ut blandit enim tincidunt ut. Phasellus varius aliquam orci at ultricies. Cras lobortis, risus nec finibus volutpat, nibh urna feugiat eros, quis suscipit turpis mi facilisis nulla. Nunc lacinia auctor magna, vel tempus tortor semper sit amet. Nunc ac varius risus. In a purus ac tortor venenatis tincidunt commodo in est. Etiam est ante, laoreet vel orci sed, finibus ornare turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+        <div><p><em>Sadece anlamsýz dolgu metnidir.</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare erat diam, ut blandit enim tincidunt ut. Phasellus varius aliquam orci at ultricies. Cras lobortis, risus nec finibus volutpat, nibh urna feugiat eros, quis suscipit turpis mi facilisis nulla. Nunc lacinia auctor magna, vel tempus tortor semper sit amet. Nunc ac varius risus. In a purus ac tortor venenatis tincidunt commodo in est. Etiam est ante, laoreet vel orci sed, finibus ornare turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+        <div><p><em>Sadece anlamsýz dolgu metnidir.</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare erat diam, ut blandit enim tincidunt ut. Phasellus varius aliquam orci at ultricies. Cras lobortis, risus nec finibus volutpat, nibh urna feugiat eros, quis suscipit turpis mi facilisis nulla. Nunc lacinia auctor magna, vel tempus tortor semper sit amet. Nunc ac varius risus. In a purus ac tortor venenatis tincidunt commodo in est. Etiam est ante, laoreet vel orci sed, finibus ornare turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+    </main>
+    <footer>
+        <p>&copy; Her hakký mahfuzdur, falan filan.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3.html: Eriþilebilinir JS türkçe arya vasýflý ve kodlamalý örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Eriþilinebilir Aryalý JS Kodlamasý</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1d3a1.html" target="_">a1) Arya özel vasýflamalý düðme rollü bölüm mesajlarýnýn týklanarak beyaný örneði</a></h4>
+    <h4><a href="C1d3a2.html" target="_">a2) XhrGet'le json alýntýlarýn tekrarlý aralýklarla aryalý kýsýmda rasgele sergilenmesi örneði</a></h4>
+    <h4><a href="C1d3a3.html" target="_">a3) Özel arya ve rolü vasýflamalý seçileni aktif-görülen üç sekmeli bilgi-kutusu örneði</a></h4>
+    <h4><a href="C1d3a4a.html" target="_">a4a) Arya-rolü vasýflý, boþ alan ikaz baðlantý odaklý form geçerlileme örneði</a></h4>
+    <h4><a href="C1d3a4b.html" target="_">a4b) Arya-rolü vasýflý, boþ alan ikaz baðlantý odaklý, müzisyen ve enstrümanlý form geçerlileme örneði</a></h4>
+    <h4><a href="C1d3a5.html" target="_">a5) Arya-etiketi ve rolü, baþlýk-seyrü-ara, esas-makale-kenarlýk, ayaklýklý aðsayfa tasarýmý örneði</a></h4>
+    <h4><a href="C1d3b1.html" target="_">b1) Arya-eriþimli düðme týklamaya duyarlý JS kodlamanýn ikaz beyaný örneði</a></h4>
+    <h4><a href="C1d3b2.html" target="_">b2) Arya vasýflý select-option veya input verisinin beyan edilmesi örneði</a></h4>
+    <h4><a href="C1d3b3.html" target="_">b3) Arya vasýflý, HTML5 varsayýlý çoklu input tipli form gönderme örneði</a></h4>
+    <h4><a href="C1d3b4a.html" target="_">b4a) Arya etiketli kutuyu basýlý fareyle konum beyanlý taþýma örneði</a></h4>
+    <h4><a href="C1d3b4b.html" target="_">b4b) Fareli lapTop'la yada dokunmatik iPhone'la kutunun beyanlý taþýnmasý örneði</a></h4>
+    <h4><a href="C1d3c1a.html" target="_">c1a) Arya etiketli varsayýlý audio ve metin ayarlarýyla müzik çalma örneði</a></h4>
+    <h4><a href="C1d3c1b.html" target="_">c1b) Arya etiketli, JS koduyla özel audio ve metin ayarlarýyla müzik çalma örneði</a></h4>
+    <h4><a href="C1d3c2a.html" target="_">c2a) Arya etiketli varsayýlý HTML5 ayarlarýyla audio ve video dosyalarýný çalýþtýrma örneði</a></h4>
+    <h4><a href="C1d3c2b.html" target="_">c2b) Arya etiketli özel JS kodlamasýyla audio ve video dosyalarýný çalýþtýrma örneði</a></h4>
+    <h4><a href="C1d3d1.html" target="_">d1) Arya etiketli resimli müzikli yorumlu namakbul ayý tanýtým sayfasý örneði</a></h4>
+    <h4><a href="C1d3d2.html" target="_">d2) Arya etiketli resimli müzikli yorumlu makbul ayý tanýtým sayfasý örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>1) Her tür türkçe arya eriþilinebilir vasýflý hareket, çoklurtam ve resimli sayfa tasarýmýnda JS kodlamalarý \
+            sunulmaktadýr. Toplam 4 grup kapsamýnda 17 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-a1 üç adet div bölüm içine türkçe bölüm-mesajý='mesaj açýklamasý' ve tab-index='0' ilk sekme \
+            numarasý vasýflarý konulmuþ; button benzeri cursor:pointer iþaretli imleçle týklandýðýnda düðme.onclick, anlýk fonksiyon \
+            duyarlýðýyla alert(o.target.getAttribute('bölüm-mesajý')) yada sekmeyle bölüm düðmesinde Enter (o.keyCode===13) \
+            týklanýnca document.activeElement.onclick(o) kontroluyla bunu aktif düðme.onclick'e atfederek gene ilgili tarayýcý \
+            alert/ikaz pencere mesajýnýn beyaný saðlanmaktadýr. Bu set/getAttribute kullanýmýyla bütün özel türkçe arya vasýflarý \
+            html elemanlarýnýn arþiv vasýflarýymýþcasýna eriþimi saðlanabilmekte, yönetilebilmektedir." +
+            "<br/>3) Altprogram-a2 arya vasýflý section kýsýmda blockquote alýntý içinde 2 adet boþ p-paragraf konulmuþtur. \
+            new XMLHttpRequest().open('GET',dosya.json) ile json dosyasýndaki 25 adet alýntý ve yazar veri-çiftleri okunmakta, \
+            setInterval (rasgeleAlýntýGöster,10000) ile her 10 sn'de bir rasgele üretilen [0,24] rakamýyla alýntýJSON[rasgele].alýntý \
+            ilk p-paragraf konumunda sola-yaslý, ikinci yazar ise diðer p-paragraf konumunda saða yaslý html sayfasýnda yansýtýlýr. \
+            Program yerel http.server sunucuyla çalýþtýrýlmalýdýr." +
+            "<br/>4) Altprogram-a3 .bilgi-kutusu section kýsýmda üstte ul/rolü='sekmelistesi' ve 3 adet li/rolü='sekme'; altta ise \
+            div/.paneller bölümünde 3 adet article/rolü='sekmepaneli' mevcuttur. Týklamaya yada sekme-Enter'a duyarlý sekmeleriKur \
+            ve sekmeyiKur fonksiyonlarýnda önce 3 adet sekmeler ve 3 adet paneller gizli ve pasif kýlýnmakta, sonra da seçili sekme \
+            ve onunla ilintili panel aktif sýnýflý ve seçili/görünür arya vasýfla setAttribute kurulmaktadýr. Böylece sadece seçili sekme \
+            ve içerik paneli görülmekte, diðer 2 pasif sekme panelleri gizlenmektedir. Tamamen türkçe arya vasýflarla yönetilmiþtir." +
+            "<br/>5) Altprogram-a4a form içi isim ve yaþ input verigiriþlerine varsayýlý required (doldurulmasý zorunlu) vasfý konulsaydý, \
+            boþ býrakýlarak submit-gönder'de ikaz verecek, formu göndermeyecekti. Burada form-input-required yerine JS kodlama \
+            kontrolüyle veri alanlarý boþsa .hatalar ikaz kutusu sayfa altýnda görülecek, boþ input-verigiriþ alanlarý name adýyla \
+            a-href baðlantýlý un-li listeleme yansýtacak; kullanýcý hangi un-li-a-href'i týklarsa imleç odaklanmasý ilgili form-input alanýna \
+            konumlanacaktýr. Þayet boþ alan kalmamýþsa form gönderilecek, ayrýca window.location.reload() gereði yeni boþ bir \
+            form, yeniden doldurulmak üzere yeniden kurulacaktýr." +
+            "<br/>6) Altprogram-a4b önceki örneðe müzisyenMi (input type='checkbox') ve çaldýðý enstrümanlar verigiriþi eklenmiþ, \
+            bunlarý ikazlayan .hatalar yanýsýra ikinci  .gizli-ikaz kutusu eklenmiþtir. Ýsim ve yaþ verigiriþleri ve boþ býrakýlma ikazlarý \
+            öncekiyle aynýdýr; burada müzisyenMi çentiklenirse alttaki enstrümanlar verigiriþini engelemeyip, gri renkten sarýya \
+            dönmekte; hatalar kutu ul-li-a-href baðlantýsý odaklanmayý enstrümanlara yönlendirmekte; ayrýca sol-altta müzisyen \
+            enstrümanlarýnýn girilip girilemeyeceði de hatýrlatýlmaktadýr. Boþ alan kalmazsa form submit-gönderilmekte ve boþ form \
+            yeniden kurulmaktadýr." +
+            "<br/>7) Altprogram-a5 html sayfa tasarýmýný header-nav(ul-li)-form(search-submit), main-article(3 alt baþlýk)-aside\
+            (ul-li-a-href baðlantýlar), footer(kopyalamahakký)  3 ana bölümde düzenlemiþtir. Her bölüm esnek serilim (display:flex)'dir." +
+            "<br/>8) Altprogram-b1 button týklandýðýnda duyarlý düðme.onclick fonksiyonu ++sayaç'la týklama sayýsýný birartýrýp alert \
+            tarayýcý ikaz kutusuyla bunu beyan etmektedir." +
+            "<br/>9) Altprogram-b2 form içi select-option çoktan-seçmeli mesleklerden biri seçilirse seç.onchange fonksiyonuyla \
+            seçilen meslek opsiyonu (seç.value); diðer(gir) seçilip form altýnda beliren verigiriþ alanýna girilen meslek Enter'lanýnca \
+            document.onkeydown fonksiyonunda olay.keyCode===13(Enter) kontrolunu takiben diðer.value girilen yenimeslek \
+            tarayýcý alert kutusuyla beyan edilecektir. Select-option-diðer týklanmazsa alttaki input alaný gizlenecektir." +
+            "<br/>10) Altprogram-b3 html5 input tiplerinden input-list-datalist, input-type-number, input-type-email, input-type-tel, \
+            input-type-time, input-type-date ve form gönderme input-type-submit verigiriþ tipleri kullanýlmakta, form.onsubmit \
+            duyarlýðýyla, varsayýlý name-value adres satýrý gönderisi engellenip (o.preventDefault()), varsa özelleþtirilen gönder \
+            sonuçlarý iþlenip, yeni boþ form için window.location.reload() iþletilmektedir." +
+            "<br/>11) Altprogram-b4a tam html sayfasý sol-üst köþesinde 200pxX150px dikdörtgen kutu onmousedown fare \
+            baskýlamayla sürüklenmekte (onmousemove), onmouseup fare serbestlemeyle kutu taþýma sonlandýrýlmaktadýr. \
+            Taþýnan kutu konumuysa F12 konsoldan (aktüelX, aktüelY)=(ilkKutuX+fareTaþýmasýX, ilkKutuY+fareTaþýmasýY)=\
+            (kutu.offsetLeft+o.clientX, kutu.offsetTop+o.clientY)=(x, y) px konumlarý sürekli sergilenmekte, durunca da \
+            'Basýlý fareyle kutu taþýma durduruldu' ifadesi duyurulmaktadýr." +
+            "<br/>12) Altprogram-b4b ayný fareyle kutu taþýmasý örn.iPhone dokunmatik-ekran cep telefonlarýyla da yapýlmak \
+            istendiðinde onmousedown-->ontouchstart, onmouseup-->ontouchend, onmousemove-->ontouchmove dokunmatik \
+            duyarlý fonksiyonlarýn da ilave edilmesini gerektirmektedir. Diðer kýsýmlar öncekiyle aynýdýr." +
+            "<br/>13) Altprogram-c1a audio müzik kutulu ses dosyasýnda varsayýlý ayarlarý saðlayan audio-controls vasfýdýr \
+            (çal/duraksat, süre, zaman sürgüsü, ses sürgüsü, oynatma hýzý). Metin kutusu özel ayarlarý ise en, boy, taþma \
+            (overflow:auto) yeterli olmaktadýr." +
+            "<br/>14) Altprogram-c1b müzikçalarýn düðmelerini özelleþtirmek için öncelikle varsayýlýlar iptal edilmelidir \
+            (audio.removeAttribute('controls'); sonrasýnda audio içinde tanýmlý düðmeleri (çalduraksat, dur, ileri, geri) týklanmaya \
+            duyarlý fonksiyonlarla yönetmek gerekir (düðme.onclick=function(){..}), süre güncellenmesi ise audio.ontimeupdate \
+            duyarlýðýyla dd:ss biçiminde sergilenmelidir. Metin kutusunun üstüne button.onclick(göster/gizle) düðme kontroluyla \
+            týklanýnca görülecek yada gizlenecek js kodlama yönetimi yazýlýr." +
+            "<br/>15) Altprogram-c2a varsayýlý audio ve video ayarlarý için sadece controls yeterlidir. Dosyalar için source-src-\
+            mp3/ogg/mp4/webm yol belirtmek yeterlidir. Tüm müzik ve video varsayýlý oynatma bu pratikliktedir." +
+            "<br/>16) Altprogram-c2b tüm audio ve video oynatýcýlarýný (mp3, ogg, mp4, webm) özelleþtirmek için önce varsayýlý \
+            ayarlar iptal edilir (oynatýcýlar[i].removeAttribute('controls')). Sonra 4 oynatýcý için de çalma düðmeleri (çalduraksat, dur, \
+            geri, ileri) dinamik button elemanýyla kurulur. Süre kýsmýnda oynatýcý dosya belirliliði için MP3, OGG, MP4, WEBM ibaresi \
+            eklenir. Artýk 4 oynatýcýdan herhangibirini özelleþtirilen düðme kontrollarýyla oynatabilirsiniz." +
+            "<br/>17) Altprogram-d1 yukarda 7-altprogram-5a örnektekine benzer aðsayfa tasarýmý, ayýlarla sorunlarý sunmaktadýr. \
+            Bu örnek makbul sayýlmýyor, zira h1-h2-h3 yerine font, p yerine br kullanýlmýþtýr. Sayfa tasarýmýnda, baþlýk; nav-seyrü \
+            menü seçenekleri ve araþtýr verigiriþi/gönder düðmesi; main-article içinde ayý tanýtýmý, tablo, 2 resim ve bir audio, aside \
+            kenarlýk'ta yazar'ýn tanýtýmý, yorumlarý göster'de yorum gönderen ismi ve yorumu ve önceden gönderilen bir yorum \
+            görülmekte, yeni yorum gönderileri JS kodlamayla altalta eklenmektedir, tali bölüm saðda ayý benzeri diðer hayvan \
+            sorunlarý link'lerini listelemektedir; son footer ise kopyalamahakký'na tahsislidir." +
+            "<br/>18) Altprogram-d2 önceki örnekle aynýdýr, sadece font yerine h, br yerine p kullanýlmakta ve görüntü-renk daha \
+            estetik kýlýnmýþtýr. Göster-gizle yorum ve yeni yorum eklentileri JS kodlamayla yönetilmektedir. Ayrýca ayý.mp3 audio \
+            dosyasý üzerindeki baðlantý týklandýðýnda, gelen yeni sekme sayfasý, audio ses kaydýnýn yazýlý nüshasýný sunmaktadýr."
+    </script>
+</body> 
+</html>

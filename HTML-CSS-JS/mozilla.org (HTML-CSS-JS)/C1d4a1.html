@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4a1.html: Ul-li listemeyi öykünen div-div'e arya-rolü vasýflý þerh örneði.</title>
+    <link rel="stylesheet" href="C1d4a.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<h2><u>Favori hayvanlarým:</u></h2>
+<div rolü="ul-liste">
+    <div rolü="li-listeElemaný">Güvercin-kumru</div>
+    <div rolü="li-listeElemaný">Yunus balýðý</div>
+    <div rolü="li-listeElemaný">Sibirya kurdu</div>
+    <div rolü="li-listeElemaný">Kedi kaplan</div>
+    <div rolü="li-listeElemaný">Kaplumbaða</div>
+</div>
+<hr/>
+<h3><u>Favori hayvanlarým:</u></h3>
+<ul>
+    <li>Güvercin-kumru</li>
+    <li>Yunus balýðý</li>
+    <li>Sibirya kurdu</li>
+    <li>Kedi kaplan</li>
+    <li>Kaplumbaða</li>
+</ul>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 195px;">
+div > div {
+    padding-left: 20px;
+    position: relative;}
+div > div::before {
+    content: " ";
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 8px;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 40px;">
+console.log ("JS kodlama testi"); // alert ("JS kodlama testi");
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C1d4a.js"></script>
+</html>

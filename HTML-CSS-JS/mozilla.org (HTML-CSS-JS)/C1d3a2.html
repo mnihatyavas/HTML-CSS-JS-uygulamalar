@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3a2.html: XhrGet'le json alýntýlarýn aryalý kýsýmda tekrarlý aralýklarla rasgele sergilenmesi örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 420px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h1 {letter-spacing: 2px; text-decoration: underline; color: brown;}
+        p:nth-child(1) {line-height: 1.6; color: yellow; text-align: left;}
+        p:nth-child(2) {text-align: right; color: tomato; font-weight: bold;}
+        section {
+            border-radius: 20px;
+            margin: 0 auto;
+            padding: 10px;
+            width: 400px;
+            background: #444;
+            text-shadow: 2px 2px 2px aqua;
+            min-height: 150px;}
+    </style>
+</head>
+<body>
+    <!-- (>>>python -m http.server) ve (localhost:8000) gerektirir-->
+    <section aria-live="assertive" arya-canlý="iddialý" aria-atomic="true" arya-yeganeMi="doðru">
+        <h1>Rasgele Alýntýlar</h1>
+        <blockquote>
+            <p></p>
+            <p></p>
+        </blockquote>
+    </section>
+
+    <script>
+        const alýntýParagrafý = document.querySelectorAll ("section p");
+        let alýntýJSON;
+
+        alýntýlarýXhrGetÝleYükle ("C1d3a2.json", jsonAlýntýlar); // JSON kayýtlarýný okur...
+        setInterval (rasgeleAlýntýGöster, 10000); // Her 10sn'de rasgele bir alýntýyý gösterir...
+
+        function alýntýlarýXhrGetÝleYükle (yol, geriçaðýr) {
+            let xhrTalep = new XMLHttpRequest();
+            xhrTalep.open ("GET", yol);
+            xhrTalep.responseType = "json";
+            xhrTalep.send();
+            xhrTalep.onload = function() {// yada "onreadystatechange"
+                if (xhrTalep.readyState === 4 && xhrTalep.status === 200) {geriçaðýr (xhrTalep.response);}
+            }; // xhr sonu..
+        } // func sonu...
+        function jsonAlýntýlar (yanýt) {alýntýJSON = yanýt;}
+
+        function rasgeleAlýntýGöster() {
+            var rasgele = Math.floor ((Math.random() * 25)); // [0,24]
+            alýntýParagrafý [0].textContent = alýntýJSON [rasgele].alýntý ;
+            alýntýParagrafý [1].textContent = "--" + alýntýJSON [rasgele].yazar;
+        } // func sonu...
+    </script>
+</body>
+</html>

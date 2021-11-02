@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3c2b.html: Arya etiketli özel JS kodlamasýyla audio ve video dosyalarýný çalýþtýrma örneði.</title>
+    <link href="C1d3c2b.css" rel="stylesheet">
+ </head>
+ <body>
+    <h1 rolü="iddialý"><u>Özel Müzik ve Video Ayarlarý</u></h1>
+
+    <h2>Müzik çalarlar</h2>
+    <section class="oynatýcý" arya-etiketi="Müzik çalarlar">
+        <audio controls arya-etiketi="MP3 müzik çalar">
+            <source src="resim/medya/müzik.mp3" type="audio/mp3">
+            <p>Tarayýcýnýz HTML5 müziði desteklemezse  <a href="resim/medya/müzik.mp3">"Müzik baðlantýsý"</a> týklanarak da çalýnýr.</p>
+        </audio>
+        <audio controls arya-etiketi="OGG müzik çalar">
+            <source src="resim/medya/müzik.ogg" type="audio/ogg">
+            <p>Tarayýcýnýz HTML5 müziði desteklemezse  <a href="resim/medya/müzik.mp3">"Müzik baðlantýsý"</a> týklanarak da çalýnýr.</p>
+        </audio>
+    </section>
+    <hr/>
+
+    <h2>Video oynatýcýlar</h2>
+    <section class="oynatýcý" arya-etiketi="Video oynatýcýlarý">
+        <video controls arya-etiketi="MP4 video oynatýcýsý">
+            <source src="resim/medya/tavþan.mp4" type="video/mp4">
+            <p>Tarayýcýnýz HTML5 video'yu desteklemezse  <a href="resim/medya/tavþan.mp4">"Video baðlantýsý"</a> týklanarak da oynatýlýr.</p>
+        </video>
+        <video controls arya-etiketi="WEBM video oynatýcýsý">
+            <source src="resim/medya/tavþan.webm" type="video/webm">
+            <p>Tarayýcýnýz HTML5 video'yu desteklemezse  <a href="resim/medya/tavþan.mp4">"Video baðlantýsý"</a> týklanarak da oynatýlýr.</p>
+        </video>
+    </section>
+
+    <script src="C1d3c2b.js"></script>
+</body>
+</html>

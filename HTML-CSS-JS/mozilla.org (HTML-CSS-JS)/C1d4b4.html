@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d4b4.html: Img-src-alt-title ve background-url ile gölgeli resim ve ikon sunumu örneði.</title>
+    <link rel="stylesheet" href="C1d4a.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section arya-etiketi="Esnek kutularda baþlýk ikonu ve gölgeli duyarlý gövde resimleri"></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<header>
+    <img src="resim/yýldýz1.png" alt="">
+    <h1>Gölgeli Resimler</h1>
+</header>
+<hr/>
+<main>
+    <img src="resim/çaydanlýk.jpg" title="Bir dolap rafýndaki çaydanlýk resmi" alt="çaydanlýk.jpg">
+    <img src="resim/top.jpg" title="Yeþil sahadaki bir futbol topu resmi" alt="top.jpg">
+</main>
+<hr/>
+<footer>
+    <h1 title="Iþýldayan yýldýz ikonu"></h1>
+</footer>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 200px;">
+section {background-color: DarkSlateGray; color: magenta; width: 90%; margin-bottom: 10px;}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;}
+main {display: flex; margin: 20px auto; justify-content: space-between;}
+main img {
+    display: block;
+    width: 250px;
+    box-shadow: 10px 10px 10px black;
+    margin: 10px;}
+main img:hover {
+    border: 2px solid black;
+    box-shadow: 10px 10px 10px white};
+footer {display: block;}
+footer h1{
+    margin:0 auto;
+    height:50px;
+    width: 50px;
+    background: url(resim/yýldýz1.png) no-repeat center;}
+footer h1:hover {
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px red};
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 0px;"></textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C1d4a.js"></script>
+</html>

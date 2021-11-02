@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d3c1a.html: Arya etiketli varsayýlý audio ve metin ayarlarýyla müzik çalma örneði.</title>
+    <style>
+        html {
+            background-color: #152;
+            font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        .müzik-kutusu {
+            background-color: magenta;
+            border: 2px solid green;
+            padding: 20px;
+            width: 350px;
+            margin: 5px auto;
+            text-align: center;}
+        .metin-kutusu {
+            background-color: aqua;
+            width: 400px;
+            margin: 0px auto;
+            border: 2px solid red;
+            max-height: 200px;
+            overflow: auto;
+            padding: 0 10px;}
+        h1 {text-decoration: underline; color:DarkRed; text-align:center;}
+    </style>
+</head>
+<body>
+    <h1>Varsayýlý Müzik ve Metin Ayarlarý</h1>
+
+    <div class="müzik-kutusu" arya-atiketi="audio-controls ile varsayýlý ayarlarla müzik çalma">
+        <audio controls>
+            <source src="resim/medya/müzik.mp3" type="audio/mp3"> <!-- Ýkinciyi yada mevcudu çalar -->
+            <source src="resim/medya/müzik.ogg" type="audio/ogg">
+            <p>Tarayýcýnýz HTML5 müziði desteklemezse  <a href="resim/medya/müzik.mp3">"Müzik baðlantýsý"</a> týklanarak da çalýnýr.</p>
+        </audio>
+    </div>
+    <div class="metin-kutusu" arya-etiketi="Çoklu paragraflý, taþmaya otomatik dikey kaydýraçlý metin kutusu">
+        <p><strong>1.Þahýs</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at convallis libero, ut ultricies massa. Integer vel tempor nisi. Nunc scelerisque enim est. Duis lorem ipsum, semper vitae sem at, ultricies interdum ex.</p>
+        <p><strong>2.Þahýs</strong>: In consectetur maximus blandit. Curabitur convallis iaculis quam, eu porta erat suscipit sit amet. Morbi viverra placerat ipsum, non bibendum libero egestas eu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed quis condimentum ante. Nullam ullamcorper faucibus eros. Quisque egestas non risus a faucibus. Curabitur luctus tincidunt turpis in scelerisque.</p>
+        <p><strong>3.Þahýs</strong>: Suspendisse sapien ipsum, lacinia eu bibendum in, congue eu purus. Sed fringilla sollicitudin faucibus. Cras sodales sapien neque, eget gravida augue lobortis ac. Mauris blandit faucibus porta.</p>
+        <p><strong>4.Þahýs</strong>: Fusce non libero eget nisl porta egestas ut sed elit. Nullam molestie lectus ut elementum sagittis. Donec dictum nunc leo, quis gravida diam varius non. Nam ac nisl vel nibh iaculis convallis vel eget arcu. Mauris pharetra purus ac ornare pellentesque. Fusce in leo nunc. Nunc eget vehicula sem, quis aliquam lorem.</p>
+        <p><strong>5.Þahýs</strong>: Ut auctor ornare pulvinar. Morbi nisl ipsum, pellentesque et bibendum eget, vestibulum in massa. Cras egestas cursus est sed ultrices. Etiam vel dui felis.</p>
+    </div>
+</body>
+</html>

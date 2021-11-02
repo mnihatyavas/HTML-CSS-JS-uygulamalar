@@ -1,0 +1,155 @@
+﻿/* C1d3d2.css: Resimli müzikli yorumlu makbul ayı tanıtım css vasıfları alt-örneği. */
+
+/* Genel kurulum */
+html {
+    font-size: 10px;
+    background-color: #123;}
+body {
+    background-color: #a97;
+    max-width: 90%;
+    min-width: 900px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;
+    /* text-align: center; */}
+* {box-sizing: border-box;}
+
+/* Tiplemeler */
+h1, h2, h3 {
+    font-family: "Sonsie One", cursive;
+    color: #2a2a2a;}
+p, input, li, table, label {
+    font-family: "Open Sans Condensed", sans-serif;
+    color: #2a2a2a;}
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 5px black;}
+h2 {
+    font-size: 3rem;
+    text-align: center;}
+h3 {font-size: 2.2rem;}
+p, li, table {
+    font-size: 1.6rem;
+    line-height: 1.5;}
+
+/* Header serilimi */
+nav, article, footer, .tali {
+    background-color: LightGreen;
+    border:2px solid black;}
+article, footer, .tali {padding: 10px 30px;}
+article {margin-right: 10px;}
+nav {
+    height: 50px;
+    display: flex;
+    padding: 1% 0;
+    margin-bottom: 10px;}
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;}
+nav li {
+    display: inline;
+    text-align: center;
+    flex: 1;}
+nav a {
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;}
+nav .ara {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2em;}
+.ara input {
+    font-size: 1.6rem;
+    height: 32px;}
+.ara input[type="search"] {
+    flex: 3;
+    background-color: aqua;
+    border: 1px solid red;}
+.ara input[type="submit"] {
+    flex: 1;
+    margin-left: 1rem;
+    background: #333;
+    border: 0;
+    color: white;}
+.ara input[type="submit"]:hover {color: red;}
+
+/* Main serilimi */
+main {display: flex;}
+article {flex: 5;}
+.tali {flex: 2;}
+
+/* Footer serilimi */
+footer {margin-top: 10px;}
+
+/* Tablo stilleme */
+table {
+    width: 100%;
+    background-color: black;}
+th, td {
+    padding: 10px;
+    text-align: center;}
+th[kapsam="kolon"] {background-color: brown;}
+tbody tr:nth-child(even) {background-color: DarkKhaki;}
+tbody tr:nth-child(odd) {background-color: khaki;}
+
+/* Resim ve müzikçaların stillenmesi */
+img, audio {
+    display: block;
+    margin: 0 auto;}
+audio {width: 500px;}
+
+/* Yorumstilleme */
+.yorumlar {
+    background-color: #abc;
+    padding: 10px;}
+.göster-gizle {cursor: pointer;}
+.yorumlar h2 {font-size: 2rem;}
+.yorumlar h2:nth-of-type(2) {margin-bottom: 0;}
+.yorum-formu {margin-bottom: 3rem;}
+.yorum-formu .esnek-çift {
+    display: flex;
+    padding: 0 3rem 1rem;}
+.yorum-formu label {
+    align-self: center;
+    flex: 2;
+    text-align: right;}
+.yorum-formu input {
+    margin-left: 1rem;
+    flex: 6;}
+.göster-gizle {
+    text-align: center;
+    width: 150px;}
+.yorum-formu input, .yorum-formu label, .göster-gizle {
+    font-size: 1.6rem;
+    line-height: 32px;}
+.yorum-formu input[type="submit"], .göster-gizle {
+    background: #333;
+    border: 0;
+    color: white;}
+.göster-gizle:hover {color: tomato;}
+.yorum-formu input[type="text"] {
+    background-color: Lime;
+    border:1px solid red;
+    color: navy;}
+.yorum-formu input[type="submit"] {
+    width: 30%;
+    display: block;
+    margin: 0 auto;}
+.yorum-kabı {
+    text-align: left;
+    margin-top: 0;}
+.yorum-kabı li {
+    list-style-type: none;
+    display: flex;}
+.yorum-kabı li p:nth-child(1) {
+    flex: 1.5;
+    font-weight: bold;}
+.yorum-kabı li p:nth-child(2) {flex: 5;}

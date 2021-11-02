@@ -1,0 +1,30 @@
+/* C1e4a.html: Düðmenin normal, üzerinde, aktif duyarlýlýk efektleri css vsýflarý alt-örneði. */
+
+html {background-color: #152; font-family: sans-serif;}
+body {
+    background-color: #a97;
+    max-width: 40%;
+    min-width: 300px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;
+    text-align: center;}
+/* body {display: flex;} farketmez */
+button {
+    width: 170px;
+    margin: auto;
+    line-height: 2;
+    font-size: 1.5rem;
+    text-align: center;
+    color: green;
+    text-shadow: 2px 2px 4px black;
+    border-radius: 20px / 15px;
+    border: none;
+    cursor: pointer;
+    /* background-color: #ff0000; alttakiyle ayný */
+    background-color: rgba(255,0,0,1);
+    box-shadow: inset 2px 2px 5px rgba(255,255,255,0.4), inset -2px -2px 5px rgba(0,0,0,0.4);}
+button:hover {background-color: rgba(255,0,0,0.5); color: Lime;}
+button:active {
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.4), inset -1px -1px 3px rgba(255,255,255,0.4);
+    color: yellow;}

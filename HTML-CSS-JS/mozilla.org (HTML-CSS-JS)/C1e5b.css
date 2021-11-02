@@ -1,0 +1,35 @@
+/* C1e5b.html: xhrTalebi json dosya verilerinden header/section tasarýmý css vasýflarý alt-örneði. */
+
+/* Genel stiller */
+html {
+    background-color: #152;
+    font-family: "helvetica neue", helvetica, arial, sans-serif;}
+body {
+    background-color: #a97;
+    max-width: 90%;
+    min-width: 850px;
+    height: 500px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;}
+h1, h2 {font-family: "Faster One", cursive;} /* Çevrimiçiyse "Faster One", deðilse cursive. */
+
+/* <header> baþlýk stilleri  */
+h1 {
+    font-size: 4rem;
+    text-align: center;}
+header p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;}
+
+/* <section> kýsým stilleri */
+section article {
+    width: 33%;
+    float: left;}
+section p {margin: 5px 0;}
+section ul {margin-top: 0;}
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -5px;
+    margin-bottom: 10px;}

@@ -1,0 +1,50 @@
+/* C1d1e2.css: Table-tr-td ile baþlýk-seyrü-esas/kenarlýk-ayaklýk css vasýflarý alt-örneði. */
+
+/* || Genel kurulum */
+html, body {
+    margin: 0;
+    padding: 0;}
+html {font-size: 10px;}
+body {margin: 0 auto;}
+table {border-collapse: collapse;} /* Varsayýlý tablo ayarlarý iptal */
+
+/* || Tiplemeler */
+h1, h2, h3 {
+    font-family: "Sonsie One", cursive; /* Çevrimiçi deðilse eðri-yazý */
+    color: #2a2a2a;}
+p, input, li, a {
+    font-family: "Open Sans Condensed", sans-serif; /* Çevrimiçi deðilse sans */
+    color: #2a2a2a;}
+h1 {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 10px DodgerBlue;}
+h2 {font-size: 3rem;}
+h3 {font-size: 2.2rem;}
+p, li, a {
+    font-size: 1.6rem;
+    line-height: 1.5;}
+em {color: blue;}
+
+/* || Seyrü menü serilimi */
+#esas td, #kenarlýk td, #footer td {padding: 10px;}
+#içerik {margin-right: 10px;}
+#nav {height: 150px;}
+#nav td {padding: 20px;}
+#nav a {
+    display: block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;}
+input {
+    font-size: 1.6rem;
+    height: 32px;
+    width: 150%;
+    background-color: aqua;}
+button {
+    width: 100%;
+    height: 32px;
+    background: #333;
+    border: 0;
+    color: white;}

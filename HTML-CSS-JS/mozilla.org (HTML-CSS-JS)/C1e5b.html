@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1e5b.html: xhrTalebi.send()/.load() ile json dosya verilerinden header/section tasarýmý örneði.</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="C1e5b.css">
+</head>
+<body>
+    <!-- xhrTalebi (>python -m http.server) ve (localhost:8000) gerektirmekte.-->
+    <header></header>
+    <section></section>
+
+    <script>
+        const baþlýk = document.querySelector ("header");
+        const kýsým = document.querySelector ("section");
+
+        let xhrTalebi = new XMLHttpRequest();
+        xhrTalebi.open ("GET", "C1e5b.json");
+        xhrTalebi.responseType = "json";
+        xhrTalebi.send();
+
+        xhrTalebi.onload = function() {
+            let süperKahramanlar = xhrTalebi.response;
+            baþlýkYerleþtir (süperKahramanlar);
+            kýsýmYerleþtir (süperKahramanlar);
+        } // xhr sonu...
+
+        function baþlýkYerleþtir (jsonNesnesi) {
+            const h1 = document.createElement ("h1"); // ekipAdý baþlýðý...
+            h1.textContent = jsonNesnesi ["ekipAdý"];
+            baþlýk.appendChild (h1);
+            const p = document.createElement ("p"); // ikamet ve kuruluþ paragrafý...
+            p.textContent = "Ýkamet: " + jsonNesnesi ["ikamet"] + " // Kuruluþ: " + jsonNesnesi ["kuruluþ"];
+            baþlýk.appendChild (p);
+            baþlýk.appendChild (document.createElement ("hr")); // Yatay çizgi...
+        } // func sonu...
+
+        function kýsýmYerleþtir (jsonNesnesi) {
+            const kahramanlar = jsonNesnesi ["üyeler"];
+            for (let i = 0; i < kahramanlar.length; i++) {
+                const makale = document.createElement ("article");
+                const h2 = document.createElement ("h2"); // üyeler[i].ad baþlýðý...
+                const p1 = document.createElement ("p"); // üyeler[i].gizliKimlik paragrafý...
+                const p2 = document.createElement ("p"); // üyeler[i].yaþ paragrafý...
+                const p3 = document.createElement ("p"); // üyeler[i].güçler paragrafý...
+                const ul = document.createElement ("ul"); // üyeler[i].güçler düzensiz liste...
+
+                h2.textContent = kahramanlar[i].ad;
+                p1.textContent = "Gizli kimlik: " + kahramanlar [i].gizliKimlik;
+                p2.textContent = "Yaþ: " + kahramanlar [i].yaþ;
+                p3.textContent = "Süpergüçler:";
+
+                let süperGüçler = kahramanlar [i].güçler;
+                for (let j = 0; j < süperGüçler.length; j++) {
+                    const li = document.createElement ("li"); // üyeler[i].güçler[j] listesi...
+                    li.textContent = süperGüçler [j];
+                    ul.appendChild (li);
+                } // for-j sonu...
+
+                makale.appendChild (h2);
+                makale.appendChild (p1);
+                makale.appendChild (p2);
+                makale.appendChild (p3);
+                makale.appendChild (ul);
+                kýsým.appendChild (makale);
+            } // for-i sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

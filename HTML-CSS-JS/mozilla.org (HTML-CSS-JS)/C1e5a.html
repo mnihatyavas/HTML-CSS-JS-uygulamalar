@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1e5a.html: Döngü içinde yaratýlan paragraflarýn kötü/iyi týklanma yönetimi örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        p {color: Darkblue; cursor: pointer;}
+        p:hover {color: yellow; font-style: italic;}
+    </style>
+</head>
+<body>
+    <h3>Ýstediðin paragrafý týkla, mesajýný oku</h3>
+    <hr/>
+
+    <script>
+        for (let i = 1; i <= 5; i++) { // Kötü döngülü paragraf yönetimi...
+            const p = document.createElement ("p");
+            p.textContent = "Bu " + i + " no'lu KÖTÜ paragraftýr.";
+            document.body.appendChild (p);
+            p.onclick = function() {alert (i + " no'lu KÖTÜ paragraftan herkese selam!");}
+        } // for sonu...
+        document.body.appendChild (document.createElement ("hr"));
+        for (let i = 1; i <= 5; i++) { // Ýyi döngülü paragraf yönetimi...
+            const p = document.createElement ("p");
+            p.textContent = "Bu " + i + " no'lu ÝYÝ paragraftýr.";
+            document.body.appendChild (p);
+            paragrafYönetimi (p, i);
+        } // for sonu...
+       function paragrafYönetimi (p, i) {p.onclick = ()=>{alert (i + " no'lu ÝYÝ paragraftan herkese selam!");} }
+    </script>
+</body>
+</html>

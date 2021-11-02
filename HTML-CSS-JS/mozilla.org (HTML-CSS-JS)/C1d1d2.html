@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1d1d2.html: Ýmg-resimle alt-ernative, title baþlýk, p-paragraf-aria iliþkili iyi resim örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        img {
+            display: block;
+            border: 2px solid;
+            margin: 0.5em;}
+    </style>
+</head>
+<body>
+    <h1>Ýyi Açýklamalý Resimler</h1>
+
+    <img src="resim/dinazor.png" width="100" alt="dinazor.png" title="Tiranozor Rex">
+    <hr/>
+
+    <img src="resim/dinazor.png"
+        title="Mozilla kýrmýzý Tiranozor Rex: Ýnsan gibi iki güçlü arka ayaklarý üzerinde dik durabilen, uzun ve güçlü kuyruklu, iki kýsa ve zayýf ön kollu, ve pekçok sivri diþ içeren koca aðýzlý koca kafalý etobur dinazor.">
+    <hr/>
+
+    <img src="resim/dinazor.png"
+        width="150"
+        height="300"
+        alt="Mozilla kýzýl dinazoru."
+        title="Mozilla kýrmýzý Tiranozor Rex: Ýnsan gibi iki güçlü arka ayaklarý üzerinde dik durabilen, uzun ve güçlü kuyruklu, iki kýsa ve zayýf ön kollu, ve pekçok sivri diþ içeren koca aðýzlý koca kafalý etobur dinazor.">
+    <hr/>
+
+    <img src="resim/dinazor.png" height="200" width="400" aria-etiketli="dino-etiketi">
+    <p id="dino-etiketi">Mozilla kýrmýzý Tiranozor Rex: Ýnsan gibi iki güçlü arka ayaklarý üzerinde dik durabilen, uzun ve güçlü kuyruklu, iki kýsa ve zayýf ön kollu, ve pekçok sivri diþ içeren koca aðýzlý koca kafalý etobur dinazor.</p>
+</body>
+</html>
