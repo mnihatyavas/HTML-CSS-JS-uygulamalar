@@ -1,0 +1,25 @@
+﻿/* C1c47d.css: Araştırılan Youtube video oynatma vasıfları alt-örneği. */
+html {background-color: #135;}
+body {
+    background-color: #987;
+    max-width: 90%;
+    min-width: 850px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;
+    font-family: sans-serif;}
+input {background-color:Blue; color:orange;}
+button {background-color: DarkRed; color: yellow; font-size:15px;}
+.sarıcı {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;}
+form {
+    background-color: SlateGray;
+    border: 2px solid black;
+    padding: 10px;
+    width: 200px;}
+form p:nth-of-type(1) {margin-top: 0;}
+label {color: yellow;}
+.kontrollar, .sonuçlar {flex: 1;}
+h1 {text-align: center;}

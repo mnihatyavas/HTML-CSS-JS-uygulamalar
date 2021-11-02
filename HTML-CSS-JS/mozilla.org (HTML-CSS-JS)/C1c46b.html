@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>C1c46b.html: Bir indexedDB veritabaný, nesnedeposu ve kayýtlarý yaratma, ekleme, silme, deðiþtirme, gösterme örneði.</title>
+    <style>
+        html {background-color: #135;}
+        body {
+            background-color: #db9;
+            max-width: 50%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        input {background-color:Navy; color:orange;}
+     </style>
+</head>
+<body>
+    <button onclick = "birKayýtOku()">Bir kayýt oku</button><br/>
+    <button onclick = "tümKayýtlarýOku()">Tüm kayýtlarý oku</button><br/>
+    <button onclick = "birKayýtEkle()">Bir kayýt ekle</button><br/>
+    <button onclick = "birKayýtDeðiþtir()">Bir kayýt deðiþtir</button><br/>
+    <button onclick = "birKayýtSil()">Bir kayýt sil</button><br/>
+    <button onclick = "kayýtDeposunuSil()">Kayýt deposunu sil</button><br/>
+    <button onclick = "veritabanýnýSil()">Veritabanýný sil</button><br/>
+
+    <h4>NOT: Ýþlem sonuçlarýný F12-konsol çýktýlarýndan takip etmelisiniz.</h4>
+
+    <script>
+        if (! window.indexedDB) {console.log ("Tarayýcýnýz indexedDB'i desteklememektedir.");}
+        const elemanKaydý = [
+            {no: "1", isim: "M.Nihat Yavaþ", yaþ: (2021-1957), eposta: "mnyavas@hotmail.com" },
+            {no: "2", isim: "M.Nedim Yavaþ", yaþ: (2021-1961), eposta: "mnyavas@gmail.com" },
+            {no: "3", isim: "Sevim Yavaþ", yaþ: (2021-1963), eposta: "sevimyavas@hotmail.com" } ];
+        let vt; // Aktüel tarayýcýnýzda yaratýlacak VeriTabaný nesnesi: [object IDBDatabase]...
+        let talep = window.indexedDB.open ("veritabaný1", 1);
+        talep.onerror = ()=>{console.log ("HATA: " + talep.error); }; // Yada olay.target.error
+        talep.onsuccess = ()=>{vt = talep.result; console.log ("Baþarý: " + vt); };
+        talep.onupgradeneeded = (olay)=>{
+            let vt = olay.target.result; // Yada talep.result
+            let nesneDeposu = vt.createObjectStore ("depo1", {keyPath: "no"});
+            for (let i in elemanKaydý) {nesneDeposu.add (elemanKaydý [i]); }
+        } // tal..sonu...
+
+        function birKayýtOku() {
+            let kno = prompt ("Okunacak kaydýn no'sunu girin: ", "1");
+            if (kno == "") return false;
+            let talep = vt.transaction (["depo1"], "readonly").objectStore ("depo1").get (kno);
+            talep.onerror = (o)=>{consol.log ("Okuma hatasý: " + o.target.error); };
+            talep.onsuccess = ()=>{
+                if (talep.result) {console.log ("Ýsim: " + talep.result.isim + ", Yaþ: " + talep.result.yaþ + ", Eposta: " + talep.result.eposta);
+                }else {console.log ("Aradýðýnýz kayýt veritabaný deposunda mevcut deðil!"); }
+            }; // tal..sonu...
+        } // func sonu...
+
+        function tümKayýtlarýOku() {
+            let talep = vt.transaction (["depo1"], "readonly").objectStore ("depo1");
+            talep.openCursor().onsuccess = (o)=>{
+                let izlek = o.target.result;
+                if (izlek) {console.log ("Kayýt no: " + izlek.key + ", Ýsim: " + izlek.value.isim + ", Yaþ: " + izlek.value.yaþ + ", Eposta: " + izlek.value.eposta); izlek.continue();
+                }else {console.log ("Mevcut tüm kayýtlar listelendi!"); }
+            }; // vt.sonu...
+        } // func sonu...
+
+        function birKayýtEkle() {
+            let talep=vt.transaction (["depo1"], "readonly").objectStore ("depo1").getAllKeys();
+            talep.onsuccess = ()=>{
+                let kno = prompt ("Eklenecek kaydýn no'sunu girin: ", talep.result.length+1);
+                // Nesnedepodaki kayýt sayýsý, (arakayýt silinmelerinden dolayý) girilmiþ bir kayýtno olabilir!..
+                if (kno == "") return false;
+                let mevcutMu = vt.transaction (["depo1"], "readonly").objectStore ("depo1").get (kno);
+                mevcutMu.onsuccess = ()=>{
+                    if (mevcutMu.result == undefined) {
+                        let eklemeTalebi = vt.transaction (["depo1"], "readwrite").objectStore ("depo1").add ({
+                            no: kno,
+                            isim: prompt ("Eklenecek kaydýn ad ve soyadýný girin: "),
+                            yaþ: prompt ("Eklenecek kaydýn yaþýný girin: "),
+                            eposta: prompt ("Eklenecek kaydýn epostasýný girin: ") } );
+                        eklemeTalebi.onsuccess = ()=>{console.log ("Kaydýnýzýn veritabaný deposuna eklendi."); };
+                        eklemeTalebi.onerror = ()=>{console.log ("Kayýt ekleme hatasý: " + eklemeTalebi.error);}
+                    }else {console.log ("Bu kayýt halihazýrda dosyada mevcut!..");}
+                }; // mev..sonu...
+            } // tal..sonu...
+        } // func sonu...
+
+        function birKayýtDeðiþtir() {
+            let kno = prompt ("Deðiþecek kaydýn no'sunu girin: ");
+            if (kno == "") return false;
+            let mevcutMu = vt.transaction (["depo1"], "readonly").objectStore ("depo1").get (kno);
+            mevcutMu.onsuccess = ()=>{
+                if (mevcutMu.result == undefined) {console.log ("Deðiþtirilecek kayýt dosyada mevcut deðil!.."); return false;}
+                let deðiþtirmeTalebi = vt.transaction (["depo1"], "readwrite").objectStore ("depo1").put ({
+                    no: kno,
+                    isim: prompt ("Deðiþecek kaydýn ad ve soyadýný girin: "),
+                    yaþ: prompt ("Deðiþecek kaydýn yaþýný girin: "),
+                    eposta: prompt ("Deðiþecek kaydýn epostasýný girin: ") } );
+                deðiþtirmeTalebi.onsuccess = ()=>{console.log ("Kaydýnýzýn deðiþtirildi."); };
+                deðiþtirmeTalebi.onerror = ()=>{console.log ("Kayýt deðiþtirme hatasý: " + deðiþtirmeTalebi.error);}
+            }; // mev..sonu...
+            mevcutMu.onerror = ()=>{console.log ("Bu kayýt dosyada mevcut deðil!.."); };
+        } // func sonu...
+
+        function birKayýtSil() {
+            let kno = prompt ("Silinecek kaydýn no'sunu girin: ");
+            if (kno == "") return false;
+            let cevap = prompt ("DÝKKAT... Bu eleman dosyadan silinecek.\nEmin misiniz [e/h]:", "h");
+            if (cevap.toLowerCase() != "e") return false;
+            let talep = vt.transaction (["depo1"], "readwrite").objectStore ("depo1").delete (kno);
+            talep.onsuccess = ()=>{console.log (kno + " no'lu kayýt veritabaný deposundan silinmiþtir."); };
+            talep.onerror = ()=>{console.log ("Silme hatasý: " + talep.error); };
+        } // func sonu...
+
+        function kayýtDeposunuSil() {
+            let cevap = prompt ("Nesne deponuz, içerdiði tüm kayýtlarla silinecek.\nEmin misin [e/h]: ", "h");
+            if (cevap.toLowerCase() != "e") return false;
+            var talep = vt.transaction (["depo1"], "readwrite").objectStore ("depo1").clear();
+            talep.onsuccess = ()=>{console.log ("Veritabaný deposu temizlendi."); };
+            talep.onerror = ()=>{console.error ("Nesne deposunu temizleme hatasý: " + talep.error); };
+        } // func sonu...
+
+        function veritabanýnýSil() {
+            let cevap = prompt ("Tüm veri tabanýnýz, içerdiði depolar ve kayýtlarla silinecek.\nEmin misin [e/h]: ", "h");
+            vt.close(); // Veritabaný silinmeden önce kapatýlmalýdýr, yoksa silinmez, bloklama hatasý verir...
+            if (cevap.toLowerCase() != "e") return false;
+            let talep = window.indexedDB.deleteDatabase ("veritabaný1");
+            talep.onsuccess = ()=>{console.log ("Veritabaný silinmiþtir."); };
+            talep.onerror = ()=>{console.error ("Veritabaný silme hatasý: " + talep.error); };
+            talep.onblocked = ()=>{console.log ("Bloklanan iþlem nedeniyle veritabaný silinemedi.");};
+        } // func sonu...
+    </script>
+</body>
+</html>

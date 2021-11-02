@@ -1,0 +1,20 @@
+/* C1c41a.css: Zýplayan toplar vasýflarý alt-örneði. */
+html {background-color: #246;}
+body {
+    background-color: #a97;
+    max-width: 90%;
+    min-width: 600px;
+    padding: 20px;
+    margin: 2em auto;
+    height: 100%;
+    border: 5px solid tomato;}
+h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    position: absolute;
+    margin: 0;
+    top: -4px;
+    right: 40px;
+    color: transparent;
+    text-shadow: 0 0 4px orange;}
+canvas {width:100%; height: 100%;}

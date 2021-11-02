@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52d.html: Gecikmeli yapýlacak asenkron selamlamanýn yapýlmadan iptali örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 350px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button, input {background-color: DarkRed; color: yellow; font-size:15px;}
+        .iptal {color: aqua;}
+        form {width: 320px;}
+        div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;}
+        button, input {width: 150px;}
+    </style>
+</head>
+<body>
+    <h1>Birilerini selamlama!</h1>
+    <form>
+        <div>
+            <label for="ad">Selamlayacaðýnýzýn adý: </label>
+            <input type="ad" id="ad" required>
+        </div>
+        <div>
+            <button class="selam">Selamla!</button>
+        </div>
+    </form>
+    <p><button class="iptal">Selamlamanýn iptali</button></p>
+
+    <script>
+        const formum = document.querySelector ("form");
+        const isim = document.getElementById ("ad");
+        const iptalDüðmesi = document.querySelector (".iptal");
+        let gecikmeliSelam;
+        iptalDüðmesi.disabled = true; iptalDüðmesi.style.color = "blue"; // Henüz iptal edilecek selam gönderilmedi...
+
+        formum.addEventListener ("submit", (o) =>{
+            o.preventDefault();
+            iptalDüðmesi.disabled = false; iptalDüðmesi.style.color = "aqua"; // Ýptale hazýr aktiflenmeli...
+            gecikmeliSelam = setTimeout (selamla, 5000, isim.value); // 5sn sonra selamla(kimi)...
+            console.log ("Selamlama 5sn sonra yapýlacak!");
+        }); // formum sonu...
+
+        iptalDüðmesi.addEventListener ("click", () =>{
+            clearTimeout (gecikmeliSelam);
+            iptalDüðmesi.disabled = true;  iptalDüðmesi.style.color = "blue";
+            console.log ("Selamlama 5sn dolmadan iptal edildi!");
+        }); // ipt..sonu...
+        function selamla (kimi) {
+            alert ("Merhaba " + kimi + "!");
+            console.log ("Selamlama yapýldý!");
+            iptalDüðmesi.disabled = true; iptalDüðmesi.style.color = "blue"; // Selamlama tamamlanýnca pasiflenmeli...
+        } // func sonu...
+    </script>
+</body>
+</html>

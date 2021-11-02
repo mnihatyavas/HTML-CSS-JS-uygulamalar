@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c41b.html: JSON veri dosyasýnýn XMLHttpRequest() ile json tip'li okunmasý ve içeriklerinin sergilenmesi örneði.</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="C1c41b.css">
+</head>
+<body>
+    <!-- (>>>python -m http.server ve localhost:8000) yerel sunuculu ve "Faster One" için çevrimiçi çalýþmaktadýr. -->
+    <header></header>
+    <section></section>
+
+    <script>
+        var baþlýk = document.querySelector ("header");
+        var kýsým = document.querySelector ("section");
+
+        //var yurelTalebi = "C1c41b.json"; // 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+        var talep = new XMLHttpRequest();
+        talep.open ("GET", "C1c41b.json");
+        talep.responseType = "json";
+        talep.send();
+
+        talep.onload = function() {
+            var süperKahramanlar = talep.response;
+            kahramanlarBaþlýðý (süperKahramanlar);
+            kahramanlarKýsmý (süperKahramanlar);
+        } // tal..sonu...
+        function kahramanlarBaþlýðý (jsonNesnesi) {
+            var baþlýkH1 = document.createElement ("h1");
+            baþlýkH1.textContent = jsonNesnesi ["ekipAdý"];
+            baþlýk.appendChild (baþlýkH1);
+            var baþlýkP = document.createElement ("p");
+            baþlýkP.textContent = "Ýkamet þehri: " + jsonNesnesi ["ikamet"] + " // Kuruluþ yýlý: " + jsonNesnesi ["kuruluþ"];
+            baþlýk.appendChild (baþlýkP);
+        } // func sonu...
+        function kahramanlarKýsmý (jsonNesnesi) {
+            var kahramanlar = jsonNesnesi ["üyeler"];
+            for (let i = 0; i < kahramanlar.length; i++) {
+                var makale = document.createElement ("article");
+                var makaleH2 = document.createElement ("h2");
+                var makaleP1 = document.createElement ("p");
+                var makaleP2 = document.createElement ("p");
+                var makaleP3 = document.createElement ("p");
+                var makaleUl = document.createElement ("ul");
+                makaleH2.textContent = kahramanlar [i].ad;
+                makaleP1.textContent = "Gizli kimliði: " + kahramanlar [i].gizliKimlik;
+                makaleP2.textContent = "Yaþý: " + kahramanlar [i].yaþ;
+                makaleP3.textContent = "Süper güçleri:";
+                var süperGüçler = kahramanlar [i].güçler;
+                for (let j = 0; j < süperGüçler.length; j++) {
+                    var liElemaný = document.createElement ("li");
+                    liElemaný.textContent = süperGüçler [j];
+                    makaleUl.appendChild (liElemaný);
+                } // for-j sonu...
+                makale.appendChild (makaleH2);
+                makale.appendChild (makaleP1);
+                makale.appendChild (makaleP2);
+                makale.appendChild (makaleP3);
+                makale.appendChild (makaleUl);
+                kýsým.appendChild (makale);
+            } // for-i sonu...
+        } // func sonu...
+    </script>
+</body>
+</html>

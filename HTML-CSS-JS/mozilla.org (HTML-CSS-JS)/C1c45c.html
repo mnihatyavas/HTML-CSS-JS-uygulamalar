@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c45c.html: Ýstenen katagori ve terim'li ürün json ve blob resim dosyalarýnýn XHR'yla okunmasý örneði.</title>
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway" rel="stylesheet">
+    <link href="C1c45c.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- (>>>python -m http.server), (localhost:8000) yerel sunucu ve "Cherry Swash"/Railway yazýfonlarý için çevrimiçi gerekli -->
+    <header>
+        <h1>Konserve Marketi</h1>
+    </header>
+
+    <div> <!-- Kenarlýk ve esas bölüm -->
+        <aside> <!-- Kenarlýk formu: katagori seçimi, aranan terim giriþi ve süzgeçleme düðmesi bölümlerini kapsar -->
+            <form>
+                <div>
+                    <label for="katagori">Bir katagori seçin:</label>
+                    <select id="katagori">
+                        <option selected>Tümü</option>
+                        <option>Sebzeler</option>
+                        <option>Et</option>
+                        <option>Çorba</option>
+                        <option>Tatlý</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="araþtýrýlacakÝbare">Araþtýrýlacak ibareyi girin:</label>
+                    <input type="text" id="araþtýrýlacakÝbare" placeholder="örn.fasülye">
+                </div>
+                <div>
+                    <button>Sonuçlarý süzgeçleyin</button>
+                </div>
+            </form>
+            <p>DÝKKAT: Araþtýrýlacak ibare, daima "Tümü" katagorisindeki ürün adlarýný tarar.</p>
+        </aside>
+        <main>
+            <!-- Main içinde dinamik h2Baþlýk, konserve adý, resmi, fiyatý kapsayan ürünler section/kýsmý yaratýlýr -->
+        </main>
+    </div>
+
+    <footer>
+        <p>Zikredilen projedeki ikonlar ve daha fazlasýnýn tasarýmcýlarýnýn baðlantýlarý:</p>
+        <ul>
+            <li>Fasülye ikonu: <a href="https://thenounproject.com/yalanis/" target="_b">Yazmin Alanis</a></li>
+            <li>Sebze ikonu: <a href="https://thenounproject.com/skatakila/" target="_b">Ricardo Moreira</a></li>
+            <li>Çorba ikonu: <a href="https://thenounproject.com/ArtZ91/" target="_b">Arthur Shlain</a></li>
+            <li>Et budu ikonu: <a href="https://thenounproject.com/smashicons/" target="_b">Oliviu Stoian</a>.</li>
+        </ul>
+    </footer>
+    <script src="C1c45c.js"></script>
+</body>
+</html>

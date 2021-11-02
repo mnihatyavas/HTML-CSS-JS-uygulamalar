@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c53a.html: Geciktirmeli asenkron vaat kabul mesajý örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        h3 {margin:0;}
+    </style>
+</head>
+<body>
+    <h3>F12-konsolu aç</h3>
+    <button id="vaat">Gecikmeli vaat mesajý için týkla</button>
+
+    <script>
+        let sayaç = 0;
+        vaat.onclick = ()=>{
+            new Promise ((kabul, red)=>{setTimeout (()=>{
+                if (sayaç != 2) {kabul (++sayaç + " nolu vaat-kabul mesajý!");
+                }else {red ("3 no'lu vaat reddedilmiþtir!.."); ++sayaç;}
+            }, 4000);})
+            .then (yanýt=>{alert (yanýt); console.log (yanýt); })
+            .catch (hata=>{alert (hata); console.error (hata); });
+        }; // vaat sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51b.html: Json dizgesinin try-catch-finally kontrollu nesneye çevrilip konsolda sunulmasý örneði.</title>
+    <style>
+        html {background-color: #264;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <p>Sunucudan talep edilen json dizgelerinin alýnýp, nesneye çevrilip try-catch-finally kontrollu F12-konsolda sergilenmesi.</p>
+
+    <script>
+        // Sunucudan alýnan json dizgesi:
+        let jsonDizgesi1 = '{"kod":"007", "ad":"James", "soyad": "Bond", "görev": "Gizli Ajan", "tabiyet":"Ýngiliz", "tarih": "2021.08.19"}';
+        let jsonDizgesi2 = '{"kod":"008", "ad":"M.Nihat", "soyad": "Yavaþ", "görev": "Gizsiz Ajan", "tabiyet":"Türk", "tarih": 2021.08.19}';
+        console.log ("Json dizgesi: ", jsonDizgesi1);
+
+        try {
+            let jsonNesnesi = JSON.parse (jsonDizgesi1); // Json dizgesini json nesnesine çevirelim...
+            console.log ("Json nesnesi: ", jsonNesnesi);
+            console.log ("Benim kod adým: " + jsonNesnesi.kod + " " + jsonNesnesi.ad + " " + jsonNesnesi.soyad + ".\n"
+                + "Görevim: Ýngiliz MI5 " + jsonNesnesi.görev + "'lýðý."); // Nesnenin anahtar:deðer verilerini sergileyelim...
+            jsonNesnesi = JSON.parse (jsonDizgesi2); console.log ("Yeni görev tarihi: " + jsonNesnesi.tarih);
+        }catch (hata) {console.error ("HATA ADI: " + hata.name + "\n" + "HATA MESAJI: " + hata.message);
+        }finally {console.log ("Catch'li yada catch'siz finally mutlaka iþletilir.");}
+
+        console.log ("Try-catch-finally hata yakalasa da yakalamasa da program kýrýlmadan yoluna devam eder.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51g.html: Çoklu sicimli çalýþan asenkron iþci/Worker ile anaprogram arasýndaki mesaj alýþveriþi örneði.</title>
+    <style>
+        html {background-color: #132;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <!-- Worker, fetch gibi (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç</h3>
+    <button>Ýþci'yi çoklu sicimli çalýþtýr</button>
+
+    <script>
+        const düðme = document.querySelector ("button");
+        const iþci = new Worker ("C1c51g.js");
+        let sayaç = 0;
+
+        düðme.addEventListener ("click", ()=>{
+            sayaç +=1;
+            iþci.postMessage ("Çalýþ no: " + sayaç); // Ýþci'ye gönderilen event.data
+            let p = document.createElement ("p");
+            p.textContent = sayaç + ".nci paragraf tarihi: " + new Date();
+            document.body.appendChild (p);
+        }); // düð..sonu...
+
+        // Ýþci'den alýnan event.data
+        iþci.onmessage = function (olay) {console.log ("Ýþci'den iþlemi sonrasý alýnan mesaj: " + olay.data);}
+        iþci.onerror = function (o) {console.log ("HATA: ", o.name, o.message);}
+    </script>
+</body>
+</html>

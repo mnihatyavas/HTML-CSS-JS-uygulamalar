@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c44a2.html: Canvas tuvale üstüste eþkenar üçgen, tam ve dilimli daire çizimleri örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #7c9;
+            max-width: 50%;
+            min-width: 600px;
+            height: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        canvas {width:100%; height: 100%;}
+    </style>
+</head>
+<body>
+    <canvas class="tuvalim">
+        <p>Tuval çizimleri bu alanda olacak.</p>
+    </canvas>
+
+    <script>
+        const tuval = document.querySelector (".tuvalim");
+        const en = tuval.width = window.innerWidth;
+        const boy = tuval.height = window.innerHeight;
+        const içrk = tuval.getContext ("2d");
+        function derecedenRadyana (derece) {return derece * Math.PI / 180;};
+
+        içrk.fillStyle = "rgb(0, 0, 0)";
+        içrk.fillRect (0,0, en,boy); // Siyah tuval zemini...
+
+        içrk.fillStyle = "rgb(255, 0, 0)"; // Kýrmýzý içli eþkenar üçgen (400px) çizimi...
+        içrk.beginPath();
+        içrk.moveTo (50,50);
+        içrk.lineTo (450,50);
+        let yükseklik = 200 * Math.tan (derecedenRadyana (60));
+        içrk.lineTo (250,50+yükseklik);
+        içrk.lineTo (50,50);
+        içrk.fill();
+
+        içrk.fillStyle = "rgb(0, 0, 255)"; // Mavi içli, 150px yarýçaplý tam yay/daire çizimi...
+        içrk.beginPath();
+        içrk.arc (250,(50+yükseklik)/2, 150, derecedenRadyana (0), derecedenRadyana (360), false); // false: merkeze dönmesin...
+        içrk.fill()
+
+        içrk.fillStyle = "yellow"; // Sarý içli, 150px yarýçaplý, -45'den +45'e kadar dilimli daire çizimi...
+        içrk.beginPath();
+        içrk.arc (300, (50+yükseklik)/2, 150, derecedenRadyana (-45), derecedenRadyana (45), true); // true: merkeze dönsün...
+        içrk.lineTo (300,(50+yükseklik)/2);
+        içrk.fill();
+    </script>
+</body>
+</html>

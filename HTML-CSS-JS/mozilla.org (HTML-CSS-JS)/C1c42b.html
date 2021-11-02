@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c42b.html: Ul-li listeli alýþveriþ sepetine malzeme ekleme veya çýkarma örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        li {margin-bottom: 10px;}
+        li button {
+            font-size: 10px;
+            margin-left: 20px;
+            color: yellow;}
+        button, input {background-color: DarkRed; color: aqua; font-size:15px;}
+        h1 {color:navy; text-decoration:underline;}
+    </style>
+</head>
+<body>
+    <h1>Alýþveriþ Listem</h1>
+    <div>
+        <label for="malzeme">Sepete ekle:</label>
+        <input type="text" name="malzeme" id="malzeme">
+        <button>Sepete koy</button>
+    </div>
+    <ul></ul>
+
+    <script>
+        const ulListe = document.querySelector ("ul");
+        const giriþ = document.querySelector ("input");
+        const eklemeDüðmesi = document.querySelector ("button");
+
+        eklemeDüðmesi.onclick = function() {
+            let malzemem = giriþ.value;
+            giriþ.value = "";
+            giriþ.focus();
+
+            const liElemaný = document.createElement ("li");
+            const çýkarmaDüðmesi = document.createElement ("button");
+            çýkarmaDüðmesi.textContent = "Sepetten çýkar";
+            if (malzemem) {
+                liElemaný.textContent = malzemem;
+                liElemaný.appendChild (çýkarmaDüðmesi);
+                ulListe.appendChild (liElemaný);
+            } // if sonu...
+            çýkarmaDüðmesi.onclick =()=>{ulListe.removeChild (liElemaný);}
+        } // ek..sonu...
+    </script>
+</body>
+</html>

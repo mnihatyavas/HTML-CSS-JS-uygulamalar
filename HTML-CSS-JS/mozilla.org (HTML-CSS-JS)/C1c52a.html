@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52a.html: Asenkron gecikmeli setTimeout ile selamlama örneði.</title>
+    <style>
+        html {background-color: #132;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <h3>F12-konsolu açýn</h3>
+    <button id="selam">Gecikmeli selam için týkla</button>
+
+    <script>
+        selam.onclick = ()=>{
+            console.log ("1: " + new Date().getSeconds() + " sn");
+            setTimeout (()=>{alert ("2a: Herkese Merhabalar! " + new Date().getSeconds() + " sn"); console.log ("2b: " + new Date().getSeconds() + " sn"); }, 5000); // 5 s
+            setTimeout (()=>{console.log ("3a: Herkese Merhabalar!"); console.log ("3b: " + new Date().getSeconds() + " sn"); }, 4000); // 4 s
+            console.log ("4: " + new Date().getSeconds() + " sn");
+        }; // sel..sonu...
+    </script>
+</body>
+</html>

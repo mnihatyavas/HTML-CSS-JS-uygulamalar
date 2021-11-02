@@ -1,0 +1,32 @@
+﻿/* C1c46e.css: Mp4 ve webm videoları fetch'le getirme vasıfları alt-örneği. */
+* {box-sizing: border-box;}
+html {background-color: #135;}
+body {
+    background-color: #db9;
+    max-width: 90%;
+    min-width: 800px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;}
+header, footer {
+    background-color: green;
+    border: 2px solid black;
+    color: white;
+    line-height: 100px;
+    padding: 0 20px;}
+div {background-color: transparent; display: flex; justify-content: space-between;}
+div::after {clear:both;}
+button {background-color:Navy; color:orange; font-size: 15px;}
+article {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 2px solid black;
+    background-color: DarkOliveGreen;}
+h2 {margin: 10px 0;}
+h1, p {margin: 0;}
+video {
+    width: 48%;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: block;}

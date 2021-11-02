@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c44b3.html: Fareye basarak tuvalde seçili renk ve kalýnlýkta çizim yapma örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #7c9;
+            max-width: 95%;
+            min-width: 800px;
+            height: 580px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        .tuvalim {width:100%; height: 85%; border: 5px solid pink;}
+        button {background-color: DarkRed; color: yellow;}
+        .yardýmcýAletler {
+            width: 150px;
+            height: 75px;
+            background: magenta;
+            padding: 5px;
+            border: 2px solid pink;}
+        input[type="color"], button {
+            width: 90%;
+            margin: 0 auto;
+            display: block;}
+        input[type="range"] {width: 70%;}
+        span {
+            position: relative;
+            bottom: 5px;}
+    </style>
+</head>
+<body>
+    <div class="yardýmcýAletler">
+        <input type="color" aria-label="kalem rengini seç">
+        <input type="range" min="1" max="50" value="25" aria-label="kalem kalýnlýðýný seç"><span class="kalýnlýk">25</span>
+        <button>Tuvali sil</button>
+    </div>
+    <canvas class="tuvalim"></canvas>
+
+    <script>
+        const tuval = document.querySelector (".tuvalim");
+        const en = tuval.width = window.innerWidth;
+        const boy = tuval.height = window.innerHeight-85; // yardýmcýAletler için (75+2*5) düþ...
+        const içrk = tuval.getContext ("2d");
+
+        içrk.fillStyle = "rgb(0, 0, 0)";
+        içrk.fillRect (0,0, en,boy);
+
+        const renkSeçici = document.querySelector ('input[type="color"]'); renkSeçici.value="#ffffff"; // Ýlk deðer beyaz...
+        const kalýnlýkSeçici = document.querySelector('input[type="range"]'); kalýnlýkSeçici.value=25; // Ýlk deðer...
+        const kalýnlýkÇýktýsý = document.querySelector (".kalýnlýk");
+        const silDüðmesi = document.querySelector ("button");
+
+        kalýnlýkSeçici.oninput = function() {kalýnlýkÇýktýsý.textContent = kalýnlýkSeçici.value;} // Seçilen kalýnlýðý göster...
+
+        // Fare (x,y) konumu ve çizim için basýlýMý?..
+        let imleçX;
+        let imleçY;
+        let basýlýMý = false;
+        // Basýlý olsun olmasýn, hareketli fare konumunu takip et...
+        document.onmousemove = function (o) {// Aktüel imleç konum tespiti tuvalin alt ve üstünde biraz farklý!..
+            imleçX = (window.Event) ? o.pageX : o.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+            imleçY = (window.Event) ? o.pageY : o.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+        } // doc..sonu...
+        tuval.onmousedown = function() {basýlýMý = true;}; // Fare basýlýysa doðrula...
+        tuval.onmouseup = function() {basýlýMý = false;} // Fare basýlý deðilse yanlýþla...
+        silDüðmesi.onclick = function() {// Sil týklanýrsa, tuval zeminini yeniden (siyah) renkle...
+            içrk.fillStyle = "rgb(0, 0, 0)";
+            içrk.fillRect (0,0, en,boy);
+        } // sil..sonu...
+        function derecedenRadyana (derece) {return derece * Math.PI / 180;}; // Her kalem dokunuþu 360 derecelik (seçili kalýnlýk ve içi dolu renkte) daire çizmeli...
+
+        function çiz() {
+            if (basýlýMý) {
+                içrk.fillStyle = renkSeçici.value; // console.log (renkSeçici.value, kalýnlýkSeçici.value);
+                içrk.beginPath();
+                içrk.arc (imleçX,imleçY-150, kalýnlýkSeçici.value, derecedenRadyana (0),derecedenRadyana (360), false); // Dilimsiz daire...
+                içrk.fill();
+            } // if sonu...
+            requestAnimationFrame (çiz); // Sürekli animasyon...
+        } // func sonu...
+        çiz();
+    </script>
+</body>
+</html>

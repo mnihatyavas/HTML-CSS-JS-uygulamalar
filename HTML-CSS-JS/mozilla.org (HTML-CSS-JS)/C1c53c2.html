@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c53c2.html: Kompakt asenkron  fetch-then-then-catch örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 450px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h3 {margin:0;}
+    </style>
+</head>
+<body>
+    <!-- Fetch'li vaat (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç (Vaat fetch kýlýfýdýr)</h3>
+
+    <script>
+        console.log ("Asenkron kompakt fetch baþlýyor.");
+
+        // Kompakt fetch.then.then.then.catch...
+        fetch ("resim/kahve.jpg")
+            .then (kabul => {
+                if (! kabul.ok) {throw new Error (`HTTP red hatasý! Statü no: ${response.status}`);
+                }else {return kabul.blob();} })
+            .then (damla => {
+                let yurelNesnesi = URL.createObjectURL (damla);
+                let resim = document.createElement ("img");
+                resim.src = yurelNesnesi;
+                resim.alt = "Resim: kahve.jpg";
+                resim.width = "250";
+                resim.title = "Bir fincan kahvenin 40 yýl hatýrý olurmuþ.";
+                document.body.appendChild (resim);
+                console.log ("Resim gövdeye eklendi.") })
+            .catch (o=>{console.log ("Fetch hatasý oluþtu: " + o.name + "\n" + o.message); });
+
+        console.log ("Asenkron kompakt fetch kodlamasýndan çýkýldý.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c53b.html: Geciktirmeli asenkron vaat(kabul,red).then.catch mesajý örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        h3 {margin:0;}
+    </style>
+</head>
+<body>
+    <h3>F12-konsolu aç</h3>
+    <button id="vaat">Gecikmeli vaat mesajý için týkla</button>
+
+    <script>
+        vaat.onclick = ()=>{
+            let mesaj = prompt ("Gecikmeli mesajýnýzý girin: ", "Herkese Merhabalar!");
+            let geciktirme = Math.floor (+prompt ("Geciktirme süresini gir [1000,10000]mS: ", "2000") );
+
+            gecikmeliVaat (mesaj, geciktirme)
+                .then (msj => {alert (msj); console.log (msj);})
+                .catch (o=>{console.error ("HATA: " + o);});
+
+            function gecikmeliVaat (mesajým, geciktirmem) {
+                return new Promise ((kabul, red)=>{
+                    if (mesajým.length == 0 || mesajým.replaceAll (" ","")  == "" || typeof (mesajým) !== "string") {red ("Mesaj hiç, boþ yada dizgesel deðil");
+                    }else if (! geciktirmem || geciktirmem < 1000 || geciktirmem > 10000 || typeof geciktirmem !== "number") {red ("Geciktirme [1,10]sn sýnýrlý,yada sayýsal deðil");
+                    }else {setTimeout (()=>{kabul (geciktirmem + "sn geciktirmeli mesajým: " + mesajým);}, geciktirmem); }
+                }); // ret..sonu...
+            } // func sonu...
+        }; // vaat sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c44b1.html: Ýki ayrý canvas tuvalde helezoni küçük ikizkenar üçgenler çizimi örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #7c9;
+            max-width: 90%;
+            min-width: 400px;
+            height: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            display: flex;}
+        .tuvalim1, .tuvalim2 {width:50%; height: 100%;}
+        .tuvalim1 {margin-right: 5px;}
+    </style>
+</head>
+<body>
+    <canvas class="tuvalim1"></canvas>
+    <canvas class="tuvalim2"></canvas>
+
+    <script>
+        const tuval1 = document.querySelector (".tuvalim1");
+        const en1 = tuval1.width = window.innerWidth;
+        const boy1 = tuval1.height = window.innerHeight;
+        const içrk1 = tuval1.getContext ("2d");
+
+        içrk1.fillStyle = "rgba(0, 0, 0, 0.8)"; // %80 netlikte siyah zeminli dikdörtgen tuval...
+        içrk1.fillRect (0,0, en1,boy1);
+
+        içrk1.translate (en1/2, boy1/2); // Tuval1 dikdörtgeninin ortasýna gel...
+
+        let x = 200;
+        let y = 20;
+
+        // 200 adet, kollar 200px, taban 0.7px, açýk mor'dan (255) koyu mor'a (155) 5'er derece dönerli ikizkenar üçgen çizimi...
+        for (var i = 0; i < x; i++) {
+            içrk1.fillStyle = "rgba(" + (255-x) + ", 0, " + (255-x) + ", 0.9)";
+            içrk1.beginPath();
+            içrk1.moveTo (y, y);
+            içrk1.lineTo (y+x, y);
+            let h = x/2 * Math.tan (derecedenRadyana (60));
+            içrk1.lineTo (y+(x/2), y+h);
+            içrk1.lineTo (y, y);
+            içrk1.fill();
+            x--;
+            y +=0.7;
+            içrk1.rotate (derecedenRadyana (5)); // Toplam 5*(200/2)=500D=360D + 140D
+        } // for sonu...
+
+        const tuval2 = document.querySelector (".tuvalim2");
+        const en2 = tuval2.width = window.innerWidth;
+        const boy2 = tuval2.height = window.innerHeight;
+        const içrk2 = tuval2.getContext ("2d");
+
+        içrk2.fillStyle = "rgb(100, 20, 20, 0.6)"; // %60 netlikde kýrmýzý zeminli dikdörtgen tuval...
+        içrk2.fillRect (0,0, en2,boy2);
+
+        içrk2.translate (en2/2, boy2/2); // Dikdörtgen tuvalin ortasýndan baþla...
+        function derecedenRadyana (derece) {return derece * Math.PI / 180;};
+        function rasgele (alt, üst) {return Math.floor (Math.random() * (üst-alt+1)) + (alt);}
+
+        let x2 = 200;
+        let y2 = 35;
+
+        // 200 adet, kollar 200px, taban 0.7px, rasgele net renklerden rasgele(1,10)'ar derece dönerli ikizkenar üçgen çizimi...
+        for (var i = 0; i < x2; i++) {
+            içrk2.fillStyle = "rgba(" + rasgele (0, 255-x2) + ", " + rasgele (0, 255-x2) + ", " + rasgele (0, 255-x2) + ", " + Math.random() + ")";
+            içrk2.beginPath();
+            içrk2.moveTo (y2, y2);
+            içrk2.lineTo (y2+x2, y2);
+            let h = x2/2 * Math.tan (derecedenRadyana (60));
+            içrk2.lineTo (y2+(x2/2), y2+h);
+            içrk2.lineTo (y2, y2);
+            içrk2.fill();
+            x2--;
+            y2 +=0.7;
+            içrk2.rotate (derecedenRadyana (rasgele (1,10) ));
+        } // for sonu...
+    </script>
+</body>
+</html>

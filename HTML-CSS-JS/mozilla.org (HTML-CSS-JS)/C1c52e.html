@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52e.html: Her saniye asenkron setInterval'ýn güncellediði saatý gösterme ve gizleme örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        button{background-color: DarkRed; color: yellow; font-size:15px;}
+        p {
+            display: none;
+            font-size: 50px;
+            color: yellow;
+            margin:0;
+            font-family: sans-serif;
+            font-weight: bold;}
+    </style>
+</head>
+<body>
+    <button id="göster">Saatý göster</button><button id="gizle">Gizle</button>
+    <p class="saat"></p>
+
+    <script>
+        let saat = document.querySelector (".saat")
+        göster.onclick = ()=>saat.style.display = "block";
+        gizle.onclick = ()=>saat.style.display = "none";
+        setInterval  (()=>saat.textContent = new Date().toLocaleTimeString(), 1000); // Her saniyede güncelleyecek...
+    </script>
+</body>
+</html>

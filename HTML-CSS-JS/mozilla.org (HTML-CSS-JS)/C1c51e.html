@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51e.html: Geriçaðýrma metoduyla fonksiyon argümaný olarak baþkabir fonksiyonu kullanma örneði.</title>
+    <style>
+        html {background-color: #132;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <p>Geriçaðýrma/callback fonksiyon argümaný olarak baþka bir fonksiyonu kullanmak demektir.</p>
+
+    <script>
+        function fonk2 (ad) {alert ("Merhaba " + ad); console.log ("Merhaba " + ad);}
+        function fonk1 (geriçaðýran) {geriçaðýran (prompt ("Lütfen adýnýzý girin.") ); }
+        fonk1 (fonk2);
+
+        let isim = prompt ("Lütfen tekrar bir ad girin.");
+        fonk2 (isim);
+
+        fonk2 (prompt ("Lütfen baþka bir ad daha girin."));
+    </script>
+</body>
+</html>

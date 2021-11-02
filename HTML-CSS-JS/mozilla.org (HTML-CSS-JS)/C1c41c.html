@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>C1c41c.html: MP3 müzikçalarýn JS kodlamasýyla çal/durdur ve ses hacmi kontrolu örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+            input, button {background-color:black; color:yellow; height: 1.5em;}
+    </style>
+</head>
+<body>
+    <!-- (>>>python -m http.server ve localhost:8000) yerel sunucuyla çalýþmaktadýr. -->
+    <!-- Çalýnan müzik: Kevin MacLeod'dan "Outfoxing the Fox" parçasý -->
+    <audio src="resim/medya/audio.mp3"></audio>
+    <button class="duraksadý">Çal</button>
+    <br>
+    <input type="range" min="0" max="1" step="0.01" value="1" class="sesHacmi">
+
+    <script>
+        // Tarayýcýda görünecek bir SesÝçeriði yaratýlacak:
+        const SesÝçeriði = window.AudioContext || window.webkitAudioContext;
+        const sesÝçrk = new SesÝçeriði();
+
+        // Çal/Durdur butonu sürgülü ses hacmiyle referanslanacak:
+        const audioElemaný = document.querySelector ("audio");
+        const çalDüðmesi = document.querySelector ("button");
+        const sesHacimSürgüsü = document.querySelector (".sesHacmi");
+        const sesKaynaðý = sesÝçrk.createMediaElementSource (audioElemaný);
+
+        // Müziði Çal/Durdur kontrolu:
+        çalDüðmesi.addEventListener ("click", function() {
+            // Ses içeriði otomatik askýdaysa tekrar çalmaya devam edecek...
+            if (sesÝçrk.state === "suspended") {sesÝçrk.resume();}
+            // Düðmeyle durdurulmuþsa týklayýnca çal; çalýyorsa durdur...
+            if (this.getAttribute ("class") === "duraksadý") {
+                audioElemaný.play();
+                this.setAttribute ("class", "çalýyor");
+                this.textContent = "Durdur";
+            }else if (this.getAttribute ("class") === "çalýyor") {
+                audioElemaný.pause();
+                this.setAttribute ("class", "duraksadý");
+                this.textContent = "Çal";}
+        }); // çal..sonu...
+
+        // Müzik sonlanýrsa:
+        audioElemaný.addEventListener ("ended", function() {
+            çalDüðmesi.setAttribute ("class", "duraksadý");
+            çalDüðmesi.textContent = "Çal";
+        }); // aud..sonu...
+
+        // Ses hacmi kontrolu:
+        const kazançYumrusu = sesÝçrk.createGain();
+        sesHacimSürgüsü.addEventListener ("input", function() {kazançYumrusu.gain.value = this.value;});
+
+        // Kazanç yumrusuyla ses kaynaðý birleþtirilir:
+        sesKaynaðý.connect (kazançYumrusu).connect (sesÝçrk.destination);
+    </script>
+</body>
+</html>

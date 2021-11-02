@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c44b2.html: 5 farklý yürüyen adam resmiyle ekranda yatay devinen yürüyüþcü örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #7c9;
+            max-width: 90%;
+            min-width: 600px;
+            height: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        .tuvalim {width:100%; height: 100%;}
+    </style>
+</head>
+<body>
+    <canvas class="tuvalim"></canvas>
+
+    <script>
+        const tuval = document.querySelector (".tuvalim");
+        const en = tuval.width = window.innerWidth;
+        const boy = tuval.height = window.innerHeight;
+        const içrk = tuval.getContext ("2d");
+
+        içrk.fillStyle = "rgb(0,0,0)";
+        içrk.fillRect (0,0, en,boy);
+
+        içrk.translate (en/2, boy/2); // Yürüyüþ ekran ortasýndan baþlayacak...
+
+        let resim = new Image();
+        resim.src = "resim/yürüyüþ.png";
+        resim.onload = çiz;
+
+        let yürüyüþcüNo = 0;
+        let yatayKonumu = 0;
+
+        function çiz() {
+            içrk.fillRect (-(en/2),-(boy/2), en,boy); // Her kerre birönceki yürüyüþcüyü sil...
+            içrk.drawImage (resim, (yürüyüþcüNo*102), 0, 102,148, 0+yatayKonumu,-74, 102,148); // Toplam 6 resmi çevir [0,5)...
+            if (yatayKonumu % 13 === 0) {
+                if (yürüyüþcüNo === 5) {yürüyüþcüNo = 0; // 5 yürüyüþcü resmi tamamlanýnca, tekrar ilkinden baþlat...
+                }else {yürüyüþcüNo++;}
+            } //if-dýþ sonu...
+            if (yatayKonumu > en/2) {// Yürüyüþcü ekran saðýndan kaybolmuþsa, soldan giriþ yap...
+                let yeniBaþlamaKonumu = -((en/2) + 102);
+                yatayKonumu = Math.ceil (yeniBaþlamaKonumu / 13) * 13;
+                //console.log (yatayKonumu);
+            }else {yatayKonumu += 2;} // Deðilse aktüel konumundan 2px ilerlet...
+            window.requestAnimationFrame (çiz); // Kendini çaðýran sonsuz döngülü animasyon...
+        } // func sonu...
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>C1c45a.html: Seçilen þiir dosyasý metninin XHR'yle okunup görüntülenmesi örneði.</title>
+    <style>
+        html {background-color: #135;}
+        body {
+            background-color: #db9;
+            max-width: 50%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        pre {
+            /* width: 350px; */
+            line-height: 1.5;
+            letter-spacing: 0.05rem;
+            padding: 1rem;
+            background-color: aqua;
+            border:2px solid navy;}
+        label {
+            width: 200px;
+            margin-right: 10px;}
+        select {
+            background-color: DarkGreen;
+            color: yellow;
+            width: 175px;
+            padding: 5px;}
+    </style>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <h2>Temel XHR/XMLHttpRequest Örneði</h1>
+    <form>
+        <label for="mýsra-seç">Bir mýsra seçin:</label>
+        <select id="mýsra-seç" name="mýsra-seç">
+            <option>1.Mýsra: C1 c4 5x1</option>
+            <option selected>2.Mýsra: C1 c4 5x2</option>
+            <option>3.Mýsra: C1 c4 5x3</option>
+            <option> Son Mýsra: C1 c4 5x4</option>
+        </select>
+    </form>
+    <h3>Fatih Solucan, <em>Edgar Allen Poe, 1843</em></h2>
+    <pre></pre>
+
+    <script>
+        var seçilenMýsra = document.querySelector ("select");
+        var mýsraGörseli = document.querySelector ("pre"); // pre-view: gala, fragman, ilk gösteri
+
+        seçilenMýsra.onchange = function() {
+            var mýsra = seçilenMýsra.value;
+            görseliGüncelle (mýsra);
+        }; // seç..sonu...
+
+        function görseliGüncelle (þiir) {
+            þiir = þiir.replaceAll (" ", "");
+            þiir = þiir.slice (þiir.indexOf (":") + 1);
+            //þiir = þiir.toLowerCase();
+            var yurel = þiir + ".txt";
+
+            var talep = new XMLHttpRequest();
+            talep.open ("GET", yurel);
+            talep.responseType = "text";
+            talep.onload = function() {mýsraGörseli.textContent = talep.response;};
+            talep.send();
+        }; // func sonu...
+        window.onload = görseliGüncelle ("Ýkinci þiir mýsrasý: C1 c4 5x2");
+    </script>
+</body>
+</html>

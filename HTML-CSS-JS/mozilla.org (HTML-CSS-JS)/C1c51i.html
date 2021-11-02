@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51i.html: Çoklu sicimli geriçaðýrmalý asenkron XHR ile resim yükleme örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <!-- XHR (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç</h3>
+
+    <script>
+        console.log ("Program senkron olsaydý sýralama ve zamanlama ardýþýk olacaktý.\n1) Asenkron XHR baþlýyor: " + new Date().getMilliseconds() );
+        resmiYükle ("resim/kahve.jpg", "blob", resmiGöster);
+
+        function resmiYükle (yol, tip, geriçaðýr) {
+            let xhrTalep = new XMLHttpRequest();
+            xhrTalep.open ("GET", yol);
+            xhrTalep.responseType = tip;
+            xhrTalep.onload = function() {
+                console.log ("2) XHR açýldý ve yüklemeye geçildi: " + new Date().getMilliseconds() );
+                geriçaðýr (xhrTalep.response);
+            }; // xhr..sonu...
+            xhrTalep.send();
+            console.log ("4) XHR talep gönderildi: " + new Date().getMilliseconds() );
+        } // func sonu...
+
+        function resmiGöster (damla) {
+            let yurelNesnesi = URL.createObjectURL (damla);
+            let resim = document.createElement ("img");
+            resim.src = yurelNesnesi;
+            document.body.appendChild (resim);
+            console.log ("3) Resim gövdeye eklendi: " + new Date().getMilliseconds() );
+        } // func sonu...
+
+        console.log ("5) Son JS kodlamasý: " + new Date().getMilliseconds() );
+    </script>
+</body>
+</html>

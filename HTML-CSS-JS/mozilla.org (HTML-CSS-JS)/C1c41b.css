@@ -1,0 +1,27 @@
+/* C1c41b.css: Json dosya okuma vasýflarý alt-örneði. */
+html {background-color: #246;}
+body {
+    background-color: #a97;
+    max-width: 90%;
+    min-width: 600px;
+    padding: 20px;
+    margin: 2em auto;
+    height: 550px;
+    border: 5px solid tomato;}
+h1, h2 {font-family: "Faster One", cursive;}
+h1 {
+    font-size: 4rem;
+    text-align: center;}
+header p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;}
+section article {
+    width: 33%;
+    float: left;}
+article p {margin: 5px 0;}
+article ul {margin-top: 0;}
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -5px;
+    margin-bottom: 10px;}

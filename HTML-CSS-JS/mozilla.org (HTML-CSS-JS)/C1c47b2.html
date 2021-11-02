@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c47b2.html: Özel bayrak açýklamalý dünya 'Google' harita sörfü örneði.</title>
+    <style>
+        html {background-color: #135;}
+        body {
+            background-color: #b97;
+            max-width: 80%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        #harita_tuvali {
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;}
+        h1, p {text-align: center; color: FireBrick; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <!-- Sürekli çevrimiçi gerektirir. -->
+    <h1>Google haritasýna eklentiler</h1>
+    <div id="harita_tuvali"></div>
+    <p>NOT: Bulanýk Google sað-altýnda 'Hata bildirin' týklanýrsa konum tespitli ana Google haritasý gelir.</p>
+
+    <script>
+        function initMap() {
+            var tercihlerim = {
+                zoom: 8,
+                center: {lat: 53.480759, lng: -2.242631},
+                mapTypeId: google.maps.MapTypeId.TERRAIN,
+                disableDefaultUI: true,
+                // 1.adým: Görsel kontrollarý özelleþtirin.
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true
+            } // var sonu...
+            var harita = new google.maps.Map (document.getElementById ("harita_tuvali"), tercihlerim);
+
+            // 2.adým: Özel ikon ekleyin.
+            var ikonum = "https://maps.google.com/mapfiles/kml/shapes/";
+            var iþaretçi = new google.maps.Marker ({
+                position: {lat: 53.480759, lng: -2.242631},
+                icon: ikonum + "flag_maps.png",
+                map: harita
+            }); // var sonu...
+
+            // 3.adým: Açýklama penceresi ekleyin.
+            var açýklama = '<div id="içerik"><h2 id="firstHeading" class="firstHeading">Özel açýklama penceresi</h2><p>Bu, Manchester merkez için güzel bir açýklama penceresi oldu.</p></div>';
+            var açýklamaPenceresi = new google.maps.InfoWindow ({content: açýklama});
+             iþaretçi.addListener ("click", function() {açýklamaPenceresi.open (harita, iþaretçi); });
+        } // func sonu...
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+</body>
+</html>

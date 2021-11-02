@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c44a1.html: Canvas tuvale içiçe 3 farklý renk dikdörgen ve kalýn çerçeve çizme örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #7c9;
+            max-width: 60%;
+            min-width: 500px;
+            height: 350px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        canvas {width:100%; height: 100%;}
+    </style>
+</head>
+<body>
+    <canvas>
+        <p>Bu tuvale çizim yapabilirsiniz.</p>
+    </canvas>
+
+    <script>
+        const tuval = document.querySelector ("canvas");
+        const en = tuval.width = window.innerWidth;
+        const boy = tuval.height = window.innerHeight;
+        const içrk = tuval.getContext ("2d");
+
+        içrk.fillStyle = "rgba(0, 0, 0, 0.8)"; // %80 netlikte siyah zeminli dikdörtgen...
+        içrk.fillRect (0,0, en,boy);
+
+        içrk.fillStyle = "rgb(255, 0, 0)"; // Kýrmýzý dikdörtgen...
+        içrk.fillRect (100,100, 300,350); // Ýlk konum=(x:300,y:100), artýþ=(dx:600,dy:350)
+
+        içrk.fillStyle = "rgb(0, 255, 0)";
+        içrk.fillRect (150,150, 200,250); // Yeþil dikdörtgen...
+
+        içrk.fillStyle = "rgba(255, 0, 255, 0.75)";
+        içrk.fillRect (10,200, 480,150); // %75 netlikte eflatun dikdörtgen...
+
+        içrk.strokeStyle = "rgb(255, 255, 255)";
+        içrk.lineWidth = 10;
+        içrk.strokeRect (50,50, 400,425); // 10px kalýnlýkta beyaz çerçeve...
+    </script>
+</body>
+</html>

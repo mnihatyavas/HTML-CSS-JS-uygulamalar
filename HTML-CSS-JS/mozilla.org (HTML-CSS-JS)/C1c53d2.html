@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c53d2.html: Promise.all vaat ile 3 asenkron fetch-then-catch-finally'den tümünü sunma örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 880px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h3 {margin:0;}
+        img {border: 2px solid navy; margin: 2px;}
+        p {font-size: 22px; color: DarkGreen;}
+    </style>
+</head>
+<body>
+    <!-- Fetch'li vaat (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç (Fetch'li tüm vaat)</h3>
+
+    <script>
+        function getirVeDepola (yurel, tip) {
+            return fetch (yurel)
+                .then (yanýt=>{
+                    if (! yanýt.ok) {throw new Error (`HTTP hatasý! Statü no: ${yanýt.status}`); // Red...
+                    }else {if (tip === "blob") {return yanýt.blob();
+                    }else if (tip === "text") {return yanýt.text();} }})
+                .catch (o=>{console.log (`"${yurel}" fetch'inde hata oluþtu: ` + o.message);})
+                .finally (()=>{console.log (`"${yurel}" fetch'i hatalý/hatasýz tamamlandý.`); });
+        } // func sonu...
+
+        // Resim ve metin fetch'leri vaat deðiþkenlerinde depolanacak...
+        let kahve = getirVeDepola ("resim/kahve.jpg", "blob");
+        let çay = getirVeDepola ("resim/çay.jpg", "blob");
+        let yorum = getirVeDepola ("C1c53d.txt", "text"); // Ýçerik Türkçe karakterleri yansýtmýyor...
+
+        Promise
+            .all ([kahve, çay, yorum])
+            .then (deðerler=>{
+                console.log (deðerler);
+                let yurelNesnesi1 = URL.createObjectURL (deðerler [0]); // kahve
+                let yurelNesnesi2 = URL.createObjectURL (deðerler [1]); // çay
+                let metinYorumu = deðerler[2]; // yorum
+                let resim1 = document.createElement ("img");
+                let resim2 = document.createElement ("img");
+                resim1.src = yurelNesnesi1; resim1.title = "Bir fincan kahve 400 ml iþetirmiþ";
+                resim2.src = yurelNesnesi2; resim2.title = "Bir fincan çay 40 gr kilo verdirirmiþ";
+                document.body.appendChild (resim1);
+                document.body.appendChild (resim2);
+                let paragraf = document.createElement ("p");
+                paragraf.textContent = metinYorumu;
+                document.body.appendChild (paragraf);
+                console.log ("Resimler ve yorum http sayfasýna eklendi."); });
+    </script>
+</body>
+</html>

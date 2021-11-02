@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52f.html: Kronometrenin asenkron setInterval'le göster-gizle ve baþlat-durdur-sýfýrla örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        button{background-color: DarkRed; color: yellow; font-size:15px;}
+        p {
+            display: none;
+            font-size: 50px;
+            color: purple;
+            margin:0;
+            font-family: sans-serif;
+            font-weight: bold;}
+    </style>
+</head>
+<body>
+    <button id="göster">Göster</button><button id="gizle">Gizle</button><br/>
+    <p class="kronometre"></p>
+    <button class="baþlat">Baþla</button><button class="durdur">Dur</button><button class="sýfýrla">Sýfýrla</button>
+
+    <script>
+        const kronometrem = document.querySelector (".kronometre");
+        göster.disabled = false; // Ýlk yükleniþte...
+        gizle.disabled = true; gizle.style.color = "orange";
+        let saniyeSayacý = 0;
+        let kronometreyiKur; // setInterval deðiþkeni...
+        //kronometreyiGüncelle(); // Baþla týklanmazsa kronometre görünmeyecek...
+
+        // Butonlarý fonksiyonel kýlalým...
+        göster.onclick = ()=>{kronometrem.style.display = "block"; göster.disabled = true; göster.style.color = "orange"; gizle.disabled = false; gizle.style.color = "yellow";}
+        gizle.onclick = ()=>{kronometrem.style.display = "none"; gizle.disabled = true; gizle.style.color = "orange"; göster.disabled = false; göster.style.color = "yellow";}
+
+        const baþlaDüðmesi = document.querySelector (".baþlat");
+        baþlaDüðmesi.addEventListener ("click", ()=>{
+            kronometreyiKur = setInterval (kronometreyiGüncelle, 1000);
+            baþlaDüðmesi.disabled = true; baþlaDüðmesi.style.color= "orange";
+        }); // baþla sonu...
+
+        const durDüðmesi = document.querySelector (".durdur");
+        durDüðmesi.addEventListener ("click", ()=>{
+            clearInterval (kronometreyiKur);
+            baþlaDüðmesi.disabled = false; baþlaDüðmesi.style.color = "yellow";
+        }); // dur sonu...
+
+        const sýfýrlaDüðmesi = document.querySelector (".sýfýrla");
+        sýfýrlaDüðmesi.addEventListener ("click", ()=>{
+            clearInterval (kronometreyiKur);
+            baþlaDüðmesi.disabled = false; baþlaDüðmesi.style.color = "yellow";
+            saniyeSayacý = 0;
+            kronometreyiGüncelle();
+        }); // sýfýrla sonu...
+
+        function kronometreyiGüncelle() {
+            // saniyeSayacý'ndan 60'arlýk saniye, dakika ve (99'u taþan) saatý paylaþtýrma...
+            let saat = Math.floor (saniyeSayacý / 3600);
+            let dakika = Math.floor ((saniyeSayacý % 3600) / 60);
+            let saniye = Math.floor (saniyeSayacý % 60)
+            let görünenSaat = (saat < 10) ? ("0" + saat) : saat; // 0-->9 tek rakamlarýn baþýna "0" koy...
+            let görünenDakika = (dakika < 10) ? ("0" + dakika) : dakika;
+            let görünenSaniye = (saniye < 10) ? "0" + saniye : saniye;
+            kronometrem.textContent = görünenSaat + ":" + görünenDakika + ":" + görünenSaniye;
+            saniyeSayacý++;
+        } // func sonu...
+    </script>
+</body>
+</html>

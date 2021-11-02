@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c44a4.html: Canvas tuvalde ve html-div bölümde resim sergileme örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #7c9;
+            max-width: 50%;
+            min-width: 750px;
+            height: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            display:flex;}
+        canvas, div {width:50%; height: 100%; border: 2px solid black; background-color:green;}
+        div {margin-left:5px;}
+    </style>
+</head>
+<body>
+    <canvas class="tuvalim">
+        <p>Tuvale metin yazýlýmý bu alanda olacak.</p>
+    </canvas>
+    <div><img src="resim/firefox8.png" alt="firefox" width="275" /></div>
+
+    <script>
+        const tuval = document.querySelector (".tuvalim");
+        const en = tuval.width = window.innerWidth;
+        const boy = tuval.height = window.innerHeight;
+        const içrk = tuval.getContext ("2d");
+
+        içrk.fillStyle = "rgb(0, 0, 0)";
+        içrk.fillRect (0,0, en,boy);
+
+        const resim = new Image();
+        resim.src = "resim/firefox8.png";
+        //resim.onload = function() {içrk.drawImage (resim, 20,20, 185,175, 50,50, 185,175);} // Altyazýsýz...
+        resim.onload = function() {içrk.drawImage (resim, 0,0, 550,500);} // Altyazýlý...
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52g2.html: Asenkron requestAnimationFrame ve setTimeout'la çemberli tuşlama oyun örneği.</title>
+    <style>
+        /* Genel stiller */
+        * {box-sizing: border-box;}
+        html {height: 100%;}
+        body {display:flex;
+            justify-content: center;
+            align-items: center;
+            height: inherit;
+            background-color: Red;
+            margin: 0;}
+        h3 {position: absolute; top:0; margin:0; color: blue;}
+        article {position: absolute; top: 20px; display: flex;}
+        input {background-color:Navy; color:orange; font-size: 15px;}
+
+        /* KA UI/UnitInterface/KullanıcıArayüz tasarımı */
+        section {
+            position: absolute;
+            bottom: 0;
+            padding: 20px;}
+        .altBölüm {
+            display: flex;
+            justify-content: space-between;}
+        .altBölüm p, button {
+            margin: 0;
+            font-size: 1.5rem;
+            border: 5px solid black;
+            border-radius: 20px;
+            padding: 10px 20px;}
+        .p1, .p2 {
+            align-self: flex-start;
+            background-color: black;}
+        .altBölüm .p1 { /* 1.oyuncu */
+            order: 0; /* z-index üstte'lik, order önce'llik sıramasıdır */
+            border-color: yellow;
+            color: yellow;}
+        .altBölüm .p2 { /* 2.oyuncu */
+            order: 2;
+            border-color: cyan;
+            color: cyan;}
+        .altBölüm .ortaBölüm {order: 1;}
+        .ortaBölüm { /* Başlat düğmesi */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;}
+        .ortaBölüm p { /* Tuşla ve sonuçlar */
+            background-color: brown;
+            color: DodgerBlue;}
+
+        /* Başlat düğme stillemesi */
+        button { /* Gittikce koyu-yeşillensin */
+            border: 1px solid;
+            padding: 12.75px 20px;
+            background-color: lime;
+            cursor: pointer;}
+        button:hover, button:focus {background-color: green;}
+        button:active {background-color: DarkGreen;}
+
+        /* Çember stillemesi */
+        .çember { /* Mutlak sıfırlama, merkeziler (body merkezileştirmesiyle gereksizleşir!..) */
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;}
+        .çember div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;}
+        .çember p {
+            margin: 0;
+            font-size: 10em;}
+    </style>
+</head>
+<body>
+    <h3>Çember durunca ilk tuşlayan kazanır</h3>
+    <article>
+        <input type="button" id="hız" value="Hız ve yön"/>
+        <input type="button" id="ebat" value="Ebat"/>
+        <input type="button" id="renk" value="Çember rengi"/>
+        <input type="button" id="zemin" value="Zemin rengi"/>
+    </article>
+
+    <div class="çember"><div><p>↻</p></div></div>
+
+    <section class="ka"> <!-- Gereksiz sınıflama -->
+        <div class="altBölüm">
+            <p class="p1">1.oyuncu: "A"</p>
+            <p class="p2">2.oyuncu: "B"</p>
+            <div class="ortaBölüm">
+                <button>Oyunu başlat</button>
+                <p class="sonuç"></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const çember = document.querySelector (".çember p");
+        const çemberKabı = document.querySelector (".çember");
+        const düğme = document.querySelector ("button");
+        const sonuç = document.querySelector (".sonuç");
+        let dönüşSayısı = 0;
+        let animasyonTalebi;
+        let ilk = 0;
+        let dönüyorMu = false; // İng'de Mu soru eki olmadığından Boolean'da genelde ING soneki kullanılır (spinning)...
+        let hız1=3;
+
+        // İlk anda merkezdeki çember ve alt-ortadaki sonuç gizlenir...
+        sonuç.style.display = "none";
+        çemberKabı.style.display = "none";
+
+        // Oyunu başlatmadan (çemberi görmeden) ebat, renk, hız ayarlarını değiştirebilirsiniz...
+        hız.onclick = ()=>{
+            hız1 = +prompt ("Dönüş hızı girin -+[0.2, 10]: ", "3");
+            if (! hız1 || Math.abs (hız1) < 0.2 || Math.abs (hız1) > 10) hız1 = 3;
+            console.log ("Hız: " + (1/hız1) + " dönüş/sn");
+        } // hız sonu...
+        ebat.onclick = ()=>{
+            let ebat = +prompt ("Ebatı girin [1, 20]em: ", "10");
+            if (! ebat || Math.abs (ebat) < 1 || Math.abs (ebat) > 20) ebat = 10;
+            çember.style.fontSize = ebat + "em";
+        } // ebat sonu...
+        renk.onclick = ()=>{
+            let renk = prompt ("Çember RGBA rengini girin rgba(0-255,0-255,0-255,0-1): ", "255, 255, 0, 0.9");
+            renk = renk.split (","); console.log (renk);
+            çember.style.color = "rgba(" + renk [0] + "," + renk [1]  + "," + renk [2] + "," + renk [3] + ")";
+        } // renk sonu...
+        zemin.onclick = ()=>{
+            let zeminRengi = prompt ("Zemin RENKADI'nı girin: ", "DeepPink");
+            console.log (zeminRengi);
+            document.body.style.backgroundColor = zeminRengi;
+        } // zemin sonu...
+
+        function rasgele (alt, üst) {return Math.floor (Math.random() * (üst - alt)) + alt;}
+        düğme.addEventListener ("click", başlat); // Alt-orta düğmeyi tıklatarak oyunu başlat...
+        function başlat() {
+            döndür(); // Çember görünerek rasgele 5-10 sn dönsün...
+            çemberKabı.style.display = "block";
+            düğme.style.display = "none"; // Bu ara, çember durana dek düğme gizlensin...
+            setTimeout (bitir , rasgele (5000, 10000)); // Çember durunca bitiş işlemlerine geçilsin...
+        } // func sonu...
+        function döndür (ritim) {
+            if (! ilk) {ilk = ritim;}
+            dönüşSayısı = (ritim - ilk) / hız1;
+            if (dönüşSayısı > 359) {dönüşSayısı %= 360;}
+            çember.style.transform = "rotate(" + dönüşSayısı + "deg)";
+            animasyonTalebi = requestAnimationFrame (döndür);
+        } // func sonu...
+        function bitir() {
+            cancelAnimationFrame (animasyonTalebi); // Dönüş canlandırması iptal...
+            çemberKabı.style.display = "none"; // Çember gizlensin...
+            sonuç.style.display = "block";
+            sonuç.textContent = "TUŞLA!!"; // Son tuşlama etabına geçilsin...
+
+            document.addEventListener ("keydown", tuşYönetimi);
+            function tuşYönetimi (o) {
+                let bittiMi = false; // (İng)'de soru soneki yerine dir/is öneki kullanılmakta...
+                console.log (o.key);
+                if (o.key === "a") {sonuç.textContent = "1.oyuncu KAZANDI!!"; bittiMi = true;
+                }else if (o.key === "b") {sonuç.textContent = "2.oyuncu KAZANDI!!"; bittiMi = true;}
+                if (bittiMi) {// Doğru bir tuşlamayla bittiyse, oyunu tekrar başa al...
+                    document.removeEventListener ("keydown", tuşYönetimi); // Tuşlama işlevsizlenir...
+                    setTimeout (başaAl, 5000); // 5sn sonra, oyunu tekrar başa al...
+                } // if sonu...
+            }; // func-iç sonu...
+        } // func sonu...
+        function başaAl() {// Sonuçlar silinerek gizlenir, başlatma düğmesi aktiflenir...
+            düğme.style.display = "block";
+            sonuç.textContent = "";
+            sonuç.style.display = "none";
+        } // func sonu...
+    </script>
+</body>
+</html>

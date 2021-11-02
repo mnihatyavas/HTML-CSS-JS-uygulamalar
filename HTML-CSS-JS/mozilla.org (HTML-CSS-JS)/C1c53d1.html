@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c53d1.html: Promise.any vaat ile 3 asenkron fetch'den herhangi birini sunma örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 450px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h3 {margin:0;}
+    </style>
+</head>
+<body>
+    <!-- Fetch'li vaat (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç (Fetch'li herhangibir vaat)</h3>
+
+    <script>
+        function getirÝþle (yurel) {
+            return fetch (yurel)
+                .then (yanýt=>{
+                    if (! yanýt.ok) {throw new Error (`HTTP fetch hatasý! Statü no: ${response.status}`);
+                    }else {return yanýt.blob();} })
+        } // func sonu...
+
+        let çay = getirÝþle ("resim/çay.jpg");
+        let kahve = getirÝþle ("resim/kahve.jpg");
+        let yorum= getirÝþle ("C1c53d1.txt"); // Hata mesajý vermeli
+
+        Promise
+            .any ([çay, kahve, yorum])
+            .then (deðer=>{
+                let yurelNesnesi = URL.createObjectURL (deðer );
+                let resim = document.createElement ("img");
+                resim.src = yurelNesnesi;
+                resim.alt = " ";
+                resim.title = "Bir fincan çay/kahve 40 yýl hatýr kazandýrýr.";
+                document.body.appendChild (resim);
+                console.log ("Promise.any'nin herhangibiri gövdeye eklenmiþtir."); })
+            .catch (o=>{console.log ("HATA: " + o.message); });
+    </script>
+</body>
+</html>

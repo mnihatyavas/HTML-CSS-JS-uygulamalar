@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+     <title>C1c47c.html: NY Times gazete haberlerinden resimli makale araþtýrma örneði.</title>
+     <link href="C1c47c.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sürekli çevrimiçi gerektirir. -->
+    <h1>"NY Times" haberlerinden seçme makaleler</h1>
+    <div class="sarýcý">
+        <div class="kontrollar">
+            <form>
+                <p>
+                    <label for="araþtýr">Tek bir araþtýrma terimi girin (ZORUNLU): </label>
+                    <input type="text" class="araþtýr" required>
+                </p>
+                <p>
+                    <label for="ilk-tarih">Ýlk tarih girin (biçem GG.AA.YYYY): </label>
+                    <input type="date" class="ilk-tarih" pattern="[0-9]{8}">
+                </p>
+                <p>
+                    <label for="son-tarih">Son tarih girin (biçem GG.AA.YYYY): </label>
+                    <input type="date" class="son-tarih" pattern="[0-9]{8}">
+                </p>
+                <p>
+                    <label>Tarih girilmezse tüm makaleleri farzeder.</label>
+                </p>
+                <p>
+                    <button class="gönder">Araþtýrmayý baþlat</button>
+                </p>
+            </form>
+        </div>
+
+        <div class="sonuçlar">
+            <nav>
+                <button class="önceki">Önceki 10 makale</button>
+                <label></label>
+                <button class="sonraki">Sonraki 10 makale</button>
+            </nav>
+            <section></section>
+        </div>
+    </div>
+
+    <script>
+        const esasYurel = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        const anahtar = "3Cm3bHxG1I3ROE2N94Y8vw7347XEAaQk";
+        let yurel;
+        const araþtýrýlanTerim = document.querySelector (".araþtýr");
+        const ilkTarih = document.querySelector (".ilk-tarih");
+        const sonTarih = document.querySelector (".son-tarih");
+        const araþtýrmaFormu = document.querySelector ("form");
+        // const gönderDüðmesi = document.querySelector (".gönder"); // Bunun yerine Form-submit-event kullanýlýyor...
+        const seyrü = document.querySelector ("nav"); // Sonuçlarýn nav-section'ý...
+        const öncekiDüðme = document.querySelector (".önceki"); // Nav içi önceki-sonraki...
+        const sonrakiDüðme = document.querySelector (".sonraki");
+        const sayfaEtiketi = document.querySelector ("nav label");
+        const kýsým = document.querySelector ("section");
+
+        seyrü.style.display = "none"; // Baþta içerik yokken görünmesi gerekmiyor...
+        let sayfaNo = 0;
+
+        // Fonksiyonlara yönlendiren olaylar...
+        araþtýrmaFormu.addEventListener ("submit", araþtýrmayýGönder);
+        öncekiDüðme.addEventListener ("click", öncekiSayfa);
+        sonrakiDüðme.addEventListener ("click", sonrakiSayfa);
+
+        function araþtýrmayýGönder (o) {
+            sayfaNo = 0;
+            sonuçlarýGetir (o);
+        } // func sonu...
+
+        function sonuçlarýGetir (olay) {
+            olay.preventDefault();
+            yurel = esasYurel + "?api-key=" + anahtar + "&page=" + sayfaNo + "&q=" + araþtýrýlanTerim.value + '&fq=document_type:("article")';
+            if (ilkTarih.value !== "") {yurel += "&begin_date=" + ilkTarih.value;};
+            if (sonTarih.value !== "") {yurel += "&end_date=" + sonTarih.value;};
+            fetch (yurel)
+                .then (function (sonuç) {return sonuç.json();})
+                .then (function (jsonYanýt) {sonuçlarýGöster (jsonYanýt);});
+        } // func sonu...
+
+        function sonuçlarýGöster (json) {
+            while (kýsým.firstChild) {kýsým.removeChild (kýsým.firstChild);} // Öncekileri sil...
+            const makaleler = json.response.docs;
+            if (makaleler.length === 10) {// 10'ar makalelik sayfalar...
+                seyrü.style.display = "block";
+                sayfaEtiketi.innerHTML = "&emsp;" + (sayfaNo+1) + ".sayfa";
+            }else {seyrü.style.display = "none";} // 10 makaleden kýsaysa nav içeriði görülmesin...
+            if (makaleler.length === 0) {
+                const paragraf = document.createElement ("p");
+                paragraf.textContent = "Aradýðýnýz makaleye hiç rastlanmadý.";
+                kýsým.appendChild (para);
+            }else {// Her sayfada 1-->10 makale varsa...
+                for (let i = 0; i < makaleler.length; i++) {
+                    const makale = document.createElement ("article");
+                    const h2Baþlýk = document.createElement ("h2"); // h2 baþlýklý týklama baðlantý a-href'i...
+                    const baðlantý = document.createElement ("a");
+                    const resim = document.createElement ("img");
+                    const p1 = document.createElement ("p");
+                    const p2 = document.createElement ("p");
+                    const floatÝptal = document.createElement ("div"); // section'daki her article sonrasý (yanyana deðil altalta iiçin) floatptal konulacak...
+                    const aktüelMakale = makaleler [i];
+                    console.log (aktüelMakale); // Makaleler F12-konsoldan da okunabilir...
+                    baðlantý.href = aktüelMakale.web_url; // Özel article vasýf adlarý...
+                    baðlantý.target = "_boþ";
+                    baðlantý.textContent = aktüelMakale.headline.main;
+                    p1.textContent = aktüelMakale.snippet;
+                    p2.textContent = "Anahtarkelimeler: ";
+                    for (let j = 0; j < aktüelMakale.keywords.length; j++) {
+                        const anahtarKelime = document.createElement ("span");
+                        anahtarKelime.textContent = aktüelMakale.keywords [j].value + " ";
+                        p2.appendChild (anahtarKelime);
+                    } // for sonu...
+                    if (aktüelMakale.multimedia.length > 0) {// Herbir makalenin çoklu resimlerinin sadece ilkini göster...
+                        resim.src = "http://www.nytimes.com/" + aktüelMakale.multimedia [0].url;
+                        resim.alt = aktüelMakale.headline.main;
+                    } // if sonu...
+                    floatÝptal.setAttribute ("class", "float-iptal"); // Float iptal css vasfýný iliþkilendir...
+                    makale.appendChild (h2Baþlýk);
+                    h2Baþlýk.appendChild (baðlantý);
+                    makale.appendChild (resim);
+                    makale.appendChild (p1);
+                    makale.appendChild (p2);
+                    makale.appendChild (floatÝptal);
+                    kýsým.appendChild (makale);
+                } // for sonu...
+            } // else sonu...
+        } // func sonu...
+
+        function öncekiSayfa (o) {
+            if (sayfaNo > 0) {sayfaNo--;
+            }else {return;}
+            sonuçlarýGetir (o);
+        } // func sonu...
+
+        function sonrakiSayfa (o) {
+            sayfaNo++;
+            sonuçlarýGetir (o);
+        } // func sonu...
+    </script>
+</body>
+</html>

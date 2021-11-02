@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51a.html: Dizi listesini forEach döngüsüyle F12-konsola dökümleme örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <p>Mitolojik kadim tanrýlar listesi için F12-konsolu açýn.</p>
+
+    <script>
+        const tanrýlarDizisi = ["Apollo", "Artemis", "Poseidon", "Eros", "Ares", "Zeus", "Crom", "Odin", "Herkül", "Thor", "Ra"];
+
+        console.log ("Mitolojik kadim tanrýlar listesi:");
+        tanrýlarDizisi.forEach (function (ad, endeks) {console.log ((endeks+1) + ": " + ad); });
+    </script>
+</body>
+</html>

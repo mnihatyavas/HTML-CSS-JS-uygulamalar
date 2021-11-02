@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52c.html: Çoklu sicimli asenkron setInterval ve kendini çaðýran setTimeout örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <h3>F12-konsolu açýn</h3>
+    <button id="baþlat">Sayacý baþlatmak için týkla</button>
+
+    <script>
+        baþlat.onclick = ()=>{
+            let sayaç = Math.floor (Math.random() * 41 + 10); // [10, 50]
+            console.log ("\n==>SAYAÇ SONU: " + sayaç);
+            let i = 0;
+
+            let her100ms_deKoþtur = setInterval (function koþ1() {// Fonksiyon adý fuzuli...
+                console.log ("---setInterval: " + ++i );
+                if (i >= 10) clearInterval (her100ms_deKoþtur);
+            }, 100); // Her 100 ms aralýklarla biteviye koþtur...
+
+            try {
+                let yüz_ms_sonraKoþtur = setTimeout (function koþ2() {// Fonksiyon adý zaruri...
+                    console.log ("setTimeoout: " + ++i);
+                    if (i >= sayaç) clearTimeout (yüz_ms_sonraKoþtur);
+                    else setTimeout (koþ2, 100); // Tekrar kendini çaðýran fonksiyon...
+                }, 100); // Recursive olmasa, sadece 100 ms sonra (bir kez) koþturur...
+            }catch (hata) {console.error ("HATA: " + hata.name + "\n" + hata.message);} // console.error hatayý kýzartýr, nesneleþtirir...
+        }; // baþlat sonu...
+
+        console.log ("Son senkron kodlama.");
+    </script>
+</body>
+</html>

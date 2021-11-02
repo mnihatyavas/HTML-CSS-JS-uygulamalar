@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52g1.html: Asenkron requestAnimationFrame ritmiyle nesne döndürme canlandırması örneği.</title>
+    <style>
+        html {height: 100%;}
+        body {
+            display: flex;
+            height: inherit;
+            background-color: DeepPink;
+            margin: 0;
+            justify-content: center;
+            align-items: center;}
+        div {font-size: 10em;}
+        h3 {position: absolute; top: 0px; margin:0;}
+        section {position: absolute; top: 20px;}
+        button {background-color:Navy; color:orange;}
+    </style>
+</head>
+<body>
+    <h3>Tıklayın dönsün, tıklayın dursun!</h3><br/>
+    <section>
+        <button id="hız">Hız ve yön</button>
+        <button id="ebat">Ebat</button>
+        <button id="renk">Çember rengi</button>
+        <button id="zemin">Zemin rengi</button>
+    </section>
+    <div>↻</div>
+
+    <script>
+        const çember = document.querySelector ("div");
+        let dönüşSayısı = 0;
+        let animasyonTalebi;
+        let ilk = 0;
+        let dönüyorMu = false; // İng'de Mu soru eki olmadığından Boolean'da genelde ING soneki kullanılır (spinning)...
+        let hız1=3;
+
+        document.body.addEventListener ("click", () => {
+            if (dönüyorMu) {
+                cancelAnimationFrame (animasyonTalebi);
+                dönüyorMu = false;
+            }else {
+                döndür();
+                dönüyorMu = true;
+            } // else sonu...
+        }); // doc..sonu..
+
+        hız.onclick = ()=>{
+            hız1 = +prompt ("Dönüş hızı girin -+[0.2, 10]: ", "3");
+            if (! hız1 || Math.abs (hız1) < 0.2 || Math.abs (hız1) > 10) hız1 = 3;
+            console.log ("Hız: " + (1/hız1) + " dönüş/sn");
+        } // hız sonu...
+        ebat.onclick = ()=>{
+            let ebat = +prompt ("Ebatı girin [1, 20]em: ", "10");
+            if (! ebat || Math.abs (ebat) < 1 || Math.abs (ebat) > 20) ebat = 10;
+            çember.style.fontSize = ebat + "em";
+        } // ebat sonu...
+        renk.onclick = ()=>{
+/*
+            renk [0]= prompt ("Çember KIRMIZI rengini girin rgba(0-255,0-255,0-255,0-1): ", "0");
+            renk [1]= prompt ("Çember YEŞİL rengini girin rgba(0-255,0-255,0-255,0-1): ", "0");
+            renk [2]= prompt ("Çember MAVİ rengini girin rgba(0-255,0-255,0-255,0-1): ", "255");
+            renk [3]= prompt ("Çember ŞEFFAFLIK girin rgba(0-255,0-255,0-255,0-1): ", "0.9");
+*/
+            let renk = prompt ("Çember RGBA rengini girin rgba(0-255,0-255,0-255,0-1): ", "255, 255, 0, 0.9");
+            renk = renk.split (","); console.log (renk);
+            çember.style.color = "rgba(" + renk [0] + "," + renk [1]  + "," + renk [2] + "," + renk [3] + ")";
+        } // renk sonu...
+        zemin.onclick = ()=>{
+            let zeminRengi = prompt ("Zemin RENKADI'nı girin: ", "DeepPink");
+            console.log (zeminRengi);
+            document.body.style.backgroundColor = zeminRengi;
+        } // zemin sonu...
+
+        function döndür (ritim) {
+            if (! ilk) {ilk = ritim;} // ritim'i bilahere animasyonTalebi üretecek...
+            let dönüşSayısı = (ritim - ilk) / hız1;
+            if (dönüşSayısı > 359) {dönüşSayısı %= 360;}
+            çember.style.transform = "rotate(" + dönüşSayısı + "deg)";
+            animasyonTalebi = requestAnimationFrame (döndür); // Kendini çağıran daimi canlandırma
+        } // func sonu...
+    </script>
+</body>
+</html>

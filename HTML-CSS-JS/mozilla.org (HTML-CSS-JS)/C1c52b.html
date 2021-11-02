@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c52b.html: Asenkron gecikmesiz setTimeout ile selamlama örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <h3>F12-konsolu açýn</h3>
+
+    <script>
+        let p = document.createElement ("p")
+        document.body.appendChild (p); p.textContent="1: Sayfa'ya Merhaba! (" + new Date().getMilliseconds() + " mS)";
+        console.log ("2: Konsol'a Merhaba! (" + new Date().getMilliseconds() + " mS)");
+        setTimeout (function() {console.log ("3: Herkese Merhaba! (" + new Date().getMilliseconds() + " mS)");}, 0);
+        console.log ("4: Sana Merhaba! (" + new Date().getMilliseconds() + " mS)");
+        setTimeout (function() {alert ("5: Dünya'ya Merhaba!"); console.log ("5: Dünya'ya Merhaba! (" + new Date().getMilliseconds() + " mS)");}, 0);
+    </script>
+</body>
+</html>

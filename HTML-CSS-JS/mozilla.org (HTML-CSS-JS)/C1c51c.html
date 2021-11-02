@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51c.html: Ardýþýk JS senkron iþlemlerle html sayfaya p-paragraflarý ekleme örneði.</title>
+    <style>
+        html {background-color: #132;}
+        body {
+            background-color: #a97;
+            max-width: 50%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <h3>F12-konsolu aç</h3>
+    <button>Týklayarak p-elaman ekle</button>
+
+    <script>
+        const düðme = document.querySelector ("button");
+        let sayaç = 0;
+        düðme.addEventListener ("click", ()=>{
+            alert ("Beni týklayarak olay-dinleyici fonksiyonu iþlettiniz!");
+            sayaç +=1;
+            let pElemaný = document.createElement ("p");
+            pElemaný.textContent = "HTML-BODY sayfaya " + sayaç + " no'lu p-paragrafý eklediniz.";
+            console.log ("HTML-BODY sayfaya " + sayaç + " no'lu p-paragrafý eklediniz.");
+            document.body.appendChild (pElemaný);
+        }); // düð..sonu...
+    </script>
+</body>
+</html>

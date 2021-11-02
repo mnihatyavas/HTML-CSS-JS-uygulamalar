@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51h1.html: Çoklu sicimli asenkron fetch-then-then-catch ile resim getirme örneði.</title>
+    <style>
+        html {background-color: #142;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <!-- fetch (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç</h3>
+
+    <script>
+        console.log ("Resim fetch/getir baþlýyor (mS): " + new Date().getMilliseconds() );
+        let resim;
+        fetch ("resim/kahve.jpg")
+            .then ( (yanýt)=>{
+                console.log ("Damla/blob() tipli yanýt alýnýyor (mS): " + new Date().getMilliseconds() );
+                return yanýt.blob(); })
+            .then ((damla) => {
+                let yurelNesnesi = URL.createObjectURL (damla);
+                resim = document.createElement ("img");
+                resim.src = yurelNesnesi;
+                document.body.appendChild (resim);
+                console.log ("Fetch'lenen resim gövdeye eklendi (mS): " + new Date().getMilliseconds() );})
+            .catch ((hata) => {console.error ("Fetch hatasý: " + hata.name + "\n" + hata.message); });
+
+        // Çoklu sicim'li fetch bitmeden alttaki mesaj yansýyabilir...
+        console.log ("Resim fetch'i tamamlandý (mS): " + new Date().getMilliseconds() );
+    </script>
+</body>
+</html>

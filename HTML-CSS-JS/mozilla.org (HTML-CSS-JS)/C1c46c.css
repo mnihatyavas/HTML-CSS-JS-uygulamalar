@@ -1,0 +1,27 @@
+/* s */
+* {box-sizing: border-box;}
+html {background-color: #135;}
+body {
+    background-color: #db9;
+    max-width: 70%;
+    min-width: 500px;
+    padding: 20px;
+    margin: 2em auto;
+    border: 5px solid tomato;}
+button, input {background-color:Navy; color:orange; font-size: 15px;}
+#gönder, h2 {position: relative; left: 105px;}
+h2 {text-decoration: underline;}
+header, footer {
+    background-color: green;
+    border: 2px solid black;
+    color: white;
+    line-height: 100px;
+    padding: 0 20px;}
+main {border-left: 2px solid black; border-right: 2px solid black;}
+.yeni-kayýt-giriþi, .kayýtlarýn-sunumu {padding: 20px;}
+.kayýtlarýn-sunumu {background: DodgerBlue;}
+.yeni-kayýt-giriþi {background: #ddd;}
+h1, p {margin: 0;}
+p {font-size: 14px;}
+ul {list-style-type: none;}
+div {margin-bottom: 10px;}

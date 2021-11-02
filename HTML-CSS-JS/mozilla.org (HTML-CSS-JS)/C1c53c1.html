@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c53c1.html: Vaat kýlýflý asenkron fetch-then-then-catch örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 450px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h3 {margin:0;}
+    </style>
+</head>
+<body>
+    <!-- Fetch'li vaat (>>>python -m http.server) ve (localhost:8000) gerektirir. -->
+    <h3>F12-konsolu aç (Vaat kýlýflý fetch)</h3>
+
+    <script>
+        let vaat1 = fetch ("resim/kahve.jpg"); // fetch.then.then.catch iþlenmektedir...
+        let vaat2 = vaat1.then (kabul => {// Vaat red'dini if kontrolle yapalým...
+            if (! kabul.ok) {throw new Error (`Fetch-reddi! Statüsü: ${kabul.status}`);
+            }else {return kabul.blob();} // Resim için blob() tip dönüþü...
+        }); // vaat2 sonu...
+        let vaat3 = vaat2.then (damla => {// blob() damla (resim) içeriði...
+            let yurelNesnesi = URL.createObjectURL (damla);
+            let resim = document.createElement ("img");
+            resim.src = yurelNesnesi;
+            resim.title = "Bir fincan kahvenin 40 yýl hatýrý vardýr.";
+            resim.alt = "Resim: kahve.jpg";
+            document.body.appendChild (resim);
+            console.log ("Resim gövdeye eklendi.");
+        });// vaat3 sonu...
+        let hata = vaat3.catch (o => {console.log ("HATA: " + o.message); }); // localhost'suz yada örn.kahve.jpg bulamazsa...
+        console.log ("Fetch-then-then-catch tamamlandý.");
+    </script>
+</body>
+</html>

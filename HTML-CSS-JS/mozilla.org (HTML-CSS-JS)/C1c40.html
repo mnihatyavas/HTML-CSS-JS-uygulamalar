@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c40.html: Grafik, video, veritabaný ve animasyon uygulamalarý örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>API Uygulamalarý</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1c41a.html" target="_">1a) Kurucu fonksiyon ve metodlarla zýplayan toplar animasyonu örneði</a></h4>
+    <h4><a href="C1c41b.html" target="_">1b) JSON veri dosyasýnýn XMLHttpRequest() ile json tip'li okunmasý ve içeriklerinin sergilenmesi örneði</a></h4>
+    <h4><a href="C1c41c.html" target="_">1c) MP3 müzikçalarýn JS kodlamasýyla çal/durdur ve ses hacmi kontrolu örneði</a></h4>
+    <h4><a href="C1c42a1.html" target="_">2a1) Ýpuçlu resim ve detaylý açýklamalý baðlantý yönlendirmesi örneði</a></h4>
+    <h4><a href="C1c42a2.html" target="_">2a2) Mevcut açýklamada güncelleme, yeni açýklama elemanlarý ekleme ve silme örneði</a></h4>
+    <h4><a href="C1c42b.html" target="_">2b) Ul-li listeli alýþveriþ sepetine malzeme ekleme veya çýkarma örneði</a></h4>
+    <h4><a href="C1c42c1.html" target="_">2c1) Karo döþeme zeminin küçük bir ebatýný sergileme örneði</a></h4>
+    <h4><a href="C1c42c2.html" target="_">2c2) Karo döþeme zemini tüm ekrana döþeme örneði</a></h4>
+    <h4><a href="C1c42c3.html" target="_">2c3) Karo döþemeyi aktüel pencere en ve boyuna duyarlama örneði</a></h4>
+    <h4><a href="C1c43a.html" target="_">3a) Mp4/webm video filmi varsayýlý kontrollarla oynatma örneði</a></h4>
+    <h4><a href="C1c43b.html" target="_">3b) Mp4/webm video filmi özelleþtirilen kontrollarla oynatma örneði</a></h4>
+    <h4><a href="C1c44a1.html" target="_">4a1) Canvas tuvale içiçe 3 farklý renk dikdörgen ve kalýn çerçeve çizme örneði</a></h4>
+    <h4><a href="C1c44a2.html" target="_">4a2) Canvas tuvale üstüste eþkenar üçgen, tam ve dilimli daire çizimleri örneði</a></h4>
+    <h4><a href="C1c44a3.html" target="_">4a3) Canvas tuvale içi boþ ve dolu metin yazma örneði</a></h4>
+    <h4><a href="C1c44a4.html" target="_">4a4) Canvas tuvalde ve html-div bölümde resim sergileme örneði</a></h4>
+    <h4><a href="C1c44b1.html" target="_">4b1) Ýki ayrý canvas tuvalde helezoni küçük ikizkenar üçgenler çizimi örneði</a></h4>
+    <h4><a href="C1c44b2.html" target="_">4b2) 5 farklý yürüyen adam resmiyle ekranda yatay devinen yürüyüþcü örneði</a></h4>
+    <h4><a href="C1c44b3.html" target="_">4b3) Fareye basarak tuvalde seçili renk ve kalýnlýkta çizim yapma örneði</a></h4>
+    <h4><a href="C1c44c1.html" target="_">4c1) Resmi küp'e tamamlayýp 3 boyutlu renkli ve projektörlü döndürme örneði</a></h4>
+    <h4><a href="C1c44c2.html" target="_">4c2) Bilgisayarýn video kaydedicisiyle görüntü kaydetme örneði</a></h4>
+    <h4><a href="C1c45a.html" target="_">5a) Seçilen þiir dosyasý metninin XHR'yle okunup görüntülenmesi örneði</a></h4>
+    <h4><a href="C1c45b.html" target="_">5b) Seçilen þiir dosyasý metninin fetch'le okunup görüntülenmesi örneði</a></h4>
+    <h4><a href="C1c45c.html" target="_">5c) Ýstenen katagori ve terim'li ürün json ve blob resim dosyalarýnýn XHR'yla okunmasý örneði</a></h4>
+    <h4><a href="C1c45d.html" target="_">5d) Ýstenen katagori ve terim'li ürün json ve blob resim dosyalarýnýn fetch'le okunmasý örneði</a></h4>
+    <h4><a href="C1c46a.html" target="_">6a) Tarayýcý yerel depoda saklý isim-deðer'li hitap ve karþýlama örneði</a></h4>
+    <h4><a href="C1c46b.html" target="_">6b) Bir indexedDB veritabaný, nesnedeposu ve kayýtlarý yaratma, ekleme, silme, deðiþtirme, gösterme örneði</a></h4>
+    <h4><a href="C1c46c.html" target="_">6c) Farklý adlarla veritabaný ve nesnedeposu yaratma/silme, kayýt ekleme, sunma ve silme örneði</a></h4>
+    <h4><a href="C1c46d.html" target="_">6d) Çoklu webm videolarý fetch-blob'la yükleme, gösterme, gizleme ve silme örneði</a></h4>
+    <h4><a href="C1c46e.html" target="_">6e) Mp4 ve webm çoklu videolarý fetch-blob'la yüklerken yurel kayýtlarýný yansýtma örneði</a></h4>
+    <h4><a href="C1c46f.html" target="_">6f) Veritabaný ve nesnedeposuna kayýt girme, görme, sýralama, deðiþtirme, silme, diskdosyasýna aktarma örneði</a></h4>
+    <h4><a href="C1c46g.html" target="_">6g) Tüm veritabaný kayýt alanlarý endeksleriyle tablosal sýralama örneði</a></h4>
+    <h4><a href="C1c47a1.html" target="_">7a1) Manchester-Ýng.menþeli tüm dünya 'map' haritasý sörfü örneði</a></h4>
+    <h4><a href="C1c47a2.html" target="_">7a2) Manchester-Ýng.menþeli tüm dünya 'hybrid' haritasý sörfü örneði</a></h4>
+    <h4><a href="C1c47b1.html" target="_">7b1) Manchester-Ýng.menþeli tüm dünya 'Google' haritasý sörfü örneði</a></h4>
+    <h4><a href="C1c47b2.html" target="_">7b2) Özel bayrak açýklamalý dünya 'Google' harita sörfü örneði</a></h4>
+    <h4><a href="C1c47c.html" target="_">7c) NY Times gazete haberlerinden resimli makale araþtýrma örneði</a></h4>
+    <h4><a href="C1c47d.html" target="_">7d) Araþtýrýlan azami 10 Youtube video oynatma örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "1) API profesyonel JS kodlamayla grafik, veritabaný, animasyon, video uygulamalarý sunulmaktadýr. \
+            Toplam 7 grup kapsamýnda 37 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-1a this.deðiþken içerikli kurucu Top fonksiyonu, Top prototipine baðlý çiz, güncelle \
+            ve çarpýþanlarýnTespiti fonksiyonlarý, animasyonDöngüsü fonksiyonunda tuval dikdörgeni ve zemini \
+            yaratýlýp, 100 top türetilip, bunlarýn çizim güncellenme ve çarpýþmalarý saptanýp, kendini biteviye yineleyen \
+            requestAnimationFrame (animasyonDöngüsü) ile çarpýþýnca renk deðiþtiren, kenarlardan uygun açýlarla \
+            geriye zýplayan, rasgele yarýçaplý ve renkli toplarýn animasyon canlandýrmasý kodlanmýþtýr." +
+            "<br/>3) Altprogram-1b'de ana program harici CSS, JS ve JSON dosyalarýný okumakta, ayrýca çevrimiçi \
+            'Faster One' özel hýz yansýmalý yazýfonunu kullanmaktadýr. new XMLHttpRequest().open('GET','C1c41b.json') \
+            ile json tipli dosyayý okumakta, içeriklerini talep.onload=()=>{var süperKahramanlar=talep.response} yanýtýyla \
+            almaktadýr. HTML sayfasýnda header baþlýk ve section kýsýma bu json verileri uygun biçimde yerleþtirip \
+            sergilemektedir. Header'a h1-ekipAdý, p-ikamet/kuruluþ verileri, section'a 3 süperkahramanýn h2-ad, üç \
+            adet p-gizliKimlik/yaþ/SüperGüçleri: altýna ul-li listelemeyle kaç adet varsa süperGüçler li'li ul'u, 3 adet p'yi ve \
+            h2'yi articel'e, onu da section'a ekleyerek html sayfasýný sunuma hazýr hale getirmektedir." +
+            "<br/>4) Altprogram-1c audio-src elemaný audio.mp3 müzik dosyasýný okumakta; hem HTML sayfasýndaki \
+            Çal düðmesi ve ses sürgüsüyle, hem de tarayýcý sað üstündeki müzik ikonu týklanarak görünen küçük \
+            pencerede beliren çal-duraklat ikonlarýyla müziðin çalýnmasý ve ses hacim kontrolu saðlanmaktadýr. Vasýf \
+            atfetme ayarlarýyla, müzik çalýyorsa Dur, duraksatýlmýþsa Çal düðme hatýrlatýcýlarý deðiþtirilmektedir." +
+            "<br/>5) Altprogram-2a1 JS kodlamasýz, iç style css sayfa ayarlarý ve img-src-dinazor.png ile resim \
+            görüntülenmekte, resmin alt-ernate okuma hatasýnda gösterilecek alternatif açýklama ve resim üzerinde \
+            biraz bekleyince gösterilen title ipucu açýklama verilmiþ; ayrýca resmin altýna p-paragrafla, týklanýnca \
+            detaylý bilgi alýnacak mozilla.org sayfasýna a-href-target ayrý sekmeli yönlendirme saðlanmýþtýr." +
+            "<br/>6) Altprogram-2a2 önceki örneðe JS kodlamayla dökümanter açýklamalar iþlenmiþtir. Mevcut \
+            p-paragraf baþýna yeni textContent ve sonrasýna da yeni textContent açýklamalý a-href-target baðlantýsý \
+            öncekilerin yerini almýþtýr. Bir alt satýra p-paragraf ilavesi, bu defa textContent yerine createTextNode \
+            açýklamasý eklenerek; en alta da h5-baþlýk elemaný .parlat sýnýf css vasfýyla siyah zemine sarý parlak \
+            görüntüyle sunulmuþtur. Resmin ve h5 yazýnýn ortalanmasý saðlanmýþtýr." +
+            "<br/>7) Altprogram-2b input 'malzeme giriþi' ve button 'sepete koy' týklanýnca, girilen malzeme ve \
+            sil-buttonu ul-li listeye (çoklu alt-alta) eklenir. Her malzeme yanýndaki 'sil' düðmesi týklanýnca, ilgili \
+            malzeme ul-li listesinden (removeChild) silinir." +
+            "<br/>8) Altprogram-2c1 div eleman içinde 613X613 px ebatlý karo döþeme resminin sadece sol-üst \
+            100px en ve boyu 10px beyaz sýnýrla çerçevelenip html sayfasýnda görüntülenmiþtir." +
+            "<br/>9) Altprogram-2c2 birönceki resim bu defa div içinde yüksekliði 550px, geniþliði varsayýlý %100 \
+            body padding içi, background-image varsayýlý repeat ile tanýmlý div kutusuna tamamen yaygýn döþenmiþtir." +
+            "<br/>10) Altprogram-2c3 narmalen div en ve boyu 100px ve sýnýrý 10px beyaz olup, JS kodlamasýyla \
+            mevcut pencerenin window.innerWidth/innerHeight ebatlarý orantýlý alýnarak, aktüel div bölümünün \
+            100X100 px sýnýrlý ebatý bu yeni aktüel pencere ebatlarýyla, hem açýlýþta hem de bilahere resize/ebat \
+            deðiþikliðinde güncellenmiþtir. Çoklu yaygýn/repeat karo döþeme artýk hep aktüel pencereye yaygýndýr." +
+            "<br/>11) Altprogram-3a html-body içinde mevcut video ebatlarýna uygun sayfa ebatlandýrmayla img-src \
+            benzeri video-src-controls yerleþtirilmiþ olup, varsayýlý vasýflarýyla oynat-duraksat ve ses hacmi kontrolleri \
+            mevcuttur. &copy; ikonlu kopyalamahakký paragrafý ve tüm videoyu seyretmek isteyenlere çevrimiçi \
+            youtube baðlantý yönlendirmesi yapýlmýþtýr." +
+            "<br/>12) Altprogram-3b birönceki varsayýlý kontrollar iptal edilip (removeAttribute('controls')) özel oynatma \
+            düðmeleri ve iliþkili JS fonksiyonlarý kodlanmýþtýr. O/D: Oynat/Duraksat, B: BaþaAl, G: GeriyeSar, Ý: ÝleriyeSar \
+            düðmeleri ve zamanlayýcý (00:00 / 02:00) göstergesi normalen %70 þeffaf içebasýk ve gölgeli düðmelerle hazýr \
+            edilmiþ olup, fare yaklaþtýðýnda %100 netleþmekte, ayrýca hangi düðme üzerindeyse parlamaktadýr. Ýleri/geri \
+            sarma, toplamda 2 dk süreli video'da her 200mS'de -+3S eklentilerle saðlanmakta, sona gelinmiþse tekrar \
+            baþa sarmakta; oynuyorsa D-uraksat, duraklamýþsa O-ynat harfleri yansýmakta, B her zaman enbaþa almaktadýr. \
+            Ýleri/Geri sararken O-ynat'la kalýnan yerden oynamaya devam eder. Aktüel video oynama zamanlamasý ise ortadaki \
+            uzun düðme (span) içinde '00:00 / 02:00' formatýnda iþlemektedir." +
+            "<br/>13) Altprogram-4a1 canvas tuval en ve boyu window.innerWidth/Height aktüel pencere ebatýna duyarlý \
+            kýlýnarak siyah zeminli fillStyle ve fillRect ile boyanýp, içine yine fillStyle/Rect ile önce kýrmýzý dikdörtgen, onun içine \
+            yeþil dikdörtnen, içine %25 þeffaf kýsaboy-geniþen eflatun dikdörtgen, en dýþa ise strokeStyle/Rect ile 10px \
+            kalýnlýkta beyaz çerçeve çizilmiþtir. (Çizimler kullanýlan ekran ebatýna uygun deðiþtirilebilinir.)" +
+            "<br/>14) Altprogram-4a2 html canvas/tuval elemaný içine (x,y)=(50,50) konumdan baþlayýp, 400px saða, \
+            sonra 60 derece alt-sola (eþkenar üçgen içaçýlarý 3*60=180D) ve tekrar üst-sol baþlangýca kýrmýzý içli eþkenar \
+            üçgen çizilmiþ; bunun ortasýndan {(x,y)=(250, (50+yük)/2)} 150px yarýçaplý tam daire arký (0D->360D) mavi \
+            dolgulu üstüne bindirilmiþ; sonunda da öncekinin 50px saðýndan ve yine 150px yarýçaplý -45D-->+45D eksik \
+            daire arký, eksik dilim merkezine dönüþle sarý dolgulu enüste bindirilmiþtir." +
+            "<br/>15) Altprogram-4a3 içidolu kutular fillStyle/fillRect, içiboþ kutu çerçeveleri strokeStyle/strokeRect ile \
+            çizilirken; keza içi dolu metin yazýlar fillStyle/fillText, içi boþ yazýlar strokeStyle/lineWidth/strokeText ile yazýlmaktadýr. \
+            Ýçiboþ metin beyaz 70px arial tipli, içi dolu ise kýrmýzý, 55px segoe-script tipli olarak 2 ayrý tuval konumuna \
+            (30,100)px ile (30,350)px yazýlmýþtýr." +
+            "<br/>16) Altprogram-4a4 firefox.png resmi html %50 enle div içine img-src ile konumlandýrýlmýþ, %50 enle \
+            canvas/tuval içine new Image().src-yurel.onload-drawImage ile çizilmiþtir." +
+            "<br/>17) Altprogram-4b1 x=200'lük döngüde i birer artarken x birer düþerek 100 kez tekrarlar; 5'er dereceden \
+            toplam 5*100=500D=360D+140D=1.39 tam döngülü helezonvari spirali tamamlar. Herbir üçgenin 3 konumu: \
+            (y,y), (y+x,y), (y+x/2,y+h) ve tekrar (y,y). Spirali aktüel pencerenin ortasýna içrk.translate(en/2,boy/2) taþýr. Ýlk yarým \
+            pencereye açýk-mor'dan koyuya tek renkli helezoni üçgenler, ikinci yarým pencereye ise tesadüfi renkli helezoni \
+            üçgenler spiral çizerler." +
+            "<br/>18) Altprogram-4b2 yürüyüþ.png resmi kendi içinde 6 adet yürüyüþ etaplarý resimcikleri barýndýrýr. Yürüyüþ \
+            aktüel pencerenin ortasýndan baþlar (içrk.translate(en/2,boy/2)). Yataykonum her resimde 2px'er artarken 13 katý \
+            olduðunda diðer resim alýnýr; böylece 0-->5 ve tekrar 0-->5 resimler tekrarlanýr. Yürüyüþcü pencere enini taþarsa \
+            yataykonum tekrar sol'dan baþlatýlýr. window.requestAnimationFrame(çiz)'le animasyon sürekli kendini çaðýrýr." +
+            "<br/>19) Altprogram-4b3 color/renk tipli input, range/erim tipli input ve sil button düðmesi tuvalin sol-üstündeki \
+            3 çizim yardýmcýsýdýr. Farenin tuvaldeki konumu sürekli tespitlidir. Fare ancak tuval içinde ve sol-týklama basýlýysa \
+            true/çiz fonksiyonu iþler. Seçilen renk, yazý damlasý/arc kalýnlýðý/yarýçap deðerleriyle sürüklenerek her türlü ince/kalýn \
+            çizim yapýlabilir; sil butonu týklanýrsa tekrar siyah zemin tuval çizilir. Kalem ucu konumu tuvalin üst kenarýnda isabetli, \
+            altlara doðru aþaðý sarkýk çizer." +
+            "<br/>20) Altprogram-4c1 en-boy-yükseklik 3 boyutlu, verilen tek boyutlu resmi hazýr new THREE.Scene(), \
+            new THREE.PerspectiveCamera(..), new THREE.WebGLRenderer(), new THREE.TextureLoader(), \
+            new THREE.Mesh(..), new THREE.AmbientLight(..), new THREE.SpotLight(..) gibi hazýr fonksiyonlara uygun \
+            ebat, ýþýklandýrma, projektör rengi, dönme hýzý vb argümansal deðerleri girerek sürekli dönen küp sunumu \
+            requestAnimationFrame(çiz) kendini çaðýran animasyon fonksiyonuyla mümkün kýlýnýr. Küp oluþturmak için \
+            metal.png, karo2.png ve karo4.png mevcut resimleri önerilir." +
+            "<br/>21) Altprogram-4c2 önceki 3 boyutlu küp resminin yüklenmesi yerel sunucuyu gerektirirken, bu örnekte \
+            kendi iç kameranýn çalýþma arýzasý yoksa (python -m http.server ve localhost:8000 gerektirmeden) hemen hemen \
+            öncekindeki tüm TREE fonksiyonlarý uygun argümanlarla, 3 boyutlu döner küp üstü kamera görüntünüzü \
+            size sunacaktýr." +
+            "<br/>22) Altprogram-5a XMLHttpRequest, fetch, promise yurel disk okuma komutlarý çevrimiçi olunsun \
+            olunmasýn yerel sunucuyu da (>>>python -m http.server ve localhost:8000) gerektirmektedir. Select-option \
+            disk dosya.txt yurel adlarý listesinde 2.mýsra selected açýlýþta görünür, ayrýca script JS kodlamada window.onload\
+            ilk yükleniþte seçili 2.mýsra yureli XMLHttpRequest().open('GET',yurel).onload.send'le açýlýr. Þiir yurel adý ayýklanýr, \
+            sadece dosyaAdý.txt kullanýlýr. Alýnan mýsra pre-view etiketle görsel.textContent=talep.response'la http \
+            sayfasýnda sergilenir. Diðer mýsralarý okumak isterseniz select-option listesinden týklamanýz yeterlidir." +
+            "<br/>23) Altprogram-5b þiirin 4 disk dosyasý mýsrasýný new XMLHttpRequest().open('GET',yurel).onload.send \
+            yerine bu defa fetch(yurel).then((a)=>{a.text();}).then((b)=>{pre.textContent=b;}) metoduyla getirilmiþtir. \
+            Fetch fonksiyonu açýk altalta yazýlýmla, içiçe then yöntemiyle, yada uyguladýðým yanyana ve baðýmsýz 2 then'le \
+            sembolik (a)=> fonksiyon harfleriyle gerçekleþtirilebilir. Ýstediðiniz mýsrayý týklamanýz yeterlidir. Fetch dosya tipleri \
+            a.text(), a.json() yada a.blob()/resimler olabilmektedir." +
+            "<br/>24) Altprogram-5c örnekte anaprogram.html, vasýflar.css, gýdalar.json ve kodlama.js birlikte kullanýlmaktadýr. \
+            Çevrimiçi olunursa özel yazýfonlarý (h1-h2 için 'Cherry Swash'/cursive diðerleri için Railway/sans-sherif) kullanýlýr, \
+            yerel sunucu kullanýmý XMLHttpRequest() için gereklidir. Html sayfasý header-aside-main-footer'dan oluþur. \
+            Sayfa üstünde header/baþlýk, altýnda footer/ayaklýk, solunda aside/kenar, saðýndaysa main/esas. Aside içinde \
+            istenen katagori, aranan-ibare seçimi ve gönder butonunu kapsayan form; saðýdaki main içindeyse, herbir \
+            dinamik section içine gýda resmi, üst-sola küçük ikonu, üst-saða gýda adý, sað-alt yuvarlak paftaya da fiyat \
+            konulup, yanyana 2 yada sona kalan tek ortalanmýþ main içine eklenirler. Sadece katagoriler (tümü, sebzeler, \
+            et, çorba, tatlý) sergilenmek istenebilir, yada ayrýca aranan ibare'yle gýda adlarýnda raslanacak ibare girilirse, \
+            bu örnekte tüm gýda adlarý içinde ibare taranacak, birsonrakindeyse, sadece seçili katagori içindeki gýda adlarý \
+            taranacak. Not: çoklu dosyalý, illa da yerel sunuculu programlarda yapýlan deðiþikliði tarayýcý hemen güncellememekte, \
+            kendi içindeki önceki verileri kullanmakta; bu bakýmdan tek çözüm sýk sýk tüm program adlarýný yeniymiþcesine \
+            deðiþtirip, tarayýcý ve http.server sunucuyu da yeniden kapa-aç yaparak denemek gerekmektedir. Hele ki localStorage \
+            veya indexedDB gibi tarayýcý içinde görünmeyen veriler ayný adla tekrar çaðýrýþda önceki hatayý hiç düzeltmemekte, \
+            bu görünmez tarayýcý veri/dosya adlarýný da sýk sýk silmezseniz, takýnýlan hata birdaha o tarayýcýyla 50 sene de \
+            geçse çalýþmamaktadýr. Bu bakýmdan örnek programlarýmda önceliði bu verilerin temizliðine, deðiþebilirliðine, \
+            güncellemelerin kabul edilmesine verdim. Tüm örnekleri iç rahatlýðýyla çalýþtýrabilir, deðiþtirebilir, silebilirsiniz." +
+            "<br/>25) Altprogram-5d ana.html programý birönceki vasýf.css'i ve kodlama.js dosyasý da birönceki gýdalar.json \
+            dosyasýný kullanmaktadýr. Bu örnekte XMLHttpRequest() yerine fetch(yurel).then(a.blob()).then(\
+            URL.createObjectURL(b)) kullanýlarak resim nesnesi yaratýlmakta, nesne.src ve ürün.ad/fiyat'la da section içi \
+            resim, ikon, baþlýk-ad, fiyat-paftasý hazýrlanmaktadýr. Aranan ibare sadece seçili katagorideki ürün adlarýndan \
+            taranmakta, hiç raslanmazsa resimli sunum yerine sadece raslanmadý açýklamasý yapýlmaktadýr. Not: Yerelsunuculu \
+            localhost:8000/program1.html yerine program2.html istendiðinde hala program1.html takýlmakta, elle deðiþmesi \
+            gerekmektedir." +
+            "<br/>26) Altprogram-6a yerelDepo tarayýcýya isim:deðer çifti saklar; görünmez fakat ilgili tarayýcýda hep saklý kalýr. \
+            localStorage.setItem(anahtar) ile tarayýcýya 2MB kadar anahtar:deðer yüklenir; localStorage.getItem(anahtar)ile \
+            girilen anahtar mevcutsa deðeri alýnýr; localStorage.clear(anahtar) ile de mevcutsa anahtar:deðer tarayýcýdan silinir. \
+            JS kodlama, ilk yükleniþte tarayýcýda mevcutsa isim anahtarlý yerelDepolananý alýp, karþýlama baþlýk hitabýný ve main \
+            esas baþýndaki kiþiselSelamlama'yý þahsen yapar; isim:deðer bulamazsa genel karþýlama hitaplarý sunar. Yeni isim \
+            girerken Selamla, mevcut isimle karþýlamýþsa Unut düðmeleri baþlýk saðýnda belirir. Ayrýca kullanýcýya kolaylýk olmasý \
+            için, anahtar adlarý unutulmuþsa, esas içinde 2.açýklamalý düðme, aktüel tarayýcýnýzdaki mevcut tüm anahtar:deðer'leri \
+            listeler; sonraki açýklamalý düðmeyle ise F12 konsolda görünen anahtar isimlerini kullanarak tarayýcý yerelDepo'daki \
+            gereksizleri tek tek silebilir, hatta isterseniz for(let anahtar in localStorage){localStorage.clear(anahtar)} kodlamasýyla \
+            bir kerede ve tümden anahtar adlarýný bilmeseniz de tarayýcýnýzý temizleyebilirsiniz." +
+            "<br/>27) Altprogram-6b bu örnekte veritabaný1 ve depo1 adlý indexedDB içinde objectStorage talep=window.indexedDB.open\
+            ('veritabaný1',1), talep.error, talep.onsucces ve talep.onupgradeneeded aþamalarýyla yaratýlýp, içine açýlýþta 3 kayýt \
+            yüklenmektedir. Tüm iletiþim bu ilk indexedDB örneðinde F12-konsoldan saðlanmaktadýr. Kayýt ekle, kayýt göster, kayýt \
+            deðiþtir, kayýt sil fonksiyonlarýnda talep=vt.transaction('depo1', 'readonly/readwrite').objectStore('depo1') genel formatýyla \
+            get(kno), add/put(kayýt(no,ad,yaþ,eposta)), getAllKeys, clear(kno) kullanýlmýþ; nesneDeposu'nu tümden silmek için \
+            vt.transaction('depo1', 'readwrite').objectStore('depo1').clear(), veritabanýný hepten silmek içinse vt.close() ve \
+            window.indexedDB.deleteDatabase('veritabaný1') kodlamalarý kullanýlmýþtýr. Hepsinde de ortak iþlemler: talep, onerror ve \
+            onsuccess fonksiyonlarýdýr. Çoklu kayýt okuma talep.openCursor().onsuccess=()=&gt;{izlek=talep.result; if(izlek){kayýtGöster; \
+            izlek.continue()}else kayýtBitti;} ardýþýk kayýtlarýn tek bir if-continue ile sergilenmesidir. Bu ilk indexedDB örneðinde bol bol, \
+            kayýtGir, kayýtDeðiþtir, kayýtSil, tekKayýtGör, tümKayýtlarýGör, nesneDeposunuSil, veritabanýnýSil denemenizi tavsiye ederim. \
+            Program hiç aksamadan çalýþacaktýr; hata gösterirse, veritabanýný silip, yeniden yükleyin, çalýþacaktýr." +
+            "<br/>28) Altprogram-6c birönceki örnekte 'veritabaný1' ve 'depo1' adlarý kullanýcý insiyatifiyle deðil, kodlama sýrasýnda \
+            tanýmlanmaktaydý. Bu örnekte ise vtAdý ve ndAdý'yla kullanýcý prompt tarayýcý iletisiyle istediði adlarý verebilmektedir. \
+            Ancak yine de verilen adlar kenara not edilip, arasýra temizlenerek tarayýcý rahatlatýlmalýdýr. Örnekte, menü seçenekleri: \
+            Veritabanýný sil, Nesnedeposunu sil, Kayýtlarý göster, (Kayýtlarý) Gizle; ayrýca Yenibir kayýt giriþi olarak 5 adettir. Kayýt içeriði: kimlik, \
+            baþlýk, açýklama, tarih bilgi alanlarýndan oluþur. Kimlik, burada program tarafýndan otomatikmen sayýsal olarak sýfýrdan \
+            artan rakamdýr; tekrar sýfýrdan baþlamasý için nesnedeposu veya veritabaný silinerek yeniden yaratýlmalýdýr. Kayýt giriþi \
+            sonuçlarýnýn izlenmesi için Kayýtlarý-göster, özellikle çok kayýtlý gösteride gereksiz sayfa iþgalini önlemek için Gizle seçeneði \
+            týklanmalýdýr. Gizlenen kayýtlar silinmez, nesnedeposunda mevcuttur, sadece ekran görüntüsü gizlenir. Kayýtlar tek tek, \
+            gösterim saðýndaki Sil butonu týklanarak silinebildiði gibi, nesnedeposu yada veritabaný silindiðinde de tamamen temizlenmiþ \
+            olur. Onupgradeneeded (güncellenme-ihtiyacý) fonksiyonunda tanýmlanan nesneDeposu.createIndex ile kayýtlar sadece kimlik-no \
+            ile deðil, endekslenen baþlýk, açýklama ve tarih verileriyle de artan sýralamalý görüntülenebilir; ancak bu konu 6f ve 6g örneklerinde \
+            detaylýca iþlenmiþtir." +
+            "<br/>29) Altprogram-6d html sayfa seçenekleri: Veritabanýný sil, Nesnedeposunu sil, Videolarý yükle, Videolarý göster, Videolarý gizle. \
+            Fetch-getir fonksiyonu http.server/localhost:8000 yerelsunucuyu gerektirmektedir. Veritabaný ve nesnedeposu adlarý dýþardan \
+            girilmektedir, her yükleniþte ayný adlar olmasý gerekmez. 6 adet videolar adý ve bunlarýn diskte webm tip dosyalarý vardýr. Her giriþte \
+            window.onload verili adlarla veritabaný ve nesnedeposu tarayýcýda halihazýrda varsa açýlýr, yoksa onupgradeneeded özellikleriyle \
+            yeniden yaratýlýr. Videolarý yükle düðmesi týklanýrsa, program veritabaný nesnedeposunda verili ad ve webm anahtar:deðer çiftleri \
+            yoksa if(!talep.result){videoyuGetir(videolar[i]) gereði videolarý yeniden fetch-getirle nesnedeposuna ekler. Videolarý göster týklanýnca \
+            openCursor-if(izlek)-continue()-else gereði nesnedeposunda mevcut kayýtlarý baþtan sona main-article-h2-video-source elemanlarýyla \
+            dinamik yaratýp videolarý varsayýlý kontrollarla html sayfasýna a-z artan isimle {keyPath:'ad'} altalta sýralar ve kullanýcýnýn oynatmasýna hazýr \
+            sunar. Videolarý gizle, nesnedeposundan silmeden, sadece html sayfasýndan siler. Ara ara tarayýcýyý rahatlatmak için verili adlardaki \
+            nesnedeposu ve veritabaný'nýn silinmesini öneririm. Ýstendiðinde diskten tekrar kolayca fetch-yükleyebilirsiniz." +
+            "<br/>30) Altprogram-6e biröncekiyle aynýdýr; sadece bunda nesnedeposu kaydýndaki webm yanýsýra mp4 bilgialaný da ekjlenmiþ, \
+            bu .mp4 uzantýlý videolar da yüklenip, html sayfasýnda yanyana sunularak, kullanýcýnýn heriki video'yu da oynatabilmesine olanak \
+            tanýnmýþtýr. Ayrýca tarayýcýnýz ('serviceWorker' in navigator) kayýtçýyý destekliyorsa .js uzantýlý kodlama yüklenip, ilk kurulumdaki .html, \
+            .css ve .js program yüklemelerini ve her fetch-getir disk dosya okunmasýný takip ederek konsoldan dökümlerini sunmaktadýr." +
+            "<br/>31) Altprogram-6f bu örnekte veritabaný kayýtlarý indexedDB==>Blob/File düðmesi týklanýrsa, her bilgialaný arasýna virgül, \
+            her kayýt arasýnda (;) olacak þekilde tek bir dizgeye sýralanýp dosyam.txt adýyla 'new Blob/File' disk dosyasý yaratýlýp, veriler aktarýlýp, \
+            istediðiniz klasörde saklayabilmeniz için download/indirilmektedir. Tersine input/FileReader==>indexedDB üstündeki 'Dosya Seç' \
+            týklanýrsa, bu defa da içerisinde veritabaný kayýtlarý mevcut dosyayý seçip, içerik verilerini F12-konsol'da altalt görüp onay verirseniz, \
+            mevcut nesnedeposunu temizleyip, bu dosya kayýtlarýný ekleyecektir. Böylece tarayýcýda görülmeyen yada farklý tarayýcý yada bilgisayarda \
+            ayný verilerle (þayet binlerce kayýt birikmiþse) internet aktarmasýyla her yerde bu veritabaný kayýtlarýyla çalýþmanýza devam edebilirsiniz.\
+            Disk dosyasý yaratmak için 'new Blob/File', okumak içinse 'new FileReader' dosya nesneleri kullanýlmýþtýr. Örnekte kayýt dökümleri \
+            keyPath:no ile artan alýnabildiði gibi, onupgradeneeded safhasýnda nesneDeposu.createIndex ile yaratýlan isim, yaþ ve eposta bilgi \
+            alanlarýnýn tercih edeceðiniz herhangibiriyle de vt.transaction(ndAdý,'readonly').objectStore(ndAdý).index('endeks?').openCursor().onsuccess \
+            endeks izlekli açarak artan sýralý döküm almanýz mümkündür. Böylece JS'nin indexedDB veritabaný endeksli artan dökümlerinin son derece \
+            pratik tekniðini de uygulamýþ olmaktasýnýz." +
+            "<br/>32) Altprogram-6g tamamen endeksli veritabaný kayýtlarý dökümüne hasredilmiþtir. Ýlk onupgadeneeded kurulumunda kayýt \
+            bilgialanlarýnýn tümü nesnedeposu.createIndex ile endekslenmiþ (e1-->e9), ayrýca program içinde tablo baþlýklarý (9 adet th) týklandýðýnda \
+            baþlýk adýna duyarlý olarak oncursor-izlek sýralý nesnedeposu kayýt okuma kýlavuzu aktif endeksle iliþkilendirilmiþtir (vt.transaction(ndAdý, \
+            'readonly').objectStore(ndAdý).index(aktifEndeks)). Böylece týklanarak seçilen baþlýða ait endeks kullanýlarak kayýtlar o baþýk içeriklerince \
+            tabloda yeniden artan sýralý düzenlenmiþtir. Programa ilk giriþte 'Kayýtlarý yükle' týklanarak, diskdosyasýnda deðil, kodlama içindeki kayýtlar \
+            nesnedeposuna (objectStorage) eklenmelidir. Kayýtlar gizlenmek istediðinde tbody içindeki tabloVerisi.innerHTML='' silmek yeterlidir. \
+            Ayrýca nesnedeposunu veya hepten veritabanýný da silebilirsiniz. Her baþlýða göre yeniden endeksli artan sýralamalý tablolama dökümünü \
+            sergileyen ideal örnektir. Ýstediðiniz gibi de veritabaný ve nesnedepolarýný silip yeniden kurabilirsiniz." +
+            "<br/>33) Altprogram-7a1 çevrimiçi çalýþan mapquest.js ve mapquest.css haritaarama hazýr dosyalarýný gerektirir. Sadece css id=#map \
+            için 600px en ve boy vasfý tanýmlamak yeterlidir. Özel uygulama-anahtarý da istemez. Haritanýzý +- düðmesiyle ebatlayýp Manchester Ýngiltere \
+            merkezinden tüm dünyayý sörfleyebilirsiniz." +
+            "<br/>34) Altprogram-7a2 hazýr map haritasýna tileLayer='hybrid' melez tiplemeyle basit harita yerine kuþbakýþ canlý görüntü saðlanýr. \
+            Ayrýca Manchester ortasýna A harfli ikon ve týklayýnca 'Burasý Manchester-UK'dýr!' açýklamasý da eklenmiþtir, ancak bu özelleþtirmenin \
+            geçerlilenmesi için uygulama-anahtarý istemektedir." +
+            "<br/>35) Altprogram-7b1 çevrimiçi 'https://maps.googleapis.com' GOOGLE haritayý getirir, ancak 'key=ENTER-API-KEY-HERE' \
+            anahtar olmayýnca görüntüyü kapar; 'key=' þeklinde silerseniz harita hafif puslu ve 'For development purposes only' üstyazýlý gösterir. \
+            Gerçek google haritasý için sað-alttaki 'Harita hatasý bildirin' týklanýrsa, gelir; orada -+ikon üstü 'Konum' týklanýrsa internet giriþ yada \
+            GSM-Google hesap adres konumunuz haritada iþaretli olarak, harita Manchester'den aktüel konumunuza kayar." +
+            "<br/>36) Altprogram-7b2 600px en ve boylu Manchester merkezli programcýlýk maksatlý puslu haritanýzýn ortasýna flama iþareti \
+            kondurup, týklanýnca konuma dair istediðiniz açýklamayý yazabilirsiniz. Açýklama balonunun sað-üstündeki X týklanýnca balon kapanýr." +
+            "<br/>37) Altprogram-7c 'https://www.nytimes.com' sitesine doðrudan çevrimiçi girip, arama kutusunu kullanarak da yararlanabilirsiniz, \
+            yada mevcut kodlamayla özelleþtirdiðiniz ekranýnýzda, istediðiniz makale terimini girip, ilk-son tarih arasýnda rasladýðý tüm ilgili haberleri \
+            varsa bir resimli küçük article kutusu içinde baþlýk, resim, kýsa açýklama, anahtar-kelimeler formatýnda, azami 10'ar makalelik gruplar \
+            halinde, sayfanýzýn saðýnda alt-alta görüþünüze sunar. Herhangi biri hususunda detay isterseniz baþlýk baðlantýsýný týklamanýz yeterlidir, \
+            ayrý bir tam sekmede tüm haber ve resimler gelecektir. Ýlk-son tarih belirtmezseniz, aradýðýnýz terime dair mevcut tüm makaleleri getirir; \
+            tarih belirlerseniz, aramayý belirlilen 2 tarih arasýyla sýnýrlar. Her 10'ar makalelik sayfayý ileri yada geri çevirebilirsiniz. Tüm bulunanlar \
+            10 adetten azsa ileri-geri-sayfano görünmeyecektir. Html sayfanýzda sunulanlar, isterseniz F12-konsola da düzyazý biçiminde \
+            dökümlendiðinden, inceleyebilirsiniz. Özel anahtar-þifresi verildiðinden hiç kýsýtlanmaksýzýn NewYorkTimes haberlerine kendi özelleþtirdiðiniz \
+            kodlamanýzla eriþebilirsiniz. Ýsterseniz Google spontane tercümeyi de açabilirsiniz. Ýyi araþtýrmalar dilerim!.." +
+            "<br/>38) Altprogram-7d burada da 'https://www.youtube.com' ana sitesini ve arama kutusunu tercih edebilirsiniz. Kodlamanýn çalýþtýrýlabilmesi \
+            için 9 adýmlýk özel anahtar-kelime üretme ve bunu istenen yere yapýþtýrmanýz istenmektedir. Ayrýca localhost yerel sunucu kullanýlmalýdýr. \
+            Kodlama çok basittir, istenen terim girilip (tarihsiz) týklanýnca alt-alta, herbiri  360X600px boy ve enle vasýflandýrýlan azami 10 youtube video, \
+            tahsis edilen section kýsma altalta eklenip, varsayýlý oynatma ayarlarýyla, seyir keyfinize sunulur."
+    </script>
+</body> 
+</html>

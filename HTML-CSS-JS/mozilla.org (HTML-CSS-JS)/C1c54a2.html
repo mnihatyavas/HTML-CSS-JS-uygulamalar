@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c54a2.html: Hýzlý asenkron bitiþ-bekletmeli geciktirilen vaat'lerin kabul mesajlarý örneði.</title>
+    <style>
+        html {background-color: #152;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 300px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            text-align: center;}
+        h3 {margin:0;}
+    </style>
+</head>
+<body>
+    <h3>F12-konsolu aç (Hýzlý asenkron bitiþ-bekletme)</h3>
+
+    <script>
+        let no = 0;
+        let ilkZaman = Date.now();
+
+        zamanTesti()
+            .then (()=>{
+                let toplamGeciktirme = Date.now() - ilkZaman;
+                alert ("Geçen toplam zaman: " + toplamGeciktirme + "mS'dir."); 
+                console.log ("Geçen toplam zaman: " + toplamGeciktirme/1000 + " sn'dir."); 
+            }); // then sonu...
+
+        async function zamanTesti() {
+            const test1= geciktirenVaat (1000);
+            const test2= geciktirenVaat (3000);
+            const test3= geciktirenVaat (4000);
+            const test4= geciktirenVaat (2000);
+
+            console.log (test1 ); // await olmayýnca bitmesi beklenmeden birsonrakine geçilir...
+            console.log (await test2); // Deðiþkene atalý await fonksiyonlarý çoklu (hýzlý) sicimle ayný anda iþletiyor...
+            console.log (await test3);
+            console.log (await test4);
+        }; // func sonu..
+
+        function geciktirenVaat (süre) {return new Promise ((kabul, red)=>{setTimeout (function() {kabul (`${++no} no'lu, ${süre}mS geciktirmeli Vaat kabulü tamamlandý.`);}, süre);});};
+    </script>
+</body>
+</html>

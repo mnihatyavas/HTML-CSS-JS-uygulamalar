@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c50.html: Senkron asenkron beklet getir vaat dosya açma örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+    <script>
+        function fonk1() {document.getElementById ("göster").innerHTML ="";}
+    </script>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="fonk1()">
+    <h3>Asenkron bekletmeli vaatler</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C1c51a.html" target="_">1a) Dizi listesini forEach döngüsüyle F12-konsola dökümleme örneði</a></h4>
+    <h4><a href="C1c51b.html" target="_">1b) Json dizgesinin try-catch-finally kontrollu nesneye çevrilip konsolda sunulmasý örneði</a></h4>
+    <h4><a href="C1c51c.html" target="_">1c) Ardýþýk JS senkron iþlemlerle html sayfaya p-paragraflarý ekleme örneði</a></h4>
+    <h4><a href="C1c51d.html" target="_">1d) Ardýþýk JS senkron geciktirilmeli iþlemlerle html sayfaya p-paragraflarý ekleme örneði</a></h4>
+    <h4><a href="C1c51e.html" target="_">1e) Geriçaðýrma metoduyla fonksiyon argümaný olarak baþkabir fonksiyonu kullanma örneði</a></h4>
+    <h4><a href="C1c51f.html" target="_">1f) Senkron JS'yle tuval boyama, silme ve hatýrlatma iþlemleri örneði</a></h4>
+    <h4><a href="C1c51g.html" target="_">1g) Çoklu sicimli çalýþan asenkron Worker ile anaprogram arasýndaki mesaj alýþveriþi örneði</a></h4>
+    <h4><a href="C1c51h1.html" target="_">1h1) Çoklu sicimli asenkron fetch-then-then-catch ile resim getirme örneði</a></h4>
+    <h4><a href="C1c51h2.html" target="_">1h2) Çoklu sicimli asenkron fetch-then-then-then-catch ile resim getirme örneði</a></h4>
+    <h4><a href="C1c51i.html" target="_">1i) Çoklu sicimli geriçaðýrmalý asenkron XHR ile resim yükleme örneði</a></h4>
+    <h4><a href="C1c52a.html" target="_">2a) Asenkron gecikmeli setTimeout ile selamlama örneði</a></h4>
+    <h4><a href="C1c52b.html" target="_">2b) Asenkron gecikmesiz setTimeout ile selamlama örneði</a></h4>
+    <h4><a href="C1c52c.html" target="_">2c) Çoklu sicimli asenkron setInterval ve kendini çaðýran setTimeout örneði</a></h4>
+    <h4><a href="C1c52d.html" target="_">2d) Gecikmeli yapýlacak asenkron selamlamanýn yapýlmadan iptali örneði</a></h4>
+    <h4><a href="C1c52e.html" target="_">2e) Her saniye asenkron setInterval'ýn güncellediði saatý gösterme ve gizleme örneði</a></h4>
+    <h4><a href="C1c52f.html" target="_">2f) Kronometrenin asenkron setInterval'le göster-gizle ve baþlat-durdur-sýfýrla örneði</a></h4>
+    <h4><a href="C1c52g1.html" target="_">2g1) Asenkron requestAnimationFrame ritmiyle nesne döndürme canlandýrmasý örneði</a></h4>
+    <h4><a href="C1c52g2.html" target="_">2g2) Asenkron requestAnimationFrame ve setTimeout'la çemberli tuþlama oyun örneði</a></h4>
+    <h4><a href="C1c53a.html" target="_">3a) Geciktirmeli asenkron vaat kabul mesajý örneði</a></h4>
+    <h4><a href="C1c53b.html" target="_">3b) Geciktirmeli asenkron vaat(kabul,red).then.catch mesajý örneði</a></h4>
+    <h4><a href="C1c53c1.html" target="_">3c1) Vaat kýlýflý asenkron fetch-then-then-catch örneði</a></h4>
+    <h4><a href="C1c53c2.html" target="_">3c2) Kompakt asenkron  fetch-then-then-catch örneði</a></h4>
+    <h4><a href="C1c53d1.html" target="_">3d1) Promise.any vaat ile 3 asenkron fetch'den herhangi birini sunma örneði</a></h4>
+    <h4><a href="C1c53d2.html" target="_">3d2) Promise.all vaat ile 3 asenkron fetch-then-catch-finally'den tümünü sunma örneði</a></h4>
+    <h4><a href="C1c54a1.html" target="_">4a1) Yavaþ asenkron bitiþ-bekletmeli geciktirilen vaat'lerin kabul mesajlarý örneði</a></h4>
+    <h4><a href="C1c54a2.html" target="_">4a2) Hýzlý asenkron bitiþ-bekletmeli geciktirilen vaat'lerin kabul mesajlarý örneði</a></h4>
+    <h4><a href="C1c54b1.html" target="_">4b1) Asenkron bekletmeli getir-catch'le resim getirme örneði</a></h4>
+    <h4><a href="C1c54b2.html" target="_">4b2) Asenkron bekletmeli getir-then-catch'le resim getirme örneði</a></h4>
+    <h4><a href="C1c54b3.html" target="_">4b3) Asenkron bekletmeli try-catch'li getir'le resim getirme örneði</a></h4>
+    <h4><a href="C1c54b4.html" target="_">4b4) Asenkron bekletmeli getir-then-then-catch'le resim getirme örneði</a></h4>
+    <h4><a href="C1c54c1.html" target="_">4c1) Hýzlý Promise.all vaat ile 3 asenkron bekletmeli yalýn fetch ve çaðýran göster-catch örneði</a></h4>
+    <h4><a href="C1c54c2.html" target="_">4c2) Hýzlý Promise.all vaat kýlýfla 3 asenkron bekletmeli fetch-try-catch-finally ve çaðýran yalýn göster() örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "ÖNEMLÝ NOT: Fetch'li vaat (>>>python -m http.server) ve (localhost:8000) gerektiren dosyalar genelde tarayýcýda saklanýp \
+            dosyalara sonradan yapýlan deðiþiklikleri kaale almamaktadýr. Bu durumda ilgili tarayýcýnýn tüm geçmiþi Ctrl-H ile silinmeli, hatta \
+            python http.server dahi yeniden kapatýlýp/açýlmalýdýr." +
+            "<br/>1) Disk dosyasý okumanýn senkron asenkron beklet getir vaat-ler yöntemleri sunulmaktadýr. Toplam 4 grup \
+            kapsamýnda 32 altprogramdan müteþekküldür." +
+            "<br/>2) Altprogram-1a dizi elemanlarý dizgesel mitolojik tanrý adlarý elemanlarýndan oluþmuþtur. Dizi.forEach((a,b)=>{..}) \
+            hazýr fonksiyonuyla dizi elemanlarýnýn baþtan sona a:elemanadý, sýfýrdan baþlayan b:elemanendeksi dökümünü F12-konsoldan \
+            alt alta sýralamaktadýr." +
+            "<br/>3) Altprogram-1b iki adet json dizgesi JSON.parse(jsonDizgesi)'yle jsonNesnesi'ne çevrilmekte, F12-konsoldan bu \
+            nesnenin anahtar:deðer çiftleri biçimli olarak anahtar1.deðer1 þeklinde try-catch-finally bloklarýnda, hata varsa yakalayýp, \
+            herhalükarda finally iþletilerek tamamlanmaktadýr." +
+            "<br/>4) Altprogram-1c düðme týklanýnca düðme.addEventListener('click',fonk(){..}) gereði dinamik p-elemaný yaratýp, her \
+            týklamayla artan paragraf-no'lu ifadeyi hem document.body.appendChild(p) ile html-body sayfasýna eklemekte, hem de \
+            console.log(p) ile F12-konsoldan sunmaktadýr. Ayrýca program akýþý tarayýcý alert/ikaz kutusuyla Tamam týklanýncaya dek \
+            durdurulmaktadýr." +
+            "<br/>5) Altprogram-1d önceki sýralý paragraf yazdýrýrken alert'le bekletmek yerine bu kez 10Milyon sayarlý for döngüsünde \
+            new Date() yaratýlarak, ortalama 17-18sn bekletilip herbir ardýþýk paragraf html-body ile F12-konsolda sunulmaktadýr." +
+            "<br/>6) Altprogram-1e callback/geriçaðýrmalý fonksiyon, bir fonksiyon argümaný yerine baþka bir fonksiyon adý kullanarak, \
+            argüman fonksiyonu buradan istenen ad deðerini tarayýcý prompt ile girip çalýþtýrarak, selamlama çýktýlarýný alert ve console.log \
+            ile sunmaktýr. Ayný iþlemi gittikce daha basitleþtirip 2 ayrý þekilde daha iþletebiliriz." +
+            "<br/>7) Altprogram-1f addEventListener'le tuvaliBoya, ikaz ve sil fonksiyonlarýna duyarlýdýr. Ýkaz alert, tuval'e son eklenen \
+            top sayýsýný hatýrlatýr; sil, tuvali zeminrengi sarýyla boyayýp, üstündeki toplarý gizler; tuvaliBoya, eklenecek top sayýsýný sorup, \
+            for döngüsüyle istenen adet topu tuvalde, rasgele konum, rasgele renk ve netlik, rasgele yarýçap deðerleri üreterek konumlandýrýr. \
+            Ancak top sayýsý 100 üzerindeyse, iþlem yavaþlayacak ikazý; 100000 üzeründeyse de iþlem diðer tüm iþlemleri geçersizleyip \
+            beklemenin ancak program kýrýlarak çýkýlabileceði ikazý reddedilmezse gerçekleþtirilir." +
+            "<br/>8) Altprogram-1g ilk bu örnekle asenkron çoklu sicim iþletmeye baþlanacaktýr. new Worker, fetch gibi http.server yerelsunucu \
+            vasýtasýyla çalýþýr. Yeni-iþci onmessage ve postMessage hazýr fonksiyonlarýný kullanýr. Çaðýran anaprogram, çaðrýlan alt-iþci \
+            programa postMessage'la veri gönderir, onmessage'la da ordan gelen veriyi yakalar. Ýþci alt-programram ise geleni onmessage'la \
+            yakalar, kendisi de postMessage'la anaprograma mesaj gönderir. Ýþci-alt programdaki iþlem gecikmesi new Date() ile saptanýp, \
+            alert ve console.log'larla bu zamanlamalar çýktýya duyurulur. <br/>Normal senkron kod akýþý sýralý olup, eldeki iþ bitirilmeden birsonraki \
+            koda geçilmezken, asenkron iþlemler çoklu sicimle ayný anda farklý kodlamalarý akýþ düzenine bakmaksýzýn iþletebilir, böylece \
+            kullanýcýnýn tek iþleme takýlýp beklemesini önler." +
+            "<br/>9) Altprogram-1h1 fetch/getir asenkron yurel dosya okuma fonksiyonuyla sýralý kod çalýþmasý ve asenkron gecikme \
+            gösterilmektedir. Programa baþlama mS konsola iletilmiþ, sonra fetch-then-then-catch'le resim dosyasý okunup, html-body \
+            sayfaya eklenmiþtir. Tüm kodlama sonundaysa tekrar konsola senkron sýralý zamanlama sunulmuþtur. Dikkat edilirse, sýralý \
+            son iþlem zamanýndan, ancak çok sonralarý (60-70 mS sonra) asenkron resmin gövdeye eklenmesi tamamlanmaktadýr." +
+            "<br/>10) Altprogram-1h2 asenkron fetch-then-then-then-catch'le senkron ve asenkron çalýþma farký daha belirgin þekilde \
+            sergilenmektedir. Senkron sýralama ilk 2 konsol duyurusuyla kodlama sonuna ulaþýldýðý halde, asenkron fetch arka planda \
+            iþlemini sürdürmekte ve kodlama bitiþ zamanýndan ancak 100-200mS kadar sonra resmi gövdeye eklemeyi tamamlamaktadýr." +
+            "<br/>11) Altprogram-1i asenkron fetch yerine asenkron xhr/XMLHttpRequest hazýr fonksiyonla resim sayfaya eklenecektir. \
+            Burada da sýralý senkron zamanlama ve arkaplanda iþleyen asenkron zaman gecikmeleri rakamsal sýralama ve iþlem tamamlama \
+            zamanlamalarýyla konsola duyurulmaktadýr. XHR yöntemi callback/geriçaðýrma, argümanlý fonksiyon kullanýmýyla gerçekleþtirilmektedir." +
+            "<br/>12) Altprogram-2a setTimeout(()=>{..},1000) geciktirmeli hazýr fonksiyonun 2 argümanýndan ilki dahili/harici fonksiyon, \
+            ikincisiyse bu fonksiyonun nekadar mS sonra iþletileceðidir. Geciktirme sonucunda fonksiyon (eðer kendini çaðýran deðilse) sadece \
+            bir kez iþletilir. Kendiniçaðýran tipte yineleniyorsa, sonlandýrma clearTimeout'la yapýlýr. Normal kodlama sýralamasý ve gecikmeyle \
+            sýralamada oluþan farklýlýklar sn olarak sergilenmektedir." +
+            "<br/>13) Altprogram-2b 0 sn'li gecikmesiz setTimeout bile olsa sýralý kodlama bunu birsonraki kodlamadan birkaç mS sonra iþler. \
+            Bilindiði gibi alert ise kodlama sonunda bile olsa, önceki sayfa ve konsol sunumlarýný durdurarak öncelikle bu tarayýcý ikazýný sunar ve \
+            önceki zamanlý kodlama iþlem sonuçlarýnýn sunumlarýný bilahere tamamlar." +
+            "<br/>14) Altprogram-2c a=setInterval(f,mS) tanýmlý f fonksiyonu her mS aralýklarla biteviye koþturur; ta ki clearInterval(a) ile \
+            iptal edilinceye dek (örnekte 10 koþum sonrasý iptal). b=setTimeout(f,mS) ise tanýmlý f fonksiyonu sadece mS sonra bir kez koþturur; \
+            koþturmadan önce iptal edilmesi clearTimeout(b) ile mümkündür; yada örnekteki kendini-çaðýran'sa çoklu koþturumdan sonra istediðimiz \
+            anda iptal edebiliriz (örnekte rasgele [10,50] kezden sonra iptal). Heriki koþturum da asenkron olduðundan i numaratörü çoklu sicimli \
+            içiçe almaþýk artýrabilmektedirler." +
+            "<br/>15) Altprogram-2d button/input yakalamalarý document.getElementById/id, document.querySelector-All-(.sýnýf) yada doðrudan id \
+            yegane deðiþken adýymýþcasýna doðrudan script JS kodlamada kullanýlabilmektedir. Ayrýca form içi button göndermeleri, doðrudan \
+            düðme.onclick/id, düðme.addEventListener('click',f) yada form.addEventListener('submit',f(o){o.preventDefault()..}) ile yapýlabilmektedir. \
+            a=setTimeout(f,mS,ad) mS geciktirmeli f fonksiyon koþturulurken, fonksiyona ad argümaný gönderilebilmektedir. Örnekte, ayrýca iptal \
+            düðmesi mS geciktirme bitmeden týklanýrsa clearTimeout(a) ile f-fonksiyon koþturulmadan iptali mümkün kýlýnmýþtýr. Bu arada iptal \
+            düðmesinin aktifliði, ancak setTimeout koþturulunca sözkonusu olduðundan, mS doluncaya dek iptal düðmesi açýkmaviyle ýþýldamakta, \
+            diðer zamanlarda pasif (karanlýk mavi) kýlýnmaktadýr (iptal.disabled=false/true ve iptal.style.color='aqua'/'blue' ile)." +
+            "<br/>16) Altprogram-2e nitekim burada göster ve gizle doðrudan id yegane deðiþken adýymýþcasýna, saat sýnýf adýysa \
+            saat=document.querySelector('.saat') yöntemiyle nesneleþtirilmiþtir. Sade þekilde 'saat.textContent=new Date().toLocaleString()' bize \
+            aktif bilgisayar saatýný göster/gizle olanaðý saðlamaktadýr." +
+            "<br/>17) Altprogram-2f html sayfasýna p-saat yerine p-kronometre sýnýfý eklenmiþ, kontrol düðmeleri de göster, gizle, baþla, dur, sýfýrla \
+            olarak þekillendirilmiþtir. Gösterme kronometre.display='block'/'', gizleme ise kronometre.display='none' ile yapýlabilmekte; Baþla týklanýrsa \
+            a=setInterval(kronometreyiGüncelle,1000) fonksiyonu, kronometrenin saat:dakika:saniye göstergesindeki saniyeyi her 1sn aralarla \
+            ++sayaç artýracaktýr. Dur düðmesi sayacý sýfýrlamadan clearInterval(a), Sýfýrla düðmesiyse sayacý sýfýrlayarak iptal eder. Bu arada \
+            fonksiyonel olmayacak düðme karanlýk portakal, olacaklar ise parlak sarýyla aktif kýlýnmaktadýr. Artan sayaç deðerleri her 60 sn sonra \
+            dakikayý, her 60*60=3600 sn sonra da saatý bir artýrmaktadýr. Ayrýca görüntü düzgünlüðü bakýmýndan bu haneler 10 altýndaysa baþlarýna \
+            0/sýfýr eklenmektedir." +
+            "<br/>18) Altprogram-2g1 gövde div/bölüm içinde dönecek ucu oklu çember ikonu vardýr ve ilk ebatý 10em'dir. Sayfa üzerinde: Hýz-Yön, \
+            Ebat, ÇemberRengi, ZeminRengi düðmeleri mevcut olup, ayrýca body/gövde addEventListener ile týklanmaya duyarlý kýlýnýp, týklamada \
+            duran çemberi döndürmekte (döndür fonksiyonu ve içinde kendini çaðýran animasyonTalebi=requestAnimationFrame(döndür) ile), dönen \
+            çemberiyse durdurmaktadýr (clearAnimationFrame(animasyonTalebi)). Prompt tarayýcý kutusuyla çember dönüþ hýzý ve yönü (-+hýz=[0.2,10]), \
+            ebatý ([1,20]em), çember rengi (rgba(0-255,0-255,0-255,0-1)), zemin rengi (ismen 'DeepPink') girilip (çember.stye.color='DeepPink') sonuç \
+            etkinleþtirilmektedir. Dönüþ çember.style.transform=rotate(dönüþSayýsý)deg dereceyle, dünüþSayýsý=(ritim-ilk)hýz, yani girilen hýzla ters \
+            orantýlýdýr: hýz küçük-eksi girilmiþse sola-süratli veya büyük-artý girilmiþse saða-yavaþ dönecektir." +
+            "<br/>19) Altprogram-2g2 önceki dönen çember örneði basit tuþlama oyununa geliþtirilmiþtir. Alt-ortadaki OyunuBaþlat düðmesi týklanýncaya \
+            dek çember görünmez. Bu arada üstteki düðmelerle çemberin hýz-yön, ebat, renk, zemin-rengi'ni aynen öncekindeki gibi deðitirebilirsiniz. \
+            OyunuBaþlat düðmesi týklanýnca çember belirir ve rasgele 5-10sn döner, durur durmaz, hangi oyuncu daha önce kendi harfini týklamýþsa \
+            (sadece A yada B harfi) onun kazandýðý ilan edilip, tam 5sn sonra tekrar ortadaki OyunuBaþlat düðmesi görünüp, çember gizlenerek \
+            birsonraki oyunu baþlatma amaçlý baþa-alýnýr." +
+            "<br/>20) Altprogram-3a asenkron vaat.then.catch kabul/red mesajlarý 4sn geciktirilmeyle hem tarayýcý alert kutusundan hem de konsoldan \
+            týklama sayaç no rakamýyla duyurulmaktadýr. 3.duyuru vaat reddi olup, catch ile, diðer kabullerse then ile yakalanmaktadýr. Vaat asenkron \
+            olduðundan bekleme sicimindeyken baþka iþlemler yapýlabilir." +
+            "<br/>21) Altprogram-3b birönceki asenkron vaat-then-catch yapýsý farklý kurulmuþtur. Öncelikle her týklamada duyurulacak mesaj ve geciktirme \
+            süresi haricen tarayýcý prompt'uyla girilmektedir. Bu veri giriþleri hatalýyla irdelenip vaat kabul deðil red mesajý fýrlatýlmaktadýr. Kabulse tarayýcý \
+            alert ve console.log'dan, redse alert ve console.error'dan geciktirilmeli mesajlarý duyurulmaktadýr." +
+            "<br/>22) Altprogram-3c1 (yerelsunuculu) asenkron fetch-then-then-catch bileþik yapýsý, herbiri ayrýk ifadelerle iþlenmiþtir. Öncelikle fetch(yurel) \
+            kahve.jpg resmi getirilmiþ; sonra then ile önceki vaat yakalanýp getirilen yurelin kabul.blob() tipi geridöndürülmüþ, kabul nesnesi oluþmamýþsa \
+            hata fýrlatýlmýþtýr. Sonraki ifade önceki vaati tekrar then'le yakalayýp, gönderilen damladan img nesnesi yaratýp, resmin src, title ve alt vasýflarýný \
+            ayarlayýp resmi gövdeye eklemiþ ve bunu da konsolda duyurmuþtur. Sonunda, önceki vaat tekrar catch ile yakalanýp þayet fetch hiyerarþisinin \
+            herhangibir then adýmýnda 'throw new Error' ile hata fýrlatýlmýþsa (ilki) yakalanarak konsola iletilmiþtir." +
+            "<br/>23) Altprogram-3c2 önceki fetch.then.then.catch yapýsý bu kerre kompakt ardýþýk bileþik tek ifadeli JS kodlamasýyla sunulmaktadýr." +
+            "<br/>24) Altprogram-3d1 Promise.any(çay,kahve,yorum).then().catch() vaat kýlýfýyla, önceden tanýmlý ve herbiri yurel dosyasý fetch.then'i \
+            çaðýran nesnel deðiþkenleri iþler, içlerinden herhangibirisini sonuçlandýrýr; muhtemel hatayý catch'le konsola iletir. Kasten yorum.txt dosyasý \
+            namevcut býrakýldýðýndan, hata duyuracaktýr." +
+            "<br/>25) Altprogram-3d2 önceki fetch.then yapýsýnda catch olmadýðýndan vaat catch'i namevcut dosya hatasýný yakalayamýyordu. Burada \
+            fecth-then-catch-finally yapýsý muhtemel getir hatalarýný yakalayýp bildirmektedir. Promise-all-then yapýsýyla, vaat kýlýfýyla getirilen bütün \
+            kahve, çay ve yorum dosyasý tip kontrollü (blob() yada text() ) img/resim yada p/paragraf elemanlarýyla nesneleþtirilip gövdeye eklenmektedir." +
+            "<br/>26) Altprogram-4a1 async önekli asenkron özelliði kazandýrýlan bir fonksiyon içindeki alt-fonksiyon çaðýrmalarýn önüne await/beklet \
+            getirildiðinde iþlem sýrasý, öncelikle await alt-fonksiyonunu tamamlar ve sonrasýnda takipeden kodlamaya geçer. Örnekte ilk geciktirilen vaat \
+            önünde await olmadýðýndan ona ayrý sicimle pending/ertelendi yorumlu, toplam zamana dahil edilmemektedir. Program sonraki await bitiþ \
+            beklemeli 3 alt-fonksiyonu tamamlayýp, onlara bekletilen (yavaþ) zaman gecikmelerini toplayýp (9..sn) alert ve console.log ile duyurmaktadýr." +
+            "<br/>27) Altprogram-4a2 öncekinden farký asenkron fonksiyon içindeki await alt-fonksiyonlarý önce await'siz farklý nesnel deðiþkenlere \
+            atamýþ, sonra da bu await deðiþkenleri iþletince, program herbir deðiþkene ayrý sicimle bitiþ-bekletmeli deðil tüm fonksiyonlarý ayrý sicimli \
+            ama ayný zamanda (await'siz pending/ertelenen hariç) (hýzlý) iþletmiþtir. Bu itibarla geçen zaman toplamý, gecikirilen enuzun fonksiyonunkiyle \
+            (4..sn) hemen hemen ayný olmaktadýr. Dikkat edilirse Promise.all (deðiþken adlarýna atalý fetch fonksiyonlar) da bu await yöntemle çok daha \
+            hýzlý çalýþacaktýr." +
+            "<br/>28) Altprogram-4b1 sonraki 4 örnek fetch-then-then-catch ana yapýsýnýn, türkçe async getir-then-catch fonksiyonu ve geridönüþlerin \
+            await ile yapýlmasýnýn birkaç deðiþik yöntemini yerelsunuculu sergilemektedir. Sadece geridönüþ hata yakalamalý getir().catch ile async getir \
+            altfonksiyonu await fetch ile resim dosyasý getirmekte, baþarýsýzsa hata fýrlatmakta, baþarýlýysa 'await yanýt.blob()' damlasýyla img resim elemanýnýn \
+            src-title-alt vasýflarýný kurup, gövdeye eklemektedir." +
+            "<br/>29) Altprogram-4b2 async getir fonksiyonu await fetch'le resim dosyasýný getirmekte, baþarýsýzsa hata fýrlatýp, baþarýlýysa 'await yanýt.blob()' \
+            damlasýný geridöndürmekte; çaðýran getir().then.catch ise damlayý img elemaný nesnesine çevirip, resmin src-title-alt vasýflarýný ayarlayýp, gövdeye \
+            eklemektedir. Hata ihtimalindeyse önceden fýrlatýlan hata, catch ile yakalanýp konsolda duyurulmaktadýr." +
+            "<br/>30) Altprogram-4b3 tüm iþlemler async getir fonksiyonunda hata yakalamalý try-catch bloðunda, 'await fetch' ve 'await yanýt.blob()' ile \
+            yaratýlan-vasýflandýrýlan resmin gövdeye eklenmesi, olasý fýrlatýlan hatanýnsa catch'le yakalanýp konsolda duyurulmasýyla tamamlanmakta; \
+            getir() çaðýran ifadeyse yalýn kullanýlmaktadýr." +
+            "<br/>31) Altprogram-4b4 bu kezse tam tersi, async getir fonksiyonu yalýn 'await fetch'i geridöndürmekte, diðer tüm iþlemleriyse çaðýran \
+            getir()-then-then-catch ifadesi üslenmektedir. Ýlk then 'return await yanýt.blob()' ve baþarýsýzsa hata fýrlatmayý; ikinci then alýnan damla \
+            argümanýndan vasýflý dinamik resim elemaný yaratýp gövdeye eklemeyi; catch ise olasý fýrlatýlan hatayý konsolda duyurmayý gerçekleþtirmektedir." +
+            "<br/>32) Altprogram-4c1 Promise.all ve async-await kullanýmlý çay-kahve-yorum dosya üçlüsünün getirilip html-gövdesine eklenmesinin \
+            2 farklý yöntemi uygulanmaktadýr. Çaðýran göster()-catch, async göster fonksiyonunda çay-kahve-yorum deðiþkenlerine atanan dosya getir'i \
+            hýzlý 'await Promise.all' ile deðerler dizisinde (async getir(), await fetch(), return await yanýt.blob()/text(), yada hata fýrlatarak) toparlamakta; \
+            çay ve kahve resimleri src-title-alt'la, yorum metni textContent-title'yle vasýflandýrýlýp hepsi gövdeye eklenmektedir. Çaðýran göster()-catch'se \
+            sadece olasý fetch hata fýrlatýþlarýný yakalayýp, konsolda duyuracaktýr." +
+            "<br/>33) Altprogram-4c2 çaðýran yalýn göster(), async göster fonksiyonunda çay-kahve-yorum fetch'leri hýzlý await Promise.all ile deðerler \
+            dizisine atamaktadýr. Getir async fetch ise try-catch-finally bloðunda await-fetch ile ya hata fýrlatmakta yada return await yanýt.blob()/text() \
+            geridöndürmektedir. Fýrlatýlan olasý hatalarý catch yakalayýp konsolda duyurmakta, her halukarda finally konsol duyurusu da yapýlmaktadýr. \
+            Promise.all ise sonuçta getirdiði 3 deðeri (kahve blob(), çay blob(), yorum text()) resim ve metin vasýflarýyla ayarlayýp gövdeye eklemektedir."
+    </script>
+</body> 
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c47a1.html: Manchester-Ýng.menþeli tüm dünya 'map' haritasý sörfü örneði.</title>
+    <style>
+        html {background-color: #246;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        #map {
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;}
+        h4, p {text-align: center; color: FireBrick;}
+    </style>
+    <script src="C1c47a1.js"></script>
+    <link type="text/css" rel="stylesheet" href="C1c47a1.css"/>
+    <script>
+        // 1. Örneðin temel baþlangýç kodlamasý:
+        var L;
+        window.onload = function() {
+            L.mapquest.key = "UYGULAMA-ANAHTARI";
+            // "map" bir ID haritalý <div> elemanýný kasteder
+            var haritam = L.mapquest.map ("map", {
+                center: [53.480759, -2.242631],
+                layers: L.mapquest.tileLayer ("map"),
+                zoom: 12
+            }); // var sonu...
+        } // win..sonu...
+    </script>
+</head>
+<body>
+    <!-- Sürekli çevrimiçi gerektirir. -->
+    <h4>mapguest.js/C1c47a1.js ve mapguest.css/C1c47a1.css ile temel 'map' örneði</h4>
+    <div id="map"></div>
+    <p>NOT: Çevrimiçi olarak Manchester-Ýng. menþeli tüm dünya haritasýný sörf yapabilirsiniz.</p>
+</body>
+</html>

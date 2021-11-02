@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c51f.html: Senkron JS'yle tuval boyama, silme ve hatýrlatma iþlemleri örneði.</title>
+    <style>
+        html {background-color: #132;}
+        body {
+            background-color: #a97;
+            max-width: 90%;
+            min-width: 650px;
+            height: 550px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        canvas {
+            border: 10px solid rgb(0,0,255);
+            background-color: yellow;}
+    </style>
+</head>
+<body>
+    <p><button class="boya">Tuvali boya</button><button class="ikaz">Hatýrlatýcýyý týkla</button><button class="sil">Tuvali sil</button></p>
+
+    <script>
+        const tuval = document.createElement ("canvas");
+        tuval.width = 640;
+        tuval.height = 480;
+        document.body.appendChild (tuval);
+        let içerik = tuval.getContext ("2d");
+        let adet;
+
+        let boyaDüðmesi = document.querySelector (".boya");
+        let ikazDüðmesi = document.querySelector (".ikaz");
+        let silDüðmesi = document.querySelector (".sil");
+
+        function derecedenRadyana (derece) {return derece * Math.PI / 180;};
+        function rasgele (alt, üst) {return Math.floor (Math.random() * (üst - alt)) + alt;}
+
+        function tuvaliBoya() {
+            adet = Math.floor (Math.abs (prompt ("Top sayýsýný girin:", "100")));
+            if (!adet) adet = 100; // NaN=false
+            if (adet > 100000) {
+                let cevap = prompt ("100000'den fazla top senkron iþlemi týkar, baþka hiçbir iþleme izin vermez, ancak 'Sayfadan Çýk -->Yeniden Yükle' ile programlarý kýrarak durdurabilirsiniz, emin misin [e/h]:", "h").toLowerCase();
+                if (cevap != "e") return false;
+            }else if (adet > 100) {
+                let cevap = prompt ("100'den fazla top senkron iþlemi yavaþlatýr, emin misin [e/h]:", "h").toLowerCase();
+                if (cevap != "e") return false;
+            } // if-iç sonu...
+            for (let i = 0; i < adet; i++) {
+                içerik.fillStyle = "rgba(" + rasgele (0, 255) + "," + rasgele (0, 255) + "," + rasgele (0, 255) + "," + Math.random() + ")";
+                içerik.beginPath();
+                içerik.arc (rasgele (0, tuval.width), rasgele (0, tuval.height), rasgele (5, 50), derecedenRadyana (0), derecedenRadyana (360), false);
+                içerik.fill()
+            } // for sonu...
+        } // func sonu...
+
+        boyaDüðmesi.addEventListener ("click", tuvaliBoya);
+        ikazDüðmesi.addEventListener ("click", () =>alert (`Tuvali son boyamada, rasgele konum, çap ve renkte ${adet} top daha eklediniz.`));
+        silDüðmesi.addEventListener ("click", ()=>{içerik.fillStyle = "yellow"; içerik.fillRect (0,0, tuval.width,tuval.height);} );
+    </script>
+</body>
+</html>

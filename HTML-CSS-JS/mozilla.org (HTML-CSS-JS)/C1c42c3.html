@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c42c3.html: Karo döþemeyi aktüel pencere en ve boyuna duyarlama örneði.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #a97;
+            max-width: 95%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        div {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            background-image: url(resim/karo4.png);
+            border: 10px solid white;}
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        const divBölüm = document.querySelector ("div");
+        let en = window.innerWidth - 70;
+        let boy = window.innerHeight - 120;
+        divBölüm.style.width = en + "px";
+        divBölüm.style.height = boy + "px";
+
+        window.onresize = function() {
+            en = window.innerWidth - 70;
+            boy = window.innerHeight - 120;
+            divBölüm.style.width = en + "px";
+            divBölüm.style.height = boy + "px";
+        } // win..sonu...
+    </script>
+</body>
+</html>

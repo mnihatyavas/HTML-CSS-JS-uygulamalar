@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe" />
+    <title>C1c46c.html: Farklý adlarla veritabaný ve nesnedeposu yaratma/silme, kayýt ekleme, sunma ve silme örneði.</title>
+    <link href="C1c46c.css" rel="stylesheet">
+    <script src="C1c46c.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>indexedDB: endeksliVT</h1>
+    </header>
+
+    <main>
+        <section style="background-color: magenta; display: flex; justify-content: space-between;">
+            <button id="vtSil">Veritabanýný sil</button>
+            <button id="ndSil">Nesne deposunu sil</button>
+            <button id="göster">Kayýtlarý göster</button>
+            <button id="gizle">Gizle</button>
+        </section>
+        <section class="kayýtlarýn-sunumu">
+            <h2>Kayýtlarýn sunumu</h2>
+            <ul></ul>
+        </section>
+        <section class="yeni-kayýt-giriþi">
+            <h2>Yeni bir kayýt girin</h2>
+            <form>
+                <div>
+                    <label for="baþlýk">&emsp;&ensp;Not baþlýðý: </label>
+                    <input id="baþlýk" type="text" required>
+                </div>
+                <div>
+                    <label for="açýklama">Not açýklamasý: </label>
+                    <input id="açýklama" type="text" required>
+                </div>
+                <div>
+                    <button id="gönder">Yeni bir kayýt yaratýn</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&#169;Kopyalamahakký&copy; hiçkimsenindir. Keyfinizce kullanabilirsiniz.</p>
+    </footer>
+</body>
+</html>

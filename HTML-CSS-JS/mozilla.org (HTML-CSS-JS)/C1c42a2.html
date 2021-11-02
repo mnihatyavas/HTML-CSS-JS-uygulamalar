@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C1c42a2.html: Mevcut açıklamada güncelleme, yeni açıklama elemanları ekleme ve silme örneği.</title>
+    <style>
+        html {background-color: #642;}
+        body {
+            background-color: #a97;
+            max-width: 40%;
+            min-width: 250px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        img {border: 2px solid black;}
+        .parlat {
+            color: yellow;
+            background-color: black;
+            padding: 10px;
+            /* width: 250px; */
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <section>
+        <div style="text-align: center;"><img src="resim/dinazor.png" alt="" title="Bir kırmızı Tiranozor Rex: İnsan gibi iki arka bacakları üzerinde dik durabilen, sürüngen kuyruklu, kısa kollu ve ağzında çoklu keskin diş dolu koca kafalı etobur dev." /></div>
+        <p>Burada <a href="http://www.mozilla.org/" target="_b">Mozilla anasayfa</a>'ya bir bağlantımız var.</p>
+    </section>
+
+    <script>
+        const bağlantı = document.querySelector ("a");
+        bağlantı.textContent = "Mozilla Geliştirici Ağ";
+        bağlantı.href = "https://developer.mozilla.org";
+        bağlantı.target = "_blank";
+        const paragraf = document.querySelector ("p");
+        paragraf.textContent ="Burada ilginizi çekebilecek bir bağlantımız var: ";
+        paragraf.appendChild (bağlantı);
+
+        const kısım = document.querySelector ("section");
+        const metin = document.createTextNode (" — ağ geliştirme biliminin prömyer kaynağı.");
+        const paragraf2 = document.createElement ("p");
+        paragraf2.appendChild (metin);
+        kısım.appendChild (paragraf2);
+        //paragraf2.parentNode.removeChild (paragraf2); // Son şerhi silmek isterseniz...
+
+        const h5Gezinti = document.createElement ("h5");
+        h5Gezinti.textContent = "Umarız, Tiranozor'un sırtında yaptığınız gezintiden hoşnutsunuzdur.";
+        kısım.appendChild (h5Gezinti);
+        h5Gezinti.setAttribute ("class", "parlat");
+    </script>
+  </body>
+</html>
