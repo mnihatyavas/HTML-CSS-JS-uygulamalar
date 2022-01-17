@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2b03.html: Kutu en/boy, marj, tampon, taþma, görünebilirlik, kayma ve iptali örneði.</title>
+    <link rel="stylesheet" href="C2.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<h4>Týkladýðýnýzýn içeriðini görmek için F12-konsolu aç</h4>
+
+<div class="çýktý">
+    <div id="örnek1"><h3>Kutu modelinin geniþliði</h3></div>
+</div>
+<code>width:</code>
+<button id="düðme1">Týkla</button>
+<button id="düðme2">Týkla</button>
+<button id="düðme3">Týkla</button>
+<button id="düðme4">Týkla</button>
+<span>en</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek2"><h3>Kutu modelinin enaz-geniþliði</h3></div>
+</div>
+<code>min-width:</code>
+<button id="düðme5">Týkla</button>
+<button id="düðme6">Týkla</button>
+<button id="düðme7">Týkla</button>
+<button id="düðme8">Týkla</button>
+<span>enaz-en</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek3"><h3>Kutu modelinin ençok-geniþliði</h3></div>
+</div>
+<code>max-width:</code>
+<button id="düðme9">Týkla</button>
+<button id="düðme10">Týkla</button>
+<button id="düðme11">Týkla</button>
+<button id="düðme12">Týkla</button>
+<span>ençok-en</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek4"><h3>Kutu modelinin yüksekliði</h3></div>
+</div>
+<code>height:</code>
+<button id="düðme13">Týkla</button>
+<button id="düðme14">Týkla</button>
+<button id="düðme15">Týkla</button>
+<button id="düðme16">Týkla</button>
+<span>boy</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek5"><h3>Kutu modelinin enaz yüksekliði</h3></div>
+</div>
+<code>min-height:</code>
+<button id="düðme17">Týkla</button>
+<button id="düðme18">Týkla</button>
+<button id="düðme19">Týkla</button>
+<button id="düðme20">Týkla</button>
+<span>enaz-boy</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek6"><h3>Kutu modelinin ençok yüksekliði</h3></div>
+</div>
+<code>max-height:</code>
+<button id="düðme21">Týkla</button>
+<button id="düðme22">Týkla</button>
+<button id="düðme23">Týkla</button>
+<button id="düðme24">Týkla</button>
+<span>ençok-boy</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek7">
+        <h3>Kutu içeriklerinin taþmasý</h3>
+        <p style="text-align: left;">Zeytin, narenciye, nar ve hurma hasat sezonlarý henüz bitti. Çiftlik aðasý bu yýlýn hasýlatýndan çok memnun þekilde köþkünde nargilesini fokurdatýyor. Dýþarýsý geç kasým saðanaklarýyla sýrýlsýklam. Yollar suyu yeni çekilmiþ milli dereler gibi balçýktan geçilmiyor.</p>
+    </div>
+</div>
+<code>overflow:</code>
+<button id="düðme25">Týkla</button>
+<button id="düðme26">Týkla</button>
+<button id="düðme27">Týkla</button>
+<button id="düðme28">Týkla</button>
+<span>taþma</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek8">
+        <h3>Kutu içeriklerinin yatay taþmasý</h3>
+        <p style="text-align: left;">Çember çevresinin çapýna bölümü olan "Pi" sayýsýnýn deðeri: 3.1415926535897932384626433832795029. Doðal logaritmasý 1 olan "e=exp(1)" doðal sýðaç þarj/deþarj temeli sayýsýnýn deðeri: 2.7182818284590452353602874713526625.</p>
+    </div>
+</div>
+<code>overflow-x:</code>
+<button id="düðme29">Týkla</button>
+<button id="düðme30">Týkla</button>
+<button id="düðme31">Týkla</button>
+<button id="düðme32">Týkla</button>
+<span>yatay-taþma</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek9">
+        <h3>Kutu içeriklerinin dikey taþmasý</h3>
+        <p style="text-align: left;">Çember çevresinin çapýna bölümü olan "Pi" sayýsýnýn deðeri: 3.1415926535897932384626433832795029. Doðal logaritmasý 1 olan "e=exp(1)" þarj/deþarj temeli sayýsýnýn deðeri: 2.7182818284590452353602874713526625.</p>
+    </div>
+</div>
+<code>overflow-y:</code>
+<button id="düðme33">Týkla</button>
+<button id="düðme34">Týkla</button>
+<button id="düðme35">Týkla</button>
+<button id="düðme36">Týkla</button>
+<span>dikey-taþma</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek10">
+        <h3>Kutu içeriklerinin taþma bloðu</h3>
+        <p style="text-align: left;">Zeytin, narenciye, nar ve hurma hasat sezonlarý henüz bitti. Çiftlik aðasý bu yýlýn hasýlatýndan çok memnun þekilde köþkünde nargilesini fokurdatýyor. Dýþarýsý geç kasým saðanaklarýyla sýrýlsýklam. Yollar suyu yeni çekilmiþ milli dereler gibi balçýktan geçilmiyor.</p>
+    </div>
+</div>
+<h4>Not: Sadece Firefox tarayýcýda geçerlidir.</h4>
+<code>overflow-block:</code>
+<button id="düðme37">Týkla</button>
+<button id="düðme38">Týkla</button>
+<button id="düðme39">Týkla</button>
+<button id="düðme40">Týkla</button>
+<span>taþma-bloðu</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek11">
+        <h3>Kutu içeriklerinin taþma satýriçi</h3>
+        <p style="text-align: left;">Çember çevresinin çapýna bölümü olan "Pi" sayýsýnýn deðeri: 3.1415926535897932384626433832795029. Doðal logaritmasý 1 olan "e=exp(1)" sayýsýnýn deðeri: 2.7182818284590452353602874713526625.</p>
+    </div>
+</div>
+<h4>Not: Sadece Firefox tarayýcýda geçerlidir.</h4>
+<code>overflow-inline:</code>
+<button id="düðme41">Týkla</button>
+<button id="düðme42">Týkla</button>
+<button id="düðme43">Týkla</button>
+<button id="düðme44">Týkla</button>
+<span>taþma-satýriçi</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="kab">
+        <div class="satýr">
+            <div id="örnek12">
+                <h3>Kutu çevre marjlarý</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<code>margin:</code>
+<button id="düðme45">Týkla</button>
+<button id="düðme46">Týkla</button>
+<button id="düðme47">Týkla</button>
+<button id="düðme48">Týkla</button>
+<button id="düðme49">Týkla</button>
+<span>marj</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="kab">
+        <div id="örnek13"><h3>Kutu-dýþý üst/sað/alt/sol marjlarý</h3></div>
+    </div>
+</div>
+<code>margin-top/right/bottom/left:</code>
+<button id="düðme50">Týkla</button>
+<button id="düðme51">Týkla</button>
+<button id="düðme52">Týkla</button>
+<button id="düðme53">Týkla</button>
+<button id="düðme54">Týkla</button>
+<span>boþ-etraf</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek14">
+        <div class="kutu"><h3>Kutu-içi çepeçevre tamponlarý</h3><br/>Samanyolu galaksimizin batý helezoni kolunun çok çok uzak sisleri ötesinde gözle görülmeyen bir sarý güneþ olduðunu biliyor muydunuz?</div>
+    </div>
+</div>
+<code>padding:</code>
+<button id="düðme55">Týkla</button>
+<button id="düðme56">Týkla</button>
+<button id="düðme57">Týkla</button>
+<button id="düðme58">Týkla</button>
+<button id="düðme59">Týkla</button>
+<span>tampon</span>
+<hr/>
+
+<div class="çýktý">
+    <div id="örnek15">
+        <div class="kutu"><h3>Kutu-içi üst/sað/alt/sol tamponlarý</h3><br/>Samanyolu galaksimizin batý helezoni kolunun çok çok uzak sisleri ötesinde gözle görülmeyen bir sarý güneþ olduðunu biliyor muydunuz?</div>
+    </div>
+</div>
+<code>padding-top/right/bottom/left:</code>
+<button id="düðme60">Týkla</button>
+<button id="düðme61">Týkla</button>
+<button id="düðme62">Týkla</button>
+<button id="düðme63">Týkla</button>
+<span>tampon-etraf</span>
+<hr/>
+
+<div class="çýktý">
+    <div class="kab2">
+        <div id="örnek16"><h3>Sakla beni</h3></div>
+        <div>Bölüm-2</div>
+        <div>Bölüm-3</div>
+    </div>
+</div>
+<code>visibility:</code>
+<button id="düðme64">Týkla</button>
+<button id="düðme65">Týkla</button>
+<button id="düðme66">Týkla</button>
+<span>görünebilirlik</span>
+<hr/>
+
+<div class="çýktý">
+    <div class="kab3">
+        <div id="örnek17"><h3>Kaydýr beni</h3></div>
+        Saðanak yeni dinmiþ, yoðun sis henüz daðýlmýþ, velakin tüm yollar çamurdan geçilmezken, anýnda, nerden geldiði belirsiz 15m boyunda bir  Megalozor dinazoru, fil kertenkelesi gibi paytak paytak yürüyerek Holborn Tepesi'ne doðru muhteþem bir týrmanýþ sergilemeye baþladý.
+    </div>
+</div>
+<code>float:</code>
+<button id="düðme67">Týkla</button>
+<button id="düðme68">Týkla</button>
+<button id="düðme69">Týkla</button>
+<span>kaydýr</span>
+<hr/>
+
+<h3>Sol/sað kaydýrmanýn iptali</h3>
+<div class="çýktý">
+    <div class="kab3">
+        <div class="sola-yaslý">Sol</div>
+        <div class="saða-yaslý">Sað</div>
+        <div id="örnek18">Saðanak yeni dinmiþ, yoðun sis henüz daðýlmýþ, velakin tüm yollar çamurdan geçilmezken, anýnda, nerden geldiði belirsiz 15m boyunda bir  Megalozor dinazoru, fil kertenkelesi gibi paytak paytak yürüyerek Holborn Tepesi'ne doðru muhteþem bir týrmanýþ sergilemeye baþladý.</div>
+    </div>
+</div>
+<code>clear:</code>
+<button id="düðme70">Týkla</button>
+<button id="düðme71">Týkla</button>
+<button id="düðme72">Týkla</button>
+<button id="düðme73">Týkla</button>
+<span>iptal</span>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 200px;">
+section {background-color: DarkSlateGray; font: 1rem "Fira Sans", sans-serif; letter-spacing: 1px;}
+button {background-color: DarkRed;}
+h3 {text-decoration: underline; color: LightGreen;}
+code, span, button {color: yellow; font-size: 12px;}
+/*------------------------------------------------------*/
+.çýktý {height: 200px;}
+#örnek1, #örnek2, #örnek3, #örnek4, #örnek5, #örnek6, #örnek7, #örnek10 {
+    display: flex;
+    flex-direction: column;
+    background-color: #5b6dcd;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;}
+#örnek2 {width: 100px;}
+#örnek3 {width: 100%;}
+#örnek5 {height: auto;}
+#örnek7, #örnek10 {display: block; max-height: 100px; overflow: hidden; border: medium dotted red;}
+#örnek8, #örnek9, #örnek11 {display: block; width: 200px; height: 200px; background-color: teal; overflow: hidden; border: medium dotted red;}
+/*------------------------------------------------------*/
+#kab {width: 100%; height: 100%; border: 10px solid khaki; display: flex; align-content: flex-start; flex-direction: column; justify-content: flex-start;}
+.satýr {height: 80%; display: inline-block; border: solid #5B6DCD 10px; background-color: rgba(129, 132, 152, 0.6); flex-shrink: 0;}
+#örnek12, #örnek13 {height: 100%; border: solid 10px #FFC129; background-color: rgba(255, 244, 219, 0.6);}
+/*------------------------------------------------------*/
+#örnek14, #örnek15 {
+    border: 10px solid #ffc129;
+    overflow: hidden; color: ivory;
+    height: 100%;}
+.kutu {border: dashed 2px red; height: 100%; overflow: hidden;}
+/*------------------------------------------------------*/
+.kab2 {
+    background-color: #cba;
+    border: .75em solid;
+    padding: .75em;
+    max-height: 200px;
+    display: flex;}
+.kab2 > div {
+    background-color: rgba(0, 0, 255, 0.2);
+    border: 3px solid aqua;
+    margin: 10px;
+    flex: 1;}
+#örnek16 {
+    background-color: rgba(155, 0, 100, .2);
+    border: 3px solid rebeccapurple;}
+/*------------------------------------------------------*/
+.kab3 {
+    background-color: #bbb;
+    border: .75em solid;
+    padding: .75em;
+    height: 100%;
+    text-align: left;
+    overflow: auto;
+    line-height: normal;}
+#örnek17 {
+    border: solid 10px #ffc129;
+    background-color: rgba(255, 105, 119, .6);
+    padding: .5em;
+    width: 150px;}
+/*------------------------------------------------------*/
+.sola-yaslý {
+    border: solid 10px #ffc129;
+    background-color: rgba(255, 244, 219, .6);
+    padding: 1em;
+    float: left;}
+.saða-yaslý {
+    border: solid 10px #ffc129;
+    background-color: rgba(255, 244, 219, .6);
+    padding: 1em;
+    float: right;
+    height: 150px;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 200px;">
+// Kutu modelinin geniþliði...
+düðme1.onclick = ()=>{örnek1.style.width = "150px"; console.log (örnek1.style.width);}
+düðme2.onclick = ()=>{örnek1.style.width = "20em"; console.log (örnek1.style.width);}
+düðme3.onclick = ()=>{örnek1.style.width = "75%"; console.log (örnek1.style.width);}
+düðme4.onclick = ()=>{örnek1.style.width = "auto"; console.log (örnek1.style.width + " ==>varsayýlý en");}
+// Kutu modelinin enaz geniþliði...
+düðme5.onclick = ()=>{örnek2.style.minWidth = "150px"; console.log (örnek2.style.minWidth);}
+düðme6.onclick = ()=>{örnek2.style.minWidth = "20em"; console.log (örnek2.style.minWidth);}
+düðme7.onclick = ()=>{örnek2.style.minWidth = "75%"; console.log (örnek2.style.minWidth);}
+düðme8.onclick = ()=>{örnek2.style.minWidth = "50ch"; console.log (örnek2.style.minWidth);}
+// Kutu modelinin ençok geniþliði...
+düðme9.onclick = ()=>{örnek3.style.maxWidth = "150px"; console.log (örnek3.style.maxWidth);}
+düðme10.onclick = ()=>{örnek3.style.maxWidth = "20em"; console.log (örnek3.style.maxWidth);}
+düðme11.onclick = ()=>{örnek3.style.maxWidth = "75%"; console.log (örnek3.style.maxWidth);}
+düðme12.onclick = ()=>{örnek3.style.maxWidth = "50ch"; console.log (örnek3.style.maxWidth);}
+// Kutu modelinin yüksekliði...
+düðme13.onclick = ()=>{örnek4.style.height = "150px"; console.log (örnek4.style.height);}
+düðme14.onclick = ()=>{örnek4.style.height = "6em"; console.log (örnek4.style.height);}
+düðme15.onclick = ()=>{örnek4.style.height = "75%"; console.log (örnek4.style.height);}
+düðme16.onclick = ()=>{örnek4.style.height = "auto"; console.log (örnek4.style.height + " ==>içerik boyu");}
+// Kutu modelinin enaz yüksekliði...
+düðme17.onclick = ()=>{örnek5.style.minHeight = "150px"; console.log (örnek5.style.minHeight);}
+düðme18.onclick = ()=>{örnek5.style.minHeight = "6em"; console.log (örnek5.style.minHeight);}
+düðme19.onclick = ()=>{örnek5.style.minHeight = "75%"; console.log (örnek5.style.minHeight);}
+düðme20.onclick = ()=>{örnek5.style.minHeight = "0"; console.log (örnek5.style.minHeight + " ==>enaz içerik (auto) boyu");}
+// Kutu modelinin ençok yüksekliði...
+düðme21.onclick = ()=>{örnek6.style.maxHeight = "150px"; console.log (örnek6.style.maxHeight);}
+düðme22.onclick = ()=>{örnek6.style.maxHeight = "6em"; console.log (örnek6.style.maxHeight);}
+düðme23.onclick = ()=>{örnek6.style.maxHeight = "75%"; console.log (örnek6.style.maxHeight);}
+düðme24.onclick = ()=>{örnek6.style.maxHeight = "10px"; console.log (örnek6.style.maxHeight + " ==>kontrolsuz içerik taþmasý");}
+// Kutu içeriklerinin yükseklik taþmasý...
+düðme25.onclick = ()=>{örnek7.style.overflow = "visible"; console.log (örnek7.style.overflow);}
+düðme26.onclick = ()=>{örnek7.style.overflow = "hidden"; console.log (örnek7.style.overflow);}
+düðme27.onclick = ()=>{örnek7.style.overflow = "scroll"; console.log (örnek7.style.overflow);}
+düðme28.onclick = ()=>{örnek7.style.overflow = "auto"; console.log (örnek7.style.overflow);}
+// Kutu içeriklerinin yatay taþmasý...
+düðme29.onclick = ()=>{örnek8.style.overflowX = "visible"; console.log (örnek8.style.overflowX);}
+düðme30.onclick = ()=>{örnek8.style.overflowX = "hidden"; console.log (örnek8.style.overflowX);}
+düðme31.onclick = ()=>{örnek8.style.overflowX = "scroll"; console.log (örnek8.style.overflowX);}
+düðme32.onclick = ()=>{örnek8.style.overflowX = "auto"; console.log (örnek8.style.overflowX);}
+// Kutu içeriklerinin dikey taþmasý...
+düðme33.onclick = ()=>{örnek9.style.overflowY = "visible"; console.log (örnek9.style.overflowY);}
+düðme34.onclick = ()=>{örnek9.style.overflowY = "hidden"; console.log (örnek9.style.overflowY);}
+düðme35.onclick = ()=>{örnek9.style.overflowY = "scroll"; console.log (örnek9.style.overflowY);}
+düðme36.onclick = ()=>{örnek9.style.overflowY = "auto"; console.log (örnek9.style.overflowY);}
+// Kutu içeriklerinin taþma bloðu...
+düðme37.onclick = ()=>{örnek10.style.overflowBlock = "visible"; console.log (örnek10.style.overflowBlock);}
+düðme38.onclick = ()=>{örnek10.style.overflowBlock = "hidden"; console.log (örnek10.style.overflowBlock);}
+düðme39.onclick = ()=>{örnek10.style.overflowBlock = "scroll"; console.log (örnek10.style.overflowBlock);}
+düðme40.onclick = ()=>{örnek10.style.overflowBlock = "auto"; console.log (örnek10.style.overflowBlock);}
+// Kutu içeriklerinin taþma satýriçi...
+düðme41.onclick = ()=>{örnek11.style.overflowInline = "visible"; console.log (örnek11.style.overflowInline);}
+düðme42.onclick = ()=>{örnek11.style.overflowInline = "hidden"; console.log (örnek11.style.overflowInline);}
+düðme43.onclick = ()=>{örnek11.style.overflowInline = "scroll"; console.log (örnek11.style.overflowInline);}
+düðme44.onclick = ()=>{örnek11.style.overflowInline = "auto"; console.log (örnek11.style.overflowInline);}
+// Kutu çevre marj mesafleri...
+düðme45.onclick = ()=>{örnek12.style.margin = "1em"; console.log (örnek12.style.margin);}
+düðme46.onclick = ()=>{örnek12.style.margin = "5% 0"; console.log (örnek12.style.margin);}
+düðme47.onclick = ()=>{örnek12.style.margin = "10px 50px 20px"; console.log (örnek12.style.margin);}
+düðme48.onclick = ()=>{örnek12.style.margin = "10px 50px 20px 0"; console.log (örnek12.style.margin);}
+düðme49.onclick = ()=>{örnek12.style.margin = "0"; console.log (örnek12.style.margin);}
+// Kutu üst/sað/alt/sol marj mesafleri...
+düðme50.onclick = ()=>{örnek13.style.marginTop = "1em"; console.log (örnek13.style.marginTop);}
+düðme51.onclick = ()=>{örnek13.style.marginRight = "20%"; console.log (örnek13.style.marginRight);}
+düðme52.onclick = ()=>{örnek13.style.marginBottom = "20px"; console.log (örnek13.style.marginBottom);}
+düðme53.onclick = ()=>{örnek13.style.marginLeft = "-15px"; console.log (örnek13.style.marginLeft);}
+düðme54.onclick = ()=>{örnek13.style.marginLeft = "0"; console.log (örnek13.style.marginLeft);}
+// Kutu-içi çepeçevre tampon boþluklarý...
+düðme55.onclick = ()=>{örnek14.style.padding = "1em"; console.log (örnek14.style.padding);}
+düðme56.onclick = ()=>{örnek14.style.padding = "10% 0"; console.log (örnek14.style.padding);}
+düðme57.onclick = ()=>{örnek14.style.padding = "10px 50px 20px"; console.log (örnek14.style.padding);}
+düðme58.onclick = ()=>{örnek14.style.padding = "10px 50px 30px 0"; console.log (örnek14.style.padding);}
+düðme59.onclick = ()=>{örnek14.style.padding = "0"; console.log (örnek14.style.padding);}
+// Kutu-içi üst/sað/alt/sol tampon boþluklarý...
+düðme60.onclick = ()=>{örnek15.style.paddingTop = "1.5em"; console.log ("Üst tampon: " + örnek15.style.paddingTop);}
+düðme61.onclick = ()=>{örnek15.style.paddingRight = "10%"; console.log ("Sað tampon: " + örnek15.style.paddingRight);}
+düðme62.onclick = ()=>{örnek15.style.paddingBottom = "20px"; console.log ("Alt tampon: " + örnek15.style.paddingBottom);}
+düðme63.onclick = ()=>{örnek15.style.paddingLeft = "1ch"; console.log ("Sol tampon: " + örnek15.style.paddingLeft);}
+// Görünür/gizlenir kutu...
+düðme64.onclick = ()=>{örnek16.style.visibility = "hidden"; console.log (örnek16.style.visibility);}
+düðme65.onclick = ()=>{örnek16.style.visibility = "visible"; console.log (örnek16.style.visibility);}
+düðme66.onclick = ()=>{örnek16.style.visibility = "collapse"; console.log (örnek16.style.visibility + ", Mozilla'da çöker");}
+// Sola/saða kayan kutu...
+düðme67.onclick = ()=>{örnek17.style.float = "right"; console.log (örnek17.style.float);}
+düðme68.onclick = ()=>{örnek17.style.float = "left"; console.log (örnek17.style.float);}
+düðme69.onclick = ()=>{örnek17.style.float = "none"; console.log (örnek17.style.float);}
+// Kayan kutu...
+düðme70.onclick = ()=>{örnek18.style.clear = "left"; console.log (örnek18.style.clear);}
+düðme71.onclick = ()=>{örnek18.style.clear = "right"; console.log (örnek18.style.clear);}
+düðme72.onclick = ()=>{örnek18.style.clear = "both"; console.log (örnek18.style.clear);}
+düðme73.onclick = ()=>{örnek18.style.clear = "none"; console.log (örnek18.style.clear);}
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C2.js"></script>
+</html>

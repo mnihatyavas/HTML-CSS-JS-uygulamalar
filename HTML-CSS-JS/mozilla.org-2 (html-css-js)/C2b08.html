@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2b08.html: Izgara serilimde satýr/sütun/þablon/alan/aralýk ve vasýf fonksiyonlarý örneði.</title>
+    <link rel="stylesheet" href="C2.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<h4>Týkladýðýnýzýn içeriðini görmek için F12-konsolu aç</h4>
+
+<div id="çýktý1">
+    <h3>Ýçerik kutularýn ýzgara serilimi</h3>
+    <div id="örnek1">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid:</code>
+<button id="düðme1">Týkla</button>
+<button id="düðme2">Týkla</button>
+<button id="düðme3">Týkla</button>
+<span>ýzgara(serilim)</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutunun kolon geniþliði</h3>
+    <div class="kab2">
+        <div id="örnek2">Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-column:</code>
+<button id="düðme4">Týkla</button>
+<button id="düðme5">Týkla</button>
+<button id="düðme6">Týkla</button>
+<button id="düðme7">Týkla</button>
+<span>ýzgara-kolonu</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutunun kolon baþlangýcý</h3>
+    <div class="kab2">
+        <div id="örnek3">Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-column-start:</code>
+<button id="düðme8">Týkla</button>
+<button id="düðme9">Týkla</button>
+<button id="düðme10">Týkla</button>
+<button id="düðme11">Týkla</button>
+<span>ýzgara-kolon-baþý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutunun kolon sonu</h3>
+    <div class="kab2">
+        <div id="örnek4">Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-column-end:</code>
+<button id="düðme12">Týkla</button>
+<button id="düðme13">Týkla</button>
+<button id="düðme14">Týkla</button>
+<button id="düðme15">Týkla</button>
+<span>ýzgara-kolon-sonu</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutularýn otomatik kolonlanmasý</h3>
+    <div id="örnek5">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+    </div>
+</div>
+<code>grid-auto-columns:</code>
+<button id="düðme16">Týkla</button>
+<button id="düðme17">Týkla</button>
+<button id="düðme18">Týkla</button>
+<button id="düðme19">Týkla</button>
+<span>ýzgara-otomatik-kolonlar</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutularýn yatay kolon ara boþluklarý</h3>
+    <div id="örnek6">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code>grid-column-gap:</code>
+<button id="düðme20">Týkla</button>
+<button id="düðme21">Týkla</button>
+<button id="düðme22">Týkla</button>
+<button id="düðme23">Týkla</button>
+<span>ýzgara-kolon-aralýðý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutunun satýr yüksekliði</h3>
+    <div class="kab2">
+        <div id="örnek7">Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-row:</code>
+<button id="düðme24">Týkla</button>
+<button id="düðme25">Týkla</button>
+<button id="düðme26">Týkla</button>
+<button id="düðme27">Týkla</button>
+<span>ýzgara-satýrý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutunun satýr baþlangýcý</h3>
+    <div class="kab2">
+        <div id="örnek8">Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-row-start:</code>
+<button id="düðme28">Týkla</button>
+<button id="düðme29">Týkla</button>
+<button id="düðme30">Týkla</button>
+<button id="düðme31">Týkla</button>
+<button id="düðme32">Týkla</button>
+<span>ýzgara-satýrý-baþý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutunun satýr sonu</h3>
+    <div class="kab2">
+        <div id="örnek9">Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-row-end:</code>
+<button id="düðme33">Týkla</button>
+<button id="düðme34">Týkla</button>
+<button id="düðme35">Týkla</button>
+<button id="düðme36">Týkla</button>
+<button id="düðme37">Týkla</button>
+<button id="düðme38">Týkla</button>
+<span>ýzgara-satýrý-sonu</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutularýn otomatik satýrlanmasý</h3>
+    <div id="örnek10">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+    </div>
+</div>
+<code>grid-auto-rows:</code>
+<button id="düðme39">Týkla</button>
+<button id="düðme40">Týkla</button>
+<button id="düðme41">Týkla</button>
+<button id="düðme42">Týkla</button>
+<span>ýzgara-otomatik-satýrlar</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutularýn dikey satýr ara boþluklarý</h3>
+    <div id="örnek11">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code>grid-row-gap:</code>
+<button id="düðme43">Týkla</button>
+<button id="düðme44">Týkla</button>
+<button id="düðme45">Týkla</button>
+<button id="düðme46">Týkla</button>
+<button id="düðme47">Týkla</button>
+<span>ýzgara-satýr-aralýðý</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Kutularýn ýzgara þablonlu serilimi</h3>
+    <div id="örnek12">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-template:</code>
+<button id="düðme48">Týkla</button>
+<button id="düðme49">Týkla</button>
+<button id="düðme50">Týkla</button>
+<span>ýzgara-þablonu</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Kutularýn ýzgara þablon alanlarý</h3>
+    <div id="örnek13">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>grid-template-areas:</code>
+<button id="düðme51">Týkla</button>
+<button id="düðme52">Týkla</button>
+<button id="düðme53">Týkla</button>
+<span>ýzgara-þablon-alanlarý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Kutularýn ýzgara þablon kolonlu serilimi</h3>
+    <div id="örnek14">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code>grid-template-columns:</code>
+<button id="düðme54">Týkla</button>
+<button id="düðme55">Týkla</button>
+<button id="düðme56">Týkla</button>
+<button id="düðme57">Týkla</button>
+<span>ýzgara-þablon-kolonlarý</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Kutularýn ýzgara þablon satýrlý serilimi</h3>
+    <div id="örnek15">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code>grid-template-rows:</code>
+<button id="düðme58">Týkla</button>
+<button id="düðme59">Týkla</button>
+<button id="düðme60">Týkla</button>
+<button id="düðme61">Týkla</button>
+<span>ýzgara-þablon-satýrlarý</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Kutularýn ýzgara alanlý serilimi</h3>
+    <div class="kab2">
+        <div id="örnek16">#örnek16</div>
+    </div>
+</div>
+<code>grid-area:</code>
+<button id="düðme62">Týkla</button>
+<button id="düðme63">Týkla</button>
+<button id="düðme64">Týkla</button>
+<button id="düðme65">Týkla</button>
+<button id="düðme66">Týkla</button>
+<span>ýzgara-alaný</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara kutularýn otomatik akýþý</h3>
+    <div id="örnek17">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code>grid-auto-flow:</code>
+<button id="düðme67">Týkla</button>
+<button id="düðme68">Týkla</button>
+<button id="düðme69">Týkla</button>
+<span>ýzgara-otomatik-akýþý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara þablon kolonlarýn uyumlu-içerik fonksiyonu</h3>
+    <div id="örnek18">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code>grid-template-columns:</code>
+<button id="düðme70">Týkla</button>
+<button id="düðme71">Týkla</button>
+<button id="düðme72">Týkla</button>
+<span>ýzgara-þablon-kolonlarý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara þablon kolonlarýn enaz-ençok fonksiyonu</h3>
+    <div id="örnek19">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code>grid-template-columns:</code>
+<button id="düðme73">Týkla</button>
+<button id="düðme74">Týkla</button>
+<button id="düðme75">Týkla</button>
+<span>ýzgara-þablon-kolonlarý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Izgara þablon kolonlarýn tekrar fonksiyonu</h3>
+    <div id="örnek20">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+    </div>
+</div>
+<code style="font-size:11px;">grid-template-columns:</code>
+<button id="düðme76">Týkla</button>
+<button id="düðme77">Týkla</button>
+<button id="düðme78">Týkla</button>
+<button id="düðme79">Týkla</button>
+<button id="düðme80">Týkla</button>
+<span style="font-size:11px;">ýzgara-þablon-kolonlarý</span>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 200px;">
+section {background-color: DarkSlateGray; font: 1rem, sans-serif; letter-spacing: 1px;}
+button {background-color: DarkRed;}
+h3 {text-decoration: underline; color: LightGreen; margin: 0;}
+h4, p {margin:0; color: white;}
+code, span, button {color: yellow; font-size: 12px;}
+/*------------------------------------------------------*/
+#çýktý {height: 200px;}
+#çýktý1 {height: 330px;}
+#çýktý2 {height: 130px;}
+#çýktý3 {height: 250px;}
+#örnek1, #örnek5, #örnek6, #örnek10, #örnek11, #örnek12, #örnek13, #örnek14, #örnek15, #örnek18, #örnek19, #örnek20 {
+    background-color: #eee;
+    border: .75em solid;
+    padding: .75em;
+    display: grid; // width: 100%;
+    grid-auto-rows: 40px;
+    grid-gap: 10px;}
+#örnek1 :nth-child(1) {
+    background-color: rgba(0, 0, 255, 0.2);
+    border: 3px solid blue;}
+#örnek1 :nth-child(2) {
+    background-color: rgba(255, 0, 200, 0.2);
+    border: 3px solid rebeccapurple;
+    grid-column: auto / span 3;
+    grid-row: auto / span 2;}
+#örnek1 :nth-child(3) {
+    background-color: rgba(94, 255, 0, 0.2);
+    border: 3px solid green;
+    grid-column: auto / span 2;}
+/*------------------------------------------------------*/
+.kab2, #örnek17 {
+    background-color: #eee;
+    border: .75em solid;
+    padding: .75em;
+    display: grid; // width: 100%;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: repeat(3, minmax(30px, auto));
+    grid-gap: 10px;}
+.kab2 > div, #örnek5>div, #örnek6>div, #örnek10>div, #örnek11>div, #örnek14>div, #örnek15>div, #örnek17>div, #örnek18>div, #örnek19>div, #örnek20>div {
+    background-color: rgba(0, 0, 255, 0.2);
+    border: 3px solid blue;}
+#örnek2, #örnek3, #örnek4, #örnek7, #örnek8, #örnek9, #örnek16 {
+    background-color: rgba(255, 0, 200, 0.2);
+    border: 3px solid rebeccapurple;}
+#örnek5 > div:nth-child(1) {grid-column: 1 / 3;}
+#örnek5 > div:nth-child(2) {grid-column: 2 ;}
+#örnek6, #örnek10, #örnek11 {grid-template-columns: 1fr 1fr}
+#örnek12 :nth-child(1), #örnek13 :nth-child(1) {background-color: rgba(0, 0, 255, 0.2); border: 3px solid blue; grid-area: a;}
+#örnek12 :nth-child(2), #örnek13 :nth-child(2) {background-color: rgba(255, 0, 200, 0.2); border: 3px solid rebeccapurple; grid-area: b;}
+#örnek12 :nth-child(3), #örnek13 :nth-child(3) {background-color: rgba(94, 255, 0, 0.2); border: 3px solid green; grid-area: c;}
+#örnek12 {grid-template: "a b c" 40px / 1fr 1fr 1fr;}
+#örnek13 {grid-template-areas: "a b c";}
+#örnek14, #örnek15 {grid-template-columns: 1fr 1fr;}
+#örnek16 {grid-template-areas: "a a a" "b  c  c" "b b b"}
+#örnek17 > div:nth-child(1), #örnek17 > div:nth-child(2) {grid-column: auto / span 2;}
+#örnek18, #örnek19, #örnek20 {grid-template-columns: 1fr 1fr 1fr;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 200px;">
+// Izgara serilim gözlerini düzenlemek...
+düðme1.onclick = ()=>{örnek1.style.grid = "auto-flow / 1fr 1fr 1fr"; console.log ("auto-flow / 1fr 1fr 1fr");}
+düðme2.onclick = ()=>{örnek1.style.grid = "auto-flow dense / 40px 40px 1fr"; console.log ("auto-flow dense / 40px 40px 1fr");}
+düðme3.onclick = ()=>{örnek1.style.grid = "repeat(3, 75px) / auto-flow"; console.log ("repeat(3, 75px) / auto-flow");}
+// Izgara kutularýnýn kolon geniþliði vasfý...
+düðme4.onclick = ()=>{örnek2.style.gridColumn = "1"; console.log (örnek2.style.gridColumn);}
+düðme5.onclick = ()=>{örnek2.style.gridColumn = "1 / 3"; console.log (örnek2.style.gridColumn);}
+düðme6.onclick = ()=>{örnek2.style.gridColumn = "2 / -1"; console.log (örnek2.style.gridColumn);}
+düðme7.onclick = ()=>{örnek2.style.gridColumn = "1 / span 2"; console.log (örnek2.style.gridColumn);}
+// Izgara kutularýnýn kolon baþlangýçlarý...
+düðme8.onclick = ()=>{örnek3.style.gridColumnStart = "-1"; console.log (örnek3.style.gridColumnStart);}
+düðme9.onclick = ()=>{örnek3.style.gridColumnStart = "2"; console.log (örnek3.style.gridColumnStart);}
+düðme10.onclick = ()=>{örnek3.style.gridColumnStart = "auto"; console.log (örnek3.style.gridColumnStart);}
+düðme11.onclick = ()=>{örnek3.style.gridColumnStart = "span 2"; console.log (örnek3.style.gridColumnStart);}
+// Izgara kutularýnýn kolon sonu...
+düðme12.onclick = ()=>{örnek4.style.gridColumnEnd = "-1"; console.log (örnek4.style.gridColumnEnd);}
+düðme13.onclick = ()=>{örnek4.style.gridColumnEnd = "3"; console.log (örnek4.style.gridColumnEnd);}
+düðme14.onclick = ()=>{örnek4.style.gridColumnEnd = "auto"; console.log (örnek4.style.gridColumnEnd);}
+düðme15.onclick = ()=>{örnek4.style.gridColumnEnd = "span 3"; console.log (örnek4.style.gridColumnEnd);}
+// Izgara kutularýnýn otomatik kolonlarý...
+düðme16.onclick = ()=>{örnek5.style.gridAutoColumns = "1fr"; console.log (örnek5.style.gridAutoColumns);}
+düðme17.onclick = ()=>{örnek5.style.gridAutoColumns = "auto"; console.log (örnek5.style.gridAutoColumns);}
+düðme18.onclick = ()=>{örnek5.style.gridAutoColumns = "min-content"; console.log (örnek5.style.gridAutoColumns);}
+düðme19.onclick = ()=>{örnek5.style.gridAutoColumns = "minmax(20px, auto)"; console.log (örnek5.style.gridAutoColumns);}
+// Izgara kutularýnýn yatay kolon aralýklarý...
+düðme20.onclick = ()=>{örnek6.style.gridColumnGap = "0"; console.log ("0");}
+düðme21.onclick = ()=>{örnek6.style.gridColumnGap = "10%"; console.log ("10%");}
+düðme22.onclick = ()=>{örnek6.style.gridColumnGap = "1em"; console.log ("1em");}
+düðme23.onclick = ()=>{örnek6.style.gridColumnGap = "20px"; console.log ("20px");}
+// Izgara kutularýnýn satýr yüksekliði...
+düðme24.onclick = ()=>{örnek7.style.gridRow = "1 / span 2"; console.log (örnek7.style.gridRow);}
+düðme25.onclick = ()=>{örnek7.style.gridRow = "1 / 4"; console.log (örnek7.style.gridRow);}
+düðme26.onclick = ()=>{örnek7.style.gridRow = "2 / -1"; console.log (örnek7.style.gridRow);}
+düðme27.onclick = ()=>{örnek7.style.gridRow = "1"; console.log (örnek7.style.gridRow);}
+// Izgara kutunun satýr baþlangýcý...
+düðme28.onclick = ()=>{örnek8.style.gridRowStart = "2"; console.log (örnek8.style.gridRowStart);}
+düðme29.onclick = ()=>{örnek8.style.gridRowStart = "3"; console.log (örnek8.style.gridRowStart);}
+düðme30.onclick = ()=>{örnek8.style.gridRowStart = "-1"; console.log (örnek8.style.gridRowStart);}
+düðme31.onclick = ()=>{örnek8.style.gridRowStart = "span 2"; console.log (örnek8.style.gridRowStart);}
+düðme32.onclick = ()=>{örnek8.style.gridRowStart = "auto"; console.log (örnek8.style.gridRowStart);}
+// Izgara kutunun satýr sonu...
+düðme33.onclick = ()=>{örnek9.style.gridRowEnd = "3"; console.log (örnek9.style.gridRowEnd);}
+düðme34.onclick = ()=>{örnek9.style.gridRowEnd = "4"; console.log (örnek9.style.gridRowEnd);}
+düðme35.onclick = ()=>{örnek9.style.gridRowEnd = "-1"; console.log (örnek9.style.gridRowEnd);}
+düðme36.onclick = ()=>{örnek9.style.gridRowEnd = "-2"; console.log (örnek9.style.gridRowEnd);}
+düðme37.onclick = ()=>{örnek9.style.gridRowEnd = "span 3"; console.log (örnek9.style.gridRowEnd);}
+düðme38.onclick = ()=>{örnek9.style.gridRowEnd = "auto"; console.log (örnek9.style.gridRowEnd);}
+// Izgara kutularýnýn otomatik satýrlarý...
+düðme39.onclick = ()=>{örnek10.style.gridAutoRows = "50px"; console.log (örnek10.style.gridAutoRows);}
+düðme40.onclick = ()=>{örnek10.style.gridAutoRows = "min-content"; console.log (örnek10.style.gridAutoRows);}
+düðme41.onclick = ()=>{örnek10.style.gridAutoRows = "minmax(60px, auto)"; console.log (örnek10.style.gridAutoRows);}
+düðme42.onclick = ()=>{örnek10.style.gridAutoRows = "auto"; console.log (örnek10.style.gridAutoRows);}
+// Izgara kutularýnýn dikey satýr aralýklarý...
+düðme43.onclick = ()=>{örnek11.style.gridRowGap = "0"; console.log ("0");}
+düðme44.onclick = ()=>{örnek11.style.gridRowGap = "1ch"; console.log ("1ch");}
+düðme45.onclick = ()=>{örnek11.style.gridRowGap = "1rem"; console.log ("1rem");}
+düðme46.onclick = ()=>{örnek11.style.gridRowGap = "10px"; console.log ("10px");}
+düðme47.onclick = ()=>{örnek11.style.gridRowGap = "1%"; console.log ("1%");}
+// Kutularýn ýzgara þablonlu serilimi...
+düðme48.onclick = ()=>{örnek12.style.gridTemplate = ' "a a a" 40px "b c c" 40px "b c c" 40px / 1fr 1fr 1fr'; console.log (' "a a a" 40px "b c c" 40px "b c c" 40px / 1fr 1fr 1fr');}
+düðme49.onclick = ()=>{örnek12.style.gridTemplate = ' "b b a" auto "b b c" 2ch "b b c" 1em / 20% 20px 1fr'; console.log (' "b b a" auto "b b c" 2ch "b b c" 1em / 20% 20px 1fr');}
+düðme50.onclick = ()=>{örnek12.style.gridTemplate = ' "a a ." minmax(50px, auto) "a a ." 80px "b b c" auto / 2em 3em auto'; console.log (' "a a ." minmax(50px, auto) "a a ." 80px "b b c" auto / 2em 3em auto');}
+// Kutularýn ýzgara þablon alanlý serilimi...
+düðme51.onclick = ()=>{örnek13.style.gridTemplateAreas = ' "a a a" "b c c" "b c c" '; console.log (örnek13.style.gridTemplateAreas);}
+düðme52.onclick = ()=>{örnek13.style.gridTemplateAreas = ' "b b a" "b b c" "b b c" '; console.log (örnek13.style.gridTemplateAreas);}
+düðme53.onclick = ()=>{örnek13.style.gridTemplateAreas = ' "a a ." "a a ." ". b c" '; console.log (örnek13.style.gridTemplateAreas);}
+// Kutularýn ýzgara þablon kolonlu serilimi...
+düðme54.onclick = ()=>{örnek14.style.gridTemplateColumns = "60px 60px"; console.log (örnek14.style.gridTemplateColumns);}
+düðme55.onclick = ()=>{örnek14.style.gridTemplateColumns = "1fr 60px"; console.log (örnek14.style.gridTemplateColumns);}
+düðme56.onclick = ()=>{örnek14.style.gridTemplateColumns = "1fr 2fr"; console.log (örnek14.style.gridTemplateColumns);}
+düðme57.onclick = ()=>{örnek14.style.gridTemplateColumns = "8ch auto"; console.log (örnek14.style.gridTemplateColumns);}
+// Kutularýn ýzgara þablon satýrlý serilimi...
+düðme58.onclick = ()=>{örnek15.style.gridTemplateRows = "40px 4em 40px"; console.log (örnek15.style.gridTemplateRows);}
+düðme59.onclick = ()=>{örnek15.style.gridTemplateRows = "1fr 2fr 1fr"; console.log (örnek15.style.gridTemplateRows);}
+düðme60.onclick = ()=>{örnek15.style.gridTemplateRows = "3ch auto minmax(10px, 110px)"; console.log (örnek15.style.gridTemplateRows);}
+düðme61.onclick = ()=>{örnek15.style.gridTemplateRows = "auto"; console.log (örnek15.style.gridTemplateRows);}
+// Kutularýn ýzgara alanlý serilimi...
+düðme62.onclick = ()=>{örnek16.style.gridArea = "a / 2 / a / 4"; console.log (örnek16.style.gridArea);}
+düðme63.onclick = ()=>{örnek16.style.gridArea = "1 / b / 4 / b"; console.log (örnek16.style.gridArea);}
+düðme64.onclick = ()=>{örnek16.style.gridArea = "2 / c / 10 / c"; console.log (örnek16.style.gridArea);}
+düðme65.onclick = ()=>{örnek16.style.gridArea = "2 / 1 / 2 / 4"; console.log (örnek16.style.gridArea);}
+düðme66.onclick = ()=>{örnek16.style.gridArea = "1 / 1 / 10 / 4"; console.log (örnek16.style.gridArea);}
+// Izgara kutularýnýn otomatik akýþý...
+düðme67.onclick = ()=>{örnek17.style.gridAutoFlow = "column"; console.log (örnek17.style.gridAutoFlow);}
+düðme68.onclick = ()=>{örnek17.style.gridAutoFlow = "row"; console.log (örnek17.style.gridAutoFlow);}
+düðme69.onclick = ()=>{örnek17.style.gridAutoFlow = "dense"; console.log (örnek17.style.gridAutoFlow);}
+// Izgara þablon kolonlarýn uyumlu-içerik fonksiyonu...
+düðme70.onclick = ()=>{örnek18.style.gridTemplateColumns = "fit-content(8ch) fit-content(8ch) 1fr"; console.log (örnek18.style.gridTemplateColumns);}
+düðme71.onclick = ()=>{örnek18.style.gridTemplateColumns = "fit-content(100px) 1fr fit-content(100px)"; console.log (örnek18.style.gridTemplateColumns);}
+düðme72.onclick = ()=>{örnek18.style.gridTemplateColumns = "1fr fit-content(40%) fit-content(40%)"; console.log (örnek18.style.gridTemplateColumns);}
+// Izgara þablon kolonlarýn enaz-ençok fonksiyonu...
+düðme73.onclick = ()=>{örnek19.style.gridTemplateColumns = "minmax(20px, auto) 1fr 1fr"; console.log (örnek19.style.gridTemplateColumns);}
+düðme74.onclick = ()=>{örnek19.style.gridTemplateColumns = "minmax(0,1fr) minmax(0,2fr) minmax(0,3fr)"; console.log (örnek19.style.gridTemplateColumns);}
+düðme75.onclick = ()=>{örnek19.style.gridTemplateColumns = "2fr minmax(2ch, 6ch) 1fr"; console.log (örnek19.style.gridTemplateColumns);}
+// Izgara þablon kolonlarýn tekrar fonksiyonu...
+düðme76.onclick = ()=>{örnek20.style.gridTemplateColumns = "repeat(2, 60px)"; console.log (örnek20.style.gridTemplateColumns);}
+düðme77.onclick = ()=>{örnek20.style.gridTemplateColumns = "1fr repeat(2, 60px)"; console.log (örnek20.style.gridTemplateColumns);}
+düðme78.onclick = ()=>{örnek20.style.gridTemplateColumns = "repeat(2, 50px 1fr)"; console.log (örnek20.style.gridTemplateColumns);}
+düðme79.onclick = ()=>{örnek20.style.gridTemplateColumns = "repeat(auto-fill, 60px)"; console.log (örnek20.style.gridTemplateColumns);}
+düðme80.onclick = ()=>{örnek20.style.gridTemplateColumns = "repeat(auto-fill, 130px)"; console.log (örnek20.style.gridTemplateColumns);}
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C2.js"></script>
+</html>

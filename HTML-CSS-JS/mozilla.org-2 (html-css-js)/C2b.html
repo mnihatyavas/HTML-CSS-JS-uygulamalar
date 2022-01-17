@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2b.html: Oynanabilir pencerelerden karþýlýklý etkileþimli deðiþtirilebilir css vasýflarý giriþi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="document.getElementById('göster').innerHTML='' ">
+    <h3>Karþýlýklý-etkileþimli CSS</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C2b01.html" target="_">1) Topun ileri-geri hareketlendirilme vasýflarý örneði</a></h4>
+    <h4><a href="C2b02.html" target="_">2) Zemin ve sýnýr stillemeleri ve kutu gölgeleme örneði</a></h4>
+    <h4><a href="C2b03.html" target="_">3) Kutu en/boy, marj, tampon, taþma, görünebilirlik, kayma ve iptali örneði</a></h4>
+    <h4><a href="C2b04.html" target="_">4) Izgara hücrelerinin yatay-dikey hizalanmasý/yaslanmasý/yerleþtirilmesi/aralýðý örneði</a></h4>
+    <h4><a href="C2b05.html" target="_">5) Dýþhat, ebatlanma, taþmasonu sembolü, metnin seçilebilirliði, imleç renk ve þekli örneði</a></h4>
+    <h4><a href="C2b06.html" target="_">6) Resmi bulanýk, net, parlak, gri, doygun, gölgeli, zýt, aðarýk filitreleme örneði</a></h4>
+    <h4><a href="C2b07.html" target="_">7) Esnek-kutularýn  temel/yön/akýþ/büyüme/büzülme/altasarma/sýralama örneði</a></h4>
+    <h4><a href="C2b08.html" target="_">8) Izgara serilimde satýr/sütun/þablon/alan/aralýk ve vasýf fonksiyonlarý örneði</a></h4>
+    <h4><a href="C2b09.html" target="_">9) Çoklu kolon seriliminde kolon sayýsý/eni/aralýðý/boþluðu/cetveli örneði</a></h4>
+    <h4><a href="C2b10.html" target="_">10) Blok/satýriçi ebatý, sýnýr-blok/satýriçi-baþ/son stilleri, gömülü-blok/satýriçi-baþ/son örneði</a></h4>
+    <h4><a href="C2b11.html" target="_">11) Metni hizalama/kertikleme/altasarma/tireleme/araboþluklar/dönüþtürme örneði</a></h4>
+    <h4><a href="C2b12.html" target="_">12) Metnin dekrasyonu/üst-vurgusu/gölgelenmesi/altçizgi konum ve telafisi örneði</a></h4>
+    <h4><a href="C2b13.html" target="_">13) Resim maskesi kýrpma/bileþim/kip/orijin/konum/tekrar/ebat/tip örneði</a></h4>
+    <h4><a href="C2b14.html" target="_">14) Taþmada kaydýrma çubuðunun hareket tipi/marjý/tamponu örneði</a></h4>
+    <h4><a href="C2b15.html" target="_">15) Dönüþtürmenin  stili/orijini ve perspektif/dönü/aktarým/bükme/ölçekleme fonksiyonlarý örneði</a></h4>
+    <h4><a href="C2b16.html" target="_">16) Yazýfonu ailesi/ebatý/stili/aðýrlýðý/deðiþkesi/yakýnlýðý/görseli/ayarlarý örneði</a></h4>
+    <h4><a href="C2b17.html" target="_">17) Konum, ölçekleme, liste, tablo, geçiþim, telafisel hareket, resim ve tabakalý zemin örneði</a></h4>
+    <h4><a href="C2b18.html" target="_">18) Yazýrenkleri, kaydýrmaçubuðu, yazýlýmkipi, yetim-dul, alýntý, þekil-metin, renkkarmasý örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>1) Oynanabilir CSS penceresi giriþiyle karþýlýklý etkileþimli ve canlý deðiþtir-gör örnekleri sunulmaktadýr. \
+            Toplam 18 grup kapsamýnda 18 altprogramdan müteþekküldür. Örneklerin kemali itibarýyla icabýnda HTML ve JS\
+            pencereleri de kullanýlabilmektedir." +
+            "<br/>2) Altprogram-1 animasyon için 150px en ve boyda, sýnýr-yarýçapý %50 ile yuvarlatýlmýþ disk kullanýlmakta, \
+            '3s ease-in 1s infinite reverse both running kay' hareketlendirme karma vasýflarýyla, toplam 3sn'de, ileri-geri, \
+            sonsuz, ayrýca css '@keyframe kay' içeriðinde mevcut geniþliðin ne yüzdeyle baþ ve sonuna kadar ilerleyeceði \
+            tanýmlanarak hareketli canlandýrma gerçekleþtirilmektedir. Diðer düðme seçenekleri, ilk animation karma vasfýnýn \
+            tek tek detaylarýný toplam 9 gruplanmayla daha teferruatlýca iþlemektedir." +
+            "<br/>3) Altprogram-2 background ile zeminrengi, tabakalý yada resimli zemin; zemin resimleriyle üst metin arasýnda \
+            kaydýrma iliþkileri; zeminin kutusýnýrý, tampon ve içerikten baþlamasý; zemin resminin tekliði/çokluðu, konumu; sýnýrýn üst, \
+            sað, alt ve solunun ayný yada farklý tanýmý; sýnýr tipleri (katý, noktalý, tireli, duble, içerlek, dýþarlak, yivli, pörtlek vb); sýnýr \
+            yarýçapýyla herbir kutu kenarýna ayný yada farklý yuvarlamalar tanýmlama; %50 ile tam daire biçimleme; sýnýrlarý kenarlýk \
+            resimleriyle süsleme; kutuiçi metnin olduðu gibi, kutu sýnýrýnýn da çeþitli renk, kalýnlýk, bulanýklýk, içerlek/dýþarlak \
+            gölgelendirilmesi, toplam 26 gruplamayla teferruatlýca canlý örneklendirilmiþtir." +
+            "<br/>4) Altprogram-3 kutunun (kesin/enaz/ençok) en ve boyu, kutu dýþý marj aralýklarý, kutu içi tampon aralýklarý; \
+            taþma'da gizlenme, kaydýrma çubuðuðla görülebilirlik, heriki, sadece yatay, sadece dikey kaydýrmalarýn görülmesi;\
+            kutu, blok veya satýriçinde görülebilirlik, yeri boþ olarak yada yerin de iptaliyle gizlenmesi; resmin metne göre kaydýrýlmasý \
+            yada kaydýrmalarýn (sol-sað-herikisi de) iptali gibi kutu vasýflarý (deðiþtirilebilir html-css-js metinalanlarýyla) toplam 18 \
+            gruplamayla örneklendirilmiþtir." +
+            "<br/>5) Altprogram-4 ýzgara serilimde yatay çift kolondaki içerikli kutucuklarýn hizalama/align, yaslama/justify ve \
+            yerleþtirme/place farkýyla kendi hücrelerinde ve toplam kutuda ilk/start, son/end, orta/center, esnek ve karmalarýyla içerik/content, \
+            birim/items ve tekkutucuk/self konumlandýrýlmalarý, ayrýca kutucuklar arasýndaki yatay/dikey aralýk/gap, toplam 10 \
+            gruplandýrmayla, týklanan düðmelerin html görseli ve F12-konsol vasýf deðerleri çýktýsýyla iþlenmiþtir. " +
+            "<br/>6) Altprogram-5 kutu-ebatlamasý/box-sizing içerik-kutu'ysa marj ve tampon yüksekliðe artý eklenir, sýnýr-kutu'ysa \
+            hepsi yüksekliðe dahil olur; imleç renk ve (çok) çeþitleri; anakutu sýnýrlarý içindeki sýnýrlý örnek kutuya, anakutu sýnýrlarýný \
+            taþabilen dýþhat sýnýrý, stili, kalýnlýðý, rengi, sýnýr-dýþhat aralýðý; (sadece Mozilla'da) yatay kýsa kalan metnin çeþitli sonlanýþ \
+            tarzlarý; kutu içi metnin haricen seçilip kopyalanmasýnýn etkinleþtirip kapatýlmasý, toplam 11 gruplamayla örneklenmiþitir." +
+            "<br/>7) Altprogram-6 arkaplandaki resimlerin önplandaki kutu etkisiyle bulanýk, ters, aðarýk renk süzgeçlenmesi; örnek \
+            resmin çeþitli filitreleme fonksiyonlarýyla (bulanýk, parlak, zýt, griölçek, renk-dönüþ, doygun, aðarýk) ve herbir fonksiyonun \
+            çeþitli derecelerde uygulanmasýyla, resim renk filitreleme, yatay-dikey ortalanmýþ esnek serilimde, toplam 12 gruplamayla iþlenmiþtir." +
+            "<br/>8) Altprogram-7 esnek serilimli kab içinde etkilenen çoklu kutunun teki yada hepsi için esnek vasýflardan: flex (esnek \
+            kutu geniþliði), esnek-temel, esnek-yön (satýr, sütun yada tersten), normal en 120px olmasýna raðmen alta sarmayýnca \
+            ayný satýra sýðýþmalarý yada satýr ve sütun düz/ters sarmasýyla sonraki satýrlara kaymalarý, esnek büyüme veya büzülmeyle \
+            örnek kutunun diðerlerine oranla istenilen katlý büyütülmesi yaza sündürülmesi, alta-akýþ benzeri alta-sarma'nýn olmasý/olmamasý \
+            yada tersten, sýralanmayla çoklu kutular içinde örneði istenen sýraya yerleþtirme, toplam 8 gruplama ve her gruplta 2-8 arasý \
+            düðme týklamasýyla atanan farklý css vasýflarýnýn canlý etkileri sergilenmektedir. Siz de textarea html veya css kutularýndaki \
+            ayarlarý istediðiniz gibi deðiþtirir, ayný anda deðiþen sonucunu izleyebilirsiniz." +
+            "<br/>9) Altprogram-8 ýzgara serilimin satýr ve sütun sayýlarýný, herbirinin yükseklik ve geniþliðini, gözlerdeki kutularýn göziçi \
+            baþlangýç ve son konumlarýný, kolonlar ve satýrlar arasýnda býrakýlacak boþluklarý, genel ýzgara þablonu yada sadece satýrlar \
+            veya sadece sütunlar þablonunu, sütun þablonlarýnýn tekrar, enaz-ençok en, içeriðe uygunluk fonksiyonlarýný, toplam 20 adetlik \
+            gruplamayla iþlemektedir." +
+            "<br/>10) Altprogram-9 metni çoklu kolonlara paylaþtýran kolonlar, kolon sayýsý, kolon geniþliði, metnin içindeki bölümün tek kolon \
+            yada tük kolonlara yayýlýmý, kolonlar arasý boþluk, bu ara boþluktaki cetvel, cetvelin rengi, stili ve geniþliði toplam 10 gruplanmayla \
+            canlý etkileþimli sergilenmektedir." +
+            "<br/>11) Altprogram-10 blok-ebatý yatayla boyu, dikeyle eni, auto'yla içeriði ebatlar; satýriçi-ebatý yatayla eni, dikeyle boyu, auto'yla \
+            içeriði ebatlar; gömülü blok yatay sað/sol, dikey sað/sol kenardan mutlak uzaklýkla mesafelendirilir: böylece blok enaz/ençok \
+            ebatlarý; sýnýr-blok baþ/son, sýnýr-blok baþ/son-stil/geniþlik/renk; tampon-blok baþ/son; marj-blok baþ/son; satýriçi, enaz/ençok satýriçi \
+            ebatlarý; sýnýr-satýriçi baþ/son, sýnýr-satýriçi baþ/son-stil/geniþlik/renk; tampon-satýriçi baþ/son, marj-satýriçi baþ/son; gömülü blok baþ/son; \
+            gömülü-satýriçi baþ/son, tüm teferruatlarýyla toplam 34 gruplamayla incelenmektedir." +
+            "<br/>12) Altprogram-11 metnin sola, saða, ortaya ve heriki yana hizalanmasý; paragrafýn sadece son satýrýnýn hizalanmasý; kutu geniþlik \
+            yetersizliðinde uzun kelimelerin taþmasý yada uygun yerlerinden kýrýlarak alta sarmasý; paragrafýn ilk satýrýnýn içeri/dýþarý kertiklenmesi; \
+            metin dönüþtürmede büyükharfleme, küçükharfleme, kelimelerin ilkharflerini büyütme, geniþ veya dar yanaþýklýk; paragrafýn altalta \
+            mýsramsý, içerlek/dýþarlak kertikli, mýsra arasý boþ satýrlarýn kaale alýnmasý yada alýnmamasý; sýðmayan kelimelerin kýrýlmasý; html'de \
+            görülmeyen &shy; gizli uzun kelime kýrýlma konumlarý; kelimeler ve harfler arasý boþluk ayarlarý (bazýlarý sadece Mozilla'da geçerli) toplam \
+            11 gruplanmayla örneklenmiþtir." +
+            "<br/>13) Altprogram-12 metin dekoratif süslemede altçizgi, ortaçizgi, üstçizgi, alt ve üstçizgi; dekorasyonun rengi, çizgisi, stili, kalýnlýðý, \
+            alt kuyruklu harflerdeki kesintililik/kesintisizlik; metnin üzerine herçeþit karakterle vurgu, rengi ve stili; (kutunun deðil) metnin gölgelendirilmesi; \
+            metnin altçizgisinin (kesintili/kesintisiz) konumu; altçizginin alta kayma telafi derecesi, toplam 12 gruplandýrýlmayla iþlenmiþtir." +
+            "<br/>14) Altprogram-13 maskeleme alttaki zemine (renkli tabakalanma) üstteki (tekli/çoklu) yurel resmin sadece dýþ sýnýrlarý dahilinden \
+            bakmak demektir; maskeleme-resmi tabakalandýrma, yurel tekli/çoklu resmi olabilir; maskeleme-ebatý rakamsal, yüzdesel, içerle veya kapsa \
+            olabilir; maskeleme-konumu (tek) resmin x-y/yatay-dikey kutu içi baþlangýç konumudur; maskeleme-tekrarý çoklu resimlerin yatay, dikey, tüm \
+            kutu yayýlýmýdýr; maskeleme-orijini kutunun sýnýr, tampon yada içeriðini kapsar; maskeleme-kipi yarý transparan veya nettir; maskeleme-bileþimi \
+            çoklu yurel resimlerinin toplamý, çýkarýmý, kesiþimi veya dýþlanýmýdýr; maskeleme-kýrpma, maskeleme-orijini gibi yurel resmin kutunun sýnýrýyla, \
+            tamponuyla veya içeriðiyle kýrpýlmasýdýr; kýrpma-yolu metinli kutunun solundaki img-src resmin dýþhatlarýnýn daire, elips veya poligon vb kýrpýlarak \
+            metinle uyum saðlanmasýdýr. Maskelemenin toplam 11 gruplamalý örneklenmesinin hemen tamamý sadece Mozilla tarayýcýda ve http.server'le \
+            çalýþtýrmayý gerektirmektedir." +
+            "<br/>15) Altprogram-14 kaydýraç çubuðunun yatay hareket tipi x-mandatory/zorunlu, x-proximity/yakýnlýk ve none/hiçbiri; kaydýraç marjý ortadaki \
+            kutunun baþlangýç ve sonuna eklenen marjlardýr; ayrýca tek tek kutunun yatay sol/sað ve dikey üst/alt marjlarý; yatay kaydýraç marj bloku ve yatay \
+            kaydýraç  marj blok baþý/sonu; yatay kaydýraç marj satýrýiçi ve yatay kaydýraç marj satýriçi baþý/sonu; marj benzeri kaydýraç tampon çeþitlemeleri, \
+            toplam 23 adetlik gruplamayla iþlenmiþtir." +
+            "<br/>16) Altprogram-15 daha önce dönüþtürme transform'un metni büyük/küçük harfleþtirdiðini görmüþtük. Dönüþtürme firefox.svg resmini matris, \
+            aktarma, ölçekleme, döndürme, bükme, karmalarý; düzlemsel ve 3 boyutlu dönüþtürme stili; perspektif derinlikli manzarada derinlik farklarý; perspektif \
+            orijinin farklý görüþaçýlarýyla 3 boyutlu gözlenmesi; 3 boyutlu perspektifin arkayüzlerinin görünmemesi, þeffaf görünmesi; dönüþtürme fonksiyonlarýndan \
+            perspektif derinlik mesafeleri; dönüþtürmenin döndürme farklý dereceleri, 3 boyutlu, sadece Xyatay, Ydikey ve Zötelemeli döndürmeler; dönüþtürmenin \
+            ölçekleme büyütme/küçültmesi, 3 boyutlu ölçekleme, sadece Xyatay, Ydikey, Zötelemeli ölçekleme; resmi dönüþtürmenin aktarmasýyla farklý konuma \
+            taþýma, 3 boyutlu, sadece Xyatay, Ydikey ve Xötelemeli aktarmalar; dönüþtürmenin bükülen resmi, sadece Xyatayve Ydikey bükmeler, toplam 25 \
+            gruplamayla örneklendirilmiþtir." +
+            "<br/>17) Altprogram-16 toplam 20 adet harici yazýfonu ailesinden önce üçü: Fira Sans, Gill Sans ve Amstelvar; sonrasýnda da sonsuz döngüde diðer \
+            17 harici yazýfonu ailesi 3'er sn beklemeyle vitrinlenmekte, üzerine týklandýðýnda F12-konsol'da yazýfonu ailesinin ve harici dosyanýn adlarý beyan edilmektedir. \
+             Font ile yazýfonu vasýflarý (ebat, aile, koyuluk, yatýklýk, büyük/küçük harf, süslü serif, süssüz sans-serif vb özellikleri; fonailesiyle dahili/harici fon adlarý, süslü, \
+            süssüz, elyazýlý olduklarý; fonstiliyle normal, yatýk harfler; fonaðýrlýðýyla normal, koyu, daha koyu, daha açýk, 100->900 koyulaþma dereceleri; fonebatýyla, em, \
+            rem, px, pt, %, küçük/orta/büyük-ektsra-ekstraekstra büyüklükleri; fonçeþitlemesiyle normal, çizgili sýfýr, tablosal, küçük/büyük harf farklýlýkarý; fonçeþitleme \
+            küçük/büyük harfleþme; fonçeþidiayarýyla aðýrlýk 25 silik'ten 850 koyu'ya artýþ; fon senteziyle tek tek koyu aðýrlýk ve yatýk stil ile bu ikisinin karmasý veya tümden \
+            normal; fonebat ayarýnýn 0, 0.58, 1.5 yoktan büyütülmesi; fonçeþitlemesinin fon özellik ayarlarýyla yinelenmesi; kerning ve fon görsel ebatlamayla WA gibi \
+            uyumlu bitiþik harflerin enuygun ve okunaklý aralanmasý; sonundaysa baþta bahsedilen 20 harici yazýfonu geçidi, ve týklanýnca ad-dosya beyaný; toplam \
+            15 gruplamayla sunulmaktadýr." +
+            "<br/>18) Altprogram-17 göreceli konumlandýrýlan kab içindeki mutlak konumlandýrýlan kutunun kab içinde soldan, saðdan, üstten ve alttan farklý uzaklýklara \
+            konumlandýrýlmasý; kab içi 3 kutucuktan ortadakinin duruk, göreceli ve yapýþkan konumlanmasý,  yapýþkanda alta kaydýraçlanma sarýkutunun tepede \
+            kaymaksýzýn yapýþýkkalmasýný gerektirmektedir; 3 adet auto'lu z-endeks, 3 adet 2-4-6 öncelikli z-endeks ve ana kutumuzun deðiþen z-endeks 1-3-5-7-auto \
+            önceliðinde diðer farklý öncelikli kutularla üsttelik/alttalýk iliþkisi; zemin üstü doðrusal  tabakalanan kutunun kenar kýrpýlmalarýnýn içerlek kutucuk, daire, \
+            elips, 3 köþeli/10köþeli poligon kýrpýlmasýyla þekillendirilme; zeminin doðrusal/tekrarlý-doðrusal, ýþýnsal/tekrarlý-ýþýnsal ve koniksek tabakalandýrýlmasý; \
+            kutunun aþina transform dönüþtürmenin döndürme fonksiyonuyla derece, radyan, gradyan, dönü birimleriyle -+ açýsal döndürülmesi; kutu eninin \
+            calc-ulate hesaplamayla px, %, em ve :root/kök deðiþken deðeriyle deðiþtirilmesi; yazýfonu ebatýnýn üçlü rem-vw-rem'den enbüyüðüne kenetlenmesi; \
+            kutu geniþliðinin listelenen çoklu rem-px-vw deðerlerinden enbüðüne yada enküçüðüne atanmasý; liste stilinin içerlek, dýþarlak, irinokta, çember, \
+            harici yurel roket resmi ikonu yada Gürcü sýralamasý olmasý; liste stili tipi olarak kare, çember, parmak-iþareti, isimli/ondalýk-kodlu/hex-kodlu maça, \
+            çapa sembolleri; liste stili resmi olarak yurel roket ikonu yada resimsiz varsayýlý irinokta; liste stil konumu olarak saða içerlek yada sola dýþarlak; çoklu \
+            h2 baþlýklara counter-increment:bölüm-sayacý ve content:counter(bölüm-sayacý) css ayarlarýyla js counterSet='bölüm-sayacý x' rakamýyla örnek h2 \
+            bölüm numarasý yeniden sýralanabilmektedir; counterReset='bölüm-sayacý x' ise x+1'e ayarlayar sýralar; js counterIncrement='deðiþken x' ile atanan \
+            x deðeri direk sayaç artýþ deðeri olarak yansýtýlýr; tablo serilimi sabit/otomatik ve geniþlik px/% cinsinden ölçeklenebilir; td hücre sýnýrlarýnýn çöküþü, \
+            çökük yada ayrýk olabilir; hücrelerarasý boþluk 4 tarafý tek deðerli yada kolon ve satýr aralarý farklý deðerli olabilir; tablo baþlýðý üste yada alta konumlanabilir; \
+            içi boþ td hücreler gizli yada görünür kýlýnabilir; geçiþ süreci css vasýflarý sað-marj ve sn tanýmlanýp, üzerindeyken farklý hareketlendirme deðerleriyle %50 \
+            kab yarý geniþliðine atanarak kutu geniþliði yarýyarýya geriletilebilir; geçiþim süresi, yazýrengi, zeminrengi veya saðmarj geçiþim özelliklerinden biri yada \
+            hepsi için farklý/ayný zamanlý atanabilir; geçiþim özelliði none/hiç tanýmsýz ise ani deðiþim, tekli/çoklu tanýmlýysa, tanýmlý-lar süreçli, tanýmsýzlar ani deðiþim \
+            gösterir; geçiþ zaman fonksiyonu doðrusal, kolay baþla-bitir, adým-adým veya kübik salýnýmlý yapýlabilir; metnin satýr yüksekliði normal=19px, ölçeksiz, yada \
+            em-px-% gibi ölçekli olabilir; hareketli toplarda örnek butonunda .oynuyor sýnýflý vasýf varsa bu vasýf silinip, butona Duraklat yazýlýr, aksi durumda bu sýnýf \
+            vasfý eklenip butona Oynat yazdýrýlýp, keza animasyon oynama durumu running yada paused olarak deðiþtirilir; telafi çapasý deðerleri topun hareket \
+            güzergahýný M-yolundan bir miktar saptýrýr; telafi yoluyla path('M...') farklý x-y konumlu güzergahlar çizilir; kýrpma yoluyla siyah-beyaz roket þekli çizilip, \
+            telafi döndürmeyle bu roket farklý açýlarla path-M yörüngesinde döndürülülür; telafi mesafesiyle tam path-M yürüngenin tamamý=%0-eksik yada \
+            %30'u=%70-eksik, daha azalan yörüngeyi yine ayný sürede fakat daha yavaþ kateder; resim sunumunda kab içi tabakalý örneðin kertenkele dýþ silueti \
+            kesintili/kesintisiz çizgili gösterilebilir; resmin nesne uyumu dolu, içerilsin, kaplasýn, küçük-ölçekli yapýlabilir; nesne uyumunu none/hiç'leyip resmin nesne \
+            konumu kab içinde istenilen -+(x y) konumundan baþlatýlabilir; background/zemin vasfýyla kabiçi zeminini doðrusal/tekrarlý-doðrusal, ýþýnsal/tekrarlý-ýþýnsal \
+            veya koniksel tabakalamanýz mümkündür. Bu örnekler bol bol parametrik deðiþiklik ve sonuç gözlemekle nüanslarý anlaþýlabilir. Toplam 42 gruplama ve \
+            169 parametrik düðmeli css vasfý atanarak örneklendirilmiþtir." +
+            "<br/>19) Altprogram-18 yazýrenginin isim, #, rgb, rgba, hsl ve hsla ile tanýmlarý; yazý netliðinin sadece opacity yada rgba ve hsla ile görünmez=0'den \
+            tam netliðe=1 ayarý; kutu metninin taþmasýyla saðda dikey beliren kaydýrma çubuðu ve alt sürgüsünün renkleri, kaydýrma çubuk enini ince/yok/otomatik \
+            tanýmlama; kaydýrma çubuðu tutumu yumuþak/otomatik'le yatay seyrüsefer menü seçenekleriyle dikey menü id-href git-gel sayfa-menü kontrolu \
+            gösterilmektedir; yazýlým kipinin dikey soldan-saða/saðdan sola kaydýraçlý ve yatay yukardan aþaðýya kutucuklar ve metnin düzeni iþlenmiþtir; sadece \
+            4 kutucuk ve sondaki metnin yön:saðdan-sola/soldan-saða dikey deðil yatay sýralanýþlarý görülmektedir; metnin yönelimi dikeyken yazýlým kipinin soldan-\
+            saða ve saðdan-sola farklýlýðý, ayrýca karýþýk metin yönelimi örneklenmiþtir; satýr yüksekliði devasa artýrýlýp ortaya alt-üst çizgi dekorasyonlu metin satýrý \
+            yerleþtirilip yazýebatýndan küçük bir resmin çeþitli metne ve satýryüksekliðine göreceli dikey hizalandýrýlmasý sergilenmektedir; kutuya atfedilen vasýflar \
+            (yeþil zemin, kesintili magenta sýnýr, kýrmýzý yazýrengi vb) style.all='unset' ile tümden iptal edilmekte, initial'la varsayýlý vasýflarý almakta, inherit'leyse üst \
+            ebeveyn kab vasýflarýný miraslamakta, ayrýca style='' týrnakiçi hiçlik all/tüm ayarlarý yüklemekle eþdeðerdir; :root ile 3 farklý rengi 3 farklý deðiþkene atayýp, \
+            sýnýrrengi='var(renk1)' atarsak deðiþken deðeri kutunun sýnýr rengini belirleyecektir; üçlü kolonlu metin seriliminde yetim sayýsý metni 3 kolona paylaþtýrýrken \
+            paragraf baþýndaki satýrlarýn bir önceki kolonda ayrý/yetim ayarýný belirler; dullar ise üçlü kolondan sonraya taþabilecek yalnýz kolondaki satýr sayýsýný ayarlar; \
+            paragraflý kutunun gölgelemeli, doðrusal tabakalý, sýnýr köþe yarýçap ovallý vb ayarlarý, þayet kutu geniþliði yetersizse alt satýrlara kýrýlacaktýr, ancak kutu \
+            dekorasyon kýrýlma vasfý klon olarak atanýrsa, herbir kýrýlan ibareler kýrýk deðil, baþý-sonu tamam yavrular olarak tamamlanacaklardýr; alýntý quote elemanlý \
+            metnin ilk-son, içiçe ilk-son karakterleri varsayýlýdan farklý sembollerle tanýmlanabilir; gösterge olaylarýnýn farklý vasýflarý gösterge alanýndaki parmaklý \
+            göstergenin tebarruzu ve etkinleþmesini etkilemektedir, buna göreli olarak id-href karþýlýklý atlamalarýný iliþkilendirebilmektedir; sola hizalý resmin saðýndaki \
+            metnin resmi uygun çepeçevrelikle sarabilmesi dýþ þekil ayarýyla çembersel, elipsel, poligonsal yada resmin kendi þekliyle þekillendirilebilmektedir; \
+            metiniçi sola hizalý dairesel þekil ve çembersel dýþ þekil ayarlarýna ayrýca þekille metin arasýna marj mesafesi konulabilmektedir; metnin sola yaslý þekli \
+            için sol-alttan sað-üste saydamlýðý artan doðrusaltabakalanma tanýmlanmýþ, dýþ þekil olarak da ayný tabakalanma gösterilmiþ, sonrasýndaysa þekil \
+            resim eþiði için metnin þekli sarmalayacaðý enaz netlikler tanýmlanarak, artan netlikle artan metin sarmalamasý saðlanmýþtýr; kab içine resim ve paragraf \
+            elemanlarý karýþýk karmakipi: çarpým deðerli yerleþtirilip, çarpým sonucu otomatikmen karartmalý süzgeçliyken, izolasyon yalýt deðerini aldýðýnda süzgeçleme \
+            etkisizleþip resim ve paragraf elemanlarý önplana çýkmaktadýr; daha önce filter'de görüldüðü üzere kab zeminiyle üstteki resmin karýþýk karma kipleri \
+            çarpma, fark, yoðun-ýþýklý ve normal olabilmektedir; alttaki kabýn zeminiyle deðil, üstteki örnek kutununun zemin vasfýyla atanan hem zemin rengi hem de \
+            yurel resminin zemin karma kipi çarpma, fark, yoðun-ýþýklý ve normal olabilmektedir. Toplam 23 gruplama ve 78 css vasýf atayan düðmelemeyle örnekler \
+            pekiþtirilmiþ, ayrýca html, css ve js textarea pencerelerinde isteyenin kolayca deðiþiklik yapýp sonuçlarýný izleyebilmesine imkan tanýnmýþtýr."
+    </script>
+</body> 
+</html>
