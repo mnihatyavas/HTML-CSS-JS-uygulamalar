@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2b07.html: Esnek-kutularýn  temel/yön/akýþ/büyüme/büzülme/altasarma/sýralama örneði.</title>
+    <link rel="stylesheet" href="C2.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<h4>Týkladýðýnýzýn içeriðini görmek için F12-konsolu aç</h4>
+
+<div id="çýktý2">
+    <h3>Ýçerik kutularýn esnek serilimi</h3>
+    <div class="kab1">
+        <div id="örnek1"><p>Beni deðiþtir</p></div>
+        <div>flex: 1</div>
+        <div>flex: 1</div>
+    </div>
+</div>
+<code>flex:</code>
+<button id="düðme1">Týkla</button>
+<button id="düðme2">Týkla</button>
+<button id="düðme3">Týkla</button>
+<button id="düðme4">Týkla</button>
+<span>esnek(serilim)</span>
+<hr/>
+
+<div id="çýktý2">
+    <h3>Ýçerik kutularýn esnek-temelli serilimi</h3>
+    <div class="kab1">
+        <div id="örnek2"><p>Beni deðiþtir</p></div>
+        <div>flex: 1</div>
+        <div>flex: 1</div>
+    </div>
+</div>
+<code>flex-basis:</code>
+<button id="düðme5">Týkla</button>
+<button id="düðme6">Týkla</button>
+<button id="düðme7">Týkla</button>
+<span>esnek-temel</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Ýçerik kutularýn esnek yönü</h3>
+    <div id="örnek3">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+    </div>
+</div>
+<code>flex-direction:</code>
+<button id="düðme8">Týkla</button>
+<button id="düðme9">Týkla</button>
+<button id="düðme10">Týkla</button>
+<button id="düðme11">Týkla</button>
+<span>esnek-yön</span>
+<hr/>
+
+<div id="çýktý1">
+    <h3>Alta saran/sarmayan esnek akýþý</h3>
+    <div id="örnek4">
+        <div>Bir</div>
+        <div>Ýki</div>
+        <div>Üç</div>
+        <div>Dört</div>
+        <div>Beþ</div>
+        <div>Altý</div>
+    </div>
+</div>
+<code>flex-flow:</code>
+<button id="düðme12">Týkla</button>
+<button id="düðme13">Týkla</button>
+<button id="düðme14">Týkla</button>
+<button id="düðme15">Týkla</button>
+<button id="düðme16">Týkla</button>
+<span>esnek-akýþ</span>
+<hr/>
+
+<div id="çýktý2">
+    <h3>Esnek büyüyebilen kutu</h3>
+    <div class="kab1">
+        <div id="örnek5"><p>Ben büyürüm</p></div>
+        <div>flex: 1</div>
+        <div>flex: 1</div>
+    </div>
+</div>
+<code>flex-grow:</code>
+<button id="düðme17">Týkla</button>
+<button id="düðme18">Týkla</button>
+<button id="düðme19">Týkla</button>
+<span>esnek-büyüme</span>
+<hr/>
+
+<div id="çýktý2">
+    <h3>Esnek sünebilen kutu</h3>
+    <div id="örnek6">
+        <div id="örnek6a"><p>Ben sünerim</p></div>
+        <div>flex: 1</div>
+        <div>flex: 1</div>
+        <div>flex: 1</div>
+        <div>flex: 1</div>
+    </div>
+</div>
+<code>flex-shrink:</code>
+<button id="düðme20">Týkla</button>
+<button id="düðme21">Týkla</button>
+<button id="düðme22">Týkla</button>
+<span>esnek-sünme</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Alta-sarabilen esnek kutular</h3>
+    <div id="örnek7">
+        <div>Ýlk kutu</div>
+        <div>Ýkinci kutu</div>
+        <div>Üçüncü kutu</div>
+        <div>Dördüncü kutu</div>
+        <div>Beþinci kutu</div>
+        <div>Altýncý kutu</div>
+    </div>
+</div>
+<code>flex-wrap:</code>
+<button id="düðme23">Týkla</button>
+<button id="düðme24">Týkla</button>
+<button id="düðme25">Týkla</button>
+<span>esnek-altasarma</span>
+<hr/>
+
+<div id="çýktý2">
+    <h3>Esnek kutularýn dizilim sýrasý</h3>
+    <div class="kab1">
+        <div id="örnek8"><p>Kaçýncýyým?</p></div>
+        <div style="order: 4;">Dördüncü</div>
+        <div style="order: 1;">Birinci</div>
+        <div style="order: 3;">Üçüncü</div>
+        <div style="order: 2;">Ýkinci</div>
+    </div>
+</div>
+<code>order:</code>
+<button id="düðme26">Týkla</button>
+<button id="düðme27">Týkla</button>
+<button id="düðme28">Týkla</button>
+<button id="düðme29">Týkla</button>
+<button id="düðme30">Týkla</button>
+<button id="düðme31">Týkla</button>
+<span>kaçýncý</span>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 200px;">
+section {background-color: DarkSlateGray; font: 1rem, sans-serif; letter-spacing: 1px;}
+button {background-color: DarkRed;}
+h3 {text-decoration: underline; color: LightGreen; margin: 0;}
+h4, p {margin:0; color: white;}
+code, span, button {color: yellow; font-size: 12px;}
+/*------------------------------------------------------*/
+#çýktý {height: 200px;}
+#çýktý1 {height: 330px;}
+#çýktý2 {height: 130px;}
+.kab1 {
+    background-color: #eee;
+    border: .75em solid;
+    padding: .75em;
+    width: 100%;
+    max-height: 100%;
+    display: flex;}
+.kab1 > div {
+    background-color: rgba(0, 0, 255, .2);
+    border: 3px solid blue;
+    margin: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;}
+#örnek1, #örnek2, #örnek5, #örnek8 {background-color: rgba(150, 0, 100, .4); border: 3px solid RebeccaPurple;}
+/*------------------------------------------------------*/
+#örnek3, #örnek4, #örnek6, #örnek7 {
+    background-color: #eee;
+    border: .75em solid;
+    padding: .75em;
+    //width: 100%;
+    display: flex;}
+#örnek3 > div, #örnek4>div, #örnek6>div, #örnek7>div  {
+    background-color: rgba(0, 0, 255, 0.2);
+    border: 3px solid blue;
+    width: 120px;
+    margin: 7px;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 200px;">
+// Esnek serilim elemanlarýndan birini deðiþtirmek...
+düðme1.onclick = ()=>{örnek1.style.flex = "3"; console.log (örnek1.style.flex);}
+düðme2.onclick = ()=>{örnek1.style.flex = "2"; console.log (örnek1.style.flex);}
+düðme3.onclick = ()=>{örnek1.style.flex = "1 20px"; console.log (örnek1.style.flex);}
+düðme4.onclick = ()=>{örnek1.style.flex = "1 1 150px"; console.log (örnek1.style.flex);}
+// Esnek temelli elemaný diðerlerinden farklýlaþtýrmak...
+düðme5.onclick = ()=>{örnek2.style.flexBasis = "auto"; console.log (örnek2.style.flexBasis);}
+düðme6.onclick = ()=>{örnek2.style.flexBasis = "0"; console.log (örnek2.style.flexBasis);}
+düðme7.onclick = ()=>{örnek2.style.flexBasis = "200px"; console.log (örnek2.style.flexBasis);}
+// Esnek serilimde (satýr/sütun-ters) yön belirleme...
+düðme8.onclick = ()=>{örnek3.style.flexDirection = "row"; console.log (örnek3.style.flexDirection);}
+düðme9.onclick = ()=>{örnek3.style.flexDirection = "row-reverse"; console.log (örnek3.style.flexDirection);}
+düðme10.onclick = ()=>{örnek3.style.flexDirection = "column"; console.log (örnek3.style.flexDirection);}
+düðme11.onclick = ()=>{örnek3.style.flexDirection = "column-reverse"; console.log (örnek3.style.flexDirection);}
+// Altsatýra saran/sarmayan esnek akýþ...
+düðme12.onclick = ()=>{örnek4.style.flexFlow = "row wrap"; console.log (örnek4.style.flexFlow);}
+düðme13.onclick = ()=>{örnek4.style.flexFlow = "row-reverse nowrap"; console.log (örnek4.style.flexFlow);}
+düðme14.onclick = ()=>{örnek4.style.flexFlow = "column wrap"; console.log (örnek4.style.flexFlow);}
+düðme15.onclick = ()=>{örnek4.style.flexFlow = "column-reverse wrap"; console.log (örnek4.style.flexFlow);}
+düðme16.onclick = ()=>{örnek4.style.flexFlow = "column wrap-reverse"; console.log (örnek4.style.flexFlow);}
+// Esnek büyüyen kutu...
+düðme17.onclick = ()=>{örnek5.style.flexGrow = "1"; console.log (örnek5.style.flexGrow);}
+düðme18.onclick = ()=>{örnek5.style.flexGrow = "2"; console.log (örnek5.style.flexGrow);}
+düðme19.onclick = ()=>{örnek5.style.flexGrow = "3"; console.log (örnek5.style.flexGrow);}
+// Esnek sünen kutu...
+düðme20.onclick = ()=>{örnek6a.style.flexShrink = "0"; console.log (örnek6a.style.flexShrink);}
+düðme21.onclick = ()=>{örnek6a.style.flexShrink = "1"; console.log (örnek6a.style.flexShrink);}
+düðme22.onclick = ()=>{örnek6a.style.flexShrink = "3"; console.log (örnek6a.style.flexShrink);}
+// Alt-satýra sarabilen esnek kutular...
+düðme23.onclick = ()=>{örnek7.style.flexWrap = "wrap"; console.log (örnek7.style.flexWrap);}
+düðme24.onclick = ()=>{örnek7.style.flexWrap = "nowrap"; console.log (örnek7.style.flexWrap);}
+düðme25.onclick = ()=>{örnek7.style.flexWrap = "wrap-reverse"; console.log (örnek7.style.flexWrap);}
+// Esnek kutularýn dizilim düzeni...
+düðme26.onclick = ()=>{örnek8.style.order = "3"; console.log (örnek8.style.order);}
+düðme27.onclick = ()=>{örnek8.style.order = "-10"; console.log (örnek8.style.order);}
+düðme28.onclick = ()=>{örnek8.style.order = "2"; console.log (örnek8.style.order);}
+düðme29.onclick = ()=>{örnek8.style.order = "4"; console.log (örnek8.style.order);}
+düðme30.onclick = ()=>{örnek8.style.order = "0"; console.log (örnek8.style.order);}
+düðme31.onclick = ()=>{örnek8.style.order = "30"; console.log (örnek8.style.order);}
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C2.js"></script>
+</html>

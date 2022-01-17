@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2b10.html: Blok/satýriçi ebatý, sýnýr-blok/satýriçi-baþ/son stilleri, gömülü-blok/satýriçi-baþ/son örneði.</title>
+    <link rel="stylesheet" href="C2.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<h4>Týkladýðýnýzýn içeriðini görmek için F12-konsolu aç</h4>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir blok ebatý ve yazýlým kipi</h3>
+    <div id="örnek1">
+        <p>1) Bu, blok ebatýný deðiþtirebileceðin bir kutudur.</p>
+        <p>2) block-size: horizontal ile boyu, vertical ile eni, auto ile içeriði ebatlar./p>
+    </div>
+</div>
+<code>block-size:</code>
+<button id="düðme1">Týkla</button>
+<button id="düðme2">Týkla</button>
+<button id="düðme3">Týkla</button>
+<button id="düðme4">Týkla</button>
+<span>blok-ebatý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir ençok blok ebatý ve yazýlým kipi</h3>
+    <div id="örnek2">
+        <p>Bu, ençok blok ebatýný deðiþtirebileceðiniz bir kutudur.</p>
+        <p>Blok boyutunu içerikle sýnýrlarken, taþma da görülebilir.</p>
+    </div>
+</div>
+<code>max-block-size:</code>
+<button id="düðme5">Týkla</button>
+<button id="düðme6">Týkla</button>
+<button id="düðme7">Týkla</button>
+<button id="düðme8">Týkla</button>
+<span>ençok-blok-ebatý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir enaz blok ebatý ve yazýlým kipi</h3>
+    <div id="örnek3">
+        <p>Bu, enaz blok ebatýný deðiþtirebileceðiniz bir kutudur.</p>
+        <p>Blok boyutunu içerikle sýnýrlarken, taþmada ebat içeriði kapsar.</p>
+    </div>
+</div>
+<code>min-block-size:</code>
+<button id="düðme9">Týkla</button>
+<button id="düðme10">Týkla</button>
+<button id="düðme11">Týkla</button>
+<button id="düðme12">Týkla</button>
+<span>enaz-blok-ebatý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir baþlangýç sýnýrý ve yazýlým kipi</h3>
+    <div id="örnek4">
+        <p>1) Bu baþlangýcýnda sýnýrý olan bir kutudur.</p>
+        <p>2) Bu baþlangýcýnda sýnýrý olan bir kutudur.</p>
+    </div>
+</div>
+<code>border-block-start:</code>
+<button id="düðme13">Týkla</button>
+<button id="düðme14">Týkla</button>
+<button id="düðme15">Týkla</button>
+<button id="düðme16">Týkla</button>
+<span>sýnýr-blok-baþlangýcý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir son sýnýrý ve yazýlým kipi</h3>
+    <div id="örnek5">
+        <p>1) Bu sonunda sýnýrý olan bir kutudur.</p>
+        <p>2) Bu sonunda sýnýrý olan bir kutudur.</p>
+    </div>
+</div>
+<code>border-block-end:</code>
+<button id="düðme17">Týkla</button>
+<button id="düðme18">Týkla</button>
+<button id="düðme19">Týkla</button>
+<button id="düðme20">Týkla</button>
+<span>sýnýr-blok-sonu</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir baþlangýç sýnýr stili ve yazýlým kipi</h3>
+    <div id="örnek6">
+        <p>1) Bu baþýnda sýnýr stili olan bir kutudur.</p>
+        <p>2) Bu baþýnda sýnýr stili olan bir kutudur.</p>
+    </div>
+</div>
+<code>border-block-start-style:</code>
+<button id="düðme21">Týkla</button>
+<button id="düðme22">Týkla</button>
+<button id="düðme23">Týkla</button>
+<button id="düðme24">Týkla</button>
+<span>sýnýr-blok-baþý-stili</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir son sýnýr stili ve yazýlým kipi</h3>
+    <div id="örnek7">
+        <p>1) Bu sonunda sýnýr stili olan bir kutudur.</p>
+        <p>2) Bu sonunda sýnýr stili olan bir kutudur.</p>
+    </div>
+</div>
+<code>border-block-end-style:</code>
+<button id="düðme25">Týkla</button>
+<button id="düðme26">Týkla</button>
+<button id="düðme27">Týkla</button>
+<button id="düðme28">Týkla</button>
+<span>sýnýr-blok-sonu-stili</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir baþlangýç sýnýr kalýnlýðý ve yazýlým kipi</h3>
+    <div id="örnek8">
+        <p>1) Bu baþýnda sýnýr kalýnlýðý olan bir kutudur.</p>
+        <p>2) Bu baþýnda sýnýr kalýnlýðý olan bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-block-start-width:</code>
+<button id="düðme29">Týkla</button>
+<button id="düðme30">Týkla</button>
+<button id="düðme31">Týkla</button>
+<button id="düðme32">Týkla</button>
+<span style="font-size:10px;">sýnýr-blok-baþlangýç-kalýnlýðý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir son sýnýr kalýnlýðý ve yazýlým kipi</h3>
+    <div id="örnek9">
+        <p>1) Bu sonunda sýnýr kalýnlýðý olan bir kutudur.</p>
+        <p>2) Bu sonunda sýnýr kalýnlýðý olan bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-block-end-width:</code>
+<button id="düðme33">Týkla</button>
+<button id="düðme34">Týkla</button>
+<button id="düðme35">Týkla</button>
+<button id="düðme36">Týkla</button>
+<span style="font-size:10px;">sýnýr-blok-sonu-kalýnlýðý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir baþlangýç sýnýr rengi ve yazýlým kipi</h3>
+    <div id="örnek10">
+        <p>1) Bu baþýnda sýnýr rengi olan bir kutudur.</p>
+        <p>2) Bu baþýnda sýnýr rengi olan bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-block-start-color:</code>
+<button id="düðme37">Týkla</button>
+<button id="düðme38">Týkla</button>
+<button id="düðme39">Týkla</button>
+<button id="düðme40">Týkla</button>
+<span style="font-size:10px;">sýnýr-blok-baþlangýcý-rengi</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir son sýnýr rengi ve yazýlým kipi</h3>
+    <div id="örnek11">
+        <p>1) Bu sonunda sýnýr rengi olan bir kutudur.</p>
+        <p>2) Bu sonunda sýnýr rengi olan bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-block-end-color:</code>
+<button id="düðme41">Týkla</button>
+<button id="düðme42">Týkla</button>
+<button id="düðme43">Týkla</button>
+<button id="düðme44">Týkla</button>
+<span style="font-size:10px;">sýnýr-blok-sonu-rengi</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir baþlangýç blok tamponu ve yazýlým kipi</h3>
+    <div id="örnek12">
+        <p>Samanyolu Galaksimizin helezoni uzak batý ucundaki bulanýk sisleri arasýnda gözle farkedilemeyen küçük bir sarý güneþ barýnmaktadýr.</p>
+    </div>
+</div>
+<code>padding-block-start:</code>
+<button id="düðme45">Týkla</button>
+<button id="düðme46">Týkla</button>
+<button id="düðme47">Týkla</button>
+<button id="düðme48">Týkla</button>
+<span>tampon-blok-baþý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir son blok tamponu ve yazýlým kipi</h3>
+    <div id="örnek13">
+        <p>Samanyolu Galaksimizin helezoni uzak batý ucundaki bulanýk sisleri arasýnda gözle farkedilemeyen küçük bir sarý güneþ barýnmaktadýr.</p>
+    </div>
+</div>
+<code>padding-block-end:</code>
+<button id="düðme49">Týkla</button>
+<button id="düðme50">Týkla</button>
+<button id="düðme51">Týkla</button>
+<button id="düðme52">Týkla</button>
+<span>tampon-blok-sonu</span>
+<hr/>
+
+<div id="çýktý1">
+    <h3>Deðiþtirilebilir baþlangýç blok marjý ve yazýlým kipi</h3>
+    <div class="kab14">
+        <div class="satýr14">Bir</div>
+        <div class="satýr14" id="örnek14">Ýki</div>
+        <div class="satýr14">Üç</div>
+    </div>
+</div>
+<code>margin-block-start:</code>
+<button id="düðme53">Týkla</button>
+<button id="düðme54">Týkla</button>
+<button id="düðme55">Týkla</button>
+<button id="düðme56">Týkla</button>
+<span>marj-blok-baþý</span>
+<hr/>
+
+<div id="çýktý1">
+    <h3>Deðiþtirilebilir son blok marjý ve yazýlým kipi</h3>
+    <div class="kab15">
+        <div class="satýr15">Bir</div>
+        <div class="satýr15" id="örnek15">Ýki</div>
+        <div class="satýr15">Üç</div>
+    </div>
+</div>
+<code>margin-block-end:</code>
+<button id="düðme57">Týkla</button>
+<button id="düðme58">Týkla</button>
+<button id="düðme59">Týkla</button>
+<button id="düðme60">Týkla</button>
+<span>marj-blok-sonu</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir satýriçi ebatý ve yazýlým kipi</h3>
+    <div id="örnek16">
+        <p>1) Bu, satýriçi ebatýný deðiþtirebileceðin bir kutudur.</p>
+        <p>2) inline-size: horizontal ile eni, vertical ile boyu, auto ile içeriði ebatlar.</p>
+    </div>
+</div>
+<code>inline-size:</code>
+<button id="düðme61">Týkla</button>
+<button id="düðme62">Týkla</button>
+<button id="düðme63">Týkla</button>
+<button id="düðme64">Týkla</button>
+<span>satýriçi-ebatý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir ençok satýriçi ebatý ve yazýlým kipi</h3>
+    <div id="örnek17">
+        <p>1) Bu, satýriçi ençok ebatýný deðiþtirebileceðin bir kutudur.</p>
+        <p>2) inline-size: horizontal ile eni, vertical ile boyu, auto ile içeriði ebatlar.</p>
+    </div>
+</div>
+<code>max-inline-size:</code>
+<button id="düðme65">Týkla</button>
+<button id="düðme66">Týkla</button>
+<button id="düðme67">Týkla</button>
+<button id="düðme68">Týkla</button>
+<span>ençok-satýriçi-ebatý</span>
+<hr/>
+
+<div id="çýktý1">
+    <h3>Deðiþtirilebilir enaz satýriçi ebatý ve yazýlým kipi</h3>
+    <div id="örnek18">
+        <p>1) Bu, satýriçi enaz ebatýný deðiþtirebileceðin bir kutudur.</p>
+        <p>2) inline-size: horizontal ile eni, vertical ile boyu, auto ile içeriði ebatlar.</p>
+    </div>
+</div>
+<code>min-inline-size:</code>
+<button id="düðme69">Týkla</button>
+<button id="düðme70">Týkla</button>
+<button id="düðme71">Týkla</button>
+<button id="düðme72">Týkla</button>
+<span>enaz-satýriçi-ebatý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi baþý ve yazýlým kipi</h3>
+    <div id="örnek19">
+        <p>1) Bu, sýnýr-satýriçi-baþýný deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-baþýný deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code>border-inline-start:</code>
+<button id="düðme73">Týkla</button>
+<button id="düðme74">Týkla</button>
+<button id="düðme75">Týkla</button>
+<button id="düðme76">Týkla</button>
+<span>sýnýr-satýriçi-baþý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi sonu ve yazýlým kipi</h3>
+    <div id="örnek20">
+        <p>1) Bu, sýnýr-satýriçi-sonunu deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-sonunu deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code>border-inline-end:</code>
+<button id="düðme77">Týkla</button>
+<button id="düðme78">Týkla</button>
+<button id="düðme79">Týkla</button>
+<button id="düðme80">Týkla</button>
+<span>sýnýr-satýriçi-sonu</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi baþý stili ve yazýlým kipi</h3>
+    <div id="örnek21">
+        <p>1) Bu, sýnýr-satýriçi-baþlangýç-stilini deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-baþlangýç-stilini deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-inline-start-style:</code>
+<button id="düðme81">Týkla</button>
+<button id="düðme82">Týkla</button>
+<button id="düðme83">Týkla</button>
+<button id="düðme84">Týkla</button>
+<span style="font-size:10px;">sýnýr-satýriçi-baþlangýç-stili</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi sonu stili ve yazýlým kipi</h3>
+    <div id="örnek22">
+        <p>1) Bu, sýnýr-satýriçi-sonu-stilini deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-sonu-stilini deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-inline-end-style:</code>
+<button id="düðme85">Týkla</button>
+<button id="düðme86">Týkla</button>
+<button id="düðme87">Týkla</button>
+<button id="düðme88">Týkla</button>
+<span style="font-size:10px;">sýnýr-satýriçi-sonu-stili</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi baþý kalýnlýðý ve yazýlým kipi</h3>
+    <div id="örnek23">
+        <p>1) Bu, sýnýr-satýriçi-baþý-kalýnlýðýný deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-baþý-kalýnlýðýný deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-inline-start-width:</code>
+<button id="düðme89">Týkla</button>
+<button id="düðme90">Týkla</button>
+<button id="düðme91">Týkla</button>
+<button id="düðme92">Týkla</button>
+<span style="font-size:10px;">sýnýr-satýriçi-baþý-kalýnlýðý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi sonu kalýnlýðý ve yazý kipi</h3>
+    <div id="örnek24">
+        <p>1) Bu, sýnýr-satýriçi-sonu-kalýnlýðýný deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-sonu-kalýnlýðýný deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-inline-end-width:</code>
+<button id="düðme93">Týkla</button>
+<button id="düðme94">Týkla</button>
+<button id="düðme95">Týkla</button>
+<button id="düðme96">Týkla</button>
+<span style="font-size:10px;">sýnýr-satýriçi-sonu-kalýnlýðý</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi baþý rengi ve yazýlým kipi</h3>
+    <div id="örnek25">
+        <p>1) Bu, sýnýr-satýriçi-baþý-rengini deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-baþý-rengini deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-inline-start-color:</code>
+<button id="düðme97">Týkla</button>
+<button id="düðme98">Týkla</button>
+<button id="düðme99">Týkla</button>
+<button id="düðme100">Týkla</button>
+<span style="font-size:10px;">sýnýr-satýriçi-baþý-rengi</span>
+<hr/>
+
+<div id="çýktý">
+    <h3>Deðiþtirilebilir sýnýr satýriçi sonu rengi ve yazýlým kipi</h3>
+    <div id="örnek26">
+        <p>1) Bu, sýnýr-satýriçi-sonu-rengini deðiþtirebileceðin bir kutudur.</p>
+        <p>2) Bu, sýnýr-satýriçi-sonu-rengini deðiþtirebileceðin bir kutudur.</p>
+    </div>
+</div>
+<code style="font-size:10px;">border-inline-end-color:</code>
+<button id="düðme101">Týkla</button>
+<button id="düðme102">Týkla</button>
+<button id="düðme103">Týkla</button>
+<button id="düðme104">Týkla</button>
+<span style="font-size:10px;">sýnýr-satýriçi-sonu-rengi</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Deðiþtirilebilir baþlangýç satýriçi tamponu ve yazýlým kipi</h3>
+    <div id="örnek27">
+        <p>Samanyolu Galaksimizin helezoni uzak batý ucundaki bulanýk sisleri arasýnda gözle farkedilemeyen küçük bir sarý güneþ barýnmaktadýr.</p>
+    </div>
+</div>
+<code>padding-inline-start:</code>
+<button id="düðme105">Týkla</button>
+<button id="düðme106">Týkla</button>
+<button id="düðme107">Týkla</button>
+<button id="düðme108">Týkla</button>
+<span>tampon-satýriçi-baþý</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Deðiþtirilebilir son satýriçi tamponu ve yazýlým kipi</h3>
+    <div id="örnek28">
+        <p>Samanyolu Galaksimizin helezoni uzak batý ucundaki bulanýk sisleri arasýnda gözle farkedilemeyen küçük bir sarý güneþ barýnmaktadýr.</p>
+    </div>
+</div>
+<code>padding-inline-end:</code>
+<button id="düðme109">Týkla</button>
+<button id="düðme110">Týkla</button>
+<button id="düðme111">Týkla</button>
+<button id="düðme112">Týkla</button>
+<span>tampon-satýriçi-sonu</span>
+<hr/>
+
+<div id="çýktý1">
+    <h3>Deðiþtirilebilir baþlangýç satýriçi marjý ve yazýlým kipi</h3>
+    <div class="kab14">
+        <div class="satýr14">Bir</div>
+        <div class="satýr14" id="örnek29">Ýki</div>
+        <div class="satýr14">Üç</div>
+    </div>
+</div>
+<code>margin-inline-start:</code>
+<button id="düðme113">Týkla</button>
+<button id="düðme114">Týkla</button>
+<button id="düðme115">Týkla</button>
+<button id="düðme116">Týkla</button>
+<span>marj-satýriçi-baþý</span>
+<hr/>
+
+<div id="çýktý1">
+    <h3>Deðiþtirilebilir son satýriçi marjý ve yazýlým kipi</h3>
+    <div class="kab15">
+        <div class="satýr15">Bir</div>
+        <div class="satýr15" id="örnek30">Ýki</div>
+        <div class="satýr15">Üç</div>
+    </div>
+</div>
+<code>margin-inline-end:</code>
+<button id="düðme117">Týkla</button>
+<button id="düðme118">Týkla</button>
+<button id="düðme119">Týkla</button>
+<button id="düðme120">Týkla</button>
+<span>marj-satýriçi-sonu</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Gömülü dikey mutlak blok baþlangýçlý yazýlým kipi</h3>
+    <div id="örnek31">
+        <div id="mutlak1">Ben "inset-block-start: 50px" vasfýyla mutlak konumlandýrýldým.</div>
+        <p>Saðanak yeni dinmiþ, yoðun sis henüz daðýlmýþ, velakin tüm yollar çamurdan geçilmezken, anýnda, nerden geldiði belirsiz 15m boyunda bir  Megalozor dinazoru, fil kertenkelesi gibi paytak paytak yürüyerek Gadik Tepesi'ne doðru muhteþem bir týrmanýþ sergilemeye baþladý.</p>
+    </div>
+</div>
+<code>inset-block-start:</code>
+<button id="düðme121">Týkla</button>
+<button id="düðme122">Týkla</button>
+<button id="düðme123">Týkla</button>
+<button id="düðme124">Týkla</button>
+<button id="düðme125">Týkla</button>
+<span>gömülü-blok-baþlangýcý</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Gömülü dikey mutlak blok sonlu yazýlým kipi</h3>
+    <div id="örnek32">
+        <div id="mutlak2">Ben "inset-block-end: 50px" vasfýyla mutlak konumlandýrýldým.</div>
+        <p>Saðanak yeni dinmiþ, yoðun sis henüz daðýlmýþ, velakin tüm yollar çamurdan geçilmezken, anýnda, nerden geldiði belirsiz 15m boyunda bir  Megalozor dinazoru, fil kertenkelesi gibi paytak paytak yürüyerek Gadik Tepesi'ne doðru muhteþem bir týrmanýþ sergilemeye baþladý.</p>
+    </div>
+</div>
+<code>inset-block-end:</code>
+<button id="düðme126">Týkla</button>
+<button id="düðme127">Týkla</button>
+<button id="düðme128">Týkla</button>
+<button id="düðme129">Týkla</button>
+<button id="düðme130">Týkla</button>
+<span>gömülü-blok-sonu</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Gömülü yatay mutlak satýriçi baþlangýçlý yazýlým kipi</h3>
+    <div id="örnek33">
+        <div id="mutlak3">Ben "inset-inline-start: 50px" vasfýyla mutlak konumlandýrýldým.</div>
+        <p>Saðanak yeni dinmiþ, yoðun sis henüz daðýlmýþ, velakin tüm yollar çamurdan geçilmezken, anýnda, nerden geldiði belirsiz 15m boyunda bir  Megalozor dinazoru, fil kertenkelesi gibi paytak paytak yürüyerek Gadik Tepesi'ne doðru muhteþem bir týrmanýþ sergilemeye baþladý.</p>
+    </div>
+</div>
+<code>inset-inline-start:</code>
+<button id="düðme131">Týkla</button>
+<button id="düðme132">Týkla</button>
+<button id="düðme133">Týkla</button>
+<button id="düðme134">Týkla</button>
+<button id="düðme135">Týkla</button>
+<span>gömülü-satýriçi-baþlangýcý</span>
+<hr/>
+
+<div id="çýktý3">
+    <h3>Gömülü yatay mutlak satýriçi sonlu yazýlým kipi</h3>
+    <div id="örnek34">
+        <div id="mutlak4">Ben "inset-inline-end: 50px" vasfýyla mutlak konumlandýrýldým.</div>
+        <p>Saðanak yeni dinmiþ, yoðun sis henüz daðýlmýþ, velakin tüm yollar çamurdan geçilmezken, anýnda, nerden geldiði belirsiz 15m boyunda bir  Megalozor dinazoru, fil kertenkelesi gibi paytak paytak yürüyerek Gadik Tepesi'ne doðru muhteþem bir týrmanýþ sergilemeye baþladý.</p>
+    </div>
+</div>
+<code>inset-inline-end:</code>
+<button id="düðme136">Týkla</button>
+<button id="düðme137">Týkla</button>
+<button id="düðme138">Týkla</button>
+<button id="düðme139">Týkla</button>
+<button id="düðme140">Týkla</button>
+<span>gömülü-satýriçi-sonu</span>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 200px;">
+section {background-color: DarkSlateGray; font: 1rem, sans-serif; letter-spacing: 1px;}
+button {background-color: DarkRed;}
+h3 {text-decoration: underline; color: LightGreen; margin: 0;}
+h4, p {margin:0; color: white;}
+code, span, button {color: yellow; font-size: 12px;}
+/*------------------------------------------------------*/
+#çýktý {height: 200px;}
+#çýktý1 {height: 330px;}
+#çýktý2 {height: 130px;}
+#çýktý3 {height: 250px;}
+/*------------------------------------------------------*/
+#örnek1, #örnek2, #örnek3, #örnek4, #örnek5, #örnek6, #örnek7, #örnek8, #örnek9, #örnek10,
+    #örnek11, #örnek12, #örnek13, #örnek16, #örnek17, #örnek18, #örnek19, #örnek20, #örnek21,
+    #örnek22, #örnek23, #örnek24, #örnek25, #örnek26, #örnek27, #örnek28, #örnek31, #örnek32,
+    #örnek33, #örnek34 {
+    display: flex;
+    flex-direction: column;
+    background-color: #5b6dcd;
+    justify-content: center;
+    text-align: center;}
+#örnek8, #örnek10 {border-block-start: solid 5px;}
+#örnek9, #örnek11 {border-block-end: solid 5px;}
+/*------------------------------------------------------*/
+.kab14, .kab15 {
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;}
+.satýr14, .satýr15 {
+    height: 33.33%;
+    display: inline-block;
+    border: solid #5B6DCD 10px;
+    background-color: rgba(229, 232, 252, .6);
+    flex-shrink: 0;}
+#örnek14, #örnek15, #örnek29, #örnek30 {
+    border: solid 10px #FFC129;
+    background-color: rgba(255, 244, 219, .6);}
+#örnek19, #örnek21, #örnek23, #örnek25 {border-inline-start: solid 10px DeepPink;}
+#örnek20, #örnek22, #örnek24, #örnek26 {border-inline-end: solid 10px DeepPink;}
+/*------------------------------------------------------*/
+#mutlak1, #mutlak2, #mutlak3, #mutlak4 {
+    background-color: yellow;
+    border: 3px solid red;
+    position: absolute;
+    inline-size: 170px;}
+#mutlak1 {inset-block-start: 50px;}
+#mutlak2 {inset-block-end: 50px;}
+#mutlak3 {inset-inline-start: 50px;}
+#mutlak4 {inset-inline-end: 50px;}
+#örnek31, #örnek32, #örnek33, #örnek34 {position: relative; max-height: 90%;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 200px;">
+// Yazýlým kipine duyarlý mantýksal blok ebatýnýn (boy/en) deðiþtirilmesi...
+düðme1.onclick = ()=>{örnek1.style.blockSize = "150px"; örnek1.style.writingMode = "horizontal-tb"; console.log (örnek1.style.blockSize + ", " + örnek1.style.writingMode);}
+düðme2.onclick = ()=>{örnek1.style.blockSize = "150px"; örnek1.style.writingMode = "vertical-rl"; console.log (örnek1.style.blockSize + ", " + örnek1.style.writingMode);}
+düðme3.onclick = ()=>{örnek1.style.blockSize = "auto"; örnek1.style.writingMode = "horizontal-tb"; console.log (örnek1.style.blockSize + ", " + örnek1.style.writingMode);}
+düðme4.onclick = ()=>{örnek1.style.blockSize = "auto"; örnek1.style.writingMode = "vertical-lr"; console.log (örnek1.style.blockSize + ", " + örnek1.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal ençok blok ebatýnýn (boy/en) deðiþtirilmesi...
+düðme5.onclick = ()=>{örnek2.style.maxBlockSize = "150px"; örnek2.style.writingMode = "horizontal-tb"; console.log (örnek2.style.maxBlockSize + ", " + örnek2.style.writingMode);}
+düðme6.onclick = ()=>{örnek2.style.maxBlockSize = "150px"; örnek2.style.writingMode = "vertical-rl"; console.log (örnek2.style.maxBlockSize + ", " + örnek2.style.writingMode);}
+düðme7.onclick = ()=>{örnek2.style.maxBlockSize = "20px"; örnek2.style.writingMode = "horizontal-tb"; console.log (örnek2.style.maxBlockSize + ", " + örnek2.style.writingMode);}
+düðme8.onclick = ()=>{örnek2.style.maxBlockSize = "75%"; örnek2.style.writingMode = "vertical-lr"; console.log (örnek2.style.maxBlockSize + ", " + örnek2.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal enaz blok ebatýnýn (boy/en) deðiþtirilmesi...
+düðme9.onclick = ()=>{örnek3.style.minBlockSize = "150px"; örnek3.style.writingMode = "horizontal-tb"; console.log (örnek3.style.minBlockSize + ", " + örnek3.style.writingMode);}
+düðme10.onclick = ()=>{örnek3.style.minBlockSize = "150px"; örnek3.style.writingMode = "vertical-rl"; console.log (örnek3.style.minBlockSize + ", " + örnek3.style.writingMode);}
+düðme11.onclick = ()=>{örnek3.style.minBlockSize = "20px"; örnek3.style.writingMode = "horizontal-tb"; console.log (örnek3.style.minBlockSize + ", " + örnek3.style.writingMode);}
+düðme12.onclick = ()=>{örnek3.style.minBlockSize = "15em"; örnek3.style.writingMode = "vertical-lr"; console.log (örnek3.style.minBlockSize + ", " + örnek3.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç sýnýrýnýn deðiþtirilmesi...
+düðme13.onclick = ()=>{örnek4.style.borderBlockStart = "solid"; örnek4.style.writingMode = "horizontal-tb"; console.log (örnek4.style.borderBlockStart + ", " + örnek4.style.writingMode);}
+düðme14.onclick = ()=>{örnek4.style.borderBlockStart = "dashed red"; örnek4.style.writingMode = "vertical-rl"; console.log (örnek4.style.borderBlockStart + ", " + örnek4.style.writingMode);}
+düðme15.onclick = ()=>{örnek4.style.borderBlockStart = "1rem solid"; örnek4.style.writingMode = "horizontal-tb"; console.log (örnek4.style.borderBlockStart + ", " + örnek4.style.writingMode);}
+düðme16.onclick = ()=>{örnek4.style.borderBlockStart = "thick double #f2a1ce"; örnek4.style.writingMode = "vertical-lr"; console.log (örnek4.style.borderBlockStart + ", " + örnek4.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son sýnýrýnýn deðiþtirilmesi...
+düðme17.onclick = ()=>{örnek5.style.borderBlockEnd = "solid"; örnek5.style.writingMode = "horizontal-tb"; console.log (örnek5.style.borderBlockEnd + ", " + örnek5.style.writingMode);}
+düðme18.onclick = ()=>{örnek5.style.borderBlockEnd = "dashed red"; örnek5.style.writingMode = "vertical-rl"; console.log (örnek5.style.borderBlockEnd + ", " + örnek5.style.writingMode);}
+düðme19.onclick = ()=>{örnek5.style.borderBlockEnd = "1rem solid"; örnek5.style.writingMode = "horizontal-tb"; console.log (örnek5.style.borderBlockEnd + ", " + örnek5.style.writingMode);}
+düðme20.onclick = ()=>{örnek5.style.borderBlockEnd = "thick double #f2a1ce"; örnek5.style.writingMode = "vertical-lr"; console.log (örnek5.style.borderBlockEnd + ", " + örnek5.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç sýnýr stilinin deðiþtirilmesi...
+düðme21.onclick = ()=>{örnek6.style.borderBlockStartStyle = "dotted"; örnek6.style.writingMode = "horizontal-tb"; console.log (örnek6.style.borderBlockStartStyle + ", " + örnek6.style.writingMode);}
+düðme22.onclick = ()=>{örnek6.style.borderBlockStartStyle = "dashed"; örnek6.style.writingMode = "vertical-rl"; console.log (örnek6.style.borderBlockStartStyle + ", " + örnek6.style.writingMode);}
+düðme23.onclick = ()=>{örnek6.style.borderBlockStartStyle = "groove"; örnek6.style.writingMode = "horizontal-tb"; console.log (örnek6.style.borderBlockStartStyle + ", " + örnek6.style.writingMode);}
+düðme24.onclick = ()=>{örnek6.style.borderBlockStartStyle = "double"; örnek6.style.writingMode = "vertical-lr"; console.log (örnek6.style.borderBlockStartStyle + ", " + örnek6.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son sýnýr stilinin deðiþtirilmesi...
+düðme25.onclick = ()=>{örnek7.style.borderBlockEndStyle = "dotted"; örnek7.style.writingMode = "horizontal-tb"; console.log (örnek7.style.borderBlockEndStyle + ", " + örnek7.style.writingMode);}
+düðme26.onclick = ()=>{örnek7.style.borderBlockEndStyle = "dashed"; örnek7.style.writingMode = "vertical-rl"; console.log (örnek7.style.borderBlockEndStyle + ", " + örnek7.style.writingMode);}
+düðme27.onclick = ()=>{örnek7.style.borderBlockEndStyle = "groove"; örnek7.style.writingMode = "horizontal-tb"; console.log (örnek7.style.borderBlockEndStyle + ", " + örnek7.style.writingMode);}
+düðme28.onclick = ()=>{örnek7.style.borderBlockEndStyle = "double"; örnek7.style.writingMode = "vertical-lr"; console.log (örnek7.style.borderBlockEndStyle + ", " + örnek7.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç sýnýr kalýnlýðýnýn deðiþtirilmesi...
+düðme29.onclick = ()=>{örnek8.style.borderBlockStartWidth = "thin"; örnek8.style.writingMode = "horizontal-tb"; console.log (örnek8.style.borderBlockStartWidth + ", " + örnek8.style.writingMode);}
+düðme30.onclick = ()=>{örnek8.style.borderBlockStartWidth = "medium"; örnek8.style.writingMode = "vertical-rl"; console.log (örnek8.style.borderBlockStartWidth + ", " + örnek8.style.writingMode);}
+düðme31.onclick = ()=>{örnek8.style.borderBlockStartWidth = "thick"; örnek8.style.writingMode = "horizontal-tb"; console.log (örnek8.style.borderBlockStartWidth + ", " + örnek8.style.writingMode);}
+düðme32.onclick = ()=>{örnek8.style.borderBlockStartWidth = "10px"; örnek8.style.writingMode = "vertical-lr"; console.log (örnek8.style.borderBlockStartWidth + ", " + örnek8.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son sýnýr kalýnlýðýnýn deðiþtirilmesi...
+düðme33.onclick = ()=>{örnek9.style.borderBlockEndWidth = "thin"; örnek9.style.writingMode = "horizontal-tb"; console.log (örnek9.style.borderBlockEndWidth + ", " + örnek9.style.writingMode);}
+düðme34.onclick = ()=>{örnek9.style.borderBlockEndWidth = "medium"; örnek9.style.writingMode = "vertical-rl"; console.log (örnek9.style.borderBlockEndWidth + ", " + örnek9.style.writingMode);}
+düðme35.onclick = ()=>{örnek9.style.borderBlockEndWidth = "thick"; örnek9.style.writingMode = "horizontal-tb"; console.log (örnek9.style.borderBlockEndWidth + ", " + örnek9.style.writingMode);}
+düðme36.onclick = ()=>{örnek9.style.borderBlockEndWidth = "10px"; örnek9.style.writingMode = "vertical-lr"; console.log (örnek9.style.borderBlockEndWidth + ", " + örnek9.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç sýnýr renginin deðiþtirilmesi...
+düðme37.onclick = ()=>{örnek10.style.borderBlockStartColor = "red"; örnek10.style.writingMode = "horizontal-tb"; console.log (örnek10.style.borderBlockStartColor + ", " + örnek10.style.writingMode);}
+düðme38.onclick = ()=>{örnek10.style.borderBlockStartColor = "#c2f15e"; örnek10.style.writingMode = "vertical-rl"; console.log (örnek10.style.borderBlockStartColor + ", " + örnek10.style.writingMode);}
+düðme39.onclick = ()=>{örnek10.style.borderBlockStartColor = "rgb(255, 50, 220, .8)"; örnek10.style.writingMode = "horizontal-tb"; console.log (örnek10.style.borderBlockStartColor + ", " + örnek10.style.writingMode);}
+düðme40.onclick = ()=>{örnek10.style.borderBlockStartColor = "hsl(30, 90%, 50%, .9)"; örnek10.style.writingMode = "vertical-lr"; console.log (örnek10.style.borderBlockStartColor + ", " + örnek10.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son sýnýr renginin deðiþtirilmesi...
+düðme41.onclick = ()=>{örnek11.style.borderBlockEndColor = "red"; örnek11.style.writingMode = "horizontal-tb"; console.log (örnek11.style.borderBlockEndColor + ", " + örnek11.style.writingMode);}
+düðme42.onclick = ()=>{örnek11.style.borderBlockEndColor = "#c2f15e"; örnek11.style.writingMode = "vertical-rl"; console.log (örnek11.style.borderBlockEndColor + ", " + örnek11.style.writingMode);}
+düðme43.onclick = ()=>{örnek11.style.borderBlockEndColor = "rgb(255, 50, 220, .8)"; örnek11.style.writingMode = "horizontal-tb"; console.log (örnek11.style.borderBlockEndColor + ", " + örnek11.style.writingMode);}
+düðme44.onclick = ()=>{örnek11.style.borderBlockEndColor = "hsl(30, 90%, 50%, .9)"; örnek11.style.writingMode = "vertical-lr"; console.log (örnek11.style.borderBlockEndColor + ", " + örnek11.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç blok tamponunun deðiþtirilmesi...
+düðme45.onclick = ()=>{örnek12.style.paddingBlockStart = "30px"; örnek12.style.writingMode = "horizontal-tb"; console.log (örnek12.style.paddingBlockStart + ", " + örnek12.style.writingMode);}
+düðme46.onclick = ()=>{örnek12.style.paddingBlockStart = "30pt"; örnek12.style.writingMode = "vertical-rl"; console.log (örnek12.style.paddingBlockStart + ", " + örnek12.style.writingMode);}
+düðme47.onclick = ()=>{örnek12.style.paddingBlockStart = "5em"; örnek12.style.writingMode = "horizontal-tb"; console.log (örnek12.style.paddingBlockStart + ", " + örnek12.style.writingMode);}
+düðme48.onclick = ()=>{örnek12.style.paddingBlockStart = "5rem"; örnek12.style.writingMode = "vertical-lr"; console.log (örnek12.style.paddingBlockStart + ", " + örnek12.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son blok tamponunun deðiþtirilmesi...
+düðme49.onclick = ()=>{örnek13.style.paddingBlockEnd = "30px"; örnek13.style.writingMode = "horizontal-tb"; console.log (örnek13.style.paddingBlockEnd + ", " + örnek13.style.writingMode);}
+düðme50.onclick = ()=>{örnek13.style.paddingBlockEnd = "30pt"; örnek13.style.writingMode = "vertical-rl"; console.log (örnek13.style.paddingBlockEnd + ", " + örnek13.style.writingMode);}
+düðme51.onclick = ()=>{örnek13.style.paddingBlockEnd = "5em"; örnek13.style.writingMode = "horizontal-tb"; console.log (örnek13.style.paddingBlockEnd + ", " + örnek13.style.writingMode);}
+düðme52.onclick = ()=>{örnek13.style.paddingBlockEnd = "5rem"; örnek13.style.writingMode = "vertical-lr"; console.log (örnek13.style.paddingBlockEnd + ", " + örnek13.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç blok marjýnýn deðiþtirilmesi...
+düðme53.onclick = ()=>{örnek14.style.marginBlockStart = "30px"; örnek14.style.writingMode = "horizontal-tb"; console.log (örnek14.style.marginBlockStart + ", " + örnek14.style.writingMode);}
+düðme54.onclick = ()=>{örnek14.style.marginBlockStart = "10%"; örnek14.style.writingMode = "vertical-rl"; console.log (örnek14.style.marginBlockStart + ", " + örnek14.style.writingMode);}
+düðme55.onclick = ()=>{örnek14.style.marginBlockStart = "auto"; örnek14.style.writingMode = "horizontal-tb"; console.log (örnek14.style.marginBlockStart + ", " + örnek14.style.writingMode);}
+düðme56.onclick = ()=>{örnek14.style.marginBlockStart = "auto"; örnek14.style.writingMode = "vertical-lr"; console.log (örnek14.style.marginBlockStart + ", " + örnek14.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son blok marjýnýn deðiþtirilmesi...
+düðme57.onclick = ()=>{örnek15.style.marginBlockEnd = "30px"; örnek15.style.writingMode = "horizontal-tb"; console.log (örnek15.style.marginBlockEnd + ", " + örnek15.style.writingMode);}
+düðme58.onclick = ()=>{örnek15.style.marginBlockEnd = "10%"; örnek15.style.writingMode = "vertical-rl"; console.log (örnek15.style.marginBlockEnd + ", " + örnek15.style.writingMode);}
+düðme59.onclick = ()=>{örnek15.style.marginBlockEnd = "auto"; örnek15.style.writingMode = "horizontal-tb"; console.log (örnek15.style.marginBlockEnd + ", " + örnek15.style.writingMode);}
+düðme60.onclick = ()=>{örnek15.style.marginBlockEnd = "auto"; örnek15.style.writingMode = "vertical-lr"; console.log (örnek15.style.marginBlockEnd + ", " + örnek15.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal satýriçi ebatýnýn (en/boy) deðiþtirilmesi...
+düðme61.onclick = ()=>{örnek16.style.inlineSize = "150px"; örnek16.style.writingMode = "horizontal-tb"; console.log (örnek16.style.inlineSize + ", " + örnek16.style.writingMode);}
+düðme62.onclick = ()=>{örnek16.style.inlineSize = "150px"; örnek16.style.writingMode = "vertical-rl"; console.log (örnek16.style.inlineSize + ", " + örnek16.style.writingMode);}
+düðme63.onclick = ()=>{örnek16.style.inlineSize = "auto"; örnek16.style.writingMode = "horizontal-tb"; console.log (örnek16.style.inlineSize + ", " + örnek16.style.writingMode);}
+düðme64.onclick = ()=>{örnek16.style.inlineSize = "auto"; örnek16.style.writingMode = "vertical-lr"; console.log (örnek16.style.inlineSize + ", " + örnek16.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal ençok satýiçi ebatýnýn (en/boy) deðiþtirilmesi...
+düðme65.onclick = ()=>{örnek17.style.maxInlineSize = "150px"; örnek17.style.writingMode = "horizontal-tb"; console.log (örnek17.style.maxInlineSize + ", " + örnek17.style.writingMode);}
+düðme66.onclick = ()=>{örnek17.style.maxInlineSize = "150px"; örnek17.style.writingMode = "vertical-rl"; console.log (örnek17.style.maxInlineSize + ", " + örnek17.style.writingMode);}
+düðme67.onclick = ()=>{örnek17.style.maxInlineSize = "20px"; örnek17.style.writingMode = "horizontal-tb"; console.log (örnek17.style.maxInlineSize + ", " + örnek17.style.writingMode);}
+düðme68.onclick = ()=>{örnek17.style.maxInlineSize = "75%"; örnek17.style.writingMode = "vertical-lr"; console.log (örnek17.style.maxInlineSize + ", " + örnek17.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal enaz satýiçi ebatýnýn (en/boy) deðiþtirilmesi...
+düðme69.onclick = ()=>{örnek18.style.minInlineSize = "300px"; örnek18.style.writingMode = "horizontal-tb"; console.log (örnek18.style.minInlineSize + ", " + örnek18.style.writingMode);}
+düðme70.onclick = ()=>{örnek18.style.minInlineSize = "300px"; örnek18.style.writingMode = "vertical-rl"; console.log (örnek18.style.minInlineSize + ", " + örnek18.style.writingMode);}
+düðme71.onclick = ()=>{örnek18.style.minInlineSize = "20px"; örnek18.style.writingMode = "horizontal-tb"; console.log (örnek18.style.minInlineSize + ", " + örnek18.style.writingMode);}
+düðme72.onclick = ()=>{örnek18.style.minInlineSize = "95%"; örnek18.style.writingMode = "vertical-lr"; console.log (örnek18.style.minInlineSize + ", " + örnek18.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal sýnýr satýriçi baþýnýn deðiþtirilmesi...
+düðme73.onclick = ()=>{örnek19.style.borderInlineStart = "solid 5px"; örnek19.style.writingMode = "horizontal-tb"; console.log (örnek19.style.borderInlineStart + ", " + örnek19.style.writingMode);}
+düðme74.onclick = ()=>{örnek19.style.borderInlineStart = "10px dashed red"; örnek19.style.writingMode = "vertical-rl"; console.log (örnek19.style.borderInlineStart + ", " + örnek19.style.writingMode);}
+düðme75.onclick = ()=>{örnek19.style.borderInlineStart = "1rem solid"; örnek19.style.writingMode = "horizontal-tb"; console.log (örnek19.style.borderInlineStart + ", " + örnek19.style.writingMode);}
+düðme76.onclick = ()=>{örnek19.style.borderInlineStart = "1em dotted red"; örnek19.style.writingMode = "vertical-lr"; console.log (örnek19.style.borderInlineStart + ", " + örnek19.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal sýnýr satýriçi sonunun deðiþtirilmesi...
+düðme77.onclick = ()=>{örnek20.style.borderInlineEnd = "solid 5px"; örnek20.style.writingMode = "horizontal-tb"; console.log (örnek20.style.borderInlineEnd + ", " + örnek20.style.writingMode);}
+düðme78.onclick = ()=>{örnek20.style.borderInlineEnd = "10px dashed red"; örnek20.style.writingMode = "vertical-rl"; console.log (örnek20.style.borderInlineEnd + ", " + örnek20.style.writingMode);}
+düðme79.onclick = ()=>{örnek20.style.borderInlineEnd = "1rem solid"; örnek20.style.writingMode = "horizontal-tb"; console.log (örnek20.style.borderInlineEnd + ", " + örnek20.style.writingMode);}
+düðme80.onclick = ()=>{örnek20.style.borderInlineEnd = "1em dotted red"; örnek20.style.writingMode = "vertical-lr"; console.log (örnek20.style.borderInlineEnd + ", " + örnek20.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal sýnýr satýriçi baþlangýç stilinin deðiþtirilmesi...
+düðme81.onclick = ()=>{örnek21.style.borderInlineStartStyle = "dotted"; örnek21.style.writingMode = "horizontal-tb"; console.log (örnek21.style.borderInlineStartStyle + ", " + örnek21.style.writingMode);}
+düðme82.onclick = ()=>{örnek21.style.borderInlineStartStyle = "ridge"; örnek21.style.writingMode = "vertical-rl"; console.log (örnek21.style.borderInlineStartStyle + ", " + örnek21.style.writingMode);}
+düðme83.onclick = ()=>{örnek21.style.borderInlineStartStyle = "groove"; örnek21.style.writingMode = "horizontal-tb"; console.log (örnek21.style.borderInlineStartStyle + ", " + örnek21.style.writingMode);}
+düðme84.onclick = ()=>{örnek21.style.borderInlineStartStyle = "double"; örnek21.style.writingMode = "vertical-lr"; console.log (örnek21.style.borderInlineStartStyle + ", " + örnek21.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal sýnýr satýriçi sonu stilinin deðiþtirilmesi...
+düðme85.onclick = ()=>{örnek22.style.borderInlineEndStyle = "dashed"; örnek22.style.writingMode = "horizontal-tb"; console.log (örnek22.style.borderInlineEndStyle + ", " + örnek22.style.writingMode);}
+düðme86.onclick = ()=>{örnek22.style.borderInlineEndStyle = "ridge"; örnek22.style.writingMode = "vertical-rl"; console.log (örnek22.style.borderInlineEndStyle + ", " + örnek22.style.writingMode);}
+düðme87.onclick = ()=>{örnek22.style.borderInlineEndStyle = "groove"; örnek22.style.writingMode = "horizontal-tb"; console.log (örnek22.style.borderInlineEndStyle + ", " + örnek22.style.writingMode);}
+düðme88.onclick = ()=>{örnek22.style.borderInlineEndStyle = "double"; örnek22.style.writingMode = "vertical-lr"; console.log (örnek22.style.borderInlineEndStyle + ", " + örnek22.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal sýnýr satýriçi baþý kalýnlýðýnýn deðiþtirilmesi...
+düðme89.onclick = ()=>{örnek23.style.borderInlineStartWidth = "thin"; örnek23.style.writingMode = "horizontal-tb"; console.log (örnek23.style.borderInlineStartWidth + ", " + örnek23.style.writingMode);}
+düðme90.onclick = ()=>{örnek23.style.borderInlineStartWidth = "medium"; örnek23.style.writingMode = "vertical-rl"; console.log (örnek23.style.borderInlineStartWidth + ", " + örnek23.style.writingMode);}
+düðme91.onclick = ()=>{örnek23.style.borderInlineStartWidth = "thick"; örnek23.style.writingMode = "horizontal-tb"; console.log (örnek23.style.borderInlineStartWidth + ", " + örnek23.style.writingMode);}
+düðme92.onclick = ()=>{örnek23.style.borderInlineStartWidth = "12px"; örnek23.style.writingMode = "vertical-lr"; console.log (örnek23.style.borderInlineStartWidth + ", " + örnek23.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal sýnýr satýriçi sonu kalýnlýðýnýn deðiþtirilmesi...
+düðme93.onclick = ()=>{örnek24.style.borderInlineEndWidth = "thin"; örnek24.style.writingMode = "horizontal-tb"; console.log (örnek24.style.borderInlineEndWidth + ", " + örnek24.style.writingMode);}
+düðme94.onclick = ()=>{örnek24.style.borderInlineEndWidth = "medium"; örnek24.style.writingMode = "vertical-rl"; console.log (örnek24.style.borderInlineEndWidth + ", " + örnek24.style.writingMode);}
+düðme95.onclick = ()=>{örnek24.style.borderInlineEndWidth = "thick"; örnek24.style.writingMode = "horizontal-tb"; console.log (örnek24.style.borderInlineEndWidth + ", " + örnek24.style.writingMode);}
+düðme96.onclick = ()=>{örnek24.style.borderInlineEndWidth = "12px"; örnek24.style.writingMode = "vertical-lr"; console.log (örnek24.style.borderInlineEndWidth + ", " + örnek24.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç sýnýr satýriçi renginin deðiþtirilmesi...
+düðme97.onclick = ()=>{örnek25.style.borderInlineStartColor = "red"; örnek25.style.writingMode = "horizontal-tb"; console.log (örnek25.style.borderInlineStartColor + ", " + örnek25.style.writingMode);}
+düðme98.onclick = ()=>{örnek25.style.borderInlineStartColor = "#c2f15e"; örnek25.style.writingMode = "vertical-rl"; console.log (örnek25.style.borderInlineStartColor + ", " + örnek25.style.writingMode);}
+düðme99.onclick = ()=>{örnek25.style.borderInlineStartColor = "rgb(255, 50, 220, .8)"; örnek25.style.writingMode = "horizontal-tb"; console.log (örnek25.style.borderInlineStartColor + ", " + örnek25.style.writingMode);}
+düðme100.onclick = ()=>{örnek25.style.borderInlineStartColor = "hsl(30, 90%, 50%, .9)"; örnek25.style.writingMode = "vertical-lr"; console.log (örnek25.style.borderInlineStartColor + ", " + örnek25.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son sýnýr satýriçi renginin deðiþtirilmesi...
+düðme101.onclick = ()=>{örnek26.style.borderInlineEndColor = "red"; örnek26.style.writingMode = "horizontal-tb"; console.log (örnek26.style.borderInlineEndColor + ", " + örnek26.style.writingMode);}
+düðme102.onclick = ()=>{örnek26.style.borderInlineEndColor = "#c2f15e"; örnek26.style.writingMode = "vertical-rl"; console.log (örnek26.style.borderInlineEndColor + ", " + örnek26.style.writingMode);}
+düðme103.onclick = ()=>{örnek26.style.borderInlineEndColor = "rgb(255, 50, 220, .8)"; örnek26.style.writingMode = "horizontal-tb"; console.log (örnek26.style.borderInlineEndColor + ", " + örnek26.style.writingMode);}
+düðme104.onclick = ()=>{örnek26.style.borderInlineEndColor = "hsl(30, 90%, 50%, .9)"; örnek26.style.writingMode = "vertical-lr"; console.log (örnek26.style.borderInlineEndColor + ", " + örnek26.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç blok tamponunun deðiþtirilmesi...
+düðme105.onclick = ()=>{örnek27.style.paddingInlineStart = "30px"; örnek27.style.writingMode = "horizontal-tb"; console.log (örnek27.style.paddingInlineStart + ", " + örnek27.style.writingMode);}
+düðme106.onclick = ()=>{örnek27.style.paddingInlineStart = "30pt"; örnek27.style.writingMode = "vertical-rl"; console.log (örnek27.style.paddingInlineStart + ", " + örnek27.style.writingMode);}
+düðme107.onclick = ()=>{örnek27.style.paddingInlineStart = "5em"; örnek27.style.writingMode = "horizontal-tb"; console.log (örnek27.style.paddingInlineStart + ", " + örnek27.style.writingMode);}
+düðme108.onclick = ()=>{örnek27.style.paddingInlineStart = "5rem"; örnek27.style.writingMode = "vertical-lr"; console.log (örnek27.style.paddingInlineStart + ", " + örnek27.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son blok tamponunun deðiþtirilmesi...
+düðme109.onclick = ()=>{örnek28.style.paddingInlineEnd = "30px"; örnek28.style.writingMode = "horizontal-tb"; console.log (örnek28.style.paddingInlineEnd + ", " + örnek28.style.writingMode);}
+düðme110.onclick = ()=>{örnek28.style.paddingInlineEnd = "30pt"; örnek28.style.writingMode = "vertical-rl"; console.log (örnek28.style.paddingInlineEnd + ", " + örnek28.style.writingMode);}
+düðme111.onclick = ()=>{örnek28.style.paddingInlineEnd = "5em"; örnek28.style.writingMode = "horizontal-tb"; console.log (örnek28.style.paddingInlineEnd + ", " + örnek28.style.writingMode);}
+düðme112.onclick = ()=>{örnek28.style.paddingInlineEnd = "5rem"; örnek28.style.writingMode = "vertical-lr"; console.log (örnek28.style.paddingInlineEnd + ", " + örnek28.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal baþlangýç blok marjýnýn deðiþtirilmesi...
+düðme113.onclick = ()=>{örnek29.style.marginInlineStart = "30px"; örnek29.style.writingMode = "horizontal-tb"; console.log (örnek29.style.marginInlineStart + ", " + örnek29.style.writingMode);}
+düðme114.onclick = ()=>{örnek29.style.marginInlineStart = "10%"; örnek29.style.writingMode = "vertical-rl"; console.log (örnek29.style.marginInlineStart + ", " + örnek29.style.writingMode);}
+düðme115.onclick = ()=>{örnek29.style.marginInlineStart = "auto"; örnek29.style.writingMode = "horizontal-tb"; console.log (örnek29.style.marginInlineStart + ", " + örnek29.style.writingMode);}
+düðme116.onclick = ()=>{örnek29.style.marginInlineStart = "auto"; örnek29.style.writingMode = "vertical-lr"; console.log (örnek29.style.marginInlineStart + ", " + örnek29.style.writingMode);}
+// Yazýlým kipine duyarlý mantýksal son blok marjýnýn deðiþtirilmesi...
+düðme117.onclick = ()=>{örnek30.style.marginInlineEnd = "30px"; örnek30.style.writingMode = "horizontal-tb"; console.log (örnek30.style.marginInlineEnd + ", " + örnek30.style.writingMode);}
+düðme118.onclick = ()=>{örnek30.style.marginInlineEnd = "10%"; örnek30.style.writingMode = "vertical-rl"; console.log (örnek30.style.marginInlineEnd + ", " + örnek30.style.writingMode);}
+düðme119.onclick = ()=>{örnek30.style.marginInlineEnd = "auto"; örnek30.style.writingMode = "horizontal-tb"; console.log (örnek30.style.marginInlineEnd + ", " + örnek30.style.writingMode);}
+düðme120.onclick = ()=>{örnek30.style.marginInlineEnd = "auto"; örnek30.style.writingMode = "vertical-lr"; console.log (örnek30.style.marginInlineEnd + ", " + örnek30.style.writingMode);}
+// Mutlak dikey baþlangýç blok konumlu yazýlým kipi...
+düðme121.onclick = ()=>{örnek31.style.writingMode = "horizontal-tb"; örnek31.style.direction = "rtl"; console.log (örnek31.style.writingMode + ", " + örnek31.style.direction);}
+düðme122.onclick = ()=>{örnek31.style.writingMode = "vertical-rl"; console.log (örnek31.style.writingMode);}
+düðme123.onclick = ()=>{örnek31.style.writingMode = "vertical-lr"; console.log (örnek31.style.writingMode);}
+düðme124.onclick = ()=>{örnek31.style.writingMode = "horizontal-tb"; console.log (örnek31.style.writingMode);}
+düðme125.onclick = ()=>{örnek31.style.writingMode = "horizontal-tb"; örnek31.style.direction = "ltr"; console.log (örnek31.style.writingMode + ", " + örnek31.style.direction);}
+// Mutlak dikey son blok konumlu yazýlým kipi...
+düðme126.onclick = ()=>{örnek32.style.writingMode = "horizontal-tb"; örnek32.style.direction = "rtl"; console.log (örnek32.style.writingMode + ", " + örnek32.style.direction);}
+düðme127.onclick = ()=>{örnek32.style.writingMode = "vertical-rl"; console.log (örnek32.style.writingMode);}
+düðme128.onclick = ()=>{örnek32.style.writingMode = "vertical-lr"; console.log (örnek32.style.writingMode);}
+düðme129.onclick = ()=>{örnek32.style.writingMode = "horizontal-tb"; console.log (örnek32.style.writingMode);}
+düðme130.onclick = ()=>{örnek32.style.writingMode = "horizontal-tb"; örnek32.style.direction = "ltr"; console.log (örnek32.style.writingMode + ", " + örnek32.style.direction);}
+// Mutlak yatay baþlangýç satýriçi konumlu yazýlým kipi...
+düðme131.onclick = ()=>{örnek33.style.writingMode = "horizontal-tb"; örnek33.style.direction = "rtl"; console.log (örnek33.style.writingMode + ", " + örnek33.style.direction);}
+düðme132.onclick = ()=>{örnek33.style.writingMode = "vertical-rl"; console.log (örnek33.style.writingMode);}
+düðme133.onclick = ()=>{örnek33.style.writingMode = "vertical-lr"; console.log (örnek33.style.writingMode);}
+düðme134.onclick = ()=>{örnek33.style.writingMode = "horizontal-tb"; console.log (örnek33.style.writingMode);}
+düðme135.onclick = ()=>{örnek33.style.writingMode = "horizontal-tb"; örnek33.style.direction = "ltr"; console.log (örnek33.style.writingMode + ", " + örnek33.style.direction);}
+// Mutlak yatay son satýriçi konumlu yazýlým kipi...
+düðme136.onclick = ()=>{örnek34.style.writingMode = "horizontal-tb"; örnek34.style.direction = "rtl"; console.log (örnek34.style.writingMode + ", " + örnek34.style.direction);}
+düðme137.onclick = ()=>{örnek34.style.writingMode = "vertical-rl"; console.log (örnek34.style.writingMode);}
+düðme138.onclick = ()=>{örnek34.style.writingMode = "vertical-lr"; console.log (örnek34.style.writingMode);}
+düðme139.onclick = ()=>{örnek34.style.writingMode = "horizontal-tb"; console.log (örnek34.style.writingMode);}
+düðme140.onclick = ()=>{örnek34.style.writingMode = "horizontal-tb"; örnek34.style.direction = "ltr"; console.log (örnek34.style.writingMode + ", " + örnek34.style.direction);}
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C2.js"></script>
+</html>

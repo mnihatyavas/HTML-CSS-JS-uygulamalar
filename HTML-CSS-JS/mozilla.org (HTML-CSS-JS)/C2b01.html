@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2b01.html: Topun ileri-geri hareketlendirilme vasýflarý örneði.</title>
+    <link rel="stylesheet" href="C2.css" />
+    <style></style>
+    <style class="deðiþtirilebilir-css"></style>
+</head>
+<body>
+    <section></section>
+
+    <textarea class="oynanabilir oynanabilir-html" style="height: 200px;">
+<h3>Týkladýðýnýzýn içeriðini görmek için F12-konsolu aç</h3>
+<div id="þekil"></div>
+
+<hr/>
+<code>animation:</code>
+<button id="düðme1">Týkla</button>
+<button id="düðme2">Týkla</button>
+<button id="düðme3">Týkla</button>
+<button id="düðme4">Týkla</button>
+<span>canlandýrma</span>
+<br/>
+
+<code>animation-delay:</code>
+<button id="düðme5">Týkla</button>
+<button id="düðme6">Týkla</button>
+<button id="düðme7">Týkla</button>
+<span>geciktirme</span>
+<br/>
+
+<code>animation-direction:</code>
+<button id="düðme8">Týkla</button>
+<button id="düðme9">Týkla</button>
+<button id="düðme10">Týkla</button>
+<button id="düðme11">Týkla</button>
+<span>yön</span>
+<br/>
+
+<code>animation-duration:</code>
+<button id="düðme12">Týkla</button>
+<button id="düðme13">Týkla</button>
+<button id="düðme14">Týkla</button>
+<button id="düðme15">Týkla</button>
+<span>süre</span>
+<br/>
+
+<code>animation-fill-mode:</code>
+<button id="düðme16">Týkla</button>
+<button id="düðme17">Týkla</button>
+<button id="düðme18">Týkla</button>
+<button id="düðme19">Týkla</button>
+<span>doldurma kipi</span>
+<br/>
+
+<code>animation-iteration-count:</code>
+<button id="düðme20">Týkla</button>
+<button id="düðme21">Týkla</button>
+<button id="düðme22">Týkla</button>
+<button id="düðme23">Týkla</button>
+<span>tekrar sayýsý</span>
+<br/>
+
+<code>animation-name:</code>
+<button id="düðme24">Týkla</button>
+<button id="düðme25">Týkla</button>
+<button id="düðme26">Týkla</button>
+<span>ismi</span>
+<br/>
+
+<code>animation-play-state:</code>
+<button id="düðme27">Týkla</button>
+<button id="düðme28">Týkla</button>
+<span>durdur/oynat</span>
+<br/>
+
+<code>animation-timing-function:</code>
+<button id="düðme29">Týkla</button>
+<button id="düðme30">Týkla</button>
+<button id="düðme31">Týkla</button>
+<button id="düðme32">Týkla</button>
+<span>zamanlama fonksiyonu</span>
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-css" style="height: 200px;">
+section {background-color: black; font: 1rem "Fira Sans", sans-serif; letter-spacing: 1px;}
+h3 {text-decoration: underline; color: LightGreen;}
+/*------------------------------------------------------*/
+#þekil {
+    background-color: #1766aa;
+    margin: 20px;
+    border: 5px solid magenta;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;}
+@keyframes kay {
+    from {margin-left: -2%;}
+    to {margin-left: 80%;} }
+/*------------------------------------------------------*/
+button {background-color: DarkRed;}
+code, span, button {color: yellow; font-size: 12px;}
+    </textarea>
+
+    <textarea class="oynanabilir oynanabilir-js" style="height: 200px;">
+// Herbir düðmenin topu farklý süratte ileri/geri hareketlendirmesi...
+düðme1.onclick = ()=>{þekil.style.animation = "3s ease-in 1s infinite reverse both running kay"; console.log (þekil.style.animation);}
+düðme2.onclick = ()=>{þekil.style.animation = "3s linear 1s infinite running kay"; console.log (þekil.style.animation);}
+düðme3.onclick = ()=>{þekil.style.animation = "3s linear 1s infinite alternate kay"; console.log (þekil.style.animation);}
+düðme4.onclick = ()=>{þekil.style.animation = ".5s linear 1s infinite alternate kay"; console.log (þekil.style.animation);}
+// Canlandýrmayý -+S geciktirerek baþlatma...
+düðme5.onclick = ()=>{þekil.style.animationDelay = "250ms"; console.log (þekil.style.animationDelay);}
+düðme6.onclick = ()=>{þekil.style.animationDelay = "5s"; console.log (þekil.style.animationDelay);}
+düðme7.onclick = ()=>{þekil.style.animationDelay = "-5s"; console.log (þekil.style.animationDelay);}
+// Hareket yönünü belirleme...
+düðme8.onclick = ()=>{þekil.style.animationDirection = "normal"; console.log (þekil.style.animationDirection);}
+düðme9.onclick = ()=>{þekil.style.animationDirection = "reverse"; console.log (þekil.style.animationDirection);}
+düðme10.onclick = ()=>{þekil.style.animationDirection = "alternate"; console.log (þekil.style.animationDirection);}
+düðme11.onclick = ()=>{þekil.style.animationDirection = "alternate-reverse"; console.log (þekil.style.animationDirection);}
+// Hareket süresini belirleme...
+düðme12.onclick = ()=>{þekil.style.animationDuration = "2S"; console.log (þekil.style.animationDuration);}
+düðme13.onclick = ()=>{þekil.style.animationDuration = "1S"; console.log (þekil.style.animationDuration);}
+düðme14.onclick = ()=>{þekil.style.animationDuration = "1mS"; console.log (þekil.style.animationDuration);}
+düðme15.onclick = ()=>{þekil.style.animationDuration = "0S"; console.log (þekil.style.animationDuration);}
+// Hareket dolgu kipi...
+düðme16.onclick = ()=>{þekil.style.animationFillMode = "none"; þekil.style.animationDelay = "1s"; console.log (þekil.style.animationFillMode);}
+düðme17.onclick = ()=>{þekil.style.animationFillMode = "forwards"; þekil.style.animationDelay = "1s"; console.log (þekil.style.animationFillMode);}
+düðme18.onclick = ()=>{þekil.style.animationFillMode = "backwards"; þekil.style.animationDelay = "1s"; console.log (þekil.style.animationFillMode);}
+düðme19.onclick = ()=>{þekil.style.animationFillMode = "both"; þekil.style.animationDelay = "1s"; console.log (þekil.style.animationFillMode);}
+// Hareketin tekrarlanma sayýsý...
+düðme20.onclick = ()=>{þekil.style.animationIterationCount = "2"; console.log (þekil.style.animationIterationCount);}
+düðme21.onclick = ()=>{þekil.style.animationIterationCount = "1.5"; console.log (þekil.style.animationIterationCount);}
+düðme22.onclick = ()=>{þekil.style.animationIterationCount = "0.75"; console.log (þekil.style.animationIterationCount);}
+düðme23.onclick = ()=>{þekil.style.animationIterationCount = "0"; console.log (þekil.style.animationIterationCount);}
+// Hareket adý...
+düðme24.onclick = ()=>{þekil.style.animationName = "none"; console.log (þekil.style.animationName);}
+düðme25.onclick = ()=>{þekil.style.animationName = "slide"; console.log (þekil.style.animationName);}
+düðme26.onclick = ()=>{þekil.style.animationName = "bounce"; console.log (þekil.style.animationName);}
+// Hareketin oynatýlma durumu...
+düðme27.onclick = ()=>{þekil.style.animationPlayState = "paused"; console.log (þekil.style.animationPlayState);}
+düðme28.onclick = ()=>{þekil.style.animationPlayState = "running"; console.log (þekil.style.animationPlayState);}
+// Hareketin zamanlama fonksiyonu...
+düðme29.onclick = ()=>{þekil.style.animationTimingFunction = "linear"; console.log (þekil.style.animationTimingFunction);}
+düðme30.onclick = ()=>{þekil.style.animationTimingFunction = "ease-in-out"; console.log (þekil.style.animationTimingFunction);}
+düðme31.onclick = ()=>{þekil.style.animationTimingFunction = "steps(5, end)"; console.log (þekil.style.animationTimingFunction);}
+düðme32.onclick = ()=>{þekil.style.animationTimingFunction = "cubic-bezier(0.1, -0.9, 0.2, 2)"; console.log (þekil.style.animationTimingFunction);}
+    </textarea>
+
+    <div class="oynanabilir-düðme">
+        <input id="yenidenbaþlat" type="button" value="Yeniden baþlat" />
+    </div>
+</body>
+    <script class="deðiþtirilebilir-js"></script>
+    <script src="C2.js"></script>
+</html>
