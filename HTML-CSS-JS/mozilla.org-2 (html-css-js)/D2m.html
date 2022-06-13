@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2m.html: Canvas tuval kayarken içteki topun sabit konumunu korumasý örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 90%;
+            min-width: 700px;
+            padding: 10px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        canvas {
+            display: block;
+            margin: 10px auto;
+            border: 1px solid cyan;}
+        h5 {color: lime;}
+    </style>
+</head>
+<body>
+    <h5>F12 konsolu açarak, pencereyi büyütüp küçültün. Tuval kayarken içteki topun sabit kaldýðý görülecektir.</h5>
+    <p></p>
+    <canvas><p>Tarayýcýnýz canvas tuvali desteklemiyor. Yuhh!</p></canvas>
+</body>
+<script>
+    const tuval = document.querySelector ("canvas");
+    let en = tuval.width = 640;
+    let boy = tuval.height = 480
+    let içerik = tuval.getContext ("2d");
+    const p = document.querySelector ("p");
+    let ilkÜst, ilkSol;
+
+    if (!window.screenLeft) {// !0 = true
+        window.screenLeft = window.screenX;
+        window.screenTop = window.screenY;
+    } // if sonu...
+
+    ilkSol = window.screenLeft + tuval.offsetLeft;
+    ilkÜst = window.screenTop + tuval.offsetTop;
+
+    function topuKonumlandýr() {
+      let yeniSol = window.screenLeft + tuval.offsetLeft;
+      let yeniÜst = window.screenTop + tuval.offsetTop;
+
+      let soluGüncelle = ilkSol - yeniSol;
+      let üstüGüncelle = ilkÜst - yeniÜst;
+
+      içerik.fillStyle = "rgb(0, 0, 0)"; // Siyah...
+      içerik.fillRect (0, 0, en, boy); // Tuvali siyaha boya...
+      içerik.fillStyle = "rgb(0, 0, 255)"; // Mavi...
+      içerik.beginPath();
+      içerik.arc (soluGüncelle + (en/2), üstüGüncelle + (boy/2) + 35, 50, derecedenRadyana (0), derecedenRadyana (360), false);
+      içerik.fill(); // Güncel konumlu topu maviye boya...
+
+      p.textContent = "Window.screenLeft: " + window.screenLeft + ", Window.screenTop: " + window.screenTop;
+      window.requestAnimationFrame (topuKonumlandýr);
+    } // func sonu...
+
+    function derecedenRadyana (derece) {return derece * Math.PI / 180;}
+    window.requestAnimationFrame (topuKonumlandýr);
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2g.html: Fýrlayan diyalog kutusunun açýlýp kapanma kontrolu örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            height: 200px;
+            border: 5px solid tomato;}
+        menu {text-align: center;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        dialog {background-color: cyan; margin-top: 7em;;}
+        form {background-color: DodgerBlue; color: lime; padding: 5px;}
+    </style>
+</head>
+<body>
+    <!-- Form içeren basit bir fýrlayan diyalog kutusu -->
+    <dialog id="favoriDiyalog">
+        <form method="dialog">
+            <section>
+                <p><label for="favoriHayvan">Favori hayvanýn:</label>
+                <select id="favoriHayvan" name="favoriHayvan">
+                    <option></option>
+                    <option>Deniz karidesi</option>
+                    <option>Kýzýl panda</option>
+                    <option>Örümcek maymun</option>
+                    <option>Konuþan papaðan</option>
+                    <option>Ýmparator penguen</option>
+                </select></p>
+            </section>
+            <menu>
+                <button id="iptal" type="reset">Ýptal</button>
+                <button type="submit">Onay</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <menu>
+        <button id="detayGüncelleme">Detaylarý güncelle</button>
+    </menu>
+</body>
+<script>
+    (function() {
+        var güncellemeDüðmesi = document.getElementById ("detayGüncelleme");
+        var iptalDüðmesi = document.getElementById ("iptal");
+        var diyalogKutusu = document.getElementById ("favoriDiyalog");
+        diyalogKutusu.returnValue = "favoriHayvan";
+
+        function açýþKontrolu (dKutu) {
+            if (dKutu.open) {console.log ("Diyalog kutusu açýldý");
+            } else {console.log ("Diyalog kutusu kapandý");}
+        } // func sonu...
+
+        güncellemeDüðmesi.addEventListener ("click", function() {// Güncelle düðmesi diyalog kutusunu açar...
+            diyalogKutusu.showModal(); // [form method="dialog"] etkinleþir...
+            açýþKontrolu (diyalogKutusu);
+        }); // gün..sonu...
+
+        iptalDüðmesi.addEventListener ("click", function() {// Ýptal düðmesi diyalog kutusunu kapar...
+            diyalogKutusu.close ("Seçilen hayvan yok");
+            açýþKontrolu (diyalogKutusu);
+        }); // ipt..sonu...
+    })(); // Kendini çaðýran fonksiyon...
+</script>
+</html>

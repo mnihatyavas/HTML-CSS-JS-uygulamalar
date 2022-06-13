@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2p7.html: PNG resmi getirilirken verilerin PNGTransformStream ve Readable/WritableStream akýþla iþlenmesi örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        * {margin: 0; padding: 0;}
+        img {float: left;}
+        table {width: 600px;}
+        th {text-align: left;}
+        thead th {border-bottom: 1px solid #ddd; padding: 5px 0;}
+    </style>
+</head>
+<body>
+    <!-- fetch (>python -m http.server) ve (localhost:8000) gerektirmekte.-->
+
+    <h1>Bir PNG Verilerinin Çözümlenmesi</h1>
+    <p>Altta görülen PNG resim dosya verileri bir akýþ tarafýndan okunarak PNG metin akýþýna dönüþtürülür. Böylece, fetch resminin þekillenmesi tamamlanmadan önce iþlemden geçirilip sonuç kod ve metinler konsol ve ekranda sergilenir.</p>
+    <img src="png-logo.png" width="640" height="480">
+
+    <table>
+        <thead>
+            <tr><th width="300">Akýþ</th><th>Metin No.</th><th>Gönderilen metin tipi</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+<script src="D2p7x.js"></script>
+<script src="D2p7y.js"></script>
+<script src="D2p7z.js"></script> <!-- Checksum, transform, ReadableStream, WritableStream altyapý JS dosyalarý -->
+<script>
+    const tabloGövdesi = document.getElementsByTagName ("tbody") [0];
+
+    class AkýþKayýtlarýnýSergile {
+        constructor (ad) {
+            this.ad = ad;
+            this.sayaç = 0;
+        } // con..sonu...
+        write (metin) {// Konsola yaz, ekrana yazdýrmayý çaðýr...
+            this.sayaç +=1;
+            console.log ("%snýn %d.metni: %o", this.ad, this.sayaç, metin);
+            this.satýrYarat (this.ad, this.sayaç, metin.constructor.name);
+        } // 
+        close() {this.satýrYarat (this.ad, this.sayaç, "Kapandý");}
+
+        satýrYarat (baþlýk, kolon1, kolon2) {// Ekrana yaz...
+            const tsatýr = document.createElement ("tr");
+            tabloGövdesi.appendChild (tsatýr);
+            const tbaþlýk = document.createElement ("th");
+            tbaþlýk.appendChild (document.createTextNode (baþlýk));
+            tsatýr.appendChild (tbaþlýk);
+            const tdSayaç = document.createElement ("td");
+            tdSayaç.appendChild (document.createTextNode (kolon1));
+            tsatýr.appendChild (tdSayaç);
+            const tdMetin = document.createElement ("td");
+            tdMetin.appendChild (document.createTextNode (kolon2));
+            tsatýr.appendChild (tdMetin);
+        } // sat..sonu...
+    } // class sonu...
+
+    function okunabilirAkýþaKaydet (ad, kayýt) {
+        const [kayýt1, kayýt2] = kayýt.tee();
+        kayýt2.pipeTo (new WritableStream (new AkýþKayýtlarýnýSergile (ad))).catch (console.error);
+        return kayýt1;
+    } // func sonu...
+
+
+    fetch ("resim/png-logo.png") // Orijinal resmin getirilmesi...
+    .then (a=> a.body) // Getirilen dosya gövdesini OkunabilirAkýþ olarak al...
+    .then (a=> okunabilirAkýþaKaydet ("Getirilen yanýt akýþý", a)) // Her getirileni Uint8Array metni olarak kaydet...
+    .then (a=> a.pipeThrough (new PNGTransformStream())) // PNG metin akýþýna dönüþtür...
+    .then (a=> okunabilirAkýþaKaydet ("PNG metin akýþý", a)) // Her dönüþtürülen PNG metnini kaydet...
+</script>
+</html>

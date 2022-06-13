@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2l1.html: ResizeObserver API'yle ekran ebatýna duyarlý gözlem örneði.</title>
+    <style>
+      html {
+        height: 100%;
+        background-color: LightGray;}
+      body {
+        height: inherit;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;}
+      div {
+        background-color: DarkGreen;
+        width: 50%;
+        height: 50%;
+        padding: 10px;
+        color: pink;}
+    </style>
+</head>
+<body>
+    <div>Mevcut ekran ebatýnýn %50 en ve boyuna ayarlý</div>
+</body>
+<script>
+    const ebatlamaGözlemcisi = new ResizeObserver (içerikler=> {console.log (içerikler);
+        for (let içerik of içerikler) {
+            if (içerik.contentBoxSize) {içerik.target.style.borderRadius = Math.min (100, (içerik.contentBoxSize.inlineSize/10) + (içerik.contentBoxSize.blockSize/10)) + "px";
+            } else {içerik.target.style.borderRadius = Math.min (100, (içerik.contentRect.width/10) + (içerik.contentRect.height/10)) + "px";}
+        } // for sonu...
+    }); // con..sonu...
+    ebatlamaGözlemcisi.observe (document.querySelector ("div"));
+</script>
+</html>

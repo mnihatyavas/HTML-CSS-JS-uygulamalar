@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2i2.html: Deðiþen ekran ebatýnýn matchMedia/addListener/addEventListener/onchange ile tespiti örneði.</title>
+    <style>
+        html {
+            font-family: serif;
+            background-color: LightGray;}
+        body {
+            padding: 20px;
+            margin: 10px;
+            color: pink;
+            background-color: blue;
+            border: 10px solid black;}
+        h1, p {text-align: center;}
+        p {font-size: 1.3rem;}
+    </style>
+</head>
+<body>
+    <h1>matchMedia ile ekran ebat deðiþikliðinin tespiti</h1>
+    <p></p>
+</body>
+<script>
+    var p = document.querySelector ("p");
+    var darEkran = window.matchMedia ("(max-width: 600px)");
+
+    function ekranTesti (ekran) {
+        if (ekran.matches) {
+            p.textContent = "Bu dar ekran olup, 600px'den küçüktür.";
+            document.body.style.backgroundColor = "red";
+        } else {
+            p.textContent = "Bu geniþ ekran olup, 600px'ten büyüktür.";
+            document.body.style.backgroundColor = "blue";
+        } // else sonu...
+    } // func sonu...
+
+    ekranTesti (darEkran);
+    //darEkran.addListener (ekranTesti);
+    //darEkran.addEventListener ("change", ()=>ekranTesti (darEkran));
+    //darEkran.onchange = function() {console.log (darEkran);}
+    darEkran.onchange = function() {ekranTesti (darEkran); console.log (darEkran);}
+</script>
+</html>

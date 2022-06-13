@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s1.html: Cripto þifrelemeyle girilen mesajý dijital anahtarla imzalama ve geçerli/geçersiz onaylama örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input[type="text"] {background-color: lime;}
+    </style>
+    <link rel="stylesheet" href="D2s1.css">
+</head>
+<body>
+    <main>
+        <h1>Web Þifreleme: imza/onay</h1>
+
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Web Crypto API</a> Ýnternet Þifreleme Uygulamasýnýn <code>imzala()</code> ve <code>onayla()</code> fonksiyonlarýnýn çalýþmasýný göstermektedir. Dört farklý örnek içermektedir, herbirinin desteklenen algoritmalarý þunlardýr:</p>
+            <ul>
+                <li>"RSASSA-PKCS1-v1_5"</li>
+                <li>"RSA-PSS"</li>
+                <li>"ECDSA"</li>
+                <li>"HMAC"</li>
+            </ul>
+            <hr/>
+            <p>Herbir örneðin dört kýsmý vardýr:</p>
+            <ul>
+                <li>Ýçinde imzalanacak bir mesajý içeren metin kutusu.</li>
+                <li>Ýmzanýn dijital bir temsili.</li>
+                <li>Bir "imza" düðmesi: metin kutusu içeriklerini digital imzalar, imzanýn bir kýsmýný gösterir, ve tamamýný da saklar.</li>
+                <li>Bir "onay" düðmesi: metin kutusu içeriklerini depolanan dijital imza karþýlýðýnda onaylar, ve görünen imzayý uygun onay stilinde, yeþil ve çentikli olarak yeniden gösterir.</li>
+            </ul>
+            <p>Sýrayla dene:</p>
+            <ul>
+                <li>"Ýmzala" düðmesini týkla. Dijital imza görünecektir.</li>
+                <li>"Onayla" düðmesini týkla. Dijital imza geçirli kýlýnacaktýr.</li>
+                <li>Metin kutusu içeriklerini geliþigüzel deðiþtirin.</li>
+                <li>Yeniden "Onayla"yý týklayýn. Dijital imza bu kez geçersiz kýlýnacaktýr.</li>
+            </ul>
+        </section>
+
+        <section class="örnekler">
+            <section class="imza-onay rsassa-pkcs1">
+                <h2 class="imza-onay-baþlýðý">RSASSA-PKCS1-v1_5</h2>
+                <section class="imza-onay-kontrolleri">
+                    <div class="mesaj-kontrol">
+                        <label for="rsassa-pkcs1-mesajý">Ýmzalanacak mesajý girin:</label>
+                        <input type="text" id="rsassa-pkcs1-mesajý" name="mesaj" size="25" value="Baykuþ geceyarýsý ötüyor.">
+                    </div>
+                    <div class="imza">Ýmza: <span class="imza-deðeri"></span></div>
+                    <input class="imza-düðmesi" type="button" value="Ýmzala">
+                    <input class="onay-düðmesi" type="button" value="Onayla">
+                </section>
+            </section>
+
+            <section class="imza-onay rsa-pss">
+                <h2 class="imza-onay-baþlýðý">RSA-PSS</h2>
+                <section class="imza-onay-kontrolleri">
+                    <div class="mesaj-kontrol">
+                        <label for="rsa-pss-mesajý">Ýmzalanacak mesajý girin:</label>
+                        <input type="text" id="rsa-pss-mesajý" name="mesaj" size="25" value="Kaplan þafakta avlanýyor.">
+                    </div>
+                    <div class="imza">Ýmza: <span class="imza-deðeri"></span></div>
+                    <input class="imza-düðmesi" type="button" value="Ýmzala">
+                    <input class="onay-düðmesi" type="button" value="Onayla">
+                </section>
+            </section>
+
+            <section class="imza-onay ecdsa">
+                <h2 class="imza-onay-baþlýðý">ECDSA</h2>
+                <section class="imza-onay-kontrolleri">
+                    <div class="mesaj-kontrol">
+                        <label for="ecdsa-mesajý">Ýmzalanacak mesajý girin:</label>
+                        <input type="text" id="ecdsa-mesajý" name="mesaj" size="25" value="Kartal alacakaranlýkta uçuyor.">
+                    </div>
+                    <div class="imza">Ýmza: <span class="imza-deðeri"></span></div>
+                    <input class="imza-düðmesi" type="button" value="Ýmzala">
+                    <input class="onay-düðmesi" type="button" value="Onayla">
+                </section>
+            </section>
+
+            <section class="imza-onay hmac">
+                <h2 class="imza-onay-baþlýðý">HMAC</h2>
+                <section class="imza-onay-kontrolleri">
+                    <div class="mesaj-kontrol">
+                        <label for="hmac-mesajý">Ýmzalanacak mesajý girin:</label>
+                        <input type="text" id="hmac-mesajý" name="mesaj" size="25" value="Tavþancýk çaysaatýnda zýplýyor.">
+                    </div>
+                    <div class="imza">Ýmza: <span class="imza-deðeri"></span></div>
+                    <input class="imza-düðmesi" type="button" value="Ýmzala">
+                    <input class="onay-düðmesi" type="button" value="Onayla">
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+  <script src="D2s1q.js" izah="rsassa-pkcs1"></script>
+  <script src="D2s1x.js" izah="rsa-pss"></script>
+  <script src="D2s1y.js" izah="ecdsa"></script>
+  <script src="D2s1z.js" izah="hmac"></script>
+</html>

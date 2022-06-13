@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2p5.html: WritableStream akýþa mesajý kodlayarak girme ve burdan ekrana dekodlayarak aktarma örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 650px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        ul {background-color: linen; padding: 10px 25px;}
+    </style>
+</head>
+<body>
+    <h1>Basit yazýcý örneði</h1>
+    <h2>Sonuçlar</h2>
+    <ul></ul>
+</body>
+<script>
+    function mesajGönder (mesaj, yazýlabilirAkýþ) {
+        // varsayýlýYazýcý tipi: WritableStreamDefaultWriter
+        const varsayýlýYazýcý = yazýlabilirAkýþ.getWriter();
+        const enkoder = new TextEncoder();
+        const þifrelenen = enkoder.encode (mesaj, {stream: true});
+        þifrelenen.forEach ((karakter) => {
+            varsayýlýYazýcý.ready
+            .then (()=> {return varsayýlýYazýcý.write (karakter);})
+            .then (()=> {console.log ("Karakter yazýcýya yazýldý.");})
+            .catch ((hata)=> {console.log ("Karakter yazým hatasý:", hata);});
+        }); // þif..sonu...
+        varsayýlýYazýcý.ready
+        .then (()=> {varsayýlýYazýcý.close();})
+        .then (()=> {console.log ("Tüm karakterler yazýcýya yazýldý");})
+        .catch ((hata)=> {console.log ("Yazýlabilir akýþ hatasý: ", hata);});
+    } // func sonu...
+
+    const ulEleman = document.querySelector ("ul");
+    const dekoder = new TextDecoder ("utf-16"); // utf-8, utf-16, windows-1254
+    const eklemeTaktiði = new CountQueuingStrategy ({highWaterMark: 1});
+    let sonuç = "";
+    const yazýlabilirAkýþ = new WritableStream ({
+        write (karakter) {
+            return new Promise ((kabul, red) => {
+                var tampon = new ArrayBuffer (2);
+                var gör = new Uint16Array (tampon);
+                gör [0] = karakter;
+                var çözülen = dekoder.decode (gör, {stream: true});
+                var liEleman = document.createElement ("li");
+                liEleman.textContent = "Çözümlenen karakter: " + çözülen;
+                ulEleman.appendChild (liEleman);
+                sonuç += çözülen;
+                kabul();
+            }); // return sonu...
+        }, // write sonu...
+        close() {
+            var liEleman = document.createElement ("li");
+            liEleman.innerHTML = "<br/>[ALINAN MESAJ] " + sonuç;
+            ulEleman.appendChild (liEleman);
+        }, // close sonu...
+        abort (hata) {console.log ("Yazdýrma hatasý: ", hata);}
+    }, eklemeTaktiði);
+
+    mesajGönder ("Herkese Merhabalar.", yazýlabilirAkýþ);
+</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2p6.html: TransformStream ve ReadableStream akýþla fetch ascii kodlarý metne dönüþtürme örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 650px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        section {background-color: linen; padding: 10px;}
+    </style>
+</head>
+<body>
+    <!-- fetch (>python -m http.server) ve (localhost:8000) gerektirmekte.-->
+
+    <h1>Göte: Faust ve Mefisto Trajedisi</h1>
+    <section id="kýsým"></section>
+</body>
+<script>
+    /**
+     * Bu dönüþtürücü "fetch" disk .txt dosya verilerini Uint8Array ascii rakamlar olarak alýr ve
+     * onlarý metin satýrlarýna dönüþtürür.
+     * Okunan ascii karakterler ve toplam ebatý konsoldan yansýtýlmaktadýr.
+     *
+     * @iþletilen {TransformStreamTransformer}
+     */
+    class Uint8ArrayToStringsTransformer {
+        constructor() {// Sýnýf kurucusu...
+            this.kodçözücü = new TextDecoder();
+            this.sonSatýr = "";
+        } // con..sonu...
+
+        /**
+         * "fetch"den aldýðý sonraki Uint8Array ascii yýðýnýný satýrlý metne dönüþtürerek ReadableStream tampondosya akýþýna ekler.
+         *
+         * @parametre {Uint8Array} ascii ikili yýðýn verisi.
+         * @parametre {TransformStreamDefaultController} dönüþtürülen metnin ardýþýk eklendiði okunabilir akýþ tampon dosyasý.
+         */
+        transform (metin, tamponDosya) {
+            console.log ("Disk .txt dosyasýndan okunan metin: %o Ebatý: %d byte.", metin, metin.byteLength);
+            const dizge = `${this.sonSatýr}${this.kodçözücü.decode(metin)}`;
+            const satýrlar = dizge.split (/\r\n|[\r\n]/g);
+            this.sonSatýr = satýrlar.pop() || "";
+            for (const satýr of satýrlar) {tamponDosya.enqueue (satýr)} // Metin satýrlarýný akýþa ekle...
+        } // tran..sonu...
+
+        /**
+         * "fetch" bu akýþa yazmayý tamamladýðýnda içinde kalabilecek son satýrý da ekler...
+         *
+         * @parametre {TransformStreamDefaultController} Son satýrýn da ekleneceði akýþ tampon dosyasý.
+         */
+        flush (tamponDosya) {if (this.sonSatýr) {tamponDosya.enqueue (this.sonSatýr)} }
+    } // class sonu...
+</script>
+<script>
+    async function ana() {
+        const da = new TransformStream (new Uint8ArrayToStringsTransformer()); // da: DönüþtürenAkýþ
+        const yanýt = await fetch ("D2p6.txt");
+        const oku = yanýt.body;
+        const metin = oku.pipeThrough (da);
+        const okuyucu = metin.getReader();
+        while (true) {
+            const {done, value} = await okuyucu.read();
+            if (done) {break}; // Okunan kalmazsa döngüden çýk...
+            const p = document.createElement ("p");
+            p.textContent = value;
+            document.getElementById ("kýsým").appendChild (p); // Okunan her satýrý ekrana yansýt...
+        } // whilw sonu...
+    } // asy..sonu...
+
+    ana().catch (()=> {// Tarayýcýnýz TransformStream API'sini desteklemiyorsa...
+        if (typeof TransformStream === "undefined") {
+            const hata = document.createElement ("p")
+            hata.textContent = "Tarayýcýnýz TransformStream/DönüþtürenAkýþ API'sini desteklemiyor. Chrome'u kurun ve ayarlarýný kurun://flags/#enable-experimental-web-platform-features";
+            hata.style.color = "red";
+            document.getElementById ("kýsým").appendChild (hata);
+        } // if sonu...
+    }) // ana() sonu...
+</script>
+</html>

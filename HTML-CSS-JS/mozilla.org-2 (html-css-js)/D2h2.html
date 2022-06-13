@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2h2.html: Seçilmeye duyarlý kutu öncesine/sonrasýna yeni rasgele renkli kutu ekleme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            /*height: 200px;*/
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        p {color: DarkGreen;}
+        div {
+            width: 50px;
+            height: 50px;
+            margin: 3px;
+            border: 3px solid black;
+            display: inline-block;
+            background-color: red;}
+    </style>
+</head>
+<body>
+    <p>Önce yukardaki kýrmýzý kutulardan birini seçin. Sonra alttaki önce/sonra düðmelerine týklayarak seçilenin önüne/arkasýna tesadüfi renkli kutular ekleyin.</p>
+
+    <section>
+        <div></div><div></div><div></div><div></div>
+    </section>
+
+    <button class="öncesine">Öncesine ekle</button>
+    <button class="sonrasýna">Sonrasýna ekle</button>
+    <button class="yenile">Yenibaþtan</button>
+</body>
+<script>
+    var önceDüðmesi = document.querySelector (".öncesine");
+    var sonraDüðmesi = document.querySelector (".sonrasýna");
+    var yenibaþtanDüðmesi = document.querySelector (".yenile");
+    var kab = document.querySelector ("section");
+    var aktifKutu;
+
+    baþlat();
+    function baþlat() {// Ýlk 4 kýrmýzý kutuyu seçilmeye duyarla...
+        var ilkKutular = document.querySelectorAll ("section div");
+        for (i = 0; i < ilkKutular.length; i++) seçilmeyeDuyarla (ilkKutular [i]);
+    } // func sonu...
+
+    function seçilmeyeDuyarla (kutu) {
+        kutu.addEventListener ("click", function() {// Seçilen aktif kutu sýnýr rengi açýkmavi...
+            var tümKutular = document.querySelectorAll ("section div");
+            for (i = 0; i < tümKutular.length; i++) {tümKutular [i].style.border = "3px solid black";} 
+            kutu.style.border = "3px solid aqua";
+            aktifKutu = kutu;
+        }); // kutu sonu...
+    } // func sonu...
+
+    önceDüðmesi.addEventListener ("click", function() {
+        var eklenecekKutu = document.createElement ("div");
+        eklenecekKutu.style.backgroundColor = rasgeleKutuRengi();
+        if (aktifKutu) {aktifKutu.insertAdjacentElement ("beforebegin", eklenecekKutu);} // Seçili aktif kutu varsa ekle...
+        seçilmeyeDuyarla (eklenecekKutu); // Eklenen yeni kutuyu da seçilmeye duyarla...
+    }); // önce sonu...
+
+    sonraDüðmesi.addEventListener ("click", function() {
+        var eklenecekKutu = document.createElement ("div");
+        eklenecekKutu.style.backgroundColor = rasgeleKutuRengi();
+        if (aktifKutu) {aktifKutu.insertAdjacentElement ("afterend", eklenecekKutu);} // Seçili aktif kutu varsa ekle...
+        seçilmeyeDuyarla (eklenecekKutu); // Eklenen yeni kutuyu da seçilmeye duyarla...
+    }); // sonra sonu...
+
+    yenibaþtanDüðmesi.addEventListener ("click", function() {
+        while (kab.firstChild) {kab.removeChild (kab.firstChild);} // Önce tüm section/kab içi kutularý sil...
+        for (i = 0; i <=3; i++) {// Sonra orijinal 4 kýrmýzý kutuyu section/kap içine yeniden ekle ve seçilmeye duyarla...
+            var eklenecekKutu = document.createElement ("div");
+            kab.appendChild (eklenecekKutu);
+            seçilmeyeDuyarla (eklenecekKutu);
+        } // for sonu...
+    }); // yeni sonu...
+
+    function rasgeleKutuRengi() {
+        function rasgele() {return Math.floor (Math.random() * 255);}
+        return "rgb(" + rasgele() + "," + rasgele() + "," + rasgele() + ")";
+    } // func sonu...
+</script>
+</html>

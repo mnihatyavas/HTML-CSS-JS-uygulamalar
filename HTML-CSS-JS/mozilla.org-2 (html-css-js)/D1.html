@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D1.html: Dizi, nesne, fonksiyon ve olaylar JS ileri etkileþimli örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="document.getElementById('göster').innerHTML='' ">
+    <h3>Ýleri JS Temelleri</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="D1a.html" target="_">1) Dizi metodlar; forEach, map, filter, reduce, sort ve diðerleri örneði</a></h4>
+    <h4><a href="D1b.html" target="_">2) OOJS nesneye yönelik js ile metodlar zinciri ve 2d tuval grafiði örneði</a></h4>
+    <h4><a href="D1c.html" target="_">3) Fonksiyonu tanýmlama, çaðýrma, baðlama, özyineleme ve üreteç örneði</a></h4>
+    <h4><a href="D1d.html" target="_">4) Duyarlý JS olaylarýna kodlu yanýtlar sunulmasý örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>Oynanabilir JS penceresi giriþiyle karþýlýklý etkileþimli ve canlý deðiþtir-gör örnekleri sunulmaktadýr. \
+            Toplam 4 grup kapsamýnda dizi metodlarý, OOJS nesneye yönelik js, fonksiyonlar ve olaylar etkileþimli \
+            JS, CS ve HTML pencere verigiriþleriyle sergilenmektedir. Açýklanmasý örneklerle iþlenmiþtir."
+    </script>
+</body> 
+</html>

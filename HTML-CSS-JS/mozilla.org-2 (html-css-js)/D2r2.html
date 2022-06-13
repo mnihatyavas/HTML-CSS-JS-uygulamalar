@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2r2.html: Animate ve transform:translate(o.clientX,o.clientY) ile kutuyu ekranda fareyle hareketlendirme örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: DarkSlateBlue; font-family: sans-serif;}
+        html, body {margin:0; padding:0; height: 100%;}
+        div {
+            width: 150px;
+            height: 100px;
+            background-color: red;
+            border: 10px solid black;
+            border-radius: 10px;}
+        p {
+            position: absolute;
+            width: 300px;
+            right: 10px;
+            bottom: 10px;
+            padding: 5px;
+            border: 1px solid;
+            background-color: navy;
+            color: yellow;}
+    </style>
+</head>
+<body>
+  <p>Canlandýrmayý baþlatmak için sol-týkla yada boþluk tuþuna bas. Sürekli hareketlilikten miðreniniz azar ve baþýnýz aðrýrsa, durdurmak için sað-týkla yada yeniden yükle.</p>
+  <div></div>
+</body>
+<script>
+    const divElemaný = document.querySelector ("div");
+
+    document.addEventListener ("keypress", function (olay) {if (olay.key === " ") {animasyonuBaþlat();} });
+    document.addEventListener ("click", animasyonuBaþlat);
+
+    function animasyonuBaþlat() {
+        document.body.addEventListener ("mousemove", olay=> {
+            let hareketlen = divElemaný.animate (
+                {transform: `translate(${olay.clientX}px, ${olay.clientY}px)`},
+                {duration: 100, fill: "forwards"}
+            ); // let sonu...
+            hareketlen.commitStyles();
+            //hareketlen.persist()
+            hareketlen.onremove = function() {console.log ("Hareket algýlandý");}
+            console.log (hareketlen.replaceState);
+        }); // doc..sonu...
+    } // func sonu...
+</script>
+</html>

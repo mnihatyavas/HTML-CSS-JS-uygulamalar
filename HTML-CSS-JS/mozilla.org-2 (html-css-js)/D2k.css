@@ -1,0 +1,20 @@
+/* D2k.css: Fare imlecinin tuval irinoktasýyla kilitlenme stillenmesi altprogramý örneði. */
+
+html, body {
+    margin: 0;
+    padding: 0;}
+canvas {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid cyan;}
+.açýklama {
+    width: 640px;
+    margin: 0 auto;}
+#konum {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: black;
+    color: yellow;
+    padding: 0px 5px;}
+h1 {font-size: 200%; color: DarkGreen;}

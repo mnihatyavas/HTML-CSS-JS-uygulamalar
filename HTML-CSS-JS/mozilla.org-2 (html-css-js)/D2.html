@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2.html: Çeþitli konulardaki ileri DOM/DocumentModule JS uygulamalarý örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="document.getElementById('göster').innerHTML='' ">
+    <h3>Ýleri JS DOM Uygulamalarý</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="D2a.html" target="_">1) Çevrimdýþý localhost-fetch getir'le video dosyasýný yükleyip oynatma örneði</a></h4>
+    <h4><a href="D2b.html" target="_">2) Týkla ve fareüzerinde olaylarýyla yazý ve zeminrenginin rasgele deðiþmesi örneði</a></h4>
+    <h4><a href="D2c1.html" target="_">3a) Canvas tuvale elmas ve elips çizimleri örneði</a></h4>
+    <h4><a href="D2c2.html" target="_">3b) Canvas tuval içine resim ve video yerleþtirme örneði</a></h4>
+    <h4><a href="D2d.html" target="_">4a) Anaprogramla iFrame çerçeveli altprogram arasýnda mesajlaþma örneði</a></h4>
+    <h4><a href="D2e.html" target="_">4b) Anaprogramla iFrame çerçeveli altprogram arasýnda çoklu mesajlaþma örneði</a></h4>
+    <h4><a href="D2f1.html" target="_">5a) KopyalaTaþý'nýn görsel efektli ve konsol açýklamalý sürükle-býrak aþamalarý örneði</a></h4>
+    <h4><a href="D2f2.html" target="_">5b) KopyalaTaþý'nýn DataTransfer.items ile sürükle-býrak aþamalarý örneði</a></h4>
+    <h4><a href="D2f3.html" target="_">5c) Sürükleme bölgesine býrakýlan dosya(lar)nýn yönetimi örneði</a></h4>
+    <h4><a href="D2f4.html" target="_">5d) Sürükle&Býrak olaylarý, veri aktarým/birimi/listesi özellik ve metodlarý örneði</a></h4>
+    <h4><a href="D2g.html" target="_">6) Fýrlayan diyalog kutusunun açýlýp kapanma kontrolu örneði</a></h4>
+    <h4><a href="D2h1.html" target="_">7a) Yeni verigiriþini mevcut metnin önüne/arkasýna ekleme örneði</a></h4>
+    <h4><a href="D2h2.html" target="_">7b) Seçilmeye duyarlý kutu öncesine/sonrasýna yeni rasgele renkli kutu ekleme örneði</a></h4>
+    <h4><a href="D2i1.html" target="_">8a) Deðiþen ekran ebatýnýn matchMedia ile tespiti örneði</a></h4>
+    <h4><a href="D2i2.html" target="_">8b) Deðiþen ekran ebatýnýn matchMedia/addListener/addEventListener/onchange ile tespiti örneði</a></h4>
+    <h4><a href="D2j.html" target="_">9) Müzikdosyasý indirme hatasýnýn MediaError ile tespiti örneði</a></h4>
+    <h4><a href="D2k.html" target="_">10) Fare imlecinin pointerLockElement tuval irinoktasýyla kilitlenme örneði</a></h4>
+    <h4><a href="D2l1.html" target="_">11a) ResizeObserver API'yle ekran ebatýna duyarlý gözlem örneði</a></h4>
+    <h4><a href="D2l2.html" target="_">11b) ResizeObserver API'yle ekran ve yazýfonu ebatýný tercihli aktifleme örneði</a></h4>
+    <h4><a href="D2m.html" target="_">12) Canvas tuval kayarken içteki topun sabit konumunu korumasý örneði</a></h4>
+    <h4><a href="D2n.html" target="_">13) WakeLock uyandýrma servis API'sinin oto/manüel açýlýp-kapatýlmasý örneði</a></h4>
+    <h4><a href="D2o.html" target="_">14) Tercihleri girilen window.scrollTo ile yatay/dikey kaydýrma örneði</a></h4>
+    <h4><a href="D2p1.html" target="_">15a) ReadableStream akýþ API'siyle okunan resmin büyüyen ebatlarda kopyalanmasý örneði</a></h4>
+    <h4><a href="D2p2.html" target="_">15b) pipeThrough akýþla okunup GrayscalePNGTransformer'la griye dönüþtürülen farklý ebatlý resim kopyalarý örneði</a></h4>
+    <h4><a href="D2p3.html" target="_">15c) ReadableStream akýþa geliþigüzel karakterli metin ekleme ve okuyup sergileme örneði</a></h4>
+    <h4><a href="D2p4.html" target="_">15d) ReadableStream akýþa geliþigüzel karakterli metin ekleme ve okuyup T-çift sergileme örneði</a></h4>
+    <h4><a href="D2p5.html" target="_">15e) WritableStream akýþa mesajý kodlayarak girme ve burdan ekrana dekodlayarak aktarma örneði</a></h4>
+    <h4><a href="D2p6.html" target="_">15f) TransformStream ve ReadableStream akýþla fetch ascii kodlarý metne dönüþtürme örneði</a></h4>
+    <h4><a href="D2p7.html" target="_">15g) PNG resmi getirilirken verilerin PNGTransformStream ve Readable/WritableStream akýþla iþlenmesi örneði</a></h4>
+    <h4><a href="D2r1.html" target="_">16a) Transform ve animate ile iki diski farklý hýzlarda karþýlýklý sürekli döndürme örneði</a></h4>
+    <h4><a href="D2r2.html" target="_">16b) Animate ve transform:translate(o.clientX,o.clientY) ile kutuyu ekranda fareyle hareketlendirme örneði</a></h4>
+    <h4><a href="D2s1.html" target="_">17a) Cripto þifrelemeyle girilen mesajý dijital anahtarla imzalama ve geçerli/geçersiz onaylama örneði</a></h4>
+    <h4><a href="D2s2.html" target="_">17b) Cripto þifrelemeyle girilen mesajý þifreleme ve tekrar deþifreleme örneði</a></h4>
+    <h4><a href="D2s3a.html" target="_">18a) Cripto þifrelemeyle girilen þifreden veya Alice-Bob anahtarýndan gizli bit üretme örneði</a></h4>
+    <h4><a href="D2s3b.html" target="_">18b) Cripto þifrelemeyle girilen þifreden veya Alice-Bob anahtarýndan türetilen gizli anahtarla þifreleme/deþifreleme örneði</a></h4>
+    <h4><a href="D2s4a.html" target="_">19a) Cripto þifrelemeyle yüklenirken üretilen 4 farklý anahtarýn ifþalanmasý örneði</a></h4>
+    <h4><a href="D2s4b.html" target="_">19b) Cripto þifrelemeyle 4 farklý ithal anahtarlý mesaj þifreleme/imzalama örneði</a></h4>
+    <h4><a href="D2s5a.html" target="_">20a) Cripto þifrelemeyle 4 farklý anahtarý gireceðiniz þifreyle sarmalama örneði</a></h4>
+    <h4><a href="D2s5b.html" target="_">20b) Cripto þifrelemeyle mesaj ve parolayý þifreleme ve imzalama anahtarlarýný sarýmsýzlama örneði</a></h4>
+    <h4><a href="D2s6.html" target="_">21) Zeminrengi, yazýfonu ve resim deðiþikliklerinin localStorage tarayýcý deposundan hatýrlanmasý örneði</a></h4>
+
+    <script>
+        göster.innerHTML = "Tarayýcý destekli API/ApplicationProgramInterface/UygulamaProgramýArabaðlacý tanýmlý sýnýf ve fonksiyonlara uygun argümanlar\
+        girerek toplam 21 farklý konuda 40 adet programla ve bunlara baðlý .js, .css, .html altprogramlarla Ýleri DOM Uygulamalarý sunulmuþtur."
+    </script>
+</body> 
+</html>

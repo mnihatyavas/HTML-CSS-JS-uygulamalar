@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2p4.html: ReadableStream akýþa geliþigüzel karakterli metin ekleme ve okuyup T-çift sergileme örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 1000px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        button {display: block;}
+        .dizge-üretimi {background-color: linen; padding: 5px;}
+        .te1 {
+            float: left;
+            width: 50%;
+            padding-left: 5px;
+            background-color: cyan;}
+        .te2 {
+            float: right;
+            width: 50%;
+            padding-left: 5px;
+            background-color: lime;}
+    </style>
+</head>
+<body>
+    <h1>Basit Te Örneði</h1>
+    <button>Dizge üretimini durdur</button>
+
+    <div class="dizge-üretimi">
+        <h2>Akýþa girilen dizge üretimi</h2>
+        <ul></ul>
+    </div>
+    <div class="te1">
+        <h2>Te-1 çýktýsý</h2>
+        <ul></ul>
+    </div>
+    <div class="te2">
+        <h2>Te-2 çýktýsý</h2>
+        <ul></ul>
+    </div>
+    <br/><hr/>
+</body>
+<script>
+    const ul1 = document.querySelector (".dizge-üretimi ul");
+    const ul2 = document.querySelector (".te1 ul");
+    const ul3 = document.querySelector (".te2 ul");
+    const düðme = document.querySelector ("button");
+
+    const akýþ = new ReadableStream ({
+        start (tamponDosya) {
+            let yinele = setInterval (()=> {
+                let dizge = rasgeleDizgeÜret();
+                tamponDosya.enqueue (dizge); // Üretilen her dizgeyi, dur tuþu basýlýncaya deðin tampon dosyaya ekle...
+                let liElemaný = document.createElement ("li");
+                liElemaný.textContent = dizge;
+                ul1.appendChild (liElemaný); // Dizgeyi altalta listele...
+            }, 1000); // let sonu...
+            düðme.addEventListener ("click", function() {// Dizge üretimini durdur düðmesi týklanýnca...
+                clearInterval (yinele); // Yinelemeyi sonlandýr...
+                teAkýþý();
+                tamponDosya.close();
+            }); // dðme sonu...
+        }, // start sonu...
+        pull (tamponDosya) {}, // Gereksiz...
+        cancel() {clearInterval (yinele);}
+    }); // con..sonu...
+
+    function rasgeleDizgeÜret() {
+        let dizge = "";
+        let karakterler = "ABCÇDEFGÐHIÝJKLMNOÖPQRSÞTUÜVWXYZabcçdefghýijklmnoöpqrsþtuüvwxyz0123456789!@#$%^&*()";
+        for (let i = 0; i < 8; i++) {dizge +=karakterler.charAt (Math.floor (Math.random() * karakterler.length));}
+        return dizge;
+    } // func sonu...
+
+    function teAkýþý() {
+        const teAkýþ = akýþ.tee(); console.log (teAkýþ);
+        akýþýOku (teAkýþ [0], ul2);
+        akýþýOku (teAkýþ [1], ul3);
+    } // func sonu...
+
+    function akýþýOku (akýþ, ulElemaný) {
+        const okur = akýþ.getReader();
+        let sayaç = 0;
+        okur.read().then (function metniÝþle ({done, value}) {
+            if (done) {console.log ("Akýþ okuma tamamlandý."); return;}
+            sayaç +=value.length;
+            const dizge = value;
+            let liElemaný = document.createElement ("li");
+            liElemaný.textContent = "Aktüel dizge: " + dizge + ". Toplam okunan karakter: " + sayaç;
+            ulElemaný.appendChild (liElemaný);
+            return okur.read().then (metniÝþle); // Tamamlanýncaya/done deðin iþlemeyi yinele...
+        }); // okur sonu...
+    } // func sonu...
+</script>
+</html>

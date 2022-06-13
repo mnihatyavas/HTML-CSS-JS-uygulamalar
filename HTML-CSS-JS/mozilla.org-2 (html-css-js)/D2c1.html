@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2c1.html: Canvas tuvale elmas ve elips çizimleri örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        canvas {border: 1px solid black; background-color: cyan;}
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <canvas></canvas>
+</body>
+<script>
+    <!-- Kare ve daireyi yerine set/getTransform'la elmas ve elipse dönüþtürme -->
+      const tuvaller = document.querySelectorAll ("canvas");
+      const içerik1 = tuvaller[0].getContext ("2d");
+      const içerik2 = tuvaller[1].getContext ("2d");
+
+      içerik1.setTransform (1, .2, .8, 1, 0, 0); // Yassýltma dönüþümleri...
+      içerik1.fillRect (20, 20, 80, 80);
+
+      let dönüþümÝçerikleri = içerik1.getTransform();
+      console.log (dönüþümÝçerikleri);
+
+      içerik2.setTransform (dönüþümÝçerikleri);
+      içerik2.beginPath();
+      içerik2.arc (80, 50, 50, 0, 2 * Math.PI);
+      içerik2.fill();
+</script>
+</html>

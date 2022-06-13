@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2p3.html: ReadableStream akýþa geliþigüzel karakterli metin ekleme ve okuyup sergileme örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 1000px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        button {display: block;}
+        .akýþaGirilen {
+            float: left;
+            width: 50%;
+            padding: 5px;
+            background-color: cyan;}
+        .akýþtanÇýkarýlan {
+            float: right;
+            width: 50%;
+            padding-left: 5px;
+            background-color: lime;}
+        hr {clear: both;}
+        .sonuç-dizge {background-color: DodgerBlue; padding: 5px;}
+    </style>
+</head>
+<body>
+    <h1>Basit Geliþigüzel Akýþ</h1>
+    <hr/>
+
+    <button>Dizge üretimini durdur</button>
+    <div class="akýþaGirilen">
+        <h2>Akýþa girilen geliþigüzel 8'li dizgeler</h2>
+        <ul></ul>
+    </div>
+    <div class="akýþtanÇýkarýlan">
+        <h2>Akýþtan okunan geliþigüzel 8'li dizgeler</h2>
+        <ul></ul>
+    </div>
+    <hr>
+
+    <div class="sonuç-dizge">
+        <h2>Sonuç ekli dizgeler</h2>
+        <p></p>
+    </div>
+</body>
+<script>
+    const ul1 = document.querySelector (".akýþaGirilen ul");
+    const ul2 = document.querySelector (".akýþtanÇýkarýlan ul");
+    const p = document.querySelector ("p");
+    const düðme = document.querySelector ("button");
+
+    const akýþ = new ReadableStream ({
+        start (akýþDosyasý) {
+            tekrar = setInterval (() => {
+                let geliþigüzelDizge = geliþigüzel8_liDizgeÜret();
+                akýþDosyasý.enqueue (geliþigüzelDizge); // ('li dizgeyi akýþ dosyasýna ekle...
+                let listeElemaný = document.createElement ("li");
+                listeElemaný.textContent = geliþigüzelDizge;
+                ul1.appendChild (listeElemaný); // Her 8'li dizgeyi ekran soluna altalta listele...
+            }, 1000); // tek..sonu...
+            düðme.addEventListener ("click", function() {
+                clearInterval (tekrar);
+                akýþtakileriOku();
+                akýþDosyasý.close();
+            }) // Buton týklanýnca tekrarlý listelemeyi sonlandýr ve çýktýlamaya geç...
+        }, // start sonu...
+        pull (akýþDosyasý) {}, // pull'a gerek yok...
+        cancel() {clearInterval (tekrar);}
+    }); // let sonu...
+
+    function geliþigüzel8_liDizgeÜret() {
+        let geliþigüzelDizge = "";
+        let karakterler = "ABCÇDEFGÐHIÝJKLMNOÖPQRSÞTUÜVWXYZabcçdefgðhýijklmnoöpqrsþtuüvwxyz0123456789!@#$%^&*()";
+        for (let i = 0; i < 8; i++) {geliþigüzelDizge += karakterler.charAt (Math.floor (Math.random() * karakterler.length));}
+        return geliþigüzelDizge;
+    } // func sonu...
+
+    function akýþtakileriOku() {
+        const okuyucu = akýþ.getReader();
+        let karakterSayýsý = 0;
+        let sonuçDizge = "";
+
+        okuyucu.read().then (function metniÝþle ({done, value}) {
+            if (done) {
+                console.log ("Akýþ okuma iþlemi tamamalandý");
+                p.textContent = sonuçDizge;
+                return;
+            } // if sonu...
+            karakterSayýsý += value.length;
+            const metinDilimi = value;
+            let listeElemaný = document.createElement ("li");
+            listeElemaný.textContent = "Aktüel metin dilimi: " + metinDilimi + ". Toplam karakter sayýsý: " + karakterSayýsý;
+            ul2.appendChild (listeElemaný);
+            sonuçDizge += metinDilimi;
+            return okuyucu.read().then (metniÝþle); // Akýþ metni bitinceye dek yinele...
+        }); // oku..sonu...
+    } // func sonu...
+</script>
+</html>

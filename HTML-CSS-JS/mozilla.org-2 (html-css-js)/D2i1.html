@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2i1.html: Deðiþen ekran ebatýnýn matchMedia ile tespiti örneði.</title>
+    <style>
+        html {
+            font-family: serif;
+            background-color: LightGray;}
+        body {
+            padding: 20px;
+            margin: 10px;
+            color: pink;
+            background-color: blue;
+            border: 10px solid black;}
+        h1, p {text-align: center;}
+        p {font-size: 1.3rem;}
+    </style>
+</head>
+<body>
+    <h1>window.matchMedia ile ekran ebat testi</h1>
+    <p></p>
+</body>
+<script>
+    var paragraf = document.querySelector ("p");
+
+    function ekranEbatý() {
+        if (window.matchMedia ("(max-width: 600px)").matches) {// Ekran geniþliði <= 600px ise
+            paragraf.textContent = "Bu ekran 600px'den daha dar; " + window.innerWidth + "px eninde.";
+            document.body.style.backgroundColor = "red";
+        } else if (window.matchMedia ("(min-width: 1000px)").matches) {// Ekran geniþliði <= 1000px ise
+            paragraf.textContent = "Bu ekran 1000px'den daha geniþ; " + window.innerWidth + "px eninde.";
+            document.body.style.backgroundColor = "green";
+        } else {// 600px <= Ekran geniþliði <= 1000px ise
+            paragraf.textContent = "Bu ekran 600px ile 1000px arasý; " + window.innerWidth + "px eninde.";
+            document.body.style.backgroundColor = "blue";
+        } // else sonu...
+    } // func sonu...
+
+    ekranEbatý();
+    document.body.onresize = ekranEbatý; // Her ekran ebat deðiþiklini yeniden tespit et...
+</script>
+</html>

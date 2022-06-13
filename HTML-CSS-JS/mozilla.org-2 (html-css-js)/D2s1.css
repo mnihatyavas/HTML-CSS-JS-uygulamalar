@@ -1,0 +1,67 @@
+﻿/* Genel kurulum */
+* {box-sizing: border-box;}
+html,body {
+    font-family: sans-serif;
+    line-height: 1.2rem;}
+
+/* Serilim ve stiller */
+h1 {
+    color: green;
+    margin-left: .5rem;}
+.açıklama, .imza-onay {margin: 0 .5rem;}
+.açıklama > p {margin-top: 0;}
+.imza-onay {
+    box-shadow: -1px 4px 7px black;
+    padding: .2rem .5rem;
+    margin-bottom: 2rem;}
+.imza-onay-kontrolleri > * {margin: .5rem 0;}
+input[type="button"] {width: 5rem; background-color: gold;}
+input[type="button"]:hover {background-color: goldenrod;}
+.imza-değeri {
+    padding-left: .5rem;
+    font-family: monospace;}
+
+/* Geçerlilik CSS */
+.geçerli {color: green; font-weight: bold;}
+.geçersiz {color: red; font-weight: bold;}
+.geçersiz::after {content: " ✖"; font-weight: bold; font-size: 20px;}
+.geçerli::after {content: ' ✓'; font-weight: bold; font-size: 20px;}
+
+/* Tüm sayfa ızgarası */
+main {
+    display: grid;
+    grid-template-columns: 32rem 1fr;
+    grid-template-rows: 4rem 1fr;}
+h1 {
+    grid-column: 1/2;
+    grid-row: 1;}
+.örnekler {
+    grid-column: 1;
+    grid-row: 2;}
+.açıklama {
+    grid-column: 2;
+    grid-row: 2;}
+
+/* İmza-onay kontrolleri ızgarası */
+.imza-onay-kontrolleri {
+    display: grid;
+    grid-template-columns: 1fr 5rem;
+    grid-template-rows: 1fr 1fr;}
+.mesaj-kontrol {
+    grid-column-start: 1;
+    grid-row-start: 1;}
+.imza {
+    grid-column-start: 1;
+    grid-row-start: 2;}
+.imza-düğmesi {
+    grid-column-start: 2;
+    grid-row-start: 1;}
+.onay-düğmesi {
+    grid-column-start: 2;
+    grid-row-start: 2;}
+
+/* Dijital imza animasyonu */
+.tebarruz {animation: tebarruz 1.5s;}
+@keyframes tebarruz {
+    from {opacity: 0;}
+    to {opacity: 1;} }

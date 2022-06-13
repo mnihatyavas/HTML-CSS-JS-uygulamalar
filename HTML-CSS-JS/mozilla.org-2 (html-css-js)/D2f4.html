@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2f4.html: Sürükle&Býrak olaylarý, veri aktarým/birimi/listesi özellik ve metodlarý örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        div {
+            margin: 0;
+            padding: 2em;}
+        #kaynak {
+            color: blue;
+            padding-left: 5px;
+            border: 1px solid black;
+            background-color: lime;}
+        #hedef {
+            color: red;
+            border: 1px solid black;
+            background-color: cyan;}
+    </style>
+</head>
+<body>
+    <h1>Sürükle&Býrak nesnelerinin desteklenen metod ve özellikleri</h1>
+
+    <div>
+        <p id="kaynak" ondragstart="sürüklebaþý_yönetimi (event);" draggable="true">
+            Bu elemaný seçin, Býrak Bölgesine sürükleyin, ve sonra fareyi býrakýn. F12-Konsol kütüðü tarayýcýnýn desteklenen Sürükle&Býrak arabaðlaçlarý bilgisini sunacaktýr.
+        </p>
+    </div>
+    <div id="hedef" ondrop="býrak_yönetimi (event);" ondragover="hedefüstü_yönetimi (event);">Býrak Bölgesi</div>
+</body>
+<script>
+    function SürükleOlaylarýnýn_kontrolu() {// Sürükle olaylarýnýn desteklenme kontrolu...
+        var olaylar = [
+            "ondrag",
+            "ondragstart",
+            "ondragend",
+            "ondragover",
+            "ondragenter",
+            "ondragleave",
+            "ondragexit",
+            "ondrop"];
+        console.log ("Sürükle Olay Tipleri...");
+        for (var i=0; i < olaylar.length; i++) {
+            var destekliMi = olaylar [i] in window;
+            console.log ("... " + olaylar [i] + " = " + (destekliMi ? "Evet" : "Hayýr"));
+        } // for sonu...
+    } // func sonu...
+
+    function VeriAktarýmýnýn_kontrolu (va) {// Veri aktarým metod ve özelliklerinin desteklenme kontrolu...
+        var özellikler = [
+            "dropEffect",
+            "effectAllowed",
+            "types",
+            "files",
+            "items"];
+        var metodlar = [
+            "setDragImage",
+            "getData",
+            "setData",
+            "clearData"];
+        console.log ("VeriAktarýmý ... " + va);
+        for (var i=0; i < özellikler.length; i++) {
+            var destekliMi = özellikler [i] in va;
+            console.log ("... dataTransfer." + özellikler [i] + " = " + (destekliMi ? "Evet" : "Hayýr"));
+        } // for sonu...
+        for (var i=0; i < metodlar.length; i++) {
+            var destekliMi = typeof va [metodlar [i]] == "function";
+            console.log ("... dataTransfer." + metodlar [i] + "() = " + (destekliMi ? "Evet" : "Hayýr"));
+        } // for sonu...
+    } // func sonu...
+
+    function VeriAktarýmBiriminin_kontrolu (vab) {// Veri aktarým birimi özellik ve metotlarýnýn desteklenme kontrolu...
+        var özellikler = [
+            "kind",
+            "type"];
+        var metodlar = [
+            "getAsFile",
+            "getAsString"];
+        console.log ("VeriAktarýmBirimi ... " + vab);
+        for (var i=0; i < özellikler.length; i++) {
+            if (vab === undefined) {console.log ("... items." + özellikler [i] + " = undefined");
+            } else {
+                var destekliMi = özellikler [i] in vab;
+                console.log ("... items." + özellikler [i] + " = " + (destekliMi ? "Evet" : "Hayýr"));
+            } // else sonu...
+        } // for sonu...
+        for (var i=0; i < metodlar.length; i++) {
+            if (vab === undefined) {console.log ("... items." + metodlar [i] + "() = undefined");
+            } else {
+                var destekliMi = typeof vab [metodlar [i]] == "function";
+                console.log ("... items." + metodlar [i] + "() = " + (destekliMi ? "Evet" : "Hayýr"));
+            } // else sonu...
+        } // for sonu...
+    } // func sonu...
+
+    function VeriAktarýmBirimiListesinin_kontrolu (vabl) {// Veri aktarým birimi listesi özellik ve metotlarýnýn desteklenme kontrolu...
+        var özellikler = ["length"];
+        var metodlar = [
+            "add",
+            "remove",
+            "clear"];
+        console.log ("VeriAktarýmBirimiListesi ... " + vabl);
+        for (var i=0; i < özellikler.length; i++) {
+            if (vabl === undefined) {console.log ("... items." + özellikler [i] + " = undefined");
+            } else {
+                var destekliMi = özellikler [i] in vabl;
+                console.log ("... items." + özellikler [i] + " = " + (destekliMi ? "Evet" : "Hayýr"));
+            } // else sonu...
+        } // for sonu...
+        for (var i=0; i < metodlar.length; i++) {
+            if (vabl === undefined) {console.log ("... items." + metodlar [i] + "() = undefined");
+            } else {
+                var destekliMi = typeof vabl [metodlar [i]] == "function";
+                console.log ("... items." + metodlar [i] + "() = " + (destekliMi ? "Evet" : "Hayýr"));
+            } // else sonu...
+        } // for sonu...
+    } // func sonu...
+
+    function sürüklebaþý_yönetimi (olay) {
+        olay.dataTransfer.dropEffect = "move";
+        SürükleOlaylarýnýn_kontrolu();
+        var va = olay.dataTransfer;
+        if (va === undefined) {console.log ("VeriAktarýmý DESTEKLENMÝYOR.");
+        } else {
+            va.setData ("text/plain", "Bunu taþý.");
+            VeriAktarýmýnýn_kontrolu (va);
+        } // else sonu...
+    } // func sonu...
+
+    function hedefüstü_yönetimi (olay) {
+        olay.dataTransfer.dropEffect = "move";
+        olay.preventDefault();
+    } // func sonu...
+
+    function býrak_yönetimi (olay) {
+        if (olay.dataTransfer === undefined) {
+            console.log ("VeriAktarýmý DESTEKLENMÝYOR."); 
+            console.log ("VeriAktarýmBirimiListesi DESTEKLENMÝYOR."); 
+        } else {
+            var vab = olay.dataTransfer.items;
+            if (vab === undefined) {
+                console.log ("VeriAktarýmBirimi DESTEKLENMÝYOR."); 
+                console.log ("VeriAktarýmBirimiListesi DESTEKLENMÝYOR."); 
+            } else {
+                VeriAktarýmBiriminin_kontrolu (vab [0]);
+                VeriAktarýmBirimiListesinin_kontrolu (vab);
+            } // iç-else sonu...
+        } // dýþ-else sonu...
+    } // func sonu...
+</script>
+</html>

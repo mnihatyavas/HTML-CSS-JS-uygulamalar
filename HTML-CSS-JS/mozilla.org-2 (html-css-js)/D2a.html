@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2a1.html: Çevrimdýþý localhost-fetch getir'le video dosyasýný yükleyip oynatma örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        .kýlýf {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;}
+        video {max-width: 100%;}
+        .kýlýf > div {margin-bottom: 10px;}
+        .gizli {display: none;}
+        .raporlar {color: yellow;}
+    </style>
+</head>
+<body>
+    <!-- fetch (>python -m http.server) ve (localhost:8000) gerektirmekte.-->
+
+    <div class="kýlýf">
+        <h1>Basit çevrimdýþý video oynatýcýsý</h1>
+        <div class="kontroller">
+            <button class="yükle">Video'yu yükle</button>
+            <button class="terket gizli">Yüklemeyi iptal et</button>
+            <p class="raporlar"></p>
+        </div>
+        <div class="videoKýlýfý gizli">
+            <p>Sintel © kopyahakký Blender Kuruluþu | <a href="http://www.sintel.org/">www.sintel.org</a>.</p>
+        </div>
+    </div>
+</body>
+<script>
+    const yurel = "resim/video/ejder2.mp4";
+
+    const videoKýlýfý = document.querySelector (".videoKýlýfý");
+    const yükleDüðmesi = document.querySelector (".yükle");
+    const terketDüðmesi = document.querySelector (".terket");
+    const raporlar = document.querySelector (".raporlar");
+
+    let kontrolör;
+    let animasyonÝlerleyiþi;
+    let animasyonSayacý = 0;
+
+    yükleDüðmesi.addEventListener ("click", videoYükle);
+
+    terketDüðmesi.addEventListener ("click", () => {
+        kontrolör.abort();
+        console.log ("Yükleme terk edildi");
+        yükleDüðmesi.classList.remove ("gizli");
+    });
+
+    function videoYükle() {
+        kontrolör = new AbortController();
+        const signal = kontrolör.signal;
+        yükleDüðmesi.classList.add ("gizli");
+        terketDüðmesi.classList.remove ("gizli");
+        raporlar.textContent = "Video yüklenmesinin tanmamlanmasý bekleniyor...";
+        fetch (yurel, {signal}).then ((yanýt)=> {
+            if (yanýt.status === 200) {
+                animasyonuYürüt();
+                setTimeout (() => console.log ("Gövde kullanýldý mý? " + yanýt.bodyUsed), 1);
+                return yanýt.blob();
+            } else {throw new Error ("Fetch yükleme baþarýsýz");}
+        }).then ((damla)=> {
+            const video = document.createElement ("video");
+            video.setAttribute ("controls", "");
+            video.src = URL.createObjectURL (damla);
+            videoKýlýfý.appendChild (video);
+
+            videoKýlýfý.classList.remove ("gizli");
+            terketDüðmesi.classList.add ("gizli");
+            yükleDüðmesi.classList.add ("gizli");
+
+            raporlar.textContent = "Video oynatýcýsý kullanýmýnýza hazýr";
+        }).catch ((hata) => {
+            terketDüðmesi.classList.add ("gizli");
+            yükleDüðmesi.classList.remove("gizli");
+            raporlar.textContent = "Yükleme hatasý: " + hata.message;
+        }).finally (()=> {
+            clearInterval (animasyonÝlerleyiþi);
+            animasyonSayacý = 0;
+        });
+    } // fonk sonu...
+
+    function animasyonuYürüt() {
+        animasyonÝlerleyiþi = setInterval (() => {
+            switch (animasyonSayacý++ & 3) {
+                case 0: raporlar.textContent = "Yükleme yapýlýyor; video oynatýcýnýn kurulumu beklenmekte"; break;
+                case 1: raporlar.textContent = "Yükleme yapýlýyor; video oynatýcýnýn kurulumu beklenmekte •"; break;
+                case 2: raporlar.textContent = "Yükleme yapýlýyor; video oynatýcýnýn kurulumu beklenmekte • •"; break;
+                case 3: raporlar.textContent = "Yükleme yapýlýyor; video oynatýcýnýn kurulumu beklenmekte • • •";
+            } // switch sonu...
+        }, 500); // setInt..sonu...
+    } // fonk sonu...
+</script>
+</html>

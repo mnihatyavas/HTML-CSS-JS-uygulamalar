@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2ex.html: Anaprogramýn iFrame çerçevesinde çoklu listesi yansýtýlan altprogram örneði.</title>
+    <style>ul {width: 90%; color: yellow;}
+</style>
+</head>
+<body>
+    <ul></ul>
+</body>
+<script>
+    var liste = document.querySelector ("ul");
+    var kapý2;
+
+    window.addEventListener ("message", ilkKapý);
+
+    function ilkKapý (o) {
+        kapý2 = o.ports [0];
+        kapý2.onmessage = mesajAlýndýðýnda;
+    } // func sonu...
+
+    function mesajAlýndýðýnda (o) {
+        var listeYarat = document.createElement ("li");
+        listeYarat.textContent = o.data;
+        liste.appendChild (listeYarat);
+        kapý2.postMessage ("iFrame tarafýndan alýnan mesaj: [" + o.data + "]");
+    } // func sonu...
+</script>
+</html>

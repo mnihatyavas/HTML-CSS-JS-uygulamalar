@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2p2.html: pipeThrough akýþla okunup GrayscalePNGTransformer'la griye dönüþtürülen farklý ebatlý resim kopyalarý örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+</head>
+<body>
+    <!-- fetch için [>>>python -m http.server ve localhost:8000] gerekli -->
+    <h1>PNG Resmini Grileþtirme</h1>
+    <p>Soldaki varsayýlý ebatlý ilk kaplumbaða orijinal olup, diðerleri özel akýþla okunan, gittikce artan ebatlardaki, (daha ebeveyn) GRÝLEÞTÝRÝLEN kopyalarýdýr.</p>
+
+    <img src="resim/tosbaða.png" alt="Varsayýlý 150x84 ebatlý orijinal kaplumbaða">
+    <img height="100" id="hedef1" alt="Height=100 ebatlý kopya kaplumbaða">
+    <img height="125" id="hedef2" alt="Height=125 ebatlý kopya kaplumbaða">
+    <img height="150" id="hedef3" alt="Height=150 ebatlý kopya kaplumbaða">
+
+    <!-- Grileþtirmeyi destekleyen altyapý JS kodlamalarý -->
+    <script src="D2p2x.js"></script>
+    <script src="D2p2y.js"></script>
+    <script src="D2p2z.js"></script>
+<script>
+    const resim1 = document.getElementById ("hedef1");
+    const resim2 = document.getElementById ("hedef2");
+    const resim3 = document.getElementById ("hedef3");
+
+    fetch ("resim/tosbaða.png") // Orijinal .png resim dosyasýnýn getirilmesi...
+        .then (yanýt=> yanýt.body)
+        .then (oku=> oku.pipeThrough (new TransformStream (new GrayscalePNGTransformer()))) // Okunan akýþtan gri bir suret eldesi...
+        .then (oku => new Response (oku)) // Grileþtirilen resim/blob dosyasýnýn eldesi...
+        .then (yanýt=> yanýt.blob())
+        .then (damla => URL.createObjectURL (damla)) // Gri resim dosyasýndan yurel nesnesi yaratma...
+        .then (yurel=> resim1.src = yurel) // Gri resmin yurel nesnesinin ilk ebatlý kopyasý...
+        .then (yurel=> resim2.src = yurel) // Gri resmin yurel nesnesinin ikinci ebatlý kopyasý...
+        .then (yurel=> resim3.src = yurel) // Gri resmin yurel nesnesinin üçüncü ebatlý kopyasý...
+        .catch (console.error); // Fetch'in muhtemel hatasýnýn yakalanmasý...
+</script>
+</body>
+</html>

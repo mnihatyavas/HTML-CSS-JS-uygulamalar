@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2h1.html: Yeni verigiriþini mevcut metnin önüne/arkasýna ekleme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            /*height: 200px;*/
+            border: 5px solid tomato;}
+        input {background-color:Navy; color:orange;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        section p {
+            font-size: 1.1rem;
+            color: blue;}
+        p {color: DarkGreen;}
+        input {margin-bottom: 0.5rem;}
+    </style>
+</head>
+<body>
+    <p>Verigiriþ satýrýna birþeyler girip, sonra ilk iki düðmeyle bu veriyi mevcut metnin öncesine yada sonrasýna ekleyin.</p>
+
+    <section>
+        <p>Bu benim metnim.</p>
+    </section>
+
+    <input type="text"><br>
+    <button class="öncesine">Önüne yerleþtir</button>
+    <button class="sonrasýna">Arkasýna yerleþtir</button>
+    <button class="yenile">Yeniden baþlat</button>
+</body>
+<script>
+    var önceDüðmesi = document.querySelector (".öncesine");
+    var sonraDüðmesi = document.querySelector (".sonrasýna");
+    var yenileDüðmesi = document.querySelector (".yenile");
+
+    var metin = document.querySelector ("section p");
+    var ilkÝçerik = metin.textContent;
+    var girilen = document.querySelector ("input");
+
+    önceDüðmesi.addEventListener ("click", function() {metin.insertAdjacentText ("afterbegin", girilen.value);});
+    sonraDüðmesi.addEventListener ("click", function() {metin.insertAdjacentText ("beforeend", girilen.value);});
+    yenileDüðmesi.addEventListener ("click", function() {metin.textContent = ilkÝçerik; girilen.value = "";});
+</script>
+</html>

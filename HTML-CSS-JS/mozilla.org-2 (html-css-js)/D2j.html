@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2j.html: Müzikdosyasý indirme hatasýnýn MediaError ile tespiti örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+    <link href="D2j.css" rel="stylesheet">
+    <script src="D2j.js"></script>
+</head>
+<body>
+    <div id="içerik">
+        <p>
+          <code>HTMLMediaElement</code> nesnelerince döndürülen <code>MediaError</code> hata kodlarý
+          mesajlarýný yansýtacak hatalý ve hatasýz müzik dosyasý indirme örneði.
+        </p>
+
+        <audio controls autoplay id="müzik"></audio>
+
+        <div id="yureller">
+            <a href="http://audionautix.com" target="_b">Müzik sitesi: audionautix.com</a>
+            <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_b">Lisans: CC-BY 3.0</a>
+        </div>
+      
+        <div id="indirme-düðmeleri">
+            <button id="namevcut-dosya">Namevcut dosya</button>
+            <button id="mevcut-dosya">Mevcut dosya</button>
+        </div>
+      
+        <div id="hata-mesajý"></div>
+    </div>
+</body>
+</html>

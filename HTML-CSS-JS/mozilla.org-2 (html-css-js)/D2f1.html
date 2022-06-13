@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2f1.html: KopyalaTaþý'nýn görsel efektli ve konsol açýklamalý sürükle-býrak aþamalarý örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        div {
+            margin: 0em;
+            padding: 2em;}
+        #kaynaktan-kopyala, #kaynaktan-taþý  {
+            color: blue;
+            border: 5px solid black;
+            width: 300px;
+            height: 50;
+            background-color: khaki;}
+        #hedefe-kopyala, #hedefe-taþý {
+            border: 5px solid blue;
+            width: 300px;
+            height: 50;
+            color: DarkRed;}
+    </style>
+</head>
+<body>
+    <h1>Sürükle ve Býrak: Elemanlarý <code>DataTransfer</code> ile kopyala ve taþý</h1>
+    <div draggable="true" id="kaynaktan-kopyala" ondragstart="sürükleBaþý_yönetimi (event);" ondragend="sürükleSonu_yönetimi (event);">
+        Bu elemaný seç ve <strong>Kopyalananý Býrakma Bölgesi</strong>'ne sürükle.
+    </div>
+    <div id="hedefe-kopyala" ondrop="býrak_yönetimi(event);" ondragover="hedefÜstü_yönetimi (event);"><strong>Kopyalananý Býrakma Bölgesi</strong></div>
+
+    <div draggable="true" id="kaynaktan-taþý" ondragstart="sürükleBaþý_yönetimi (event);" ondragend="sürükleSonu_yönetimi (event);">
+        Bu elemaný seç ve <strong>Taþýnaný Býrakma Bölgesi</strong>'ne sürükle.
+    </div> 
+    <div id="hedefe-taþý" ondrop="býrak_yönetimi (event);" ondragover="hedefÜstü_yönetimi (event);"><strong>Taþýnaný Býrakma Bölgesi</strong></div>
+</body>
+<script>
+    function sürükleBaþý_yönetimi (olay) {
+        console.log ("ondragstart: sürükleBaþý");
+        olay.currentTarget.style.border = "dashed"; // Kopyalama/taþýma baþlatýlýnca sürüklenenin tireli sýnýrýný ve copyMove efektini yansýt...
+        olay.dataTransfer.setData ("text", olay.target.id);
+        olay.effectAllowed = "copyMove";
+    } // func sonu...
+
+    function hedefÜstü_yönetimi (olay) {
+        console.log ("ondragover: hedefÜstü");
+        olay.currentTarget.style.background = "lightblue"; // Hedef üstündeyken zemin açýkmaviye deðiþsin...
+        olay.preventDefault();
+    } // func sonu...
+
+    function býrak_yönetimi (olay) {
+        console.log ("Býrak");
+        olay.preventDefault();
+        var id = olay.dataTransfer.getData("text"); // Taþýnan/kopyalanan bölgeye býrakýlýnca içerik metnini yansýtsýn...
+        if (id == "kaynaktan-taþý" && olay.target.id == "hedefe-taþý") olay.target.appendChild (document.getElementById (id));
+        if (id == "kaynaktan-kopyala" && olay.target.id == "hedefe-kopyala") {
+            var nodeCopy = document.getElementById (id).cloneNode (true);
+            nodeCopy.id = "newId";
+            olay.target.appendChild (nodeCopy);
+        } // if sonu...
+    } // func sonu...
+
+    function sürükleSonu_yönetimi (olay) {
+        console.log ("ondragend: sürükleSonu");
+        olay.target.style.border = "solid black"; // Sürükle-Býrak tamamlanýnca kaynak sýnýrý tireli-maviden orijinal katý-siyaha dönsün...
+        olay.dataTransfer.clearData();
+    } // func sonu...
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2b.html: Týkla ve fareüzerinde olaylarýyla yazý ve zeminrenginin rasgele deðiþmesi örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        body {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;}
+        button {
+            border: 0;
+            background-color: white;
+            font-size: 5vw;
+            display: block;
+            width: 100%;
+            height: 100%;}
+        h1 {letter-spacing: 1rem;}
+    </style>
+</head>
+<body>
+    <!-- Düðme týklanmasý zeminrengini, fare üzerinde yazýrengini rasgele deðiþtirir. -->
+    <button><h1>Týkla beni!</h1></button>
+</body>
+<script>
+    var düðme = document.querySelector ("button");
+
+    function rasgele (sayý) {return Math.floor (Math.random() * sayý);}
+
+    düðme.onclick = function() {düðme.style.backgroundColor = "rgb(" + rasgele (255) + "," + rasgele (255) + "," + rasgele (255) + ")";};
+    düðme.onmouseover = function() {düðme.style.color = "rgb(" + rasgele (255) + "," + rasgele (255) + "," + rasgele (255) + ")";}; // düðme.onauxclick
+</script>
+</html>

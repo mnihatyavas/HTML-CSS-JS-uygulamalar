@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2d.html: Anaprogramla iFrame çerçeveli altprogram arasýnda mesajlaþma örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        iframe, .çýktý {background-color: dodgerBlue; color: brown;}
+    </style>
+</head>
+<body>
+    <h1>Kanal mesajlaþmasý</h1>
+    <p class="çýktý">Ana program gövdesi</p>
+    <iframe src="D2dx.html" width="480" height="320" izah="Ana program gövdesinde altprogram çerçevesi"></iframe>
+</body>
+<script>
+    var kanal = new MessageChannel();
+    var çýktým = document.querySelector (".çýktý");
+    var çerçevem = document.querySelector ("iframe");
+
+    çerçevem.addEventListener ("load", yüklendiðinde);
+    
+    function yüklendiðinde() {
+        kanal.port1.onmessage = mesajAlýndýðýnda; // Alt programdan gelen mesajý gövdede yansýt...
+        çerçevem.contentWindow.postMessage ("Ana sayfadan altprograma Merhabalar!", "*", [kanal.port2]);
+        // Alt programa gönderilip gövdesinde yansýtýlan mesaj, anaprogramýn iFrame çerçevesinde de yansýyacak...
+    } // func sonu...
+
+    function mesajAlýndýðýnda (o) {çýktým.innerHTML = o.data;}
+</script>
+</html>

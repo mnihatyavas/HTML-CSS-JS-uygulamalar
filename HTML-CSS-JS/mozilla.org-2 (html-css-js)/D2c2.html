@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2c2.html: Canvas tuval içine resim ve video yerleþtirme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 90%;
+            min-width: 730px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;
+            height: 250px;}
+        #v2 {
+            background-image: url(resim/firefox9.png);
+            background-size: 180px;
+            background-repeat: no-repeat;}
+        div {
+            float: left;
+            border :1px solid blue;
+            padding:10px;
+            margin: 10px;
+            background:#3B3B3B;}
+    </style>
+</head>
+<body>
+    <!-- fetch (>python -m http.server) ve (localhost:8000) gerektirmekte.-->
+
+    <div izah="JS kontrolsüz, varsayýlý ayarlý video; video oynatýlýnca 2.çerçevede çift bölümlüde de sergilenecek.">
+        <video id="video" src="resim/video/kelle.mp4" controls="true"/>
+    </div>
+    <div izah="Tuval içi 2 bölümlü JS kontrollü video">
+        <canvas id="v1" width="160" height="96"></canvas>
+        <canvas id="v2" width="160" height="96" izah="zemin firefox resimli sað bölüm"></canvas>
+    </div>
+</body>
+<script>
+    let iþlemci = {
+        zamanlamalýGeriçaðýr: function() {
+            if (this.video.paused || this.video.ended) return;
+            this.çerçeveyiHesapla();
+            let kendi = this; // Doðrudan this'le devam edilebilirdi...
+            setTimeout (function () {kendi.zamanlamalýGeriçaðýr();}, 0);
+        }, // zam..sonu...
+  
+        yüklemeYap: function() {
+            this.video = document.getElementById ("video");
+            this.v1 = document.getElementById ("v1");
+            this.içerik1 = this.v1.getContext ("2d");
+            this.v2 = document.getElementById ("v2");
+            this.içerik2 = this.v2.getContext ("2d");
+            let bu = this;
+            this.video.addEventListener ("play", function() {
+                bu.width = bu.video.videoWidth / 2;
+                bu.height = bu.video.videoHeight / 2;
+                bu.zamanlamalýGeriçaðýr();
+            }, false);
+        }, // yük..sonu...
+  
+        çerçeveyiHesapla: function() {
+            this.içerik1.drawImage (this.video, 0, 0, this.width, this.height);
+            let çerçeve = this.içerik1.getImageData (0, 0, this.width, this.height);
+            let uz = çerçeve.data.length / 4;
+  
+            for (let i = 0; i < uz; i++) {
+                let r = çerçeve.data [i * 4 + 0];
+                let g = çerçeve.data [i * 4 + 1];
+                let b = çerçeve.data [i * 4 + 2];
+                if (g > 100 && r > 100 && b < 43) çerçeve.data [i * 4 + 3] = 0;
+            } // for sonu...
+            this.içerik2.putImageData (çerçeve, 0, 0);
+            return;
+        } // çer..sonu...
+  }; // iþlemci sonu...
+
+  document.addEventListener ("DOMContentLoaded", ()=> {iþlemci.yüklemeYap();});
+</script>
+</html>

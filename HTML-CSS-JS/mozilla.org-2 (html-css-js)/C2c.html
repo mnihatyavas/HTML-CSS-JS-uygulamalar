@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>C2c.html: Oynanabilir pencerelerden karþýlýklý etkileþimli deðiþtirilebilir js kodlamalarý giriþi örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="document.getElementById('göster').innerHTML='' ">
+    <h3>Karþýlýklý-etkileþimli JS</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="C2c01.html" target="_">1) Dizge/string tipli nesnel/ilkel deðiþkenlerde kullanýlan fonksiyonlar örneði</a></h4>
+    <h4><a href="C2c02.html" target="_">2) Sayý/number tipli nesnel/ilkel deðiþkenlerde kullanýlan fonksiyonlar örneði</a></h4>
+    <h4><a href="C2c03.html" target="_">3) Matematik/math tipli açý ve tersi, üs, log, rasgele ve yuvarlama örneði</a></h4>
+    <h4><a href="C2c04.html" target="_">4) Dizi/array tipli nesnel/ilkel deðiþkenlerde kullanýlan fonksiyonlar örneði</a></h4>
+    <h4><a href="C2c05.html" target="_">5) Nesne/object tipli özellik:deðer içerikli deðiþkenlerin arþiv fonksiyonlarý örneði</a></h4>
+    <h4><a href="C2c06.html" target="_">6) Tarih/date nesnel GMT zaman-telafili yýl, ay, gün, st, dk, sn, ms fonksiyonlarý örneði</a></h4>
+    <h4><a href="C2c07.html" target="_">7) Anahtar-kelimeli for while function class gibi JS ifadeleri örneði</a></h4>
+    <h4><a href="C2c08.html" target="_">8) Tüm JS iþlemcilerinin sembolik tabirleri örneði</a></h4>
+    <h4><a href="C2c09.html" target="_">9) Fonksiyon ve sýnýf örneði</a></h4>
+    <h4><a href="C2c10.html" target="_">10) RegExp DüzenliÝfade ile eþleþtirme, arama ve deðiþtirme örneði</a></h4>
+    <h4><a href="C2c11.html" target="_">11) JS boolean, map, set ve symbol veri tipleri örneði</a></h4>
+    <h4><a href="C2c12.html" target="_">12) JS json, promise ve arraybuffer örneði</a></h4>
+    <h4><a href="C2c13.html" target="_">13) JS dataview, reflect, proxyhandler, atomics, global'ler, bigint, intl örneði</a></h4>
+
+    <script>
+        document.getElementById ("göster").innerHTML =
+            "<br/>Oynanabilir JS penceresi giriþiyle karþýlýklý etkileþimli ve canlý deðiþtir-gör örnekleri sunulmaktadýr. \
+            Toplam 13 grup kapsamýnda dizge, sayý, matematik, dizi, nesne, tarih, ifadeler, tabirler, fonksiyon ve sýnýf, regexp, \
+            ikilem, harita, küme ve sembol, json, vaat, dizitamponu, ve daha az kullanýlan son grup JS örnekleri etkileþimli \
+             JS, CS ve HTML pencere verigiriþleriyle sergilenmektedir. Açýklanmasý örneklerle iþlenmiþtir."
+    </script>
+</body> 
+</html>

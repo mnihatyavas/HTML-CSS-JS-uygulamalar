@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2l2.html: ResizeObserver API'yle ekran ve yazýfonu ebatýný tercihli aktifleme örneði.</title>
+    <style>
+        html {
+            height: 100%;
+            font-family: "helvetica neue", arial, sans-serif;}
+        body {
+            height: inherit;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #464;}
+        body > div {
+            background-color: #bbb;
+            border: 1px solid red;
+            padding: 20px;
+            width: 50%;
+            min-width: 320px;}
+        h1 {margin: 0; color: DarkGreen;}
+        p {line-height: 1.5; color: DarkRed;}
+        form {width: 100%;}
+        form > div {display: flex;}
+        form label {flex: 2; color: DarkBlue;}
+        form input {flex: 3;}
+        input[type="checkbox"] {height: 2rem;}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Ne yapýyoruz?</h1>
+        <p>Sürgü kaydýracýyla varsayýlý=600px, enaz=300px ençok=1300px deðiþtirirken, buna duyarlý olarak form kutu eni de deðiþmektedir. Ayrýca ResizeObserver gözlemci contentRect.width/200 nisbetiyle h1 baþlýk yazýebatýný, contentRect.width/600'la da p1'inkini deðiþtirmekteyiz. Çentik kutusu iþaretlenince gözlemci etkinsizleþip, ebat deðiþimi yazýfonu büyüklüðüne tesir etmemektedir. Bu ayarlamalar F12-konsoldan takip edilebilir. Vay be!..</p>
+        <hr/>
+        <form>
+            <div><label>Gözlemcinin aktiflenmesi:</label><input type="checkbox" checked></div>
+            <div><label>Sürgülü ayar:</label><input type="range" value="600" min="300" max="1300"></div>
+        </form>
+    </div>
+</body>
+<script>
+    if (window.ResizeObserver) {// EbatlamaGözlemcisi API'sini tarayýcýnýz destekliyorsa...
+        const h1Eleman = document.querySelector ("h1");
+        const pEleman = document.querySelector ("p");
+        const divEleman = document.querySelector ("body > div");
+        const sürgü = document.querySelector ('input[type="range"]');
+        const çentikkutusu = document.querySelector ('input[type="checkbox"]');
+
+        divEleman.style.width = "600px"; // Ýlk form eni...
+
+        sürgü.addEventListener ("input", ()=> {divEleman.style.width = sürgü.value + "px";});
+
+        const ebatlamaGözlemcisi = new ResizeObserver (içerikler => {
+            for (let içerik of içerikler) {
+                if (içerik.contentBoxSize) {console.log (`Gözlenen kutu(en,boy): (${içerik.contentRect.width}, ${içerik.contentRect.height})`);
+                    h1Eleman.style.fontSize = Math.max (1.5, içerik.contentRect.width/200) + "rem";
+                    pEleman.style.fontSize = Math.max (1, içerik.contentRect.width/600) + "rem";
+                } else {
+                    h1Eleman.style.fontSize = Math.max (1.5, içerik.contentRect.width/200) + "rem";
+                    pEleman.style.fontSize = Math.max (1, içerik.contentRect.width/600) + "rem";
+                } // else sonu...
+            } // for sonu...
+        }); // con..sonu...
+
+        ebatlamaGözlemcisi.observe (divEleman);
+
+        çentikkutusu.addEventListener ("change", ()=> {
+            if (çentikkutusu.checked) {ebatlamaGözlemcisi.observe (divEleman); console.log ("Gözleniyor"); // Çentiklersen gözlem ve yazýfonu ebat deðiþimi aktiflenir...
+            } else {ebatlamaGözlemcisi.unobserve (divEleman); console.log ("Gözlenmiyor");}
+        }); // çen..sonu...
+    } else {console.log ("ResizeObserver API'si desteklenmiyor!");}
+</script>
+</html>

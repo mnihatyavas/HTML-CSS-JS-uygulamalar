@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2e.html: Anaprogramla iFrame çerçeveli altprogram arasýnda çoklu mesajlaþma örneði.</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Lobster+Two' rel='stylesheet' type='text/css'>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input {background-color:Navy; color:orange;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+        form {
+            width: 80%;
+            margin: 10px auto;}
+        form input {width: 55%;}
+        form label {
+            color: brown;
+            width: 40%;
+            margin-right: 5%;}
+        form button {
+            width: 130px;
+            display: block;
+            margin: 10px auto 0;}
+        p {margin: 10px 0;}
+        h1, p {text-align: center;}
+        h1 {font-family: "Lobster Two", cursive; color: purple;} /* Çevrimdýþýysa cursive */
+        iframe {background-color: DodgerBlue;}
+        #alýnan-mesaj {width: 90%; background-color: red; color: lime;}
+    </style>
+</head>
+<body>
+    <h1>Kanal çoklu mesajlaþmasý</h1>
+    <p id="alýnan-mesaj">Henüz gönderilen ve alýnan mesaj yok</p>
+
+    <form>
+        <label for="gönderilen-mesaj">Bir mesaj gönder:</label>
+        <input type="text" id="gönderilen-mesaj" autofocus>
+        <button>Mesajý Gönder</button>
+    </form>
+
+    <iframe src="D2ex.html" width="480" height="320"></iframe>
+</body>
+<script>
+    var gönderilen = document.getElementById ("gönderilen-mesaj");
+    var alýnan = document.getElementById ("alýnan-mesaj");
+    var düðme = document.querySelector ("button");
+    var çerçeve = document.querySelector ("iframe");
+    var kanal = new MessageChannel();
+    var kapý1 = kanal.port1;
+
+    çerçeve.addEventListener ("load", yüklendiðinde); // Çerçeve/iframe yüklenmesi tamamlanýnca...
+    function yüklendiðinde() {
+        düðme.addEventListener ("click", týklandýðýnda); // Gönde düðmesi týklanýnca...
+        kapý1.onmessage = mesajAlýndýðýnda; // Altprogramdan (iFrame'e) mesaj alýndýðýnda...
+        çerçeve.contentWindow.postMessage ("init", "*", [kanal.port2]); // iFrame çerçeveye alýnan mesaj-larý listele...
+    } // func sonu...
+
+    function týklandýðýnda (o) {//Girilen mesajý iFrame-altprograma gönder...
+        o.preventDefault();
+        kapý1.postMessage (gönderilen.value);
+    } // func sonu...
+
+    function mesajAlýndýðýnda (o) {// Altprogram mesajýný üst paragrafta yansýt...
+      alýnan.innerHTML = o.data;
+      gönderilen.value = "";
+    } // func sonu...
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2f3.html: Sürükleme bölgesine býrakýlan dosya(lar)nýn yönetimi örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        div {
+            margin: 0;
+            padding: 2em;}
+        #býrak-bölgesi {
+            border: 5px solid blue;
+            width: 300px;
+            height: 200;
+            color: red;
+            background-color: cyan;}
+    </style>
+</head>
+<body>
+    <h1>Dosyalarý sürükle ve býrak</h1>
+  
+    <div id="býrak-bölgesi" ondragover="üzerineSürükleYönetimi (event);"  ondrop="býrakYönetimi (event);">
+        <p>Bir yada daha fazla dosyayý bu bölgeye sürükleyin ve býrakýn...</p>
+    </div>
+</body>
+<script>
+    function üzerineSürükleYönetimi (olay) {
+        console.log ("Dosya(lar) býrakma bölgesi içindedir");
+        olay.preventDefault(); // Dosya açýlmasýný önler...
+    } // func sonu...
+
+    function býrakYönetimi (olay) {
+        console.log ("Dosya(lar) býrakýldý");
+        olay.preventDefault();
+        if (olay.dataTransfer.items) {// dataTransfer.items arabaðlacý kullanýlacak...
+            for (var i = 0; i < olay.dataTransfer.items.length; i++) {
+                if (olay.dataTransfer.items [i].kind === "file") {
+                    var dosya = olay.dataTransfer.items [i].getAsFile();
+                    console.log ("... dosya[" + i + "].adý = " + dosya.name);
+                } // if sonu...
+            } // for sonu...
+        } else {// dataTransfer.files arabaðlacý kullanýlacak...
+            for (var i = 0; i < olay.dataTransfer.files.length; i++) console.log ("... dosya[" + i + "].adý = " + olay.dataTransfer.files [i].name);
+        } // else sonu...
+        sürüklemeVerileriniSil (olay);
+    } // func sonu...
+
+    function sürüklemeVerileriniSil (olay) {
+        console.log ("Sürükleme verileri siliniyor");
+        if (olay.dataTransfer.items) {olay.dataTransfer.items.clear();
+        } else {olay.dataTransfer.clearData();}
+    } // func sonu...
+</script>
+</html>

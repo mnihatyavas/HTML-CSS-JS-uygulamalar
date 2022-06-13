@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2r1.html: Transform ve animate ile iki diski farklý hýzlarda karþýlýklý sürekli döndürme örneði.</title>
+    <style>
+        * {box-sizing: border-box;}
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 400px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        html {height: 100%;}
+        body {
+            margin: 0;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;}
+        div {
+            width: 150px;
+            height: 150px;
+            margin: 15px;
+            background-color: yellow;
+            border: 10px dashed black;
+            border-radius: 50%;}
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+<script>
+    const divElemanlarý = document.getElementsByTagName ("div");
+    let dönüþ1_360 = [{transform: "rotate(360deg)"}];
+    let dönüþ2_360 = [{transform: "rotate(-360deg)"}];
+    let yavaþSonsuz = {duration: 6000, iterations: Infinity}
+    let hýzlýSonsuz = {duration: 2000, iterations: Infinity}
+
+    divElemanlarý [0].animate (dönüþ1_360, yavaþSonsuz);
+    divElemanlarý [1].animate (dönüþ2_360, hýzlýSonsuz);
+</script>
+</html>
