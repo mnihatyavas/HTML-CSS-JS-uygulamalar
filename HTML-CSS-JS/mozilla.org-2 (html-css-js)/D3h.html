@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D3h.html: Resmin fetch getir blob() yanýtýndan klonlar çoðaltma örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 600px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        img {border: 2px solid;}
+        p {text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Ýlk resmi fetch blob()'la klonlama</h1>
+    <p><img src="" class="rsm1" alt="resim" width="100">
+    <img src="" class="rsm2" alt="klon1" width="150">
+    <img src="" class="rsm3" alt="klon2" width="200">
+    <img src="" class="rsm4" alt="klon3" width="250"></p>
+</body>
+<script>
+    var resim1 = document.querySelector (".rsm1");
+    var resim2 = document.querySelector (".rsm2");
+    var resim3 = document.querySelector (".rsm3");
+    var resim4 = document.querySelector (".rsm4");
+
+    fetch ("resim/çiçekler.jpg")
+    .then (function (yanýt1) {
+        if (!yanýt1.ok) {hatayýGöster (resim1, "Resmi okuma hatasý, statüsü=" + yanýt1.status);}
+        else {
+            var yanýt2 = yanýt1.clone();
+            var yanýt3 = yanýt1.clone();
+            var yanýt4 = yanýt1.clone();
+            yanýtýKullan (yanýt1, resim1);
+            yanýtýKullan (yanýt2, resim2);
+            yanýtýKullan (yanýt3, resim3);
+            yanýtýKullan (yanýt4, resim4);
+        } // else sonu...
+    }); // then sonu...
+
+    function yanýtýKullan (yanýt, resim) {
+        yanýt.blob()
+        .then (function (damla) {
+            var yurelNesnesi = URL.createObjectURL (damla);
+            resim.src = yurelNesnesi;
+        }) // then sonu...
+        .catch (function (hata) {hatayýGöster (resim, hata.message);});
+    } // func sonu...
+
+    function hatayýGöster (resim, hataMesajý) {
+        var p = document.querySelector ("p");
+        p.appendChild (document.createTextNode ("HATA: " + hataMesajý));
+    } // func sonu...
+</script>
+</html>

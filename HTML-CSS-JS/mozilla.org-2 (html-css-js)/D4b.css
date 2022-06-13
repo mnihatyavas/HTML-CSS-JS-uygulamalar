@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding-bottom: 100px;
+    min-width: 1300px;
+    font-family: "Arvo", serif;
+    font-size: 13px;
+    background: linear-gradient(to bottom, rgba(0,0,255,0), rgba(0,0,255,1));
+    text-align: center;}
+h1 {
+    font-family: "Bevan", cursive;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 1px 1px 1px yellow,
+        2px 2px 1px yellow,
+        3px 3px 1px red,
+        4px 4px 1px red,
+        5px 5px 1px DarkRed,
+        6px 6px 1px DarkRed;}
+table {
+    width: 75%; line-height: 0.8;
+    letter-spacing: 0.1rem;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 15px rgba(0,200,0,0.8);}
+tbody {background: khaki;}
+tbody {border: 2px solid green;}
+thead {border: 1px solid #261758;}
+th {
+    font-size: 1.1rem;
+    padding: 1rem;
+    background: linear-gradient(to bottom,DarkGreen,lime);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;}
+th:hover, th:focus {color: DeepPink;}
+th:active {color: pink;}
+td {
+    padding: 0.5rem;
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;}
+td:first-child {border-left: none;}
+td:last-child {border-right: none;}
+tr:nth-child(even) {background-color: DarkKhaki;}
+p, button {color: yellow;}
+button {background-color: DarkRed; font-size: 15px;}

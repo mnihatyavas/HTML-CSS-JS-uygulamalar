@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s6.html: Zeminrengi, yazýfonu ve resim deðiþikliklerinin localStorage tarayýcý deposundan hatýrlanmasý örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 70%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Bitter|Ubuntu+Mono" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="D2s6.css">
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="sarýcý">
+        <h1>Að deposu</h1>
+        <p>Bu örnek <a href="http://dev.w3.org/html5/webstorage/">W3C Að Deposu UYA</a> uygulama arabaðlacýnýn kullanýmýný sergilemek amacýyla tasarlanmýþtýr. IE8 tarayýcýya deðin destek destek bulmaktadýr. Özel zeminrengi, yazýfonu ve resim logosunu sarkan menü seçeneklerinden deðiþtirdikten sonra, sayfayý hatta bilgisayarý kapatýp açýn, (fakat ayný tarayýcý olmak koþuluyla) uygulamayý çalýþtýrdýðýnýzda son tercihlerinizin hatýrlandýðýný, yani Að Deposu (localStorage) kullanýlarak saklandýðýný göreceksiniz. Ayrýca <a href="D2s6a.html" target="_blank">depolama olay çýktýlarý</a> altprogramýný yeni bir sekmede açýp, tekrar ana program sekmesine döner, deðiþiklik yaparsanýz, son deðiþikliðinizin raporunu yeni sekmedeki altprogramdan takip edebilirsiniz.</p>
+        <hr/>
+        <form>
+            <div>
+                <label for="bgcolor">Zemin rengi:</label>
+                <input class="color" id="bgcolor" value="BB541A">
+            </div>
+            <div>
+                <label for="font">Yazý tipi:</label>
+                <select id="font">
+                    <option value="'Open Sans Condensed', sans-serif" selected>Sans-serif</option>
+                    <option value="'Bitter', serif">Serif</option>
+                    <option value="monospace">Monospace</option>
+                </select>
+            </div>
+            <div>
+                <label for="image">Resim:</label>
+                <select id="image">
+                    <option value="resim/firefox10.png" selected>Firefox</option>
+                    <option value="resim/timsah.png">Timsah</option>
+                    <option value="resim/tosbaða.png">Kaplumbaða</option>
+                </select>
+            </div>
+        </form>
+        <footer></footer>
+        <img src="resim/firefox10.png">
+    </div>
+</body>
+    <script src="D2s6x.js"></script>
+    <script src="D2s6y.js"></script>
+</html>

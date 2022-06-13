@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D6.html: Tarayýcý destekli browser fonksiyonlarýyla yüklenen resmi zumlama örneði.</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="D6.css">
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <iframe src="https://www.maxthon.com" mozbrowser></iframe> <!-- Çevrimiçi gerektirir. -->
+    <div class="controls">
+        <button class="back">&lt;</button>
+        <button class="forward">&gt;</button>
+        <form class="urlForm"><input type="text"></form> <!-- resim/firefox[1..10].png -->
+        <button class="stop-reload">R</button>
+        <button class="zoom-in">+</button>
+        <button class="zoom-out">-</button>
+    </div>
+    <div class="search">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+        <form class="searchForm"><input type="text"></form>
+        <button class="searchToggle">S</button>
+    </div>
+</body>
+    <script src="D6.js"></script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D5.html: Canvas tuvalde nesneyi sola-saða ilerletme ve öne-arkaya yaklaþtýrýp/uzaklaþtýrma örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input {background-color:Navy; color:orange;}
+        canvas {
+            border: 2px solid #000;
+            /* position: absolute; */
+            left: 50%;
+            margin-left: 10px;}
+    </style>
+    <link rel="stylesheet" href="D5.css" />
+    <script src="D5x1.js" izah="trace"></script>
+    <script src="D5x2.js" izah="input"></script>
+    <script src="D5x3.js" izah="Player"></script>
+    <script src="D5x4.js" izah="Level"></script>
+    <script src="D5x5.js" izah="RayCaster"></script>
+</head>
+<body onload="main();" onkeydown="press (event);" onkeyup="release (event);">
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <div id="trace" class="pencere"><ul><li>RayCaster v.0.0.1</li></ul></div>
+    <canvas id="canvas" width="320" height="240"></canvas>
+</body>
+<script>
+    var C2D, W, H, RC;
+    var fps = 24;
+    var mspf = 1000 / fps;
+    var updateInterval;
+    var quit = false;
+
+    function main() {
+        var c = document.getElementById ("canvas");
+        if (c.getContext) {
+            initializeCanvas (c);
+            var P = new Player (8);
+            var L = new Level();
+            RC = new RayCaster (C2D, W, H, 4, L, P, input);
+            if (initializeLevel()) {
+                trace ("harita baþarýlý yüklendi.");
+                trace ("canlandýrmaya hazýr...");
+                trace ("  \'a\' - sola ilerlet");
+                trace ("  \'d\' - saða ilerlet");
+                trace ("  \'w\' - öne yaklaþtýr");
+                trace ("  \'s\' - arkaya uzaklaþtýr");
+                trace ("  \'q\' - animasyonu sonlandýr");
+                updateInterval = window.setInterval ("update()", mspf);
+            }else {trace ("haritalama yükleme baþarýsýzlýðý");}
+        }else {
+            trace ('sorry.. you\'ll need a browser that supports the canvas tag,');
+            trace ('like Safari or Firefox 1.5+ to see this demo.');
+        } // if-else sonu...
+    } // func sonu...
+
+    function initializeCanvas (c) {
+        C2D = c.getContext ("2d");
+        C2D.lineWidth = 1;
+        C2D.globalAlpha = 1;
+        C2D.globalCompositeOperation = "source-over";
+        W = c.width;
+        H = c.height;
+        trace ("tuval baþlatýldý");
+    } // func sonu...
+
+    function initializeLevel() {
+        var mapCells_x = 16;
+        var mapCells_y = 16;
+        var M = '' +
+            '################' +
+            '#  @@@@@       #' +
+            '#  @   @ % # % #' +
+            '#  @       #   #' +
+            '#  @  @@       #' +
+            '#    &         #' +
+            '#   &   P      #' +
+            '#  &      &&   #' +
+            '#              #' +
+            '#  ##  #@%#@%  #' +
+            '#  #        #  #' +
+            '#  ###      #  #' +
+            '#  #        #  #' +
+            '#  ######## #  #' +
+            '#              #' +
+            '################';
+        trace ("haritalama sunulmakta...");
+        return RC.loadMap (M, mapCells_x, mapCells_y);
+    } // func sonu...
+
+    function update() {
+        if (input.quit) {
+            input.quit = false;
+            window.clearInterval (updateInterval);
+            trace ("raycaster durduruldu.");
+        }else {RC.update();}
+    } // func sonu...
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s5b.html: Cripto þifrelemeyle mesaj ve parolayý þifreleme ve imzalama anahtarlarýný sarýmsýzlama örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input[type="text"] {background-color: lime;}
+    </style>
+    <link rel="stylesheet" href="D2s5b.css">
+</head>
+<body>
+    <main>
+        <h1>Að Þifreleme: anahtarýSarýmsýzla</h1>
+
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Að Þifreleme UYA</a> uygulama arabaðlacýnýn <code>unwrapKey()</code> anahtarýSarýmsýzla() fonksiyonunun 2 farklý kullanýmýný göstermektedir:</p>
+            <ul>
+                <li>Raw/AES-GCM/AES-KW: AES-KW kullanýlýp "raw" formatla ihraç edilerek þifrelenen bir AES-GCM þifreleme anahtarýný sarýmsýzlar.</li>
+                <li>PKCS #8/RSA-PSS/AES-GCM: AES-GCM kullanýlýp "pkcs8" formatla ihraç edilerek þifrelenen bir RSA-PSS dijital imza anahtarýný sarýmsýzlar.</li>
+            </ul>
+            <p>Heriki örnek de ayný yapýya sahiptir: kutudaki mesaj giriþiyle "Anahtarý Sarýmsýzla" düðmesi týklanýr.</p>
+            <p>Týklama sonucunda örnek, onun özgün anahtarýný sarýmsýzlar. Evvela sizden tarayýcý iletili þifre giriþiniz sorulur: girmeniz gereken þifre <strong>correct horse battery staple</strong> "at bataryasý ahýrýný restore et"dir. Þifreniz sarýlý anahtarýn þifrelenmesinde kullanýlan anahtarý türetmekte kullanýlacaktýr. Akabinde sarýlý anahtarý sarýmsýzlayacaktýr. Þayet þifre giriþiniz hatalýysa, sarýmsýzlama baþarýsýz olacaktýr.</p>
+            <p>Eðer sarýmsýzlama baþarýlý olursa, sizin, sarýmsýzlanan anahtarý kullanabilmenizi mümkün kýlacak olan yeni bir düðme tebarruz edecektir. Yeni düðme, "raw/AES-GCM" için "Þifrele", ve "pkcs8/RSA-PSS" içinse "Ýmzala" etiketlidir. Yeni düðmeyi týklayarak, sarýmsýzlanan anahtarý uygun iþlem icrasý ve sonucun sergilenmesi için kullanabilirsiniz.</p>
+        </section>
+
+        <section class="örnekler">
+            <section class="anahtarý-sarýmsýzla raw">
+                <h2 class="anahtarý-sarýmsýzla-baþlýðý">Raw/AES-GCM/AES-KW</h2>
+                <section class="anahtarý-sarýmsýzla-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="raw-mesajý">Þifrelenecek mesajý gir:</label>
+                        <input type="text" id="raw-mesajý" name="mesaj" size="25" value="Baykuþ tam da geceyarýsý ötüyor">
+                    </div>
+                    <div class="þifreliMetin">Þifreli metin: <span class="þifrelimetin-deðeri"></span></div>
+                    <input class="anahtarý-sarýmsýzla-düðmesi" type="button" value="Anahtarý Sarýmsýzla">
+                    <input class="þifrele-düðmesi gizli" type="button" value="Þifrele" disabled>
+                </section>
+            </section>
+
+            <section class="anahtarý-sarýmsýzla pkcs8">
+                <h2 class="anahtarý-sarýmsýzla-baþlýðý">PKCS #8/RSA-PSS/AES-GCM</h2>
+                <section class="anahtarý-sarýmsýzla-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="pkcs8-mesajý">Ýmzalanacakk mesajý gir:</label>
+                        <input type="text" id="pkcs8-mesajý" name="mesaj" size="25" value="Kaplan henüz þafakta avlanýyor">
+                    </div>
+                    <div class="dijitalÝmza">Dijital imza: <span class="dijitalimza-deðeri"></span></div>
+                    <input class="anahtarý-sarýmsýzla-düðmesi" type="button" value="Anahtarý Sarýmsýzla">
+                    <input class="imzala-düðmesi gizli" type="button" value="Ýmzala" disabled>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+    <script src="D2s5bx.js" izah="Raw/AES-GCM/AES-KW"></script>
+    <script src="D2s5by.js" izah="PKCS #8/RSA-PSS/AES-GCM"></script>
+</html>

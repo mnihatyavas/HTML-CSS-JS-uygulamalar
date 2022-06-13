@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D3g.html: Resmin talepli fetch getir blob() yanýtýný konsolda sergileme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        p {text-align: center;}
+        img {border: 2px solid;}
+    </style>
+</head>
+    <h1>Resmin talep fetch blob() yanýtýný konsolda sergileme</h1>
+    <p><img src="" alt="çiçekler"></p>
+</body>
+<script>
+    var resmim = document.querySelector ("img");
+    var talebim = new Request ("resim/çiçekler.jpg");
+
+    fetch (talebim)
+    .then (function (yanýt) {
+        console.log (`${yanýt}\n${yanýt.type}\n${yanýt.url}\n${yanýt.redirected}\n${yanýt.status}\n${yanýt.ok}\n${yanýt.statusText}\n${yanýt.headers}`);
+        if (!yanýt.ok) {throw new Error ("Resim yükleme hatasý, statü=" + yanýt.status);}
+        return yanýt.blob();
+    }) // then sonu...
+    .then ((damla)=> {
+        var yurelNesnesi = URL.createObjectURL (damla);
+        resmim.src = yurelNesnesi;
+    }) // then sonu...
+    .catch ((hata)=> {
+        var p = document.querySelector ("p");
+        p.appendChild (document.createTextNode ("HATA: " + hata.message));
+    }); // catch sonu...
+</script>
+</html>

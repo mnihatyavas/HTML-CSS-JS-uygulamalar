@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D4c.html: Veritabaný kayýtlarýný çeþitli kapsam sýnýrlamasýyla süzgeçleyerek görüntüleme örneði.</title>
+    <link href="http://fonts.googleapis.com/css?family=Arvo|Bevan" rel="stylesheet">
+    <link href="D4c.css" rel="stylesheet">
+</head>
+<body>
+    <h1>IDBKeyRange ile kayýtlarý süzgeçleme</h1>
+    <hr/>
+
+    <form>
+        <div>
+            <div>
+                <label for="hiç">Hiçbir süzgeçleme yapma</label>
+                <input type="radio" name="deðer" value="hiç" id="hiç" checked>
+                <!-- name="deðer" radyo düðmeleri tek gruptur -->
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="tek">Sadece <strong>bir</strong> hobi döndür</label>
+                <input type="radio" name="deðer" value="tek" id="tek">
+            </div>
+            <div>
+                <label for="tekad">Tek hobinin TAM adýný gir</label>
+                <input type="text" name="tekad" id="tekad">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="kapsam">Deðerler <strong>kapsamýný</strong> döndür</label>
+                <input type="radio" name="deðer" value="kapsam" id="kapsam">
+            </div>
+            <div>
+                <label for="kapsamýnilkadý">Kapsamýn ilk sýnýrýný gir</label>
+                <input type="text" name="kapsamýnilkadý" id="kapsamýnilkadý">
+            </div>
+            <div>
+                <label for="kapsamýnsonadý">Kapsamýn alt sýnýrýný gir</label>
+                <input type="text" name="kapsamýnsonadý" id="kapsamýnsonadý">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="ilkad"><strong>Ýlk</strong> sýnýrlý deðerleri döndür</label>
+                <input type="radio" name="deðer" value="ilkad" id="ilkad">
+            </div>
+            <div>
+                <label for="altsýnýradý">Deðerlerin altsýnýrýný gir</label>
+                <input type="text" name="altsýnýradý" id="altsýnýradý">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="sonad"><strong>Son</strong> sýnýrlý deðerleri döndür</label>
+                <input type="radio" name="deðer" value="sonad" id="sonad">
+            </div>
+            <div>
+                <label for="üstsýnýradý">Deðerlerin üst sýnýrýný gir</label>
+                <input type="text" name="üstsýnýradý" id="üstsýnýradý">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <input type="radio" name="süzgeçlemeEndeksi" value="hobim" id="hobi" checked>
+                <label for="hobi">Ýsmen artan sýrala</label>
+            </div>
+            <div>
+                <input type="radio" name="süzgeçlemeEndeksi" value="puaným" id="puan">
+                <label for="puan">Puanen artan sýrala</label>
+            </div>
+        </div>
+
+        <button>Sorguyu çalýþtýr</button>
+        <p>
+            <input type="button" value="Tüm kayýtlarý sil" id="tümKayýtlarýSil">
+            <input type="button" value="Veritabanýný sil" id="vtSil">
+            <input type="button" value="Yeniden yükle" onclick="window.location.reload();">
+        </p>
+    </form>
+
+    <ul></ul>
+</body>
+    <script src="D4c.js"></script>
+</html>

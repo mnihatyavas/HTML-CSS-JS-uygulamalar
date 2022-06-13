@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D3f.html: Öncelikli talep ve ilkli fetch getir blob()'la resim sergileme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 70%;
+            min-width: 700px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        div {text-align: center;}
+        img {border: 2px solid;}
+    </style>
+</head>
+<body>
+    <h1>Talepli ve ilkli fetch blob()'la resmi getirme</h1>
+    <div><img src="" alt="çiçek"></div>
+    <p></p>
+</body>
+<script>
+    var resmim = document.querySelector ("img");
+    var baþlýklarým = new Headers();
+    baþlýklarým.append ("Content-Type", "image/jpeg");
+    var ilklerim = {
+        method: "GET",
+        headers: baþlýklarým,
+        mode: "cors",
+        cache: "default"
+    }; // var sonu...
+    var talebim = new Request ("resim/çiçekler.jpg");
+
+    fetch (talebim, ilklerim)
+    .then (function (yanýt) {
+        if (!yanýt.ok) {throw new Error("Resmi okuma hatasý, statüsü=" + yanýt.status);}
+        return yanýt.blob();
+    }) // then sonu...
+    .then (function (damla) {
+        var yurelNesnesi = URL.createObjectURL (damla);
+        resmim.src = yurelNesnesi;
+    }) // then sonu...
+    .catch (function (hata) {
+        var p = document.querySelector ("p");
+        p.appendChild (document.createTextNode ("HATA: " + hata.message));
+    }); // catch-fetch sonu...
+</script>
+</html>

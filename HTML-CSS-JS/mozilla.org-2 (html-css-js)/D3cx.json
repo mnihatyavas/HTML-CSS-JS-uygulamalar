@@ -1,0 +1,8 @@
+﻿{"ürünler": [
+    {"Adı": "Peynir", "Fiyatı" : 2.50, "Reyonu": "Soğukmuhafazalı gıdalar"},
+    {"Adı": "Karışık salata", "Fiyatı" : 3, "Reyonu": "Atıştırmalıklar adası"},
+    {"Adı": "Pizza", "Fiyatı" : 4, "Reyonu": "Soğukmuhafazalı gıdalar"},
+    {"Adı": "Çukolata", "Fiyatı" : 1.50, "Reyonu": "Atıştırmalıklar adası"},
+    {"Adı": "Kabaran un", "Fiyatı" : 1.50, "Reyonu": "Ev fırınlıkları"},
+    {"Adı": "Öğütülmüş badem", "Fiyatı" : 3, "Reyonu": "Ev fırınlıkları"}
+]}

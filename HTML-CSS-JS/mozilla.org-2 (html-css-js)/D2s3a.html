@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s3a.html: Cripto þifrelemeyle girilen þifreden veya Alice-Bob anahtarýndan gizli bit üretme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+    <link rel="stylesheet" href="D2s3a.css">
+</head>
+<body>
+    <main>
+        <h1>Að Þifreleme: türetilenBit'ler</h1>
+
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Að Þifreleme UYG</a> uygulamasýnýn <code>türetilenBitler()</code> fonksiyonunun nasýl kullanýlacaðýný göstermektedir. Ýki farklý örnek içerir: biri PBKDF2 ve diðeri de ECDH için.</p>
+            <p>Her ikisi de anahtar türetme fonksiyonlarý olarak tanýmlansa da, PBKDF2 ve ECDH'nin birbirlerinden tamamen farklý yöntemler kullandýklarýný bilmek önemlidir.</p>
+
+            <hr/>
+            <h2>PBKDF2 örneði</h2>
+            <p>PBKDF2 algoritmasý girilecek olan tarayýcý þifresinden bit türetmektedir.</p>
+            <p>"Bitleri türet" düðmesini týklayýnca, bir tarayýcý þifre girme kutusu fýrlayýp, gireceðiniz þifreyi PBKDF2 algoritmasýyla bit türetmekte kullanacak, ve türetilen bitlerin ilk 5 ascii kodlama özeti gösterilecektir.</p>
+
+            <hr/>
+            <h2>ECDH örneði</h2>
+            <p>ECDH algoritmasý daha ziyade bir "anahtar anlaþmasý" olarak adlandýrýlýr. Paylaþýlan bir gizli anahtar kurulumu için, iki tarafýn (geleneksel "Alice" ve "Bob"), herbirine ait özel/genel anahtar çiftini kullanýr.</p>
+            <p>Bu örnekle iki ECDH anahtar çifti üretiriz: biri Alice ve biri de Bob için.</p>
+            <p>"Bitleri türet" düðmesini týklayýnca, bu örnek Alice'in özel anahtarýný ve Bob'un da genel anahtarýný kullanarak bir paylaþýlan sýr türetir, ve bu sýrrýn ilk 5 ascii kodlama özetini görüntüler.</p>
+        </section>
+
+        <section class="örnekler">
+            <section class="bitleri-türet pbkdf2">
+                <h2>PBKDF2</h2>
+                <section class="bitleri-türet-kontrolleri">
+                    <div class="türetilen-bitler">Türetilen bitler: <span class="türetilen-bitler-deðeri"></span></div>
+                    <input class="bitleri-türet-düðmesi" type="button" value="Bitleri türet">
+                </section>
+            </section>
+
+            <section class="bitleri-türet ecdh">
+          <h2>ECDH</h2>
+          <section class="bitleri-türet-kontrolleri">
+            <div class="türetilen-bitler">Paylaþýlan sýr: <span class="türetilen-bitler-deðeri"></span></div>
+            <input class="bitleri-türet-düðmesi" type="button" value="Bitleri türet">
+          </section>
+            </section>
+        </section>
+    </main>
+</body>
+    <script src="D2s3ax.js" izah="pbkdf2"></script>
+    <script src="D2s3ay.js" izah="ecdh"></script>
+</html>

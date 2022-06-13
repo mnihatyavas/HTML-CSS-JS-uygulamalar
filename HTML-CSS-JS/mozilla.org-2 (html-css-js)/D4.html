@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D4.html: Çeþitli indexedDB  örneði.</title>
+    <style>
+        body {background-color:DarkGreen; color: DodgerBlue; font-size:20px; margin:1em;}
+        input {background-color:Navy; color:orange;}
+        button, select {background-color: DarkRed; color: yellow; font-size:15px;}
+        a {color: Orange;}
+    </style>
+</head>
+<body>
+    <input type="button" value="Sayfayý Yenile" onClick="window.location.reload();"><br/>
+    <input type="button" value="Sil" onClick="document.getElementById('göster').innerHTML='' ">
+    <h3>indexedDB</h3>
+    <p id="göster" >Paragraf</p>
+    <hr/>
+
+    <h4><a href="D4a.html" target="_">1) indexedDB cursor ile tarayýcýda depolanan müzik albümlerini silme, güncelleme, ters/düz listeleme örneði.</a></h4>
+    <h4><a href="D4b.html" target="_">2) Kaydýn 7 alan baþlýðýðýyla nesnedeposu kayýtlarýný endeksli sýralama örneði.</a></h4>
+    <h4><a href="D4c.html" target="_">3) Veritabaný nesnedeposu kayýtlarýný çeþitli kapsam sýnýrlamasýyla süzgeçleyerek görüntüleme örneði.</a></h4>
+    <h4><a href="D4d.html" target="_">4) Disk Blob/File/FileReader dosyasý ile indexedDB arasýnda endeksli kayýt aktarýmlarý örneði.</a></h4>
+
+    <script>
+        göster.innerHTML = "Toplam 4 adet indexedDB program örneðinin, veritabaný dosyasýný tarayýcýda (50MB) depolamasý, kaydýn tüm alanlarýyla\
+        endekslenebilmesi, IDBKeyRange ile çeþitli kapsam süzgeçleme, kayýtlarýn girilmesi, silinmesi, güncellenmesi, (endeksli) görüntülenmesi,\
+        ve ayrýca kalýcý disk dosyasýyla indexedDB arasýnda kayýt aktarýmlarý iþlenmiþtir."
+    </script>
+</body> 
+</html>

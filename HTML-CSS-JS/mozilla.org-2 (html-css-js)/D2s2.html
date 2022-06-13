@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s2.html: Cripto þifrelemeyle girilen mesajý þifreleme ve tekrar deþifreleme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input[type="text"] {background-color: lime;}
+    </style>
+    <link rel="stylesheet" href="D2s2.css">
+</head>
+<body>
+    <main>
+        <h1>Að Þifreleme: þifre/deþifre</h1>
+
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Að Þifreleme UYA</a> (UygulamaArabaðlaç)'ýnýn <code>encrypt()</code> þifrele() ve <code>decrypt()</code> deþifrele fonksiyonlarýnýn kullanýmýný göstermektedir. Dört örnekle, herbirinin desteklenen aþaðýdaki algoritmalý örneklerini içermektedir:</p>
+            <ul>
+                <li>"RSA-OAEP"</li>
+                <li>"AES-CTR"</li>
+                <li>"AES-CBC"</li>
+                <li>"AES-GCM"</li>
+            </ul>
+            <hr/>
+            <p>Herbir örnekte beþ kýsým mevcuttur:</p>
+            <ul>
+                <li>Þifrelenecek mesajý içeren bir verigiriþ kutusu.</li>
+                <li>Þifrelenenmetnin kýsa bir temsili.</li>
+                <li>Þifrelenenin tekrar deþifrelenmiþ geridönüþü.</li>
+                <li>"Þifrele" düðmesi: bu týklanýnca metin kutusu içerikleri þifrelenir, þifrelenenmetnin bir kýsmý sergilenir, ve þifrelimetnin tamamý saklanýr.</li>
+                <li>"Deþifrele" düðmesi: bu týklanýnca þifrelenen tekrardan deþifrelenir ve sonuç þifrelinin altýnda sergilenir.</li>
+            </ul>
+            <p>Þunlarý deneyin:</p>
+            <ul>
+                <li>"Þifrele" düðmesini týklayýn. Þifrelimetin özeti görülecektir.</li>
+                <li>"Deþifrele" düðmesini týklayýn. Orijinalle uyumlu deþifrelenen metin görülecektir.</li>
+                <li>Metin kutusu içeriklerini deðiþtirin.</li>
+                <li>Tekrar "Þifrele" düðmesini týklayýn. Farklý bir þifrelimetin özeti görülecektir.</li>
+                <li>Tekrar "Deþifrele" düðmesini týklayýn. Deðiþtirilen metin tekrar aynen görülecektir.</li>
+            </ul>
+        </section>
+
+        <section class="örnekler">
+            <section class="þifre-deþifre rsa-oaep">
+                <h2 class="þifre-deþifre-baþlýðý">RSA-OAEP</h2>
+                <section class="þifre-deþifre-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="rsa-oaep-mesajý">Þifrelenecek bir mesaj gir:</label>
+                        <input type="text" id="rsa-oaep-mesajý" name="message" size="25" value="Baykuþ geceyarýsý ötüyor">
+                    </div>
+                    <div class="þifreliMetin">Þifrelimetin: <span class="þifrelimetin-deðeri"></span></div>
+                    <div class="deþifreliMetin">Deþifrelimetin: <span class="deþifrelimetin-deðeri"></span></div>
+                    <input class="þifre-düðmesi" type="button" value="Þifrele">
+                    <input class="deþifre-düðmesi" type="button" value="Deþifrele">
+                </section>
+            </section>
+
+            <section class="þifre-deþifre aes-ctr">
+                <h2 class="þifre-deþifre-baþlýðý">AES-CTR</h2>
+                <section class="þifre-deþifre-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="aes-ctr-mesajý">Þifrelenecek bir mesaj gir:</label>
+                        <input type="text" id="aes-ctr-mesajý" name="message" size="25" value="Kaplan þafakta avlanýyor">
+                    </div>
+                    <div class="þifreliMetin">Þifrelimetin: <span class="þifrelimetin-deðeri"></span></div>
+                    <div class="deþifreliMetin">Deþifrelimetin: <span class="deþifrelimetin-deðeri"></span></div>
+                    <input class="þifre-düðmesi" type="button" value="Þifrele">
+                    <input class="deþifre-düðmesi" type="button" value="Deþifrele">
+                </section>
+            </section>
+
+            <section class="þifre-deþifre aes-cbc">
+                <h2 class="þifre-deþifre-baþlýðý">AES-CBC</h2>
+                <section class="þifre-deþifre-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="aes-cbc-mesajý">Þifrelenecek bir mesaj gir:</label>
+                        <input type="text" id="aes-cbc-mesajý" name="message" size="25" value="Kartal alacakaranlýkta uçuyor">
+                    </div>
+                    <div class="þifreliMetin">Þifrelimetin: <span class="þifrelimetin-deðeri"></span></div>
+                    <div class="deþifreliMetin">Deþifrelimetin: <span class="deþifrelimetin-deðeri"></span></div>
+                    <input class="þifre-düðmesi" type="button" value="Þifrele">
+                    <input class="deþifre-düðmesi" type="button" value="Deþifrele">
+                </section>
+            </section>
+
+            <section class="þifre-deþifre aes-gcm">
+                <h2 class="þifre-deþifre-baþlýðý">AES-GCM</h2>
+                <section class="þifre-deþifre-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="aes-gcm-mesajý">Þifrelenecek bir mesaj gir:</label>
+                        <input type="text" id="aes-gcm-mesajý" name="message" size="25" value="Tavþancýk çaysaatýnda zýplýyor">
+                    </div>
+                    <div class="þifreliMetin">Þifrelimetin: <span class="þifrelimetin-deðeri"></span></div>
+                    <div class="deþifreliMetin">Deþifrelimetin: <span class="deþifrelimetin-deðeri"></span></div>
+                    <input class="þifre-düðmesi" type="button" value="Þifrele">
+                    <input class="deþifre-düðmesi" type="button" value="Deþifrele">
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+  <script src="D2s2q.js" izah="rsa-oaep"></script>
+  <script src="D2s2x.js" izah="aes-ctr"></script>
+  <script src="D2s2y.js" izah="aes-cbc"></script>
+  <script src="D2s2z.js" izah="aes-gcm"></script>
+</html>

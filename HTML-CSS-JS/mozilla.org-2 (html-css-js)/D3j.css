@@ -1,0 +1,24 @@
+html {
+    margin: 0;
+    background: black;
+    height: 100%;}
+body {
+    margin: 0;
+    width: 100%;
+    height: inherit;}
+body > div {height: 25%;}
+.týrnak-resim {
+    float: left;
+    width: 25%;
+    height: 100%;
+    object-fit: cover;}
+.tek-resim {display: none;}
+.büyük {
+    display: block;
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    width: 90%;
+    z-index: 2;}
+.karart {opacity: 0.5;}

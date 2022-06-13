@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s3b.html: Cripto þifrelemeyle girilen þifreden veya Alice-Bob anahtarýndan türetilen gizli anahtarla þifreleme/deþifreleme örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input[type="text"] {background-color: lime;}
+    </style>
+    <link rel="stylesheet" href="D2s3b.css">
+</head>
+<body>
+    <main>
+        <h1>Að Þifreleme: türetilenAnahtar</h1>
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Að Þifreleme UYG</a> uygulama arabaðlacýnýn <code>anahtarTüret()</code> fonksiyonunun nasýl kullanýlacaðýný göstermektedir. Ýki farklý örnek içermektedir, biri PBKDF2 ve diðeri de ECDH için.</p>
+            <p>Uygulama arabaðlacýnda herikisi de anahtar türetme fonksiyonlarý olarak tanýmlansa da, PBKDF2 ve ECDH birbirinden farklý kullanýmlara ve karakteristiklere sahiptir.</p>
+            <hr/>
+            <h2>PBKDF2 örneði</h2>
+            <p>PBKDF2 algoritmasý bir þifreden gizli anahtar þifresi tütermekte kullanýlýr.</p>
+            <p>"Þifrele" düðmesini týklayýnca tarayýcý ikaz kutusu sizden bir þifre giriþi isteyecek ve sonra PBKDF2'yi kullanarak þifreden bir AES anahtarý türetecektir. Bu anahtarla verili/girili mesaj þifrelenecek, ve þifrelimetnin ilk 5 ascii kod temsili çýktýya yazýlacaktýr.</p>
+            <p>"Deþifrele" düðmesini týklayýnca tarayýcý tekrar bir ikaz kutusuyla sizden þifre giriþi isteyecek ve PBKDF2'yi kullanarak þifreden bir AES anahtarý türetecektir. Bu anahtarla þifrelimetniniz deþifre edilecek, ve deþifrelimetnin tamamý çýktýya yazýlacaktýr.</p>
+            <p>Þayet deþifreleme þifresi orijinalinden farklýysa deþifreleme baþarýsýz olacak ve bir hata mesajý çýktýya yazýlacaktýr.</p>
+            <hr/>
+            <h2>ECDH örneði</h2>
+            <p>ECDH algoritmasý genel olarak bir "anahtar sözleþleþmesi" algoritmasý olarak bilinir. Geleneksel olarak "Alice" ve "Bob" isimli iki tarafýn herbirinin de özel/genel anahtar çiftlerini kullanarak paylaþýlan gizli bir anahtar türetir.</p>
+            <p>Bu örnekle, biri Alice ve diðeri Bob için iki anahtar çifti yaratýrýz. Alice'in özel anahtarý ve Bob'unsa genel anahtarýyla herbirine birer AES anahtarý türetilir.</p>
+            <p>"Þifrele" düðmesi týklanýnca Alice'in anahtar kopyasý kullanýlarak Bob için bir mesaj þifrelenir.</p>
+            <p>"Deþifrele" düðmesi týklanýnca da Bob'un anahtar kopyasý kullanýlarak mesajý deþifrelenir.</p>
+            <p>Þayet "Deþifrele" düðmesi "Þifrele" týklanmadan basýlýrsa hata mesajý çýktýya yazýlacaktýr.</p>
+        </section>
+
+        <section class="örnekler">
+            <section class="anahtar-türet pbkdf2">
+                <h2>PBKDF2</h2>
+                <section class="anahtar-türet-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="pbkdf2-mesajý">Þifrelenecek mesajý girin:</label>
+                        <input type="text" id="pbkdf2-mesajý" name="mesaj" size="25" value="Tavþancýk tam çaysaatýnda zýplar">
+                    </div>
+                    <div class="þifreliMetin">Þifrelimetin: <span class="þifrelimetin-deðeri"></span></div>
+                    <div class="deþifreliMetin">Deþifrelimetin: <span class="deþifrelimetin-deðeri"></span></div>
+                    <input class="þifrele-düðmesi" type="button" value="Þifrele">
+                    <input class="deþifrele-düðmesi" type="button" value="Deþifrele">
+                </section>
+            </section>
+
+            <section class="anahtar-türet ecdh">
+                <h2>ECDH</h2>
+                <section class="anahtar-türet-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="ecdh-mesajý">Þifrelenecek mesajý girin:</label>
+                        <input type="text" id="ecdh-mesajý" name="mesaj" size="25" value="Tavþancýk tam çaysaatýnda zýplar">
+                    </div>
+                    <div class="þifreliMetin">Þifrelimetin: <span class="þifrelimetin-deðeri"></span></div>
+                    <div class="deþifreliMetin">Deþifrelimetin: <span class="deþifrelimetin-deðeri"></span></div>
+                    <input class="þifrele-düðmesi" type="button" value="Þifrele">
+                    <input class="deþifrele-düðmesi" type="button" value="Deþifrele">
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+    <script src="D2s3bx.js" izah="pbkdf2"></script>
+    <script src="D2s3by.js" izah="ecdh"></script>
+</html>

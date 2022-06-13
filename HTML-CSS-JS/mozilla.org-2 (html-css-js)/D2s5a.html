@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s5a.html: Cripto þifrelemeyle 4 farklý anahtarý gireceðiniz þifreyle sarmalama örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+    <link rel="stylesheet" href="D2s5a.css">
+</head>
+<body>
+    <main>
+        <h1>Að Þifreleme: anahtarýSar</h1>
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Að Þifreleme UYA</a> uygulama arabaðlacý <code>wrapKey()</code> anahtarýSar() fonksionunun kullanýlmasýný göstermektedir.</p>
+            <p>ayfa yüklendiðinde, otomatikmen þu dört anahtar üretilir:</p>
+            <ul>
+                <li>Bir AES-GCM gizli anahtarý</li>
+                <li>Bir RSA-PSS dijitalimza anahtar çifti</li>
+                <li>Bir RSA-OAEP þifreleme anahtar çifti</li>
+                <li>Bir ECDSA dijitalimza anahtar çifti</li>
+            </ul>
+            <p>Sayfanýn sol üstünde dört düðme bulunur:</p>
+            <ul>
+                <li>AES-GCM anahtarýný raw formatla sarmala</li>
+                <li>RSA-PSS özel anahtarýný PKCS #8 formatla sarmala</li>
+                <li>RSA-OAEP genel anahtarýný SubjectPublicKeyInfo formatla sarmala</li>
+                <li>ECDSA özel anahtarýný JWK formatla sarmala</li>
+            </ul>
+            <p>Bir anahtarý"Sarmalama" bir anahtarýn þifrelenmiþ biçimde ihrac edilmesi gerekliliði demektir. Böylece her dört durumda da, düðmeyi týkladýðýnýzda, tarayýcý ileti kutucuðuyla herhangibir þifre girmeniz istenecek, ve program þifrenizden dimetrik bir anahtar üretip, ihracýndan sonra anahtarýn þifrelenmesinde kullanýlacaktýr.</p>
+            <p>Ýhraç edilen ve þifrelenen anahtar düðmelerin altýndaki vitrinde sergilenecektir.</p>
+        </section>
+
+        <section class="örnekler">
+            <section class="düðmeler">
+                <input class="raw anahtarý-sar-düðmesi" type="button" value="AES-GCM anahtarý raw olarak sarmala">
+                <input class="pkcs8 anahtarý-sar-düðmesi" type="button" value="RSA-PSS anahtarý PKCS#8 olarak sarmala">
+                <input class="spki anahtarý-sar-düðmesi" type="button" value="RSA-OAEP anahtarý SPKI olarak sarmala">
+                <input class="jwk anahtarý-sar-düðmesi" type="button" value="ECDSA anahtarý JWK olarak sarmala">
+            </section>
+            <section class="vitrin">
+                <pre class="sarmalanan-anahtar"></pre>
+            </section>
+        </section>
+    </main>
+</body>
+    <script src="D2s5aq.js" izah="raw AES-GSM"></script>
+    <script src="D2s5ax.js" izah="pkcs8 RSA-PSS"></script>
+    <script src="D2s5ay.js" izah="spki RSA-OAEP"></script>
+    <script src="D2s5az.js" izah="jwk ECDSA"></script>
+</html>

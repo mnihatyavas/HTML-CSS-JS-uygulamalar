@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D3i.html: Üç farklý metnin týklanýnca fetch getir text()'le sayfada sergilenmesi örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 60%;
+            min-width: 500px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+    <link rel="stylesheet" href="D3i.css">
+</head>
+<body>
+    <h1>Metni fetch text() ile getirme</h1>
+    <ul>
+        <li><a veri-sayfasý="D3ix">Sayfa 1</a></li>
+        <li><a veri-sayfasý="D3iy">Sayfa 2</a></li>
+        <li><a veri-sayfasý="D3iz">Sayfa 3</a></li>
+    </ul>
+    <article></article>
+</body>
+<script>
+    var makalem = document.querySelector ("article");
+    var metinBaðlantýlarým = document.querySelectorAll ("ul a");
+    for (var i = 0; i < metinBaðlantýlarým.length; i++) {
+        metinBaðlantýlarým [i].onclick = function (olay) {
+            olay.preventDefault();
+            var metinBaðlantýsý = olay.target.getAttribute ("veri-sayfasý");
+            veriyiAl (metinBaðlantýsý);
+        } // met..sonu...
+    }; // for sonu...
+
+    function veriyiAl (metinAdý) {
+        console.log ("Týklanan metnin yureli: " + metinAdý + ".txt");
+        var talebim = new Request (metinAdý + ".txt");
+
+        fetch (talebim)
+        .then (function (yanýt) {
+            if (!yanýt.ok) {throw new Error ("Metin dosyasý okuma hatasý, statüsü=" + yanýt.status);}
+            return yanýt.text();
+        }) // thrn sonu...
+        .then (function (metin) {makalem.innerHTML = metin;})
+        .catch (function (hata) {
+            makalem.innerHTML = "";
+            makalem.appendChild (document.createTextNode ("HATA: " + hata.message));
+        }); // catch sonu...
+    } // func sonu...
+</script>
+</html>

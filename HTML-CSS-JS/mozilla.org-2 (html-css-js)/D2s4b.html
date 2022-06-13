@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s4b.html: Cripto þifrelemeyle 4 farklý ithal anahtarlý mesaj þifreleme/imzalama örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        input[type="text"] {background-color: lime;}
+    </style>
+    <link rel="stylesheet" href="D2s4b.css">
+</head>
+<body>
+    <main>
+        <h1>Að Þifreleme: anahtarýDahilet</h1>
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Að Þifreleme UYG</a> uygulama arabaðlacýnýn <code>importKey()</code> anahtarýDahilet() fonksiyonunun kullanýmýný göstermektedir. Herbiri desteklenen ithal biçimli dört farklý örnek içermektedir:</p>
+            <ul>
+                <li>Raw</li>
+                <li>PKCS #8</li>
+                <li>SubjectPublicKeyInfo</li>
+                <li>JSON Web Key</li>
+            </ul>
+            <p>Herbir örneðin yapýsý aynýdýr: girilen bir mesaj kutusu ve saðýnda "Anahtarý Dahilet" düðmesi.</p>
+            <p>Þayet "Anahtarý Dahilet" týklanýrsa, örneðiniz þu özel gizli anahtarlardan birini üretip þifrelemeye dahil edecektir:</p>
+            <ul>
+                <li>"Raw" için, bir AES þifreleme anahtarý.</li>
+                <li>"PKCS #8" için, bir RSA özel imzalama anahtarý.</li>
+                <li>"SubjectPublicKeyInfo" için, bir RSA genel þifreleme anahtarý.</li>
+                <li>"JSON Web Key" için, bir EC özel imzalama anahtarý.</li>
+            </ul>
+            <p>Akabinde ithal edilen anahtarýn çeþidine baðlý olarak "Ýmzala" yada "Þifrele" etiketli yeni bir düðme görünür kýlýnacaktýr. Bu düðmeyi týklayarak ithal anahtarýn uygun iþlemi icrasýnda kullanýmýný ve sonucun sergilenmesini saðlayabilirsiniz.</p>
+        </section>
+
+        <section class="örnekler">
+            <section class="ithal-anahtar raw">
+                <h2 class="ithal-anahtar-baþlýðý">Raw</h2>
+                <section class="ithal-anahtar-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="raw-mesajý">Þifrelenecek mesajý gir:</label>
+                        <input type="text" id="raw-mesajý" name="mesaj" size="25" value="Baykuþ tam geceyarýsýnda ötüyor">
+                    </div>
+                    <div class="þifreliMetin">Þifreli metin: <span class="þifrelimetin-deðeri"></span></div>
+                    <input class="ithal-anahtar-düðmesi" type="button" value="Anahtarý Dahilet">
+                    <input class="þifreleme-düðmesi gizli" type="button" value="Þifrele" disabled>
+                </section>
+            </section>
+
+            <section class="ithal-anahtar pkcs8">
+                <h2 class="ithal-anahtar-baþlýðý">PKCS #8</h2>
+                <section class="ithal-anahtar-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="pkcs8-mesajý">Ýmzalanacak mesajý gir:</label>
+                        <input type="text" id="pkcs8-mesajý" name="mesaj" size="25" value="Kaplan henüz þafakta avlanýtor">
+                    </div>
+                    <div class="dijitalÝmza">Dijital imza: <span class="dijitalimza-deðeri"></span></div>
+                    <input class="ithal-anahtar-düðmesi" type="button" value="Anahtarý Dahilet">
+                    <input class="imzalama-düðmesi gizli" type="button" value="Ýmzala" disabled>
+                </section>
+            </section>
+
+            <section class="ithal-anahtar spki">
+                <h2 class="ithal-anahtar-baþlýðý">SubjectPublicKeyInfo</h2>
+                <section class="ithal-anahtar-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="spki-mesajý">Þifrelenecek mesajý gir:</label>
+                        <input type="text" id="spki-mesajý" name="mesaj" size="25" value="Kartal alacakaranlýkta hala uçuyor">
+                    </div>
+                    <div class="þifreliMetin">Þifreli metin: <span class="þifrelimetin-deðeri"></span></div>
+                    <input class="ithal-anahtar-düðmesi" type="button" value="Anahtarý Dahilet">
+                    <input class="þifreleme-düðmesi gizli" type="button" value="Þifrele" disabled>
+                </section>
+            </section>
+
+            <section class="ithal-anahtar jwk">
+                <h2 class="ithal-anahtar-baþlýðý">JSON Web Key</h2>
+                <section class="ithal-anahtar-kontrolleri">
+                    <div class="mesaj-kontrolü">
+                        <label for="jwk-mesajý">Ýmzalanacak mesajý gir:</label>
+                        <input type="text" id="jwk-mesajý" name="mesaj" size="25" value="Tavþancýk tam çayvakti zýplýyor">
+                    </div>
+                    <div class="dijitalÝmza">Dijital imza: <span class="dijitalimza-deðeri"></span></div>
+                    <input class="ithal-anahtar-düðmesi" type="button" value="Anahtarý Dahilet">
+                    <input class="imzalama-düðmesi gizli" type="button" value="Ýmzala" disabled>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+    <script src="D2s4bq.js" izah="raw AES-GSM"></script>
+    <script src="D2s4bx.js" izah="pkcs8 RSA-PSS"></script>
+    <script src="D2s4by.js" izah="spki RSA-OAEP"></script>
+    <script src="D2s4bz.js" izah="jwk ECDSA"></script>
+</html>

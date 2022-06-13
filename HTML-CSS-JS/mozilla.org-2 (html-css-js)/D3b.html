@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D3b.html: JS kodlamayla müzik dosyasýný arrayBuffer()'la fetch'leme, çalma ve durdurma örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: #a97;
+            max-width: 80%;
+            min-width: 750px;
+            padding: 20px; /* overflow: auto; */
+            margin: 2em auto;
+            border: 5px solid tomato;}
+        button {background-color: DarkRed; color: yellow; font-size:15px;}
+    </style>
+</head>
+<body>
+    <h1>Müziði fetch arrayBuffer() ile çalma</h1>
+    <button class="çal">Çal</button>
+    <button class="dur">Durdur</button>
+    <span class="hata"></span>
+    <pre></pre>
+</body>
+<script>
+    var sesÝçeriði = new (window.AudioContext || window.webkitAudioContext)();
+    var kaynak;
+    var göster = document.querySelector ("pre");
+    var jsTaslaðý = document.querySelector ("script");
+    var oynat = document.querySelector (".çal");
+    var durdur = document.querySelector (".dur");
+    var hatayýGöster = document.querySelector (".hata");
+
+    function veriyiAl() {// Fetch arrayBuffer() olarak getirilmesi, sonra dekodlanýp kaynaða baðlanmalý...
+        kaynak = sesÝçeriði.createBufferSource();
+        return fetch ("resim/medya/müzik.ogg") // return'den sonra ayný satýrda fetch gelmeli...
+            .then (function (yanýt) {
+                if (!yanýt.ok) {throw new Error ("Müzik dosyasýný okuma hatasý, statü=" + yanýt.status);}
+                return yanýt.arrayBuffer();
+            }) // then sonu...
+            .then (function (tampon) {
+                sesÝçeriði.decodeAudioData (tampon, function (decodluVeri) {
+                    kaynak.buffer = decodluVeri; // buffer ile tampon karýþtýrýlmamalý...
+                    kaynak.connect (sesÝçeriði.destination);
+                }); // ses..sonu...
+            }); // then-return sonu...
+    }; // func sonu...
+
+    oynat.onclick = function() {
+        veriyiAl()
+        .then (function() {
+            hatayýGöster.innerHTML = "";
+            kaynak.start (0);
+            oynat.disabled = true;
+        }) // then sonu...
+        .catch (function (ht) {hatayýGöster.appendChild (document.createTextNode ("HATA: " + ht.message));});
+    }; // oynat sonu...
+    durdur.onclick = function() {kaynak.stop (0); oynat.disabled = false;};
+    göster.innerHTML = jsTaslaðý.innerHTML; // JS kodlarýný göster...
+  </script>
+</html>

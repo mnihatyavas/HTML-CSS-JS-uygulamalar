@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D2s4a.html: Cripto þifrelemeyle yüklenirken üretilen 4 farklý anahtarýn ifþalanmasý örneði.</title>
+    <style>
+        html {background-color: #152; font-family: sans-serif;}
+        body {
+            background-color: Khaki;
+            max-width: 85%;
+            min-width: 850px;
+            padding: 20px;
+            margin: 2em auto;
+            border: 5px solid tomato;}
+    </style>
+    <link rel="stylesheet" href="D2s4a.css">
+</head>
+<body>
+    <main>
+        <h1>Að Þifreleme: anahtarýÝfþaet</h1>
+        <section class="açýklama">
+            <p>Bu sayfa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Að Þifreleme UYG</a> uygulama arabaðlacýnýn <code>exportKey()</code> anahtarýÝfþaet() fonksiyonunun kullanýmýný göstermektedir.</p>
+            <p>Sayfa yüklendiðinde, otomatikmen þu dört anahtar üretilir:</p>
+            <ul>
+                <li>Bir AES-GCM gizli anahtarý</li>
+                <li>Bir RSA-PSS dijital imza anahtar çifti</li>
+                <li>Bir RSA-OAEP þifreleme anahtar çifti</li>
+                <li>Bir ECDSA dijital imza anahtar çifti</li>
+            </ul>
+            <p>Sayfanýn sol yukarýsýnda dört düðme tedariklenmiþtir:</p>
+            <ul>
+                <li>AES-GCM anahtarýnýn ham biçimde ifþaasý</li>
+                <li>RSA-PSS özel anahtarýnýnPKCS #8 biçimde ifþaasý</li>
+                <li>RSA-OAEP genel anahtarýnýn SubjectPublicKeyInfo biçimde ifþaasý</li>
+                <li>ECDSA özel anahtarýnýn JWK biçimde ifþaasý</li>
+            </ul>
+            <p>Ýfþa edilen anahtar içeriði düðmelerin hemen altýndaki kutuya sýðýþtýrýlýr. PKCS #8 ve SubjectPublicKeyInfo formatlarý ayrýca PEM nesnelerine þifrelenmektedir.</p>
+        </section>
+
+        <section class="örnekler">
+            <section class="düðmeler">
+                <input class="ham ifþalanan-anahtar-düðmesi" type="button" value="AES-GCM anahtarýný ham ifþala">
+                <input class="pkcs8 ifþalanan-anahtar-düðmesi" type="button" value="RSA-PSS anahtarýnýPKCS #8 ifþala">
+                <input class="spki ifþalanan-anahtar-düðmesi" type="button" value="RSA-OAEP anahtarýný SPKI ifþala">
+                <input class="jwk ifþalanan-anahtar-düðmesi" type="button" value="ECDSA anahtarýný JWK ifþala">
+            </section>
+            <section class="ifþaat">
+                <pre class="ifþalanan-anahtar"></pre>
+            </section>
+        </section>
+    </main>
+</body>
+    <script src="D2s4aq.js" izah="raw AES-GSM"></script>
+    <script src="D2s4ax.js" izah="pkcs8 RSA-PSS"></script>
+    <script src="D2s4ay.js" izah="spki RSA-OAEP"></script>
+    <script src="D2s4az.js" izah="jwk ECDSA"></script>
+</html>

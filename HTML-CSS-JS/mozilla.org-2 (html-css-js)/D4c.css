@@ -1,0 +1,56 @@
+/* Temel kurulum ve kablarýn ebatlanmasý */
+
+html {background-color: #152; font-family: sans-serif; font-size:10px;}
+body {
+    background-color: #a97;
+    max-width: 80%;
+    min-width: 750px;
+    padding: 20px;
+    margin: 2em auto; height: 900px;
+    border: 5px solid tomato;}
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: pink;
+    text-shadow: -5px -5px 5px black;}
+ul {
+    float: left;
+    width: 40%;
+    text-align: center;
+    list-style-type: none;
+    padding: 2rem 1rem;
+    background: white linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    box-shadow: 3px 3px 10px black;}
+li {
+    font-size: 2rem;
+    padding-bottom: 1rem;}
+form {
+    float: right;
+    width: 55%;
+    font-size: 1.7rem;
+    margin-top: 1rem;}
+form > div {
+    margin-bottom: 3rem;
+    padding: 1rem 1rem 2rem;
+    background: white linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    box-shadow: 3px 3px 10px black;}
+form div div {
+    clear: both;
+    margin-top: 1rem;}
+form div label {
+    width: 55%;
+    clear: both;}
+form div input {float: right;}
+form div input[type="text"] {width: 30%; background-color: pink; color: blue;}
+form div input[type="radio"] {margin-right: 10px;}
+form p input[type="button"] {background-color: Navy; color: orange;}
+form p {text-align: center; margin: 0; padding: 0;}
+form button {
+    display: block;
+    width: 35%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    box-shadow: 2px 2px 4px black;
+    background-color: DarkRed; color: yellow;}

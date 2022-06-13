@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso:8859-9 Türkçe">
+    <title>D4b.html: Kaydýn 7 alan baþlýðýyla nesnedeposunu endeksli sýralama örneði.</title>
+    <link href="http://fonts.googleapis.com/css?family=Arvo|Bevan" rel="stylesheet">
+    <link href="D4b.css" rel="stylesheet">
+</head>
+<body>
+    <h1>IDBIndex ile artan/azalan kayýt alanlarý</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th tabindex="150">SN</th> <!-- "tabindex" ile sekme tuþu daima burdan baþlayarak ilerler -->
+                <th tabindex="151">Soyadý</th>
+                <th tabindex="152">Adý</th>
+                <th tabindex="153">Ünvaný</th>
+                <th tabindex="154">Þirketi</th>
+                <th tabindex="155">Eposta</th>
+                <th tabindex="156">GSM</th>
+                <th tabindex="157">Yaþý</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <p>Kayýtlarýn hangi kolona göre artan sýralanmasýný isterseniz o kolon baþlýðýný týklayýn/odaklayýn.</p>
+    <button id="tümKayýtlarýSil">Tüm kayýtlarý sil</button>
+    <button id="vtSil">Veri tabanýný sil</button>
+    <button onclick="window.location.reload();">Yeniden yükle</button>
+</body>
+    <script src="D4b.js"></script>
+</html>
