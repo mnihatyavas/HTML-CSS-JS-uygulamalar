@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+*:focus, *:active {outline: none !important;
+    color: transparent;}
+html, body {display: grid;
+    height: 100vh;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    place-items: center;
+    background: linear-gradient(315deg, #8f3636, #f7e1ec);}
+.sarmaç {display: inline-flex;}
+.sarmaç .ikon {position: relative;
+    background: #ddd;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);}
+.sarmaç .ipucu {position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #ffffff;
+    padding: 5px 8px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);}
+.sarmaç .ipucu::before {position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);}
+.sarmaç .ikon:hover .ipucu {top: -100px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;}
+.sarmaç .ikon:hover span, .sarmaç .ikon:hover .ipucu {text-shadow: 0 -5px 0 rgba(255, 255, 0, 0.5);}
+.sarmaç .facebook:hover, .sarmaç .facebook:hover .ipucu, .sarmaç .facebook:hover .ipucu::before {
+    background: #3b5999; /* üzerinde zemin renk deðiþimi */
+    color: #fff;}
+.sarmaç .twitter:hover, .sarmaç .twitter:hover .ipucu, .sarmaç .twitter:hover .ipucu::before {
+    background: #46c1f6;
+    color: #fff;}
+.sarmaç .instagram:hover, .sarmaç .instagram:hover .ipucu, .sarmaç .instagram:hover .ipucu::before {
+    background: #e1306c;
+    color: #fff;}
+.sarmaç .github:hover, .sarmaç .github:hover .ipucu, .sarmaç .github:hover .ipucu::before {
+    background: #333333;
+    color: #fff;}
+.sarmaç .youtube:hover, .sarmaç .youtube:hover .ipucu, .sarmaç .youtube:hover .ipucu::before {
+    background: #e92828;
+    color: #fff;}

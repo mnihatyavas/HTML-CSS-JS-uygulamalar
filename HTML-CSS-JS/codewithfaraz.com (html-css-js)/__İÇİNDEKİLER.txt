@@ -1,0 +1,63 @@
+ÝÇÝNDEKÝLER
+-----------
+https://www.codewithfaraz.com/article/103/50-html-css-and-javascript-projects-with-source-code-for-beginners
+https://www.codewithfaraz.com/
+----------------------------------------------------------
+1. Dijital Saat
+    faraz5001.html: Dairesel  saat-dakika-saniye halka animasyonlu dijital saat örneði.
+2. Parlayan Aramaçubuðu
+    faraz5002.html: Iþýldayan pulsar arama çubuðu örneði.
+3. Sosyal Medya Ýkonlarý
+    faraz5003.html: Zýplayan sosyal medya ikonlarý örneði.
+    faraz5003b.css: Ýkon fa-facebook için font-awesome.min.css ünikodlarý.
+4. Drop-Down Menu
+5. Simple Calculator
+6. Login Page
+7. Sign Up Form
+8. Animated Search Box
+9. Dark/Light Mode Switch
+10. Breadcrumb
+11. Carousel Sliders
+12. Glitch Effect Text
+13. Sound Bars
+14. Loaders
+15. Radio Button
+16. Blog Card Grid
+17. Footer
+18. Navbar
+19. Sidebar
+20. Sort HTML Table
+21. Switch Button
+22. Tab Bar
+23. Submit Button
+24. To Do List
+25. Hamburger Menu
+26. Accordion
+27. Coffee Landing Page
+28. Login and Sign-Up Form
+29. Card Design	30. Glow Button
+31. Modal Popup Window
+32. Split Text
+33. Product Showcase Carousel
+34. Drag and Drop File
+35. 404 Not Found Page
+36. Animated Product Page
+37. Netflix Clone
+38. Google Clone
+39. Dropdown Menu
+40. Music Player
+41. Profile Card
+42. Portfolio Template
+43. Copy Text to Clipboard
+44. Hotel Landing Page
+45. Ice Cream Shop Landing Page
+46. Blog Cards with Bootstrap
+47. Pizza Shop Website
+48. Password Validation Form
+49. Text to Voice
+50. Circular Grid
+51. Pricing Table
+52. Search Filter
+53. Sticky Notes
+54. CRUD App
+55. GitHub Profile Finder
