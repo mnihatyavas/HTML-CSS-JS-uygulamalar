@@ -1,0 +1,54 @@
+body {font-family: sans-serif;
+    font-weight: 800;
+    background-color: #060b3b;}
+.düðme {position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 75px;
+    text-align: center;
+    margin: -30px 0 0 -75px;
+    background: #2ee924;
+    transition: all 0.8s ease;
+    border-radius: 35px;}
+.düðme span {position: absolute;
+    width: 25px;
+    height: 8px;
+    top: 50%;
+    left: 50%;
+    margin: -2px 0px 0px -4px;
+    background: #fff;
+    display: block;
+    transform: rotate(-45deg);
+    transition: all 0.8s ease;
+    border-radius: 2px;}
+.düðme span:after {content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    margin-top: -8px;
+    background: #fff;
+    transition: all 0.8s ease;
+    border-radius: 2px;}
+input[type=radio] {display: none;}
+.düðme label {cursor: pointer;
+    color: rgba(0, 0, 0, 0.1);
+    width: 60px;
+    line-height: 65px;
+    font-size: 25px;
+    transition: all 0.8s ease;}
+label[for=evet] {position: absolute;
+    left: 10px;
+    height: 20px;}
+label[for=hayýr] {position: absolute;
+    right: 25px;}
+#hayýr:checked ~ .düðme {background: #ff0b00;}
+#hayýr:checked ~ .düðme span {background: #fff;
+    margin-left: -8px;}
+#hayýr:checked ~ .düðme span:after {background: #fff;
+    height: 25px;
+    margin-top: -8px;
+    margin-left: 8px;}
+#evet:checked ~ .düðme label[for=evet] {color: #fff;}
+#hayýr:checked ~ .düðme label[for=hayýr] {color: #fff;}

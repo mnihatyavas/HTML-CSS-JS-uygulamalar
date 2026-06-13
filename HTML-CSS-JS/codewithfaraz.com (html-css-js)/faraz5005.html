@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>faraz5005.html: Dört iþlemli (/+-*/) basit bir hesap makinesi örneði.</title>
+    <meta charset="iso:8859-9 Türkçe" />
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="faraz5005.css"/>
+</head>
+<body>
+    <div class="kab1">
+        <fieldset id="kab2">
+            <form name="hesapMakinesi">
+                <input id="gösteri" type="text" name="göster" readonly>
+                <input class="düðme rakamlar" type="button" value="7" onclick="hesapMakinesi.göster.value += '7'">
+                <input class="düðme rakamlar" type="button" value="8" onclick="hesapMakinesi.göster.value += '8'">
+                <input class="düðme rakamlar" type="button" value="9" onclick="hesapMakinesi.göster.value += '9'">
+                <input class="düðme matematikDüðmeler" type="button" value="+" onclick="hesapMakinesi.göster.value += ' + '">
+                <br>
+                <input class="düðme rakamlar" type="button" value="4" onclick="hesapMakinesi.göster.value += '4'">
+                <input class="düðme rakamlar" type="button" value="5" onclick="hesapMakinesi.göster.value += '5'">
+                <input class="düðme rakamlar" type="button" value="6" onclick="hesapMakinesi.göster.value += '6'">
+                <input class="düðme matematikDüðmeler" type="button" value="-" onclick="hesapMakinesi.göster.value += ' - '">
+                <br>
+                <input class="düðme rakamlar" type="button" value="1" onclick="hesapMakinesi.göster.value += '1'">
+                <input class="düðme rakamlar" type="button" value="2" onclick="hesapMakinesi.göster.value += '2'">
+                <input class="düðme rakamlar" type="button" value="3" onclick="hesapMakinesi.göster.value += '3'">
+                <input class="düðme matematikDüðmeler" type="button" value="x" onclick="hesapMakinesi.göster.value += ' * '">
+                <br>
+                <input id="silDüðme" class="düðme" type="button" value="C" onclick="hesapMakinesi.göster.value = ''">
+                <input class="düðme rakamlar" type="button" value="0" onclick="hesapMakinesi.göster.value += '0'">
+                <input class="düðme matematikDüðmeler" type="button" value="=" onclick="hesapMakinesi.göster.value = eval(hesapMakinesi.göster.value)">
+                <input class="düðme matematikDüðmeler" type="button" value="/" onclick="hesapMakinesi.göster.value += ' / '">
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+html {background-color: #001;}
+/* .devridaim {margin-left: 15%; margin-right: 15%;} */
+ul .slaytlar {display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;}
+.slaytlar * {user-select: none;}
+ul .slaytlar input {display: none;}
+.slayt-kab {display: block;}
+.slayt-resim {display: block;
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    top: 0;
+    opacity: 0;
+    transition: all 0.7s ease-in-out;}     
+.slayt-resim img {width: auto;
+    width: 90%;
+    height: 100%;}
+.devridaim-kontrollar {position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 500px; /* Sol ve sað kenardaki 500px duyarlý */
+    color: #fff;}
+.devridaim-kontrollar label {display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    cursor: pointer;}
+.slayt-resim:hover + .devridaim-kontrollar label {opacity: 0.5;}
+.devridaim-kontrollar label:hover {opacity: 1;}
+.devridaim-kontrollar .önceki-slayt {width: 50%;
+    text-align: left; /* sol kenarda "<" sembol */
+    left: 0px;}
+.devridaim-kontrollar .sonraki-slayt {width: 50%;
+    text-align: right;  /* sað kenarda ">" sembol */
+    right: 0px;}
+.devridaim-noktalar {position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px; /* resim sayýsý kadar üst ortada iri beyaz noktalar */
+    z-index: 999;
+    text-align: center;}
+.devridaim-noktalar .devridaim-nokta {display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;}
+input:checked + .slayt-kab .slayt-resim {opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;}
+input:checked + .slayt-kab .devridaim-kontrollar label {display: block;}
+input#resim-1:checked ~ .devridaim-noktalar label#resim-nokta-1,
+  input#resim-2:checked ~ .devridaim-noktalar label#resim-nokta-2,
+  input#resim-3:checked ~ .devridaim-noktalar label#resim-nokta-3,
+  input#resim-4:checked ~ .devridaim-noktalar label#resim-nokta-4 {opacity: 1;} /* aktif çentikli resim noktasý parlak beyaz */
+/* input:checked + .slayt-kab .nav label {display: block;} */

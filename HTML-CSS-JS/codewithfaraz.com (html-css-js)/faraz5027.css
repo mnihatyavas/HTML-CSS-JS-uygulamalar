@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Nunito+Sans:ital,wght@0,400;0,700;0,800;1,300;1,700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+*{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;}
+section {position: relative;
+    width: 100%;
+    min-width: 100vh;
+    padding: 100px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;}
+header {position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+header .logo {position: relative;
+    max-width: 80px;}
+header ul {position: relative;
+    display: flex;}
+header ul li {list-style: none;}
+header ul li a {display: inline-block;
+    color: #333;
+    font-weight: 800;
+    margin-left: 40px;
+    text-decoration: none;}
+.kab {position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+.kab .metin-kutu {position: relative;
+    max-width: 600px;}
+.kab .metin-kutu h2 {color: #333;
+    font-size: 4em;
+    font-weight: 500px;}
+.kab .metin-kutu h2 span {color: #017143;
+    font-size: 1.2em;
+    font-weight: 900;}
+.kab .metin-kutu p {color: #333;}
+.kab .metin-kutu a {display: inline-block;
+    margin-top: 20px;
+    padding: 0px 20px;
+    background: #017143;
+    color: #ff0;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;}
+.kab .resim-kutu {width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;}
+.kab .resim-kutu img {max-width: 340px;}
+.küçük-resim {position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;}
+.küçük-resim li {list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.5s;}
+.küçük-resim li:hover {transform: translateY(-60px);}
+.küçük-resim li img {max-width: 600px;}
+.sosyal {position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;}
+.sosyal li {list-style: none;}
+.sosyal li a {display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.5);
+    filter: invert(1);}
+.daire {position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #017143;
+    clip-path: circle(600px at right 800px);}

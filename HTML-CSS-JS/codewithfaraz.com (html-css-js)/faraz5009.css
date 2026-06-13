@@ -1,0 +1,30 @@
+body {font-family: sans-serif;
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 0.9375rem;}
+small {font-style: italic;}
+large {font-size: 25px;}
+article {display: flex;
+    flex-direction: column;}
+img {max-width: 100%;
+    display: block;
+    align-self: center;
+    border: 3px solid blue;}
+.düðme-etiketi {align-self: flex-end;
+    margin: 0.9375rem;}
+.düðme {display: inline-block;
+    cursor: pointer;
+    border: 2px solid #555;
+    border-radius: 1.25rem;
+    width: 6.125rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.1875rem;
+    margin-left: 0.3125rem;}
+.karanlýk,
+ .karanlýk * {background-color: #222;
+    color: #e6e6e6;
+    border-color: #e68686;}

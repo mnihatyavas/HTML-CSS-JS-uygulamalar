@@ -1,0 +1,83 @@
+* {border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;}
+:root {--renk: 600;
+    --zr1: #ae7f0f;
+    --zr2: hsl(var(--renk), 10%, 80%);
+    --yr1: hsl(var(--renk), 10%, 10%);
+    --yr2: hsl(var(--renk), 10%, 20%);
+    --renk1: hsl(var(--renk), 90%, 65%);
+    --renk2: hsl(var(--renk), 90%, 25%);
+    font-size: calc(30px + (40 - 20) * (100vw - 320px) / (1280 - 320));}
+body, button {font: 1em/1.5 Nunito, sans-serif;}
+body {background-color: var(--zr1);
+    color: var(--yr1);
+    height: 100vh;
+    display: grid;
+    place-items: center;}
+/* Düðme stilleri */
+.düðme {background-color: transparent;
+    border-radius: 1.5em;
+    display: block;
+    position: relative;
+    width: 7.5em;
+    height: 3em;
+    transition: width 0.8s ease-in-out;}
+.düðme:not(:disabled):active {transform: translateY(0.1em);}
+.düðme-metin {background-color: var(--renk1);
+    border-radius: inherit;
+    color: hsl(0,0%, 100%);
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    transition: background-color 1s linear, color 1s 0.8s ease-in-out;
+    width: 100%;}
+.düðme:not(:disabled):focus .düðme-metin,
+.düðme:not(:disabled):hover .düðme-metin {background-color: var(--renk2);}
+.düðme-ilerle {overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3em;
+    height: 3em;
+    visibility: hidden;}
+.düðme-ilerle-çiz {r: 12px;
+    stroke: var(--zr2);
+    stroke-width: 24;}
+.düðme-ilerle-doldur {stroke: var(--renk1);
+    stroke-dashoffset: 125.66;}
+.düðme-ilerle-çentikle {stroke: hsl(0, 0%, 100%);
+    stroke-dashoffset: 34;}
+
+/* düðmenin temel durumlarý */
+.düðme-çalýþýyor, .düðme-tamamlandý {outline: none;
+    pointer-events: none;
+    width: 3em;
+    user-select: none;}
+.düðme-çalýþýyor .düðme-metin, .düðme-tamamlandý .düðme-metin {color: transparent;
+    transition: background-color 0.8s ease-in-out, visibility 0.8s steps(1);}
+.düðme-çalýþýyor .düðme-ilerle, .düðme-tamamlandý .düðme-ilerle {visibility: visible;}
+
+/* Çalýþýyor durumu */
+.düðme-çalýþýyor .düðme-metin {background-color: var(--zr2);
+    visibility: hidden;}
+.düðme-çalýþýyor .düðme-ilerle {transition: visibility 0.88s 0.8s steps(1, start);}
+.düðme-çalýþýyor .düðme-ilerle-çiz {r: 20px;
+    stroke-width: 8;
+    transition: r 0.8s 0.8s ease-in-out, stroke-width 0.8s 0.8s ease-in-out;}
+.düðme-çalýþýyor .düðme-ilerle-doldur {stroke-dashoffset: 0;
+    transition: stroke-dashoffset 2s 1s linear;}
+
+/* Tamamlandý durumu */
+.düðme-tamamlandý .düðme-ilerle-çiz {stroke: var(--renk1);
+    transition: r 0.8s ease-in-out, stroke-width 0.8s ease-in-out;}
+.düðme-tamamlandý .düðme-ilerle-çentikle {stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.8s 0.8s ease-out;}
+
+/* Karanlýk  tema tercihi
+@media (prefers-color-scheme: dark) {
+    :root {--zr1: hsl(var(--renk), 10%, 10%);
+        --zr2: hsl(var(--renk), 10%, 20%);
+        --yr1: hsl(var(--renk), 10%, 90%);
+        --yr2: hsl(var(--renk), 10%, 80%);} }
+*/

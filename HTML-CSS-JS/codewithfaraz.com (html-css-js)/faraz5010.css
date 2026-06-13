@@ -1,0 +1,98 @@
+body {font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    background: linear-gradient(120deg, #f0d14c, #756528);}
+.menü {position: fixed;
+    top: 40px;
+    left: 40px;
+    width: 300px;}
+.menü:hover {width: auto;}
+.menü:hover .alt-menüler {opacity: 1;
+    transform: translateY(0);}
+.menü:hover .menü-düðmesi div {background: rgba(65,138,216,0.25);}
+.menü:hover .menü-düðmesi div svg path,
+  .menü:hover .menü-düðmesi div svg polyline {stroke: #418ad8;}
+.menü:hover .menü-düðmesi span {transform: translateX(0);
+    opacity: 1;}
+.menü:hover ul.tarihçe {transform: translateY(0);
+    pointer-events: auto;}
+.menü:hover ul.tarihçe li {margin-bottom: 8px;}
+.menü:hover ul.tarihçe li::after {background: #418ad8;
+    transform: translateY(6px);}
+.menü:hover ul.tarihçe li.active::after {background: #5a667f;}
+.menü:hover ul.tarihçe li a {opacity: 1;
+    transform: translateY(0);}
+.menü:hover ul.baðlantýlar {position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;}
+.menü-düðmesi {display: inline-block;}
+.menü-düðmesi div {position: relative;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e8eaed;
+    float: left;}
+.menü-düðmesi div svg {fill: none;
+    transform: translate(10px, 7px);}
+.menü-düðmesi div svg path,
+  .menü-düðmesi div svg polyline {stroke: #9098a9;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;}
+.menü-düðmesi span {display: inline-block;
+    color: #418ad8;
+    margin-left: 10px;
+    line-height: 34px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.2s ease;}
+.menü-düðmesi:hover span {color: #2b7cd2;}
+.menü ul {display: block;
+    margin-bottom: 0;
+    list-style: none;}
+.menü ul li {white-space: nowrap;}
+.menü ul li a {text-decoration: none;}
+.menü ul.tarihçe {padding-left: 36px;
+    padding-top: 25px;
+    pointer-events: none;}
+.menü ul.tarihçe li {margin-bottom: 5px;}
+.menü ul.tarihçe li::after {content: '';
+    position: absolute;
+    left: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e8eaed;
+    transform: scale(0.9);
+    transition: all 0.2s ease;}
+.menü ul.tarihçe li:not(:last-child)::before {content: '';
+    position: absolute;
+    left: 17px;
+    margin-top: 10px;
+    width: 2px;
+    height: 28px;
+    background: #e8eaed;
+    transition: all 0.2s ease;}
+.menü ul.tarihçe li.active {pointer-events: none;}
+.menü ul.tarihçe li.active::after {background: #e8eaed;}
+.menü ul.tarihçe li.active a {color: #5a667f;}
+.menü ul.tarihçe li a {color: #418ad8;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;}
+.menü ul.tarihçe li a:hover {color: #2b7cd2;}
+.menü ul.baðlantýlar {position: absolute;
+    transform: translateY(-10px);
+    margin-top: 20px;
+    padding-left: 12px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    pointer-events: none;}
+.menü ul.baðlantýlar li:not(:last-child) {margin-bottom: 5px;}
+.menü ul.baðlantýlar li a {font-size: 14px;
+    font-weight: 800;
+    color: #989c24;
+    transition: color 0.2s ease;}
+.menü ul.baðlantýlar li a:hover {color: #9098a9;}

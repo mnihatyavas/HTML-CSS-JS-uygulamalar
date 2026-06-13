@@ -1,0 +1,12 @@
+body {background-color: rgb(211, 226, 216);}
+table {border-spacing: 2px;
+    width: 80%;
+    border: 5px solid #aa3;}
+th, td {text-align: left;
+    padding: 15px;
+    border-bottom: 3px solid #ff3;}
+th:hover {
+    background-color: maroon;
+    color: yellow;}
+td {border-bottom: 3px solid lime;}
+tr:nth-child(even) {background-color: rgb(153, 153, 197);}

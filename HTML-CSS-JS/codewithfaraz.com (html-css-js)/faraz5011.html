@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>faraz5011.html: Dönmedolapvari heriki yönlü slayt gösterimi örneği.</title>
+    <link rel="stylesheet" href="faraz5011.css"/>
+</head>
+<body>
+<!-- Genelde resimli dosya verilerini tarayıcı muhafaza edip sonraki değişiklikle
+hata vermekte. Tek çare her değişiklikte tarayıcıyı kapatıp, yeniden açmakta -->
+    <div class="devridaim">
+        <ul class="slaytlar">
+            <input type="radio" name="radyoDüğmeler" id="resim-1" checked/>
+            <li class="slayt-kab">
+                <div class="slayt-resim"><img src="faraz5011a.png"></div>
+                <div class="devridaim-kontrollar">
+                    <label for="resim-4" class="önceki-slayt"><span>‹</span></label>
+                    <label for="resim-2" class="sonraki-slayt"><span>›</span></label>
+                </div>
+            </li>
+            <input type="radio" name="radyoDüğmeler" id="resim-2"/>
+            <li class="slayt-kab">
+                <div class="slayt-resim"><img src="faraz5011b.png"></div>
+                <div class="devridaim-kontrollar">
+                    <label for="resim-1" class="önceki-slayt"><span>‹</span></label>
+                    <label for="resim-3" class="sonraki-slayt"><span>›</span></label>
+                </div>
+            </li>
+            <input type="radio" name="radyoDüğmeler" id="resim-3"/>
+            <li class="slayt-kab">
+                <div class="slayt-resim"><img src="faraz5011c.png"></div>
+                <div class="devridaim-kontrollar">
+                    <label for="resim-2" class="önceki-slayt"><span>‹</span></label>
+                    <label for="resim-4" class="sonraki-slayt"><span>›</span></label>
+                </div>
+            </li>
+            <input type="radio" name="radyoDüğmeler" id="resim-4"/>
+            <li class="slayt-kab">
+                <div class="slayt-resim"><img src="faraz5011d.png"></div>
+                <div class="devridaim-kontrollar">
+                    <label for="resim-3" class="önceki-slayt"><span>‹</span></label>
+                    <label for="resim-1" class="sonraki-slayt"><span>›</span></label>
+                </div>
+            </li>
+            <div class="devridaim-noktalar">
+                <label for="resim-1" class="devridaim-nokta" id="resim-nokta-1"></label>
+                <label for="resim-2" class="devridaim-nokta" id="resim-nokta-2"></label>
+                <label for="resim-3" class="devridaim-nokta" id="resim-nokta-3"></label>
+                <label for="resim-4" class="devridaim-nokta" id="resim-nokta-4"></label>
+            </div>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>faraz5025.html: Animasyonlu seyrü menü düðme örneði.</title>
+    <meta charset="iso:8859-9 Türkçe"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="faraz5025.css"/>
+</head>
+<body>
+    <div title="Seyrü menü düðmesi">
+        <button class="seyrü seyrü-düðme" type="button">
+            <span class="seyrü-kutu">
+                <span class="seyrü-iç"></span>
+            </span>
+        </button>
+    </div>
+    <script>
+        var seyrü = document.querySelector (".seyrü");
+        // Týklayýnca aktif'lenen düðme
+        seyrü.addEventListener ("click", function() {seyrü.classList.toggle ("aktif");});
+    </script>
+</body>
+</html>

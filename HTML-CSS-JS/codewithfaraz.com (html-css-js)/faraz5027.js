@@ -1,0 +1,3 @@
+function külahlar (külah) {document.querySelector ('.külahlar').src = külah; document.querySelector ('.külahlar').style.marginRight = "50px";}
+function renkDeðiþtir (renk) {document.querySelector ('.daire').style.backgroundColor = renk; document.querySelector ('.daire').style.marginTop = "50px";}
+function medyalar () {document.querySelector ('.sosyal').style.transform = "scale(0.8)"; document.querySelector ('.sosyal').style.filter = "invert(1)"; document.querySelector ('.sosyal').style.marginTop = "-180px";}

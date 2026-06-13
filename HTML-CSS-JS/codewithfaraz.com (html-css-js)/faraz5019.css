@@ -1,0 +1,109 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap'); */
+@font-face {font-family: 'Poppins'; src: url(faraz5001.txt);}
+* {margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;}
+.kab {width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #3d4152;}
+.seyrüsefer {position: fixed;
+    inset: 20px 0 20px 20px;
+    width: 75px;
+    min-height: 500px;
+    background: #fff;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.seyrüsefer.aç {width: 250px;}
+.seyrüsefer .menü-açkapa {position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;}
+.seyrüsefer .menü-açkapa::before {content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(-8px);
+    transition: 0.5s;}
+.seyrüsefer.aç .menü-açkapa::before {transform: translateY(0) rotate(45deg);}
+.seyrüsefer .menü-açkapa::after {content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(8px);
+    transition: 0.5s;
+    box-shadow: 0 -8px 0 #333;}
+.seyrüsefer.aç .menü-açkapa::after {transform: translateY(0) rotate(-45deg);
+    box-shadow: none;}
+.seyrüsefer ul {display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;}
+.seyrüsefer ul li {list-style: none;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: 0.5s;}
+.seyrüsefer ul li.aktif {transform: translateX(30px);}
+.seyrüsefer.aç ul li.aktif {transform: translateX(10px);}
+.seyrüsefer ul li a {text-decoration: none;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;}
+.seyrüsefer ul li a .ikon {
+    position: relative;
+    display: block;
+    min-width: 55px;
+    height: 55px;
+    line-height: 60px;
+    color: #222;
+    border-radius: 10px;
+    font-size: 1.75em;
+    transition: 0.5s;}
+.seyrüsefer ul li.aktif a .ikon {color: #fff;
+    background: var(--renk);}
+.seyrüsefer ul li a .ikon::before {content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: var(--renk);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;}
+.seyrüsefer ul li.aktif a .ikon::before {opacity: 0.5;}
+.seyrüsefer ul li a .metin {position: relative;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;}
+.seyrüsefer.aç ul li a .metin {opacity: 1;
+    visibility: visible;}
+.seyrüsefer ul li.aktif a .metin {color: var(--renk);}

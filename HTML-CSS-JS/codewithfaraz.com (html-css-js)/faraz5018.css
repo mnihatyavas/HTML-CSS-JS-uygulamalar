@@ -1,0 +1,64 @@
+* {box-sizing: border-box;}
+body {margin: 0px;
+    font-family: 'segoe ui';
+    background-color: #AFCDAC;}
+.seyrü {height: 50px;
+    width: 100%;
+    background-color: #345285;
+    position: relative;}
+.seyrü > .seyrü-baþlýk {display: inline;}
+.seyrü > .seyrü-baþlýk > .seyrü-unvan {display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px;}
+.seyrü > .seyrü-düðme {display: none;}
+.seyrü > .seyrü-baðlantýlar {display: inline;
+    float: right;
+    font-size: 18px;}
+.seyrü > .seyrü-baðlantýlar > a {display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;}
+.seyrü > .seyrü-baðlantýlar > a:hover {background-color: rgba(0, 0, 0, 0.8);}
+.seyrü > #seyrü-çentik {display: none;}
+@media (max-width:800px) {
+    .seyrü > .seyrü-düðme {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .seyrü > .seyrü-düðme > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .seyrü > .seyrü-düðme > label:hover, .seyrü #seyrü-çentik:checked ~ .seyrü-düðme > label {background-color: rgba(0, 0, 0, 0.8);}
+    .seyrü > .seyrü-düðme > label > span {
+        display: block;
+        width: 25px;
+        height: 8px;
+        border-top: 2px solid #eee;
+    }
+    .seyrü > .seyrü-baðlantýlar {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.5s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .seyrü > .seyrü-baðlantýlar > a {
+        display: block;
+        width: 100%;
+    }
+    .seyrü > #seyrü-çentik:not(:checked) ~ .seyrü-baðlantýlar {height: 0px;}
+    .seyrü > #seyrü-çentik:checked ~ .seyrü-baðlantýlar {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}

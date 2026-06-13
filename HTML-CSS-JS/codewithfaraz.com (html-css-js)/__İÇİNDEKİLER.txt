@@ -3,39 +3,131 @@
 https://www.codewithfaraz.com/article/103/50-html-css-and-javascript-projects-with-source-code-for-beginners
 https://www.codewithfaraz.com/
 ----------------------------------------------------------
+0.  Ana Menü
+    faraz50.html: Çeþitli konulardaki HTML-CSS-JS uygulamalarý örneði.
+    faraz50.png: Code With Faraz resmi.
 1. Dijital Saat
     faraz5001.html: Dairesel  saat-dakika-saniye halka animasyonlu dijital saat örneði.
+    faraz5001.css: Link href css kodlarý.
+    faraz5001.txt: @font-face Poppins src-url yazý ailesi.
+    faraz5001.ttf: @font-face TRGALLERIA src-url yazý ailesi.
 2. Parlayan Aramaçubuðu
     faraz5002.html: Iþýldayan pulsar arama çubuðu örneði.
+    faraz5002.css: Link href css kodlarý.
+    faraz5002.txt: @font-face Cabin src-url yazý ailesi.
 3. Sosyal Medya Ýkonlarý
     faraz5003.html: Zýplayan sosyal medya ikonlarý örneði.
+    faraz5003a.css: Link href css kodlarý.
     faraz5003b.css: Ýkon fa-facebook için font-awesome.min.css ünikodlarý.
-4. Drop-Down Menu
-5. Simple Calculator
-6. Login Page
-7. Sign Up Form
-8. Animated Search Box
-9. Dark/Light Mode Switch
-10. Breadcrumb
-11. Carousel Sliders
-12. Glitch Effect Text
-13. Sound Bars
-14. Loaders
-15. Radio Button
-16. Blog Card Grid
-17. Footer
-18. Navbar
-19. Sidebar
-20. Sort HTML Table
-21. Switch Button
-22. Tab Bar
-23. Submit Button
-24. To Do List
-25. Hamburger Menu
-26. Accordion
-27. Coffee Landing Page
-28. Login and Sign-Up Form
-29. Card Design	30. Glow Button
+4. Sarkan Menü
+    faraz5004.html: CSS ile sarkan üçlü yatay menü örneði.
+    faraz5004.css: Link href css kodlarý.
+5. Basit Hesapmakinesi
+    faraz5005.html: Dört iþlemli (/+-*/) basit bir hesap makinesi örneði.
+    faraz5005.css: Link href css kodlarý.
+6. Oturum Açýþ Formu
+    faraz5006.html: CSS ile oturum açma formu örneði.
+    faraz5006.css: Link href css kodlarý.
+7. Yeni Kayýt Formu
+    faraz5007.html: Kayýt formuyla yeni kayýt bilgileri giriþi örneði.
+    faraz5007.css: Link href css kodlarý.
+8. Hareketli Araþtýrma Çubuðu
+    faraz5008.html: Hareketli araþtýrma çubuðu örneði.
+    faraz5008.css: Link href css kodlarý.
+9. Karanlýk/Aydýnlýk Kipi Düðmesi
+    faraz5009.html: Düðmeyle zemin/yazý rengini deðiþtirme örneði.
+    faraz5009.css: Link href css kodlarý.
+    faraz5009a.js: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js
+    faraz5009b.js: Script src javascript kodlarý.
+    faraz5009.png: Kaplan resmi.
+10. Ekmekkýrýntýlý Menü
+    faraz5010.html: Ekmekkýrýntýlý seyrüsefer menüsü örneði.
+    faraz5010.css: Link href css kodlarý.
+11. Devridaim Slaytlar
+    faraz5011.html: Dönmedolapvari heriki yönlü slayt gösterimi örneði.
+    faraz5011.css: Link href css kodlarý.
+    faraz5011a.png: Yeþil plato resmi.
+    faraz5011b.png: Grup güneþ resmi.
+    faraz5011c.png: Göl kayýk resmi.
+    faraz5011d.png: Kaplan resmi.
+12. Yükleniyor Efekti
+    faraz5012.html: Yükleniyor uyarýsýnýn css&js animasyonu örneði.
+    faraz5012.css: Link href css kodlarý.
+    faraz5012a.js: Özelleþtirilen jquery.min.js fonksiyonlarý.
+    faraz5012b.js: Kelime harflerini oynatan jquery.lettering.min.js fonksiyonu.
+    faraz5012.txt: @font-face Source Code Pro src-url yazý ailesi.
+13. Ses Çizgileri
+    faraz5013.html: Ses çizgileri animasyonu örneði.
+    faraz5013.css: Link href css kodlarý.
+14. Þekil Yükle
+    faraz5014.html: Noktalý daire, üçgen ve kare animasyonu örneði.
+    faraz5014.css: Link href css kodlarý.
+15. Radyo Düðmesi
+    faraz5015.html: Evet-hayýr radyo düðmeleri efekti örneði.
+    faraz5015.css: Link href css kodlarý.
+16. Blog Kart Izgarasý
+    faraz5016.html: Fareye duyarlý blog kartlarý örneði.
+    faraz5016.css: Link href css kodlarý.
+    faraz5016.txt: @font-face "Heebo" ve "Open Sans" yazý ailesi örneði.
+    faraz5016a.png: Dijital saat resmi.
+    faraz5016b.png: Hesap makinesi resmi.
+    faraz5016c.png: Kaplan resmi.
+    faraz5016d.png: Radyo düðmesi resmi.
+17. Dipnot
+    faraz5017.html: Footer-dipnotlu header-baþlýklý article-makale örneði.
+    faraz5017.css: Link href css kodlarý.
+18. Yatay Seyrüçubuk
+    faraz5018.html: Yatay seyrüsefer-çubukta týklamaya duyarlý düðme örneði.
+    faraz5018.css: Link href css kodlarý.
+19. Dikey Kenarçubuk
+    faraz5019.html: Dikey seyrüsefer-çubukta týklamaya duyarlý düðme örneði.
+    faraz5019.css: Link href css kodlarý.
+    faraz5019.js: Script src javascript kodlarý.
+20. HTML Tablo Sýralama
+    faraz5020.html: Tablo sütunlarýnýn artan/azalan sýralanmasý örneði.
+    faraz5020.css: Link href css kodlarý.
+    faraz5020.js: Script src javascript kodlarý.
+21. Açkapa Düðmesi
+    faraz5021.html: Çentikkutu düðmenin çentikli-çentiksiz yerine açýk-kapalý örneði.
+    faraz5021.css: Link href css kodlarý.
+22. Saçýlan Seyrümenü
+    faraz5022.html: Seyrüsefer çubuðunun saçýlan çentiklikutulu birimleri örneði.
+    faraz5022.css: Link href css kodlarý.
+23. Gönder Düðmesi
+    faraz5023.html: Formu gönderme düðmesini biçimlendirme örneði.
+    faraz5023.css: Link href css kodlarý.
+    faraz5023.js: Script src javascript kodlarý.
+24. Yapýlacaklar Listesi
+    faraz5024.html: Çentiklemeli-karalamalý yapýlacaklar listesi örneði.
+    faraz5024.css: Link href css kodlarý.
+25. Seyrü Menü Düðme
+    faraz5025.html: Animasyonlu seyrü menü düðme örneði.
+    faraz5025.css: Link href css kodlarý.
+26. Akordiyon Paragraflar
+    faraz5026.html: Týklanýnca açýlýp kapanan akordiyonlu paragraflar örneði.
+    faraz5026.css: Link href css kodlarý.
+    faraz5026.js: Script src javascript kodlarý.
+27. Neskafe Mola Sayfasý
+    faraz5027.html: Türlü külahlý tatlýlar ve neskahve sitesi örneði.
+    faraz5027.css: Link href css kodlarý.
+    faraz5027.js: Script src javascript kodlarý.
+    faraz5027-logo.png: Starbuck logo resmi.
+    faraz5027-külah.png: Starbuck külah resmi.
+    faraz5027-külah1.png: Starbuck külah1 küçük resmi.
+    faraz5027-külah2.png: Starbuck külah2 küçük resmi.
+    faraz5027-külah3.png: Starbuck külah3 küçük resmi.
+    faraz5027-fb.png: Sosyal fb resmi.
+    faraz5027-ins.png: Sosyal instagram resmi.
+    faraz5027-twit.png: Sosyal twitter resmi.
+28. Oturumaçma ve Hesapyaratma Formu
+    faraz5028.html: Oturum-açma veya yeni hesap yaratma gönderi-formu örneði.
+    faraz5028.css: Link href css kodlarý.
+29. Hareketli Kartlar
+    faraz5029.html: Basýnca yelpazevari hareketlenen üçlü kart örneði.
+    faraz5029.css: Link href css kodlarý.
+30. Neon Lambalarý
+    faraz5030.html: Üzerindeyken neonvari parlayan üçlü çapa örneði.
+    faraz5030.css: Link href css kodlarý.
 31. Modal Popup Window
 32. Split Text
 33. Product Showcase Carousel

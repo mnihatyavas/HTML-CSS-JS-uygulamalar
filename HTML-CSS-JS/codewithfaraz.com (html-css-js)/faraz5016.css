@@ -1,0 +1,100 @@
+/* Bazen Türkçe (html yada js deðil) CSS adlarýný (örn.'ý' harfi) kabul etmiyor */
+/* @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700'); */
+@font-face {font-family: 'Heebo'; src: url(faraz5016.txt);}
+@font-face {font-family: 'Open Sans'; src: url(faraz5016.txt);}
+@font-face {font-family: TRGALLERIA; font-weight: normal; font-style: normal; src: url(faraz5001.ttf);}
+:root {--renk: #3c3163;
+    --geçiþ-süresi: 1.5s;}
+* {box-sizing: border-box;}
+body {margin: 0;
+    min-height: 100vh;
+    font-family: 'Heebo';
+    background: cyan;}
+a {color: inherit;}
+.kartlar-sarmal {display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    padding: 4rem;
+    margin: 0 auto;
+    width: max-content;}
+.kart {
+    --görünürlük: 0.4;
+    background-image: linear-gradient(rgba(0, 0, 0, var(--görünürlük)), rgba(0, 0, 0, var(--görünürlük))), var(--resim);
+    height: 20em;
+    width: 15em;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    /*margin: 2em;*/
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 10em -1em black;
+    transition: all, var(--geçiþ-süresi);
+    position: relative;
+    overflow: hidden;
+    border: 10px solid #ccc;
+    text-decoration: none;}
+.kart:hover {transform: rotate(0);}
+.kart h1 {margin: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;}
+.kart p {font-size: 0.75em;
+    font-family: 'Open Sans';
+    margin-top: 0.5em;
+    line-height: 2em;}
+.kart .etiketler {display: flex;}
+.kart .etiketler .etiket {font-size: 0.75em;
+    background: rgba(255,255,255,0.5);
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all, var(--geçiþ-süresi);}
+.kart:hover .etiketler .etiket {background: var(--renk);
+    color: white;}
+.kart .tarih {position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75em;
+    padding: 1em;
+    line-height: 1em;
+    opacity: .8;}
+.kart:before, .kart:after {content: '';
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all, var(--geçiþ-süresi);
+    transition-timing-function: ease-in-out;}
+.kart:before {background: #888;
+    width: 250%;
+    height: 250%;}
+.kart:after {background: white;
+    width: 200%;
+    height: 200%;}
+.kart:hover {color: var(--renk);}
+.kart:hover:before, .kart:hover:after {transform: scale(1);}
+.herbir-kart .no {font-size: 3em;
+    margin-bottom: 1.2rem;
+    text-align: center;}
+
+/* Medya Sorgularý */
+@media screen and (max-width: 1285px) {.kartlar-sarmal {grid-template-columns: 1fr 1fr;}}
+@media screen and (max-width: 900px) {
+    .kartlar-sarmal {grid-template-columns: 1fr;}
+    .herbir-kart .no {margin-left: 0; text-align: center;}
+}
+@media screen and (max-width: 500px) {
+    .kartlar-sarmal {padding: 4rem 2rem;}
+    .kart {max-width: calc(100vw - 4rem);}
+}
+h1, .etiket, .tarih {font-weight: normal; font-family: TRGALLERIA;}
+p {font-family: 'Heebo';}

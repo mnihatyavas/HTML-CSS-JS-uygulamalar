@@ -1,0 +1,34 @@
+body {background-color: #d6cbcb;}
+h1 {color: #225;
+    font: bold 40px 'helvetica neue', helvetica, arial, sans-serif;
+    left: 0;
+    margin: 20px 0 0 0;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;}
+#çizgiler {height: 100px;
+    left: 50%;
+    margin: -30px 0 0 -20px;
+    position: absolute;
+    top: 80%;
+    width: 150px;}
+.çizgi {background: #d69626;
+    bottom: 1px;
+    height: 153px;
+    position: absolute;
+    width: 5px;            
+    animation: ses 0ms -800ms linear infinite alternate;}
+@keyframes ses {
+    0% {opacity: 0.3; height: 3px;}
+    100% {opacity: 1; height: 480px;}}
+.çizgi:nth-child(1) {left: 1px; animation-duration: 474ms;}
+.çizgi:nth-child(2) {left: 8px; animation-duration: 433ms;}
+.çizgi:nth-child(3) {left: 15px; animation-duration: 407ms;}
+.çizgi:nth-child(4) {left: 23px; animation-duration: 458ms;}
+.çizgi:nth-child(5) {left: 31px; animation-duration: 400ms;}
+.çizgi:nth-child(6) {left: 39px; animation-duration: 427ms;}
+.çizgi:nth-child(7) {left: 47px; animation-duration: 441ms;}
+.çizgi:nth-child(8) {left: 55px; animation-duration: 419ms;}
+.çizgi:nth-child(9) {left: 63px; animation-duration: 487ms;}
+.çizgi:nth-child(10) {left: 71px; animation-duration: 442ms;}

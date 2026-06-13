@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso:8859-9 Türkçe"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>faraz5009.html: Düðmeyle zemin/yazý rengini deðiþtirme örneði.</title>
+    <link rel="stylesheet" href="faraz5009.css"> 
+</head>
+<body>
+    <!-- Her iki düðmeyle de biraz farklý karanlýk/aydýnlýk kipleri uygulanabilmektedir. -->
+    <input type="button" id="kip" height="50" value="KARANLIK" onClick="fonk1();"><br/>
+    <div class="düðme-etiketi">Karanlýk Kip: <span class="düðme">KARANLIK</span></div>
+    <h1>Hayvanlar</h1>
+    <article>
+        <h1>Kaplan</h1>
+        <p><small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, laudantium.</small></p>
+        <p><large>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, nulla. Debitis qui quam, ratione totam voluptatibus vitae necessitatibus sit laudantium, optio quis nam quidem est officia nemo architecto cum repellendus dolores eveniet ullam eligendi porro?</large></p>
+        <img src="faraz5009.png">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium tempora error deleniti eum facilis eaque neque laboriosam repellat molestiae deserunt, aliquid numquam a, nisi qui ipsa debitis obcaecati, voluptate expedita veritatis similique laudantium. Magni dolorum dolores labore eius aut. Fugiat.</p>
+    </article>
+    <script src="faraz5009a.js"></script>
+    <script src="faraz5009b.js"></script> <!-- js kodlamasýndaki $ ve komutlarý iþlevselleþtirir -->
+    <script>
+        function fonk1() {
+            if (document.body.style.backgroundColor == "black") {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                kip.value="KARANLIK";
+                kip.style.backgroundColor = "black";
+                kip.style.color = "white";
+                kip.style.height = "30px";
+            }else {document.body.style.backgroundColor = "black";
+                document.body.style.color = "cyan";
+                kip.value="AYDINLIK";
+                kip.style.backgroundColor = "red";
+                kip.style.color = "yellow";
+                kip.style.height = "50px";}
+        }
+    </script>
+</body>
+</html>
