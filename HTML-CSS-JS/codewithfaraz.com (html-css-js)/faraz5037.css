@@ -1,0 +1,311 @@
+/* genel */
+* {box-sizing: border-box;
+    margin: 0;
+    padding: 0;}
+body {background: #000;
+    color: #fff;
+    font-weight: 500;
+    font-family: Arial, sans-serif;}
+ul {list-style: none;}
+.lg {font-size: 1.5rem;}
+
+/* eposta düðme */
+.buton {text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background: #e50914;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-align: center;}
+.buton-logo {text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    margin: 0;
+    background: #e50914;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;}
+.buton-logo:hover {background: #fd1c27; color: blue;}
+
+/* iç kab baþlýk ve metin */
+.kab2 {display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    line-height: 1.25;}
+.kab2-unvan {font-size: 1.8rem;
+    width: 90%;}
+.kab2-unvan h1 {margin-bottom: 1rem;}
+.kab2-metin {font-size: 1.5rem;
+    width: 90%;}
+
+/* eposta formu */
+.eposta-formu {margin: 1rem;}
+.eposta-formu .yolla {padding-top: 1rem;
+    display: flex;
+    height: 80%;}
+.eposta-formu .yolla > input {border-radius: 2px 0 0 2px;
+    border: 3px solid #333;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    flex: 1;}
+.eposta-formu .buton-logo {border-radius: 0 2px 2px 0;}
+
+/* baþlýk */
+.kafa {height: 110vh;
+    position: relative;
+    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/8ef88e03-6f89-4c75-ae51-f8da7d252358/6ac07e5f-07ca-4543-8540-f22edce8bb02/TW-en-20210208-popsignuptwoweeks-perspective_alpha_website_small.jpg") no-repeat center center/cover;
+    background: url("faraz5037.zemin.jpg") repeat;
+    box-shadow: inset 0 50px 300px #000, inset 0 -50px 300px #000;
+    border-bottom: 10px #333 solid;
+    opacity: 0.7;}
+
+/* brightness and vignette effect (etkisiz)
+.sar {height: 110vh;
+    width: 100%;
+    background-color: #568a4f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.4;
+    z-index: 1;} */
+
+/* logo */
+.logo {display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;}
+.logo > img {width: 150px;}
+
+/* baþlýk metin, giriþ form ve düðme */
+.kafa .kab2 {margin-top: 10rem;}
+.kafa .kab2-unvan {width: 50%;
+    text-align: center;}
+.kafa h1 {margin-bottom: 1rem;}
+.kafa .kab2-metin {width: 50%;
+    text-align: center;}
+
+/* 1.gösteri */
+.sergi {border-bottom: 10px solid #333;
+    padding: 2rem 0;}
+.sergi-kab {display: flex;
+    width: 85%;
+    margin: auto;}
+.sergi-resim {position: relative;
+    z-index: 1;}
+.sergi-animasyon {position: absolute;
+    left: 75px;
+    top: 95px;
+    z-index: -1;}
+
+/* sergi 2*/
+.seans2 {width: 90%;}
+.sergi-kab.seans2 > .sergi-resim {margin: 1.2rem 0;}
+.indiriyor {background: #000;
+    width: 60%;
+    height: 125px;
+    position: absolute;
+    top: 335px;
+    left: 125px;
+    border: 5px solid #333;
+    border-radius: 10px;
+    padding: 0.7rem;
+    display: flex;}
+.indiriyor > img {height: 100%;}
+.indir-metin {padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;}
+.indir-metin > p {color: #0066e3;}
+
+/* sergi 3*/
+.seans3 .sergi-animasyon {width: 395px;
+    height: 225px;
+    top: 50px;
+    left: 120px;}
+
+/* sss listesi */
+.sss {border-bottom: 10px solid #333;}
+.sss .kab2 {line-height: 1.5;
+    margin: 2rem 0;}
+.sss .kab2-unvan {text-align: center;}
+.sss h1 {margin-bottom: 5rem;}
+.sss h2 {display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;}
+.sss ul {width: 60%;
+    margin: auto;}
+.sss li {border-bottom: 5px solid #000;
+    background: #333;
+    cursor: pointer;}
+.sss li.sun i {transform: rotate(45deg);}
+.sss li > p {padding: 1rem 0;
+    border-top: 1px solid #000;
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    position: absolute;
+    max-height: 0;
+    visibility: hidden;
+    transition: max-height 0.1s ease-in;}
+.sss .kab2-metin {margin-top: 2rem;}
+
+/* sun liste soru */
+.sss li.sun p {max-height: 700px;
+    position: relative;
+    visibility: visible;}
+
+/* ayaklýk */
+
+footer {color: #757575;
+    margin: 3rem auto;
+    width: 70%;}
+footer .linkler > * {margin-bottom: 20px;}
+footer p {margin-bottom: 2rem;}
+footer .linkler ul {display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;}
+footer .dil {padding: 1rem 0;
+    font-weight: 700;
+    cursor: pointer;
+    width: 14%;
+    border: 1px solid #333;
+    border-radius: 0.2rem;
+    font-family: inherit;
+    padding: 1rem;
+    position: relative;}
+footer .dil:active {outline: 1px solid #fff;
+    box-shadow: 0 0 0 2px #fff;}
+footer .sarkan-liste {width: 100%;}
+footer .sarkan-liste ul {display: none;
+    position: absolute;
+    background: #000;
+    border: 1px solid #333;
+    top: 58px;
+    width: 100%;
+    left: 0;}
+footer .sarkan-liste li {margin: 0.5rem 0;}
+
+/* sun sarkan dil */
+footer .sarkan-liste ul.sun {display: block;}
+
+/* büyükboy-ekran */
+@media (max-width: 950px) {
+    /* genel */
+    /* buton */
+    .buton-logo {padding: 10px 12.5px;
+        font-size: 15px;
+        text-align: center;
+        margin: 10px auto;}
+    /* metin-stil */
+    .kab2-unvan {font-size: 1.6rem;
+        text-align: center;
+        width: 100%;}
+    .kab2-metin {font-size: 1.2rem;
+        width: 100%;
+        text-align: center;}
+    /* eposta formu */
+    .eposta-formu .yolla {padding-top: 1rem;
+        display: flex;
+        flex-direction: column;}
+    .eposta-formu .yolla > input {padding: 1rem;
+        font-size: 1.1rem;}
+    /* seyrü logo */
+    .logo > img {width: 120px;}
+    /* kafa */
+    .kafa {height: 100%;}
+    .kafa .kab2-unvan {width: 70%;}
+    /* sergi */
+    .sergi-kab {flex-direction: column;
+        width: 90%;}
+    .sergi-resim {display: flex;
+        justify-content: center;}
+    .sergi-animasyon {left: 180px;
+        top: 95px;
+        z-index: -1;}
+    .seans2 .sergi-resim {order: 2;}
+    .seans3 .sergi-animasyon {top: 50px;
+        left: 218px;}
+    /* sss listesi */
+    .sss ul {width: 90%;
+        margin: auto;}
+    .sss h2 {display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;}
+    /* ayaklýk */
+    footer {width: 90%;}
+    footer .dil {width: 20%;}
+}
+
+/* tablet-ekran */
+@media (max-width: 768px) {
+    .kafa .kab2 {margin-top: 2rem;}
+    .kab2-unvan {width: 90%;
+        font-size: 1.5rem;}
+    .kab2-metin {width: 90%;
+        font-size: 1.5rem;}
+    .seans1 .sergi-animasyon {left: 100px;}
+    .seans3 .sergi-animasyon {left: 135px;}
+    /* buton */
+    .buton {padding: 10px 15px;
+        font-size: 15px;}
+}
+
+/* ortaboy-ekran*/
+@media (max-width: 550px) {
+    /* seyrülogo */
+    .logo > img {width: 100px;}
+    /* sergi*/
+    .kab2-metin .yolla > input {
+        padding: 0.5rem;
+        font-size: 1.1rem;}
+    .sergi-resim {display: flex;
+        justify-content: center;}
+    .sergi-resim > img {width: 100%;}
+    .seans1 .sergi-animasyon {width: 400px;
+        left: 35px;
+        top: 45px;}
+    .seans3 .sergi-animasyon {width: 300px;
+        top: 0;
+        left: 85px;}
+    .indiriyor {top: 260px;
+        left: 95px;
+        height: 70px;
+        border: 3px solid #333}
+    .indir-metin {font-size: 10px;
+        padding-left: 15px;}
+    /* sss listesi */
+    .sss h1 {text-align: center;
+        font-size: 25px;
+        margin-bottom: 0.5rem;}
+    .sss ul {width: 100%;}
+    .sss li {font-size: 10px;}
+    /* ayaklýk */
+    footer .linkler ul {grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;}
+}
+
+/* küçükboy-ekran*/
+@media (max-width: 375px) {
+    .kab2-unvan {font-size: 1rem;}
+    .kab2-metin {font-size: 1rem;}
+    /* kafa */
+    .kafa .kab2-unvan {width: 90%;}
+    .kafa .kab2-metin {width: 90%;}
+    /* sergi */
+    .seans1 .sergi-animasyon {
+        width: 250px;
+        left: 45px;
+        top: 50px;}
+    .seans3 .sergi-animasyon {
+        width: 210px;
+        left: 60px;
+        top: -25px;}
+    .indiriyor {top: 180px;
+        left: 66px;}
+}

@@ -1,0 +1,112 @@
+html, body {height: 100%;}
+html {font-size: 18px;
+    line-height: 1.2em;}
+body {font-family: "Segoe UI";
+    font-weight: 600;
+    background-image: linear-gradient(#f66465, #414895);
+    color: black;
+    overflow: hidden;}
+.kab {display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;}
+a {color: inherit;
+    text-decoration: none;}
+button {font: inherit;}
+.buton1 {background-color: lime;
+    padding: 1em;
+    border-radius: 0.5rem;
+    text-decoration: none;}
+/* @media (max-width: 600px) {.kab {width: 80%;}} */
+.pencere {position: fixed;
+    background-color: rgba(200, 255, 200, 0.25);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;}
+.pencere:target {visibility: visible;
+    opacity: 1;
+    pointer-events: auto;}
+.pencere > div {border-radius: 1rem;}
+.pencere div:not(:last-of-type) {margin-bottom: 15px;}
+*::-webkit-scrollbar {background-color: transparent;
+    width: 20px;}
+*::-webkit-scrollbar-thumb {border-radius: 99px;
+    background-color: #ddd;
+    border: 3px solid #f00;}
+.kab-modülü {max-height: 90vh;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #cc0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 200, 0.5);}
+.kab-kafa {padding: 16px 32px;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;}
+.kab-unvan {display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 1.75em;}
+.ikon-düðme {padding: 0;
+    border: 0;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.5s ease;}
+.ikon-düðme svg {width: 40px;
+    height: 40px;}
+.ikon-düðme:hover, .ikon-düðme:focus {background-color: #dfdad7;}
+.kab-beden {padding: 24px 32px 51px;
+    overflow-y: auto;}
+.kab-ayak {padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 2px solid #ddd;
+    /* gap: 12px; */
+    position: relative;}
+.kab-ayak:after {content: "";
+    display: block;
+    position: absolute;
+    top: -51px;
+    left: 24px;
+    right: 24px;
+    height: 50px;
+    flex-shrink: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.65), transparent);
+    pointer-events: none;}
+.buton2 {padding: 12px 20px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 50px 5px;
+    transition: 0.5s ease;}
+.buton2.red:hover, .buton2.red:focus {background-color: #dfdad7;}
+.buton2.kabul {background-color: #c66465;
+    color: #fff;}
+.buton2.kabul:hover, .buton2.kabul:focus {background-color: #fb4848;
+    color: cyan;}

@@ -1,0 +1,69 @@
+body {margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: linear-gradient(to top, #2e1753, #1f1746, #131537, #0d1028, #050819);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;}
+.ortala {align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    max-width: 50em;
+    margin: 0 auto;}
+.hata {text-align: center;}
+.hata__no {background: linear-gradient(#00bcd4, #9575cd);
+    -webkit-background-clip: text;
+    font-family: "Montserrat";
+    font-size: 18rem;
+    font-weight: 200;
+    margin: 0;
+    -webkit-text-fill-color: transparent;}
+.hata__tip {color: #f00;
+    font-weight: 600;
+    font-size: 2.75rem;
+    letter-spacing: 0.125em;
+    margin: 0;
+    text-transform: uppercase;}
+.hata__izah {color: #fff;
+    font-family: "Source Sans Pro";
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 2;}
+.hata__link {color: #fff;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    white-space: nowrap;}
+.hata__link--mor {background: purple;}
+.hata__link--mavi {background: blue;}
+.hata__link:hover {color: pink;}
+.yýldýz {position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    right: 0;
+    animation:ýþýltý 3s infinite linear;}
+.astronot img {width: 200px;
+    position: absolute;
+    top: 5%;
+    animation: uçuç 10s infinite linear;}
+@keyframes uçuç {
+    0% {left: -100px;}
+    25% {top: 50%; transform: rotate(30deg);}
+    50% {transform: rotate(45deg); top:55%;}
+    75% {top: 60%; transform: rotate(30deg);}
+    100% {left: 90%; transform: rotate(45deg);}
+}
+@keyframes ýþýltý {
+    0% {background: rgba(255,255,255, 0.4);}
+    25% {background: rgba(255,255,255, 0.8);}
+    50% {background: rgba(255,255,255, 1);}
+    75% {background: rgba(255,255,255, 0.8);}
+    100% {background: rgba(255,255,255, 0.4);}
+}
+@media (max-width: 40em) {
+    .hata__no {font-size: 10rem;}
+    .hata__tip {font-size: 1.25rem;}
+    .hata__izah {font-size: 1rem;}
+}

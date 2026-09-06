@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+*, *::before, *::after {margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+:root {--bg-color: #226449;
+    --primary-bg-color: #333740;
+    --primary-color: #2c62f6;
+    --text-color: #b1b8ca;
+    --text-active: #ffffff;
+    --button-hover-bg-color: #2b2e34;
+    --border-color: #494d59;
+    --dropdown-height: 0;
+    --rotate-arrow: 0;
+    --translate-value: 0;
+    --list-opacity: 0;
+    --transition-time: 0.4s;
+    --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --border-radius: 1.4rem;
+    --list-button-height: 4.6rem;
+    --floating-icon-size: 26;
+    --floating-icon-top: 0;
+    --floating-icon-left: 0;}
+html {font-size: 62.5%;}
+html, body {height: 100%;}
+body {display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    line-height: 1.4;}
+button {border: none;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;}
+svg {height: 1.6rem;
+    width: 1.6rem;}
+.metni-kes {text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;}
+.sarkan-kab {margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 34rem;}
+.sarkan-unvan-ikonu, .sarkan-ok {display: inline-flex;}
+.sarkan-unvan {margin: 0 auto 0 1.8rem;
+    text-transform: capitalize;}
+.sarkan-dugme {font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1.8rem;}
+.sarkan-dugme svg {
+    transition: all var(--transition-time) var(--transition-timing);
+    fill: var(--text-color);}
+.sarkan-dugme svg, .sarkan-dugme span {pointer-events: none;}
+.sarkan-dugme:hover, .sarkan-dugme:focus {color: var(--text-active);}
+.sarkan-dugme:hover svg, .sarkan-dugme:focus svg {fill: var(--text-active);}
+.ana-dugme {height: 5.2rem;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    background-color: var(--primary-bg-color);
+    border: 0.1rem solid var(--border-color);
+    transition: all var(--transition-time) var(--transition-timing);}
+.ana-dugme:focus {border: 0.1rem solid var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 98, 246, 0.4);}
+.ana-dugme .sarkan-ok {
+    transition: transform var(--transition-time) var(--transition-timing);
+    transform: rotate(var(--rotate-arrow));
+    margin-left: 1.8rem;}
+.liste-dugme {height: var(--list-button-height);
+    transition: color var(--transition-time) var(--transition-timing);
+    color: var(--text-color);
+    overflow: hidden;
+    cursor: none;}
+.sarkan-liste-kab {overflow: hidden;
+    max-height: var(--dropdown-height);
+    transition: max-height var(--transition-time) var(--transition-timing);}
+.sarkan-liste-sar {margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--primary-bg-color);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--border-color);
+    position: relative;}
+ul.sarkan-liste {position: relative;
+    list-style-type: none;}
+ul.sarkan-liste::before {content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    height: var(--list-button-height);
+    background-color: var(--button-hover-bg-color);
+    transition: all var(--transition-time) linear;
+    transform: translateY(var(--translate-value));
+    border-radius: var(--border-radius);
+    pointer-events: none;}
+ul.sarkan-liste:hover::before, ul.sarkan-liste:hover ~ .kayan-ikon {opacity: 1;}
+li.sarkan-liste-birim {display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    opacity: var(--list-opacity);
+    transition: opacity 0.8s var(--transition-timing);}
+.kayan-ikon {height: calc(var(--floating-icon-size) * 1px);
+    width: calc(var(--floating-icon-size) * 1px);
+    position: absolute;
+    top: var(--floating-icon-top);
+    left: var(--floating-icon-left);
+    background-color: var(--border-color);
+    border-radius: 1rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-time) var(--transition-timing);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;}
+.kayan-ikon svg {fill: var(--text-active);}

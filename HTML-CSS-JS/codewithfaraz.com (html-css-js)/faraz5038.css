@@ -1,0 +1,111 @@
+body {font-family: arial,sans-serif;
+    margin:0;
+    font-size: 13px;}
+/* baþlýk */
+header .ustCubuk {text-align: right;
+    padding: 5px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.54);}
+header .solIkonlar li {display: inline-block;
+    margin-right: 12px;
+    vertical-align: middle;}
+header .solIkonlar li a {text-decoration: none;
+    color: #0f0f0f;}
+header .solIkonlar input {border: 1px solid #42f544;
+    font-weight: bold;
+    outline: none;
+    background: #4387fd;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#4387fd, endColorstr=#4683ea, GradientType=0);
+    padding: 6px 12px;
+    font-size: 10px;
+    color: white;
+    border-radius: 2px;}
+header .solIkonlar input:hover {box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);}
+.ustCubukIkonu {display: inline-block;
+    position: relative;
+    height: 14px;
+    width: 14px;
+    vertical-align: middle;}
+/* kýsým gövde */
+section .aramaAlan {text-align: center;
+    margin-top: 55px;}
+section .aramaAlan .logo img {height: 72px;}
+section .aramaAlan .aramaKutu {display: flex;}
+section .aramaAlan .aramaKutu .aramaCubuk {width: 120px;
+    flex: 1;
+    align-self: center;}
+section .aramaAlan .aramaKutu .aramaCubuk .ara {
+    background: #ffffff;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    z-index: 3;
+    height: 32px;
+    margin: 15px auto;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;}
+section .aramaAlan .aramaKutu .aramaCubuk .ara input {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.87);
+    word-wrap: break-word;
+    outline: none;
+    height: 100%;
+    width: 24em;
+    font-size: 16px;}
+section .aramaAlan .aramaKutu .aramaCubuk .ara:hover {
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229, 0.9);}
+section .aramaAlan .aramaButonlar button {
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 30px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;}
+section .aramaAlan .aramaButonlar button:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;}
+section .aramaAlan .dilCubuk {margin-top: 20px;
+    font-size: 9pt;}
+section .aramaAlan .dilCubuk a {margin-left: 5px;}
+.goruntu {vertical-align: middle;
+    display: inline-block;}
+.aramaIkonEbat {height: 18px;
+    width: 18px;}
+.sesIkonEbat {height: 20px;
+    width: 20px;}
+.sesIkonEbat:hover {cursor: pointer;}
+/* ayaklýk */
+footer .ayakVeri {position: absolute;
+    bottom: 0;
+    background: #f2f2f2;
+    line-height: 20px;
+    border-top: 1px solid #e4e4e4;
+    min-width: 400px;
+    width: 100%;
+    font-size: 9pt;
+    color: rgba(0,0,0,.54);}
+.sola, .saga {display: inline-block;}
+.ayakVeri .ulusCubuk {margin-left: 30px;}
+footer .ayakDip {border-top: 1px solid #e4e4e4;}
+footer .ayakDip a {text-decoration: none;
+    color: rgba(0,0,0,.54);
+    margin-left: 20px;}
+footer .ayakDip .saga {float: right;
+    margin-right: 20px;}
